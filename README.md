@@ -20,9 +20,51 @@ For a chat, attach the chosen Play's `SKILL.md`, then ask:
 
 > Help me apply this Play to [my product and customer]. Walk me through it one question at a time.
 
-## Use the library in a ChatGPT Project
+## Use the library in a project, notebook, or assistant
 
-[Set up a ChatGPT Project](chatgpt-project/README.md) with three source files and project instructions. The Play guide routes you to coaching prompts or the full skill references, including their templates and examples. No skill installation is needed.
+[Use the shared reference kit](project/README.md) in a Claude Project, ChatGPT Project, Microsoft 365 Copilot Notebook or Agent, or Gemini Skill (formerly Gem). The setup guide explains each tool's file and instructions options.
+
+## Find the right download or setup
+
+[Start with the downloads guide](downloads/README.md) for skill-and-prompt bundles, Claude plugin ZIPs, and the shared Project kit. It explains the paths for Claude, ChatGPT, Microsoft 365 Copilot, Gemini, Cursor, and other assistants.
+
+## Choose a way to use the library
+
+```mermaid
+flowchart TD
+    Q["How would you like to work?"]
+    Q --> P["Copy a prompt<br/>Nothing to install"]
+    Q --> S["Use a skill folder<br/>Follow your agent's setup"]
+    Q --> L["Install a Claude plugin<br/>Add a collection of skills"]
+    Q --> R["Use the shared reference kit<br/>Project, Notebook, Agent, or Gemini Skill"]
+    P --> U["Bring context and choose<br/>Guided, Expert, or Discovery"]
+    S --> U
+    L --> U
+    R --> U
+
+    classDef route fill:#eef2ff,stroke:#4f46e5,color:#111827
+    class P,S,L,R route
+```
+
+[Prompts](prompts/README.md) · [Skill folders](skills/README.md) · [Claude plugin ZIPs](downloads/plugins/README.md) · [Project reference kit](project/README.md)
+
+## Share a prompt library with your team
+
+A shared folder of prompts can be enough. Unpack the [full-library bundle](downloads/bundles/README.md), review its `prompts/` folder, and place the prompts your team wants in an approved SharePoint document library, shared drive, or wiki. Add a simple index by task and link colleagues to it.
+
+```mermaid
+flowchart LR
+    P["Choose prompts<br/>from the bundle"] --> V["Review and adapt<br/>for your team"]
+    V --> S["Publish to SharePoint,<br/>a shared drive, or wiki"]
+    S --> C["A colleague copies<br/>a prompt into an AI chat"]
+    C --> R["They review the result<br/>and record their decision"]
+    R -.->|Feedback for the next version| V
+
+    classDef shared fill:#eef2ff,stroke:#4f46e5,color:#111827
+    class S shared
+```
+
+Name an owner for updates and keep source labels, assumptions, and Productside attribution visible. A shared prompt library provides copy-and-paste access; connecting an agent or notebook to it is a separate setup. Keep your organization's private context out of the reusable public files.
 
 ## How the Plays fit together
 

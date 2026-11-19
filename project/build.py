@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the ChatGPT upload kit from this library, using Python's standard library."""
+"""Build the shared project reference kit from this library, using Python's standard library."""
 
 import argparse
 import hashlib
@@ -285,14 +285,14 @@ def build():
              "## Try it\n",
              '> "Help me choose a Play. Our warehouse supervisors stop using our scheduling tool after their first week. Guide me one question at a time."\n',
              '> "Use Play 05 to critique my draft job statements. Find its coaching prompt first; use the skill reference if we need the template or format rules."\n',
-             f"## Using the three files\n\nIn a ChatGPT Project, add this guide, {PROMPTS}, and {SKILLS} as sources and paste project-instructions-compact.txt into the Project's Instructions box. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.\n\nOutside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/psk-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.\n",
+             f"## Using the three files\n\nFor Claude or ChatGPT Projects, Microsoft 365 Copilot Notebooks or Agents, or Gemini Skills, use the platform-specific setup in project/README.md. Add this guide, {PROMPTS}, and {SKILLS} as reference content, and use project-instructions-compact.txt for the assistant's instructions. File formats and setup controls differ; the guide covers those differences. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.\n\nOutside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/psk-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.\n",
              "## Find a Play\n",
              "Use the number, name, or psk- identifier. Both companion files follow this guide's phase and Play order. Section Two of the Outcome Tree (Play 23) points to the same full skill as Section One (Play 03); its prompt has a separate Deliver entry. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older numbering by Play name.\n",
              "| Play | Name | Prompts | Full skill |\n|---|---|---|---|"]
     for entry in entries:
         guide.append(f'| {entry["number"]} | {entry["title"]} | {link(PROMPTS, entry["heading"], "Open prompts")} | {link(SKILLS, entry["id"] + " / Instructions", entry["id"])} |')
     skills = ["# Productside Playbook: full skill references\n", snapshot + "\n", attribution + "\n",
-              f"Start with {GUIDE} to choose a Play or find its coaching prompts. Each reference below preserves the consolidated SKILL.md instructions, embedded template, and examples. In a ChatGPT Project, mentions of a skill or agent mean applying this uploaded reference, not calling an installed tool.\n",
+              f"Start with {GUIDE} to choose a Play or find its coaching prompts. Each reference below preserves the consolidated SKILL.md instructions, embedded template, and examples. In a Project, Notebook, agent, or Gemini Skill configured with these references, mentions of a skill or agent mean applying the named Play, not calling an unavailable tool.\n",
               "## Contents\n"]
     prompts = ["# Productside Playbook: coaching prompts\n", snapshot + "\n", attribution + "\n",
                f"Start with {GUIDE} to choose a Play. For the full method and working template, use {SKILLS}. Copy the text inside the selected prompt box, add your context, and keep the judgments with you or your team.\n",

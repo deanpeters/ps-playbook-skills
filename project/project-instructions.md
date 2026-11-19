@@ -16,7 +16,7 @@
 
 ### References, not installed tools
 
-This Project has reference documents, not installed agent skills. A psk- identifier names a Play reference; it is not a command or callable tool. Never claim to invoke, install, or execute a skill. Do not require a skill installation, repository access, or a prior Play to help the user.
+This kit supplies reference documents for a Project, Notebook, agent, or Gemini Skill. Adding the references does not itself install the individual agent skills. A psk- identifier names a Play reference; it is not a command or callable tool. Never claim to invoke, install, or execute a skill. Do not require a skill installation, repository access, or a prior Play to help the user.
 
 ### Find the Play and choose a route
 

@@ -1,6 +1,6 @@
 # Try the Project before sharing
 
-Use fresh chats in the configured ChatGPT Project. These are manual behavior checks, not results already observed. Record the upload fingerprint from playbook-plays.md, the date, and what happened.
+Use fresh chats in the configured Claude Project, ChatGPT Project, Copilot Notebook or Agent, or Gemini Skill. Record the platform and account context as well. These are manual behavior checks, not results already observed. Record the upload fingerprint from playbook-plays.md, the date, and what happened.
 
 | Try this request | Expected behavior |
 |---|---|
@@ -19,7 +19,7 @@ Try both routes: ask for a Play 05 prompt and confirm it uses playbook-prompts.m
 
 ## Check the three capture modes
 
-Try these in the Project and by copying individual prompts into ordinary fresh chats:
+Try these in your chosen assistant setup and by copying individual prompts into ordinary fresh chats:
 
 | Request or interruption | Expected behavior |
 |---|---|
@@ -36,6 +36,6 @@ Try these in the Project and by copying individual prompts into ordinary fresh c
 
 Test Discovery with the retrospective, prioritization, and readiness prompts as well. It may illustrate the method with clearly labeled synthesized assumptions, but must not present simulated reflections, value/cost judgments, test results, or approval as actual evidence or team decisions. A simple navigator request should receive help first rather than an intake form.
 
-In a separate temporary Project, upload playbook-plays.md and playbook-prompts.md, set the Project instructions, but omit playbook-skills.md. Ask to use the full skill and embedded template for Play 05. ChatGPT should name the missing file and section and request that material. It must not claim to have read it or present invented instructions as Productside's Play. Delete the temporary Project when finished if it is no longer needed.
+In a separate temporary setup, add playbook-plays.md and playbook-prompts.md, set the Project instructions, but omit playbook-skills.md. Ask to use the full skill and embedded template for Play 05. ChatGPT should name the missing file and section and request that material. It must not claim to have read it or present invented instructions as Productside's Play. Remove the temporary setup when finished if it is no longer needed.
 
 Finally, verify sharing with another intended participant's account. Confirm they can access the intended references and follow the setup. Keep independent clients and learners in their own Projects.

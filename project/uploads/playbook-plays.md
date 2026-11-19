@@ -29,7 +29,7 @@ You can switch modes during a conversation. Supplied context is reused. Every mo
 
 ## Using the three files
 
-In a ChatGPT Project, add this guide, playbook-prompts.md, and playbook-skills.md as sources and paste project-instructions-compact.txt into the Project's Instructions box. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.
+For Claude or ChatGPT Projects, Microsoft 365 Copilot Notebooks or Agents, or Gemini Skills, use the platform-specific setup in project/README.md. Add this guide, playbook-prompts.md, and playbook-skills.md as reference content, and use project-instructions-compact.txt for the assistant's instructions. File formats and setup controls differ; the guide covers those differences. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.
 
 Outside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/psk-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.
 
@@ -363,7 +363,7 @@ AI-generated customer details are hypotheses, not research. People conduct real 
 
 ## Source and updates
 
-Source snapshot: `c90e44b3931027f8`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `0a2342fb1e6ce949`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 This kit is generated from deanpeters/ps-playbook-skills. Changes on GitHub do not update uploaded sources. Replace all three together and update Project instructions when changed. Full decks, PDF excerpts, and external maintenance documents are outside this kit; their mentions in skill text are provenance. Test actual reference use and sharing access before wider distribution.
 

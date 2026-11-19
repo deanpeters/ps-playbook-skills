@@ -1,10 +1,10 @@
 # Productside Playbook: full skill references
 
-Source snapshot: `c90e44b3931027f8`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `0a2342fb1e6ce949`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. Full license: playbook-plays.md, License appendix.
 
-Start with playbook-plays.md to choose a Play or find its coaching prompts. Each reference below preserves the consolidated SKILL.md instructions, embedded template, and examples. In a ChatGPT Project, mentions of a skill or agent mean applying this uploaded reference, not calling an installed tool.
+Start with playbook-plays.md to choose a Play or find its coaching prompts. Each reference below preserves the consolidated SKILL.md instructions, embedded template, and examples. In a Project, Notebook, agent, or Gemini Skill configured with these references, mentions of a skill or agent mean applying the named Play, not calling an unavailable tool.
 
 ## Contents
 
