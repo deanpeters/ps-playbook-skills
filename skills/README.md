@@ -1,86 +1,85 @@
-# Skills
+# Work through a Play with your AI assistant
 
-A skill gives your AI assistant instructions for working through a Productside Playbook Play with you. Choose one below. Each Play folder contains only `SKILL.md`, with instructions, a working template, compact examples, and quality checks in that file.
+A skill gives your assistant a Play's full method, working template, examples, and quality checks. Choose a Play below, then give its file to your assistant. You do not need to understand the file's instructions yourself before starting.
 
-For a chat, attach the chosen Play's `SKILL.md`, then describe your product and the help you need. Ask: "Walk me through this one question at a time."
+## Try one skill
 
-For an agent tool that supports skill folders, use the complete `psk-...` folder and follow that tool's installation instructions.
+1. Click a Play name in the tables below.
+2. On its file page, choose **Download raw file** (the down-arrow button near the file). The file is called `SKILL.md`; it is a text document, not a program.
+3. Attach that file to a new AI chat and describe your product and customer.
+4. Ask:
 
-Every skill supports **Guided** (learn and complete the work step by step, with context-relevant recommendations), **Expert** (bring context and get the result, with guidance on any step when needed), and **Discovery** (synthesize missing context and quickly sketch or simulate a walkthrough). The assistant reuses supplied context and hands decisions back to you. Discovery assumptions stay labeled; this interaction mode is distinct from the Blueprint's Discover phases and does not claim research was conducted.
+   > Use this Play to help with my product. Start in Guided mode and walk me through it one question at a time.
 
-```mermaid
-flowchart TD
-    M{"How would you like to work?"}
-    M --> G["Guided<br/>Learn and complete each step"]
-    M --> E["Expert<br/>Bring context and get the result"]
-    M --> D["Discovery<br/>Sketch with synthesized assumptions"]
-    E -->|Help on one step| H["Get coaching on that step"]
-    H -->|Resume| E
-    G --> R["Review the result<br/>and decide what to keep"]
-    E --> R
-    D --> R
+If your assistant cannot accept the file, [try a copy-and-paste prompt](../prompts/README.md). To download several skills at once or add them to a supported tool, use the [download guide](../downloads/README.md).
 
-    classDef mode fill:#eef2ff,stroke:#4f46e5,color:#111827
-    class G,E,D mode
-```
+## Choose how you want help
 
-Switch modes when needed; keep the context already supplied. A Discovery result remains provisional until its assumptions are validated.
+- **Guided:** learn and complete the work step by step, with recommendations relevant to your situation.
+- **Expert:** bring the context you have and ask for the result. Request coaching on any step when needed.
+- **Discovery:** get an early sketch when context is incomplete, with assumptions clearly labeled.
 
-For copy-and-paste prompts, use the separate [prompt collection](../prompts/README.md). No prompts or source PDFs are duplicated inside the skill folders.
+You can change modes as you work. You review the suggestions and decide what to keep. A Discovery sketch is a starting point to validate, not customer research.
 
-25 skills cover all 24 numbered Plays, plus a Blueprint navigator and Storyboarding. The Outcome Tree covers two numbered Plays. Numbers follow the November 2026 B2B work-in-progress Playbook, which is not yet ratified.
+## Choose a Play
+
+Not sure where to start? Try the **Blueprint navigator** first. Otherwise, choose the phase that matches the work in front of you.
+
+There are 25 skills covering all 24 numbered Plays, plus the navigator and Storyboarding. Outcome Tree Sections One and Two share one skill. Numbers follow the November 2026 work-in-progress Playbook.
 
 ### Navigator (cross-phase)
 
-| Directory | Template | Type |
+| Open a Play | Playbook number | How it helps |
 |---|---|---|
-| [psk-blueprint-advisor](psk-blueprint-advisor/SKILL.md) | Blueprint (pages 1-3) | process |
+| [Blueprint navigator](psk-blueprint-advisor/SKILL.md) | Blueprint (pages 1-3) | Prepare and guide a conversation or activity |
 
 ### Context
 
-| Directory | Template | Type |
+| Open a Play | Playbook number | How it helps |
 |---|---|---|
-| [psk-outcome-strategy-discussion](psk-outcome-strategy-discussion/SKILL.md) | 01 | process |
-| [psk-stakeholder-alignment](psk-stakeholder-alignment/SKILL.md) | 02 | component |
-| [psk-outcome-tree](psk-outcome-tree/SKILL.md) | 03 + 23 | component |
-| [psk-market-selection-sizing](psk-market-selection-sizing/SKILL.md) | 04 | component |
+| [Outcome & Strategy Discussion](psk-outcome-strategy-discussion/SKILL.md) | 01 | Prepare and guide a conversation or activity |
+| [Stakeholder Alignment](psk-stakeholder-alignment/SKILL.md) | 02 | Develop a working draft using the Play's template |
+| [Outcome Tree (Sections One and Two)](psk-outcome-tree/SKILL.md) | 03 + 23 | Develop a working draft using the Play's template |
+| [Market Selection & Sizing](psk-market-selection-sizing/SKILL.md) | 04 | Develop a working draft using the Play's template |
 
 ### Discover + Investigate
 
-| Directory | Template | Type |
+| Open a Play | Playbook number | How it helps |
 |---|---|---|
-| [psk-jobs-to-be-done](psk-jobs-to-be-done/SKILL.md) | 05 | component |
-| [psk-proto-persona](psk-proto-persona/SKILL.md) | 06 | component |
-| [psk-empathy-interviews](psk-empathy-interviews/SKILL.md) | 07 | process |
-| [psk-affinity-mapping](psk-affinity-mapping/SKILL.md) | 08 | process |
-| [psk-problem-identification](psk-problem-identification/SKILL.md) | 09 | component |
-| [psk-framing-the-problem](psk-framing-the-problem/SKILL.md) | 10 | component |
+| [Jobs-to-Be-Done & Outcomes](psk-jobs-to-be-done/SKILL.md) | 05 | Develop a working draft using the Play's template |
+| [Personas & Proto-Personas](psk-proto-persona/SKILL.md) | 06 | Develop a working draft using the Play's template |
+| [Empathy Interviews](psk-empathy-interviews/SKILL.md) | 07 | Prepare and guide a conversation or activity |
+| [Affinity Mapping](psk-affinity-mapping/SKILL.md) | 08 | Prepare and guide a conversation or activity |
+| [Problem Identification](psk-problem-identification/SKILL.md) | 09 | Develop a working draft using the Play's template |
+| [Framing the Problem](psk-framing-the-problem/SKILL.md) | 10 | Develop a working draft using the Play's template |
 
 ### Discover + Define
 
-| Directory | Template | Type |
+| Open a Play | Playbook number | How it helps |
 |---|---|---|
-| [psk-exploring-solution-space](psk-exploring-solution-space/SKILL.md) | 11 | process |
-| [psk-solution-hypothesis](psk-solution-hypothesis/SKILL.md) | 12 | component |
-| [psk-positioning-statement](psk-positioning-statement/SKILL.md) | 13 | component |
-| [psk-lofi-experimentation](psk-lofi-experimentation/SKILL.md) | 14 | component |
-| [psk-storyboarding](psk-storyboarding/SKILL.md) | none (instruction page only) | component |
-| [psk-risk-assessment](psk-risk-assessment/SKILL.md) | 15 | component |
-| [psk-product-outcome-canvas](psk-product-outcome-canvas/SKILL.md) | 16 | component |
+| [Exploring the Solution Space](psk-exploring-solution-space/SKILL.md) | 11 | Prepare and guide a conversation or activity |
+| [Solution Hypothesis](psk-solution-hypothesis/SKILL.md) | 12 | Develop a working draft using the Play's template |
+| [Positioning Statement](psk-positioning-statement/SKILL.md) | 13 | Develop a working draft using the Play's template |
+| [Lo-fi Experimentation](psk-lofi-experimentation/SKILL.md) | 14 | Develop a working draft using the Play's template |
+| [Storyboarding](psk-storyboarding/SKILL.md) | none (instruction page only) | Develop a working draft using the Play's template |
+| [Risk Assessment](psk-risk-assessment/SKILL.md) | 15 | Develop a working draft using the Play's template |
+| [Product Outcome Canvas](psk-product-outcome-canvas/SKILL.md) | 16 | Develop a working draft using the Play's template |
 
 ### Create
 
-| Directory | Template | Type |
+| Open a Play | Playbook number | How it helps |
 |---|---|---|
-| [psk-outcome-roadmap](psk-outcome-roadmap/SKILL.md) | 17 | component |
-| [psk-tiny-acts-discovery](psk-tiny-acts-discovery/SKILL.md) | 18 | process |
-| [psk-output-prioritization](psk-output-prioritization/SKILL.md) | 19 | component |
-| [psk-go-to-market](psk-go-to-market/SKILL.md) | 20 | component |
-| [psk-product-readiness](psk-product-readiness/SKILL.md) | 21 | component |
+| [Outcome-Based Roadmap & Release Plan](psk-outcome-roadmap/SKILL.md) | 17 | Develop a working draft using the Play's template |
+| [Tiny Acts of Discovery](psk-tiny-acts-discovery/SKILL.md) | 18 | Prepare and guide a conversation or activity |
+| [Output Prioritization](psk-output-prioritization/SKILL.md) | 19 | Develop a working draft using the Play's template |
+| [Go-to-Market Enablement](psk-go-to-market/SKILL.md) | 20 | Develop a working draft using the Play's template |
+| [Product Readiness Testing](psk-product-readiness/SKILL.md) | 21 | Develop a working draft using the Play's template |
 
 ### Deliver
 
-| Directory | Template | Type |
+| Open a Play | Playbook number | How it helps |
 |---|---|---|
-| [psk-measuring-outcomes](psk-measuring-outcomes/SKILL.md) | 22 | component |
-| [psk-process-retrospective](psk-process-retrospective/SKILL.md) | 24 | process |
+| [Measuring Outcomes](psk-measuring-outcomes/SKILL.md) | 22 | Develop a working draft using the Play's template |
+| [Process Retrospective](psk-process-retrospective/SKILL.md) | 24 | Prepare and guide a conversation or activity |
+
+[Back to the main guide](../README.md) · [Copy-and-paste prompts](../prompts/README.md)

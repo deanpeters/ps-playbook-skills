@@ -52,12 +52,12 @@ class DownloadTests(unittest.TestCase):
     def test_project_kit_has_current_sources_and_instructions(self):
         files = self.packages["bundles/psk-project-kit.zip"]
         self.assertEqual(len(files), 9)
-        for path in (build.ROOT / "project/uploads").glob("*.md"):
+        for path in (build.ROOT / "projects/uploads").glob("*.md"):
             self.assertEqual(files[str(path.relative_to(build.ROOT))], path.read_bytes())
-        compact = files["project/project-instructions-compact.txt"].decode()
+        compact = files["projects/project-instructions-compact.txt"].decode()
         self.assertLessEqual(len(compact), 7700)
-        self.assertIn("project/README.md", files)
-        self.assertNotIn(b"(../skills/README.md)", files["project/README.md"])
+        self.assertIn("projects/README.md", files)
+        self.assertNotIn(b"(../skills/README.md)", files["projects/README.md"])
 
     def test_current_archives_are_deterministic_and_match_payloads(self):
         for relative, files in self.packages.items():

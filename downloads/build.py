@@ -25,7 +25,7 @@ COLLECTIONS = {
 
 
 def project_builder():
-    spec = importlib.util.spec_from_file_location("playbook_project_builder", ROOT / "project/build.py")
+    spec = importlib.util.spec_from_file_location("playbook_project_builder", ROOT / "projects/build.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -44,22 +44,22 @@ def snapshot(files):
 
 
 def package_readme(title, kind, plays, prompts, fingerprint):
-    intro = ("Unpack this ZIP to use the skills and prompts as files. A bundle does not install itself."
+    intro = ("Open this collection to choose a prompt or a full Play for your AI chat. No coding required. On a Mac, double-click the ZIP. On Windows, right-click it and choose Extract All."
              if kind == "bundle" else
-             "This is a Claude plugin package. Use Claude's custom-plugin installation flow. "
+             "Add this collection through Claude's Plugins page using its custom-plugin upload option. Keep the ZIP closed for upload. "
              "A plugin ZIP is not the three-document Project kit.")
     first = plays[0]["id"]
     text = f"""# Productside Playbook: {title}
 
 {intro}
 
-Version: {VERSION}. Source fingerprint: {fingerprint}.
+Package version: {VERSION}.
 
 ## Try it
 
 """
     if kind == "bundle":
-        text += "Open a prompt under prompts/ and copy its text box into your AI chat. Or attach a chosen skills/psk-.../SKILL.md, which includes its template and examples.\n\n"
+        text += "Open the prompts folder, choose a task, and open a prompt document. Copy the whole text box into your AI chat. For a full Play, open the skills folder, choose a Play, and attach its SKILL.md document to your chat. That document includes its template and examples.\n\n"
     else:
         text += "After installation, find the included skills in your assistant. Ask for a skill by its psk- identifier, or select it from the available skills list.\n\n"
     text += f"> Use {first} for [my product and customer]. Start in Guided mode and ask one question at a time.\n\n"
@@ -70,7 +70,7 @@ Version: {VERSION}. Source fingerprint: {fingerprint}.
         text += f"\n\nIncludes {len(prompts)} matching prompt files. The original Playbook tasks and library-added interaction instructions are labeled separately.\n"
         text += "\nFor a shared prompt library, copy the prompts/ folder to an approved SharePoint library, shared drive, or wiki. Add a simple index and keep one reviewed version for your team. A shared folder does not install skills or automatically connect an AI assistant.\n"
     text += "\nOutcome Tree Sections One and Two share one skill, packaged in Context and the full library. The Blueprint navigator is in the full library only.\n"
-    text += "\n## Status and license\n\nContent follows the November 2026 B2B work-in-progress Playbook, not yet ratified. Archive checks and plugin-manifest validation do not establish live installation or behavioral results.\n\n"
+    text += "\n## Status and license\n\nContent follows the November 2026 B2B work-in-progress Playbook, not yet ratified. The package files have been checked for completeness. Live installation and AI responses still need testing; try one Play before sharing a setup.\n\n"
     text += f"Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. See [LICENSE](LICENSE). [Setup and current validation status]({REPOSITORY}/tree/main/downloads).\n"
     return text.encode()
 
@@ -79,9 +79,9 @@ def payloads():
     builder = project_builder()
     generated = builder.build()
     for name, content in generated.items():
-        path = ROOT / "project/uploads" / name
+        path = ROOT / "projects/uploads" / name
         if not path.exists() or path.read_text() != content:
-            raise ValueError("Project sources are stale. Run python3 project/build.py first.")
+            raise ValueError("Project sources are stale. Run python3 projects/build.py first.")
     plays = builder.load_plays()
     prompt_files = sorted((ROOT / "prompts").glob("*/*.md"))
     output = {}
@@ -110,23 +110,23 @@ def payloads():
             folder = "bundles" if kind == "bundle" else "plugins"
             output[f"{folder}/psk-{kind}-{slug}.zip"] = files
     kit = {"LICENSE": read("LICENSE")}
-    for relative in ["project/README.md", "project/project-instructions.md", "project/project-instructions-compact.txt", "project/smoke-checks.md"]:
+    for relative in ["projects/README.md", "projects/project-instructions.md", "projects/project-instructions-compact.txt", "projects/smoke-checks.md"]:
         content = read(relative)
-        if relative == "project/README.md":
+        if relative == "projects/README.md":
             content = content.replace(b"(../skills/README.md)", f"({REPOSITORY}/tree/main/skills)".encode())
         kit[relative] = content
-    kit.update({f"project/uploads/{name}": content.encode() for name, content in generated.items()})
+    kit.update({f"projects/uploads/{name}": content.encode() for name, content in generated.items()})
     kit["README.md"] = f"""# Productside Playbook: Project kit
 
-Start with [project/README.md](project/README.md). It explains Claude Projects, ChatGPT Projects, Microsoft 365 Copilot Notebooks or Agents, and Gemini Skills (formerly Gems).
+Start with [projects/README.md](projects/README.md). It explains Claude Projects, ChatGPT Projects, Microsoft 365 Copilot Notebooks or Agents, and Gemini Skills (formerly Gems).
 
-Unpack this ZIP. Add the three documents in project/uploads/ as reference content in your tool's supported format. Paste project/project-instructions-compact.txt into its instructions field; project/project-instructions.md is the detailed reference. Follow the platform-specific format notes in the setup guide, including plain-text copies for Microsoft 365 Agent uploads.
+On a Mac, double-click the ZIP. On Windows, right-click it and choose Extract All. Open projects/README.md for step-by-step setup. Add the three documents in projects/uploads/ as reference content in your tool's supported format. Paste projects/project-instructions-compact.txt into its instructions field; projects/project-instructions.md is the detailed reference. Follow the platform-specific format notes in the setup guide, including plain-text copies for Microsoft 365 Agent uploads.
 
-Version: {VERSION}. Source fingerprint: {snapshot(kit)}.
+Package version: {VERSION}.
 
 Uploaded files do not update automatically from GitHub. Replace all three sources together and test both a prompt and a full Play before sharing. This kit is reference content, not a Claude plugin or Gemini SKILL.md upload package.
 
-Based on materials from Productside. See [LICENSE](LICENSE) for CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. Source content is work-in-progress, not yet ratified. Live platform installation and behavior remain unverified.
+Based on materials from Productside. See [LICENSE](LICENSE) for CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. Source content is work-in-progress, not yet ratified. Try the example requests in the setup guide before sharing with your team. Live setup and responses have not yet been tested.
 """.encode()
     output["bundles/psk-project-kit.zip"] = kit
     return output

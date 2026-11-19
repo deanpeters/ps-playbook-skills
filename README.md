@@ -2,11 +2,17 @@
 
 Practical help for product discovery, strategy, planning, and learning, based on the Productside Playbook.
 
+You can use this library from your browser. You do not need to write code, use Terminal, or learn GitHub first. Start with one task and one AI conversation.
+
+A **Play** is an exercise that helps you work through a product question. A **prompt** is text you copy into your AI chat. A **skill** gives the assistant a Play's full method and template.
+
 ## Start with a prompt
 
 1. [Choose a task](prompts/README.md), such as preparing customer interviews or checking a positioning statement.
 2. Open a prompt and copy the text inside the box into your AI chat.
 3. Bring your context, answer the questions, and keep the work you agree with.
+
+On a prompt page, copy only the text inside the large text box, using its copy button if shown. Leave the title and notes outside the box.
 
 Nothing to install. You do the thinking, and AI pressure-tests it.
 
@@ -16,13 +22,13 @@ Choose **Guided** to complete the work while learning the method step by step, w
 
 [Browse the 25 skills](skills/README.md) for guided help across all 24 Playbook Plays. Each Play is one `SKILL.md` file containing its instructions, working template, examples, and quality checks.
 
-For a chat, attach the chosen Play's `SKILL.md`, then ask:
+To try one, open its link, then use **Download raw file** (the down-arrow button near the file). `SKILL.md` is a text document; you do not need to edit it. Attach the downloaded file to your AI chat, then ask:
 
 > Help me apply this Play to [my product and customer]. Walk me through it one question at a time.
 
 ## Use the library in a project, notebook, or assistant
 
-[Use the shared reference kit](project/README.md) in a Claude Project, ChatGPT Project, Microsoft 365 Copilot Notebook or Agent, or Gemini Skill (formerly Gem). The setup guide explains each tool's file and instructions options.
+[Use the shared reference kit](projects/README.md) in a Claude Project, ChatGPT Project, Microsoft 365 Copilot Notebook or Agent, or Gemini Skill (formerly Gem). The setup guide explains each tool's file and instructions options.
 
 ## Find the right download or setup
 
@@ -46,7 +52,7 @@ flowchart TD
     class P,S,L,R route
 ```
 
-[Prompts](prompts/README.md) · [Skill folders](skills/README.md) · [Claude plugin ZIPs](downloads/plugins/README.md) · [Project reference kit](project/README.md)
+[Prompts](prompts/README.md) · [Skill folders](skills/README.md) · [Claude plugin ZIPs](downloads/plugins/README.md) · [Project reference kit](projects/README.md)
 
 ## Share a prompt library with your team
 
@@ -91,10 +97,14 @@ flowchart LR
 
 Use the Plays to examine evidence and make decisions throughout this cycle. Discovery continues after launch.
 
-## About this copy
+## From training to everyday product work
 
-This is Dean Peters's minimal adaptation of the [Productside library](https://github.com/Productside/Productside-Playbook-Skills). Each Play is one file; standalone prompts live in `prompts/`. Expanded examples, source excerpts, and maintenance documentation remain in the original project.
+Born out of the **Productside Playbook**, this library turns its Plays, templates, and Productside Blueprint into prompts and reusable AI skills for everyday product work. It carries the Playbook's reasoning into the conversation: understand the customer, examine the evidence, connect work to outcomes, and make deliberate decisions.
 
-Copied from the source project's local working tree on November 19, 2026, including its uncommitted library updates. Content follows the November 2026 B2B work-in-progress Playbook, which is not yet ratified. AI-generated customer details and numbers are assumptions to validate.
+The library complements Productside's **Optimal Product Management (OPM)** and **AI Product Management** training by helping you apply what you learn to your own product and team. Use it during exercises, revisit a method after class, or bring a Play into your next discovery, strategy, or planning conversation.
+
+**Guided** helps you learn and complete the method with coaching. **Expert** helps you put a familiar method to work with the context you already have. **Discovery** helps you explore a provisional sketch when context is incomplete. In every mode, you do the thinking and own the decisions; AI helps you practice, structure, and pressure-test the work.
+
+Content follows the November 2026 work-in-progress Playbook. Treat AI-generated customer details and numbers as assumptions to validate.
 
 Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. See [LICENSE](LICENSE) for permissions and restrictions.

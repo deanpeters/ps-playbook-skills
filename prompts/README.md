@@ -1,6 +1,8 @@
 # Copy and paste prompts
 
-Choose a task below, open its first prompt, and copy the text inside the box into your AI chat. Replace bracketed placeholders with your own context. Nothing to install.
+Choose a task below, open its first prompt, and copy the text inside the box into your AI chat. Replace bracketed placeholders, such as [your product], with your own context. Nothing to install, and no GitHub experience needed.
+
+On the prompt page, look for the large text box. Use its copy button if shown, or select and copy the text inside it. Leave the title, notes, and file information outside the box. You can then return to this page with your browser's Back button.
 
 You do the thinking, and AI pressure-tests it. Review its suggestions and record what you decide to keep in your notes or Playbook template. Customer evidence comes from real customers.
 
@@ -29,7 +31,7 @@ flowchart TD
 
 All modes reuse context already supplied and finish with a visible summary and the decision left with you. You can switch modes at any point. The Blueprint navigator helps first without a mandatory intake.
 
-Each copyable prompt includes this library's guided-capture instructions. In the Playbook-supplied prompts, the original wording is preserved in a labeled section inside the same box; the added interaction instructions are identified separately.
+The text box includes instructions for how the assistant should coach you. Copy the whole box so it knows how to guide the conversation.
 
 ## Prompts supplied by the Playbook
 
@@ -62,7 +64,7 @@ Each copyable prompt includes this library's guided-capture instructions. In the
 
 ## Additional coaching prompts
 
-These prompts are **authored for this library**, based on the corresponding Playbook Plays. They extend the same coaching approach to work without a supplied AI-Enabled prompt. They are not prompts from the source deck and do not change its AI-Enabled labels.
+These prompts are **authored for this library**, based on the corresponding Playbook Plays. They extend the same coaching approach to work without a supplied AI-Enabled prompt. They follow the same coaching style; they are labeled separately so you can tell which prompts came directly from the Playbook.
 
 Bring your own context and draft where requested. AI helps you learn, rehearse, or critique; you or your team make the judgments and record the result.
 

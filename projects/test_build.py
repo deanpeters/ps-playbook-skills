@@ -184,7 +184,7 @@ class ProjectKitTests(unittest.TestCase):
         def read(path, *args, **kwargs):
             text = original_read(path, *args, **kwargs)
             if path == catalog:
-                return "\n".join(line for line in text.splitlines() if "[psk-jobs-to-be-done]" not in line)
+                return "\n".join(line for line in text.splitlines() if "(psk-jobs-to-be-done/SKILL.md)" not in line)
             return text
 
         with patch.object(Path, "read_text", read):

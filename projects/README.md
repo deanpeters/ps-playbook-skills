@@ -2,7 +2,16 @@
 
 Keep the Productside Playbook alongside your product work in a **Claude Project**, **ChatGPT Project**, **Microsoft 365 Copilot Notebook or Agent**, or **Gemini Skill (formerly Gem)**. The same reference documents support coaching prompts and full Play walkthroughs.
 
-**Start with your tool below.** You do not need to code or install a plugin to use this reference kit. Account features, file support, and sharing controls differ; these are documented setup routes, not completed installation tests.
+**You only need three reference documents and one set of instructions.** No coding or plugin installation required.
+
+## Get the files first
+
+1. [Download the Project kit ZIP](https://github.com/deanpeters/ps-playbook-skills/raw/main/downloads/bundles/psk-project-kit.zip). A ZIP holds several files in one download.
+2. Open your Downloads folder. On a Mac, double-click the ZIP. On Windows, right-click it and choose **Extract All**.
+3. Open the extracted folder, then `projects`. The three reference documents are inside its `uploads` folder. Leave their filenames unchanged.
+4. Open `project-instructions-compact.txt` and copy all its text. You will paste it into your AI tool in the steps below.
+
+Choose your tool below. Menus and available features can differ by account. These steps follow the tools' documentation; they have not yet been tested in live accounts.
 
 ## What you need
 
@@ -13,7 +22,7 @@ Keep the Productside Playbook alongside your product work in a **Claude Project*
 | [playbook-skills.md](uploads/playbook-skills.md) | Full instructions, embedded templates, examples, and quality checks. |
 | [project-instructions-compact.txt](project-instructions-compact.txt) | Paste into your tool's instructions field. Kept under 7,700 characters; respect any smaller limit your tool shows. |
 
-The [full Markdown instructions](project-instructions.md) are the detailed reference. The first three files are source material; instructions belong in the tool's behavior or instructions field. Adding documents alone does not configure that behavior.
+The [full Markdown instructions](project-instructions.md) are the detailed reference. Upload the first three files as documents the assistant can read. Paste the text from the fourth file into its instructions box to explain how it should help you. You need both steps.
 
 ## Choose your setup
 
@@ -88,7 +97,7 @@ If your tool rejects Markdown, open each source in a text editor and save a plai
 | playbook-prompts.md | playbook-prompts.txt |
 | playbook-skills.md | playbook-skills.txt |
 
-In the instructions you paste into that tool, replace those three `.md` filenames with their `.txt` equivalents so lookup requests match the files you actually added. Keep the repository originals unchanged. Markdown headings remain readable as plain text. If your organization requires Word or PDF instead, preserve the headings and use the actual uploaded filenames in the instructions.
+In the instructions you paste into that tool, replace those three `.md` filenames with their `.txt` equivalents so lookup requests match the files you actually added. Keep your original downloaded files so you can use them with other tools. Markdown headings remain readable as plain text. If your organization requires Word or PDF instead, preserve the headings and use the actual uploaded filenames in the instructions.
 
 ## Gemini Skills (formerly Gems)
 
@@ -116,7 +125,7 @@ Then check both routes:
 
 > Now use the full Play 05 reference to explain its template and quality checks.
 
-It should find the correct reference, preserve the distinction between sources and assumptions, and leave judgments with you. If it cannot find a document, it should name the missing file rather than invent its contents. Use the [trial checklist](smoke-checks.md) on each platform you intend to use. Headings and catalog links help lookup; they do not guarantee retrieval of every passage.
+It should find the correct reference, preserve the distinction between sources and assumptions, and leave judgments with you. If it cannot find a document, it should name the missing file rather than invent its contents. Use the [trial checklist](smoke-checks.md) on each platform you intend to use. If an answer seems to miss part of a Play, ask the assistant to find and review that section before continuing.
 
 ## Guided, Expert, and Discovery
 
@@ -126,30 +135,12 @@ It should find the correct reference, preserve the distinction between sources a
 
 The same modes apply across these tools. Simulated outcomes are not actual research, team agreement, or test results. Each skill remains a single `SKILL.md`; adding these compiled references does not itself install every individual skill.
 
-Prompts are labeled **Deck** or **Library-authored** for their underlying source. Their guided-capture layer is library-added. Content follows the November 2026 B2B work-in-progress Playbook, not yet ratified. The full license is in playbook-plays.md.
+Prompts labeled **Deck** come from the Playbook. **Library-authored** prompts extend its coaching approach to other Plays. Content follows the November 2026 B2B work-in-progress Playbook, not yet ratified. The full license is in playbook-plays.md.
 
 ## Share and update
 
 Keep unrelated clients and products in separate setups. Before sharing, check who can access the assistant and its source files. For independent learners, distribute this guide, compact instructions, and three references so each person can create their own setup.
 
-Replace all three reference files together and update the instructions when changed. Their source fingerprints should match. Updating GitHub does not update uploaded copies; verify connected-source updates in the target tool. If you used the earlier nine-file kit, remove its superseded sources before adding this set.
+Replace all three reference files together and update the instructions when changed. Downloading a newer kit does not replace files you already uploaded to your assistant. Remove the older reference documents when you add the new set.
 
-## Rebuild the kit
-
-For maintainers working in the source repository: Python 3 only; no additional packages or API keys. The downloadable Project kit does not include the build scripts. These commands write or check local files, not live assistant setups.
-
-```bash
-python3 project/build.py
-```
-
-```bash
-python3 project/build.py --check
-```
-
-```bash
-python3 -m unittest discover -s project -p 'test_*.py'
-```
-
-Edit the source skills/prompts, then rebuild. Do not edit uploads/ by hand. New Plays require updating skills/README.md and the title mapping in build.py. The shared capture contract lives in project-instructions.md under **Shared interaction contract**, ending before **Play boundaries**; keep its copies aligned with skills and prompt wrappers. Keep compact instructions behaviorally consistent and within 7,700 characters, including whitespace and newlines. The build enforces the limit and checks consistency, references, ordering, and prompt inclusion.
-
-Packaging checks do not establish platform installation, live behavior, sharing access, or Productside approval.
+[Back to the main guide](../README.md) · [For people maintaining these files](https://github.com/deanpeters/ps-playbook-skills/blob/main/downloads/MAINTAINING.md)

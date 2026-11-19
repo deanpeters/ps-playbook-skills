@@ -46,7 +46,7 @@ If you want to install several skills together in Claude, use a [Claude plugin Z
 
 ### Claude Projects, ChatGPT, Copilot, and Gemini
 
-For repeated use, download the [Project kit ZIP](https://github.com/deanpeters/ps-playbook-skills/raw/main/downloads/bundles/psk-project-kit.zip). It contains the three compiled references, compact instructions, full Markdown instructions, setup guide, and trial checklist. Follow the [platform-specific setup](../../project/README.md) for Claude Projects, ChatGPT Projects, Microsoft 365 Copilot Notebooks or Agents, and Gemini Skills (formerly Gems). Adding sources and setting instructions are separate steps. Microsoft Agent uploads use plain-text copies as explained in that guide.
+For repeated use, download the [Project kit ZIP](https://github.com/deanpeters/ps-playbook-skills/raw/main/downloads/bundles/psk-project-kit.zip). It contains the three reference documents, compact instructions, full Markdown instructions, setup guide, and trial checklist. Follow the [platform-specific setup](../../projects/README.md) for Claude Projects, ChatGPT Projects, Microsoft 365 Copilot Notebooks or Agents, and Gemini Skills (formerly Gems). Adding sources and setting instructions are separate steps. Microsoft Agent uploads use plain-text copies as explained in that guide.
 
 ### Cursor
 
@@ -71,6 +71,6 @@ Use the `psk-...` skill folder in the location your assistant documents. A bundl
 
 The full-library ZIP includes all 38 files under prompts/. Copy that folder into an approved SharePoint document library, shared drive, or wiki. Add an index organized by task, keep attribution and source labels, and name an owner for updates. Colleagues can open a prompt and paste its copyable box into their chosen AI chat. This does not automatically connect or install anything in that assistant.
 
-## Validation and updates
+## Updates and trying it out
 
-All seven bundle ZIPs pass integrity and source-content checks. The six skill collections preserve source skills and prompts; the Project kit preserves the three generated references and adjusts the setup guide's repository link for use outside this repository. Live assistant setup and behavior remain unverified. Re-download after an update; extracted copies do not update themselves.
+The files in all seven ZIPs have been checked against the library. Try one Play in your assistant before relying on or sharing a setup; live installation and responses have not yet been tested. Download a new ZIP when you want an updated collection. Copies already on your computer do not update themselves.

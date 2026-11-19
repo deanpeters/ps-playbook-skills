@@ -4,7 +4,13 @@ Get help with customer discovery, strategy, planning, and learning. A **Play** i
 
 **New here? Start with a [copy-and-paste prompt](../prompts/README.md).** Nothing to install and no coding required.
 
-**Start with a ZIP:** [full skills-and-prompts bundle](https://github.com/deanpeters/ps-playbook-skills/raw/main/downloads/bundles/psk-bundle-full-library.zip), [shared Project kit](https://github.com/deanpeters/ps-playbook-skills/raw/main/downloads/bundles/psk-project-kit.zip), or [Claude plugin choices](plugins/README.md). Packages pass archive checks; Claude plugin manifests are validated. Live installation and behavior still need testing in your account.
+**Start with a ZIP:** [full skills-and-prompts bundle](https://github.com/deanpeters/ps-playbook-skills/raw/main/downloads/bundles/psk-bundle-full-library.zip), [shared Project kit](https://github.com/deanpeters/ps-playbook-skills/raw/main/downloads/bundles/psk-project-kit.zip), or [Claude plugin choices](plugins/README.md). Choose a bundle if you want files to open and use yourself. Choose a plugin if you want to add skills through Claude's Plugins page.
+
+## Download and open a ZIP
+
+Click a download link and look in your computer's Downloads folder. On a Mac, double-click a bundle ZIP to open it. On Windows, right-click it and choose **Extract All**. You can then browse its folders like any other documents.
+
+For a Claude plugin, keep the ZIP closed: Claude's upload option takes the ZIP itself. You do not need GitHub's green **Code** button or a copy of the whole library to get started.
 
 ## Try a Play in about five minutes
 
@@ -19,10 +25,10 @@ Review what the assistant suggests and record what you decide to keep. You do th
 
 | I use... | Start here | What to expect |
 |---|---|---|
-| Claude in a browser or the Claude desktop app | [Prompts](../prompts/README.md) or [Claude Project](../project/README.md#claude-project) | Paste a prompt or add the reference kit to a Project. See [Claude plugins](plugins/README.md) for installable package ZIPs. |
-| ChatGPT | [ChatGPT Project setup](../project/README.md#chatgpt-project) | Add three source files and paste the compact Project instructions. For a single task, use a prompt instead. |
-| Microsoft 365 Copilot | [Notebook or Agent setup](../project/README.md#microsoft-365-copilot-notebook) | Add reference documents and instructions; the guide covers plain-text copies for Agent uploads. |
-| Gemini Skills, formerly Gems | [Gemini setup](../project/README.md#gemini-skills-formerly-gems) | Create a library skill manually with the reference documents, or upload a single Play's SKILL.md. |
+| Claude in a browser or the Claude desktop app | [Prompts](../prompts/README.md) or [Claude Project](../projects/README.md#claude-project) | Paste a prompt or add the reference kit to a Project. See [Claude plugins](plugins/README.md) for installable package ZIPs. |
+| ChatGPT | [ChatGPT Project setup](../projects/README.md#chatgpt-project) | Add three source files and paste the compact Project instructions. For a single task, use a prompt instead. |
+| Microsoft 365 Copilot | [Notebook or Agent setup](../projects/README.md#microsoft-365-copilot-notebook) | Add reference documents and instructions; the guide covers plain-text copies for Agent uploads. |
+| Gemini Skills, formerly Gems | [Gemini setup](../projects/README.md#gemini-skills-formerly-gems) | Create a library skill manually with the reference documents, or upload a single Play's SKILL.md. |
 | Cursor | [Skill files and Cursor steps](bundles/README.md#cursor) | Start with a prompt in Agent chat, or add a chosen skill folder to your project. |
 | Claude Code or another assistant that supports skill folders | [Skills library](../skills/README.md) | Use the complete `psk-...` folder and follow your tool's installation instructions. |
 | Another AI chat | [Prompts](../prompts/README.md) | Copy a prompt. If your tool accepts Markdown attachments, you can also give it a Play's `SKILL.md`. |
@@ -66,30 +72,6 @@ For a ChatGPT Project, follow the three-file setup rather than trying to install
 
 These materials follow the November 2026 work-in-progress Playbook, which is not yet ratified. Review the [Productside license](../LICENSE) before redistributing materials or using them in a commercial offering.
 
-## Rebuild downloads (maintainers)
+The download files have been checked for completeness. Installation and responses in live AI accounts still need testing; try one Play before sharing a setup with your team.
 
-From the source repository root, rebuild the shared references, then the ZIPs. Python 3 is sufficient; no API keys or model sessions are used.
-
-```bash
-python3 project/build.py
-```
-
-```bash
-python3 downloads/build.py
-```
-
-Check the ZIPs against current sources without writing:
-
-```bash
-python3 downloads/build.py --check
-```
-
-Run the archive tests:
-
-```bash
-python3 -m unittest discover -s downloads -p 'test_*.py'
-```
-
-The builder creates six skill-and-prompt bundles, six Claude plugin packages, and one Project kit. It preserves source skill and prompt bytes, includes the license, uses reproducible ZIP metadata, and refuses unexpected ZIPs. Readmes and manifests are generated packaging material. The Project kit's setup guide changes its repository-only skill link to a web link for portability. The build does not install, publish, or upload the packages.
-
-[Back to the main guide](../README.md)
+[Back to the main guide](../README.md) · [For people maintaining these files](MAINTAINING.md)
