@@ -18,6 +18,10 @@ For a chat, attach the chosen skill's `SKILL.md` and `template.md`, then ask:
 
 > Help me apply this Play to [my product and customer]. Walk me through it one question at a time.
 
+## Use the library in a ChatGPT Project
+
+[Set up a ChatGPT Project](chatgpt-project/README.md) with nine reference files and project instructions. Its catalog lets ChatGPT find a Play by name, number, or task, then read its instructions, template, and examples. No skill installation is needed.
+
 ## About this copy
 
 This is Dean Peters's minimal adaptation of the [Productside library](https://github.com/Productside/Productside-Playbook-Skills). It keeps skills and prompts, with supporting materials inside each skill. Maintenance documentation remains in the source project.
