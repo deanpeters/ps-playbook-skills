@@ -12,7 +12,7 @@ Choose a Play, then get coaching from a prompt or work through its full skill re
 
 1. Create a new Project in ChatGPT named **Productside Playbook**.
 2. Add the three Markdown files linked above to its sources.
-3. Open [project-instructions.txt](project-instructions.txt) and paste its contents into the Project's instructions field. Uploading it as another source is not a substitute for setting the instructions.
+3. Open [project-instructions-compact.txt](project-instructions-compact.txt) and paste its contents into the Project's **Instructions** box. It stays within 7,700 characters. Uploading it as another source is not a substitute for setting the instructions. The existing [full instructions](project-instructions.md) remain available as the detailed reference.
 4. Start a new chat in the Project and paste:
 
    > Help me choose a Play. Our warehouse supervisors stop using our scheduling tool after their first week. Guide me one question at a time.
@@ -56,7 +56,7 @@ Every prompt now has a library-added capture layer inside its copyable box. The 
 
 ## Share or update
 
-For a team working on one product, use the Project's available sharing controls and verify access with another account. For independent learners or unrelated clients, distribute this setup guide, project-instructions.txt, and the three source files so each person can create a separate Project. Review the audience and accessible content before sharing. Follow the license included in playbook-plays.md.
+For a team working on one product, use the Project's available sharing controls and verify access with another account. For independent learners or unrelated clients, distribute this setup guide, project-instructions-compact.txt, and the three source files so each person can create a separate Project. Review the audience and accessible content before sharing. Follow the license included in playbook-plays.md.
 
 If you used the earlier nine-file kit, remove those nine sources from ChatGPT before adding this set. Replace the Project instructions as well, then start a new chat. For future updates, replace all three files together; their source fingerprints should match. Changes on GitHub do not update uploaded snapshots.
 
@@ -84,6 +84,8 @@ python3 -m unittest discover -s chatgpt-project -p 'test_*.py'
 
 Edit skills, prompts, or project instructions, then rebuild. Do not edit uploads/ by hand. New Plays require updating skills/README.md and the title mapping in build.py. The generator rejects missing or unmapped references, prompts without catalog entries, and unexpected upload files.
 
-The compact shared capture contract lives between GUIDED CONTEXT CAPTURE and PLAY BOUNDARIES in project-instructions.txt. When changing it, update the inline copies in all skills and prompt wrappers before rebuilding. The generator rejects mismatches. Keep the original prompt section intact when editing its wrapper.
+The shared capture contract lives under **Guided context capture → Shared interaction contract** in project-instructions.md, ending before **Play boundaries**. When changing it, update the inline copies in all skills and prompt wrappers before rebuilding. The generator rejects mismatches. Keep the original prompt section intact when editing its wrapper.
+
+Keep project-instructions-compact.txt consistent with the full instructions. It is the compressed version for the Instructions box; its 7,700-character maximum, including whitespace and newlines, is enforced by the build. Keep the full instructions as the detailed reference and capture-contract source.
 
 Packaging checks verify content, ordering, and references. They do not establish live ChatGPT behavior, sharing access, or Productside approval.

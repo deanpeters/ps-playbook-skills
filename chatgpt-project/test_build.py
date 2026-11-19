@@ -118,6 +118,17 @@ class ProjectKitTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "shared guided capture contract"):
                 build.build()
 
+    def test_overlong_compact_instructions_fail_the_build(self):
+        original_read = Path.read_text
+        compact = build.HERE / "project-instructions-compact.txt"
+
+        def read(path, *args, **kwargs):
+            return "x" * 7701 if path == compact else original_read(path, *args, **kwargs)
+
+        with patch.object(Path, "read_text", read):
+            with self.assertRaisesRegex(ValueError, "1-7700 characters; found 7701"):
+                build.build()
+
     def test_prompts_cover_every_play_and_keep_provenance_distinct(self):
         covered = set()
         numbers = set()

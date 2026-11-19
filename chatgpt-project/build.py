@@ -151,19 +151,23 @@ def prompt_skill(path):
 
 def capture_contract():
     """Keep the shared interaction text in the existing Project instructions."""
-    text = (HERE / "project-instructions.txt").read_text()
-    match = re.search(r"^GUIDED CONTEXT CAPTURE\n(.*?)\n\nPLAY BOUNDARIES$", text, re.S | re.M)
+    text = (HERE / "project-instructions.md").read_text()
+    match = re.search(r"^### Shared interaction contract\n\n(.*?)(?=^## Play boundaries$)", text, re.S | re.M)
     if not match:
         raise ValueError("Project instructions are missing the guided capture contract")
     return match.group(1).strip()
 
 
 def build():
+    compact = (HERE / "project-instructions-compact.txt").read_text()
+    if not compact.strip() or len(compact) > 7700:
+        raise ValueError(f"Compact Project instructions must contain 1-7700 characters; found {len(compact)}")
     plays = load_plays()
     capture = capture_contract()
     entries = play_entries(plays)
     locations = {}
-    inputs = {ROOT / "skills/README.md", ROOT / "LICENSE", HERE / "project-instructions.txt", HERE / "build.py"}
+    inputs = {ROOT / "skills/README.md", ROOT / "LICENSE", HERE / "project-instructions.md",
+              HERE / "project-instructions-compact.txt", HERE / "build.py"}
     prompt_files = sorted((ROOT / "prompts").glob("*/*.md"))
     groups = {prompt: prompt_group(prompt) for prompt in prompt_files}
     assigned = set()
@@ -281,7 +285,7 @@ def build():
              "## Try it\n",
              '> "Help me choose a Play. Our warehouse supervisors stop using our scheduling tool after their first week. Guide me one question at a time."\n',
              '> "Use Play 05 to critique my draft job statements. Find its coaching prompt first; use the skill reference if we need the template or format rules."\n',
-             f"## Using the three files\n\nIn a ChatGPT Project, add this guide, {PROMPTS}, and {SKILLS} as sources and use the supplied Project instructions. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.\n\nOutside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/ps-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.\n",
+             f"## Using the three files\n\nIn a ChatGPT Project, add this guide, {PROMPTS}, and {SKILLS} as sources and paste project-instructions-compact.txt into the Project's Instructions box. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.\n\nOutside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/ps-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.\n",
              "## Find a Play\n",
              "Use the number, name, or ps- identifier. Both companion files follow this guide's phase and Play order. Section Two of the Outcome Tree (Play 23) points to the same full skill as Section One (Play 03); its prompt has a separate Deliver entry. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older numbering by Play name.\n",
              "| Play | Name | Prompts | Full skill |\n|---|---|---|---|"]
