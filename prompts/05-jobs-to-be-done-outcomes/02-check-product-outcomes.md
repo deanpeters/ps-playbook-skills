@@ -2,7 +2,7 @@
 title: Check Product Outcomes
 play_number: 5
 play: Jobs-to-Be-Done & Outcomes
-skill: ps-jobs-to-be-done
+skill: psk-jobs-to-be-done
 sequence: 2
 sequence_total: 2
 source:

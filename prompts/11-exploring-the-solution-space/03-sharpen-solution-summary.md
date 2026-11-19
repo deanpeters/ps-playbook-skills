@@ -2,7 +2,7 @@
 title: Sharpen a Solution Summary
 play_number: 11
 play: Exploring the Solution Space
-skill: ps-exploring-solution-space
+skill: psk-exploring-solution-space
 sequence: 3
 sequence_total: 3
 source:

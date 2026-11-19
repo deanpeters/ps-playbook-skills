@@ -2,12 +2,12 @@
 title: Pressure-Test Your Solution Hypothesis
 play_number: 12
 play: Solution Hypothesis
-skill: ps-solution-hypothesis
+skill: psk-solution-hypothesis
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-solution-hypothesis/SKILL.md
+  based_on: skills/psk-solution-hypothesis/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

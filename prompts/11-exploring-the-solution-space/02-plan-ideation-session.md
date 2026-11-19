@@ -2,7 +2,7 @@
 title: Plan an Ideation Session
 play_number: 11
 play: Exploring the Solution Space
-skill: ps-exploring-solution-space
+skill: psk-exploring-solution-space
 sequence: 2
 sequence_total: 3
 source:

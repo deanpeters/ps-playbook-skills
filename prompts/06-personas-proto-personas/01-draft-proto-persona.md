@@ -2,7 +2,7 @@
 title: Draft a Proto-Persona
 play_number: 6
 play: Personas & Proto-Personas
-skill: ps-proto-persona
+skill: psk-proto-persona
 sequence: 1
 sequence_total: 2
 source:

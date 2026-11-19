@@ -2,7 +2,7 @@
 title: Build the PESTEL together
 play_number: 4
 play: Market Selection & Sizing
-skill: ps-market-selection-sizing
+skill: psk-market-selection-sizing
 sequence: 2
 sequence_total: 4
 source:

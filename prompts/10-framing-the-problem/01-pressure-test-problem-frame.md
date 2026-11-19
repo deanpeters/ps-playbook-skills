@@ -2,12 +2,12 @@
 title: Pressure-Test Your Problem Frame
 play_number: 10
 play: Framing the Problem
-skill: ps-framing-the-problem
+skill: psk-framing-the-problem
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-framing-the-problem/SKILL.md
+  based_on: skills/psk-framing-the-problem/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

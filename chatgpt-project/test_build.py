@@ -93,6 +93,14 @@ class ProjectKitTests(unittest.TestCase):
             self.assertNotIn("template.md", text)
             self.assertNotIn("examples/sample.md", text)
 
+    def test_skill_folder_and_frontmatter_use_psk_namespace(self):
+        for play in self.plays:
+            self.assertRegex(play["id"], r"^psk-[a-z0-9-]+$")
+            front = (play["folder"] / "SKILL.md").read_text().split("---", 2)[1]
+            name = re.search(r"^name: ([^\n]+)$", front, re.M).group(1)
+            self.assertEqual(name, play["id"])
+        self.assertFalse(list((build.ROOT / "skills").glob("ps-*")))
+
     def test_guided_capture_reaches_every_standalone_skill_and_prompt(self):
         capture = build.capture_contract()
         for play in self.plays:
@@ -136,7 +144,7 @@ class ProjectKitTests(unittest.TestCase):
         for path in (build.ROOT / "prompts").glob("*/*.md"):
             text = path.read_text()
             front = text.split("---", 2)[1]
-            play_id = re.search(r"^skill: (ps-[\w-]+)$", front, re.M).group(1)
+            play_id = re.search(r"^skill: (psk-[\w-]+)$", front, re.M).group(1)
             covered.add(play_id)
             group = build.prompt_group(path)
             groups[group].add(play_id)
@@ -176,7 +184,7 @@ class ProjectKitTests(unittest.TestCase):
         def read(path, *args, **kwargs):
             text = original_read(path, *args, **kwargs)
             if path == catalog:
-                return "\n".join(line for line in text.splitlines() if "[ps-jobs-to-be-done]" not in line)
+                return "\n".join(line for line in text.splitlines() if "[psk-jobs-to-be-done]" not in line)
             return text
 
         with patch.object(Path, "read_text", read):

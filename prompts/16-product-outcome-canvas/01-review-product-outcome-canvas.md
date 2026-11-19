@@ -2,12 +2,12 @@
 title: Review Your Product Outcome Canvas Before Go/No Go
 play_number: 16
 play: Product Outcome Canvas
-skill: ps-product-outcome-canvas
+skill: psk-product-outcome-canvas
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-product-outcome-canvas/SKILL.md
+  based_on: skills/psk-product-outcome-canvas/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

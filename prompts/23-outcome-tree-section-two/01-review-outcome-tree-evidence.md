@@ -2,12 +2,12 @@
 title: Review Your Outcome Tree Against New Evidence
 play_number: 23
 play: Outcome Tree, Section Two
-skill: ps-outcome-tree
+skill: psk-outcome-tree
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-tree/SKILL.md
+  based_on: skills/psk-outcome-tree/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

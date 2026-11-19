@@ -2,7 +2,7 @@
 title: Pressure-Test Key Messages
 play_number: 20
 play: Go-to-Market Enablement
-skill: ps-go-to-market
+skill: psk-go-to-market
 sequence: 1
 sequence_total: 2
 source:

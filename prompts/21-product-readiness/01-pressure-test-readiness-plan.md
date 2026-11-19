@@ -2,12 +2,12 @@
 title: Pressure-Test Your Product Readiness Plan
 play_number: 21
 play: Product Readiness Testing
-skill: ps-product-readiness
+skill: psk-product-readiness
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-product-readiness/SKILL.md
+  based_on: skills/psk-product-readiness/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

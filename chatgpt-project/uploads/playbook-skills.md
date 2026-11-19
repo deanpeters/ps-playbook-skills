@@ -1,6 +1,6 @@
 # Productside Playbook: full skill references
 
-Source snapshot: `ac653b868df4bf3f`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `c90e44b3931027f8`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. Full license: playbook-plays.md, License appendix.
 
@@ -8,47 +8,47 @@ Start with playbook-plays.md to choose a Play or find its coaching prompts. Each
 
 ## Contents
 
-- [Unnumbered: Blueprint navigator](playbook-skills.md#ps-blueprint-advisor--instructions)
-- [Play 01: Outcome & Strategy Discussion](playbook-skills.md#ps-outcome-strategy-discussion--instructions)
-- [Play 02: Stakeholder Alignment](playbook-skills.md#ps-stakeholder-alignment--instructions)
-- [Play 03: Outcome Tree, Section One](playbook-skills.md#ps-outcome-tree--instructions)
-- [Play 04: Market Selection & Sizing](playbook-skills.md#ps-market-selection-sizing--instructions)
-- [Play 05: Jobs-to-Be-Done & Outcomes](playbook-skills.md#ps-jobs-to-be-done--instructions)
-- [Play 06: Personas & Proto-Personas](playbook-skills.md#ps-proto-persona--instructions)
-- [Play 07: Empathy Interviews](playbook-skills.md#ps-empathy-interviews--instructions)
-- [Play 08: Affinity Mapping](playbook-skills.md#ps-affinity-mapping--instructions)
-- [Play 09: Problem Identification](playbook-skills.md#ps-problem-identification--instructions)
-- [Play 10: Framing the Problem](playbook-skills.md#ps-framing-the-problem--instructions)
-- [Play 11: Exploring the Solution Space](playbook-skills.md#ps-exploring-solution-space--instructions)
-- [Play 12: Solution Hypothesis](playbook-skills.md#ps-solution-hypothesis--instructions)
-- [Play 13: Positioning Statement](playbook-skills.md#ps-positioning-statement--instructions)
-- [Play 14: Lo-fi Experimentation](playbook-skills.md#ps-lofi-experimentation--instructions)
-- [Unnumbered: Storyboarding](playbook-skills.md#ps-storyboarding--instructions)
-- [Play 15: Risk Assessment](playbook-skills.md#ps-risk-assessment--instructions)
-- [Play 16: Product Outcome Canvas](playbook-skills.md#ps-product-outcome-canvas--instructions)
-- [Play 17: Outcome-Based Roadmap & Release Plan](playbook-skills.md#ps-outcome-roadmap--instructions)
-- [Play 18: Tiny Acts of Discovery](playbook-skills.md#ps-tiny-acts-discovery--instructions)
-- [Play 19: Output Prioritization](playbook-skills.md#ps-output-prioritization--instructions)
-- [Play 20: Go-to-Market Enablement](playbook-skills.md#ps-go-to-market--instructions)
-- [Play 21: Product Readiness Testing](playbook-skills.md#ps-product-readiness--instructions)
-- [Play 22: Measuring Outcomes](playbook-skills.md#ps-measuring-outcomes--instructions)
-- [Play 23: Outcome Tree, Section Two](playbook-skills.md#ps-outcome-tree--instructions)
-- [Play 24: Process Retrospective](playbook-skills.md#ps-process-retrospective--instructions)
+- [Unnumbered: Blueprint navigator](playbook-skills.md#psk-blueprint-advisor--instructions)
+- [Play 01: Outcome & Strategy Discussion](playbook-skills.md#psk-outcome-strategy-discussion--instructions)
+- [Play 02: Stakeholder Alignment](playbook-skills.md#psk-stakeholder-alignment--instructions)
+- [Play 03: Outcome Tree, Section One](playbook-skills.md#psk-outcome-tree--instructions)
+- [Play 04: Market Selection & Sizing](playbook-skills.md#psk-market-selection-sizing--instructions)
+- [Play 05: Jobs-to-Be-Done & Outcomes](playbook-skills.md#psk-jobs-to-be-done--instructions)
+- [Play 06: Personas & Proto-Personas](playbook-skills.md#psk-proto-persona--instructions)
+- [Play 07: Empathy Interviews](playbook-skills.md#psk-empathy-interviews--instructions)
+- [Play 08: Affinity Mapping](playbook-skills.md#psk-affinity-mapping--instructions)
+- [Play 09: Problem Identification](playbook-skills.md#psk-problem-identification--instructions)
+- [Play 10: Framing the Problem](playbook-skills.md#psk-framing-the-problem--instructions)
+- [Play 11: Exploring the Solution Space](playbook-skills.md#psk-exploring-solution-space--instructions)
+- [Play 12: Solution Hypothesis](playbook-skills.md#psk-solution-hypothesis--instructions)
+- [Play 13: Positioning Statement](playbook-skills.md#psk-positioning-statement--instructions)
+- [Play 14: Lo-fi Experimentation](playbook-skills.md#psk-lofi-experimentation--instructions)
+- [Unnumbered: Storyboarding](playbook-skills.md#psk-storyboarding--instructions)
+- [Play 15: Risk Assessment](playbook-skills.md#psk-risk-assessment--instructions)
+- [Play 16: Product Outcome Canvas](playbook-skills.md#psk-product-outcome-canvas--instructions)
+- [Play 17: Outcome-Based Roadmap & Release Plan](playbook-skills.md#psk-outcome-roadmap--instructions)
+- [Play 18: Tiny Acts of Discovery](playbook-skills.md#psk-tiny-acts-discovery--instructions)
+- [Play 19: Output Prioritization](playbook-skills.md#psk-output-prioritization--instructions)
+- [Play 20: Go-to-Market Enablement](playbook-skills.md#psk-go-to-market--instructions)
+- [Play 21: Product Readiness Testing](playbook-skills.md#psk-product-readiness--instructions)
+- [Play 22: Measuring Outcomes](playbook-skills.md#psk-measuring-outcomes--instructions)
+- [Play 23: Outcome Tree, Section Two](playbook-skills.md#psk-outcome-tree--instructions)
+- [Play 24: Process Retrospective](playbook-skills.md#psk-process-retrospective--instructions)
 
 ## Navigator (cross-phase)
 
 
 ### Unnumbered: Blueprint navigator
 
-Stable identifier: `ps-blueprint-advisor`.
+Stable identifier: `psk-blueprint-advisor`.
 
-#### ps-blueprint-advisor / Instructions
+#### psk-blueprint-advisor / Instructions
 
 ##### Purpose
 
-Navigate the **Productside Blueprint** and point to the plays that live on it. The play library (ps-outcome-tree, ps-jobs-to-be-done, ps-positioning-statement, and the rest) gives a Product Manager one tool at a time. This skill sits above those plays and answers the questions a single play does not: where are we, what does good look like here, which principle governs this, and what do we do next.
+Navigate the **Productside Blueprint** and point to the plays that live on it. The play library (psk-outcome-tree, psk-jobs-to-be-done, psk-positioning-statement, and the rest) gives a Product Manager one tool at a time. This skill sits above those plays and answers the questions a single play does not: where are we, what does good look like here, which principle governs this, and what do we do next.
 
-It runs in three modes over one shared knowledge base ([Blueprint reference](playbook-skills.md#ps-blueprint-advisor--instructions)):
+It runs in three modes over one shared knowledge base ([Blueprint reference](playbook-skills.md#psk-blueprint-advisor--instructions)):
 
 - **Navigate.** Place the team on the Blueprint, show what good and bad look like in that phase, name the governing principle, and point to the next play. Run repeatedly to walk a team end to end.
 - **Coach a phase.** Go deep on one phase: its objective, tasks, anti-patterns, governing principles, and exit criteria.
@@ -142,7 +142,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Reads from [Blueprint reference](playbook-skills.md#ps-blueprint-advisor--instructions) for all phase content, principle mappings, and play routing. Use [Template](playbook-skills.md#ps-blueprint-advisor--template) for the audit output scaffold. Worked runs are in [Examples](playbook-skills.md#ps-blueprint-advisor--examples).
+Reads from [Blueprint reference](playbook-skills.md#psk-blueprint-advisor--instructions) for all phase content, principle mappings, and play routing. Use [Template](playbook-skills.md#psk-blueprint-advisor--template) for the audit output scaffold. Worked runs are in [Examples](playbook-skills.md#psk-blueprint-advisor--examples).
 
 ###### Step 1: Answer the Question in Front of You
 
@@ -177,7 +177,7 @@ Take the decision, roadmap, or artifact provided. For each of the five principle
 
 Help first, always. Lead with the useful answer and keep the diagnosis woven in and brief. Name a canonical principle only when it sharpens the point, and when you do, use the canonical five, not a phase-level label. Assume the plays may not be installed: every play you point to carries a one-line gist so the advice works even if the user never opens it, and you offer to do that thinking inline. Length follows the ask: short question, short answer.
 
-#### ps-blueprint-advisor / Template
+#### psk-blueprint-advisor / Template
 
 Working scaffold for pressure-testing a decision, roadmap, or artifact against the five Optimal Product Process Principles. Fill the brackets. Lead with violations.
 
@@ -218,7 +218,7 @@ For each violated or at-risk principle, the smallest change that returns it to h
 
 `[the single next step, usually the fix for the most damaging violation]`
 
-#### ps-blueprint-advisor / Examples
+#### psk-blueprint-advisor / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -245,7 +245,7 @@ Illustrative and fictional, not customer evidence.
 
 ##### Blueprint Reference
 
-Knowledge base for ps-blueprint-advisor. Single source of truth the skill reads from. The five principles stay canonical; the phases inherit from them.
+Knowledge base for psk-blueprint-advisor. Single source of truth the skill reads from. The five principles stay canonical; the phases inherit from them.
 
 ##### The Five Canonical Principles
 
@@ -293,7 +293,7 @@ What bad looks like: treating customers as a monolith; over-reliance on analytic
 
 Principles: Empathy First to Feedback Driven; Jobs-to-be-Done Over Demographics to Ruthlessly Distilled; Value Is Defined by the Customer to Outcome Obsessed; Diversity of Perspective to Environment Adaptive; Validation Is Continuous to Feedback Driven; Listen Beyond the Obvious to Feedback Driven; Bias Toward Actionable Insight to Ruthlessly Distilled.
 
-Plays for Context: ps-outcome-strategy-discussion, ps-stakeholder-alignment, ps-outcome-tree, ps-market-selection-sizing (Facet B: name the market, PESTEL, segments with real buyers and users, sourced TAM/SAM/SOM), ps-jobs-to-be-done, ps-proto-persona.
+Plays for Context: psk-outcome-strategy-discussion, psk-stakeholder-alignment, psk-outcome-tree, psk-market-selection-sizing (Facet B: name the market, PESTEL, segments with real buyers and users, sourced TAM/SAM/SOM), psk-jobs-to-be-done, psk-proto-persona.
 
 Exit criteria: measurable business objectives named, the primary customer and their job defined, and a defensible read of market and economics.
 
@@ -309,7 +309,7 @@ What bad looks like: premature solutioning; research without decision questions 
 
 Principles: Problem Before Solution to Ruthlessly Distilled; Evidence Over Assumption to Feedback Driven; Portfolio Thinking to Ruthlessly Distilled; Customer Value as North Star to Outcome Obsessed; Iterative Validation to Feedback Driven; Bias Toward Action to Ruthlessly Distilled; Transparency in Decision-Making to ORPHAN.
 
-Plays: ps-empathy-interviews, ps-affinity-mapping, ps-problem-identification, ps-framing-the-problem.
+Plays: psk-empathy-interviews, psk-affinity-mapping, psk-problem-identification, psk-framing-the-problem.
 
 Exit criteria: a framed, evidence-backed problem worth solving, with a kill criterion, not just a list of ideas.
 
@@ -325,7 +325,7 @@ What bad looks like: testing desirability while ignoring viability; treating the
 
 Principles: Solution Fit Is Earned Not Assumed to Feedback Driven; De-Risk Early and Often to Ruthlessly Distilled; Hypotheses Drive Action to Feedback Driven; Success Is Measured Not Declared to Outcome Obsessed; Business Model Awareness to Outcome Obsessed; Stakeholder Engagement Is Continuous to Dynamic Interactivity; Learning Is the Goal to Feedback Driven.
 
-Plays: ps-exploring-solution-space, ps-solution-hypothesis, ps-positioning-statement, ps-lofi-experimentation, ps-storyboarding (a lo-fi way to test the value proposition with real customers), ps-risk-assessment, ps-product-outcome-canvas.
+Plays: psk-exploring-solution-space, psk-solution-hypothesis, psk-positioning-statement, psk-lofi-experimentation, psk-storyboarding (a lo-fi way to test the value proposition with real customers), psk-risk-assessment, psk-product-outcome-canvas.
 
 Exit criteria: value, feasibility, and viability each backed by evidence, and a business case tying the chosen solution to a named outcome.
 
@@ -341,7 +341,7 @@ What bad looks like: roadmaps as commitment contracts disconnected from learning
 
 Principles: Readiness Is Holistic to ORPHAN (Cross-Functional Ownership); Outcome-Based Planning to Outcome Obsessed; Specs Match Uncertainty to Ruthlessly Distilled; Enablement Is a Team Sport to ORPHAN (Cross-Functional Ownership); Iterate Toward Launch to Dynamic Interactivity; Decision Rules Are Explicit to Outcome Obsessed; Risk Management Is Proactive to Ruthlessly Distilled.
 
-Plays: ps-outcome-roadmap, ps-tiny-acts-discovery, ps-output-prioritization, ps-go-to-market, ps-product-readiness.
+Plays: psk-outcome-roadmap, psk-tiny-acts-discovery, psk-output-prioritization, psk-go-to-market, psk-product-readiness.
 
 Exit criteria: the product and the organization are both ready, with a controlled rollout plan and explicit backlog decision rules.
 
@@ -357,7 +357,7 @@ What bad looks like: declaring victory and shipping without measurement; success
 
 Principles: Learning Never Stops to Feedback Driven; Value Is Proven Not Assumed to Outcome Obsessed; Health Is Managed Proactively to Environment Adaptive; Transparency in Outcomes to ORPHAN; Customer Advocacy Is Ongoing to Feedback Driven; Cross-Functional Ownership to ORPHAN (Cross-Functional Ownership); Adaptation Is Strength to Environment Adaptive.
 
-Plays: ps-measuring-outcomes, ps-process-retrospective.
+Plays: psk-measuring-outcomes, psk-process-retrospective.
 
 Exit criteria: value proven with real metrics, and a clear reinvest-or-retire decision rather than a default to continue.
 
@@ -384,9 +384,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 01: Outcome & Strategy Discussion
 
-Stable identifier: `ps-outcome-strategy-discussion`.
+Stable identifier: `psk-outcome-strategy-discussion`.
 
-#### ps-outcome-strategy-discussion / Instructions
+#### psk-outcome-strategy-discussion / Instructions
 
 ##### Purpose
 
@@ -492,7 +492,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-outcome-strategy-discussion--template) for the working scaffold.
+Use [Template](playbook-skills.md#psk-outcome-strategy-discussion--template) for the working scaffold.
 
 
 ###### Required Output Convention
@@ -606,7 +606,7 @@ After the summary is complete, the PM makes an explicit Key Decision Point decis
 
 The agent can help draft the KDP statement, but the call belongs to the PM.
 
-#### ps-outcome-strategy-discussion / Template
+#### psk-outcome-strategy-discussion / Template
 
 ###### When to Use This
 
@@ -723,7 +723,7 @@ Mark one.
 > The discussion summary should be readable in under five minutes. If it runs longer, consolidate. The purpose of this document is shared alignment, not comprehensive documentation.
 ```
 
-#### ps-outcome-strategy-discussion / Examples
+#### psk-outcome-strategy-discussion / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -755,9 +755,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 02: Stakeholder Alignment
 
-Stable identifier: `ps-stakeholder-alignment`.
+Stable identifier: `psk-stakeholder-alignment`.
 
-#### ps-stakeholder-alignment / Instructions
+#### psk-stakeholder-alignment / Instructions
 
 ##### Purpose
 
@@ -786,7 +786,7 @@ These are distinct categories and must not be conflated.
 
 **Stakeholders** are internal or partner-side people who affect or are affected by the PM's work. They live inside the organization or at the boundary (executives, legal, finance, engineering leads, partner teams). They need to be managed, informed, or satisfied.
 
-**Customers** are the people the product serves in the field. They experience the problem the product is solving. They belong in the persona play (ps-proto-persona), not in the stakeholder map.
+**Customers** are the people the product serves in the field. They experience the problem the product is solving. They belong in the persona play (psk-proto-persona), not in the stakeholder map.
 
 Mixing customers into the stakeholder table creates confusion about who needs organizational engagement vs. who needs product discovery. The two groups need fundamentally different treatment.
 
@@ -878,7 +878,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-stakeholder-alignment--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-stakeholder-alignment--template) for the full scaffold.
 
 
 ###### If the PM Brings a Draft
@@ -958,7 +958,7 @@ Three things to capture before closing the map:
 
 **Political dynamics:** Relationships between stakeholders that create complexity. For example: two stakeholders who have a history of conflict, or a senior stakeholder whose opinion a key influencer defers to entirely.
 
-#### ps-stakeholder-alignment / Template
+#### psk-stakeholder-alignment / Template
 
 Use this template to build a **Productside-style stakeholder map** before discovery begins.
 
@@ -1049,11 +1049,11 @@ Use this during the Context phase, before empathy interviews or discovery work b
 
 - Build this map before empathy interviews begin.
 - Rate influence based on actual power over this initiative, not title alone.
-- Keep stakeholders and customers separate. Customers who use the product belong in ps-proto-persona.
+- Keep stakeholders and customers separate. Customers who use the product belong in psk-proto-persona.
 - Revisit this map at each major phase boundary (after framing, after discovery, before launch).
 - A map with no skeptics or blockers should be treated as incomplete, not as good news.
 
-#### ps-stakeholder-alignment / Examples
+#### psk-stakeholder-alignment / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -1066,7 +1066,7 @@ Illustrative and fictional, not customer evidence.
 
 - **Listing Only Supporters:** Before closing the map, ask explicitly: who might push back? Who was not consulted on similar initiatives? Add them.
 
-- **Confusing Stakeholders with Customers:** Customers who use the product in the field belong in the persona play (ps-proto-persona), not here. The stakeholder map covers people who affect the initiative organizationally. Keep these lists separate.
+- **Confusing Stakeholders with Customers:** Customers who use the product in the field belong in the persona play (psk-proto-persona), not here. The stakeholder map covers people who affect the initiative organizationally. Keep these lists separate.
 
 - **Equating Influence with Seniority:** Rate influence based on actual power over this specific initiative. Ask: can this person approve, block, accelerate, or veto the work? That is influence. Title alone is not.
 
@@ -1087,9 +1087,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 03: Outcome Tree, Section One
 
-Stable identifier: `ps-outcome-tree`.
+Stable identifier: `psk-outcome-tree`.
 
-#### ps-outcome-tree / Instructions
+#### psk-outcome-tree / Instructions
 
 ##### Purpose
 
@@ -1122,7 +1122,7 @@ This is not a one-time exercise. The playbook says to revisit regularly, bring i
 - The template produces a structured artifact with five sections: Business Outcome, Business Success Metrics, Product Outcomes (2-5), Product Success Metrics, and Product Health Metrics.
 - Product outcomes use role names, not persona names.
 - The play cross-references two other plays: Framing the Problem (Problem Statement box) and Solution Hypothesis Statement (Solution Summary box). Neither is a blocking dependency.
-- Upstream: ps-jobs-to-be-done product outcomes feed into this tree. Section Two updates the tree after discovery work.
+- Upstream: psk-jobs-to-be-done product outcomes feed into this tree. Section Two updates the tree after discovery work.
 
 ##### Key Concepts
 
@@ -1223,7 +1223,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-outcome-tree--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-outcome-tree--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -1339,9 +1339,9 @@ Product health metrics are about the product working correctly, not about outcom
 
 ###### Step 8: Cross-Reference Problem Statement and Solution Summary
 
-If the user has completed the Framing the Problem play (ps-framing-the-problem), pull in the problem statement as context.
+If the user has completed the Framing the Problem play (psk-framing-the-problem), pull in the problem statement as context.
 
-If the user has completed the Solution Hypothesis Statement play (ps-solution-hypothesis), pull in the solution summary.
+If the user has completed the Solution Hypothesis Statement play (psk-solution-hypothesis), pull in the solution summary.
 
 If neither exists yet, note these as optional inputs that strengthen the tree when available.
 
@@ -1361,8 +1361,8 @@ Flag any weak links for the user to consider.
 
 After the Section One artifact is complete, offer the user up to three next-step options:
 
-1. **Build or refine a problem statement** using ps-framing-the-problem, if no problem statement exists yet
-2. **Define a solution hypothesis** using ps-solution-hypothesis, to fill in the Solution Summary box
+1. **Build or refine a problem statement** using psk-framing-the-problem, if no problem statement exists yet
+2. **Define a solution hypothesis** using psk-solution-hypothesis, to fill in the Solution Summary box
 3. **Run Section Two** of this skill after discovery work to update the tree with evidence
 
 Present these as options, not as mandatory steps. The user decides what comes next.
@@ -1420,10 +1420,10 @@ Flag any breaks in the chain for the PM to resolve.
 After the Section Two update is complete, offer the user:
 
 1. **Share the updated tree with stakeholders** to align on revised priorities
-2. **Update the roadmap** using ps-outcome-roadmap (if available) to reflect revised outcomes
+2. **Update the roadmap** using psk-outcome-roadmap (if available) to reflect revised outcomes
 3. **Schedule the next review cycle** to keep the tree current as the product evolves
 
-#### ps-outcome-tree / Template
+#### psk-outcome-tree / Template
 
 ###### When to Use This
 
@@ -1574,8 +1574,8 @@ Do not use:
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-framing-the-problem provides the Problem Statement; ps-solution-hypothesis provides the Solution Summary
-- **Parallel:** ps-jobs-to-be-done produces product outcomes that may feed into this tree
+- **Upstream:** psk-framing-the-problem provides the Problem Statement; psk-solution-hypothesis provides the Solution Summary
+- **Parallel:** psk-jobs-to-be-done produces product outcomes that may feed into this tree
 - **Downstream:** Section Two (this skill, Modality 2) updates the tree after discovery and define work
 
 ---
@@ -1588,9 +1588,9 @@ Use this scaffold when returning to the Outcome Tree after completing discovery 
 
 Before running Section Two, the PM should have completed at least one of:
 
-- empathy interviews (ps-empathy-interviews)
-- solution hypothesis validation (ps-solution-hypothesis)
-- lo-fi experimentation (ps-lofi-experimentation)
+- empathy interviews (psk-empathy-interviews)
+- solution hypothesis validation (psk-solution-hypothesis)
+- lo-fi experimentation (psk-lofi-experimentation)
 - market or customer research
 - post-launch measurement data
 
@@ -1661,7 +1661,7 @@ Section Two does not add value when:
 
 ###### Capacity Reference
 
-See [Template and capacity guidance](playbook-skills.md#ps-outcome-tree--template) for the exact word and character budgets per field.
+See [Template and capacity guidance](playbook-skills.md#psk-outcome-tree--template) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -1671,7 +1671,7 @@ See [Template and capacity guidance](playbook-skills.md#ps-outcome-tree--templat
 | Product Success Metric | ~10-15 | Leading indicator tied to an outcome |
 | Product Health Metric | ~5-10 | Operational metric with target |
 
-#### ps-outcome-tree / Examples
+#### psk-outcome-tree / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -1707,9 +1707,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 04: Market Selection & Sizing
 
-Stable identifier: `ps-market-selection-sizing`.
+Stable identifier: `psk-market-selection-sizing`.
 
-#### ps-market-selection-sizing / Instructions
+#### psk-market-selection-sizing / Instructions
 
 ##### Purpose
 
@@ -1738,7 +1738,7 @@ This is not a financial forecast or a business case. It is a first pass, fast an
 - **Every number needs a source.** Sizing is written as formulas whose inputs carry source IDs or `[TO SOURCE]`, in one counting unit, as ranges, with SOM ≤ SAM ≤ TAM.
 - **AI may propose, never invent.** Following the Playbook's own prompts, the skill proposes market definitions, PESTEL entries, and segments with its reasoning visible, and cites what it finds. It never fills a sizing blank with a plausible number.
 - **SOM can wait:** it is estimated only when there is a product to price. Otherwise it is deferred until solutions are ideated.
-- **Downstream:** ps-jobs-to-be-done, ps-proto-persona, ps-empathy-interviews, and ps-positioning-statement use the segments and the people named in them.
+- **Downstream:** psk-jobs-to-be-done, psk-proto-persona, psk-empathy-interviews, and psk-positioning-statement use the segments and the people named in them.
 - The source deck is not yet ratified, and its pages are not objectified (no named shapes). The budget entry in `technical/data/canonical_template_budgets.yaml` has guidance only, no shape budgets.
 
 ##### Key Concepts
@@ -1825,7 +1825,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-market-selection-sizing--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-market-selection-sizing--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -1920,19 +1920,19 @@ Present the artifact with the open questions ranked by how much they could chang
 
 Offer, as options:
 
-1. **Write jobs for the people in the chosen segments** (ps-jobs-to-be-done). The segments and the people named in them are its input.
-2. **Build a proto-persona** for the primary user in the most promising segment (ps-proto-persona).
+1. **Write jobs for the people in the chosen segments** (psk-jobs-to-be-done). The segments and the people named in them are its input.
+2. **Build a proto-persona** for the primary user in the most promising segment (psk-proto-persona).
 3. **Close the biggest `[TO SOURCE]` gaps** before taking the sizing to leadership.
 
 The user decides what comes next. Revisit this artifact as discovery produces evidence.
 
-#### ps-market-selection-sizing / Template
+#### psk-market-selection-sizing / Template
 
 ###### When to Use This
 
 Use this template in the **Context** phase, before Jobs-to-Be-Done and Personas, to name the market a product serves, understand the forces acting on it, cut it into segments, and size the opportunity. It is a first pass you will revisit as you learn more.
 
-Downstream: the segments and the people named in them feed ps-jobs-to-be-done, ps-proto-persona, ps-empathy-interviews, and ps-positioning-statement.
+Downstream: the segments and the people named in them feed psk-jobs-to-be-done, psk-proto-persona, psk-empathy-interviews, and psk-positioning-statement.
 
 ###### Template
 
@@ -2027,7 +2027,7 @@ Ranked by how much the answer could change the sizing.
 - The "is it worth it" judgment stays with the PM and their team.
 - Revisit this artifact as discovery produces evidence.
 
-#### ps-market-selection-sizing / Examples
+#### psk-market-selection-sizing / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -2068,9 +2068,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 05: Jobs-to-Be-Done & Outcomes
 
-Stable identifier: `ps-jobs-to-be-done`.
+Stable identifier: `psk-jobs-to-be-done`.
 
-#### ps-jobs-to-be-done / Instructions
+#### psk-jobs-to-be-done / Instructions
 
 ##### Purpose
 
@@ -2103,7 +2103,7 @@ This is not a solution specification. Until you know what the customer is trying
 - Job statements use three Productside formats: Functional, Emotional, Social.
 - Product outcomes use the Direction + Metric + Context format. "Optimize," "enhance," and "improve" are never a direction.
 - Upstream (B2B work-in-progress deck): Market Selection & Sizing defines the segment these jobs belong to.
-- Downstream: ps-problem-identification uses jobs and outcomes from this skill as input. Product outcomes feed into ps-outcome-tree.
+- Downstream: psk-problem-identification uses jobs and outcomes from this skill as input. Product outcomes feed into psk-outcome-tree.
 
 ##### Key Concepts
 
@@ -2204,7 +2204,7 @@ The JTBD artifact has two halves: job statements (Table 1) and product outcomes 
 The common pattern is:
 
 1. **Step One:** Draft job statements and personas based on what the PM knows now. Use this to design empathy interview questions.
-2. **Run empathy interviews** (ps-empathy-interviews) to validate and enrich understanding.
+2. **Run empathy interviews** (psk-empathy-interviews) to validate and enrich understanding.
 3. **Step Two:** Return to the JTBD artifact and fill in product outcomes informed by what customers actually said.
 
 If the PM already has strong discovery evidence, both steps can be completed in one session. The skill supports either workflow.
@@ -2245,7 +2245,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-jobs-to-be-done--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-jobs-to-be-done--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -2309,7 +2309,7 @@ For most products, there are 2-4 distinct personas involved:
 
 Each job row names the persona who has that specific job. Different personas can appear in different rows. Use concrete role titles, not generic labels.
 
-If a proto-persona already exists from the ps-proto-persona skill, reuse that persona name.
+If a proto-persona already exists from the psk-proto-persona skill, reuse that persona name.
 
 **Distribute rows across roles.** Do not repeat the same persona in every row. The point of the Persona column is to show that different people have different jobs. If the product serves a Regional Operations Planner, a Dock Supervisor, and a VP of Distribution, all three should appear in the table - not just the primary user 10 times.
 
@@ -2372,7 +2372,7 @@ Produce at least 2 social jobs.
 Steps 1-6 above complete **Step One** of this skill: job statements and personas. At this point, the PM has a choice:
 
 1. **Continue to Step Two now** if they already have enough evidence to write product outcomes confidently (prior research, customer data, domain expertise).
-2. **Pause and run empathy interviews first** (ps-empathy-interviews) to validate the jobs and gather evidence about what outcomes customers actually care about. Then return to Step Two.
+2. **Pause and run empathy interviews first** (psk-empathy-interviews) to validate the jobs and gather evidence about what outcomes customers actually care about. Then return to Step Two.
 
 If the PM chooses to pause, offer to help design empathy interview questions based on the job statements just captured. The jobs from Step One make excellent interview prompts.
 
@@ -2438,19 +2438,19 @@ After the current step is complete, offer context-appropriate options:
 
 **If Step One is complete but Step Two is not yet done:**
 
-1. **Run empathy interviews** (ps-empathy-interviews) - use the job statements to design interview questions that test whether these are real customer needs. Return to Step Two afterward.
-2. **Build or refine a proto-persona** (ps-proto-persona) - if no persona exists yet, or if the JTBD work revealed a persona gap.
+1. **Run empathy interviews** (psk-empathy-interviews) - use the job statements to design interview questions that test whether these are real customer needs. Return to Step Two afterward.
+2. **Build or refine a proto-persona** (psk-proto-persona) - if no persona exists yet, or if the JTBD work revealed a persona gap.
 3. **Continue to Step Two now** - if the PM already has enough evidence to write product outcomes.
 
 **If both steps are complete:**
 
-1. **Move to Problem Identification** (ps-problem-identification) - synthesize the jobs, pains, and outcomes into candidate problem statements.
-2. **Feed product outcomes into the Outcome Tree** (ps-outcome-tree) - the product outcomes from this skill can inform the Outcome Tree's product outcome section.
-3. **Build or refine a proto-persona** (ps-proto-persona) - if persona work has not been done yet.
+1. **Move to Problem Identification** (psk-problem-identification) - synthesize the jobs, pains, and outcomes into candidate problem statements.
+2. **Feed product outcomes into the Outcome Tree** (psk-outcome-tree) - the product outcomes from this skill can inform the Outcome Tree's product outcome section.
+3. **Build or refine a proto-persona** (psk-proto-persona) - if persona work has not been done yet.
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### ps-jobs-to-be-done / Template
+#### psk-jobs-to-be-done / Template
 
 ###### When to Use This
 
@@ -2573,7 +2573,7 @@ Do not use:
 
 ###### Capacity Reference
 
-See [Template and capacity guidance](playbook-skills.md#ps-jobs-to-be-done--template) for the exact word and character budgets per field.
+See [Template and capacity guidance](playbook-skills.md#psk-jobs-to-be-done--template) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -2581,7 +2581,7 @@ See [Template and capacity guidance](playbook-skills.md#ps-jobs-to-be-done--temp
 | Persona | ~2-3 | Role title only |
 | Product Outcome | ~12-14 | Direction + Metric + Context; one sentence max |
 
-#### ps-jobs-to-be-done / Examples
+#### psk-jobs-to-be-done / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -2608,7 +2608,7 @@ Illustrative and fictional, not customer evidence.
 
 - **Underfilling the Template:** Default to 10 job rows covering all three types (Functional, Emotional, Social) with at least 10 outcomes. Distribute rows across multiple personas - do not repeat one role in every row.
 
-- **Presenting AI-Drafted Jobs as Findings:** Label every drafted job and outcome as a hypothesis, and end with Assumptions to Validate. Route the hypotheses into empathy interviews (ps-empathy-interviews) before treating any of them as evidence.
+- **Presenting AI-Drafted Jobs as Findings:** Label every drafted job and outcome as a hypothesis, and end with Assumptions to Validate. Route the hypotheses into empathy interviews (psk-empathy-interviews) before treating any of them as evidence.
 
 ##### References
 
@@ -2617,9 +2617,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 06: Personas & Proto-Personas
 
-Stable identifier: `ps-proto-persona`.
+Stable identifier: `psk-proto-persona`.
 
-#### ps-proto-persona / Instructions
+#### psk-proto-persona / Instructions
 
 ##### Purpose
 
@@ -2753,7 +2753,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-proto-persona--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-proto-persona--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -2793,7 +2793,7 @@ There are two kinds of draft. Treat them differently.
 
 The canonical example page has real carrying-capacity limits. Respect them.
 
-Use the budgets in [Template and capacity guidance](playbook-skills.md#ps-proto-persona--template).
+Use the budgets in [Template and capacity guidance](playbook-skills.md#psk-proto-persona--template).
 
 Default expectations:
 
@@ -2959,7 +2959,7 @@ As research progresses:
 - split one proto-persona into two if the segment was too broad
 - retire fields that turn out to be wrong
 
-#### ps-proto-persona / Template
+#### psk-proto-persona / Template
 
 Use this template to build a **Productside-style proto-persona** for the primary user first, then optionally the buyer.
 
@@ -3068,7 +3068,7 @@ The AI-suggested lines that would most change this persona if wrong, ranked by w
 - Keep provenance tags short and at the end of each line. Keep validation notes concise unless the user explicitly asks for heavier evidence annotation.
 - Complete every main persona section before adding any commentary.
 
-#### ps-proto-persona / Examples
+#### psk-proto-persona / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -3099,7 +3099,7 @@ Illustrative and fictional, not customer evidence.
 
 - **The Assumptions Are the Model's, Not the Team's:** Review what the PM supplied before adding anything. Add only where they are thin, and tag every addition `[AI-SUGGESTED, VALIDATE THIS]`. If most of the persona is AI-suggested, say so and ask for more of the team's own beliefs before going further.
 
-- **A Name and a Face Imply Proof:** Keep validation status visible ("Proto-persona") on the artifact. Keep invented quotes tagged as invented. Route the Riskiest Assumptions into empathy interviews (ps-empathy-interviews) before the persona is shared as a validated profile.
+- **A Name and a Face Imply Proof:** Keep validation status visible ("Proto-persona") on the artifact. Keep invented quotes tagged as invented. Route the Riskiest Assumptions into empathy interviews (psk-empathy-interviews) before the persona is shared as a validated profile.
 
 - **Stretching the Persona to Cover Everyone:** Build for the center of the segment. If the segment really holds two different people, split it into two personas rather than averaging them into one.
 
@@ -3110,9 +3110,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 07: Empathy Interviews
 
-Stable identifier: `ps-empathy-interviews`.
+Stable identifier: `psk-empathy-interviews`.
 
-#### ps-empathy-interviews / Instructions
+#### psk-empathy-interviews / Instructions
 
 ##### Purpose
 
@@ -3146,8 +3146,8 @@ This is not a survey design tool, a usability test script, or a sales call frame
 - **Rehearsal (optional):** the agent can play the persona in a technique drill, one tough moment at a time, then review the PM's technique. It is practice, never research. Nothing from a rehearsal goes into findings.
 - Evidence gathering: this skill qualifies for **web research + user artifacts**. Web research grounds the PM in the interviewee's domain before the interview. User artifacts (persona work, JTBD output, prior research) inform question preparation.
 - The findings board produces structured output that feeds downstream skills: Jobs-to-Be-Done, Desired Outcomes, Problems, and Feels/Appears.
-- Upstream: ps-proto-persona (persona grounds the interview target), ps-jobs-to-be-done (provides assumptions to test).
-- Downstream: ps-problem-identification (uses problems and jobs from findings), ps-proto-persona (refine with real quotes and observations).
+- Upstream: psk-proto-persona (persona grounds the interview target), psk-jobs-to-be-done (provides assumptions to test).
+- Downstream: psk-problem-identification (uses problems and jobs from findings), psk-proto-persona (refine with real quotes and observations).
 
 ##### Key Concepts
 
@@ -3179,10 +3179,10 @@ After the interviewee shares something significant, repeat back what you heard i
 
 The documentation phase produces four categories that feed directly into other playbook skills:
 
-- **Jobs-to-Be-Done** - what the customer is trying to accomplish (feeds ps-jobs-to-be-done)
-- **Desired Outcomes** - what success looks like for the customer (feeds ps-jobs-to-be-done)
-- **Problems** - friction, blockers, and pain points observed (feeds ps-problem-identification)
-- **Feels/Appears** - emotional and behavioral observations (feeds ps-proto-persona refinement)
+- **Jobs-to-Be-Done** - what the customer is trying to accomplish (feeds psk-jobs-to-be-done)
+- **Desired Outcomes** - what success looks like for the customer (feeds psk-jobs-to-be-done)
+- **Problems** - friction, blockers, and pain points observed (feeds psk-problem-identification)
+- **Feels/Appears** - emotional and behavioral observations (feeds psk-proto-persona refinement)
 
 ###### Team Sport
 
@@ -3242,7 +3242,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-empathy-interviews--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-empathy-interviews--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -3391,13 +3391,13 @@ Do not force consensus. Divergence is signal, not noise.
 
 After the findings are documented, offer the user up to three next-step options:
 
-1. **Refine the proto-persona** - update the persona with real quotes, validated pains, and observed attitudes using ps-proto-persona
-2. **Move to Problem Identification** - synthesize interview findings into candidate problem statements using ps-problem-identification
+1. **Refine the proto-persona** - update the persona with real quotes, validated pains, and observed attitudes using psk-proto-persona
+2. **Move to Problem Identification** - synthesize interview findings into candidate problem statements using psk-problem-identification
 3. **Conduct more interviews** - if the sample is small or the findings are inconclusive, prepare questions for another round
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### ps-empathy-interviews / Template
+#### psk-empathy-interviews / Template
 
 ###### When to Use This
 
@@ -3672,7 +3672,7 @@ The findings board maps to the canonical template's sticky-note grid:
 
 ###### Capacity Reference
 
-See [Template and capacity guidance](playbook-skills.md#ps-empathy-interviews--template) for the exact word and character budgets per field.
+See [Template and capacity guidance](playbook-skills.md#psk-empathy-interviews--template) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -3684,7 +3684,7 @@ See [Template and capacity guidance](playbook-skills.md#ps-empathy-interviews--t
 | Problem | ~8-12 | Sticky-note sized; concrete observation |
 | Feels/Appears | ~6-10 | Sticky-note sized; emotional/behavioral |
 
-#### ps-empathy-interviews / Examples
+#### psk-empathy-interviews / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -3722,9 +3722,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 08: Affinity Mapping
 
-Stable identifier: `ps-affinity-mapping`.
+Stable identifier: `psk-affinity-mapping`.
 
-#### ps-affinity-mapping / Instructions
+#### psk-affinity-mapping / Instructions
 
 ##### Purpose
 
@@ -3742,13 +3742,13 @@ The point is not to produce a summary of what customers said. The point is to su
 
 - **Coach by default.** With real notes, the skill walks the PM through the Playbook's five-step method (orient, split, immerse, group, name) and the PM does the grouping, labeling, and insights.
 - **Draft on request.** If the PM asks the skill to group the notes, it produces a map labeled "AI draft grouping: for the team to challenge."
-- **No real notes, no map.** The skill will not map invented observations. It routes to ps-empathy-interviews instead.
+- **No real notes, no map.** The skill will not map invented observations. It routes to psk-empathy-interviews instead.
 
 ##### Key Concepts
 
 ###### This Skill Bridges Interviews and Problem Identification
 
-Affinity mapping is the synthesis step. Raw observations from empathy interviews are too granular to act on directly. Affinity mapping groups them into patterns. Those patterns become the input to ps-problem-identification.
+Affinity mapping is the synthesis step. Raw observations from empathy interviews are too granular to act on directly. Affinity mapping groups them into patterns. Those patterns become the input to psk-problem-identification.
 
 Without this step, teams often jump from "we talked to customers" to "here is our feature roadmap" without ever making the intermediate inference.
 
@@ -3779,7 +3779,7 @@ The value of affinity mapping lives in the team's debate over where each note be
 - **Real notes, default:** coach the PM through the method (Step 3). The PM groups, labels, and writes the insights. You teach, question, and illustrate. The line, from the Playbook: you may point at two notes and ask "are these the same behavior?" You may not say "these two go together under this theme."
 - **Real notes, and the PM asks you to group them (or chooses Discovery):** produce a draft map, labeled **AI draft grouping: for the team to challenge**. Show why each cluster holds together, and end with the groupings you were least sure of. The team still decides.
 - **Fragments only:** coach or draft as above, and label every theme provisional.
-- **No real notes:** stop. Affinity mapping on invented data teaches nothing and proves nothing. Offer to help prepare interviews (ps-empathy-interviews), or to set up the template for a workshop once notes exist. Never invent observations or quotes to map. Labeling the work "hypotheses" doesn't change this: produce no themes, clusters, or map layout at all. If the PM needs something for a meeting, offer a short plain list of assumptions to test in interviews, clearly labeled, and point to ps-empathy-interviews.
+- **No real notes:** stop. Affinity mapping on invented data teaches nothing and proves nothing. Offer to help prepare interviews (psk-empathy-interviews), or to set up the template for a workshop once notes exist. Never invent observations or quotes to map. Labeling the work "hypotheses" doesn't change this: produce no themes, clusters, or map layout at all. If the PM needs something for a meeting, offer a short plain list of assumptions to test in interviews, clearly labeled, and point to psk-empathy-interviews.
 
 ###### What Binds a Cluster
 
@@ -3821,7 +3821,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-affinity-mapping--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-affinity-mapping--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -3858,9 +3858,9 @@ Ask whether the user has materials to supply:
 - customer feedback logs or support tickets
 - survey open-text responses
 - competitive research observations
-- outputs from ps-empathy-interviews, ps-jobs-to-be-done, or ps-proto-persona
+- outputs from psk-empathy-interviews, psk-jobs-to-be-done, or psk-proto-persona
 
-The more raw material supplied, the stronger the clustering. If only fragments are available, note that the resulting themes are provisional and should be validated before being used in ps-problem-identification.
+The more raw material supplied, the stronger the clustering. If only fragments are available, note that the resulting themes are provisional and should be validated before being used in psk-problem-identification.
 
 Do not skip this ask.
 
@@ -3933,19 +3933,19 @@ Before finalizing:
 
 After delivering the completed affinity map, offer three paths:
 
-1. **Use these key insights in ps-problem-identification** to turn the strongest patterns into candidate problem statements.
+1. **Use these key insights in psk-problem-identification** to turn the strongest patterns into candidate problem statements.
 2. **Review the insights as a team** to identify which pattern represents the highest-priority problem to pursue.
 3. **Re-run affinity mapping with a different grouping lens** to check whether a different clustering reveals patterns the first pass missed.
 
-#### ps-affinity-mapping / Template
+#### psk-affinity-mapping / Template
 
 ###### When to Use This
 
 Use this template during **Discover + Investigate** after you have collected qualitative observations from customer research. You are ready to map when you have raw notes from empathy interviews, customer feedback, survey responses, or other customer-side sources and need to organize them into patterns.
 
-Upstream work that feeds this template: ps-empathy-interviews (primary), ps-jobs-to-be-done, ps-proto-persona.
+Upstream work that feeds this template: psk-empathy-interviews (primary), psk-jobs-to-be-done, psk-proto-persona.
 
-Downstream: the key insights from this map feed ps-problem-identification.
+Downstream: the key insights from this map feed psk-problem-identification.
 
 ###### Template
 
@@ -4070,7 +4070,7 @@ Before treating this map as final, confirm:
 
 Affinity mapping requires input data. If no customer-side observations are available:
 
-- Offer to help the user run ps-empathy-interviews first.
+- Offer to help the user run psk-empathy-interviews first.
 - If the user wants a scaffold to use in an upcoming workshop, fill the theme and insight sections with labeled placeholder sections and explain that they should be completed collaboratively with the team after data is collected.
 - Do not generate observations from the agent's training data and present them as customer findings.
 
@@ -4085,8 +4085,8 @@ Affinity mapping requires input data. If no customer-side observations are avail
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-empathy-interviews provides the raw observation notes. ps-jobs-to-be-done and ps-proto-persona provide additional customer context that can inform how observations are grouped.
-- **Downstream:** The key insights from this map feed ps-problem-identification. The strongest insight often becomes the focal point for the candidate problem that gets developed in ps-framing-the-problem.
+- **Upstream:** psk-empathy-interviews provides the raw observation notes. psk-jobs-to-be-done and psk-proto-persona provide additional customer context that can inform how observations are grouped.
+- **Downstream:** The key insights from this map feed psk-problem-identification. The strongest insight often becomes the focal point for the candidate problem that gets developed in psk-framing-the-problem.
 
 ###### Capacity Reference
 
@@ -4097,7 +4097,7 @@ Affinity mapping requires input data. If no customer-side observations are avail
 | Key insight title | 5-8 words. Plain language. |
 | Key insight paragraph | 50-80 words. Answers "so what?" |
 
-#### ps-affinity-mapping / Examples
+#### psk-affinity-mapping / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -4116,7 +4116,7 @@ Illustrative and fictional, not customer evidence.
 
 - **Collapsing Distinct Themes to Hit a Target Count:** Keep themes separate if the underlying observations point to different root causes or different customer roles. Six specific themes are more useful than three bloated ones.
 
-- **Mapping Team Opinions Instead of Customer Evidence:** Return to Step 1. Replace internal opinion entries with direct customer observations. If no customer-side data exists yet, run ps-empathy-interviews before mapping.
+- **Mapping Team Opinions Instead of Customer Evidence:** Return to Step 1. Replace internal opinion entries with direct customer observations. If no customer-side data exists yet, run psk-empathy-interviews before mapping.
 
 - **Stopping at the Cluster, Skipping the Insight:** Always complete the key insights section before treating the affinity map as done.
 
@@ -4135,9 +4135,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 09: Problem Identification
 
-Stable identifier: `ps-problem-identification`.
+Stable identifier: `psk-problem-identification`.
 
-#### ps-problem-identification / Instructions
+#### psk-problem-identification / Instructions
 
 ##### Purpose
 
@@ -4157,7 +4157,7 @@ This artifact is also a **cross-functional alignment tool.** The output makes cu
 
 ###### Usage Notes
 
-- This exemplar follows the `ps-` naming contract
+- This exemplar follows the `psk-` naming contract
 - It is intentionally budget-aware and template-capacity-aware
 - Most default outputs should stay sticky-note-sized or small-cell-sized
 - **Coach by default:** the skill asks the PM for the root cause beneath each pain rather than naming it, and catches features posing as problems
@@ -4243,14 +4243,14 @@ That means the default output must be:
 
 Do not generate mini-essays for fields that behave like notes.
 
-See [Template and capacity guidance](playbook-skills.md#ps-problem-identification--template) for the real canonical budgets.
+See [Template and capacity guidance](playbook-skills.md#psk-problem-identification--template) for the real canonical budgets.
 
 ###### How AI Supports This Play
 
 The Playbook casts AI as a **coach that separates pains from problems and formats the result**. The PM has done the research. AI helps shape affinity themes, interview insights, jobs, and personas into sharp, well-formed problem statements. The cause has to come from the PM and their evidence.
 
 - **Use it when:** the PM has real insights from affinity mapping and interviews and wants help separating symptoms from causes.
-- **Avoid it when:** the PM has not talked to customers yet. AI will format confident root causes and problem statements no one can defend. Say so, and route to ps-empathy-interviews.
+- **Avoid it when:** the PM has not talked to customers yet. AI will format confident root causes and problem statements no one can defend. Say so, and route to psk-empathy-interviews.
 - **Return:** pains separated from the root causes beneath them, problem statements in one consistent format, and every guessed root cause marked `[CAUSE TO VALIDATE]`.
 
 ###### Working With AI
@@ -4273,7 +4273,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-problem-identification--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-problem-identification--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -4315,7 +4315,7 @@ Before drafting, ask the user whether they have materials to share that would gr
 
 This skill synthesizes earlier discovery work - the more the user can supply, the less the output relies on assumption. Do not skip this ask.
 
-If there is no customer evidence at all, say so plainly. The Playbook advises against this play until the PM has talked to customers. Recommend ps-empathy-interviews first. If the PM still wants a first pass (Discovery), produce it as a labeled hypothesis: no quotes (every slot `[needs a real quote]`), and every candidate problem marked `[CAUSE TO VALIDATE]`.
+If there is no customer evidence at all, say so plainly. The Playbook advises against this play until the PM has talked to customers. Recommend psk-empathy-interviews first. If the PM still wants a first pass (Discovery), produce it as a labeled hypothesis: no quotes (every slot `[needs a real quote]`), and every candidate problem marked `[CAUSE TO VALIDATE]`.
 
 ###### If the PM Brings a Draft
 
@@ -4420,7 +4420,7 @@ Do not add a notes section at all unless:
 - the user asks for it, or
 - the artifact is already fully complete
 
-#### ps-problem-identification / Template
+#### psk-problem-identification / Template
 
 Use this template to build a **Productside-style Problem Identification artifact** from customer research.
 
@@ -4497,10 +4497,10 @@ Most fields in this play are small. Keep entries compact and paste-ready.
 
 - Do not turn jobs, pains, gains, or problems into paragraphs.
 - If the user wants explanation, add it after the artifact.
-- Respect the canonical template capacity in [Template and capacity guidance](playbook-skills.md#ps-problem-identification--template).
+- Respect the canonical template capacity in [Template and capacity guidance](playbook-skills.md#psk-problem-identification--template).
 - Do not add the `What To Pressure-Test Next` section unless the artifact is already fully complete.
 
-#### ps-problem-identification / Examples
+#### psk-problem-identification / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -4538,9 +4538,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 10: Framing the Problem
 
-Stable identifier: `ps-framing-the-problem`.
+Stable identifier: `psk-framing-the-problem`.
 
-#### ps-framing-the-problem / Instructions
+#### psk-framing-the-problem / Instructions
 
 ##### Purpose
 
@@ -4550,10 +4550,10 @@ This skill is for the **Discover + Investigate** phase and marks a **Key Decisio
 
 This is a synthesis skill. It pulls together findings from earlier discovery work:
 
-- persona work (ps-proto-persona)
-- jobs-to-be-done (ps-jobs-to-be-done)
+- persona work (psk-proto-persona)
+- jobs-to-be-done (psk-jobs-to-be-done)
 - empathy interviews
-- problem identification (ps-problem-identification)
+- problem identification (psk-problem-identification)
 - affinity mapping
 
 The output is a structured problem frame using the five-stem sequence, context and constraints, and a final problem statement. This artifact is what the PM reviews with their manager and introduces to product governance.
@@ -4572,7 +4572,7 @@ This is not a solution specification. If the output mentions features, tools, or
 - The template produces a single artifact with three sections: Problem Framing (five stems), Context and Constraints, and Final Problem Statement.
 - The five-stem sequence is fixed order: I am / Trying to / But / Because / Which makes me feel.
 - Evidence gathering is **user artifacts only** - no web research offered. This skill synthesizes the PM's own discovery work.
-- Upstream: ps-proto-persona, ps-jobs-to-be-done, ps-problem-identification, empathy interviews.
+- Upstream: psk-proto-persona, psk-jobs-to-be-done, psk-problem-identification, empathy interviews.
 - Downstream: solution hypothesis, positioning, exploring the solution space (Discover + Define phase).
 
 ##### Key Concepts
@@ -4635,7 +4635,7 @@ The problem frame describes the world as the customer experiences it today. Solu
 This Play has no AI page in the B2B work-in-progress deck. This guidance applies the deck's global rule (the PM does the thinking, AI pressure-tests it) to this Play. Here AI works as a **critic of the problem frame the PM drafted**. It checks each stem of the I am / Trying to / But / Because / Which makes me feel sequence for customer voice and evidence, catches a solution hiding in the frame, and tests whether the final statement synthesizes the stems. The frame stays the PM's, built from their discovery evidence.
 
 - **Use it when:** the PM has discovery evidence and a draft frame, and wants it pressure-tested before the decision point.
-- **Avoid it when:** there is no discovery evidence yet. A well-formed frame on a guessed problem is still a guess. Route to ps-problem-identification or ps-empathy-interviews.
+- **Avoid it when:** there is no discovery evidence yet. A well-formed frame on a guessed problem is still a guess. Route to psk-problem-identification or psk-empathy-interviews.
 - **Return:** each stem checked for customer voice, specificity, and evidence; solution language flagged; and the final statement tested against the stems.
 
 ###### Working With AI
@@ -4658,7 +4658,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-framing-the-problem--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-framing-the-problem--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -4804,7 +4804,7 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### ps-framing-the-problem / Template
+#### psk-framing-the-problem / Template
 
 ###### When to Use This
 
@@ -4919,7 +4919,7 @@ Do not merge stems, skip stems, or reorder them. Each has a distinct function in
 
 ###### Capacity Reference
 
-See [Template and capacity guidance](playbook-skills.md#ps-framing-the-problem--template) for the exact word and character budgets per field.
+See [Template and capacity guidance](playbook-skills.md#psk-framing-the-problem--template) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -4931,7 +4931,7 @@ See [Template and capacity guidance](playbook-skills.md#ps-framing-the-problem--
 | Context and Constraints | ~30-40 | External conditions bounding the solution space |
 | Final Problem Statement | ~40-50 | Cohesive synthesis of all five stems |
 
-#### ps-framing-the-problem / Examples
+#### psk-framing-the-problem / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -4970,9 +4970,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 11: Exploring the Solution Space
 
-Stable identifier: `ps-exploring-solution-space`.
+Stable identifier: `psk-exploring-solution-space`.
 
-#### ps-exploring-solution-space / Instructions
+#### psk-exploring-solution-space / Instructions
 
 ##### Purpose
 
@@ -5003,7 +5003,7 @@ This is not a solution-generation tool. The agent does not brainstorm solutions 
 - This is a **process skill** (`type: process`). The agent helps prepare a design thinking session; the actual ideation happens with the team in real time.
 - Evidence gathering: this skill qualifies for **artifacts only**. The PM brings the validated problem statement, stakeholder alignment, and prior discovery work. No web research needed.
 - The method catalog contains 10 tools from the Productside playbook organized across three activity types: Generating Ideas, Prioritizing Ideas, and Testing. A well-planned session includes at least one from each category.
-- Upstream: ps-framing-the-problem (validated problem statement is required input), ps-empathy-interviews, ps-proto-persona, ps-jobs-to-be-done.
+- Upstream: psk-framing-the-problem (validated problem statement is required input), psk-empathy-interviews, psk-proto-persona, psk-jobs-to-be-done.
 - Downstream: Solution Hypothesis Statement (the top idea from this session feeds the hypothesis).
 
 ##### Key Concepts
@@ -5123,7 +5123,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-exploring-solution-space--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-exploring-solution-space--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -5145,7 +5145,7 @@ Before writing anything, answer:
 - Who is the target customer?
 - What is the validated problem statement?
 
-If the PM does not have a validated problem statement, stop. This skill requires one as input. Direct the PM to ps-framing-the-problem first.
+If the PM does not have a validated problem statement, stop. This skill requires one as input. Direct the PM to psk-framing-the-problem first.
 
 **Guard against tech-role bias.** When the PM identifies session participants, check that the list is cross-functional. If the participant list is only engineers or only technical roles, flag it. Design thinking sessions need diverse perspectives: design, product, engineering, customer success, sales, and (when feasible) actual customers. The PM building a logistics platform should include logistics coordinators in the session, not only backend engineers.
 
@@ -5264,7 +5264,7 @@ When the PM returns with the team's prioritized solutions, help them build the c
 2. **Risks:** ask what risks the PM sees. After they answer, ask questions that test whether they looked widely enough (adoption, dependencies, the business) without naming a risk yourself.
 3. **Value:** have the PM trace customer value to business value, and show where the chain breaks.
 4. **Challenge the shortlist** on value, viability, and feasibility if the PM asks. Question it; the team judges it.
-5. **Pull it into a solution summary** in the PM's words: the input to ps-solution-hypothesis.
+5. **Pull it into a solution summary** in the PM's words: the input to psk-solution-hypothesis.
 
 Do not invent customer reactions or business numbers.
 
@@ -5273,18 +5273,18 @@ Do not invent customer reactions or business numbers.
 After the session plan is complete, offer the PM up to three next-step options:
 
 1. **Run the session** - take the plan into the room and facilitate the design thinking session with the team
-2. **Move to Solution Hypothesis** - after the session and the solution case (Step 11), craft a Solution Hypothesis Statement using ps-solution-hypothesis
-3. **Revisit the problem statement** - if the evidence is thin, revisit ps-framing-the-problem before entering the solution space
+2. **Move to Solution Hypothesis** - after the session and the solution case (Step 11), craft a Solution Hypothesis Statement using psk-solution-hypothesis
+3. **Revisit the problem statement** - if the evidence is thin, revisit psk-framing-the-problem before entering the solution space
 
 Present these as options, not mandatory steps. The PM decides what comes next.
 
-#### ps-exploring-solution-space / Template
+#### psk-exploring-solution-space / Template
 
 ###### When to Use This
 
 Use this template during **Discover + Define** when you have a validated problem statement and need to plan a design thinking session to explore solution possibilities. This is a process skill for session preparation, not a solution-generation exercise.
 
-Upstream work that feeds this template: validated problem statement (from ps-framing-the-problem), stakeholder alignment, empathy interview findings, proto-persona, jobs-to-be-done.
+Upstream work that feeds this template: validated problem statement (from psk-framing-the-problem), stakeholder alignment, empathy interview findings, proto-persona, jobs-to-be-done.
 
 ###### Template
 
@@ -5301,7 +5301,7 @@ Upstream work that feeds this template: validated problem statement (from ps-fra
 
 ## Validated Problem Statement
 
-Paste the validated problem statement here. If you do not have one, stop and use ps-framing-the-problem first.
+Paste the validated problem statement here. If you do not have one, stop and use psk-framing-the-problem first.
 
 > Quality check: Is this a specific, validated problem statement, not a vague "customers struggle with X"?
 > Quality check: Is the problem stated from the customer's perspective, not the product team's?
@@ -5484,7 +5484,7 @@ If prototyping or journey mapping was conducted, document what was learned.
 ## Next Steps
 
 - [ ] Document and share session outcomes with stakeholders not in the room
-- [ ] Select the top candidate for Solution Hypothesis Statement (ps-solution-hypothesis)
+- [ ] Select the top candidate for Solution Hypothesis Statement (psk-solution-hypothesis)
 - [ ] Plan follow-up session if needed
 - [ ] Schedule prototype testing with real customers if applicable
 ```
@@ -5521,7 +5521,7 @@ If more methods are needed, plan a second session rather than cramming. Depth pr
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-framing-the-problem (validated problem statement is required input), ps-empathy-interviews (customer evidence grounds the session), ps-proto-persona (persona context), ps-jobs-to-be-done (jobs and outcomes to solve for)
+- **Upstream:** psk-framing-the-problem (validated problem statement is required input), psk-empathy-interviews (customer evidence grounds the session), psk-proto-persona (persona context), psk-jobs-to-be-done (jobs and outcomes to solve for)
 - **Downstream:** The top idea from this session feeds into the Solution Hypothesis Statement
 
 ###### Capacity Reference
@@ -5535,7 +5535,7 @@ If more methods are needed, plan a second session rather than cramming. Depth pr
 | Idea Description | ~10-15 | Concrete enough to evaluate |
 | Prioritization Rationale | ~15-20 | Why this idea rose to the top |
 
-#### ps-exploring-solution-space / Examples
+#### psk-exploring-solution-space / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -5546,7 +5546,7 @@ Illustrative and fictional, not customer evidence.
 
 ##### Common Pitfalls
 
-- **Skipping the Problem Statement:** Require the validated problem statement as input. If the PM cannot state the problem clearly, redirect to ps-framing-the-problem before planning a solution space session.
+- **Skipping the Problem Statement:** Require the validated problem statement as input. If the PM cannot state the problem clearly, redirect to psk-framing-the-problem before planning a solution space session.
 
 - **Inviting Only Engineers:** Check the participant list for cross-functional diversity. Flag if design, customer-facing roles, or domain experts are missing. A logistics platform PM should have logistics professionals in the session, not only backend developers.
 
@@ -5575,9 +5575,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 12: Solution Hypothesis
 
-Stable identifier: `ps-solution-hypothesis`.
+Stable identifier: `psk-solution-hypothesis`.
 
-#### ps-solution-hypothesis / Instructions
+#### psk-solution-hypothesis / Instructions
 
 ##### Purpose
 
@@ -5587,9 +5587,9 @@ This skill is for the **Discover + Define** phase. It sits directly downstream o
 
 This is a synthesis and articulation skill. It pulls together findings from:
 
-- problem framing (ps-framing-the-problem)
-- solution space exploration (ps-exploring-solution-space)
-- positioning work (ps-positioning-statement), if available
+- problem framing (psk-framing-the-problem)
+- solution space exploration (psk-exploring-solution-space)
+- positioning work (psk-positioning-statement), if available
 
 The output is a five-section artifact: problem statement (imported from upstream), solution summary, solution benefits, risks and assumptions, and a two-column solution hypothesis statement. This artifact is what the PM uses to communicate a testable solution direction to leadership and to justify resource allocation through gate review processes.
 
@@ -5607,7 +5607,7 @@ This is not a PRD or feature specification. If the output reads like a requireme
 - The template produces a single artifact with five sections: Problem Statement (imported), Solution Summary, Solution Benefits, Risks and Assumptions, and Solution Hypothesis Statement (two-column If/Then).
 - Two hypothesis statements are required, not one: customer-focused (IF solution THEN customer benefit) and business-focused (IF customer benefit THEN business outcome). The THEN of the first becomes the IF of the second.
 - Evidence gathering is **artifacts only** - no web research offered. This skill synthesizes the PM's problem framing and solution exploration work.
-- Upstream: ps-framing-the-problem, ps-exploring-solution-space, ps-positioning-statement.
+- Upstream: psk-framing-the-problem, psk-exploring-solution-space, psk-positioning-statement.
 - Downstream: lo-fi experimentation, risk assessment, roadmap planning, outcome tree alignment.
 
 ##### Key Concepts
@@ -5635,7 +5635,7 @@ If there is only one hypothesis that mixes customer and business language, the c
 
 The artifact builds in a deliberate sequence:
 
-1. **Problem Statement** carries forward from ps-framing-the-problem. It is imported, not rewritten.
+1. **Problem Statement** carries forward from psk-framing-the-problem. It is imported, not rewritten.
 2. **Solution Summary** describes the proposed solution in one paragraph.
 3. **Solution Benefits** lists 3-5 specific benefits for the customer and the business.
 4. **Risks and Assumptions** lists 3-5 specific risks or assumptions that need validation.
@@ -5691,7 +5691,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-solution-hypothesis--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-solution-hypothesis--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -5726,15 +5726,15 @@ If you cannot identify a specific customer, stop and resolve the target first.
 
 Once you know the product and customer, offer the user materials to share before drafting:
 
-**User-supplied artifacts** - ask whether the user has materials to ground the hypothesis: validated problem statement (from ps-framing-the-problem), solution space exploration output, positioning work, competitive analysis, or earlier skill outputs.
+**User-supplied artifacts** - ask whether the user has materials to ground the hypothesis: validated problem statement (from psk-framing-the-problem), solution space exploration output, positioning work, competitive analysis, or earlier skill outputs.
 
 This skill is **artifacts only** - it synthesizes the PM's own problem framing and solution exploration. Web research is not offered because the hypothesis should flow from validated upstream work, not from external sources the PM has not yet verified.
 
-If the user has no validated problem statement, surface the tension: a solution hypothesis without a validated problem is building on assumptions. Recommend completing ps-framing-the-problem first, but proceed if the user wants to draft an assumption-based hypothesis.
+If the user has no validated problem statement, surface the tension: a solution hypothesis without a validated problem is building on assumptions. Recommend completing psk-framing-the-problem first, but proceed if the user wants to draft an assumption-based hypothesis.
 
 ###### Step 3: Import or Confirm the Problem Statement
 
-The problem statement comes from ps-framing-the-problem. It should be imported directly, not rewritten.
+The problem statement comes from psk-framing-the-problem. It should be imported directly, not rewritten.
 
 If the user provides a problem statement, place it in Section 1 as-is. If the user does not have one, help them draft a brief problem statement, but flag it as unvalidated.
 
@@ -5828,13 +5828,13 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### ps-solution-hypothesis / Template
+#### psk-solution-hypothesis / Template
 
 ###### When to Use This
 
 Use this template during **Discover + Define** when you have a validated problem statement and have explored the solution space. You are ready to express your chosen solution direction as a testable hypothesis with expected customer and business outcomes.
 
-Upstream work that feeds this template: framing the problem (ps-framing-the-problem), exploring the solution space (ps-exploring-solution-space), positioning statement (ps-positioning-statement, if available).
+Upstream work that feeds this template: framing the problem (psk-framing-the-problem), exploring the solution space (psk-exploring-solution-space), positioning statement (psk-positioning-statement, if available).
 
 ###### Template
 
@@ -5854,7 +5854,7 @@ Import from your Framing the Problem output. Do not rewrite.
 
 > Quality check: Is this a validated problem statement, or an assumption? If it is an assumption, flag it.
 > Quality check: Is the problem written from the customer's perspective, not the product team's?
-> Capacity check: ~40-50 words (matching the final problem statement from ps-framing-the-problem).
+> Capacity check: ~40-50 words (matching the final problem statement from psk-framing-the-problem).
 
 ## 2. Solution Summary
 
@@ -5928,7 +5928,7 @@ THEN [describe the measurable business outcome].
 ###### Filling the Template
 
 1. Start with **Product Context** to anchor who this is for and whose problem the solution addresses.
-2. **Import the Problem Statement** from ps-framing-the-problem. Do not rewrite it.
+2. **Import the Problem Statement** from psk-framing-the-problem. Do not rewrite it.
 3. Write the **Solution Summary** as one paragraph describing what the solution provides.
 4. List **Solution Benefits** as outcomes, not features. Push each one past "what it does" to "why it matters."
 5. List **Risks and Assumptions** with enough specificity that each one can be investigated.
@@ -5953,23 +5953,23 @@ Do not skip ahead to writing hypotheses without completing the preceding section
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-framing-the-problem provides the problem statement. ps-exploring-solution-space provides the chosen solution direction. ps-positioning-statement provides framing for how the solution fits the market.
+- **Upstream:** psk-framing-the-problem provides the problem statement. psk-exploring-solution-space provides the chosen solution direction. psk-positioning-statement provides framing for how the solution fits the market.
 - **Downstream:** The validated hypothesis drives lo-fi experimentation, risk assessment, and roadmap planning. The business outcome in hypothesis 2 should connect to the outcome tree if one exists.
 
 ###### Capacity Reference
 
-See [Template and capacity guidance](playbook-skills.md#ps-solution-hypothesis--template) for the exact word and character budgets per field.
+See [Template and capacity guidance](playbook-skills.md#psk-solution-hypothesis--template) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
-| Problem Statement | ~40-50 | Imported from ps-framing-the-problem |
+| Problem Statement | ~40-50 | Imported from psk-framing-the-problem |
 | Solution Summary | ~30-40 | One paragraph, specific and testable |
 | Solution Benefits | ~5-10 each | 3-5 outcome statements, not feature names |
 | Risks and Assumptions | ~5-10 each | 3-5 specific, testable risks |
 | Customer Hypothesis | ~30-40 | IF solution THEN customer benefit |
 | Business Hypothesis | ~30-40 | IF customer benefit THEN business outcome |
 
-#### ps-solution-hypothesis / Examples
+#### psk-solution-hypothesis / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -5988,7 +5988,7 @@ Illustrative and fictional, not customer evidence.
 
 - **Listing Generic Risks:** Each risk should name a specific failure mode. "Resistance to change from employees accustomed to the current manual process" is specific. "Integration with the legacy HRIS may require custom middleware not in the current budget" is specific.
 
-- **Starting Without a Validated Problem Statement:** Complete ps-framing-the-problem first. If that is not possible, at minimum draft a problem statement and flag it as unvalidated. The hypothesis artifact should make visible whether the problem foundation is solid or assumed.
+- **Starting Without a Validated Problem Statement:** Complete psk-framing-the-problem first. If that is not possible, at minimum draft a problem statement and flag it as unvalidated. The hypothesis artifact should make visible whether the problem foundation is solid or assumed.
 
 - **Using Persona Names Instead of Role Names in the Hypothesis:** Use role names: "IF we save HR specialists time on manual tasks, THEN they will redirect effort to strategic initiatives like talent development and workforce planning."
 
@@ -6005,9 +6005,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 13: Positioning Statement
 
-Stable identifier: `ps-positioning-statement`.
+Stable identifier: `psk-positioning-statement`.
 
-#### ps-positioning-statement / Instructions
+#### psk-positioning-statement / Instructions
 
 ##### Purpose
 
@@ -6038,7 +6038,7 @@ Most Product Managers are working on a product that is already out in market. If
 - "That" must be a benefit (customer outcome), not a feature (product capability).
 - "Unlike" must name a real competitive alternative, including status quo.
 - "Our product gives" must use outcome language, not feature language.
-- Upstream: ps-proto-persona (For element), ps-jobs-to-be-done (Who element), ps-problem-identification (need/opportunity).
+- Upstream: psk-proto-persona (For element), psk-jobs-to-be-done (Who element), psk-problem-identification (need/opportunity).
 - Downstream: solution hypothesis, product requirements, marketing messaging.
 - This skill qualifies for both web research and user artifacts during evidence gathering.
 
@@ -6147,7 +6147,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-positioning-statement--template) for the full scaffold.
+Use [Template](playbook-skills.md#psk-positioning-statement--template) for the full scaffold.
 
 
 ###### Required Output Convention
@@ -6320,7 +6320,7 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### ps-positioning-statement / Template
+#### psk-positioning-statement / Template
 
 ###### When to Use This
 
@@ -6439,7 +6439,7 @@ These are not suggestions - they are rules:
 
 ###### Capacity Reference
 
-See [Template and capacity guidance](playbook-skills.md#ps-positioning-statement--template) for the exact word and character budgets per field.
+See [Template and capacity guidance](playbook-skills.md#psk-positioning-statement--template) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -6453,7 +6453,7 @@ See [Template and capacity guidance](playbook-skills.md#ps-positioning-statement
 | Competitive matrix X-axis | ~3-5 | Differentiating factor label |
 | Competitive matrix Y-axis | ~3-5 | Differentiating factor label |
 
-#### ps-positioning-statement / Examples
+#### psk-positioning-statement / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -6493,9 +6493,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 14: Lo-fi Experimentation
 
-Stable identifier: `ps-lofi-experimentation`.
+Stable identifier: `psk-lofi-experimentation`.
 
-#### ps-lofi-experimentation / Instructions
+#### psk-lofi-experimentation / Instructions
 
 ##### Purpose
 
@@ -6541,7 +6541,7 @@ Productside criteria for a valid assumption:
 
 ###### The Lo-fi Hypothesis Differs from the Solution Hypothesis
 
-The Solution Hypothesis (from ps-solution-hypothesis) chains: IF we provide this solution, THEN customers benefit, THEN the business achieves an outcome.
+The Solution Hypothesis (from psk-solution-hypothesis) chains: IF we provide this solution, THEN customers benefit, THEN the business achieves an outcome.
 
 The lo-fi hypothesis is different. It describes a specific test and a specific observable signal:
 
@@ -6581,7 +6581,7 @@ The Playbook casts AI as a **thought partner in two moments**. First, after the 
 The reasoning stays with the PM. They name the assumptions, rank the risk, decide what a pass looks like, and decide what they will do about it. If AI hands over the riskiest assumption, the PM has skipped the thinking that shows whether they understand their own idea. AI sharpens the probe. The signal comes from real people, never from the model.
 
 - **Use it when:** there is a prioritized solution, and the PM wants to find the riskiest assumption under it and design a cheap, fast experiment that drives a real decision.
-- **Avoid it when:** the problem, persona, or solution is still vague. AI will manufacture confident assumptions and a tidy test with nothing real beneath them. Route back to ps-solution-hypothesis or ps-framing-the-problem.
+- **Avoid it when:** the problem, persona, or solution is still vague. AI will manufacture confident assumptions and a tidy test with nothing real beneath them. Route back to psk-solution-hypothesis or psk-framing-the-problem.
 - **Return:** blind-spot assumptions raised as candidates for the PM to weigh, a single riskiest assumption tied to a decision, and the smallest test that produces a real pass-or-fail signal.
 
 ###### Working With AI
@@ -6604,7 +6604,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-lofi-experimentation--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-lofi-experimentation--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -6630,7 +6630,7 @@ Ask: Who is experiencing the problem this solution addresses? If the answer is t
 
 Ask whether the user has materials to supply that would ground the experiment in evidence:
 
-- the solution hypothesis from ps-solution-hypothesis (the If/Then chain)
+- the solution hypothesis from psk-solution-hypothesis (the If/Then chain)
 - the framing-the-problem output (the five-stem problem statement)
 - any prior customer feedback on the solution direction
 - empathy interview notes that speak to adoption or behavior change
@@ -6728,15 +6728,15 @@ After completing the artifact, offer three options:
 
 1. Run the experiment and return with results for interpretation
 2. Design a second experiment for the remaining assumption
-3. Proceed to ps-risk-assessment once the critical assumption is validated
+3. Proceed to psk-risk-assessment once the critical assumption is validated
 
-#### ps-lofi-experimentation / Template
+#### psk-lofi-experimentation / Template
 
 ###### When to Use This
 
-Use this template during **Discover + Define** when you have a proposed solution direction (ideally from ps-solution-hypothesis) and need to validate the riskiest assumption about it before committing to build.
+Use this template during **Discover + Define** when you have a proposed solution direction (ideally from psk-solution-hypothesis) and need to validate the riskiest assumption about it before committing to build.
 
-Upstream work that feeds this template: ps-solution-hypothesis (the If/Then hypothesis to stress-test), ps-framing-the-problem (the validated problem statement), ps-exploring-solution-space (the solution method selected).
+Upstream work that feeds this template: psk-solution-hypothesis (the If/Then hypothesis to stress-test), psk-framing-the-problem (the validated problem statement), psk-exploring-solution-space (the solution method selected).
 
 This template produces a commitment artifact. By the time you complete it, you have identified what you believe, designed a test, and committed to acting on the results regardless of outcome.
 
@@ -6877,8 +6877,8 @@ Provide enough detail that someone could run this experiment without redesigning
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-solution-hypothesis provides the If/Then chain that surfaces the assumptions most worth testing. ps-framing-the-problem provides the validated problem that grounds the solution direction.
-- **Downstream:** Results from the experiment feed ps-risk-assessment (once the critical assumption is validated, risks become clearer). ps-product-outcome-canvas (Template 16) draws from a validated solution direction.
+- **Upstream:** psk-solution-hypothesis provides the If/Then chain that surfaces the assumptions most worth testing. psk-framing-the-problem provides the validated problem that grounds the solution direction.
+- **Downstream:** Results from the experiment feed psk-risk-assessment (once the critical assumption is validated, risks become clearer). psk-product-outcome-canvas (Template 16) draws from a validated solution direction.
 
 ###### Capacity Reference
 
@@ -6893,7 +6893,7 @@ Provide enough detail that someone could run this experiment without redesigning
 | Decision Rule | Three tiers, each with a threshold and action |
 | Experiment Description | ~100-150 words |
 
-#### ps-lofi-experimentation / Examples
+#### psk-lofi-experimentation / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -6933,9 +6933,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Unnumbered: Storyboarding
 
-Stable identifier: `ps-storyboarding`.
+Stable identifier: `psk-storyboarding`.
 
-#### ps-storyboarding / Instructions
+#### psk-storyboarding / Instructions
 
 ##### Purpose
 
@@ -6950,10 +6950,10 @@ The storyboard does two things: it tests whether the PM's story about the custom
 ###### Usage Notes
 
 - This is a component skill that produces a paste-ready six-panel narrative artifact.
-- The Solution Hypothesis Statement (from ps-solution-hypothesis) anchors the top of every storyboard.
+- The Solution Hypothesis Statement (from psk-solution-hypothesis) anchors the top of every storyboard.
 - Low fidelity is a design principle, not a limitation. Speed and clarity of thinking matter; aesthetics do not.
 - The tech-role bias guard in Step 1 of Application is the single most important step in this skill.
-- Upstream: ps-solution-hypothesis, ps-proto-persona, ps-framing-the-problem.
+- Upstream: psk-solution-hypothesis, psk-proto-persona, psk-framing-the-problem.
 - Downstream: leadership alignment, executive communication, Go-to-Market narrative.
 
 ##### Key Concepts
@@ -6962,11 +6962,11 @@ The storyboard does two things: it tests whether the PM's story about the custom
 
 Every storyboard requires three elements working together. If any one is missing, the story breaks down.
 
-**Character** is the persona - the specific customer whose life the PM is trying to improve. The character must match the User Persona from ps-proto-persona. This is not the PM, not the product team, and not a generic user. It is a concrete individual with a job, a world, and things they care about.
+**Character** is the persona - the specific customer whose life the PM is trying to improve. The character must match the User Persona from psk-proto-persona. This is not the PM, not the product team, and not a generic user. It is a concrete individual with a job, a world, and things they care about.
 
-**Conflict** is the problem - the specific breakdown that makes the persona's goal unreachable in the current state. The conflict should echo the Problem Statement from ps-framing-the-problem. A storyboard without a real conflict has no stakes and cannot be validated.
+**Conflict** is the problem - the specific breakdown that makes the persona's goal unreachable in the current state. The conflict should echo the Problem Statement from psk-framing-the-problem. A storyboard without a real conflict has no stakes and cannot be validated.
 
-**Resolution** is the solution - how the product enters the persona's world and changes what is possible. The resolution must align with the If/Then structure from the Solution Hypothesis in ps-solution-hypothesis.
+**Resolution** is the solution - how the product enters the persona's world and changes what is possible. The resolution must align with the If/Then structure from the Solution Hypothesis in psk-solution-hypothesis.
 
 All three must be present and internally consistent. A strong character paired with a weak conflict produces a story no one can respond to. A strong conflict with a vague resolution does not validate the hypothesis.
 
@@ -7018,7 +7018,7 @@ This skill produces text captions, not visual images. Each panel has a caption d
 
 ###### The Solution Hypothesis Statement Anchors Every Storyboard
 
-Copy the If/Then statement from ps-solution-hypothesis and place it at the top of every storyboard. This anchors the story to a testable claim. If the story does not follow from the hypothesis, the storyboard is disconnected from the validation the PM needs.
+Copy the If/Then statement from psk-solution-hypothesis and place it at the top of every storyboard. This anchors the story to a testable claim. If the story does not follow from the hypothesis, the storyboard is disconnected from the validation the PM needs.
 
 ###### How AI Supports This Play
 
@@ -7048,7 +7048,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-storyboarding--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-storyboarding--template) for the scaffold.
 
 
 ###### If the PM Brings a Draft
@@ -7069,9 +7069,9 @@ If the persona is the PM themselves, that is a signal the exercise has drifted. 
 
 Ask whether the PM has these artifacts to share:
 
-- Solution Hypothesis from ps-solution-hypothesis (the If/Then statement that anchors the storyboard)
-- User Persona from ps-proto-persona (the character's name, role, world, pains, and goals)
-- Problem Framing from ps-framing-the-problem (the conflict source for Panel 3)
+- Solution Hypothesis from psk-solution-hypothesis (the If/Then statement that anchors the storyboard)
+- User Persona from psk-proto-persona (the character's name, role, world, pains, and goals)
+- Problem Framing from psk-framing-the-problem (the conflict source for Panel 3)
 
 Accept equivalent input from any source. A PM with a product description but no prior plays can still run this skill. Do not block the exercise on missing upstream artifacts.
 
@@ -7082,7 +7082,7 @@ If artifacts are missing, gather the minimum needed:
 
 ###### Step 3: Write the Solution Hypothesis Statement Header
 
-At the top of the storyboard, place the full If/Then statement from ps-solution-hypothesis (or the PM's equivalent).
+At the top of the storyboard, place the full If/Then statement from psk-solution-hypothesis (or the PM's equivalent).
 
 Format it as a clearly labeled header:
 
@@ -7154,16 +7154,16 @@ After completing the storyboard, offer three options:
 2. Share with leadership: the storyboard is an effective executive alignment tool. It makes the problem and solution concrete without requiring a slide deck.
 3. Use in Go-to-Market messaging: the six-panel arc - problem, escalation, discovery, breakthrough, new normal - maps directly to launch narrative and sales enablement content.
 
-#### ps-storyboarding / Template
+#### psk-storyboarding / Template
 
 ###### When to Use This
 
 Use this template during the **Create phase** after you have a Solution Hypothesis in hand. The storyboard validates your hypothesis by telling the customer's story - from their everyday world through the problem crisis into the solution and beyond.
 
 Upstream artifacts that feed this template:
-- Solution Hypothesis (ps-solution-hypothesis): the If/Then statement that anchors Panel 1 and must survive to Panel 6
-- User Persona (ps-proto-persona): the character - name, role, world, pains, goals
-- Problem Framing (ps-framing-the-problem): the source of the conflict in Panel 3
+- Solution Hypothesis (psk-solution-hypothesis): the If/Then statement that anchors Panel 1 and must survive to Panel 6
+- User Persona (psk-proto-persona): the character - name, role, world, pains, goals
+- Problem Framing (psk-framing-the-problem): the source of the conflict in Panel 3
 
 You can run this with only a product description if needed. The hypothesis and persona can be sketched on the fly. Do not block the exercise on missing upstream artifacts.
 
@@ -7311,20 +7311,20 @@ Who will you show this storyboard to?
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-solution-hypothesis provides the If/Then statement; ps-proto-persona provides the character; ps-framing-the-problem provides the conflict source
+- **Upstream:** psk-solution-hypothesis provides the If/Then statement; psk-proto-persona provides the character; psk-framing-the-problem provides the conflict source
 - **Downstream:** the storyboard feeds leadership alignment, executive communication, and Go-to-Market narrative
 
 ###### Capacity Reference
 
 | Field | Target Length | Guidance |
 |-------|-------------|---------|
-| Solution Hypothesis Statement | 40-70 words | Full If/Then statement from ps-solution-hypothesis |
+| Solution Hypothesis Statement | 40-70 words | Full If/Then statement from psk-solution-hypothesis |
 | Panel 1-2 captions | 20-35 words each | One to three sentences; specific but not overlong |
 | Panel 3 caption | 25-40 words | Slightly more room - the conflict needs enough specificity to be testable |
 | Panel 4-6 captions | 20-35 words each | One to three sentences |
 | Visual descriptions | 5-15 words each | Optional; describe the image, not the story |
 
-#### ps-storyboarding / Examples
+#### psk-storyboarding / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -7347,7 +7347,7 @@ Illustrative and fictional, not customer evidence.
 
 - **Panel 6 Is Too Vague:** Name what the persona can now do, build, prevent, or decide that was impossible before. "She can now submit the monthly compliance report in one day instead of four, and she stops dreading the end of each quarter" is specific. "Things improved" is not.
 
-- **Running This Before the Solution Hypothesis Exists:** Before running this skill, produce at least a rough If/Then statement using ps-solution-hypothesis. Even an informal hypothesis ("IF we automate the reconciliation step, THEN the operations manager can close the books without waiting on the data team") is enough to anchor the story.
+- **Running This Before the Solution Hypothesis Exists:** Before running this skill, produce at least a rough If/Then statement using psk-solution-hypothesis. Even an informal hypothesis ("IF we automate the reconciliation step, THEN the operations manager can close the books without waiting on the data team") is enough to anchor the story.
 
 - **Jumping to Product Features in Panel 4:** Panel 4 describes the persona's first experience, not the product's capabilities. "She logged in for the first time and saw her three overdue tasks organized by the system - she did not have to create the list herself" is an experience. A feature list is not.
 
@@ -7360,9 +7360,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 15: Risk Assessment
 
-Stable identifier: `ps-risk-assessment`.
+Stable identifier: `psk-risk-assessment`.
 
-#### ps-risk-assessment / Instructions
+#### psk-risk-assessment / Instructions
 
 ##### Purpose
 
@@ -7414,7 +7414,7 @@ The assessment is not a one-time checkpoint. Risks change as the product is buil
 
 Risk names, mitigation tactics, and contingency plans should be paste-ready for the playbook template. Keep entries specific but compact.
 
-See [Template and capacity guidance](playbook-skills.md#ps-risk-assessment--template) for canonical field budgets.
+See [Template and capacity guidance](playbook-skills.md#psk-risk-assessment--template) for canonical field budgets.
 
 ###### How AI Supports This Play
 
@@ -7444,7 +7444,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-risk-assessment--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-risk-assessment--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -7487,8 +7487,8 @@ Prompt the user to think across these categories:
 
 Before drafting, ask whether the user has materials to share:
 
-- Solution hypothesis from ps-solution-hypothesis (defines what is being de-risked)
-- Problem framing from ps-framing-the-problem (gives customer and problem context)
+- Solution hypothesis from psk-solution-hypothesis (defines what is being de-risked)
+- Problem framing from psk-framing-the-problem (gives customer and problem context)
 - Any early customer feedback or field observations
 - Stakeholder concerns surfaced in prior conversations
 - A Stakeholder Alignment artifact (useful for identifying Points of Contact)
@@ -7554,7 +7554,7 @@ Before presenting the artifact, check:
 - Do higher-priority risks have stronger, more specific plans than lower-priority ones?
 - Is every Contingency Plan clearly different from its paired Mitigation Tactic?
 - Is every Point of Contact a named individual, not a team or function?
-- Are there risks that are actually testable assumptions? If so, flag them as candidates for ps-lofi-experimentation.
+- Are there risks that are actually testable assumptions? If so, flag them as candidates for psk-lofi-experimentation.
 - Are priorities meaningfully differentiated? If everything is Critical, the classification has not done its job.
 
 ###### Step 8: Flag the Assessment as a Living Document
@@ -7565,19 +7565,19 @@ After delivering the artifact, note that this assessment should be revisited at 
 
 At the end of the artifact, offer three options:
 
-1. Convert the most critical testable assumption into a lo-fi experiment using ps-lofi-experimentation
-2. Carry the risk summary forward into ps-product-outcome-canvas when that play is run
+1. Convert the most critical testable assumption into a lo-fi experiment using psk-lofi-experimentation
+2. Carry the risk summary forward into psk-product-outcome-canvas when that play is run
 3. Share the assessment with stakeholders identified in the Risk Raised By column to validate completeness and confirm Points of Contact
 
-#### ps-risk-assessment / Template
+#### psk-risk-assessment / Template
 
 ###### When to Use This
 
 Use this template during **Discover + Define** after completing your solution hypothesis and before committing to a build plan. Run it as a collaborative session with your project manager and relevant stakeholders.
 
 Upstream artifacts that feed this template:
-- Solution hypothesis (ps-solution-hypothesis): defines what is being built and what must be true for it to succeed
-- Problem framing (ps-framing-the-problem): provides customer and context grounding for adoption risks
+- Solution hypothesis (psk-solution-hypothesis): defines what is being built and what must be true for it to succeed
+- Problem framing (psk-framing-the-problem): provides customer and context grounding for adoption risks
 - Stakeholder Alignment artifact (if available): helps identify Points of Contact for each risk
 
 ###### Template
@@ -7720,8 +7720,8 @@ Mark at least one future decision point where this assessment will be reviewed a
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-solution-hypothesis provides the solution context that grounds the risk identification. ps-framing-the-problem provides the customer and problem context.
-- **Downstream:** ps-product-outcome-canvas (Batch 5) draws the risk summary from this assessment. ps-lofi-experimentation can convert high-priority testable assumptions from this assessment into structured experiments.
+- **Upstream:** psk-solution-hypothesis provides the solution context that grounds the risk identification. psk-framing-the-problem provides the customer and problem context.
+- **Downstream:** psk-product-outcome-canvas (Batch 5) draws the risk summary from this assessment. psk-lofi-experimentation can convert high-priority testable assumptions from this assessment into structured experiments.
 
 ###### Capacity Reference
 
@@ -7733,7 +7733,7 @@ Mark at least one future decision point where this assessment will be reviewed a
 | Contingency Plans | 15-25 words | Specific reactive response |
 | Notes | 10-20 words | Timing, dependencies, escalation |
 
-#### ps-risk-assessment / Examples
+#### psk-risk-assessment / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -7769,9 +7769,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 16: Product Outcome Canvas
 
-Stable identifier: `ps-product-outcome-canvas`.
+Stable identifier: `psk-product-outcome-canvas`.
 
-#### ps-product-outcome-canvas / Instructions
+#### psk-product-outcome-canvas / Instructions
 
 ##### Purpose
 
@@ -7815,18 +7815,18 @@ An Ask that is too small under-allocates and sets the project up to slip. An Ask
 
 ###### Loose Coupling to Upstream Plays
 
-This skill draws from six upstream plays. Every field on the canvas can be populated from an upstream play artifact or from direct input, whichever the PM has available. The skill never blocks a field because an upstream play has not been run. If the PM has a problem statement from a workshop, a spreadsheet, or a prior document, that input is as valid as a ps-framing-the-problem output.
+This skill draws from six upstream plays. Every field on the canvas can be populated from an upstream play artifact or from direct input, whichever the PM has available. The skill never blocks a field because an upstream play has not been run. If the PM has a problem statement from a workshop, a spreadsheet, or a prior document, that input is as valid as a psk-framing-the-problem output.
 
 The upstream plays and their contributions:
 
 | Canvas Field | Primary Upstream Source |
 |---|---|
-| Problem Statement | ps-framing-the-problem |
-| Solution Summary | ps-solution-hypothesis |
-| Positioning Statement | ps-positioning-statement |
-| Business Outcomes, Product Outcomes, Metrics | ps-outcome-tree |
-| Risks | ps-risk-assessment |
-| Stories | ps-proto-persona (for persona context) |
+| Problem Statement | psk-framing-the-problem |
+| Solution Summary | psk-solution-hypothesis |
+| Positioning Statement | psk-positioning-statement |
+| Business Outcomes, Product Outcomes, Metrics | psk-outcome-tree |
+| Risks | psk-risk-assessment |
+| Stories | psk-proto-persona (for persona context) |
 
 If an upstream play has not been run, offer to run it before filling the field. If the PM has equivalent input from another source, accept it and proceed.
 
@@ -7858,7 +7858,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-product-outcome-canvas--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-product-outcome-canvas--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -7886,18 +7886,18 @@ Most products serve people who do not write code: clinicians, logistics coordina
 
 Ask the PM: "Who is the primary user of this product in the field? What is their job title? What does their day look like before this product exists?"
 
-Use the answer to anchor both stories. If the PM cannot answer this question, offer to run ps-proto-persona before proceeding.
+Use the answer to anchor both stories. If the PM cannot answer this question, offer to run psk-proto-persona before proceeding.
 
 ###### Step 2: Gather Upstream Artifacts
 
 Ask the PM which of the following artifacts are available:
 
-- Problem Statement (from ps-framing-the-problem or equivalent)
-- Solution Summary or hypothesis (from ps-solution-hypothesis or equivalent)
-- Positioning Statement (from ps-positioning-statement or equivalent)
-- Business Outcomes, Product Outcomes, and Metrics (from ps-outcome-tree or equivalent)
-- Risk Assessment (from ps-risk-assessment or equivalent)
-- Persona descriptions (from ps-proto-persona or equivalent, for story context)
+- Problem Statement (from psk-framing-the-problem or equivalent)
+- Solution Summary or hypothesis (from psk-solution-hypothesis or equivalent)
+- Positioning Statement (from psk-positioning-statement or equivalent)
+- Business Outcomes, Product Outcomes, and Metrics (from psk-outcome-tree or equivalent)
+- Risk Assessment (from psk-risk-assessment or equivalent)
+- Persona descriptions (from psk-proto-persona or equivalent, for story context)
 
 For each artifact that is not available, offer to run the corresponding skill or ask the PM to provide the information directly. Do not invent content for any field. If a field must be left incomplete, mark it clearly and note what is needed to complete it.
 
@@ -7912,7 +7912,7 @@ Capture:
 
 ###### Step 4: Write the Problem Statement
 
-Use the final Problem Statement from ps-framing-the-problem if available. If not, ask the PM to describe the problem in 2-4 sentences covering: who is affected, what they are trying to do, what is blocking them, and why it matters to the business.
+Use the final Problem Statement from psk-framing-the-problem if available. If not, ask the PM to describe the problem in 2-4 sentences covering: who is affected, what they are trying to do, what is blocking them, and why it matters to the business.
 
 Do not write a problem statement that contains solution language. The problem statement describes the current state, not the desired future state.
 
@@ -7920,7 +7920,7 @@ Target: 40-60 words.
 
 ###### Step 5: Write the Solution Summary
 
-Use the If/Then hypothesis format from ps-solution-hypothesis if available.
+Use the If/Then hypothesis format from psk-solution-hypothesis if available.
 
 If not, ask the PM: "In one or two sentences, what does this product do and what does it enable the customer to do that they cannot do today?"
 
@@ -7930,7 +7930,7 @@ Target: 30-50 words.
 
 ###### Step 6: Write the Positioning Statement
 
-Use the seven-element Positioning Statement from ps-positioning-statement if available. The seven elements are: For (target customer), Who (need or opportunity), The (product name), Is a (product category), That (key benefit), Unlike (primary competitive alternative), Our product gives (primary differentiation).
+Use the seven-element Positioning Statement from psk-positioning-statement if available. The seven elements are: For (target customer), Who (need or opportunity), The (product name), Is a (product category), That (key benefit), Unlike (primary competitive alternative), Our product gives (primary differentiation).
 
 If the upstream artifact is not available, ask the PM to provide the positioning elements directly and assemble them using the formula.
 
@@ -7960,7 +7960,7 @@ Target: 50-80 words.
 
 ###### Step 9: Complete Project Boundaries (Outcomes and Metrics)
 
-Use the ps-outcome-tree output if available. Populate:
+Use the psk-outcome-tree output if available. Populate:
 
 - Business Outcomes: what the business gains from the product's success (revenue, efficiency, compliance, retention)
 - Product Outcomes: what the customer achieves through using the product (role-based, not persona-named)
@@ -7983,7 +7983,7 @@ Target: 3-5 bullets at 5-8 words each.
 
 ###### Step 11: List Top 3 Risks
 
-Use the ps-risk-assessment output if available. Identify the top 3 risks by priority (Critical first) and list their names only. Do not include the full mitigation and contingency plans.
+Use the psk-risk-assessment output if available. Identify the top 3 risks by priority (Critical first) and list their names only. Do not include the full mitigation and contingency plans.
 
 Risk names in the canvas are labels, not plans. The full risk management detail lives in the Risk Assessment artifact. The canvas shows leadership that the team has a risk picture; it does not replace the risk document.
 
@@ -8020,19 +8020,19 @@ After delivering the artifact, offer three options:
 2. Enter the Create phase by transitioning to build planning, user story mapping, or roadmap work
 3. Schedule a structured review session to pressure-test The Ask and the risk picture before presenting
 
-#### ps-product-outcome-canvas / Template
+#### psk-product-outcome-canvas / Template
 
 ###### When to Use This
 
 Use this template at the **Go/No Go decision point** at the end of the Discover + Define phase, before the team commits to entering the Create (build) phase. Present the completed canvas to your leadership sponsor or investment committee.
 
 Upstream artifacts that feed this template:
-- Problem Statement (ps-framing-the-problem or equivalent)
-- Solution Summary (ps-solution-hypothesis or equivalent)
-- Positioning Statement (ps-positioning-statement or equivalent)
-- Business Outcomes, Product Outcomes, and Metrics (ps-outcome-tree or equivalent)
-- Top Risks (ps-risk-assessment or equivalent)
-- Persona context (ps-proto-persona or equivalent, for story anchoring)
+- Problem Statement (psk-framing-the-problem or equivalent)
+- Solution Summary (psk-solution-hypothesis or equivalent)
+- Positioning Statement (psk-positioning-statement or equivalent)
+- Business Outcomes, Product Outcomes, and Metrics (psk-outcome-tree or equivalent)
+- Top Risks (psk-risk-assessment or equivalent)
+- Persona context (psk-proto-persona or equivalent, for story anchoring)
 
 Loose coupling rule: if an upstream artifact is not available, provide the information directly or ask the agent to run the relevant skill before proceeding. No field should be left as TBD in the final canvas.
 
@@ -8221,7 +8221,7 @@ Format guide:
 1. Start with **Section 1: Core Information** to anchor the document.
 2. Complete **Section 2: Summary** starting with the Problem Statement, which grounds everything that follows.
 3. Write the Positioning Statement before the stories; the positioning clarifies who each story is about.
-4. Write the stories last in Section 2, after confirming the persona identities from ps-proto-persona or direct PM input.
+4. Write the stories last in Section 2, after confirming the persona identities from psk-proto-persona or direct PM input.
 5. Complete **Section 3: Project Boundaries** by importing from upstream artifacts wherever possible.
 6. Write The Ask after reviewing all other sections; the resource request should reflect the full scope of what the canvas describes.
 
@@ -8238,7 +8238,7 @@ Format guide:
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-framing-the-problem (Problem Statement), ps-solution-hypothesis (Solution Summary), ps-positioning-statement (Positioning Statement), ps-outcome-tree (Outcomes and Metrics), ps-risk-assessment (Risks), ps-proto-persona (persona context for stories)
+- **Upstream:** psk-framing-the-problem (Problem Statement), psk-solution-hypothesis (Solution Summary), psk-positioning-statement (Positioning Statement), psk-outcome-tree (Outcomes and Metrics), psk-risk-assessment (Risks), psk-proto-persona (persona context for stories)
 - **Downstream:** Go-to-Market Enablement (Template 20) imports Problem Statement, Positioning Statement, and Key Features
 
 ###### Capacity Reference
@@ -8259,7 +8259,7 @@ Format guide:
 | The Ask | 30-50 words | Roles + percentages + timeline |
 | Introduction Date | 5-10 words | Specific date, quarter, or milestone |
 
-#### ps-product-outcome-canvas / Examples
+#### psk-product-outcome-canvas / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -8298,9 +8298,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 17: Outcome-Based Roadmap & Release Plan
 
-Stable identifier: `ps-outcome-roadmap`.
+Stable identifier: `psk-outcome-roadmap`.
 
-#### ps-outcome-roadmap / Instructions
+#### psk-outcome-roadmap / Instructions
 
 ##### Purpose
 
@@ -8370,9 +8370,9 @@ Different audiences need different layers of the same artifact.
 
 ###### This Builds Directly From the Outcome Tree
 
-The product outcomes in the Now and Next roadmap cells should come directly from the ps-outcome-tree, not be invented fresh here. The PM should not use the roadmap as an opportunity to introduce new outcomes that have not been validated through the Outcome Tree play.
+The product outcomes in the Now and Next roadmap cells should come directly from the psk-outcome-tree, not be invented fresh here. The PM should not use the roadmap as an opportunity to introduce new outcomes that have not been validated through the Outcome Tree play.
 
-If the Outcome Tree has not been run, offer to run ps-outcome-tree first, or accept the PM's description of outcomes directly. But confirm they are grounded in discovery work.
+If the Outcome Tree has not been run, offer to run psk-outcome-tree first, or accept the PM's description of outcomes directly. But confirm they are grounded in discovery work.
 
 ###### How AI Supports This Play
 
@@ -8402,7 +8402,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-outcome-roadmap--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-outcome-roadmap--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -8439,9 +8439,9 @@ Do not proceed until there is a customer-perspective answer to that question.
 
 Before drafting, ask whether the user has materials to share:
 
-- Outcome Tree from ps-outcome-tree (Business Outcomes and product outcomes)
-- Output prioritization results from ps-output-prioritization (Quadrant I and Quadrant II outputs)
-- Tiny Acts findings from ps-tiny-acts-discovery (specific experiments and assumptions)
+- Outcome Tree from psk-outcome-tree (Business Outcomes and product outcomes)
+- Output prioritization results from psk-output-prioritization (Quadrant I and Quadrant II outputs)
+- Tiny Acts findings from psk-tiny-acts-discovery (specific experiments and assumptions)
 - Any prior roadmap or release plan the team has already discussed
 
 Check whether each exists; offer to help fill gaps; accept equivalent input from any source. Do not gate the skill on whether the upstream play has been run. Accept the PM's direct description if the artifact is not available.
@@ -8486,7 +8486,7 @@ Write these as outcome hypotheses, not as research questions. "Procurement manag
 
 ###### Step 7: Populate Outputs to Develop (NOW)
 
-List the features and capabilities that will drive the Now outcomes. These come from Quadrant I outputs in ps-output-prioritization (low cost, high value) or from the PM's direct input on what is in active development.
+List the features and capabilities that will drive the Now outcomes. These come from Quadrant I outputs in psk-output-prioritization (low cost, high value) or from the PM's direct input on what is in active development.
 
 Write as specific output names, not categories. "Real-time fault alert push notification" is specific. "Notification system" is a category.
 
@@ -8494,7 +8494,7 @@ Write as specific output names, not categories. "Real-time fault alert push noti
 
 ###### Step 8: List Tiny Acts of Discovery (NOW)
 
-List the small, fast experiments the team is running in parallel with Now output development. These come from ps-tiny-acts-discovery or from the PM's direct input.
+List the small, fast experiments the team is running in parallel with Now output development. These come from psk-tiny-acts-discovery or from the PM's direct input.
 
 Each Tiny Act should be specific enough to run: name what is being tested, how, and with whom. "Run a 5-person session with field technicians using a paper mock of the fault alert screen to confirm the alert hierarchy makes sense to them" is a Tiny Act. "Test the UI" is not.
 
@@ -8502,7 +8502,7 @@ Each Tiny Act should be specific enough to run: name what is being tested, how, 
 
 ###### Step 9: Populate Output Concepts to Validate (NEXT)
 
-List the output ideas that need validation before entering the release plan. These come from Quadrant II outputs in ps-output-prioritization (high cost, high value - needs more evidence before committing) or from the PM's description of candidates under consideration.
+List the output ideas that need validation before entering the release plan. These come from Quadrant II outputs in psk-output-prioritization (high cost, high value - needs more evidence before committing) or from the PM's description of candidates under consideration.
 
 > Quality check: Is each concept clearly tied to a Next outcome? Is there a specific assumption that, if validated, would move this into Now outputs?
 
@@ -8545,16 +8545,16 @@ At the end of the artifact, offer three options:
 2. Share the release plan with engineering: the output-focused bottom row gives the team concrete, prioritized work with clear discovery activities running alongside
 3. Schedule a review cadence: propose a specific date or milestone trigger for the next roadmap review, so the artifact stays current as assumptions resolve
 
-#### ps-outcome-roadmap / Template
+#### psk-outcome-roadmap / Template
 
 ###### When to Use This
 
 Use this template during the **Create** phase after completing your Outcome Tree and Output Prioritization. It is most powerful when Tiny Acts of Discovery results are available to populate the discovery sections.
 
 Upstream artifacts that feed this template:
-- Outcome Tree (ps-outcome-tree): Business Outcomes header and product outcomes for the roadmap row
-- Output Prioritization (ps-output-prioritization): Quadrant I outputs for Now release plan; Quadrant II outputs for Next output concepts
-- Tiny Acts of Discovery (ps-tiny-acts-discovery): specific experiments and assumptions for the discovery sections
+- Outcome Tree (psk-outcome-tree): Business Outcomes header and product outcomes for the roadmap row
+- Output Prioritization (psk-output-prioritization): Quadrant I outputs for Now release plan; Quadrant II outputs for Next output concepts
+- Tiny Acts of Discovery (psk-tiny-acts-discovery): specific experiments and assumptions for the discovery sections
 
 ---
 
@@ -8633,7 +8633,7 @@ Do not list customer outcomes in this row.
 ### NOW
 **Outputs to Develop**
 
-[List 2-4 specific features or capabilities the team is actively building to drive the Now outcomes. Each output should trace to a Now outcome above. Use Quadrant I outputs from ps-output-prioritization if available.]
+[List 2-4 specific features or capabilities the team is actively building to drive the Now outcomes. Each output should trace to a Now outcome above. Use Quadrant I outputs from psk-output-prioritization if available.]
 
 - [Output 1: specific feature or capability name - 5-10 words]
 - [Output 2: specific feature or capability name - 5-10 words]
@@ -8644,7 +8644,7 @@ Do not list customer outcomes in this row.
 
 **Tiny Acts of Discovery**
 
-[List 1-2 small, fast experiments running now alongside output development. These are not future work - they run in parallel with the outputs above. Use Tiny Acts from ps-tiny-acts-discovery if available.
+[List 1-2 small, fast experiments running now alongside output development. These are not future work - they run in parallel with the outputs above. Use Tiny Acts from psk-tiny-acts-discovery if available.
 
 Format: name the test, the method, and the participants. 10-20 words each.]
 
@@ -8659,7 +8659,7 @@ Format: name the test, the method, and the participants. 10-20 words each.]
 ### NEXT
 **Output Concepts to Validate**
 
-[List 1-2 output ideas that need validation before entering the release plan. These are candidates, not commitments. Use Quadrant II outputs from ps-output-prioritization if available - high value, high cost items that need more evidence before committing.]
+[List 1-2 output ideas that need validation before entering the release plan. These are candidates, not commitments. Use Quadrant II outputs from psk-output-prioritization if available - high value, high cost items that need more evidence before committing.]
 
 - [Output concept 1: specific feature or capability idea - 5-10 words]
 - [Output concept 2: specific feature or capability idea - 5-10 words]
@@ -8744,7 +8744,7 @@ Items can move right if confidence decreases. A Now outcome with an unexpected d
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-outcome-tree provides the Business Outcomes header and product outcomes for the roadmap row. ps-output-prioritization provides Quadrant I outputs for Now and Quadrant II outputs for Next output concepts. ps-tiny-acts-discovery provides specific experiments and assumptions.
+- **Upstream:** psk-outcome-tree provides the Business Outcomes header and product outcomes for the roadmap row. psk-output-prioritization provides Quadrant I outputs for Now and Quadrant II outputs for Next output concepts. psk-tiny-acts-discovery provides specific experiments and assumptions.
 - **Downstream:** This artifact is the primary communication tool for the Create phase. Share the roadmap row (outcome language) with leadership and the release plan row (output language) with engineering.
 
 ###### Capacity Reference
@@ -8761,7 +8761,7 @@ Items can move right if confidence decreases. A Now outcome with an unexpected d
 | Assumptions to Validate | 2-4 assumptions | 10-20 words each | Hypothesis format |
 | Assumptions to Research | 2-4 questions | 10-20 words each | Open question or early hypothesis |
 
-#### ps-outcome-roadmap / Examples
+#### psk-outcome-roadmap / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -8797,9 +8797,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 18: Tiny Acts of Discovery
 
-Stable identifier: `ps-tiny-acts-discovery`.
+Stable identifier: `psk-tiny-acts-discovery`.
 
-#### ps-tiny-acts-discovery / Instructions
+#### psk-tiny-acts-discovery / Instructions
 
 ##### Purpose
 
@@ -8819,7 +8819,7 @@ The skill applies at multiple lifecycle phases, not only Create. The playbook st
 
 Downstream connections: Outcome-Based Roadmap (Template 17) - specifically "Outputs to Develop," "Output Concepts to Validate," "Assumptions to Validate," and "Assumptions to Research" sections.
 
-Related skill for single high-stakes assumptions: ps-lofi-experimentation (Template 14).
+Related skill for single high-stakes assumptions: psk-lofi-experimentation (Template 14).
 
 ##### Key Concepts
 
@@ -8912,7 +8912,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-tiny-acts-discovery--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-tiny-acts-discovery--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -8951,9 +8951,9 @@ Do not allow the assumption list to default to technical unknowns (performance, 
 
 Before drafting, ask whether the user has relevant materials to share:
 
-- Solution hypothesis from ps-solution-hypothesis (defines what is being tested)
-- Problem statement from ps-framing-the-problem (gives the customer and problem context)
-- Outcome tree from ps-outcome-tree (clarifies what the team is trying to achieve)
+- Solution hypothesis from psk-solution-hypothesis (defines what is being tested)
+- Problem statement from psk-framing-the-problem (gives the customer and problem context)
+- Outcome tree from psk-outcome-tree (clarifies what the team is trying to achieve)
 - Any prior research, field observations, or customer feedback already collected
 - Existing roadmap items or backlog priorities (these often reveal implicit assumptions)
 
@@ -9067,10 +9067,10 @@ Offer to help document results when the PM returns. The typical return conversat
 At the end of the artifact, offer three options:
 
 1. Run the tiny acts and return with findings - the agent will help document results and update the assumption map
-2. If one assumption from Step 6 stands out as uniquely high-stakes, convert it into a formal Lo-fi Experimentation plan using ps-lofi-experimentation
+2. If one assumption from Step 6 stands out as uniquely high-stakes, convert it into a formal Lo-fi Experimentation plan using psk-lofi-experimentation
 3. Feed confirmed results into the Outcome-Based Roadmap (Template 17): the "Outputs to Develop," "Output Concepts to Validate," and "Assumptions to Validate / Research" sections draw directly from Tiny Acts findings
 
-#### ps-tiny-acts-discovery / Template
+#### psk-tiny-acts-discovery / Template
 
 **Product:** [name the product]
 **Customer:** [name the role that uses or buys this product day-to-day - not the PM, not the team]
@@ -9187,11 +9187,11 @@ For each hypothesis, design one small, fast, cheap test. Each act should be comp
 
 **When you return with findings:** Share what you observed. The agent will help document results, identify which hypotheses were supported or disproved, and decide what the next round of tiny acts should address.
 
-**If one assumption stands out as uniquely high-stakes:** Consider converting it into a formal Lo-fi Experimentation plan (Template 14) using ps-lofi-experimentation.
+**If one assumption stands out as uniquely high-stakes:** Consider converting it into a formal Lo-fi Experimentation plan (Template 14) using psk-lofi-experimentation.
 
 **When acts are complete:** Feed confirmed results into the Outcome-Based Roadmap (Template 17) - specifically the "Outputs to Develop," "Output Concepts to Validate," "Assumptions to Validate," and "Assumptions to Research" sections.
 
-#### ps-tiny-acts-discovery / Examples
+#### psk-tiny-acts-discovery / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -9214,7 +9214,7 @@ Illustrative and fictional, not customer evidence.
 
 - **Leaving "Assigned" Blank:** Every act must have a named individual. If the PM cannot name one, that is a signal the team does not have the capacity to run this act. Either assign it or drop it from the list.
 
-- **Conflating Tiny Acts with Lo-fi Experimentation:** Tiny Acts is for many small tests running in parallel or in rapid sequence. If the PM needs a single rigorous test for a make-or-break assumption, redirect them to ps-lofi-experimentation (Template 14).
+- **Conflating Tiny Acts with Lo-fi Experimentation:** Tiny Acts is for many small tests running in parallel or in rapid sequence. If the PM needs a single rigorous test for a make-or-break assumption, redirect them to psk-lofi-experimentation (Template 14).
 
 - **Running It Once and Filing It Away:** At the end of each Tiny Acts session, schedule the next one explicitly. Tiny Acts is not a milestone - it is a rhythm. The cadence can be biweekly, sprint-based, or triggered by a key decision. What matters is that it recurs.
 
@@ -9229,9 +9229,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 19: Output Prioritization
 
-Stable identifier: `ps-output-prioritization`.
+Stable identifier: `psk-output-prioritization`.
 
-#### ps-output-prioritization / Instructions
+#### psk-output-prioritization / Instructions
 
 ##### Purpose
 
@@ -9301,7 +9301,7 @@ The canonical labels the quadrants I through IV. The layout differs from standar
 
 ###### Cross-Functional Input Is Required
 
-Customer value: requires data from discovery work, empathy interviews, or validated product outcomes. The Outcome Tree (ps-outcome-tree) is the best source for linking outputs to product outcomes.
+Customer value: requires data from discovery work, empathy interviews, or validated product outcomes. The Outcome Tree (psk-outcome-tree) is the best source for linking outputs to product outcomes.
 
 Business cost: requires input from engineering, a project manager, or a technical lead. Do not estimate cost without a technical voice in the room.
 
@@ -9345,7 +9345,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-output-prioritization--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-output-prioritization--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -9367,15 +9367,15 @@ Before evaluating any output for value, confirm who the customer is - the person
 
 This is the tech-role bias guard. LLMs and product teams both default to developer, architect, or internal-operations perspectives when evaluating value. If the product serves field technicians, operations managers, clinical coordinators, or other non-technical roles, the value dimension must be assessed from that person's standpoint.
 
-Ask the user to name the customer role. If a proto-persona exists (from ps-proto-persona), use it. If an Outcome Tree exists (from ps-outcome-tree), confirm the product outcomes before evaluating outputs against value.
+Ask the user to name the customer role. If a proto-persona exists (from psk-proto-persona), use it. If an Outcome Tree exists (from psk-outcome-tree), confirm the product outcomes before evaluating outputs against value.
 
 ###### Step 2: Gather Available Artifacts
 
 Before drafting, ask whether the user has materials to share:
 
-- Solution hypothesis from ps-solution-hypothesis (defines the solution being decomposed into outputs)
-- Product outcomes from ps-outcome-tree (used to evaluate value from the customer's perspective)
-- Discovery findings from ps-empathy-interviews or ps-problem-identification (used to calibrate which customer pains are most severe)
+- Solution hypothesis from psk-solution-hypothesis (defines the solution being decomposed into outputs)
+- Product outcomes from psk-outcome-tree (used to evaluate value from the customer's perspective)
+- Discovery findings from psk-empathy-interviews or psk-problem-identification (used to calibrate which customer pains are most severe)
 - Any Story Mapping or Tiny Acts of Discovery results (used to populate the candidate output list)
 - Engineering capacity or sprint planning data (used to calibrate cost)
 
@@ -9459,7 +9459,7 @@ Quadrant II outputs are high value but high cost. Do not treat them as "do next"
 For each Quadrant II output:
 
 - Identify what assumptions about value and cost need to be validated before committing to the build
-- Consider whether a lo-fi experiment (ps-lofi-experimentation) could reduce uncertainty before committing to full development
+- Consider whether a lo-fi experiment (psk-lofi-experimentation) could reduce uncertainty before committing to full development
 - If the team cannot validate the value assumptions, move the output to "Output Concepts to Validate" in the roadmap rather than "Outputs to Develop"
 
 ###### Step 11: Deprioritize Quadrant III and Cut Quadrant IV
@@ -9481,10 +9481,10 @@ If the Outcome Tree has already been completed, reference the specific outcome b
 After delivering the artifact, offer three options:
 
 1. Feed Quadrant I outputs into the Outcome-Based Roadmap (Template 17) as "Outputs to Develop"
-2. Place Quadrant II outputs in "Output Concepts to Validate" and run ps-lofi-experimentation on the highest-uncertainty ones
+2. Place Quadrant II outputs in "Output Concepts to Validate" and run psk-lofi-experimentation on the highest-uncertainty ones
 3. Share the classification with stakeholders to surface any Quadrant IV items that carry political weight and document the tradeoff decision explicitly
 
-#### ps-output-prioritization / Template
+#### psk-output-prioritization / Template
 
 Use this scaffold to produce a paste-ready four-quadrant output prioritization artifact in Productside format.
 
@@ -9569,7 +9569,7 @@ Action: Prioritize these outputs for the first development cycle. Carry them int
 |--------|---------------------------|----------------|
 | [Output name] | [What assumption about value or cost needs to be validated before committing?] | [Lo-fi experiment / further technical sizing / staged delivery] |
 
-Action: Do not commit these to the build plan until the key assumption is validated. Place them in "Output Concepts to Validate" in the roadmap. Consider ps-lofi-experimentation for the highest-uncertainty items.
+Action: Do not commit these to the build plan until the key assumption is validated. Place them in "Output Concepts to Validate" in the roadmap. Consider psk-lofi-experimentation for the highest-uncertainty items.
 
 **Quadrant III - Deprioritize (Low Cost, Low Value)**
 
@@ -9595,7 +9595,7 @@ Action: Do not schedule. If stakeholders press to keep these, document the speci
 2. Move Quadrant II outputs to "Output Concepts to Validate" and plan validation for the highest-uncertainty items
 3. Share the full classification with stakeholders to surface any Quadrant IV political items and document the tradeoff decisions
 
-#### ps-output-prioritization / Examples
+#### psk-output-prioritization / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -9612,9 +9612,9 @@ Illustrative and fictional, not customer evidence.
 
 - **Running This Without Engineering Input on Cost:** Do not finalize cost classifications without a technical voice. At minimum, run a rough sizing conversation with an engineering lead or project manager before locking the grid.
 
-- **Confusing Outputs with Outcomes:** Every item on the candidate list must be a concrete, buildable thing: a specific feature, integration, interface, or capability. If the team is listing outcomes, redirect to the Outcome Tree (ps-outcome-tree) and then ask: what outputs could be built to drive that outcome?
+- **Confusing Outputs with Outcomes:** Every item on the candidate list must be a concrete, buildable thing: a specific feature, integration, interface, or capability. If the team is listing outcomes, redirect to the Outcome Tree (psk-outcome-tree) and then ask: what outputs could be built to drive that outcome?
 
-- **Treating Quadrant II as "Do Next" Without Validation:** For every Quadrant II output, name the key assumptions about value that need to be validated before committing to the full build. Consider lo-fi experimentation (ps-lofi-experimentation) for high-uncertainty Quadrant II items before the development commitment is made.
+- **Treating Quadrant II as "Do Next" Without Validation:** For every Quadrant II output, name the key assumptions about value that need to be validated before committing to the full build. Consider lo-fi experimentation (psk-lofi-experimentation) for high-uncertainty Quadrant II items before the development commitment is made.
 
 - **Never Cutting Quadrant IV Outputs:** Document the Quadrant IV designation explicitly and surface the tradeoff to the stakeholder. "We can build this, but it will displace [specific Quadrant I output] that [customer outcome]. Is that the right call?" Force the explicit decision rather than letting Quadrant IV items survive by default.
 
@@ -9633,9 +9633,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 20: Go-to-Market Enablement
 
-Stable identifier: `ps-go-to-market`.
+Stable identifier: `psk-go-to-market`.
 
-#### ps-go-to-market / Instructions
+#### psk-go-to-market / Instructions
 
 ##### Purpose
 
@@ -9653,7 +9653,7 @@ The PM provides information, synthesizes upstream work, and owns the artifact. B
 
 ###### The Persona-Voice Problem Statement
 
-The formal Problem Statement from ps-framing-the-problem uses a structured five-stem format written for product teams. The GTM Problem Statement does something different: it retells the same story in first-person from the customer's perspective, in emotional and accessible language.
+The formal Problem Statement from psk-framing-the-problem uses a structured five-stem format written for product teams. The GTM Problem Statement does something different: it retells the same story in first-person from the customer's perspective, in emotional and accessible language.
 
 The format:
 "I am a [role] [doing/struggling with X]. [Pain]. Because [root cause]. Which makes me feel [emotional consequence]."
@@ -9666,7 +9666,7 @@ These two sections serve different purposes and must not be collapsed into one.
 
 The **Solution Summary** is a plain-language product description. It answers: what is it, what does it do, what does it improve? Drop all PM vocabulary. Write for someone who has never seen the solution hypothesis or the product backlog.
 
-The **Positioning Statement** is the seven-element formula from ps-positioning-statement, written verbatim. This is the structured messaging foundation that all other messaging is derived from. Paraphrasing it loses precision. The seven elements are:
+The **Positioning Statement** is the seven-element formula from psk-positioning-statement, written verbatim. This is the structured messaging foundation that all other messaging is derived from. Paraphrasing it loses precision. The seven elements are:
 - For: [target customer]
 - Who: [need or opportunity]
 - The: [product name]
@@ -9693,7 +9693,7 @@ Messages are written for **at least one user and one buyer persona**. A buyer us
 
 ###### Launch Goals vs. Product Success Metrics
 
-Launch Goals are not the same as the ongoing metrics from ps-outcome-tree or ps-measuring-outcomes. Launch Goals are time-bounded success indicators for the launch window itself: adoption milestones, satisfaction scores, and efficiency gains that confirm the launch executed correctly.
+Launch Goals are not the same as the ongoing metrics from psk-outcome-tree or psk-measuring-outcomes. Launch Goals are time-bounded success indicators for the launch window itself: adoption milestones, satisfaction scores, and efficiency gains that confirm the launch executed correctly.
 
 Each row in the Launch Goals table requires a numeric target. "Improve satisfaction" is not a launch goal. "Achieve NPS of 40+ in first 90 days post-launch" is a launch goal. Each target also needs a basis (a baseline, a benchmark, or evidence), a measure the team can actually collect, and a tie to a business or product outcome. **The targets are the PM's to set.** The skill questions whether they are realistic; it does not pick the number.
 
@@ -9718,7 +9718,7 @@ Starting late on GTM preparation is the most common failure mode. This artifact 
 The Playbook casts AI as a **critic of the two parts the PM writes fresh here**: key messages with proof points, and launch goals. For messages, AI checks that each is a benefit, free of jargon, and backed by proof the persona would trust. For launch goals, it tests the measure and whether the target is realistic, and keeps launch goals distinct from readiness goals. The messages and targets stay the PM's. AI cannot know what the buyers trust or what the business can hit.
 
 - **Use it when:** positioning and personas are set, and the PM has drafted key messages, proof points, and launch goals to pressure-test.
-- **Avoid it when:** positioning or personas are still unsettled (route to ps-positioning-statement or ps-proto-persona), or the request is for AI to set the targets. It has no data on the market or the business.
+- **Avoid it when:** positioning or personas are still unsettled (route to psk-positioning-statement or psk-proto-persona), or the request is for AI to set the targets. It has no data on the market or the business.
 - **Return:** messages tested for benefit, jargon, and credible proof; launch goals checked for measure, realistic target, and timeframe; and proposed rewrites for the PM to accept, adapt, or reject.
 
 ###### Working With AI
@@ -9741,7 +9741,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-go-to-market--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-go-to-market--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -9770,10 +9770,10 @@ If the user's initial framing focuses on capabilities ("what the platform does")
 
 Before drafting, ask whether the user has these materials to share:
 
-- Problem framing from ps-framing-the-problem (five-stem format, for translation to persona voice)
-- Solution hypothesis from ps-solution-hypothesis (for the Solution Summary)
-- Positioning statement from ps-positioning-statement (for verbatim copy into the Positioning Statement section)
-- Persona work from ps-proto-persona (identifies the personas for Key Messages and Target Audience)
+- Problem framing from psk-framing-the-problem (five-stem format, for translation to persona voice)
+- Solution hypothesis from psk-solution-hypothesis (for the Solution Summary)
+- Positioning statement from psk-positioning-statement (for verbatim copy into the Positioning Statement section)
+- Persona work from psk-proto-persona (identifies the personas for Key Messages and Target Audience)
 
 Use whatever the user can provide. If a section has no upstream source, draft from context and flag it for review. Do not gate the skill on whether all upstream plays have been run.
 
@@ -9789,7 +9789,7 @@ Do not use web research to substitute for customer discovery. If the user lacks 
 
 ###### Step 4: Write the Problem Statement in Persona Voice
 
-Translate the formal five-stem Problem Statement (from ps-framing-the-problem, or from the user's description if that play has not been run) into a first-person narrative from the customer's perspective.
+Translate the formal five-stem Problem Statement (from psk-framing-the-problem, or from the user's description if that play has not been run) into a first-person narrative from the customer's perspective.
 
 Use the scaffold:
 "I am a [role] [doing/struggling with X]. [Pain]. Because [root cause]. Which makes me feel [emotional consequence]."
@@ -9820,7 +9820,7 @@ Target length: 40-60 words.
 
 ###### Step 7: Write the Positioning Statement
 
-Copy the seven-element Positioning Statement verbatim from the ps-positioning-statement output if available. If not, construct it using the formula:
+Copy the seven-element Positioning Statement verbatim from the psk-positioning-statement output if available. If not, construct it using the formula:
 
 For: [target customer]
 Who: [statement of need or opportunity]
@@ -9897,17 +9897,17 @@ At the end of the artifact, offer the user three options:
 2. Share with marketing to align on the Positioning Statement as the messaging anchor for launch campaigns
 3. Schedule a launch readiness review with all GTM stakeholders to walk through the artifact together and confirm each function knows what they need to execute
 
-#### ps-go-to-market / Template
+#### psk-go-to-market / Template
 
 ###### When to Use This
 
 Use this template during the **Create phase** after completing positioning, solution hypothesis, and proto-persona work. Run it collaboratively with sales, marketing, and customer support stakeholders before setting the launch timeline.
 
 Upstream artifacts that feed this template:
-- Problem framing (ps-framing-the-problem): provides the five-stem structure to translate into persona voice
-- Solution hypothesis (ps-solution-hypothesis): provides the solution framing for plain-language translation
-- Positioning statement (ps-positioning-statement): provides the seven-element formula to copy verbatim
-- Proto-persona (ps-proto-persona): identifies the personas and their pains for Key Messages and Target Audience
+- Problem framing (psk-framing-the-problem): provides the five-stem structure to translate into persona voice
+- Solution hypothesis (psk-solution-hypothesis): provides the solution framing for plain-language translation
+- Positioning statement (psk-positioning-statement): provides the seven-element formula to copy verbatim
+- Proto-persona (psk-proto-persona): identifies the personas and their pains for Key Messages and Target Audience
 
 ###### Template
 
@@ -10046,10 +10046,10 @@ Every Target cell must contain a number or percentage - not "improve" or "increa
 ###### Filling the Template
 
 1. Complete **Product Context** to anchor who participated and what the launch timeline is.
-2. Write the **Problem Statement** last, after reading the framing from ps-framing-the-problem. Translate from analytical to emotional and first-person.
+2. Write the **Problem Statement** last, after reading the framing from psk-framing-the-problem. Translate from analytical to emotional and first-person.
 3. Write **Target Audience** from the proto-persona work - personas should match what has already been validated.
 4. Write the **Solution Summary** as if explaining the product to a new support hire on day one.
-5. Copy the **Positioning Statement** verbatim from ps-positioning-statement output. If that play has not been run, construct it fresh using the formula.
+5. Copy the **Positioning Statement** verbatim from psk-positioning-statement output. If that play has not been run, construct it fresh using the formula.
 6. Build **Key Messages** persona by persona. Start with the primary user, then the buyer, then any other affected roles.
 7. Set **Launch Goals** by working backward from the launch date - what does success look like at 30, 60, and 90 days?
 
@@ -10066,7 +10066,7 @@ Every Target cell must contain a number or percentage - not "improve" or "increa
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-framing-the-problem provides the Problem Statement structure for translation. ps-proto-persona provides the personas. ps-solution-hypothesis provides the solution framing. ps-positioning-statement provides the Positioning Statement verbatim.
+- **Upstream:** psk-framing-the-problem provides the Problem Statement structure for translation. psk-proto-persona provides the personas. psk-solution-hypothesis provides the solution framing. psk-positioning-statement provides the Positioning Statement verbatim.
 - **Downstream:** This skill is an endpoint. The artifact feeds into sales enablement, marketing campaigns, and launch readiness reviews - but no other playbook skills consume it.
 
 ###### Capacity Reference
@@ -10082,7 +10082,7 @@ Every Target cell must contain a number or percentage - not "improve" or "increa
 | Measure/Metric | 5-10 words | Specific, countable signal |
 | Target | 3-8 words | Number or percentage required |
 
-#### ps-go-to-market / Examples
+#### psk-go-to-market / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -10120,9 +10120,9 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 21: Product Readiness Testing
 
-Stable identifier: `ps-product-readiness`.
+Stable identifier: `psk-product-readiness`.
 
-#### ps-product-readiness / Instructions
+#### psk-product-readiness / Instructions
 
 ##### Purpose
 
@@ -10218,7 +10218,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-product-readiness--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-product-readiness--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -10250,10 +10250,10 @@ Ask: "Who is the customer who will use or buy this product in the field?" The an
 
 Before drafting the readiness test plan, ask whether the user has:
 
-- Solution hypothesis from ps-solution-hypothesis (defines what is being validated)
-- Product success metrics from ps-outcome-tree (provides the measurable targets the test should confirm)
-- Risk assessment from ps-risk-assessment (surfaces known risks that may affect the test or its scope limits)
-- Persona profiles from ps-proto-persona (helps define who to recruit for the test)
+- Solution hypothesis from psk-solution-hypothesis (defines what is being validated)
+- Product success metrics from psk-outcome-tree (provides the measurable targets the test should confirm)
+- Risk assessment from psk-risk-assessment (surfaces known risks that may affect the test or its scope limits)
+- Persona profiles from psk-proto-persona (helps define who to recruit for the test)
 
 Accept equivalent information from any source. The PM may already know their beta user pool independently. If upstream artifacts are not available, work with what the PM knows and note where assumptions are being made.
 
@@ -10341,7 +10341,7 @@ After delivering the artifact, offer three options:
 2. Carry the readiness test goals and outcomes forward into post-launch retrospective planning
 3. Review the Assumptions and Risks section with stakeholders to confirm alignment on scope limits before the test begins
 
-#### ps-product-readiness / Template
+#### psk-product-readiness / Template
 
 ###### When to Use This
 
@@ -10350,10 +10350,10 @@ Use this template when preparing a **pre-launch beta program** to validate the p
 Before running this template, confirm that earlier rounds of user testing have occurred. This is the final validation before launch, not the first time users see the product.
 
 Upstream artifacts that feed this template:
-- Solution hypothesis (ps-solution-hypothesis): defines what is being validated
-- Product success metrics from ps-outcome-tree: provides measurement anchors for the Goals table
-- Risk assessment (ps-risk-assessment): surfaces known risks that may define scope limits
-- Persona profiles (ps-proto-persona): helps define who to recruit as beta participants
+- Solution hypothesis (psk-solution-hypothesis): defines what is being validated
+- Product success metrics from psk-outcome-tree: provides measurement anchors for the Goals table
+- Risk assessment (psk-risk-assessment): surfaces known risks that may define scope limits
+- Persona profiles (psk-proto-persona): helps define who to recruit as beta participants
 
 ---
 
@@ -10527,9 +10527,9 @@ Complete after the test concludes.
 
 ###### Connecting to Other Skills
 
-- **Upstream:** ps-solution-hypothesis (defines what is being validated), ps-outcome-tree (product success metrics), ps-risk-assessment (known risks), ps-proto-persona (who to recruit)
+- **Upstream:** psk-solution-hypothesis (defines what is being validated), psk-outcome-tree (product success metrics), psk-risk-assessment (known risks), psk-proto-persona (who to recruit)
 - **Downstream:** Post-launch retrospective; launch communications (customer quotes)
-- **Related:** ps-lofi-experimentation (if earlier rounds of user testing have not occurred, use this skill before planning a readiness test)
+- **Related:** psk-lofi-experimentation (if earlier rounds of user testing have not occurred, use this skill before planning a readiness test)
 
 ###### Capacity Reference
 
@@ -10544,7 +10544,7 @@ Complete after the test concludes.
 | Target | 3-8 words | Numeric or percentage threshold |
 | Assumptions/Risks bullet | 15-25 words | Named constraint with reason |
 
-#### ps-product-readiness / Examples
+#### psk-product-readiness / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -10563,7 +10563,7 @@ Illustrative and fictional, not customer evidence.
 
 - **Assumptions and Risks Section Left Blank:** Every readiness test has scope limits. Name them. Incomplete integrations, missing training materials, single-segment coverage, deferred security testing: these are real and nameable. Documenting them is not weakness. It is honesty.
 
-- **This Is the First Time Users Have Tested the Product:** Confirm that earlier testing has occurred before planning a readiness test. If it has not, the better path is lo-fi experimentation (ps-lofi-experimentation) or a structured discovery session, not a formal beta program.
+- **This Is the First Time Users Have Tested the Product:** Confirm that earlier testing has occurred before planning a readiness test. If it has not, the better path is lo-fi experimentation (psk-lofi-experimentation) or a structured discovery session, not a formal beta program.
 
 - **Test Duration Defined Only in Calendar Days:** Anchor duration to a product usage cycle ("one full scheduling cycle"), a minimum usage expectation ("three sessions of at least 30 minutes each within the two-week window"), or a task completion definition ("the test ends when participants have completed their first end-to-end workflow"). Calendar time is secondary.
 
@@ -10583,15 +10583,15 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 22: Measuring Outcomes
 
-Stable identifier: `ps-measuring-outcomes`.
+Stable identifier: `psk-measuring-outcomes`.
 
-#### ps-measuring-outcomes / Instructions
+#### psk-measuring-outcomes / Instructions
 
 ##### Purpose
 
 Create a **Productside-style Measuring Outcomes dashboard** from the Product Manager's Outcome Tree and product analytics baseline.
 
-This is a **Deliver phase** skill. It runs after launch, when real data begins to flow. The dashboard ties each outcome from ps-outcome-tree to specific metrics, named measurement tools, and a baseline - then tracks quarterly and annual updates against that baseline.
+This is a **Deliver phase** skill. It runs after launch, when real data begins to flow. The dashboard ties each outcome from psk-outcome-tree to specific metrics, named measurement tools, and a baseline - then tracks quarterly and annual updates against that baseline.
 
 The point is not to list every possible metric. The point is to build a focused, regularly updated signal system that tells the PM and senior leadership whether the product is delivering on what it promised. The playbook says this belongs in front of the CEO.
 
@@ -10599,7 +10599,7 @@ This is a living document, not a one-time artifact. A dashboard that is built at
 
 ###### Usage Notes
 
-- Upstream dependency: ps-outcome-tree (Business Outcome and Product Outcome fields)
+- Upstream dependency: psk-outcome-tree (Business Outcome and Product Outcome fields)
 - Deliver-phase endpoint: no skills currently feed downstream from this one
 - One product outcome per dashboard; multiple dashboards for multiple outcomes
 - The two-table structure (Product Success Metrics / Product Health Metrics) is load-bearing - do not conflate the tables
@@ -10667,14 +10667,14 @@ The update columns are not aspirational. Set a calendar cadence at the end of th
 
 ###### This Builds Directly from the Outcome Tree
 
-The PM should not invent new outcomes for this dashboard. The Business Outcome and Product Outcome fields come verbatim from ps-outcome-tree. If the PM does not have an Outcome Tree, ask for an equivalent statement of what the product is trying to achieve and who benefits.
+The PM should not invent new outcomes for this dashboard. The Business Outcome and Product Outcome fields come verbatim from psk-outcome-tree. If the PM does not have an Outcome Tree, ask for an equivalent statement of what the product is trying to achieve and who benefits.
 
 ###### How AI Supports This Play
 
 The Playbook casts AI as a **grader of the metrics the PM drafted**. It sorts them, says which track real customer behavior toward the outcome and which are business results, operational plumbing, or a reflexive satisfaction score, then pushes the PM to imagine behaviors worth watching. What AI cannot do is say the outcome was met. That verdict comes from real data, read by the PM.
 
 - **Use it when:** the PM has product outcomes from the Outcome Tree and wants metrics that prove customers are behaving the way the outcome predicts.
-- **Avoid it when:** the product outcome is vague or is really a business outcome. AI will hand over confident metrics aimed at the wrong target. Fix the outcome first (Step 1, or ps-outcome-tree).
+- **Avoid it when:** the product outcome is vague or is really a business outcome. AI will hand over confident metrics aimed at the wrong target. Fix the outcome first (Step 1, or psk-outcome-tree).
 - **Return:** each metric sorted into success, health, or business; lagging and lazy metrics sent back for a rethink; and customer behaviors that signal the outcome is moving, as candidates for the PM to judge.
 
 ###### Working With AI
@@ -10697,7 +10697,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-measuring-outcomes--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-measuring-outcomes--template) for the scaffold.
 
 
 ###### Required Output Convention
@@ -10725,7 +10725,7 @@ If the answer is "this describes what we built" or "this describes system capabi
 
 ###### Step 2: Gather the Outcome Tree
 
-Ask whether the user has a completed ps-outcome-tree artifact. If yes, pull the Business Outcome and Product Outcome verbatim. If not, ask for:
+Ask whether the user has a completed psk-outcome-tree artifact. If yes, pull the Business Outcome and Product Outcome verbatim. If not, ask for:
 
 - What business-level outcome is this product trying to drive? (revenue, cost reduction, efficiency, retention - with a specific target if available)
 - What does the customer achieve through using the product? (the product outcome - a change in their behavior, capability, or results)
@@ -10810,7 +10810,7 @@ After delivering the artifact, offer three options:
 2. Share the dashboard with senior leadership, including the business outcomes header as context
 3. Connect this dashboard back to the Outcome Tree - if metrics are consistently off-target by Q2, consider whether the product outcome itself needs to be revised
 
-#### ps-measuring-outcomes / Template
+#### psk-measuring-outcomes / Template
 
 **Template 22 of 24 | Phase: Deliver | Type: Component**
 
@@ -10822,7 +10822,7 @@ After delivering the artifact, offer three options:
 
 > _Copy the Business Outcome verbatim from your Outcome Tree. This is the business-level goal your product is intended to drive - a specific, measurable direction at the organizational level. Budget: 15-25 words._
 
-[Business Outcome from ps-outcome-tree]
+[Business Outcome from psk-outcome-tree]
 
 **Quality check:** Does this describe a business-level result (revenue, cost, efficiency, retention) with a measurable direction? If it describes what the product does rather than what the business achieves, revise before proceeding.
 
@@ -10832,7 +10832,7 @@ After delivering the artifact, offer three options:
 
 > _Copy the Product Outcome verbatim from your Outcome Tree. This is what the customer achieves through using the product - the specific change in their behavior, capability, or results. Track one product outcome per dashboard. Budget: 15-25 words._
 
-[Product Outcome from ps-outcome-tree]
+[Product Outcome from psk-outcome-tree]
 
 **Quality check:** Does this describe what the customer achieves, not what the engineering team shipped? If the subject of this sentence is your product or your team rather than your customer, it needs to be reframed.
 
@@ -10889,7 +10889,7 @@ Owner responsible for pulling data: [name and role]
 
 This dashboard is shared with: [audience - including leadership level]
 
-#### ps-measuring-outcomes / Examples
+#### psk-measuring-outcomes / Examples
 
 Illustrative and fictional, not customer evidence.
 
@@ -10929,14 +10929,14 @@ Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additio
 
 ### Play 23: Outcome Tree, Section Two
 
-Read Section Two within [the shared Outcome Tree reference](playbook-skills.md#ps-outcome-tree--instructions). The full content is stored once under Context.
+Read Section Two within [the shared Outcome Tree reference](playbook-skills.md#psk-outcome-tree--instructions). The full content is stored once under Context.
 
 
 ### Play 24: Process Retrospective
 
-Stable identifier: `ps-process-retrospective`.
+Stable identifier: `psk-process-retrospective`.
 
-#### ps-process-retrospective / Instructions
+#### psk-process-retrospective / Instructions
 
 ##### Purpose
 
@@ -10964,7 +10964,7 @@ This is not a software sprint retrospective. The standard agile format (What Wen
 - No tech-role bias guard applies here. Step 1 instead confirms the scope and timeframe of the retro.
 - Psychological safety is the prerequisite. If the Anchors quadrant is empty or vague, the retro has not worked.
 - Action items with owners and dates are the primary deliverable. A retro without them is just a meeting.
-- Downstream: ps-risk-assessment - significant Barriers identified in the retro may warrant formal risk planning.
+- Downstream: psk-risk-assessment - significant Barriers identified in the retro may warrant formal risk planning.
 
 ##### Key Concepts
 
@@ -11044,7 +11044,7 @@ Guided teaches while completing the work. Expert moves experienced users from co
 
 ##### Application
 
-Use [Template](playbook-skills.md#ps-process-retrospective--template) for the scaffold.
+Use [Template](playbook-skills.md#psk-process-retrospective--template) for the scaffold.
 
 
 ###### If the PM Brings a Draft
@@ -11153,9 +11153,9 @@ After completing the documented artifact, offer:
 
 1. Share the completed retro with the full team for review - the people in the room should see the documented output before it is filed.
 2. Schedule a follow-up check-in at the next logical milestone to review action item progress. A retro with no follow-up is a filing exercise.
-3. Note whether any Barriers identified here should feed into a risk assessment (ps-risk-assessment) if they are significant enough to warrant formal mitigation and contingency planning.
+3. Note whether any Barriers identified here should feed into a risk assessment (psk-risk-assessment) if they are significant enough to warrant formal mitigation and contingency planning.
 
-#### ps-process-retrospective / Template
+#### psk-process-retrospective / Template
 
 ###### When to Use This
 
@@ -11310,10 +11310,10 @@ The four quadrants use a nautical metaphor. Upper quadrants are positive (what h
 ```
 
 > Quality check: Are these future-facing? If an item describes something that already happened, it belongs in Anchors.
-> Quality check: Are the most significant Barriers candidates for formal risk planning (ps-risk-assessment)?
+> Quality check: Are the most significant Barriers candidates for formal risk planning (psk-risk-assessment)?
 > Capacity check: 5-8 words per item (sticky-note sized).
 
-#### ps-process-retrospective / Examples
+#### psk-process-retrospective / Examples
 
 Illustrative and fictional, not customer evidence.
 

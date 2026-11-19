@@ -2,12 +2,12 @@
 title: Pressure-Test Your Customer Storyboard
 play_number: null
 play: Storyboarding
-skill: ps-storyboarding
+skill: psk-storyboarding
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-storyboarding/SKILL.md
+  based_on: skills/psk-storyboarding/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

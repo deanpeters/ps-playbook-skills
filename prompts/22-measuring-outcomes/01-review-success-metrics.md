@@ -2,7 +2,7 @@
 title: Review Success Metrics
 play_number: 22
 play: Measuring Outcomes
-skill: ps-measuring-outcomes
+skill: psk-measuring-outcomes
 sequence: 1
 sequence_total: 1
 source:

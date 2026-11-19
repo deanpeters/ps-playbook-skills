@@ -2,7 +2,7 @@
 title: First Pass Market Sizing
 play_number: 4
 play: Market Selection & Sizing
-skill: ps-market-selection-sizing
+skill: psk-market-selection-sizing
 sequence: 4
 sequence_total: 4
 source:

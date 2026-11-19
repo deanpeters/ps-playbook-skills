@@ -2,7 +2,7 @@
 title: Prioritize Assumptions
 play_number: 18
 play: Tiny Acts of Discovery
-skill: ps-tiny-acts-discovery
+skill: psk-tiny-acts-discovery
 sequence: 1
 sequence_total: 2
 source:

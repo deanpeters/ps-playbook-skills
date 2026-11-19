@@ -2,7 +2,7 @@
 title: Refine Problem Statements
 play_number: 9
 play: Problem Identification
-skill: ps-problem-identification
+skill: psk-problem-identification
 sequence: 1
 sequence_total: 1
 source:

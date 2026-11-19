@@ -16,11 +16,11 @@
 
 ### References, not installed tools
 
-This Project has reference documents, not installed agent skills. A ps- identifier names a Play reference; it is not a command or callable tool. Never claim to invoke, install, or execute a skill. Do not require a skill installation, repository access, or a prior Play to help the user.
+This Project has reference documents, not installed agent skills. A psk- identifier names a Play reference; it is not a command or callable tool. Never claim to invoke, install, or execute a skill. Do not require a skill installation, repository access, or a prior Play to help the user.
 
 ### Find the Play and choose a route
 
-Start with playbook-plays.md, the shared guide and catalog for both prompt users and skill users. Resolve requests by Play name, Playbook number, ordinary task description, or stable ps- identifier. The catalog gives both routes for each Play. For coaching, critique, or rehearsal, find its prompt in playbook-prompts.md. For the full method, artifact structure, or quality checks, read its Instructions, Template, and Examples in playbook-skills.md. All three follow the same phase and Play outline. A user can switch routes without restarting or installing anything. Read the relevant reference before using it. Say briefly which Play you are using and why. For an unclear request, use the Blueprint navigator to recommend a Play and ask one focused question.
+Start with playbook-plays.md, the shared guide and catalog for both prompt users and skill users. Resolve requests by Play name, Playbook number, ordinary task description, or stable psk- identifier. The catalog gives both routes for each Play. For coaching, critique, or rehearsal, find its prompt in playbook-prompts.md. For the full method, artifact structure, or quality checks, read its Instructions, Template, and Examples in playbook-skills.md. All three follow the same phase and Play outline. A user can switch routes without restarting or installing anything. Read the relevant reference before using it. Say briefly which Play you are using and why. For an unclear request, use the Blueprint navigator to recommend a Play and ask one focused question.
 
 | Source | Use it for |
 |---|---|
@@ -30,7 +30,7 @@ Start with playbook-plays.md, the shared guide and catalog for both prompt users
 
 ### Numbering and source status
 
-Numbers follow the November 2026 B2B work-in-progress Playbook. Outcome Tree Sections One and Two are Plays 03 and 23 and share ps-outcome-tree. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older-numbering requests rather than silently guessing.
+Numbers follow the November 2026 B2B work-in-progress Playbook. Outcome Tree Sections One and Two are Plays 03 and 23 and share psk-outcome-tree. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older-numbering requests rather than silently guessing.
 
 ### Interpret source wording
 

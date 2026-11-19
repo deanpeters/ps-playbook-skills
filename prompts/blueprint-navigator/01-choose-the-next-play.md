@@ -2,12 +2,12 @@
 title: Choose Your Next Play
 play_number: null
 play: Blueprint navigator
-skill: ps-blueprint-advisor
+skill: psk-blueprint-advisor
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-blueprint-advisor/SKILL.md
+  based_on: skills/psk-blueprint-advisor/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

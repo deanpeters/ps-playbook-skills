@@ -2,7 +2,7 @@
 title: Pressure Test the Market
 play_number: 4
 play: Market Selection & Sizing
-skill: ps-market-selection-sizing
+skill: psk-market-selection-sizing
 sequence: 1
 sequence_total: 4
 source:

@@ -2,12 +2,12 @@
 title: Check Your Outcome Tree Before Discovery
 play_number: 3
 play: Outcome Tree, Section One
-skill: ps-outcome-tree
+skill: psk-outcome-tree
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-tree/SKILL.md
+  based_on: skills/psk-outcome-tree/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

@@ -2,7 +2,7 @@
 title: Prepare interview guide
 play_number: 7
 play: Empathy Interviews
-skill: ps-empathy-interviews
+skill: psk-empathy-interviews
 sequence: 1
 sequence_total: 2
 source:

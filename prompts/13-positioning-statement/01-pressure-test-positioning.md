@@ -2,7 +2,7 @@
 title: Pressure-Test Positioning
 play_number: 13
 play: Positioning Statement
-skill: ps-positioning-statement
+skill: psk-positioning-statement
 sequence: 1
 sequence_total: 1
 source:

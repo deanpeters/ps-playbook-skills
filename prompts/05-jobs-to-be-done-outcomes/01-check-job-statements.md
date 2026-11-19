@@ -2,7 +2,7 @@
 title: Check Job Statements
 play_number: 5
 play: Jobs-to-Be-Done & Outcomes
-skill: ps-jobs-to-be-done
+skill: psk-jobs-to-be-done
 sequence: 1
 sequence_total: 2
 source:

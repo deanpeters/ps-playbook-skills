@@ -2,12 +2,12 @@
 title: Pressure-Test Your Stakeholder Map
 play_number: 2
 play: Stakeholder Alignment
-skill: ps-stakeholder-alignment
+skill: psk-stakeholder-alignment
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-stakeholder-alignment/SKILL.md
+  based_on: skills/psk-stakeholder-alignment/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

@@ -2,7 +2,7 @@
 title: Rehearse a Prioritization Session
 play_number: 19
 play: Output Prioritization
-skill: ps-output-prioritization
+skill: psk-output-prioritization
 sequence: 1
 sequence_total: 1
 source:

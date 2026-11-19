@@ -2,12 +2,12 @@
 title: Prepare and Close Out Your Retrospective
 play_number: 24
 play: Process Retrospective
-skill: ps-process-retrospective
+skill: psk-process-retrospective
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-process-retrospective/SKILL.md
+  based_on: skills/psk-process-retrospective/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

@@ -2,7 +2,7 @@
 title: Learn Affinity Mapping
 play_number: 8
 play: Affinity Mapping
-skill: ps-affinity-mapping
+skill: psk-affinity-mapping
 sequence: 1
 sequence_total: 1
 source:

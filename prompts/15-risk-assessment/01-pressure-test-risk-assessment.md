@@ -2,12 +2,12 @@
 title: Widen and Pressure-Test Your Risk Assessment
 play_number: 15
 play: Risk Assessment
-skill: ps-risk-assessment
+skill: psk-risk-assessment
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-risk-assessment/SKILL.md
+  based_on: skills/psk-risk-assessment/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

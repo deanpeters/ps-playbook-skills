@@ -2,7 +2,7 @@
 title: Review a Research-Based Persona
 play_number: 6
 play: Personas & Proto-Personas
-skill: ps-proto-persona
+skill: psk-proto-persona
 sequence: 2
 sequence_total: 2
 source:

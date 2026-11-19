@@ -2,7 +2,7 @@
 title: Define the Riskiest Assumption
 play_number: 14
 play: Lo-fi Experimentation
-skill: ps-lofi-experimentation
+skill: psk-lofi-experimentation
 sequence: 1
 sequence_total: 2
 source:

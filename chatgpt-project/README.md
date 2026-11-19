@@ -54,7 +54,7 @@ flowchart LR
 For example, **Play 05: Jobs-to-Be-Done & Outcomes** links to:
 
 - Its prompts in playbook-prompts.md, in sequence.
-- `ps-jobs-to-be-done / Instructions` in playbook-skills.md, with embedded Template and Examples sections.
+- `psk-jobs-to-be-done / Instructions` in playbook-skills.md, with embedded Template and Examples sections.
 
 The guide and prompt collection have separate entries for all 24 numbered Plays, plus the unnumbered Blueprint navigator and Storyboarding. The skill collection stores the full Outcome Tree reference once, under Context; Play 23 under Deliver points back to its Section Two. Play 16 is Product Outcome Canvas in this edition.
 

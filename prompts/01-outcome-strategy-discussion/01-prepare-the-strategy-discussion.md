@@ -2,12 +2,12 @@
 title: Prepare Your Outcome and Strategy Discussion
 play_number: 1
 play: Outcome & Strategy Discussion
-skill: ps-outcome-strategy-discussion
+skill: psk-outcome-strategy-discussion
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-strategy-discussion/SKILL.md
+  based_on: skills/psk-outcome-strategy-discussion/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

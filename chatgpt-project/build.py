@@ -74,8 +74,8 @@ def prompt_group(path):
         raise ValueError(f"Prompt is missing source metadata: {path.name}")
     fields = source.group(1)
     if re.search(r"^  kind: authored$", fields, re.M):
-        match = re.search(r"^  based_on: (skills/ps-[\w-]+/SKILL\.md)$", fields, re.M)
-        skill = re.search(r"^skill: (ps-[\w-]+)$", front, re.M)
+        match = re.search(r"^  based_on: (skills/psk-[\w-]+/SKILL\.md)$", fields, re.M)
+        skill = re.search(r"^skill: (psk-[\w-]+)$", front, re.M)
         if not match or not skill or match.group(1) != f"skills/{skill.group(1)}/SKILL.md":
             raise ValueError(f"Authored prompt must identify its matching Play source: {path.name}")
         if not (ROOT / match.group(1)).is_file():
@@ -95,11 +95,11 @@ def load_plays():
     for line in (ROOT / "skills/README.md").read_text().splitlines():
         if line.startswith("### "):
             phase = line[4:]
-        match = re.match(r"\| \[(ps-[\w-]+)\]\([^)]+\) \| ([^|]+) \|", line)
+        match = re.match(r"\| \[(psk-[\w-]+)\]\([^)]+\) \| ([^|]+) \|", line)
         if not match:
             continue
         play_id, number = match.groups()
-        title = TITLES[play_id[3:]]
+        title = TITLES[play_id.removeprefix("psk-")]
         if phase not in PHASES:
             raise ValueError(f"Unknown Blueprint phase: {phase}")
         filename = SKILLS
@@ -129,10 +129,10 @@ def play_entries(plays):
     entries = []
     for play in plays:
         entry = dict(play)
-        if play["id"] == "ps-outcome-tree":
+        if play["id"] == "psk-outcome-tree":
             entry.update(number="03", title="Outcome Tree, Section One")
-        if play["id"] == "ps-process-retrospective":
-            tree = next(p for p in plays if p["id"] == "ps-outcome-tree")
+        if play["id"] == "psk-process-retrospective":
+            tree = next(p for p in plays if p["id"] == "psk-outcome-tree")
             entries.append(dict(tree, number="23", title="Outcome Tree, Section Two", phase="Deliver"))
         entries.append(entry)
     for entry in entries:
@@ -143,7 +143,7 @@ def play_entries(plays):
 
 def prompt_skill(path):
     front = path.read_text().split("---", 2)[1]
-    match = re.search(r"^skill: (ps-[\w-]+)$", front, re.M)
+    match = re.search(r"^skill: (psk-[\w-]+)$", front, re.M)
     if not match:
         raise ValueError(f"Prompt is missing its Play identifier: {path.name}")
     return match.group(1)
@@ -285,9 +285,9 @@ def build():
              "## Try it\n",
              '> "Help me choose a Play. Our warehouse supervisors stop using our scheduling tool after their first week. Guide me one question at a time."\n',
              '> "Use Play 05 to critique my draft job statements. Find its coaching prompt first; use the skill reference if we need the template or format rules."\n',
-             f"## Using the three files\n\nIn a ChatGPT Project, add this guide, {PROMPTS}, and {SKILLS} as sources and paste project-instructions-compact.txt into the Project's Instructions box. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.\n\nOutside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/ps-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.\n",
+             f"## Using the three files\n\nIn a ChatGPT Project, add this guide, {PROMPTS}, and {SKILLS} as sources and paste project-instructions-compact.txt into the Project's Instructions box. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.\n\nOutside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/psk-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.\n",
              "## Find a Play\n",
-             "Use the number, name, or ps- identifier. Both companion files follow this guide's phase and Play order. Section Two of the Outcome Tree (Play 23) points to the same full skill as Section One (Play 03); its prompt has a separate Deliver entry. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older numbering by Play name.\n",
+             "Use the number, name, or psk- identifier. Both companion files follow this guide's phase and Play order. Section Two of the Outcome Tree (Play 23) points to the same full skill as Section One (Play 03); its prompt has a separate Deliver entry. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older numbering by Play name.\n",
              "| Play | Name | Prompts | Full skill |\n|---|---|---|---|"]
     for entry in entries:
         guide.append(f'| {entry["number"]} | {entry["title"]} | {link(PROMPTS, entry["heading"], "Open prompts")} | {link(SKILLS, entry["id"] + " / Instructions", entry["id"])} |')

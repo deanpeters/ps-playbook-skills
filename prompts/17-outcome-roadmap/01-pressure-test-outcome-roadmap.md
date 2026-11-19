@@ -2,12 +2,12 @@
 title: Pressure-Test Your Outcome-Based Roadmap
 play_number: 17
 play: Outcome-Based Roadmap & Release Plan
-skill: ps-outcome-roadmap
+skill: psk-outcome-roadmap
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-roadmap/SKILL.md
+  based_on: skills/psk-outcome-roadmap/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:

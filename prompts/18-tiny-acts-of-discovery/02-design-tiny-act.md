@@ -2,7 +2,7 @@
 title: Design a Tiny Act of Discovery
 play_number: 18
 play: Tiny Acts of Discovery
-skill: ps-tiny-acts-discovery
+skill: psk-tiny-acts-discovery
 sequence: 2
 sequence_total: 2
 source:

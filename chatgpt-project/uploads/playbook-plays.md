@@ -31,40 +31,40 @@ You can switch modes during a conversation. Supplied context is reused. Every mo
 
 In a ChatGPT Project, add this guide, playbook-prompts.md, and playbook-skills.md as sources and paste project-instructions-compact.txt into the Project's Instructions box. They are reference documents; no agent skills are installed by uploading them. Start a new chat for each distinct outcome.
 
-Outside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/ps-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.
+Outside a Project, copy a prompt into your AI chat, or attach the individual Play's SKILL.md from the repository. In an agent tool that supports installed skills, use the corresponding skills/psk-.../ folder and that tool's installation instructions. Each folder contains only SKILL.md.
 
 ## Find a Play
 
-Use the number, name, or ps- identifier. Both companion files follow this guide's phase and Play order. Section Two of the Outcome Tree (Play 23) points to the same full skill as Section One (Play 03); its prompt has a separate Deliver entry. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older numbering by Play name.
+Use the number, name, or psk- identifier. Both companion files follow this guide's phase and Play order. Section Two of the Outcome Tree (Play 23) points to the same full skill as Section One (Play 03); its prompt has a separate Deliver entry. Storyboarding and the Blueprint navigator are unnumbered. Play 16 is Product Outcome Canvas. Clarify older numbering by Play name.
 
 | Play | Name | Prompts | Full skill |
 |---|---|---|---|
-| Unnumbered | Blueprint navigator | [Open prompts](playbook-prompts.md#unnumbered-blueprint-navigator) | [ps-blueprint-advisor](playbook-skills.md#ps-blueprint-advisor--instructions) |
-| 01 | Outcome & Strategy Discussion | [Open prompts](playbook-prompts.md#play-01-outcome--strategy-discussion) | [ps-outcome-strategy-discussion](playbook-skills.md#ps-outcome-strategy-discussion--instructions) |
-| 02 | Stakeholder Alignment | [Open prompts](playbook-prompts.md#play-02-stakeholder-alignment) | [ps-stakeholder-alignment](playbook-skills.md#ps-stakeholder-alignment--instructions) |
-| 03 | Outcome Tree, Section One | [Open prompts](playbook-prompts.md#play-03-outcome-tree-section-one) | [ps-outcome-tree](playbook-skills.md#ps-outcome-tree--instructions) |
-| 04 | Market Selection & Sizing | [Open prompts](playbook-prompts.md#play-04-market-selection--sizing) | [ps-market-selection-sizing](playbook-skills.md#ps-market-selection-sizing--instructions) |
-| 05 | Jobs-to-Be-Done & Outcomes | [Open prompts](playbook-prompts.md#play-05-jobs-to-be-done--outcomes) | [ps-jobs-to-be-done](playbook-skills.md#ps-jobs-to-be-done--instructions) |
-| 06 | Personas & Proto-Personas | [Open prompts](playbook-prompts.md#play-06-personas--proto-personas) | [ps-proto-persona](playbook-skills.md#ps-proto-persona--instructions) |
-| 07 | Empathy Interviews | [Open prompts](playbook-prompts.md#play-07-empathy-interviews) | [ps-empathy-interviews](playbook-skills.md#ps-empathy-interviews--instructions) |
-| 08 | Affinity Mapping | [Open prompts](playbook-prompts.md#play-08-affinity-mapping) | [ps-affinity-mapping](playbook-skills.md#ps-affinity-mapping--instructions) |
-| 09 | Problem Identification | [Open prompts](playbook-prompts.md#play-09-problem-identification) | [ps-problem-identification](playbook-skills.md#ps-problem-identification--instructions) |
-| 10 | Framing the Problem | [Open prompts](playbook-prompts.md#play-10-framing-the-problem) | [ps-framing-the-problem](playbook-skills.md#ps-framing-the-problem--instructions) |
-| 11 | Exploring the Solution Space | [Open prompts](playbook-prompts.md#play-11-exploring-the-solution-space) | [ps-exploring-solution-space](playbook-skills.md#ps-exploring-solution-space--instructions) |
-| 12 | Solution Hypothesis | [Open prompts](playbook-prompts.md#play-12-solution-hypothesis) | [ps-solution-hypothesis](playbook-skills.md#ps-solution-hypothesis--instructions) |
-| 13 | Positioning Statement | [Open prompts](playbook-prompts.md#play-13-positioning-statement) | [ps-positioning-statement](playbook-skills.md#ps-positioning-statement--instructions) |
-| 14 | Lo-fi Experimentation | [Open prompts](playbook-prompts.md#play-14-lo-fi-experimentation) | [ps-lofi-experimentation](playbook-skills.md#ps-lofi-experimentation--instructions) |
-| Unnumbered | Storyboarding | [Open prompts](playbook-prompts.md#unnumbered-storyboarding) | [ps-storyboarding](playbook-skills.md#ps-storyboarding--instructions) |
-| 15 | Risk Assessment | [Open prompts](playbook-prompts.md#play-15-risk-assessment) | [ps-risk-assessment](playbook-skills.md#ps-risk-assessment--instructions) |
-| 16 | Product Outcome Canvas | [Open prompts](playbook-prompts.md#play-16-product-outcome-canvas) | [ps-product-outcome-canvas](playbook-skills.md#ps-product-outcome-canvas--instructions) |
-| 17 | Outcome-Based Roadmap & Release Plan | [Open prompts](playbook-prompts.md#play-17-outcome-based-roadmap--release-plan) | [ps-outcome-roadmap](playbook-skills.md#ps-outcome-roadmap--instructions) |
-| 18 | Tiny Acts of Discovery | [Open prompts](playbook-prompts.md#play-18-tiny-acts-of-discovery) | [ps-tiny-acts-discovery](playbook-skills.md#ps-tiny-acts-discovery--instructions) |
-| 19 | Output Prioritization | [Open prompts](playbook-prompts.md#play-19-output-prioritization) | [ps-output-prioritization](playbook-skills.md#ps-output-prioritization--instructions) |
-| 20 | Go-to-Market Enablement | [Open prompts](playbook-prompts.md#play-20-go-to-market-enablement) | [ps-go-to-market](playbook-skills.md#ps-go-to-market--instructions) |
-| 21 | Product Readiness Testing | [Open prompts](playbook-prompts.md#play-21-product-readiness-testing) | [ps-product-readiness](playbook-skills.md#ps-product-readiness--instructions) |
-| 22 | Measuring Outcomes | [Open prompts](playbook-prompts.md#play-22-measuring-outcomes) | [ps-measuring-outcomes](playbook-skills.md#ps-measuring-outcomes--instructions) |
-| 23 | Outcome Tree, Section Two | [Open prompts](playbook-prompts.md#play-23-outcome-tree-section-two) | [ps-outcome-tree](playbook-skills.md#ps-outcome-tree--instructions) |
-| 24 | Process Retrospective | [Open prompts](playbook-prompts.md#play-24-process-retrospective) | [ps-process-retrospective](playbook-skills.md#ps-process-retrospective--instructions) |
+| Unnumbered | Blueprint navigator | [Open prompts](playbook-prompts.md#unnumbered-blueprint-navigator) | [psk-blueprint-advisor](playbook-skills.md#psk-blueprint-advisor--instructions) |
+| 01 | Outcome & Strategy Discussion | [Open prompts](playbook-prompts.md#play-01-outcome--strategy-discussion) | [psk-outcome-strategy-discussion](playbook-skills.md#psk-outcome-strategy-discussion--instructions) |
+| 02 | Stakeholder Alignment | [Open prompts](playbook-prompts.md#play-02-stakeholder-alignment) | [psk-stakeholder-alignment](playbook-skills.md#psk-stakeholder-alignment--instructions) |
+| 03 | Outcome Tree, Section One | [Open prompts](playbook-prompts.md#play-03-outcome-tree-section-one) | [psk-outcome-tree](playbook-skills.md#psk-outcome-tree--instructions) |
+| 04 | Market Selection & Sizing | [Open prompts](playbook-prompts.md#play-04-market-selection--sizing) | [psk-market-selection-sizing](playbook-skills.md#psk-market-selection-sizing--instructions) |
+| 05 | Jobs-to-Be-Done & Outcomes | [Open prompts](playbook-prompts.md#play-05-jobs-to-be-done--outcomes) | [psk-jobs-to-be-done](playbook-skills.md#psk-jobs-to-be-done--instructions) |
+| 06 | Personas & Proto-Personas | [Open prompts](playbook-prompts.md#play-06-personas--proto-personas) | [psk-proto-persona](playbook-skills.md#psk-proto-persona--instructions) |
+| 07 | Empathy Interviews | [Open prompts](playbook-prompts.md#play-07-empathy-interviews) | [psk-empathy-interviews](playbook-skills.md#psk-empathy-interviews--instructions) |
+| 08 | Affinity Mapping | [Open prompts](playbook-prompts.md#play-08-affinity-mapping) | [psk-affinity-mapping](playbook-skills.md#psk-affinity-mapping--instructions) |
+| 09 | Problem Identification | [Open prompts](playbook-prompts.md#play-09-problem-identification) | [psk-problem-identification](playbook-skills.md#psk-problem-identification--instructions) |
+| 10 | Framing the Problem | [Open prompts](playbook-prompts.md#play-10-framing-the-problem) | [psk-framing-the-problem](playbook-skills.md#psk-framing-the-problem--instructions) |
+| 11 | Exploring the Solution Space | [Open prompts](playbook-prompts.md#play-11-exploring-the-solution-space) | [psk-exploring-solution-space](playbook-skills.md#psk-exploring-solution-space--instructions) |
+| 12 | Solution Hypothesis | [Open prompts](playbook-prompts.md#play-12-solution-hypothesis) | [psk-solution-hypothesis](playbook-skills.md#psk-solution-hypothesis--instructions) |
+| 13 | Positioning Statement | [Open prompts](playbook-prompts.md#play-13-positioning-statement) | [psk-positioning-statement](playbook-skills.md#psk-positioning-statement--instructions) |
+| 14 | Lo-fi Experimentation | [Open prompts](playbook-prompts.md#play-14-lo-fi-experimentation) | [psk-lofi-experimentation](playbook-skills.md#psk-lofi-experimentation--instructions) |
+| Unnumbered | Storyboarding | [Open prompts](playbook-prompts.md#unnumbered-storyboarding) | [psk-storyboarding](playbook-skills.md#psk-storyboarding--instructions) |
+| 15 | Risk Assessment | [Open prompts](playbook-prompts.md#play-15-risk-assessment) | [psk-risk-assessment](playbook-skills.md#psk-risk-assessment--instructions) |
+| 16 | Product Outcome Canvas | [Open prompts](playbook-prompts.md#play-16-product-outcome-canvas) | [psk-product-outcome-canvas](playbook-skills.md#psk-product-outcome-canvas--instructions) |
+| 17 | Outcome-Based Roadmap & Release Plan | [Open prompts](playbook-prompts.md#play-17-outcome-based-roadmap--release-plan) | [psk-outcome-roadmap](playbook-skills.md#psk-outcome-roadmap--instructions) |
+| 18 | Tiny Acts of Discovery | [Open prompts](playbook-prompts.md#play-18-tiny-acts-of-discovery) | [psk-tiny-acts-discovery](playbook-skills.md#psk-tiny-acts-discovery--instructions) |
+| 19 | Output Prioritization | [Open prompts](playbook-prompts.md#play-19-output-prioritization) | [psk-output-prioritization](playbook-skills.md#psk-output-prioritization--instructions) |
+| 20 | Go-to-Market Enablement | [Open prompts](playbook-prompts.md#play-20-go-to-market-enablement) | [psk-go-to-market](playbook-skills.md#psk-go-to-market--instructions) |
+| 21 | Product Readiness Testing | [Open prompts](playbook-prompts.md#play-21-product-readiness-testing) | [psk-product-readiness](playbook-skills.md#psk-product-readiness--instructions) |
+| 22 | Measuring Outcomes | [Open prompts](playbook-prompts.md#play-22-measuring-outcomes) | [psk-measuring-outcomes](playbook-skills.md#psk-measuring-outcomes--instructions) |
+| 23 | Outcome Tree, Section Two | [Open prompts](playbook-prompts.md#play-23-outcome-tree-section-two) | [psk-outcome-tree](playbook-skills.md#psk-outcome-tree--instructions) |
+| 24 | Process Retrospective | [Open prompts](playbook-prompts.md#play-24-process-retrospective) | [psk-process-retrospective](playbook-skills.md#psk-process-retrospective--instructions) |
 
 ## Navigator (cross-phase)
 
@@ -76,7 +76,7 @@ Place a team on the Productside Blueprint, coach a phase, or audit a decision ag
 
 - [Choose the next play](playbook-prompts.md#library-authored--blueprint-navigator--01-choose-the-next-playmd) (Library-authored).
 
-**Skill route:** [ps-blueprint-advisor](playbook-skills.md#ps-blueprint-advisor--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-blueprint-advisor](playbook-skills.md#psk-blueprint-advisor--instructions). Read Instructions, Template, and Examples in that reference.
 
 
 ## Context
@@ -89,7 +89,7 @@ Facilitate a structured Product Manager-manager alignment conversation to confir
 
 - [Prepare the strategy discussion](playbook-prompts.md#library-authored--01-outcome-strategy-discussion--01-prepare-the-strategy-discussionmd) (Library-authored).
 
-**Skill route:** [ps-outcome-strategy-discussion](playbook-skills.md#ps-outcome-strategy-discussion--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-outcome-strategy-discussion](playbook-skills.md#psk-outcome-strategy-discussion--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 02: Stakeholder Alignment
 
@@ -99,7 +99,7 @@ Map stakeholders by role, interest, and influence, then assign engagement strate
 
 - [Pressure test stakeholder map](playbook-prompts.md#library-authored--02-stakeholder-alignment--01-pressure-test-stakeholder-mapmd) (Library-authored).
 
-**Skill route:** [ps-stakeholder-alignment](playbook-skills.md#ps-stakeholder-alignment--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-stakeholder-alignment](playbook-skills.md#psk-stakeholder-alignment--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 03: Outcome Tree, Section One
 
@@ -109,7 +109,7 @@ Connect business outcomes to product outcomes using the Productside Outcome Tree
 
 - [Check outcome tree](playbook-prompts.md#library-authored--03-outcome-tree-section-one--01-check-outcome-treemd) (Library-authored).
 
-**Skill route:** [ps-outcome-tree](playbook-skills.md#ps-outcome-tree--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-outcome-tree](playbook-skills.md#psk-outcome-tree--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 04: Market Selection & Sizing
 
@@ -122,7 +122,7 @@ Name a market, run a PESTEL on it, cut it into at least two segments with the us
 - [Segment the market](playbook-prompts.md#deck--04-market-selection-sizing--03-segment-the-marketmd) (Deck).
 - [First pass market sizing](playbook-prompts.md#deck--04-market-selection-sizing--04-first-pass-market-sizingmd) (Deck).
 
-**Skill route:** [ps-market-selection-sizing](playbook-skills.md#ps-market-selection-sizing--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-market-selection-sizing](playbook-skills.md#psk-market-selection-sizing--instructions). Read Instructions, Template, and Examples in that reference.
 
 
 ## Discover + Investigate
@@ -136,7 +136,7 @@ Identify customer Jobs-to-Be-Done and desired Product Outcomes using Productside
 - [Check job statements](playbook-prompts.md#deck--05-jobs-to-be-done-outcomes--01-check-job-statementsmd) (Deck).
 - [Check product outcomes](playbook-prompts.md#deck--05-jobs-to-be-done-outcomes--02-check-product-outcomesmd) (Deck).
 
-**Skill route:** [ps-jobs-to-be-done](playbook-skills.md#ps-jobs-to-be-done--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-jobs-to-be-done](playbook-skills.md#psk-jobs-to-be-done--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 06: Personas & Proto-Personas
 
@@ -147,7 +147,7 @@ Create a Productside-style proto-persona for a primary user, then optionally a b
 - [Draft proto persona](playbook-prompts.md#deck--06-personas-proto-personas--01-draft-proto-personamd) (Deck).
 - [Review research based persona](playbook-prompts.md#deck--06-personas-proto-personas--02-review-research-based-personamd) (Deck).
 
-**Skill route:** [ps-proto-persona](playbook-skills.md#ps-proto-persona--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-proto-persona](playbook-skills.md#psk-proto-persona--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 07: Empathy Interviews
 
@@ -158,7 +158,7 @@ Prepare empathy interview questions, get conduct guidance, and document structur
 - [Prepare interview guide](playbook-prompts.md#deck--07-empathy-interviews--01-prepare-interview-guidemd) (Deck).
 - [Rehearse your technique](playbook-prompts.md#deck--07-empathy-interviews--02-rehearse-your-techniquemd) (Deck).
 
-**Skill route:** [ps-empathy-interviews](playbook-skills.md#ps-empathy-interviews--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-empathy-interviews](playbook-skills.md#psk-empathy-interviews--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 08: Affinity Mapping
 
@@ -168,7 +168,7 @@ Synthesize qualitative research observations into labeled theme clusters and key
 
 - [Learn affinity mapping](playbook-prompts.md#deck--08-affinity-mapping--01-learn-affinity-mappingmd) (Deck).
 
-**Skill route:** [ps-affinity-mapping](playbook-skills.md#ps-affinity-mapping--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-affinity-mapping](playbook-skills.md#psk-affinity-mapping--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 09: Problem Identification
 
@@ -178,7 +178,7 @@ Identify customer jobs, pains, gains, and candidate problem statements in Produc
 
 - [Refine problem statements](playbook-prompts.md#deck--09-problem-identification--01-refine-problem-statementsmd) (Deck).
 
-**Skill route:** [ps-problem-identification](playbook-skills.md#ps-problem-identification--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-problem-identification](playbook-skills.md#psk-problem-identification--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 10: Framing the Problem
 
@@ -188,7 +188,7 @@ Frame a validated customer problem using the Productside stem sequence (I am / T
 
 - [Pressure test problem frame](playbook-prompts.md#library-authored--10-framing-the-problem--01-pressure-test-problem-framemd) (Library-authored).
 
-**Skill route:** [ps-framing-the-problem](playbook-skills.md#ps-framing-the-problem--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-framing-the-problem](playbook-skills.md#psk-framing-the-problem--instructions). Read Instructions, Template, and Examples in that reference.
 
 
 ## Discover + Define
@@ -204,7 +204,7 @@ Prepare a design thinking session to brainstorm and evaluate solution hypotheses
 - [Plan ideation session](playbook-prompts.md#deck--11-exploring-the-solution-space--02-plan-ideation-sessionmd) (Deck).
 - [Sharpen solution summary](playbook-prompts.md#deck--11-exploring-the-solution-space--03-sharpen-solution-summarymd) (Deck).
 
-**Skill route:** [ps-exploring-solution-space](playbook-skills.md#ps-exploring-solution-space--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-exploring-solution-space](playbook-skills.md#psk-exploring-solution-space--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 12: Solution Hypothesis
 
@@ -214,7 +214,7 @@ Craft a testable solution hypothesis using the If/Then structure, producing both
 
 - [Pressure test solution hypothesis](playbook-prompts.md#library-authored--12-solution-hypothesis--01-pressure-test-solution-hypothesismd) (Library-authored).
 
-**Skill route:** [ps-solution-hypothesis](playbook-skills.md#ps-solution-hypothesis--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-solution-hypothesis](playbook-skills.md#psk-solution-hypothesis--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 13: Positioning Statement
 
@@ -224,7 +224,7 @@ Craft a Productside-style positioning statement using the For/Who/Is a/That/Unli
 
 - [Pressure test positioning](playbook-prompts.md#deck--13-positioning-statement--01-pressure-test-positioningmd) (Deck).
 
-**Skill route:** [ps-positioning-statement](playbook-skills.md#ps-positioning-statement--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-positioning-statement](playbook-skills.md#psk-positioning-statement--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 14: Lo-fi Experimentation
 
@@ -235,7 +235,7 @@ Design a lo-fidelity experiment to test a critical solution assumption in Produc
 - [Define riskiest assumption](playbook-prompts.md#deck--14-lo-fi-experimentation--01-define-riskiest-assumptionmd) (Deck).
 - [Design lean experiment](playbook-prompts.md#deck--14-lo-fi-experimentation--02-design-lean-experimentmd) (Deck).
 
-**Skill route:** [ps-lofi-experimentation](playbook-skills.md#ps-lofi-experimentation--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-lofi-experimentation](playbook-skills.md#psk-lofi-experimentation--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Unnumbered: Storyboarding
 
@@ -245,7 +245,7 @@ Build a six-panel narrative storyboard that validates a product solution hypothe
 
 - [Pressure test storyboard](playbook-prompts.md#library-authored--storyboarding--01-pressure-test-storyboardmd) (Library-authored).
 
-**Skill route:** [ps-storyboarding](playbook-skills.md#ps-storyboarding--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-storyboarding](playbook-skills.md#psk-storyboarding--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 15: Risk Assessment
 
@@ -255,7 +255,7 @@ Identify, prioritize, and plan for product risks in Productside format. Use when
 
 - [Pressure test risk assessment](playbook-prompts.md#library-authored--15-risk-assessment--01-pressure-test-risk-assessmentmd) (Library-authored).
 
-**Skill route:** [ps-risk-assessment](playbook-skills.md#ps-risk-assessment--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-risk-assessment](playbook-skills.md#psk-risk-assessment--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 16: Product Outcome Canvas
 
@@ -265,7 +265,7 @@ Consolidate all discovery and define artifacts into the Product Outcome Canvas, 
 
 - [Review product outcome canvas](playbook-prompts.md#library-authored--16-product-outcome-canvas--01-review-product-outcome-canvasmd) (Library-authored).
 
-**Skill route:** [ps-product-outcome-canvas](playbook-skills.md#ps-product-outcome-canvas--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-product-outcome-canvas](playbook-skills.md#psk-product-outcome-canvas--instructions). Read Instructions, Template, and Examples in that reference.
 
 
 ## Create
@@ -278,7 +278,7 @@ Build an outcome-based roadmap and release plan that connects product outcomes t
 
 - [Pressure test outcome roadmap](playbook-prompts.md#library-authored--17-outcome-roadmap--01-pressure-test-outcome-roadmapmd) (Library-authored).
 
-**Skill route:** [ps-outcome-roadmap](playbook-skills.md#ps-outcome-roadmap--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-outcome-roadmap](playbook-skills.md#psk-outcome-roadmap--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 18: Tiny Acts of Discovery
 
@@ -289,7 +289,7 @@ Run continuous assumption validation through small, fast tests. Use at any phase
 - [Prioritize assumptions](playbook-prompts.md#deck--18-tiny-acts-of-discovery--01-prioritize-assumptionsmd) (Deck).
 - [Design tiny act](playbook-prompts.md#deck--18-tiny-acts-of-discovery--02-design-tiny-actmd) (Deck).
 
-**Skill route:** [ps-tiny-acts-discovery](playbook-skills.md#ps-tiny-acts-discovery--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-tiny-acts-discovery](playbook-skills.md#psk-tiny-acts-discovery--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 19: Output Prioritization
 
@@ -299,7 +299,7 @@ Prepare to facilitate, then record, a team ranking of product outputs (features,
 
 - [Rehearse prioritization session](playbook-prompts.md#deck--19-output-prioritization--01-rehearse-prioritization-sessionmd) (Deck).
 
-**Skill route:** [ps-output-prioritization](playbook-skills.md#ps-output-prioritization--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-output-prioritization](playbook-skills.md#psk-output-prioritization--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 20: Go-to-Market Enablement
 
@@ -310,7 +310,7 @@ Build a Go-to-Market Enablement artifact that aligns sales, marketing, support, 
 - [Pressure test key messages](playbook-prompts.md#deck--20-go-to-market-enablement--01-pressure-test-key-messagesmd) (Deck).
 - [Pressure test launch goals](playbook-prompts.md#deck--20-go-to-market-enablement--02-pressure-test-launch-goalsmd) (Deck).
 
-**Skill route:** [ps-go-to-market](playbook-skills.md#ps-go-to-market--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-go-to-market](playbook-skills.md#psk-go-to-market--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 21: Product Readiness Testing
 
@@ -320,7 +320,7 @@ Design and document a structured Product Readiness Test plan before launch. Use 
 
 - [Pressure test readiness plan](playbook-prompts.md#library-authored--21-product-readiness--01-pressure-test-readiness-planmd) (Library-authored).
 
-**Skill route:** [ps-product-readiness](playbook-skills.md#ps-product-readiness--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-product-readiness](playbook-skills.md#psk-product-readiness--instructions). Read Instructions, Template, and Examples in that reference.
 
 
 ## Deliver
@@ -333,7 +333,7 @@ Build a post-launch outcomes dashboard that ties product and business outcomes t
 
 - [Review success metrics](playbook-prompts.md#deck--22-measuring-outcomes--01-review-success-metricsmd) (Deck).
 
-**Skill route:** [ps-measuring-outcomes](playbook-skills.md#ps-measuring-outcomes--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-measuring-outcomes](playbook-skills.md#psk-measuring-outcomes--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 23: Outcome Tree, Section Two
 
@@ -345,7 +345,7 @@ Use this when new discovery or post-launch evidence calls for revisiting the ori
 
 - [Review outcome tree evidence](playbook-prompts.md#library-authored--23-outcome-tree-section-two--01-review-outcome-tree-evidencemd) (Library-authored).
 
-**Skill route:** [ps-outcome-tree](playbook-skills.md#ps-outcome-tree--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-outcome-tree](playbook-skills.md#psk-outcome-tree--instructions). Read Instructions, Template, and Examples in that reference.
 
 ### Play 24: Process Retrospective
 
@@ -355,7 +355,7 @@ Help a Product Manager prepare for, facilitate documentation of, and close out a
 
 - [Prepare retrospective](playbook-prompts.md#library-authored--24-process-retrospective--01-prepare-retrospectivemd) (Library-authored).
 
-**Skill route:** [ps-process-retrospective](playbook-skills.md#ps-process-retrospective--instructions). Read Instructions, Template, and Examples in that reference.
+**Skill route:** [psk-process-retrospective](playbook-skills.md#psk-process-retrospective--instructions). Read Instructions, Template, and Examples in that reference.
 
 ## Evidence, ownership, and missing references
 
@@ -363,7 +363,7 @@ AI-generated customer details are hypotheses, not research. People conduct real 
 
 ## Source and updates
 
-Source snapshot: `ac653b868df4bf3f`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `c90e44b3931027f8`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 This kit is generated from deanpeters/ps-playbook-skills. Changes on GitHub do not update uploaded sources. Replace all three together and update Project instructions when changed. Full decks, PDF excerpts, and external maintenance documents are outside this kit; their mentions in skill text are provenance. Test actual reference use and sharing access before wider distribution.
 

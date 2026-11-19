@@ -2,7 +2,7 @@
 title: Design a Lean Experiment
 play_number: 14
 play: Lo-fi Experimentation
-skill: ps-lofi-experimentation
+skill: psk-lofi-experimentation
 sequence: 2
 sequence_total: 2
 source:

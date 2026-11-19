@@ -1,6 +1,6 @@
 # Productside Playbook: coaching prompts
 
-Source snapshot: `ac653b868df4bf3f`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `c90e44b3931027f8`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. Full license: playbook-plays.md, License appendix.
 
@@ -42,7 +42,7 @@ Playbook-supplied prompts are labeled Deck. Added prompts are labeled Library-au
 
 ### Unnumbered: Blueprint navigator
 
-Stable identifier: `ps-blueprint-advisor`.
+Stable identifier: `psk-blueprint-advisor`.
 
 
 #### Library-authored / blueprint-navigator / 01-choose-the-next-play.md
@@ -55,12 +55,12 @@ Source metadata:
 title: Choose Your Next Play
 play_number: null
 play: Blueprint navigator
-skill: ps-blueprint-advisor
+skill: psk-blueprint-advisor
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-blueprint-advisor/SKILL.md
+  based_on: skills/psk-blueprint-advisor/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -121,7 +121,7 @@ Constraints: do not invent customer learning or treat my assumptions as validate
 
 ### Play 01: Outcome & Strategy Discussion
 
-Stable identifier: `ps-outcome-strategy-discussion`.
+Stable identifier: `psk-outcome-strategy-discussion`.
 
 
 #### Library-authored / 01-outcome-strategy-discussion / 01-prepare-the-strategy-discussion.md
@@ -134,12 +134,12 @@ Source metadata:
 title: Prepare Your Outcome and Strategy Discussion
 play_number: 1
 play: Outcome & Strategy Discussion
-skill: ps-outcome-strategy-discussion
+skill: psk-outcome-strategy-discussion
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-strategy-discussion/SKILL.md
+  based_on: skills/psk-outcome-strategy-discussion/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -191,7 +191,7 @@ Constraints: do not answer for my sponsor, invent targets, fill the agreed-outco
 
 ### Play 02: Stakeholder Alignment
 
-Stable identifier: `ps-stakeholder-alignment`.
+Stable identifier: `psk-stakeholder-alignment`.
 
 
 #### Library-authored / 02-stakeholder-alignment / 01-pressure-test-stakeholder-map.md
@@ -204,12 +204,12 @@ Source metadata:
 title: Pressure-Test Your Stakeholder Map
 play_number: 2
 play: Stakeholder Alignment
-skill: ps-stakeholder-alignment
+skill: psk-stakeholder-alignment
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-stakeholder-alignment/SKILL.md
+  based_on: skills/psk-stakeholder-alignment/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -261,7 +261,7 @@ Constraints: do not invent people, relationships, sentiment, or evidence. Do not
 
 ### Play 03: Outcome Tree, Section One
 
-Stable identifier: `ps-outcome-tree`.
+Stable identifier: `psk-outcome-tree`.
 
 
 #### Library-authored / 03-outcome-tree-section-one / 01-check-outcome-tree.md
@@ -274,12 +274,12 @@ Source metadata:
 title: Check Your Outcome Tree Before Discovery
 play_number: 3
 play: Outcome Tree, Section One
-skill: ps-outcome-tree
+skill: psk-outcome-tree
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-tree/SKILL.md
+  based_on: skills/psk-outcome-tree/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -332,7 +332,7 @@ Constraints: do not invent baselines, targets, or customer evidence. A number wi
 
 ### Play 04: Market Selection & Sizing
 
-Stable identifier: `ps-market-selection-sizing`.
+Stable identifier: `psk-market-selection-sizing`.
 
 
 #### Deck / 04-market-selection-sizing / 01-pressure-test-the-market.md
@@ -345,7 +345,7 @@ Source metadata:
 title: Pressure Test the Market
 play_number: 4
 play: Market Selection & Sizing
-skill: ps-market-selection-sizing
+skill: psk-market-selection-sizing
 sequence: 1
 sequence_total: 4
 source:
@@ -420,7 +420,7 @@ Source metadata:
 title: Build the PESTEL together
 play_number: 4
 play: Market Selection & Sizing
-skill: ps-market-selection-sizing
+skill: psk-market-selection-sizing
 sequence: 2
 sequence_total: 4
 source:
@@ -492,7 +492,7 @@ Source metadata:
 title: Segment the Market
 play_number: 4
 play: Market Selection & Sizing
-skill: ps-market-selection-sizing
+skill: psk-market-selection-sizing
 sequence: 3
 sequence_total: 4
 source:
@@ -566,7 +566,7 @@ Source metadata:
 title: First Pass Market Sizing
 play_number: 4
 play: Market Selection & Sizing
-skill: ps-market-selection-sizing
+skill: psk-market-selection-sizing
 sequence: 4
 sequence_total: 4
 source:
@@ -632,7 +632,7 @@ If I have an existing product, we can explore the SOM; if I don’t, we’ll ski
 
 ### Play 05: Jobs-to-Be-Done & Outcomes
 
-Stable identifier: `ps-jobs-to-be-done`.
+Stable identifier: `psk-jobs-to-be-done`.
 
 
 #### Deck / 05-jobs-to-be-done-outcomes / 01-check-job-statements.md
@@ -645,7 +645,7 @@ Source metadata:
 title: Check Job Statements
 play_number: 5
 play: Jobs-to-Be-Done & Outcomes
-skill: ps-jobs-to-be-done
+skill: psk-jobs-to-be-done
 sequence: 1
 sequence_total: 2
 source:
@@ -731,7 +731,7 @@ Source metadata:
 title: Check Product Outcomes
 play_number: 5
 play: Jobs-to-Be-Done & Outcomes
-skill: ps-jobs-to-be-done
+skill: psk-jobs-to-be-done
 sequence: 2
 sequence_total: 2
 source:
@@ -809,7 +809,7 @@ What Are Good Product Outcomes?
 
 ### Play 06: Personas & Proto-Personas
 
-Stable identifier: `ps-proto-persona`.
+Stable identifier: `psk-proto-persona`.
 
 
 #### Deck / 06-personas-proto-personas / 01-draft-proto-persona.md
@@ -822,7 +822,7 @@ Source metadata:
 title: Draft a Proto-Persona
 play_number: 6
 play: Personas & Proto-Personas
-skill: ps-proto-persona
+skill: psk-proto-persona
 sequence: 1
 sequence_total: 2
 source:
@@ -900,7 +900,7 @@ Source metadata:
 title: Review a Research-Based Persona
 play_number: 6
 play: Personas & Proto-Personas
-skill: ps-proto-persona
+skill: psk-proto-persona
 sequence: 2
 sequence_total: 2
 source:
@@ -967,7 +967,7 @@ Constraints: your suggestions may sharpen wording, structure, and emphasis, but 
 
 ### Play 07: Empathy Interviews
 
-Stable identifier: `ps-empathy-interviews`.
+Stable identifier: `psk-empathy-interviews`.
 
 
 #### Deck / 07-empathy-interviews / 01-prepare-interview-guide.md
@@ -980,7 +980,7 @@ Source metadata:
 title: Prepare interview guide
 play_number: 7
 play: Empathy Interviews
-skill: ps-empathy-interviews
+skill: psk-empathy-interviews
 sequence: 1
 sequence_total: 2
 source:
@@ -1049,7 +1049,7 @@ Source metadata:
 title: Rehearse your technique
 play_number: 7
 play: Empathy Interviews
-skill: ps-empathy-interviews
+skill: psk-empathy-interviews
 sequence: 2
 sequence_total: 2
 source:
@@ -1112,7 +1112,7 @@ Constraints: These are practice situations, not data, and nothing here goes in m
 
 ### Play 08: Affinity Mapping
 
-Stable identifier: `ps-affinity-mapping`.
+Stable identifier: `psk-affinity-mapping`.
 
 
 #### Deck / 08-affinity-mapping / 01-learn-affinity-mapping.md
@@ -1125,7 +1125,7 @@ Source metadata:
 title: Learn Affinity Mapping
 play_number: 8
 play: Affinity Mapping
-skill: ps-affinity-mapping
+skill: psk-affinity-mapping
 sequence: 1
 sequence_total: 1
 source:
@@ -1199,7 +1199,7 @@ question at a time. Keep me encouraged; this is a skill I am building.
 
 ### Play 09: Problem Identification
 
-Stable identifier: `ps-problem-identification`.
+Stable identifier: `psk-problem-identification`.
 
 
 #### Deck / 09-problem-identification / 01-refine-problem-statements.md
@@ -1212,7 +1212,7 @@ Source metadata:
 title: Refine Problem Statements
 play_number: 9
 play: Problem Identification
-skill: ps-problem-identification
+skill: psk-problem-identification
 sequence: 1
 sequence_total: 1
 source:
@@ -1279,7 +1279,7 @@ hypothesis until my evidence backs it. Keep me in the problem space, not solutio
 
 ### Play 10: Framing the Problem
 
-Stable identifier: `ps-framing-the-problem`.
+Stable identifier: `psk-framing-the-problem`.
 
 
 #### Library-authored / 10-framing-the-problem / 01-pressure-test-problem-frame.md
@@ -1292,12 +1292,12 @@ Source metadata:
 title: Pressure-Test Your Problem Frame
 play_number: 10
 play: Framing the Problem
-skill: ps-framing-the-problem
+skill: psk-framing-the-problem
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-framing-the-problem/SKILL.md
+  based_on: skills/psk-framing-the-problem/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -1359,7 +1359,7 @@ Constraints: do not invent root causes, quotes, emotions, or validation. Do not 
 
 ### Play 11: Exploring the Solution Space
 
-Stable identifier: `ps-exploring-solution-space`.
+Stable identifier: `psk-exploring-solution-space`.
 
 
 #### Deck / 11-exploring-the-solution-space / 01-scope-how-might-we-questions-slide-53-alternate.md
@@ -1372,7 +1372,7 @@ Source metadata:
 title: Scope How Might We Questions
 play_number: 11
 play: Exploring the Solution Space
-skill: ps-exploring-solution-space
+skill: psk-exploring-solution-space
 sequence: 1
 sequence_total: 3
 source:
@@ -1447,7 +1447,7 @@ Source metadata:
 title: Scope How Might We Questions
 play_number: 11
 play: Exploring the Solution Space
-skill: ps-exploring-solution-space
+skill: psk-exploring-solution-space
 sequence: 1
 sequence_total: 3
 source:
@@ -1522,7 +1522,7 @@ Source metadata:
 title: Plan an Ideation Session
 play_number: 11
 play: Exploring the Solution Space
-skill: ps-exploring-solution-space
+skill: psk-exploring-solution-space
 sequence: 2
 sequence_total: 3
 source:
@@ -1593,7 +1593,7 @@ Source metadata:
 title: Sharpen a Solution Summary
 play_number: 11
 play: Exploring the Solution Space
-skill: ps-exploring-solution-space
+skill: psk-exploring-solution-space
 sequence: 3
 sequence_total: 3
 source:
@@ -1662,7 +1662,7 @@ question at a time.
 
 ### Play 12: Solution Hypothesis
 
-Stable identifier: `ps-solution-hypothesis`.
+Stable identifier: `psk-solution-hypothesis`.
 
 
 #### Library-authored / 12-solution-hypothesis / 01-pressure-test-solution-hypothesis.md
@@ -1675,12 +1675,12 @@ Source metadata:
 title: Pressure-Test Your Solution Hypothesis
 play_number: 12
 play: Solution Hypothesis
-skill: ps-solution-hypothesis
+skill: psk-solution-hypothesis
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-solution-hypothesis/SKILL.md
+  based_on: skills/psk-solution-hypothesis/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -1735,7 +1735,7 @@ Constraints: do not invent customer behavior, business figures, or test results.
 
 ### Play 13: Positioning Statement
 
-Stable identifier: `ps-positioning-statement`.
+Stable identifier: `psk-positioning-statement`.
 
 
 #### Deck / 13-positioning-statement / 01-pressure-test-positioning.md
@@ -1748,7 +1748,7 @@ Source metadata:
 title: Pressure-Test Positioning
 play_number: 13
 play: Positioning Statement
-skill: ps-positioning-statement
+skill: psk-positioning-statement
 sequence: 1
 sequence_total: 1
 source:
@@ -1813,7 +1813,7 @@ Constraints: do not invent a persona, segment, or customer evidence I did not gi
 
 ### Play 14: Lo-fi Experimentation
 
-Stable identifier: `ps-lofi-experimentation`.
+Stable identifier: `psk-lofi-experimentation`.
 
 
 #### Deck / 14-lo-fi-experimentation / 01-define-riskiest-assumption.md
@@ -1826,7 +1826,7 @@ Source metadata:
 title: Define the Riskiest Assumption
 play_number: 14
 play: Lo-fi Experimentation
-skill: ps-lofi-experimentation
+skill: psk-lofi-experimentation
 sequence: 1
 sequence_total: 2
 source:
@@ -1900,7 +1900,7 @@ Source metadata:
 title: Design a Lean Experiment
 play_number: 14
 play: Lo-fi Experimentation
-skill: ps-lofi-experimentation
+skill: psk-lofi-experimentation
 sequence: 2
 sequence_total: 2
 source:
@@ -1963,7 +1963,7 @@ question at a time.
 
 ### Unnumbered: Storyboarding
 
-Stable identifier: `ps-storyboarding`.
+Stable identifier: `psk-storyboarding`.
 
 
 #### Library-authored / storyboarding / 01-pressure-test-storyboard.md
@@ -1976,12 +1976,12 @@ Source metadata:
 title: Pressure-Test Your Customer Storyboard
 play_number: null
 play: Storyboarding
-skill: ps-storyboarding
+skill: psk-storyboarding
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-storyboarding/SKILL.md
+  based_on: skills/psk-storyboarding/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -2037,7 +2037,7 @@ Constraints: do not invent customer reactions or present the storyboard as proof
 
 ### Play 15: Risk Assessment
 
-Stable identifier: `ps-risk-assessment`.
+Stable identifier: `psk-risk-assessment`.
 
 
 #### Library-authored / 15-risk-assessment / 01-pressure-test-risk-assessment.md
@@ -2050,12 +2050,12 @@ Source metadata:
 title: Widen and Pressure-Test Your Risk Assessment
 play_number: 15
 play: Risk Assessment
-skill: ps-risk-assessment
+skill: psk-risk-assessment
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-risk-assessment/SKILL.md
+  based_on: skills/psk-risk-assessment/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -2109,7 +2109,7 @@ Constraints: do not invent probabilities, business impacts, agreement, or owners
 
 ### Play 16: Product Outcome Canvas
 
-Stable identifier: `ps-product-outcome-canvas`.
+Stable identifier: `psk-product-outcome-canvas`.
 
 
 #### Library-authored / 16-product-outcome-canvas / 01-review-product-outcome-canvas.md
@@ -2122,12 +2122,12 @@ Source metadata:
 title: Review Your Product Outcome Canvas Before Go/No Go
 play_number: 16
 play: Product Outcome Canvas
-skill: ps-product-outcome-canvas
+skill: psk-product-outcome-canvas
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-product-outcome-canvas/SKILL.md
+  based_on: skills/psk-product-outcome-canvas/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -2185,7 +2185,7 @@ Constraints: do not invent numbers, customer proof, resource commitments, or lea
 
 ### Play 17: Outcome-Based Roadmap & Release Plan
 
-Stable identifier: `ps-outcome-roadmap`.
+Stable identifier: `psk-outcome-roadmap`.
 
 
 #### Library-authored / 17-outcome-roadmap / 01-pressure-test-outcome-roadmap.md
@@ -2198,12 +2198,12 @@ Source metadata:
 title: Pressure-Test Your Outcome-Based Roadmap
 play_number: 17
 play: Outcome-Based Roadmap & Release Plan
-skill: ps-outcome-roadmap
+skill: psk-outcome-roadmap
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-roadmap/SKILL.md
+  based_on: skills/psk-outcome-roadmap/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -2256,7 +2256,7 @@ Constraints: do not invent validation, customer value, dates, or team commitment
 
 ### Play 18: Tiny Acts of Discovery
 
-Stable identifier: `ps-tiny-acts-discovery`.
+Stable identifier: `psk-tiny-acts-discovery`.
 
 
 #### Deck / 18-tiny-acts-of-discovery / 01-prioritize-assumptions.md
@@ -2269,7 +2269,7 @@ Source metadata:
 title: Prioritize Assumptions
 play_number: 18
 play: Tiny Acts of Discovery
-skill: ps-tiny-acts-discovery
+skill: psk-tiny-acts-discovery
 sequence: 1
 sequence_total: 2
 source:
@@ -2338,7 +2338,7 @@ Source metadata:
 title: Design a Tiny Act of Discovery
 play_number: 18
 play: Tiny Acts of Discovery
-skill: ps-tiny-acts-discovery
+skill: psk-tiny-acts-discovery
 sequence: 2
 sequence_total: 2
 source:
@@ -2403,7 +2403,7 @@ Constraints: do not pick the act for me, and do not invent results. Bias every s
 
 ### Play 19: Output Prioritization
 
-Stable identifier: `ps-output-prioritization`.
+Stable identifier: `psk-output-prioritization`.
 
 
 #### Deck / 19-output-prioritization / 01-rehearse-prioritization-session.md
@@ -2416,7 +2416,7 @@ Source metadata:
 title: Rehearse a Prioritization Session
 play_number: 19
 play: Output Prioritization
-skill: ps-output-prioritization
+skill: psk-output-prioritization
 sequence: 1
 sequence_total: 1
 source:
@@ -2480,7 +2480,7 @@ facilitating a relative ranking people believe in. Ask one question at a time.
 
 ### Play 20: Go-to-Market Enablement
 
-Stable identifier: `ps-go-to-market`.
+Stable identifier: `psk-go-to-market`.
 
 
 #### Deck / 20-go-to-market-enablement / 01-pressure-test-key-messages.md
@@ -2493,7 +2493,7 @@ Source metadata:
 title: Pressure-Test Key Messages
 play_number: 20
 play: Go-to-Market Enablement
-skill: ps-go-to-market
+skill: psk-go-to-market
 sequence: 1
 sequence_total: 2
 source:
@@ -2568,7 +2568,7 @@ Source metadata:
 title: Pressure-Test Launch Goals
 play_number: 20
 play: Go-to-Market Enablement
-skill: ps-go-to-market
+skill: psk-go-to-market
 sequence: 2
 sequence_total: 2
 source:
@@ -2634,7 +2634,7 @@ Constraints: do not invent baselines, benchmarks, or market data. Do not choose 
 
 ### Play 21: Product Readiness Testing
 
-Stable identifier: `ps-product-readiness`.
+Stable identifier: `psk-product-readiness`.
 
 
 #### Library-authored / 21-product-readiness / 01-pressure-test-readiness-plan.md
@@ -2647,12 +2647,12 @@ Source metadata:
 title: Pressure-Test Your Product Readiness Plan
 play_number: 21
 play: Product Readiness Testing
-skill: ps-product-readiness
+skill: psk-product-readiness
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-product-readiness/SKILL.md
+  based_on: skills/psk-product-readiness/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -2709,7 +2709,7 @@ Constraints: do not invent participants, quotes, baselines, results, or approval
 
 ### Play 22: Measuring Outcomes
 
-Stable identifier: `ps-measuring-outcomes`.
+Stable identifier: `psk-measuring-outcomes`.
 
 
 #### Deck / 22-measuring-outcomes / 01-review-success-metrics.md
@@ -2722,7 +2722,7 @@ Source metadata:
 title: Review Success Metrics
 play_number: 22
 play: Measuring Outcomes
-skill: ps-measuring-outcomes
+skill: psk-measuring-outcomes
 sequence: 1
 sequence_total: 1
 source:
@@ -2788,7 +2788,7 @@ Constraints: do not choose my metrics or invent numbers. A metric you suggest is
 
 ### Play 23: Outcome Tree, Section Two
 
-Stable identifier: `ps-outcome-tree`.
+Stable identifier: `psk-outcome-tree`.
 
 
 #### Library-authored / 23-outcome-tree-section-two / 01-review-outcome-tree-evidence.md
@@ -2801,12 +2801,12 @@ Source metadata:
 title: Review Your Outcome Tree Against New Evidence
 play_number: 23
 play: Outcome Tree, Section Two
-skill: ps-outcome-tree
+skill: psk-outcome-tree
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-outcome-tree/SKILL.md
+  based_on: skills/psk-outcome-tree/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
@@ -2859,7 +2859,7 @@ Constraints: do not invent evidence, baselines, actuals, or a decision to contin
 
 ### Play 24: Process Retrospective
 
-Stable identifier: `ps-process-retrospective`.
+Stable identifier: `psk-process-retrospective`.
 
 
 #### Library-authored / 24-process-retrospective / 01-prepare-retrospective.md
@@ -2872,12 +2872,12 @@ Source metadata:
 title: Prepare and Close Out Your Retrospective
 play_number: 24
 play: Process Retrospective
-skill: ps-process-retrospective
+skill: psk-process-retrospective
 sequence: 1
 sequence_total: 1
 source:
   kind: authored
-  based_on: skills/ps-process-retrospective/SKILL.md
+  based_on: skills/psk-process-retrospective/SKILL.md
   status: library-authored
 tool_type: Chat-based AI tool
 instructions:
