@@ -1,12 +1,267 @@
-# Prompts by Play
+# Productside Playbook: coaching prompts
 
-November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `b9e7875950db91fa`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
-Prompt text and source metadata are preserved from the top-level prompts/ collection. Only Plays with deck prompts appear here. For full Play guidance, including Plays without a standalone prompt, read the catalog's Instructions, embedded Template, and Examples references.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. Full license: playbook-plays.md, License appendix.
 
-## Deck prompts
+Start with playbook-plays.md to choose a Play. For the full method and working template, use playbook-skills.md. Copy the text inside the selected prompt box, add your context, and keep the judgments with you or your team.
 
-### Deck / 04-market-selection-sizing / 01-pressure-test-the-market.md
+Playbook-supplied prompts are labeled Deck. Added prompts are labeled Library-authored. The additions do not change which Plays the source Playbook calls AI-Enabled. Prompt text and source metadata are preserved. Follow each Play's prompt sequence; later steps may require real research or a team session.
+
+## Contents
+
+- [Unnumbered: Blueprint navigator](playbook-prompts.md#unnumbered-blueprint-navigator)
+- [Play 01: Outcome & Strategy Discussion](playbook-prompts.md#play-01-outcome--strategy-discussion)
+- [Play 02: Stakeholder Alignment](playbook-prompts.md#play-02-stakeholder-alignment)
+- [Play 03: Outcome Tree, Section One](playbook-prompts.md#play-03-outcome-tree-section-one)
+- [Play 04: Market Selection & Sizing](playbook-prompts.md#play-04-market-selection--sizing)
+- [Play 05: Jobs-to-Be-Done & Outcomes](playbook-prompts.md#play-05-jobs-to-be-done--outcomes)
+- [Play 06: Personas & Proto-Personas](playbook-prompts.md#play-06-personas--proto-personas)
+- [Play 07: Empathy Interviews](playbook-prompts.md#play-07-empathy-interviews)
+- [Play 08: Affinity Mapping](playbook-prompts.md#play-08-affinity-mapping)
+- [Play 09: Problem Identification](playbook-prompts.md#play-09-problem-identification)
+- [Play 10: Framing the Problem](playbook-prompts.md#play-10-framing-the-problem)
+- [Play 11: Exploring the Solution Space](playbook-prompts.md#play-11-exploring-the-solution-space)
+- [Play 12: Solution Hypothesis](playbook-prompts.md#play-12-solution-hypothesis)
+- [Play 13: Positioning Statement](playbook-prompts.md#play-13-positioning-statement)
+- [Play 14: Lo-fi Experimentation](playbook-prompts.md#play-14-lo-fi-experimentation)
+- [Unnumbered: Storyboarding](playbook-prompts.md#unnumbered-storyboarding)
+- [Play 15: Risk Assessment](playbook-prompts.md#play-15-risk-assessment)
+- [Play 16: Product Outcome Canvas](playbook-prompts.md#play-16-product-outcome-canvas)
+- [Play 17: Outcome-Based Roadmap & Release Plan](playbook-prompts.md#play-17-outcome-based-roadmap--release-plan)
+- [Play 18: Tiny Acts of Discovery](playbook-prompts.md#play-18-tiny-acts-of-discovery)
+- [Play 19: Output Prioritization](playbook-prompts.md#play-19-output-prioritization)
+- [Play 20: Go-to-Market Enablement](playbook-prompts.md#play-20-go-to-market-enablement)
+- [Play 21: Product Readiness Testing](playbook-prompts.md#play-21-product-readiness-testing)
+- [Play 22: Measuring Outcomes](playbook-prompts.md#play-22-measuring-outcomes)
+- [Play 23: Outcome Tree, Section Two](playbook-prompts.md#play-23-outcome-tree-section-two)
+- [Play 24: Process Retrospective](playbook-prompts.md#play-24-process-retrospective)
+
+## Navigator (cross-phase)
+
+
+### Unnumbered: Blueprint navigator
+
+Stable identifier: `ps-blueprint-advisor`.
+
+
+#### Library-authored / blueprint-navigator / 01-choose-the-next-play.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Choose Your Next Play
+play_number: null
+play: Blueprint navigator
+skill: ps-blueprint-advisor
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-blueprint-advisor/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Identify the decision in front of you and choose a useful Play without turning navigation into
+    an interrogation.
+  how_to_use: Bring your immediate decision, what you know, and where you are stuck. Record the next Play
+    and the question it should help you answer.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Bring your immediate decision, what you know, and where you are stuck. Record the next Play and the question it should help you answer. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me use the Productside Blueprint to choose what work to do next. I am a product manager. Help me reason about my situation, then recommend a Play I can choose to use.
+
+Context: my product and the person it serves are [describe]. The decision in front of us is [describe]. We have learned [paste observations, findings, or results, with their sources]. We are still assuming [list]. What feels stuck is [describe].
+
+Choose from these Playbook Plays, accepting equivalent prior work:
+- Context: Outcome & Strategy Discussion, Stakeholder Alignment, Outcome Tree Section One, Market Selection & Sizing.
+- Discover + Investigate: Jobs-to-Be-Done & Outcomes, Personas & Proto-Personas, Empathy Interviews, Affinity Mapping, Problem Identification, Framing the Problem.
+- Discover + Define: Exploring the Solution Space, Solution Hypothesis, Positioning Statement, Lo-fi Experimentation, Storyboarding, Risk Assessment, Product Outcome Canvas.
+- Create: Outcome-Based Roadmap & Release Plan, Tiny Acts of Discovery, Output Prioritization, Go-to-Market Enablement, Product Readiness Testing.
+- Deliver: Measuring Outcomes, Outcome Tree Section Two, Process Retrospective.
+
+Task:
+- Start with the decision I need to make. If something essential is missing, ask the one question that would most change your recommendation. Give me useful help before introducing process terminology.
+- Explain where this work fits on the Blueprint: Context, Discover + Investigate, Discover + Define, Create, or Deliver. We may straddle phases or need to return to discovery. Do not force a linear journey.
+- Explain which of the five principles matters most here and why: Outcome Obsessed (measurable outcomes tied to strategy), Feedback Driven (learning from customers), Environment Adaptive (fits the team's context and methods), Dynamic Interactivity (nonlinear, concurrent work), or Ruthlessly Distilled (the simplest useful path, discarding dead ends).
+- Recommend one Play by its name and describe the question it would help us answer. Offer an alternative only if a genuine uncertainty would change the choice. Accept equivalent prior work; I do not need to complete every earlier Play.
+- Ask whether your reading fits my situation. Once I choose, have me record the next Play, the decision it supports, and the context I will bring. Pause before starting it.
+
+Constraints: do not invent customer learning or treat my assumptions as validated. Do not claim a Play is installed or that you have read instructions I have not supplied. If you need its detailed format, ask me to paste or attach its reference. Keep the choice with me. Ask one question at a time.
+```
+
+
+## Context
+
+
+### Play 01: Outcome & Strategy Discussion
+
+Stable identifier: `ps-outcome-strategy-discussion`.
+
+
+#### Library-authored / 01-outcome-strategy-discussion / 01-prepare-the-strategy-discussion.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Prepare Your Outcome and Strategy Discussion
+play_number: 1
+play: Outcome & Strategy Discussion
+skill: ps-outcome-strategy-discussion
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-outcome-strategy-discussion/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Prepare an alignment conversation that produces an agreed business outcome, rather than assuming
+    the sponsor has already agreed.
+  how_to_use: Bring your business context and draft questions. Rehearse, hold the real discussion, then
+    record what was agreed and what remains open.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Bring your business context and draft questions. Rehearse, hold the real discussion, then record what was agreed and what remains open. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me prepare an Outcome & Strategy discussion with my manager or executive sponsor. I am a product manager. Help me ask better questions and surface what needs agreement. The real conversation is mine to conduct.
+
+Context: my product and its customer are [describe]. I am meeting with [role]. Our business goals, strategy, and known constraints are [paste or screenshot]. My draft discussion questions are [paste, or say I have not drafted them]. The decision this conversation needs to support is [describe].
+
+Guide me through these five areas, one at a time: Business Outcome, Why Now, Customer, Success Criteria, and Constraints and Non-Negotiables.
+- Ask what I know in the current area and what I still need to learn from my sponsor. Separate an agreed fact from my interpretation.
+- Have me write a question for that gap. Critique leading wording, yes-or-no shortcuts, and questions that presume my preferred project is the answer. Offer a generic example when I need help, then let me try again.
+- For the business outcome, check for a measurable business change rather than a feature or project. For the customer, ask for a real role and situation. For success criteria, ask where the metric, target, and timeframe come from.
+- Rehearse one difficult moment, such as a sponsor naming a feature instead of an outcome. Ask what I would say, then help me improve the follow-up. Label the rehearsal as practice; nothing from it is an agreement.
+
+Before we finish, have me record my questions, known constraints, and unresolved decisions in a discussion guide. Pause so I can hold the real meeting. If I later bring actual notes, help me check my summary of the agreed business outcome, urgency, customer, criteria, constraints, and open questions. Ask me to record the real Go, Partial, or No-go alignment decision and any follow-up.
+
+Constraints: do not answer for my sponsor, invent targets, fill the agreed-outcome section before the meeting, or declare alignment from rehearsal. Keep gaps visible. Work one area at a time and ask one question at a time.
+```
+
+
+### Play 02: Stakeholder Alignment
+
+Stable identifier: `ps-stakeholder-alignment`.
+
+
+#### Library-authored / 02-stakeholder-alignment / 01-pressure-test-stakeholder-map.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Pressure-Test Your Stakeholder Map
+play_number: 2
+play: Stakeholder Alignment
+skill: ps-stakeholder-alignment
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-stakeholder-alignment/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Check stakeholder coverage and engagement choices against observed interest and influence.
+  how_to_use: Draft your stakeholder table and placements first. After the critique, record the placements
+    and engagement actions you can justify.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Draft your stakeholder table and placements first. After the critique, record the placements and engagement actions you can justify. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me pressure-test a stakeholder map I drafted. I am a product manager. You do not know these people; I do. Question my reasoning rather than assigning people to quadrants for me.
+
+Context: my product, customer, and initiative are [describe]. My draft table lists each stakeholder's name, role, interest, influence, and sentiment [paste or screenshot]. My Interest / Influence placements, planned engagement, and known gaps are [paste or screenshot].
+
+Task, one stakeholder or gap at a time:
+- Ask what decision this map supports and which roles may be missing. Prompt me to consider legal, security, finance, sales, marketing, operations, support, sponsors, skeptics, and people who can stop progress. Suggest role types to consider, not invented people.
+- For a placement, ask what I have observed that shows this person's interest and actual influence over this initiative. A senior title or my impression of their personality is not enough. Help me distinguish low interest from disagreement or skepticism.
+- Check my engagement choice against the four modes: Manage Closely for high influence/high interest; Keep Satisfied for high influence/low interest; Keep Informed for low influence/high interest; Monitor for low influence/low interest.
+- Ask what decisions they need to shape, what information they need, and how I will involve them. Challenge a generic update schedule that ignores decision rights or a real relationship risk.
+- Keep organizational stakeholders distinct from the customers whose needs we investigate. Ask which political dynamics, missing stakeholders, or potential blockers belong in Risks and Gaps.
+
+After the critique, have me revise the table, choose any changed placements myself, and record specific engagement actions. Ask what would cause me to revisit the map.
+
+Constraints: do not invent people, relationships, sentiment, or evidence. Do not rate or move stakeholders for me. Unknown is an acceptable entry until I investigate. Ask one question at a time.
+```
+
+
+### Play 03: Outcome Tree, Section One
+
+Stable identifier: `ps-outcome-tree`.
+
+
+#### Library-authored / 03-outcome-tree-section-one / 01-check-outcome-tree.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Check Your Outcome Tree Before Discovery
+play_number: 3
+play: Outcome Tree, Section One
+skill: ps-outcome-tree
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-outcome-tree/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Check the causal link between business results, customer progress, and the measures that would
+    reveal it.
+  how_to_use: Draft Section One first. Bring your strategy context and tree, then record revisions and
+    assumptions you will investigate.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Draft Section One first. Bring your strategy context and tree, then record revisions and assumptions you will investigate. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me check Section One of my Outcome Tree before discovery. I am a product manager. Critique the connections I drafted; do not write my outcomes or choose my targets.
+
+Context: my product and customer roles are [describe]. My strategy discussion notes or equivalent business context are [paste or screenshot]. My draft tree contains the Business Outcome, Business Success Metrics, two to five Product Outcomes, Product Success Metrics, and Product Health Metrics [paste or screenshot]. Any problem statement or solution summary already available is [paste, or say not yet defined].
+
+Task, one part at a time:
+- Check whether the business outcome names a measurable business change rather than a project or feature. Ask who agreed it and what evidence supports any target.
+- For each product outcome, ask what the customer achieves and how it could contribute to the business result. Check for a direction, named metric, and context. Point at outputs, internal tasks, or financial results posing as customer outcomes.
+- Check that there are two to five distinct product outcomes, using customer role names. If there are more, ask me which overlap or whether we need separate trees. Do not consolidate them for me.
+- Check the measures: business success metrics track business results; product success metrics show customer progress toward an outcome; product health metrics show whether the product is operating acceptably. Ask which outcome each success metric measures and how we would collect it.
+- Walk the chain back from one customer change to the business result. Ask where we have evidence and where we are relying on a causal assumption. Flag an unsupported link without inventing a replacement.
+
+Have me revise the tree in my own words and record the assumptions and missing measures to investigate. Leave problem or solution sections marked not yet defined when that is the truth.
+
+Constraints: do not invent baselines, targets, or customer evidence. A number without support stays an open entry. Offer a generic example if I am stuck, then ask me to try. Work one item at a time and ask one question at a time.
+```
+
+
+### Play 04: Market Selection & Sizing
+
+Stable identifier: `ps-market-selection-sizing`.
+
+
+#### Deck / 04-market-selection-sizing / 01-pressure-test-the-market.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -59,7 +314,10 @@ Ask me, one question at a time:
 After my answers, attempt to define my market and ask me to confirm if your definition is good or needs iterating. After a definition is locked, pause and ask me if we should move to Prompt #2 – Build the PESTEL together.
 ```
 
-### Deck / 04-market-selection-sizing / 02-build-the-pestel-together.md
+
+#### Deck / 04-market-selection-sizing / 02-build-the-pestel-together.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -109,7 +367,10 @@ Before you do research, ask me if there are any market forces that I should, or 
 By the end, you should deliver me a summary of a PESTEL analysis of my market, cite your sources, and never fabricate information or make assumptions of your own.
 ```
 
-### Deck / 04-market-selection-sizing / 03-segment-the-market.md
+
+#### Deck / 04-market-selection-sizing / 03-segment-the-market.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -161,7 +422,10 @@ This will help me move beyond simple industries or demographics as segments.
 Suggest two high-potential segments I can explore for opportunities. High-potential segments are those with strong underserved needs and have potential problems worth solving to validate. Justify your recommendations with evidence. Encourage me to challenge you and add my own market and segment knowledge to refine the recommendations.
 ```
 
-### Deck / 04-market-selection-sizing / 04-first-pass-market-sizing.md
+
+#### Deck / 04-market-selection-sizing / 04-first-pass-market-sizing.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -210,7 +474,18 @@ NOTE: We will continue to iterate on this market sizing; we are looking for a fi
 If I have an existing product, we can explore the SOM; if I don’t, we’ll skip it until I have ideated solutions.
 ```
 
-### Deck / 05-jobs-to-be-done-outcomes / 01-check-job-statements.md
+
+## Discover + Investigate
+
+
+### Play 05: Jobs-to-Be-Done & Outcomes
+
+Stable identifier: `ps-jobs-to-be-done`.
+
+
+#### Deck / 05-jobs-to-be-done-outcomes / 01-check-job-statements.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -274,7 +549,10 @@ It is important to always think beyond functional and include emotional and soci
 It is important to NOT include outcomes and solutions in a job-to-be-done statement. If we mix outcomes and solutions into the job statement, we lose clarity and bias our thinking towards a specific product or feature. A clean job statement ensures we stay focused on the customer’s goal, not our assumptions.
 ```
 
-### Deck / 05-jobs-to-be-done-outcomes / 02-check-product-outcomes.md
+
+#### Deck / 05-jobs-to-be-done-outcomes / 02-check-product-outcomes.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -338,7 +616,15 @@ What Are Good Product Outcomes?
 - Reveal Unmet or Overserved Needs: Outcomes help us see where customers struggle or where they have more capability than they need.
 ```
 
-### Deck / 06-personas-proto-personas / 01-draft-proto-persona.md
+
+### Play 06: Personas & Proto-Personas
+
+Stable identifier: `ps-proto-persona`.
+
+
+#### Deck / 06-personas-proto-personas / 01-draft-proto-persona.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -394,7 +680,10 @@ Hold one discipline throughout: a segment defines WHO I target based on data; a 
 Constraints: Do not present any of you suggestions as fact. Keep every field tagged so I can see what is mine and what is a guess. Ask one question at a time.
 ```
 
-### Deck / 06-personas-proto-personas / 02-review-research-based-persona.md
+
+#### Deck / 06-personas-proto-personas / 02-review-research-based-persona.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -447,7 +736,15 @@ worth my time.
 Constraints: your suggestions may sharpen wording, structure, and emphasis, but must not add attributes, quotes, or data my research did not produce. Improving how a real finding is communicated is fair; inventing new substance is not. Aim to drive stakeholder empathy, not a perfect document. Ask one question at a time.
 ```
 
-### Deck / 07-empathy-interviews / 01-prepare-interview-guide.md
+
+### Play 07: Empathy Interviews
+
+Stable identifier: `ps-empathy-interviews`.
+
+
+#### Deck / 07-empathy-interviews / 01-prepare-interview-guide.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -494,7 +791,10 @@ Suggest 4-5 topic areas for me to explore during the interview. This will allow 
 Constraints: do not write my questions for me. But offer some examples of open-ended questions so I know what good looks like.
 ```
 
-### Deck / 07-empathy-interviews / 02-rehearse-your-technique.md
+
+#### Deck / 07-empathy-interviews / 02-rehearse-your-technique.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -543,7 +843,15 @@ Task:
 Constraints: These are practice situations, not data, and nothing here goes in my findings. We may run this out loud in voice mode. Always remind me to go talk to a real customer and not use what I learned from you as the truth.
 ```
 
-### Deck / 08-affinity-mapping / 01-learn-affinity-mapping.md
+
+### Play 08: Affinity Mapping
+
+Stable identifier: `ps-affinity-mapping`.
+
+
+#### Deck / 08-affinity-mapping / 01-learn-affinity-mapping.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -603,7 +911,15 @@ see. Do not invent observations or quotes. Work one step at a time and ask one
 question at a time. Keep me encouraged; this is a skill I am building.
 ```
 
-### Deck / 09-problem-identification / 01-refine-problem-statements.md
+
+### Play 09: Problem Identification
+
+Stable identifier: `ps-problem-identification`.
+
+
+#### Deck / 09-problem-identification / 01-refine-problem-statements.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -656,7 +972,76 @@ sharpen what I bring; do not replace my diagnosis. A clean problem statement is 
 hypothesis until my evidence backs it. Keep me in the problem space, not solutions. Ask one question at a time.
 ```
 
-### Deck / 11-exploring-the-solution-space / 01-scope-how-might-we-questions-slide-53-alternate.md
+
+### Play 10: Framing the Problem
+
+Stable identifier: `ps-framing-the-problem`.
+
+
+#### Library-authored / 10-framing-the-problem / 01-pressure-test-problem-frame.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Pressure-Test Your Problem Frame
+play_number: 10
+play: Framing the Problem
+skill: ps-framing-the-problem
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-framing-the-problem/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Examine a customer problem frame for evidence, root causes, and solutions hiding inside the wording.
+  how_to_use: Bring your research and draft five-stem frame. Record the revised frame, constraints, and
+    final problem statement you can defend.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Bring your research and draft five-stem frame. Record the revised frame, constraints, and final problem statement you can defend. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me pressure-test a problem frame I drafted. I am a product manager. Help me sharpen the customer's problem before I commit to a solution. Critique my wording and ask me to revise it.
+
+Context: my customer and situation are [paste or screenshot my persona or equivalent notes]. My interview findings and candidate problem are [paste, with sources]. My draft frame is:
+I am [role, situation, and experience].
+Trying to [desired outcome].
+But [observable barrier].
+Because [root cause].
+Which makes me feel [customer emotion and context].
+My context and constraints are [paste]. My final problem statement is [paste, or say not drafted].
+
+Task, one stem at a time:
+- Check that I am writing from the customer's perspective, not the product team's. Point at vague words and ask what actually happens in that person's world.
+- Ask which observation backs the statement. Keep what a customer said distinct from my interpretation. Mark unsupported explanations and emotions as hypotheses to investigate.
+- Check that Trying to states the outcome and But names a concrete barrier. Keep external conditions such as regulations or budget in Context and Constraints rather than confusing them with the barrier.
+- Test Because: does it explain why the barrier exists, or repeat it? Is a proposed feature hiding in the supposed root cause? Ask what would show that explanation is wrong.
+- Check that Which makes me feel names a specific emotion supported by what I heard, or is clearly marked as my assumption.
+- Then have me write or revise a concise final problem statement that synthesizes the five stems without adding new claims or implying a preferred solution. Check that version against the evidence.
+
+Have me record the revised frame, final statement, and remaining evidence gaps. Ask what needs resolving before I take it to the next decision.
+
+Constraints: do not invent root causes, quotes, emotions, or validation. Do not rewrite the frame before I have worked through your critique. Teach with generic examples when helpful. Ask one question at a time.
+```
+
+
+## Discover + Define
+
+
+### Play 11: Exploring the Solution Space
+
+Stable identifier: `ps-exploring-solution-space`.
+
+
+#### Deck / 11-exploring-the-solution-space / 01-scope-how-might-we-questions-slide-53-alternate.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -709,7 +1094,10 @@ Task, one question at a time:
 Constraints: Do not invent a problem statement I did not give you. A good HMW opens the space without choosing what goes in it. Ask one question at a time.
 ```
 
-### Deck / 11-exploring-the-solution-space / 01-scope-how-might-we-questions.md
+
+#### Deck / 11-exploring-the-solution-space / 01-scope-how-might-we-questions.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -762,7 +1150,10 @@ Task, one question at a time:
 Constraints: Do not invent a problem statement I did not give you. A good HMW opens the space without choosing what goes in it. Ask one question at a time.
 ```
 
-### Deck / 11-exploring-the-solution-space / 02-plan-ideation-session.md
+
+#### Deck / 11-exploring-the-solution-space / 02-plan-ideation-session.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -811,7 +1202,10 @@ Task:
 Constraints: do not produce the ideas, that is the team's job in the room. Do not set the agenda for me. Build it with me and make me justify each choice. Ask one question at a time.
 ```
 
-### Deck / 11-exploring-the-solution-space / 03-sharpen-solution-summary.md
+
+#### Deck / 11-exploring-the-solution-space / 03-sharpen-solution-summary.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -866,7 +1260,69 @@ write a testable hypothesis next, in Play 12. It is not the test. Ask one
 question at a time.
 ```
 
-### Deck / 13-positioning-statement / 01-pressure-test-positioning.md
+
+### Play 12: Solution Hypothesis
+
+Stable identifier: `ps-solution-hypothesis`.
+
+
+#### Library-authored / 12-solution-hypothesis / 01-pressure-test-solution-hypothesis.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Pressure-Test Your Solution Hypothesis
+play_number: 12
+play: Solution Hypothesis
+skill: ps-solution-hypothesis
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-solution-hypothesis/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Test the reasoning from proposed solution to customer benefit to business outcome before treating
+    the bet as proven.
+  how_to_use: Draft your solution summary, benefits, assumptions, and two hypotheses. Record the revised
+    bet and the uncertainty a test must settle.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Draft your solution summary, benefits, assumptions, and two hypotheses. Record the revised bet and the uncertainty a test must settle. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me pressure-test a solution hypothesis I drafted. I am a product manager. Critique the bet and its reasoning; do not choose a solution or write the hypothesis for me.
+
+Context: my customer and evidence-backed problem statement are [paste or screenshot]. My proposed solution summary is [paste]. My draft benefits, risks, and assumptions are [paste]. My two hypotheses are:
+Customer-focused: IF we [provide this solution], THEN [the customer experiences this benefit].
+Business-focused: IF [that customer benefit occurs], THEN [this measurable business outcome follows].
+
+Task, one point at a time:
+- Check that the solution addresses the problem I supplied rather than introducing a new problem to justify it. Flag implementation detail that hides the actual customer experience.
+- For each benefit, ask what changes for the customer or business. Point at any feature name posing as a benefit, and have me restate it.
+- Check both If/Then statements. The first Then should describe customer progress. The second If should carry that same customer benefit into a distinct business result. Ask me to explain the causal link and identify the evidence for it.
+- Ask which risk or assumption could break each link. Challenge generic concerns that no test could settle. Ask what observation would support or contradict the assumption.
+- If I use a number, ask where it came from. Distinguish a proposed test threshold I must justify from an actual result. Do not fill a missing target with a plausible figure.
+
+After the critique, have me revise the solution summary, benefits, assumptions, and both hypotheses in my own words. Ask which unresolved assumption most needs a small test and what result would change my mind. Record the hypothesis and that question before moving on.
+
+Constraints: do not invent customer behavior, business figures, or test results. A well-written hypothesis is still a hypothesis. Do not treat my preference as validation. Offer examples to help me reason, not as a replacement for my bet. Ask one question at a time.
+```
+
+
+### Play 13: Positioning Statement
+
+Stable identifier: `ps-positioning-statement`.
+
+
+#### Deck / 13-positioning-statement / 01-pressure-test-positioning.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -917,7 +1373,15 @@ Task, working through my draft with me:
 Constraints: do not invent a persona, segment, or customer evidence I did not give you. Treat competitor details you add as general knowledge for me to verify, not fact. Keep this persona fixed; I will rerun this for other personas. Work one point at a time, and wait for my answers before you rewrite.
 ```
 
-### Deck / 14-lo-fi-experimentation / 01-define-riskiest-assumption.md
+
+### Play 14: Lo-fi Experimentation
+
+Stable identifier: `ps-lofi-experimentation`.
+
+
+#### Deck / 14-lo-fi-experimentation / 01-define-riskiest-assumption.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -969,7 +1433,10 @@ Task, in this order:
 Constraints: do not rank the assumptions for me or declare a winner. Do not invent evidence or customer reactions. A candidate assumption you raise is mine to accept or reject. Ask one question at a time.
 ```
 
-### Deck / 14-lo-fi-experimentation / 02-design-lean-experiment.md
+
+#### Deck / 14-lo-fi-experimentation / 02-design-lean-experiment.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -1018,7 +1485,232 @@ Constraints: do not set my metric, time window, or decision rule, those are mine
 question at a time.
 ```
 
-### Deck / 18-tiny-acts-of-discovery / 01-prioritize-assumptions.md
+
+### Unnumbered: Storyboarding
+
+Stable identifier: `ps-storyboarding`.
+
+
+#### Library-authored / storyboarding / 01-pressure-test-storyboard.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Pressure-Test Your Customer Storyboard
+play_number: null
+play: Storyboarding
+skill: ps-storyboarding
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-storyboarding/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Examine whether a six-frame customer story expresses a hypothesis clearly enough to test with
+    real people.
+  how_to_use: Draft your six frames first, or sketch the customer, conflict, and resolution to get started.
+    Record your revised story and plan to test it with real customers.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Draft your six frames first, or sketch the customer, conflict, and resolution to get started. Record your revised story and plan to test it with real customers. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me pressure-test a customer storyboard. I am a product manager. Help me see where the story is unclear or where my solution hypothesis is doing too much work. Do not write the customer's story for me.
+
+Context: my target customer and situation are [describe or paste my persona]. The customer problem is [paste]. My solution hypothesis is IF we [provide the solution], THEN [customer benefit]; IF [customer benefit], THEN [business outcome]. My six draft frames are [paste captions or screenshot]. If I do not have a draft yet, start by asking me to sketch the character, conflict, and resolution in my own words.
+
+Guide me through the frames one at a time:
+1. Once upon a time: does this introduce a specific customer and the world they work in?
+2. Every day: does this show the recurring routine and friction, rather than jumping straight to the crisis?
+3. Until one day: is there a concrete event that makes the problem consequential? Ask which parts come from research and which are hypothetical.
+4. Because of that: does the customer experience a proposed solution, or has the frame turned into a feature list?
+5. Until finally: what does the customer achieve, and what specific emotion accompanies that moment?
+6. And every day after that: what lasting behavior or capability changes, beyond a happy ending?
+
+At each frame, point at wording that loses the customer as protagonist, explain the issue, and ask me to revise it. Teach with a generic example when useful. After the six frames, check that the conflict matches the problem, the solution matches the If clause, and the resolution matches the customer Then clause.
+
+Then help me plan a test: which real target customers I will show it to, what I most need to learn, what open question I will ask, and how I will record their reactions. Have me commit my revised captions and test plan before ending.
+
+Constraints: do not invent customer reactions or present the storyboard as proof that the hypothesis works. Keep hypothetical scenes labeled as such. Aim for roughly 20-35 words per caption, allowing 25-40 for the crisis frame. Work one frame at a time and ask one question at a time.
+```
+
+
+### Play 15: Risk Assessment
+
+Stable identifier: `ps-risk-assessment`.
+
+
+#### Library-authored / 15-risk-assessment / 01-pressure-test-risk-assessment.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Widen and Pressure-Test Your Risk Assessment
+play_number: 15
+play: Risk Assessment
+skill: ps-risk-assessment
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-risk-assessment/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Challenge the breadth, evidence, and responses in a team risk assessment while leaving ratings
+    and commitments with the team.
+  how_to_use: Bring brainstormed risks and draft responses. Record the team's revisions, named owners,
+    and unresolved judgments after the critique.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Bring brainstormed risks and draft responses. Record the team's revisions, named owners, and unresolved judgments after the critique. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me pressure-test a risk assessment my team drafted. I am a product manager. Help us notice gaps and question our judgments. Do not rate, plot, or prioritize our risks for us.
+
+Context: our product, customer, proposed solution, and upcoming decision are [describe]. Our risk list names the concern, who raised it, impact severity, and likelihood [paste or screenshot]. Our draft mitigations, contingencies, points of contact, and notes are [paste].
+
+Task:
+- Ask which kinds of risk we have considered: customer and adoption, technical, financial, legal and regulatory, operations, go-to-market, and people. Ask where our knowledge is weakest before suggesting anything missing.
+- After I answer, you may offer candidate risk questions for us to consider, accept, adjust, or reject. Tie them to what I supplied. Do not present a possibility as an established threat.
+- For one risk, check whether its name identifies a specific concern rather than a category such as "technical risk." Ask what could happen and what the business consequence would be.
+- Ask what evidence supports severity and likelihood separately. If our rating does not fit the evidence we supplied, explain the tension and ask us to reconsider it. We choose the rating and placement.
+- Check that mitigation is a proactive action to reduce likelihood or impact and contingency is the response if the risk occurs. Flag duplicates disguised by different words.
+- Ask whether the point of contact is a named accountable person and whether the response needs a trigger, timing, dependency, or escalation recorded in Notes. Do not assign someone who has not agreed.
+
+Have me record accepted changes and unresolved risks in the assessment, then choose when and under what conditions we will revisit it.
+
+Constraints: do not invent probabilities, business impacts, agreement, or owners. Do not make the team's priority decision. Keep risks distinct from observed incidents and assumptions that still need testing. Work one risk at a time and ask one question at a time.
+```
+
+
+### Play 16: Product Outcome Canvas
+
+Stable identifier: `ps-product-outcome-canvas`.
+
+
+#### Library-authored / 16-product-outcome-canvas / 01-review-product-outcome-canvas.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Review Your Product Outcome Canvas Before Go/No Go
+play_number: 16
+play: Product Outcome Canvas
+skill: ps-product-outcome-canvas
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-product-outcome-canvas/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Check whether a concise investment case faithfully summarizes discovery and makes a specific decision
+    request.
+  how_to_use: Assemble the canvas from your actual work first. After the review, record corrections, open
+    gaps, and the decision you will request from leadership.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Assemble the canvas from your actual work first. After the review, record corrections, open gaps, and the decision you will request from leadership. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me review a Product Outcome Canvas before a Go/No Go discussion with leadership. I am a product manager. Pressure-test my case and help me prepare for questions; do not create a persuasive story unsupported by our work.
+
+Context: my draft canvas is [paste or screenshot]. The evidence and earlier work it summarizes are [paste my problem frame, solution hypothesis, positioning, customer and buyer notes, outcome tree, and risk assessment, or equivalent material]. The decision-makers and decision I need are [describe].
+
+Review one section at a time:
+- Summary: check the Problem Statement, Solution Summary, and Positioning Statement against the supplied work. Point at any claim that appeared from nowhere, became stronger, or contradicts another section.
+- User and buyer stories: ask which details come from research and which are illustrative. Keep the customer or buyer as protagonist. Do not invent a quote or a success story to fill a gap.
+- Key Features: check that these describe capabilities, while Product Outcomes describe what customers achieve. Keep the Business Outcomes and Business Success Metrics at the business level; tie Product Success Metrics to customer progress.
+- Risks: ask whether the top risks reflect our actual assessment and whether something important has disappeared to make the case look cleaner.
+- What's Next, The Ask: ask exactly what decision, roles, allocation, resources, and timeframe I need. Test the proposed Introduction Date against what we know. Leave unsupported commitments open.
+
+Rehearse one difficult leadership question grounded in a gap you found. Ask me to answer it, critique my response, and help me identify what evidence or decision I still need. This is practice, not approval.
+
+Have me revise the canvas and record the remaining gaps and specific Ask. Keep it concise enough to support a real decision rather than burying uncertainty in extra copy.
+
+Constraints: do not invent numbers, customer proof, resource commitments, or leadership approval. Do not make the Go/No Go call or rewrite the canvas before I have addressed the critique. Ask one question at a time.
+```
+
+
+## Create
+
+
+### Play 17: Outcome-Based Roadmap & Release Plan
+
+Stable identifier: `ps-outcome-roadmap`.
+
+
+#### Library-authored / 17-outcome-roadmap / 01-pressure-test-outcome-roadmap.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Pressure-Test Your Outcome-Based Roadmap
+play_number: 17
+play: Outcome-Based Roadmap & Release Plan
+skill: ps-outcome-roadmap
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-outcome-roadmap/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Check whether confidence horizons, customer outcomes, outputs, and ongoing discovery tell a defensible
+    story.
+  how_to_use: Bring your draft roadmap and release plan with the evidence behind them. Record the revisions
+    and horizon choices you can justify.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Bring your draft roadmap and release plan with the evidence behind them. Record the revisions and horizon choices you can justify. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me pressure-test an outcome-based roadmap and release plan I drafted. I am a product manager. Challenge the reasoning behind my choices; do not place items, pick dates, or make commitments for me.
+
+Context: my business outcome and outcome tree are [paste or screenshot]. My draft roadmap and release plan are [paste or screenshot]. The evidence behind our confidence in these items is [paste].
+
+Task, one horizon at a time:
+- Check that the Roadmap describes customer outcomes, not features. Ask what progress each customer role will make and how it supports the business outcome. Keep revenue goals in the business layer.
+- Ask why an item belongs in Now, Next, or Later. Now should reflect high confidence backed by validation; Next contains work being validated; Later holds lower-confidence outcome hypotheses. Point out mismatches between evidence and claimed confidence, then let me choose whether to move or revise the item.
+- Check the Release Plan uses output language: what the team will develop now and which output concepts it will validate next. Ask which customer outcome each output serves. Flag an output with no connection.
+- Look for Tiny Acts of Discovery happening alongside current work, assumptions ready to validate next, and open questions to research later. Ask what each activity could teach us and which roadmap decision it could change.
+- Ask what evidence would let an item graduate to a nearer horizon, or cause us to revise or retire it. Keep the roadmap living rather than disguising uncertain work as a dated promise.
+
+After the critique, have me revise the outcome wording, output links, discovery activities, and horizon placements I choose to change. Record the remaining assumptions and when we will review the evidence again.
+
+Constraints: do not invent validation, customer value, dates, or team commitments. Do not replace customer outcomes with financial goals or make prioritization decisions for me. If I am stuck, illustrate the distinction with a generic example, then have me revise my own item. Ask one question at a time.
+```
+
+
+### Play 18: Tiny Acts of Discovery
+
+Stable identifier: `ps-tiny-acts-discovery`.
+
+
+#### Deck / 18-tiny-acts-of-discovery / 01-prioritize-assumptions.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -1065,7 +1757,10 @@ Task:
 Constraints: do not assign my scores or sort the backlog. The certainty rating is mine, because only I know my evidence. Do not invent signals or confidence I did not give you. Ask one question at a time.
 ```
 
-### Deck / 18-tiny-acts-of-discovery / 02-design-tiny-act.md
+
+#### Deck / 18-tiny-acts-of-discovery / 02-design-tiny-act.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -1116,7 +1811,15 @@ Task:
 Constraints: do not pick the act for me, and do not invent results. Bias every suggestion toward speed and low cost over completeness. The goal is a signal, not a report. Ask one question at a time.
 ```
 
-### Deck / 19-output-prioritization / 01-rehearse-prioritization-session.md
+
+### Play 19: Output Prioritization
+
+Stable identifier: `ps-output-prioritization`.
+
+
+#### Deck / 19-output-prioritization / 01-rehearse-prioritization-session.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -1166,7 +1869,15 @@ evidence. Do not invent customer value or cost numbers. Keep me focused on
 facilitating a relative ranking people believe in. Ask one question at a time.
 ```
 
-### Deck / 20-go-to-market-enablement / 01-pressure-test-key-messages.md
+
+### Play 20: Go-to-Market Enablement
+
+Stable identifier: `ps-go-to-market`.
+
+
+#### Deck / 20-go-to-market-enablement / 01-pressure-test-key-messages.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -1219,7 +1930,10 @@ Task, one persona at a time:
 Constraints: do not invent personas, quotes, testimonials, test results, or data as proof. You may suggest types of proof I could gather, labeled as proof I still need. Work one persona at a time, and wait for my answers before you rewrite.
 ```
 
-### Deck / 20-go-to-market-enablement / 02-pressure-test-launch-goals.md
+
+#### Deck / 20-go-to-market-enablement / 02-pressure-test-launch-goals.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -1271,7 +1985,71 @@ Task, one goal at a time:
 Constraints: do not invent baselines, benchmarks, or market data. Do not choose my targets; question them. Ask one question at a time.
 ```
 
-### Deck / 22-measuring-outcomes / 01-review-success-metrics.md
+
+### Play 21: Product Readiness Testing
+
+Stable identifier: `ps-product-readiness`.
+
+
+#### Library-authored / 21-product-readiness / 01-pressure-test-readiness-plan.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Pressure-Test Your Product Readiness Plan
+play_number: 21
+play: Product Readiness Testing
+skill: ps-product-readiness
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-product-readiness/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Challenge the test design and pre-committed decision criteria before real customer results are
+    visible.
+  how_to_use: Draft your readiness plan before recruiting or testing. Record justified criteria and named
+    responsibilities, then conduct the real test.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Draft your readiness plan before recruiting or testing. Record justified criteria and named responsibilities, then conduct the real test. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me pressure-test a product readiness test plan before launch. I am a product manager. Question my test design and decision rules; do not set my targets or decide whether to launch.
+
+Context: the product, target customers, and solution we are testing are [describe]. Earlier customer learning is [paste, or state what remains unknown]. My draft plan, goals, proposed Go/No Go criteria, and out-of-scope assumptions are [paste or screenshot].
+
+Task, one part at a time:
+- Participants: check that each profile describes role, company context, experience, and what it represents in the target market. Ask whether these are real customers. Have me explain the total and counts by participant type.
+- Duration: ask what meaningful usage cycle or task completion the test must cover. Calendar days alone do not show that customers had a fair chance to use it.
+- Responsibilities: check for a named Test Lead, Account/Client Contact, Technical Support person, and Quote Collector. Ask me to resolve open assignments and how real participant quotes will be captured accurately with appropriate permission.
+- Goals: ask how we will measure workload or efficiency, satisfaction, self-service adoption, and reliability as appropriate. For each named goal, check the metric, proposed numeric target, and supporting baseline or rationale. An unjustified number stays an unresolved choice for me to settle before testing.
+- Go/No Go: have me distinguish must-pass from aspirational goals before results are available. Ask what I would do if a must-pass result fell just below its target. Challenge a criterion that would never stop or change our launch.
+- Scope: ask which assumptions and risks this test cannot address and why. Keep those limits visible rather than calling the product universally ready.
+
+Have me record the revised plan and pre-committed criteria, then pause for the real test. If I return with results, compare actuals with the original criteria and flag gaps for the named decision owner. Ask me to record that person's actual decision and conditions.
+
+Constraints: do not invent participants, quotes, baselines, results, or approval. Do not silently lower criteria after seeing results. I choose the targets and the authorized owner makes the launch decision. Ask one question at a time.
+```
+
+
+## Deliver
+
+
+### Play 22: Measuring Outcomes
+
+Stable identifier: `ps-measuring-outcomes`.
+
+
+#### Deck / 22-measuring-outcomes / 01-review-success-metrics.md
+
+**Source: Deck.**
 
 Source metadata (preserved):
 
@@ -1321,4 +2099,108 @@ Task, one metric at a time:
 - Widen my thinking: what are several different behaviors I could measure for my product, not just the obvious one?
 
 Constraints: do not choose my metrics or invent numbers. A metric you suggest is a candidate for me to judge. Keep me on customer behavior that leads the outcome, not the business result that follows it. Ask one question at a time.
+```
+
+
+### Play 23: Outcome Tree, Section Two
+
+Stable identifier: `ps-outcome-tree`.
+
+
+#### Library-authored / 23-outcome-tree-section-two / 01-review-outcome-tree-evidence.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Review Your Outcome Tree Against New Evidence
+play_number: 23
+play: Outcome Tree, Section Two
+skill: ps-outcome-tree
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-outcome-tree/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Revisit the original outcome tree using discovery or post-launch evidence while leaving keep,
+    revise, and retire decisions with the team.
+  how_to_use: Bring Section One and new evidence. Record the outcome decisions, metric changes, sources,
+    and remaining gaps in Section Two.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Bring Section One and new evidence. Record the outcome decisions, metric changes, sources, and remaining gaps in Section Two. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a product coach helping me revisit my Outcome Tree after discovery or post-launch learning. I am a product manager. Help me weigh new evidence against the tree we started with. Do not decide which outcomes to keep.
+
+Context: my original Section One tree is [paste or screenshot]. Since then we have learned [paste interview findings, research, experiment results, or post-launch measurements, with sources and dates]. The decision this update should support is [describe].
+
+Task, one product outcome at a time:
+- Ask what the new evidence supports, what contradicts it, and what is still unknown. Keep observations distinct from my interpretation and show where the evidence is too weak to call an outcome validated or invalidated.
+- Ask whether discovery revealed a customer outcome missing from the tree, or showed that an existing one was actually a feature or a business result.
+- Have me decide whether to keep, revise, retire, or add an outcome and explain why. For the recorded status, use Validated, Invalidated, Revised, or New only where justified by my decision and evidence; leave unresolved cases explicitly open. Keep the updated tree within two to five product outcomes.
+- For Business Success, Product Success, and Product Health metrics, ask for the source of each baseline, target, and actual. Keep targets separate from observed results. Mark actuals as not yet available when we are still pre-launch.
+- Recheck the causal chain: which links between customer progress and business results became stronger, weaker, or unsupported? Ask what evidence could settle the most consequential remaining gap.
+
+Have me record the update date, activities completed, each outcome's status or open question, the evidence behind changes, and any revised measures. Finish with the changes I chose and what still needs investigation.
+
+Constraints: do not invent evidence, baselines, actuals, or a decision to continue. No new evidence is a reason to leave uncertainty visible, not to manufacture an update. Offer suggestions as options for me to consider, accept, adjust, or reject. Ask one question at a time.
+```
+
+
+### Play 24: Process Retrospective
+
+Stable identifier: `ps-process-retrospective`.
+
+
+#### Library-authored / 24-process-retrospective / 01-prepare-retrospective.md
+
+**Source: Library-authored.**
+
+Source metadata (preserved):
+
+```yaml
+title: Prepare and Close Out Your Retrospective
+play_number: 24
+play: Process Retrospective
+skill: ps-process-retrospective
+sequence: 1
+sequence_total: 1
+source:
+  kind: authored
+  based_on: skills/ps-process-retrospective/SKILL.md
+  status: library-authored
+tool_type: Chat-based AI tool
+instructions:
+  goal: Rehearse a safe, useful team retrospective and turn the team's real discussion into agreed actions
+    afterward.
+  how_to_use: Bring the session scope and participants. Prepare and rehearse first; return with real team
+    notes before recording findings and agreed actions.
+```
+
+**Source:** Authored for this library, based on the Productside Playbook Play. This is an added coaching prompt, not a prompt supplied by the Playbook.
+
+Bring the session scope and participants. Prepare and rehearse first; return with real team notes before recording findings and agreed actions. Copy the text in the box into your AI chat and replace the bracketed placeholders with your own context.
+
+```text
+You are a facilitation coach helping me prepare and close out a Productside team retrospective. I am a product manager. Help me lead the room. The team's reflections come from the real session, not from you.
+
+Context: we are reviewing [phase, sprint, launch, or project]. The people who did the work and will attend are [list roles]. My draft session plan and any concerns about participation or safety are [paste]. Say whether we are preparing or returning after the real session [state which].
+
+Before the session, guide me one step at a time:
+- Ask what I want the team to learn and who might be missing or reluctant to speak. Help me prepare a way to invite their views without making assumptions about what they think.
+- Coach me to use four quadrants: Wind in Our Sails, past events that helped; Anchors Holding Us Back, past obstacles; Beacons on the Horizon, future goals; Barriers We See Ahead, future obstacles.
+- Have me write open prompts that fit our situation. Use a generic example to teach the distinction when needed, then ask me to try. Do not populate the quadrants.
+- Rehearse a difficult moment, such as blame directed at a person. Ask what I would say, then help me refocus on the process or system while preserving the real concern. Label this as practice.
+- Have me record the scope, participants, prompts, and facilitation plan, then pause so I can run the session.
+
+After the real session, when I provide the team's raw notes [paste them], help me check my grouping without changing what people meant. Flag ambiguities for the team to resolve. Have me propose actions addressing important anchors or barriers in this format: [Owner] will [specific action] by [date]. Ask which owners and dates the team actually agreed before I record them as commitments.
+
+Constraints: do not infer the team's wins, frustrations, goals, or obstacles from background documents. Do not invent consensus, assign owners, or invent dates. Keep quadrant items short and specific, and preserve disagreement. Ask one question at a time.
 ```

@@ -13,6 +13,7 @@ Read README.md and LICENSE first. Keep this project focused on skills and prompt
 - Preserve the Productside license and attribution.
 - Before committing, check local Markdown links, frontmatter, and prompt sequence links. Changes to skill behavior also need relevant behavioral validation in the source project.
 - After changing library content, run `python3 chatgpt-project/build.py` and `python3 chatgpt-project/build.py --check`. The ChatGPT kit uses uploaded Play references, not installed skills. Preserve its catalog destinations and prompt text. See [setup and packaging checks](chatgpt-project/README.md).
+- The Project upload set has three files: `playbook-plays.md` is the guide for both prompt and skill users; `playbook-prompts.md` contains the coaching prompts; `playbook-skills.md` contains full Play references. Keep their phase and Play ordering aligned.
 - Do not commit or publish unless the user asks.
 
 Maintenance standards and source tracking live in the [original project](https://github.com/Productside/Productside-Playbook-Skills). This copy intentionally omits its build system, eval suite, bundles, and planning documents.

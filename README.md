@@ -20,7 +20,7 @@ For a chat, attach the chosen Play's `SKILL.md`, then ask:
 
 ## Use the library in a ChatGPT Project
 
-[Set up a ChatGPT Project](chatgpt-project/README.md) with nine reference files and project instructions. Its catalog lets ChatGPT find a Play by name, number, or task, then read its instructions, template, and examples. No skill installation is needed.
+[Set up a ChatGPT Project](chatgpt-project/README.md) with three source files and project instructions. The Play guide routes you to coaching prompts or the full skill references, including their templates and examples. No skill installation is needed.
 
 ## About this copy
 
