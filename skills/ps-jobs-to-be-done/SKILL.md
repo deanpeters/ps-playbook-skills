@@ -25,6 +25,7 @@ scenarios:
   - "Help me capture the functional, emotional, and social jobs for our target persona"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Jobs-to-Be-Done & Outcomes artifact** for your target market segment.
@@ -47,6 +48,16 @@ Use this skill when you need to:
 - build the foundation for problem identification, opportunity framing, and prioritization (both steps)
 
 This is not a solution specification. Until you know what the customer is trying to accomplish, you are not ready to define what to build.
+
+### Usage Notes
+
+- **Two steps:** Step One (job statements + personas) can be done pre-discovery. Step Two (product outcomes) is strongest after empathy interviews provide evidence. Both steps can be completed in one session if evidence exists.
+- **Review path:** if the PM brings a draft, the skill pressure-tests it first (verdict per job and outcome) before offering rewrites. This matches the Playbook's AI prompts.
+- The template produces two artifacts: a Job Statement + Persona table and a Product Outcome & Context table.
+- Job statements use three Productside formats: Functional, Emotional, Social.
+- Product outcomes use the Direction + Metric + Context format. "Optimize," "enhance," and "improve" are never a direction.
+- Upstream (B2B work-in-progress deck): Market Selection & Sizing defines the segment these jobs belong to.
+- Downstream: ps-problem-identification uses jobs and outcomes from this skill as input. Product outcomes feed into ps-outcome-tree.
 
 ## Key Concepts
 
@@ -86,9 +97,9 @@ Product outcomes express what the customer wants to achieve. They are not intern
 
 Format: `Direction + Metric + Context/Circumstance`
 
-The metric names what is being measured. **Default to including a quantified target** — a percentage, ratio, range, or exact number. When in doubt, put something in. The PM can refine it; a vague direction cannot be refined.
+The metric names what is being measured. **Default to including a quantified target**  -  a percentage, ratio, range, or exact number. When in doubt, put something in. The PM can refine it; a vague direction cannot be refined.
 
-Preference order for the quantified value: **percentage > ratio > range > exact number**. For time-based outcomes, use a range ("by Q3", "by H2", "by EOY") rather than an exact date — specific dates stale out quickly.
+Preference order for the quantified value: **percentage > ratio > range > exact number**. For time-based outcomes, use a range ("by Q3", "by H2", "by EOY") rather than an exact date  -  specific dates stale out quickly.
 
 Examples:
 - "Reduce payroll data entry errors by 30% during quarterly onboarding cycles" (percentage)
@@ -96,9 +107,9 @@ Examples:
 - "Add 3 new regional customers through HR partner channel by Q4" (exact number + range)
 - "Increase HR self-service revenue to $1.2M by H2" (dollar figure + range)
 
-Every outcome must have a direction. Direction + named metric ("Reduce time to complete payroll data entry") is the minimum viable form — acceptable when the PM has no basis for a threshold yet, but always the starting point to improve from. Add the quantified threshold ("by 30%", "from 2-day to same-day") when any evidence supports it.
+Every outcome must have a direction. Direction + named metric ("Reduce time to complete payroll data entry") is the minimum viable form  -  acceptable when the PM has no basis for a threshold yet, but always the starting point to improve from. Add the quantified threshold ("by 30%", "from 2-day to same-day") when any evidence supports it.
 
-Avoid: "improve efficiency," "faster onboarding," "better HR tools" — these are not metrics, just sentiment. **"Optimize," "enhance," and "improve" are never a direction.** They don't say which way the metric moves. Use increase/decrease, faster/slower, expand/contract, reduce, or eliminate.
+Avoid: "improve efficiency," "faster onboarding," "better HR tools"  -  these are not metrics, just sentiment. **"Optimize," "enhance," and "improve" are never a direction.** They don't say which way the metric moves. Use increase/decrease, faster/slower, expand/contract, reduce, or eliminate.
 
 Metrics can be quantitative (time, cost, quantity) or qualitative (confidence, trust, satisfaction). Qualitative metrics are especially useful for emotional and social jobs: "Increase confidence in incident-handling procedures" is a real outcome. When a qualitative metric can be measured, name how (for example, "trust scores on passenger security surveys").
 
@@ -118,7 +129,7 @@ The Playbook gives three tests:
 
 The playbook states this directly: *"Customers experience Pains when they are unable to achieve the desired Outcomes when executing a Job."*
 
-This is load-bearing for the next play. Pains do not float free — they arise when a Job is hard to execute and the desired Outcome is out of reach. Writing precise, measurable Outcomes in this play is what makes Problem Identification tractable: the PM already knows what "success" looks like for each Job, so the Pains become specific gaps between where the customer is and where they want to be.
+This is load-bearing for the next play. Pains do not float free  -  they arise when a Job is hard to execute and the desired Outcome is out of reach. Writing precise, measurable Outcomes in this play is what makes Problem Identification tractable: the PM already knows what "success" looks like for each Job, so the Pains become specific gaps between where the customer is and where they want to be.
 
 ### Jobs, Outcomes, and Solutions Are Not the Same
 
@@ -170,64 +181,24 @@ What AI cannot do is say what customers are trying to accomplish. Jobs come from
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_jobs_to_be_done_playbook_pages.pdf](assets/ps_jobs_to_be_done_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -246,7 +217,7 @@ The artifact comes first. Commentary is secondary.
 
 ### If the PM Brings a Draft
 
-When the user arrives with drafted job statements or outcomes, review the draft instead of drafting from scratch. This is the path the Playbook's AI prompts take ([prompts/01](prompts/01-check-job-statements.md), [prompts/02](prompts/02-check-product-outcomes.md)).
+When the user arrives with drafted job statements or outcomes, review the draft instead of drafting from scratch. This is the path the Playbook's AI prompts take (the critique guidance in this Play, the critique guidance in this Play).
 
 1. **Confirm the segment.** If it is unnamed or vague, resolve it first (Step 1). Do not review jobs for a segment no one can name.
 2. **Review each job.** Give a verdict per row: clean, wrong format, contaminated with an outcome, or contaminated with a solution. Quote the words that cause the problem.
@@ -365,8 +336,8 @@ For each job, express the product outcomes the customer wants to achieve.
 
 Format: `Direction + Metric + Context/Circumstance`
 
-- **Direction**: Increase, Decrease, Expand, Contract, Reduce, Eliminate — always required, never optional
-- **Metric**: what is being measured (time, errors, satisfaction, revenue, customer count) — default to including a quantified target: percentage, ratio, range, or exact number ($3.5M, 3 new regional customers). Use a time range ("by Q3", "by H2") rather than an exact date. When in doubt, put a number in — the PM can refine it.
+- **Direction**: Increase, Decrease, Expand, Contract, Reduce, Eliminate  -  always required, never optional
+- **Metric**: what is being measured (time, errors, satisfaction, revenue, customer count)  -  default to including a quantified target: percentage, ratio, range, or exact number ($3.5M, 3 new regional customers). Use a time range ("by Q3", "by H2") rather than an exact date. When in doubt, put a number in  -  the PM can refine it.
 - **Context**: the specific circumstance that bounds the outcome
 
 Each job can have one or more outcomes. Produce at least 10 outcomes total across all jobs.
@@ -431,115 +402,166 @@ After the current step is complete, offer context-appropriate options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Investigate** to capture what your target customers are trying to accomplish and what success looks like for them. Pair this with persona work - the playbook says to consider Jobs-to-Be-Done and Persona at the same time.
+
+This template supports **two steps** that can be completed together or at different times:
+
+- **Step One:** Fill the Job Statements & Personas table (Section 1). This can be done pre-discovery.
+- **Step Two:** Fill the Product Outcomes table (Section 2). This is often done after empathy interviews provide evidence about what outcomes customers actually care about.
+
+### Template
+
+```markdown
+# Jobs-to-Be-Done & Outcomes
+
+## Product Context
+
+- Product or service:
+- Target market segment:
+- Primary user persona:
+- Buyer persona (if different):
+
+## 1. Job Statements & Personas
+
+Write job statements using the Productside formats:
+- **Functional:** [Action verb] + [object of the action]
+- **Emotional:** Feel [Emotion] when [Circumstance]
+- **Social:** Seen as [Social Perception] to [whom]
+
+| # | Type | Job Statement | Persona |
+|---|------|---------------|---------|
+| 1 | F | | |
+| 2 | F | | |
+| 3 | F | | |
+| 4 | F | | |
+| 5 | F | | |
+| 6 | F | | |
+| 7 | E | | |
+| 8 | E | | |
+| 9 | S | | |
+| 10 | S | | |
+
+> Quality check: Does every job describe customer progress, not a product feature or internal team task?
+> Quality check: Are all three job types represented (Functional, Emotional, Social)?
+> Quality check: Would the named persona recognize this as something they are actually trying to do?
+> Quality check: Are rows distributed across multiple personas, not one repeated role?
+> Capacity check: Job statements should be ~8-10 words. Persona entries should be 2-3 words (a role title).
+
+## 2. Product Outcomes
+
+For each job, express the desired product outcomes using:
+**Direction + Metric + Context/Circumstance**
+
+| # | Product Outcome & Context | Related Job(s) |
+|---|--------------------------|-----------------|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+| 4 | | |
+| 5 | | |
+| 6 | | |
+| 7 | | |
+| 8 | | |
+| 9 | | |
+| 10 | | |
+
+> Quality check: Does every outcome start with a direction word (reduce, increase, minimize, improve, eliminate)?
+> Quality check: Is every outcome measurable - could you tell if it happened?
+> Quality check: Are these things the *customer* wants to achieve, not internal business metrics?
+> Quality check: Have you avoided feature requests disguised as outcomes ("have a dashboard that...")?
+> Capacity check: Product outcomes should be ~12-14 words per row.
+
+## Evidence Notes (optional)
+
+- What is well-supported by evidence:
+- What is still assumption:
+- Recommended next validation steps:
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+**Step One (can be done pre-discovery):**
+
+1. Start with **Product Context** to anchor who this is for.
+2. Fill **Job Statements** starting with functional jobs, then adding emotional and social jobs. Use the Productside sentence formats - do not improvise different structures.
+
+**Step Two (strongest after empathy interviews):**
+
+3. Fill **Product Outcomes** for each job. One job can have multiple outcomes. Use Direction + Metric + Context. If you completed empathy interviews between steps, let customer language inform the outcome statements.
+4. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
+
+#### How Many Rows
+
+The canonical template has 12 rows. Default to 10 filled rows:
+
+- at least 5-6 functional jobs
+- at least 2 emotional jobs
+- at least 2 social jobs
+- at least 10 product outcomes (one or more per job)
+- distribute rows across multiple personas, not one repeated role
+
+Add more rows if the evidence supports them. Do not pad with vague jobs to fill the template.
+
+#### What Goes in the Persona Column
+
+Use a concrete role title that reflects the actual customer - the person who has this job in the field. If you built a proto-persona already, reuse that persona name.
+
+Do not use:
+- "User" (too vague)
+- "Stakeholder" (too abstract)
+- The Product Manager's own title (unless the product truly serves PMs)
+
+#### Connecting to Other Skills
+
+- **Upstream:** Proto-persona (the persona names in this template should match)
+- **Downstream:** Problem Identification uses the jobs, pains, and outcomes from this artifact
+- **Parallel:** The Outcome Tree (Template 03) uses product outcomes from this skill as input
+
+#### Capacity Reference
+
+See [Template and capacity guidance](#template) for the exact word and character budgets per field.
+
+| Field | Word Budget | Guidance |
+|-------|-------------|----------|
+| Job Statement | ~8-10 | Compact action phrase; use Productside format |
+| Persona | ~2-3 | Role title only |
+| Product Outcome | ~12-14 | Direction + Metric + Context; one sentence max |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** Warehouse planner: Functional, "Coordinate daily labor assignments"; Emotional, "Feel confident when reallocating crews"; Social, "Seen as dependable by site supervisors." Outcome: "Reduce reassignment delays during shift changes."
+- **Weak:** "Improve efficiency" has no named metric or clear direction.
+- **Drift to avoid:** Jobs as solutions: "Use the scheduling dashboard" describes a product interaction. State what the planner is trying to accomplish.
 
-- a stronger Productside-style JTBD artifact with all three job types
-- a weak, generic version
-- a drift-bug example showing jobs written as solutions
-- commentary on why the weak versions fail
 
 ## Common Pitfalls
 
-### Pitfall 1: Writing Only Functional Jobs
+- **Writing Only Functional Jobs:** After writing functional jobs, explicitly ask: how does this person want to feel while doing this work? How do they want to be seen by their peers and leadership? Write at least 1-2 emotional and 1-2 social jobs.
 
-**Symptom:** Every job is a task ("process orders," "generate reports," "track shipments") with no emotional or social dimension.
+- **Confusing Jobs with Solutions:** Strip out any mention of products, features, tools, or implementation. Rewrite as the underlying customer progress: "Track regional performance against quarterly targets."
 
-**Consequence:** The team builds a tool that does the job but nobody wants to use because it ignores how people feel about their work and how they want to be perceived.
+- **Making Outcomes Vague:** Use the Direction + Metric + Context format, and never use "optimize," "enhance," or "improve" as the direction. "Improve efficiency" becomes "Reduce time spent reconciling data across multiple HR systems." Adding a specific threshold ("by 40% during month-end close") makes it stronger when you have the evidence  -  but even without a number, a named metric beats a vague direction.
 
-**Fix:** After writing functional jobs, explicitly ask: how does this person want to feel while doing this work? How do they want to be seen by their peers and leadership? Write at least 1-2 emotional and 1-2 social jobs.
+- **Defaulting to a Tech Role:** Ask what the customer actually does day-to-day. Most products serve people whose primary job is not writing code. A fleet manager's jobs involve route optimization, driver coordination, and compliance reporting - not API integration or system architecture.
 
-### Pitfall 2: Confusing Jobs with Solutions
+- **Writing Internal Team Tasks as Customer Jobs:** Ask: who experiences the product's value in the field? That person's jobs go in the template. The PM's jobs belong in process docs, not in customer discovery artifacts.
 
-**Symptom:** "Use our analytics dashboard to track KPIs" or "Integrate data from multiple systems."
+- **Restating Jobs as Outcomes:** Outcomes should describe a measurable result: "Reduce time to complete payroll data entry." "Reduce errors in new employee form submissions." Where the PM has evidence for a specific threshold, adding it strengthens the outcome  -  but a named metric without a number beats a vague direction every time. The outcome is what success looks like *for the customer* when the job goes well.
 
-**Consequence:** The team starts from a solution and works backward, skipping the customer need entirely.
+- **Exceeding Template Capacity:** Job statements: ~8-10 words. Outcomes: ~12-14 words. Persona entries: 2-3 words. Write for the template cell, not for the model's appetite for prose.
 
-**Fix:** Strip out any mention of products, features, tools, or implementation. Rewrite as the underlying customer progress: "Track regional performance against quarterly targets."
+- **Underfilling the Template:** Default to 10 job rows covering all three types (Functional, Emotional, Social) with at least 10 outcomes. Distribute rows across multiple personas - do not repeat one role in every row.
 
-### Pitfall 3: Making Outcomes Vague
-
-**Symptom:** "Improve efficiency," "Better visibility," "Streamline processes."
-
-**Consequence:** The outcome cannot be measured, so nobody can tell if the product is working.
-
-**Fix:** Use the Direction + Metric + Context format, and never use "optimize," "enhance," or "improve" as the direction. "Improve efficiency" becomes "Reduce time spent reconciling data across multiple HR systems." Adding a specific threshold ("by 40% during month-end close") makes it stronger when you have the evidence — but even without a number, a named metric beats a vague direction.
-
-### Pitfall 4: Defaulting to a Tech Role
-
-**Symptom:** The user asks about an IoT platform PM's customers and gets job statements for a solutions architect or platform engineer.
-
-**Consequence:** The JTBD artifact reflects LLM training bias, not the real customer population.
-
-**Fix:** Ask what the customer actually does day-to-day. Most products serve people whose primary job is not writing code. A fleet manager's jobs involve route optimization, driver coordination, and compliance reporting - not API integration or system architecture.
-
-### Pitfall 5: Writing Internal Team Tasks as Customer Jobs
-
-**Symptom:** "Prioritize the product backlog," "Align stakeholders on the roadmap," "Define acceptance criteria."
-
-**Consequence:** The JTBD artifact describes the Product Manager's own work, not the customer's.
-
-**Fix:** Ask: who experiences the product's value in the field? That person's jobs go in the template. The PM's jobs belong in process docs, not in customer discovery artifacts.
-
-### Pitfall 6: Restating Jobs as Outcomes
-
-**Symptom:** Job: "Onboard new employees." Outcome: "Onboarding is faster."
-
-**Consequence:** The outcome adds no new information. The team cannot tell what "better" means.
-
-**Fix:** Outcomes should describe a measurable result: "Reduce time to complete payroll data entry." "Reduce errors in new employee form submissions." Where the PM has evidence for a specific threshold, adding it strengthens the outcome — but a named metric without a number beats a vague direction every time. The outcome is what success looks like *for the customer* when the job goes well.
-
-### Pitfall 7: Exceeding Template Capacity
-
-**Symptom:** Job statements become full sentences with context clauses. Outcomes turn into multi-sentence explanations.
-
-**Consequence:** The human cannot paste the output into the playbook without rewriting it.
-
-**Fix:** Job statements: ~8-10 words. Outcomes: ~12-14 words. Persona entries: 2-3 words. Write for the template cell, not for the model's appetite for prose.
-
-### Pitfall 8: Underfilling the Template
-
-**Symptom:** The model produces 3-5 jobs and 3-5 outcomes because it thinks the synthesis is cleaner.
-
-**Consequence:** The human has blank rows to fill, missing job types, and incomplete role coverage.
-
-**Fix:** Default to 10 job rows covering all three types (Functional, Emotional, Social) with at least 10 outcomes. Distribute rows across multiple personas - do not repeat one role in every row.
-
-### Pitfall 9: Presenting AI-Drafted Jobs as Findings
-
-**Symptom:** A best-guess JTBD table, plausible and well formatted, goes into a stakeholder deck or straight into Problem Identification as if customers had said it. Nothing marks which jobs came from research and which came from the model.
-
-**Consequence:** The team validates nothing and builds on a stereotype. The Playbook names this the first AI trap: AI standing in for the customer.
-
-**Fix:** Label every drafted job and outcome as a hypothesis, and end with Assumptions to Validate. Route the hypotheses into empathy interviews (ps-empathy-interviews) before treating any of them as evidence.
+- **Presenting AI-Drafted Jobs as Findings:** Label every drafted job and outcome as a hypothesis, and end with Assumptions to Validate. Route the hypotheses into empathy interviews (ps-empathy-interviews) before treating any of them as evidence.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (2, in order)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Related Skills
-
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - build a persona before or alongside this skill
-- [ps-problem-identification](../ps-problem-identification/SKILL.md) - uses jobs from this skill as input
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_jobs_to_be_done_playbook_pages.pdf](assets/ps_jobs_to_be_done_playbook_pages.pdf)
-- Productside Playbook companion document (supplied separately)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 19-24: Template 05 of 24 there, with the AI overview on slide 21 and prompts on slides 22-23. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-jobs-to-be-done) for supporting source material and expanded examples.

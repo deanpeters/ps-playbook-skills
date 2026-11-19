@@ -22,6 +22,7 @@ scenarios:
   - "Help me connect our product outcomes to a concrete release plan with dates and owners"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Outcome-Based Roadmap and Release Plan** from a product team's validated outcomes and prioritized outputs.
@@ -104,64 +105,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_outcome_roadmap_playbook_pages.pdf](assets/ps_outcome_roadmap_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -179,7 +140,7 @@ That means:
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-pressure-test-roadmap.md](prompts/01-pressure-test-roadmap.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 When a draft roadmap lists outputs (features, releases, projects), don't guess the outcomes behind them, even labeled as guesses. Name each item as an output and ask the PM what customer outcome it serves and what evidence puts it in Now, Next, or Later. The outcomes come from the PM and their customers.
 
@@ -303,119 +264,251 @@ At the end of the artifact, offer three options:
 2. Share the release plan with engineering: the output-focused bottom row gives the team concrete, prioritized work with clear discovery activities running alongside
 3. Schedule a review cadence: propose a specific date or milestone trigger for the next roadmap review, so the artifact stays current as assumptions resolve
 
+## Template
+
+### When to Use This
+
+Use this template during the **Create** phase after completing your Outcome Tree and Output Prioritization. It is most powerful when Tiny Acts of Discovery results are available to populate the discovery sections.
+
+Upstream artifacts that feed this template:
+- Outcome Tree (ps-outcome-tree): Business Outcomes header and product outcomes for the roadmap row
+- Output Prioritization (ps-output-prioritization): Quadrant I outputs for Now release plan; Quadrant II outputs for Next output concepts
+- Tiny Acts of Discovery (ps-tiny-acts-discovery): specific experiments and assumptions for the discovery sections
+
+---
+
+### Template
+
+```markdown
+# Outcome-Based Roadmap and Release Plan
+
+**Product or initiative:**
+**Date:**
+**Team:**
+
+---
+
+## Business Outcomes
+
+[One or two sentences from the Outcome Tree describing the business-level goal this roadmap serves. Include a measurable target if one exists. Example: "Reduce unplanned equipment downtime by 30% across field service regions by end of year, so regional operations teams can meet SLA commitments without emergency dispatch costs."]
+
+---
+
+## Roadmap
+
+The roadmap row communicates in outcome language only - what customers achieve.
+Do not list outputs (features, capabilities, or deliverables) in this row.
+
+---
+
+### NOW - High Confidence
+**Product Outcomes to Pursue**
+
+[List 1-2 product outcomes the team has validated and is committed to pursuing. Write from the customer's perspective: what they achieve, accomplish, or experience - not what the product does.
+
+Format: one outcome per bullet, 15-25 words each.]
+
+- [Outcome 1: what specific customer role achieves a specific result in a specific situation]
+- [Outcome 2: what specific customer role achieves a specific result in a specific situation]
+
+> Quality check: Are these written from the customer's point of view, not the engineering team's? Can each be measured once achieved? Do they trace to the Business Outcomes header above?
+> Capacity check: 1-2 outcomes; 15-25 words each.
+
+---
+
+### NEXT - Medium Confidence
+**Product Outcomes to Validate**
+
+[List 1-2 product outcomes the team believes in but has not yet validated. These need testing before the team commits to pursuing them. Write in customer language - what customers would achieve if this outcome proved true.]
+
+- [Outcome 1: what specific customer role would achieve if the underlying assumption proves valid]
+- [Outcome 2: what specific customer role would achieve if the underlying assumption proves valid]
+
+> Quality check: Is there a clear validation question for each outcome - something that, if answered, would move it to Now? Are these distinct from the Now outcomes?
+> Capacity check: 1-2 outcomes; 15-25 words each.
+
+---
+
+### LATER - Low Confidence
+**Product Outcome Hypotheses**
+
+[List 1-2 early-stage outcome ideas that require research before the team can evaluate them seriously. These are hypotheses, not validated outcomes. The team has a directional sense but not enough knowledge to design a test yet.]
+
+- [Hypothesis 1: a plausible outcome the team suspects might be valuable but cannot yet validate]
+- [Hypothesis 2: a plausible outcome the team suspects might be valuable but cannot yet validate]
+
+> Quality check: Is each written as a hypothesis, not a research question? Is there a clear research path that would move this to Next?
+> Capacity check: 1-2 hypotheses; 15-25 words each.
+
+---
+
+## Release Plan
+
+The release plan row communicates in output language only - what gets built.
+Do not list customer outcomes in this row.
+
+---
+
+### NOW
+**Outputs to Develop**
+
+[List 2-4 specific features or capabilities the team is actively building to drive the Now outcomes. Each output should trace to a Now outcome above. Use Quadrant I outputs from ps-output-prioritization if available.]
+
+- [Output 1: specific feature or capability name - 5-10 words]
+- [Output 2: specific feature or capability name - 5-10 words]
+- [Output 3: specific feature or capability name - 5-10 words]
+
+> Quality check: Does each output trace to a Now outcome above? Are these specific enough to build a sprint from? No outcomes should appear here.
+> Capacity check: 2-4 outputs; 5-10 words each.
+
+**Tiny Acts of Discovery**
+
+[List 1-2 small, fast experiments running now alongside output development. These are not future work - they run in parallel with the outputs above. Use Tiny Acts from ps-tiny-acts-discovery if available.
+
+Format: name the test, the method, and the participants. 10-20 words each.]
+
+- [Tiny Act 1: specific test with named method and participants, running in parallel with Now outputs]
+- [Tiny Act 2: specific test with named method and participants]
+
+> Quality check: Are these running now, not after Now outputs ship? Are they specific enough to execute this week? Do they connect to the outputs being built?
+> Capacity check: 1-2 Tiny Acts; 10-20 words each.
+
+---
+
+### NEXT
+**Output Concepts to Validate**
+
+[List 1-2 output ideas that need validation before entering the release plan. These are candidates, not commitments. Use Quadrant II outputs from ps-output-prioritization if available - high value, high cost items that need more evidence before committing.]
+
+- [Output concept 1: specific feature or capability idea - 5-10 words]
+- [Output concept 2: specific feature or capability idea - 5-10 words]
+
+> Quality check: Does each concept trace to a Next outcome above? Is there a specific assumption that, if validated, would move this into Now outputs?
+> Capacity check: 1-2 output concepts; 5-10 words each.
+
+**Assumptions to Validate**
+
+[List 2-4 specific hypotheses about customer behavior or adoption that must be resolved before moving Next outcomes and output concepts to Now. Write as testable hypothesis statements, not as feature requests.
+
+Format: "We believe [customer segment] will [behavior] when [condition], because [reasoning]." 10-20 words each.]
+
+- [Assumption 1: testable hypothesis about customer behavior or adoption]
+- [Assumption 2: testable hypothesis about customer behavior or adoption]
+- [Assumption 3: testable hypothesis about customer behavior or adoption]
+
+> Quality check: Is each assumption specific enough to design a test around? Is it about customer behavior or sentiment - not a technical or feature decision? Does it connect to a Next outcome?
+> Capacity check: 2-4 assumptions; 10-20 words each.
+
+---
+
+### LATER
+**Assumptions to Research**
+
+[List 2-4 open questions and broad hypotheses that must be explored before Later outcome hypotheses can graduate to Next. These are wider than testable assumptions - they need research to even know what to test.
+
+Format: an open question or early hypothesis. 10-20 words each.]
+
+- [Research question 1: open question or early hypothesis about the Later outcome area]
+- [Research question 2: open question or early hypothesis about the Later outcome area]
+- [Research question 3: open question or early hypothesis about the Later outcome area]
+
+> Quality check: Is each specific enough to guide a research method (interviews, observation, data pull)? Does it connect to a Later hypothesis above? Would answering this question move an item to Next?
+> Capacity check: 2-4 items; 10-20 words each.
+
+---
+
+## Living Document Note
+
+Mark when and how this roadmap will be reviewed:
+
+- Next scheduled review:
+- Trigger for unscheduled review (e.g., "when a Tiny Act produces a result" or "when a Next assumption is resolved"):
+- Owner of the review cadence:
+```
+
+---
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Complete **Business Outcomes** first. Everything below it must trace back to this header.
+2. Fill the **Roadmap row** (Now, Next, Later) using outcome language. Do not place any feature or output name in this row.
+3. Fill the **Release Plan row** (Now, Next, Later) using output language. Do not place any customer outcome statement in this row.
+4. Check that every Now output in the release plan traces to a Now outcome in the roadmap.
+5. Fill the discovery sections (Tiny Acts, Assumptions to Validate, Assumptions to Research). If any are blank, the artifact is not ready.
+6. Add the **Living Document Note** before sharing.
+
+#### What Goes Where
+
+| Section | Language | Contains | Does NOT Contain |
+|---------|----------|----------|-----------------|
+| Roadmap row | Outcome language | What customers achieve | Features, capabilities, deliverables |
+| Release plan row | Output language | What the team builds | Customer outcome statements |
+| Business Outcomes header | Business language | Business-level goal with measurable target | Vague directions like "grow revenue" |
+| Tiny Acts of Discovery | Action language | Specific tests running now | Future research phases |
+| Assumptions to Validate | Hypothesis language | Testable beliefs about customer behavior | Feature requests or build decisions |
+| Assumptions to Research | Question language | Open questions needing research | Assumptions already ready to test |
+
+#### The Graduation Path
+
+Items move left as confidence increases:
+
+- Later outcome hypothesis + research resolved = moves to Next as Product Outcome to Validate
+- Next outcome + assumptions validated = moves to Now as Product Outcome to Pursue
+- Next output concept + assumptions validated = moves to Now as Output to Develop
+- Now output shipped + outcome achieved = removed from roadmap; captured in metrics
+
+Items can move right if confidence decreases. A Now outcome with an unexpected discovery finding should move back to Next for additional validation rather than continuing to drive output development on a weakened foundation.
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-outcome-tree provides the Business Outcomes header and product outcomes for the roadmap row. ps-output-prioritization provides Quadrant I outputs for Now and Quadrant II outputs for Next output concepts. ps-tiny-acts-discovery provides specific experiments and assumptions.
+- **Downstream:** This artifact is the primary communication tool for the Create phase. Share the roadmap row (outcome language) with leadership and the release plan row (output language) with engineering.
+
+#### Capacity Reference
+
+| Section | Items | Words per Item | Notes |
+|---------|-------|---------------|-------|
+| Business Outcomes | 1-2 sentences | 20-35 words total | Specific + measurable target |
+| Product Outcomes - Now | 1-2 outcomes | 15-25 words each | Customer language only |
+| Product Outcomes - Next | 1-2 outcomes | 15-25 words each | Customer language only |
+| Product Outcome Hypotheses - Later | 1-2 hypotheses | 15-25 words each | Customer language only |
+| Outputs to Develop | 2-4 outputs | 5-10 words each | Specific feature or capability names |
+| Tiny Acts of Discovery | 1-2 acts | 10-20 words each | Running now, in parallel |
+| Output Concepts to Validate | 1-2 concepts | 5-10 words each | Candidate outputs, not commitments |
+| Assumptions to Validate | 2-4 assumptions | 10-20 words each | Hypothesis format |
+| Assumptions to Research | 2-4 questions | 10-20 words each | Open question or early hypothesis |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** Roadmap: technicians diagnose faults sooner. Release plan: deliver the diagnostic checklist that may support that outcome. Distinguish confidence horizons.
+- **Weak:** A dated feature list alone hides the customer progress each release is meant to support.
+- **Drift to avoid:** Business language in the customer row: revenue growth belongs at the business layer, not as a substitute for the technician's outcome.
 
-- a strong outcome-based roadmap with clear outcome language in the roadmap row, output language in the release plan row, and active discovery sections in all three columns
-- a weak version where outputs appear in the roadmap row, all outcomes are in Now, and discovery sections are empty
-- a drift-bug example where outcomes are written in business/financial language instead of customer outcome language, turning the roadmap into an internal financial plan
 
 ## Common Pitfalls
 
-### Pitfall 1: Feature-Based Roadmap - Outputs in the Roadmap Row
+- **Feature-Based Roadmap - Outputs in the Roadmap Row:** Ask: what does the customer achieve when this output exists and works? That answer is the outcome. Replace the output in the roadmap row with the outcome. Move the output to the release plan row.
 
-**Symptom:** The roadmap row contains items like "launch the mobile app," "add dashboard reporting," "migrate to microservices."
+- **All Outcomes in NOW - No Differentiation by Confidence:** Push the team to differentiate honestly. If everything is high confidence, either the team is building too narrowly or they have not surfaced what they do not yet know. Most real product situations have at least two or three outcome hypotheses in Next or Later.
 
-**Consequence:** Executives read a feature list. They cannot evaluate whether the team is working on the right customer problems. Engineering has no anchor for what customer value each output is supposed to create.
+- **Roadmap Written in Business/Financial Language:** Reframe every outcome as a customer achievement: "What does the customer experience or accomplish when this metric improves?" "Increase ARR by 15%" becomes "contract renewal managers approve renewals faster because pricing scenarios are visible before the meeting." The business metric can live in the Business Outcomes header, not in the product outcome row.
 
-**Fix:** Ask: what does the customer achieve when this output exists and works? That answer is the outcome. Replace the output in the roadmap row with the outcome. Move the output to the release plan row.
+- **Discovery Sections Left Blank:** Treat empty discovery sections as a red flag, not a formatting gap. At minimum, name one Tiny Act running alongside Now outputs and one assumption in each of Next and Later. If the team genuinely has no open questions, probe: what would have to be true for the Next outcomes to earn high confidence? Those answers are the starting assumptions.
 
-### Pitfall 2: All Outcomes in NOW - No Differentiation by Confidence
+- **Outputs Not Connected to Outcomes:** For each output, ask: which Now outcome does this drive? If no outcome in the Now roadmap row answers that question, either the outcome is missing from the roadmap or the output should not be in the Now release plan.
 
-**Symptom:** Every product outcome is in the Now column. Next and Later are empty or have token content.
+- **Static Artifact - Built Once and Never Updated:** Establish a specific review cadence tied to discovery milestones, not to the calendar quarter. When a Tiny Act produces a result or an assumption is resolved, the roadmap should update the same week. Build the review trigger into the artifact itself.
 
-**Consequence:** The roadmap communicates false certainty. There is no signal about what is validated versus what is directional. Leadership cannot assess where the team is taking risk.
+- **Business Outcomes Header Missing or Too Vague:** Make the business outcome specific and measurable. Name the direction, the metric, and the target if possible. "Reduce unplanned equipment downtime by 30% in field service regions by end of year" is an anchor. "Improve operations" is not.
 
-**Fix:** Push the team to differentiate honestly. If everything is high confidence, either the team is building too narrowly or they have not surfaced what they do not yet know. Most real product situations have at least two or three outcome hypotheses in Next or Later.
+- **Assumptions Written as Features Instead of Hypotheses:** Reframe each item as a testable hypothesis about customer behavior: "We believe [customer role] will [specific behavior] when [condition], because [reasoning]." The feature that might follow from a validated assumption is an output - it belongs in the release plan, not in the assumptions section.
 
-### Pitfall 3: Roadmap Written in Business/Financial Language
-
-**Symptom:** Roadmap outcomes read as: "increase ARR by 15%," "reduce churn 10 basis points," "improve NPS by 5 points."
-
-**Consequence:** The roadmap becomes an internal financial plan, not a customer value plan. Engineering cannot connect their work to these outcomes. Customers would not recognize them as describing their experience. The roadmap has been inverted: it is now communicating what the business gets, not what customers get.
-
-**Fix:** Reframe every outcome as a customer achievement: "What does the customer experience or accomplish when this metric improves?" "Increase ARR by 15%" becomes "contract renewal managers approve renewals faster because pricing scenarios are visible before the meeting." The business metric can live in the Business Outcomes header, not in the product outcome row.
-
-### Pitfall 4: Discovery Sections Left Blank
-
-**Symptom:** Tiny Acts of Discovery, Assumptions to Validate, and Assumptions to Research sections are empty or contain placeholder text.
-
-**Consequence:** The artifact signals that discovery is complete. The team is committing to a build plan without active learning. New risks and changed customer behavior will not surface until after outputs are shipped and measured.
-
-**Fix:** Treat empty discovery sections as a red flag, not a formatting gap. At minimum, name one Tiny Act running alongside Now outputs and one assumption in each of Next and Later. If the team genuinely has no open questions, probe: what would have to be true for the Next outcomes to earn high confidence? Those answers are the starting assumptions.
-
-### Pitfall 5: Outputs Not Connected to Outcomes
-
-**Symptom:** The release plan contains outputs that cannot be traced to any outcome in the roadmap row above.
-
-**Consequence:** The team is building things that do not connect to any validated customer value. When asked why something is being built, the answer is "because stakeholders asked for it" or "it was on last year's roadmap."
-
-**Fix:** For each output, ask: which Now outcome does this drive? If no outcome in the Now roadmap row answers that question, either the outcome is missing from the roadmap or the output should not be in the Now release plan.
-
-### Pitfall 6: Static Artifact - Built Once and Never Updated
-
-**Symptom:** The roadmap is built at the start of a planning cycle and never revisited. Later items never graduate to Next. Next items never graduate to Now.
-
-**Consequence:** The roadmap stops reflecting reality. Assumptions resolve but the roadmap does not update. Engineering builds to a plan that discovery has already invalidated.
-
-**Fix:** Establish a specific review cadence tied to discovery milestones, not to the calendar quarter. When a Tiny Act produces a result or an assumption is resolved, the roadmap should update the same week. Build the review trigger into the artifact itself.
-
-### Pitfall 7: Business Outcomes Header Missing or Too Vague
-
-**Symptom:** The header says "grow revenue," "improve operations," "increase customer satisfaction," or is left blank.
-
-**Consequence:** The roadmap floats without an anchor. Individual outcomes cannot be evaluated for whether they actually serve the business goal. Stakeholders cannot see what the team is ultimately trying to achieve.
-
-**Fix:** Make the business outcome specific and measurable. Name the direction, the metric, and the target if possible. "Reduce unplanned equipment downtime by 30% in field service regions by end of year" is an anchor. "Improve operations" is not.
-
-### Pitfall 8: Assumptions Written as Features Instead of Hypotheses
-
-**Symptom:** The Assumptions to Validate section contains items like "build the inventory lookup," "add notification preferences," "integrate with the ERP."
-
-**Consequence:** The assumptions section becomes a shadow feature backlog. No actual assumption is being tested. The team will build these items without knowing whether the underlying customer behavior or need has been confirmed.
-
-**Fix:** Reframe each item as a testable hypothesis about customer behavior: "We believe [customer role] will [specific behavior] when [condition], because [reasoning]." The feature that might follow from a validated assumption is an output - it belongs in the release plan, not in the assumptions section.
-
-### Pitfall 9: A Feature List Dressed as an Outcome Roadmap
-
-**Symptom:** The roadmap's Now column lists "SSO," "mobile app," and "reporting v2," with an outcome heading added on top.
-
-**Consequence:** The team is back in the build trap, with outcome language as decoration. Executives and engineering read it as a feature commitment.
-
-**Fix:** Put product outcomes in each horizon, and link each output to the outcome it serves. Place items by confidence, based on evidence.
+- **A Feature List Dressed as an Outcome Roadmap:** Put product outcomes in each horizon, and link each output to the outcome it serves. Place items by confidence, based on evidence.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-outcome-tree](../ps-outcome-tree/SKILL.md) provides Business Outcomes and product outcomes for the roadmap row; [ps-output-prioritization](../ps-output-prioritization/SKILL.md) provides Quadrant I and II outputs for the release plan row; [ps-tiny-acts-discovery](../ps-tiny-acts-discovery/SKILL.md) provides Tiny Acts and assumptions for the discovery sections
-- **Downstream:** no direct downstream skill; this artifact is the primary communication tool for the Create phase
-- **Related:** ps-lofi-experimentation: assumptions from the Next and Later sections may become structured lo-fi experiments
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_outcome_roadmap_playbook_pages.pdf](assets/ps_outcome_roadmap_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 78-80: Template 17 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
-
-### Playbook Quote
-
-"The value is in what gets used, not what gets built." (Kris Gale, Yammer)
-
-"Discovery is never complete! Your Roadmap and Release plan is a living document. Conduct continuous discovery to ensure your effort is always positively impacting business outcomes."
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-outcome-roadmap) for supporting source material and expanded examples.

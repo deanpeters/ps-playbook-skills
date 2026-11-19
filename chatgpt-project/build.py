@@ -105,13 +105,14 @@ def build():
 
     for play in plays:
         folder, play_id = play["folder"], play["id"]
-        for relative, section in [("SKILL.md", "Instructions"), ("template.md", "Template"),
-                                  ("examples/sample.md", "Examples")]:
-            register(folder / relative, play["file"], f"{play_id} / {section}")
-        for reference in sorted((folder / "reference").glob("*.md")):
-            register(reference, play["file"], f"{play_id} / Reference {reference.stem}")
-        for prompt in sorted((folder / "prompts").glob("*.md")):
-            register(prompt, "07-prompts.md", f"{play_id} / Companion / {prompt.name}")
+        contents = sorted(p.name for p in folder.iterdir())
+        if contents != ["SKILL.md"]:
+            raise ValueError(f"{play_id} must contain only SKILL.md; found {contents}")
+        text = (folder / "SKILL.md").read_text()
+        for heading in ["## Template\n", "## Examples\n"]:
+            if heading not in text:
+                raise ValueError(f"{play_id} is missing its embedded {heading.strip('# ').strip()}")
+        register(folder / "SKILL.md", play["file"], f"{play_id} / Instructions")
     deck_prompts = sorted((ROOT / "prompts").glob("*/*.md"))
     for prompt in deck_prompts:
         register(prompt, "07-prompts.md", f"Deck / {prompt.parent.name} / {prompt.name}")
@@ -138,6 +139,10 @@ def build():
 
             def resolve(match):
                 label, target = match.groups()
+                if target in ("#template", "#examples", "#application", "#blueprint-reference"):
+                    filename, _ = locations[path.resolve()]
+                    part = {"#template": "Template", "#examples": "Examples"}.get(target, "Instructions")
+                    return f"{label} (uploaded reference: `{filename}`, section `{path.parent.name} / {part}`)"
                 if re.match(r"(?:https?://|mailto:|#)", target):
                     return match.group(0)
                 local = (path.parent / target.split("#", 1)[0]).resolve()
@@ -151,6 +156,9 @@ def build():
                 raise ValueError(f"Unmapped reference in {path.relative_to(ROOT)}: {target}")
 
             line = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", resolve, line)
+            if path.name == "SKILL.md" and line in ("## Template", "## Examples"):
+                output.append(f"### {path.parent.name} / {line[3:]}")
+                continue
             # Nest source headings below the unique section marker.
             line = re.sub(r"^(#{1,5}) ", r"##\1 ", line)
             output.append(line)
@@ -159,7 +167,7 @@ def build():
     def section(path):
         filename, heading = locations[path.resolve()]
         metadata = ""
-        if path.parent.name == "prompts" or path in deck_prompts:
+        if path in deck_prompts:
             raw = path.read_text()
             if raw.startswith("---\n"):
                 metadata = "Source metadata (preserved):\n\n```yaml\n" + raw.split("---", 2)[1].strip() + "\n```\n\n"
@@ -186,17 +194,10 @@ def build():
     for play in plays:
         filename, folder = play["file"], play["folder"]
         outputs[filename] += f'\n## {play["id"]} | {play["title"]}\n\nPlaybook number: {play["number"]}. Phase: {play["phase"]}.\n'
-        for name in ["SKILL.md", "template.md", "examples/sample.md"]:
-            outputs[filename] += section(folder / name)
-        for reference in sorted((folder / "reference").glob("*.md")):
-            outputs[filename] += section(reference)
-    outputs["07-prompts.md"] = f"# Prompts by Play\n\n{STATUS}\n\nPrompt text and source metadata are preserved. Deck prompts come from the standalone prompts/ collection. Play companion prompts come from the individual Play folders and include authored prompts. These collections can reflect different source revisions; do not treat them as identical. For a standalone Playbook prompt request, choose Deck prompts when available. For a Play's supporting prompt, choose its Companion entry. For full Play guidance, read the catalog's Instructions and Template references instead.\n\n## Deck prompts\n"
+        outputs[filename] += section(folder / "SKILL.md")
+    outputs["07-prompts.md"] = f"# Prompts by Play\n\n{STATUS}\n\nPrompt text and source metadata are preserved from the top-level prompts/ collection. Only Plays with deck prompts appear here. For full Play guidance, including Plays without a standalone prompt, read the catalog's Instructions, embedded Template, and Examples references.\n\n## Deck prompts\n"
     for prompt in deck_prompts:
         outputs["07-prompts.md"] += section(prompt)
-    outputs["07-prompts.md"] += "\n## Play companion prompts\n"
-    for play in plays:
-        for prompt in sorted((play["folder"] / "prompts").glob("*.md")):
-            outputs["07-prompts.md"] += section(prompt)
     outputs["08-license.md"] = (ROOT / "LICENSE").read_text()
     digest = hashlib.sha256()
     for path in sorted(inputs):
@@ -233,7 +234,7 @@ These files are reference documents. No skills are installed. You can ask by nam
 - `04-discover-define.md`: solution exploration, hypotheses, positioning, experiments, Storyboarding, risks, and Product Outcome Canvas.
 - `05-create.md`: roadmaps, tiny discovery acts, prioritization, launch, and readiness.
 - `06-deliver.md`: measurement and retrospectives.
-- `07-prompts.md`: deck prompts and Play companion prompts, with source labels.
+- `07-prompts.md`: standalone deck prompts, with source labels.
 - `08-license.md`: Productside license and attribution.
 
 ## Keep the work grounded

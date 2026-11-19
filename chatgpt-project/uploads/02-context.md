@@ -96,64 +96,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-outcome-strategy-discussion / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Template`) for the working scaffold.
+Use Template (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Template`) for the working scaffold.
 
-See the source pages from the canonical playbook in assets/ps_outcome_strategy_discussion_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -171,7 +131,7 @@ The summary comes first. Commentary is secondary.
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-prepare-discussion-guide.md (uploaded reference: `07-prompts.md`, section `ps-outcome-strategy-discussion / Companion / 01-prepare-discussion-guide.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Confirm Scope and Participants
 
@@ -266,111 +226,9 @@ After the summary is complete, the PM makes an explicit Key Decision Point decis
 
 The agent can help draft the KDP statement, but the call belongs to the PM.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Examples`).
-
-The example set includes:
-
-- a strong guided discussion summary for a logistics software scenario
-- a weak version of the same scenario showing vague answers accepted as complete
-- a drift bug example where the business outcome was captured as a project milestone
-
-#### Common Pitfalls
-
-##### Pitfall 1: Treating the Discussion as a Requirements Intake
-
-**Symptom:** The PM enters the meeting ready to record what the manager tells them to build. They leave with a feature list instead of a business outcome.
-
-**Consequence:** Discovery is framed around delivering the feature, not solving the customer problem. The business outcome is never explicitly agreed on.
-
-**Fix:** Before the meeting, reframe the purpose: the PM is there to understand what the business needs to achieve, not what to build. If the manager jumps to solutions, the PM redirects: "That sounds like one approach - can we first align on what success looks like for the business overall?"
-
-##### Pitfall 2: Accepting Vague Outcomes Without Pressing
-
-**Symptom:** The business outcome is recorded as "improve customer satisfaction" or "grow the business" and the PM moves on.
-
-**Consequence:** The outcome is unmeasurable. Discovery produces findings that no one can act on because there is no shared standard for success.
-
-**Fix:** Press for specifics. "Improve customer satisfaction" needs a metric and a direction: "Increase NPS from 32 to 50 within 12 months." If the manager cannot provide a specific target, write "TBD" and flag it as a gap that must be resolved before discovery begins.
-
-##### Pitfall 3: Skipping the KDP
-
-**Symptom:** The conversation ends, the PM writes up notes, and begins discovery the next day without making an explicit proceed or escalate decision.
-
-**Consequence:** Discovery begins on an unstable foundation. If the business outcome is still contested, the research findings will be contested too.
-
-**Fix:** Treat the KDP as a required output, not an optional reflection. Before starting discovery, the PM should have a written KDP statement on file.
-
-##### Pitfall 4: Letting the Manager Dictate the Solution
-
-**Symptom:** During the outcomes conversation, the manager proposes a specific feature, technology, or approach, and the PM records it as the solution rather than redirecting to the outcome.
-
-**Consequence:** Discovery is bypassed. The PM goes directly from alignment conversation to building something the manager suggested, without validating whether it solves the customer problem.
-
-**Fix:** Solutions that emerge during an outcomes conversation are hypotheses, not decisions. Record them in the open questions section and flag them for validation during discovery.
-
-##### Pitfall 5: Documenting the Conversation Without Identifying the Gaps
-
-**Symptom:** The PM writes a complete-looking summary that covers all five areas, but fills in vague or placeholder answers in the areas where the conversation was unclear.
-
-**Consequence:** The summary looks complete but is not. The PM and the manager may have different memories of what was agreed.
-
-**Fix:** In the open questions section, be explicit about what was not resolved. A summary with two or three open questions documented is more useful than a summary with five areas filled in with uncertain answers.
-
-##### Pitfall 6: Confusing Internal Stakeholders with the Customer
-
-**Symptom:** The PM documents "our customers" as "the PM team," "engineering," or "the business unit" - the internal stakeholders they work with, not the people who use or buy the product.
-
-**Consequence:** Discovery targets internal processes instead of customer problems. The play produces internal alignment but no customer insight.
-
-**Fix:** The customer field in this play refers to who the product serves in the field - the person who uses or buys the thing the PM is building. If the product is built for external users, the customer is external. If the product is internal tooling, the customer is the internal user population (not the sponsoring executive).
-
-##### Pitfall 7: AI Answers for the Manager
-
-**Symptom:** The PM asks the agent to fill the discussion template "with what leadership probably wants" before the conversation happens.
-
-**Consequence:** The business outcome and success criteria are the model's guesses. The PM walks into discovery aligned with a document, not with their manager.
-
-**Fix:** Prepare questions, not answers. Fill the template only from notes of the real discussion, and mark anything still unconfirmed.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-outcome-strategy-discussion / Companion / README.md`) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-
-
-##### Source Material
-
-- assets/ps_outcome_strategy_discussion_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 5-7: Template 01 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-
-##### Template and Examples
-
-- template.md (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Template`)
-- examples/sample.md (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Examples`)
-
-##### Budget Data
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-
-##### Adjacent Skills
-
-- ps-outcome-tree (uploaded reference: `02-context.md`, section `ps-outcome-tree / Instructions`) - builds on the alignment reached here; takes the business outcome and product outcomes from this play as inputs
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - starts from the customer identified in this play
-- ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) - problem statement work that follows from the customer context established here
-
 ### ps-outcome-strategy-discussion / Template
 
-### Outcome & Strategy: Guided Discussion
-
-#### When to Use This
+##### When to Use This
 
 Use this template before discovery begins to document the alignment conversation between a PM and their manager or executive sponsor. The conversation must happen first. Fill in the outcome section after the discussion, not before.
 
@@ -378,7 +236,7 @@ Completing this template is the exit condition for this play. Do not begin disco
 
 ---
 
-#### Template
+##### Template
 
 ```markdown
 # Outcome & Strategy: Guided Discussion
@@ -487,167 +345,32 @@ Mark one.
 
 ### ps-outcome-strategy-discussion / Examples
 
-### Outcome & Strategy: Guided Discussion - Examples
+Illustrative and fictional, not customer evidence.
 
----
+- **Strong:** For shipper retention, align with the manager on the business result, customer, decision boundaries, and evidence needed before discovery.
+- **Weak:** "Improve retention somehow" leaves the result and authority unclear.
+- **Drift to avoid:** Outcome as project: "Launch a shipper portal" is an output. Establish the business change it is expected to produce.
 
-#### Example 1: Strong
 
-**Scenario:** A PM at a logistics software company whose product helps freight carriers manage shipper relationships. The PM's manager has flagged shipper churn as a growing problem and requested a PM-led initiative to address it.
+#### Common Pitfalls
 
-```markdown
-# Outcome & Strategy: Guided Discussion
+- **Treating the Discussion as a Requirements Intake:** Before the meeting, reframe the purpose: the PM is there to understand what the business needs to achieve, not what to build. If the manager jumps to solutions, the PM redirects: "That sounds like one approach - can we first align on what success looks like for the business overall?"
 
-## Scope
+- **Accepting Vague Outcomes Without Pressing:** Press for specifics. "Improve customer satisfaction" needs a metric and a direction: "Increase NPS from 32 to 50 within 12 months." If the manager cannot provide a specific target, write "TBD" and flag it as a gap that must be resolved before discovery begins.
 
-- Discussion with: Priya Venkataraman, VP of Product
-- Initiative or product: Shipper Retention Initiative
-- Date: 14 March 2026
-- Time horizon: 12 months (FY26)
+- **Skipping the KDP:** Treat the KDP as a required output, not an optional reflection. Before starting discovery, the PM should have a written KDP statement on file.
 
----
+- **Letting the Manager Dictate the Solution:** Solutions that emerge during an outcomes conversation are hypotheses, not decisions. Record them in the open questions section and flag them for validation during discovery.
 
-## Outcome of the Discussion
+- **Documenting the Conversation Without Identifying the Gaps:** In the open questions section, be explicit about what was not resolved. A summary with two or three open questions documented is more useful than a summary with five areas filled in with uncertain answers.
 
-### Business Outcome (one sentence)
+- **Confusing Internal Stakeholders with the Customer:** The customer field in this play refers to who the product serves in the field - the person who uses or buys the thing the PM is building. If the product is built for external users, the customer is external. If the product is internal tooling, the customer is the internal user population (not the sponsoring executive).
 
-Reduce 90-day shipper churn among mid-market accounts from 22% to under 12% by the end of FY26.
+- **AI Answers for the Manager:** Prepare questions, not answers. Fill the template only from notes of the real discussion, and mark anything still unconfirmed.
 
-### Why It Matters Now
+#### References
 
-Mid-market shippers represent 60% of contracted revenue but have shown accelerating churn since Q3 last year, driven in part by two competitors launching improved onboarding experiences. The board has flagged net revenue retention as a primary health metric for FY26 and this segment is pulling it below target.
-
-### Customer
-
-Mid-market shipper operations managers at companies moving 200 to 2,000 shipments per month, responsible for carrier selection, freight cost management, and exception handling. They use our platform daily but currently describe the first 90 days as confusing and unsupported.
-
-### Success Criteria
-
-| Criteria | Metric or Signal | Target |
-|---|---|---|
-| 90-day churn rate (mid-market) | Percentage of mid-market accounts churning within 90 days of contract start | Under 12% by Q4 FY26 |
-| Time to first successful shipment | Days from account activation to first completed shipment | Under 7 days (from current 18) |
-| Early-stage support ticket volume | Support tickets per account in first 90 days | Reduce by 40% |
-
-### Constraints
-
-- Engineering capacity: one squad available for this initiative through Q3; a second squad can be added in Q4 if early results warrant it
-- Timeline: any changes affecting the shipper onboarding flow must be live before the summer shipping peak (end of May)
-- Technology: the current onboarding module is being migrated to the new platform in Q3; solutions must work within the existing module or be designed to port to the new platform
-- Out of scope: enterprise accounts and spot-freight shippers are handled by a separate team
-
-### Open Questions and Gaps
-
-- The 12% churn target came from the finance team's NRR model, but no one has validated whether that target is achievable with the resources available. Need to confirm with finance by end of month.
-- The root cause of churn is assumed to be onboarding quality, but we have not yet spoken to churned shippers. This assumption drives the entire initiative frame and needs to be tested early in discovery.
-
----
-
-## Key Decision Point
-
-- [x] Go: alignment is clear across all five areas. Proceed to discovery.
-
-Caveat: the finance target confirmation and root-cause assumption should be first items on the discovery agenda.
-```
-
-**Why this works:**
-
-- The business outcome is specific and measurable: a named segment, a named metric (90-day churn), a current baseline (22%), a target (under 12%), and a time horizon (FY26). A third party could assess whether it was achieved.
-- The customer is named by role and context. It identifies not just a job title but the operational situation (200 to 2,000 shipments per month, daily users, 90-day struggle) that makes this population meaningful.
-- The success criteria table has three rows, each with a named metric and a specific target. None of them say "improve" without quantifying what improvement means.
-- The open questions section does not paper over gaps. It explicitly flags two assumptions that could invalidate the entire initiative if unchecked - and the PM takes responsibility for testing them early.
-- The KDP is marked Go, but with a documented caveat rather than unqualified sign-off. This is honest alignment.
-
----
-
-#### Example 2: Weak
-
-**Scenario:** The same company, the same manager, the same conversation - but the PM recorded vague answers, accepted weak language as complete, and left critical fields underdefined.
-
-```markdown
-# Outcome & Strategy: Guided Discussion
-
-## Scope
-
-- Discussion with: VP of Product
-- Initiative or product: Churn project
-- Date: March 2026
-- Time horizon: this year
-
----
-
-## Outcome of the Discussion
-
-### Business Outcome (one sentence)
-
-Improve shipper satisfaction and reduce churn.
-
-### Why It Matters Now
-
-Churn has been a problem and the board wants to see it fixed. We are behind competitors.
-
-### Customer
-
-Shippers who use our platform.
-
-### Success Criteria
-
-| Criteria | Metric or Signal | Target |
-|---|---|---|
-| Satisfaction | NPS or CSAT | Improve |
-| Churn | Churn rate | Reduce |
-
-### Constraints
-
-- Limited engineering time
-- Need to move fast
-
-### Open Questions and Gaps
-
-None noted.
-
----
-
-## Key Decision Point
-
-- [x] Go: proceed to discovery.
-```
-
-**Why this fails:**
-
-- **Business Outcome:** "Improve shipper satisfaction and reduce churn" bundles two different outcomes with no measurement and no target. A third party cannot assess whether this was achieved. This is the acceptance of vague language that Pitfall 2 describes.
-- **Why Now:** "Churn has been a problem" is background noise, not strategic rationale. It does not establish urgency or explain what changed to make this the current priority.
-- **Customer:** "Shippers who use our platform" covers potentially thousands of accounts across multiple segments with different needs. It gives discovery no useful frame. Is this small shippers? Enterprise shippers? The entire customer base?
-- **Success Criteria:** Both rows say "improve" or "reduce" without a baseline, a target, or a timeframe. These are not success criteria. They are aspirations. A PM cannot tell whether they succeeded if they have no definition of success.
-- **Constraints:** "Limited engineering time" and "need to move fast" are not constraints. They are vague acknowledgments that resources are finite. Every project has finite resources. A real constraint names what is fixed: a specific team, a deadline, a technical boundary.
-- **Open Questions:** Marking "None noted" when two major assumptions are unvalidated (root cause of churn, achievability of any target) is active gap suppression. The gaps exist. They are just not documented.
-- **KDP:** The Go call is marked without any basis for confidence. This PM is proceeding to discovery while carrying a contested outcome, an undefined customer, and unmeasured success criteria.
-
----
-
-#### Example 3: Drift Bug - Outcome Captured as a Project
-
-**Scenario:** Same company, same conversation. But in this version, the PM writes down what the manager said at the end of the meeting - a project scope - instead of the business outcome the project is meant to achieve.
-
-```markdown
-### Business Outcome (one sentence)
-
-Launch the new shipper onboarding dashboard by Q3.
-```
-
-**Why this fails:**
-
-This is the most common failure mode in this play, and it is easy to miss because it sounds specific and concrete. "Launch the new shipper onboarding dashboard by Q3" has a named deliverable and a date. It feels like a well-defined outcome. It is not.
-
-A project milestone describes what the team will ship. A business outcome describes what changes for the business when the project succeeds.
-
-The dashboard launch is an output. Reducing 90-day churn among mid-market shippers is the outcome. These are categorically different, and the distinction matters for everything that follows:
-
-- **Discovery framed around the project:** the PM will research how to build a better dashboard, not whether a dashboard solves the customer's actual problem. If the real problem is something the dashboard cannot address (pricing, support response time, competitor switching costs), the project will be completed on time and still fail.
-- **Success defined by delivery:** the team celebrates shipping the dashboard in Q3, but no one tracks whether churn improved. The business outcome that motivated the project is never measured.
-- **No KDP leverage:** if the PM reaches a Go decision with "launch dashboard by Q3" as the outcome, there is no meaningful escalation path if discovery reveals the approach is wrong. You cannot escalate "we should reconsider the dashboard" when the entire frame is "deliver the dashboard."
-
-**The fix:** before recording a business outcome, ask: "Is this what we are delivering, or is this what changes for the business when we deliver it successfully?" If the answer is "what we are delivering," press for the outcome behind it. "What should improve for the business as a result of launching the dashboard?" - that answer is the business outcome.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-outcome-strategy-discussion) for supporting source material and expanded examples.
 
 ## ps-stakeholder-alignment | Stakeholder Alignment
 
@@ -710,14 +433,14 @@ The Interest/Influence matrix places stakeholders in one of four quadrants, each
 
 ##### Engagement Modes Are About Decision Rights, Not Just Communication
 
-This is the distinction that matters most. Engagement modes are not a comms schedule — they determine who has input on which decisions and at what depth.
+This is the distinction that matters most. Engagement modes are not a comms schedule  -  they determine who has input on which decisions and at what depth.
 
 - **Manage Closely** stakeholders are in the room for trade-off discussions. They have a voice in decisions, not just updates.
 - **Keep Satisfied** stakeholders are briefed on outcomes and key decisions, but they are not consulted in the decision process itself. They need altitude-appropriate information, not operational depth.
 - **Keep Informed** stakeholders receive regular updates but do not affect decisions. Their value is advocacy and downstream adoption, not direction-setting.
 - **Monitor** stakeholders are not in the decision loop at all. Periodic check-ins prevent surprises, but they do not shape the work.
 
-Treating all engagement as a communication cadence question misses this. A PM who sends weekly updates to all stakeholders has not done stakeholder management — they have sent emails. The quadrant assignment determines who the PM brings into decisions, not just who receives communications.
+Treating all engagement as a communication cadence question misses this. A PM who sends weekly updates to all stakeholders has not done stakeholder management  -  they have sent emails. The quadrant assignment determines who the PM brings into decisions, not just who receives communications.
 
 ##### The Map is a Working Tool
 
@@ -740,9 +463,9 @@ If the map skews entirely positive, something is missing.
 
 ##### Stakeholders Are Teammates, Not Opponents
 
-Different functions bring different priorities: legal thinks about risk, finance thinks about returns, engineering thinks about technical feasibility. Those differences create friction — but they do not make stakeholders adversaries.
+Different functions bring different priorities: legal thinks about risk, finance thinks about returns, engineering thinks about technical feasibility. Those differences create friction  -  but they do not make stakeholders adversaries.
 
-The playbook is explicit: you may have different roles, but you are all working on the same team. A skeptical legal counsel who raises a compliance concern in week two is not an obstacle — they are a teammate whose input prevented a problem at launch. A finance stakeholder who pushes back on scope is not blocking the product — they are enforcing a constraint that is real for the business.
+The playbook is explicit: you may have different roles, but you are all working on the same team. A skeptical legal counsel who raises a compliance concern in week two is not an obstacle  -  they are a teammate whose input prevented a problem at launch. A finance stakeholder who pushes back on scope is not blocking the product  -  they are enforcing a constraint that is real for the business.
 
 Approach every stakeholder as someone who shares the organization's goals, even if they express those goals differently than you do. The map is a tool for building a communication strategy across that diversity, not a list of people to manage around.
 
@@ -756,68 +479,28 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-stakeholder-alignment / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Template`) for the full scaffold.
+Use Template (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Template`) for the full scaffold.
 
-See the source pages from the canonical playbook in assets/ps_stakeholder_alignment_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-pressure-test-stakeholder-map.md (uploaded reference: `07-prompts.md`, section `ps-stakeholder-alignment / Companion / 01-pressure-test-stakeholder-map.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Tech-Role Bias Guard
 
@@ -892,121 +575,17 @@ Three things to capture before closing the map:
 
 **Political dynamics:** Relationships between stakeholders that create complexity. For example: two stakeholders who have a history of conflict, or a senior stakeholder whose opinion a key influencer defers to entirely.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Examples`).
-
-The example set includes:
-
-- a strong stakeholder map (complete, balanced, with actionable engagement strategies)
-- a weak version (supporters only, vague strategies, empty risks)
-- a drift bug example (customers listed as stakeholders)
-
-#### Common Pitfalls
-
-##### Pitfall 1: Listing Only Supporters
-
-**Symptom:** The map contains five people, all in "manage closely," all listed as Supportive.
-
-**Consequence:** The first skeptic who surfaces during a key decision is a surprise. The team has no strategy for them.
-
-**Fix:** Before closing the map, ask explicitly: who might push back? Who was not consulted on similar initiatives? Add them.
-
-##### Pitfall 2: Confusing Stakeholders with Customers
-
-**Symptom:** Truck drivers, field technicians, or end users appear in the stakeholder table because they are "affected by" the initiative.
-
-**Consequence:** The PM spends time managing internal engagement with people who actually need product discovery and empathy work.
-
-**Fix:** Customers who use the product in the field belong in the persona play (ps-proto-persona), not here. The stakeholder map covers people who affect the initiative organizationally. Keep these lists separate.
-
-##### Pitfall 3: Equating Influence with Seniority
-
-**Symptom:** A VP is rated High Influence for every initiative because of their title. A junior engineer who owns the deployment process is rated Low Influence.
-
-**Consequence:** The engagement strategy misses the people who actually control the outcome.
-
-**Fix:** Rate influence based on actual power over this specific initiative. Ask: can this person approve, block, accelerate, or veto the work? That is influence. Title alone is not.
-
-##### Pitfall 4: Treating Interest and Influence as Binary
-
-**Symptom:** Every stakeholder is either High or Low. Nobody is Medium.
-
-**Consequence:** Too many stakeholders end up in "manage closely," diluting attention.
-
-**Fix:** Use Medium deliberately. Reserve High for stakeholders with genuine power or deep engagement with this initiative specifically.
-
-##### Pitfall 5: Building the Map Once and Never Revisiting
-
-**Symptom:** The map is filled out during the Context phase and never opened again.
-
-**Consequence:** Relationships that shift during discovery, framing, or launch go untracked. The team is blindsided.
-
-**Fix:** Revisit the map at each major phase boundary. Note what changed and why.
-
-##### Pitfall 6: Assigning Everyone to "Manage Closely"
-
-**Symptom:** All stakeholders are rated High Influence and High Interest.
-
-**Consequence:** The PM tries to manage every stakeholder at the same depth and exhausts themselves. Nobody is getting the right level of attention.
-
-**Fix:** Force distribution. Reserve "manage closely" for the two to four stakeholders who genuinely require it. Everyone else gets a lighter strategy.
-
-##### Pitfall 7: Writing Engagement Strategies as Communication Schedules
-
-**Symptom:** Every strategy reads as a cadence: "monthly update email," "weekly Slack message," "invite to demo." No strategy specifies what the stakeholder has input on.
-
-**Consequence:** The PM manages the cadence but not the relationship. Stakeholders in "manage closely" who are never brought into actual trade-off discussions will feel sidelined and surface objections at the wrong moment.
-
-**Fix:** For every "manage closely" and "keep satisfied" stakeholder, specify at least one type of decision they will be consulted on - not just a communication format. Example: "Involve in go/no-go discussion before framing is complete" is an engagement strategy. "Weekly update email" is not.
-
-##### Pitfall 8: AI Places Stakeholders It Has Never Met
-
-**Symptom:** The PM pastes ten names and titles and asks the agent to place them on the power/interest grid. The grid comes back filled in.
-
-**Consequence:** Placements rest on job titles, not on how these people actually decide. The PM manages the wrong relationships.
-
-**Fix:** The PM places each stakeholder from what they have observed. The skill asks for the evidence behind each placement and names roles the PM may have missed.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-stakeholder-alignment / Companion / README.md`) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-
-
-##### Source Material
-
-- Source: assets/ps_stakeholder_alignment_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 8-10: Template 02 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Template: template.md (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Template`)
-- Examples: examples/sample.md (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Examples`)
-- Budget data: [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-
-##### Adjacent Skills
-
-- **ps-outcome-strategy-discussion** - identifies who to have the guided discussion with; the stakeholder map informs that list
-- **ps-empathy-interviews** - the stakeholder map helps identify who to recruit for interviews and who to brief before fieldwork begins
-- **ps-proto-persona** - the destination for customers who should not be in the stakeholder map
-
 ### ps-stakeholder-alignment / Template
-
-### ps-stakeholder-alignment Template
 
 Use this template to build a **Productside-style stakeholder map** before discovery begins.
 
 If some stakeholders are not yet identified, note that in the Risks and Gaps section rather than leaving the table sparse. A complete map with unknowns flagged is more useful than a partial map that looks tidy.
 
-#### When to Use This
+##### When to Use This
 
 Use this during the Context phase, before empathy interviews or discovery work begins. The stakeholder map tells you who to involve, who to brief, and who to watch.
 
-#### Template
+##### Template
 
 ```markdown
 # Stakeholder Alignment
@@ -1083,7 +662,7 @@ Use this during the Context phase, before empathy interviews or discovery work b
 > - Role / Team field: 6 words maximum
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
 - Build this map before empathy interviews begin.
 - Rate influence based on actual power over this initiative, not title alone.
@@ -1093,170 +672,34 @@ Use this during the Context phase, before empathy interviews or discovery work b
 
 ### ps-stakeholder-alignment / Examples
 
-### ps-stakeholder-alignment Examples
+Illustrative and fictional, not customer evidence.
 
-All examples use a fictionalized scenario: a PM at a mid-size food distribution company building a **route optimization platform** for their logistics operations team.
+- **Strong:** For a route-optimization initiative, assess internal stakeholders' interest and influence and choose Manage Closely, Keep Satisfied, Keep Informed, or Monitor accordingly.
+- **Weak:** Sending every stakeholder the same weekly update ignores differences in decision involvement.
+- **Drift to avoid:** Customers as internal stakeholders: keep discovery subjects distinct from the organizational stakeholder map.
 
----
 
-#### Example 1: Strong Stakeholder Map
+#### Common Pitfalls
 
-This example shows a complete, balanced map with actionable engagement strategies and a meaningful risks section.
+- **Listing Only Supporters:** Before closing the map, ask explicitly: who might push back? Who was not consulted on similar initiatives? Add them.
 
-```markdown
-# Stakeholder Alignment
+- **Confusing Stakeholders with Customers:** Customers who use the product in the field belong in the persona play (ps-proto-persona), not here. The stakeholder map covers people who affect the initiative organizationally. Keep these lists separate.
 
-## Context
+- **Equating Influence with Seniority:** Rate influence based on actual power over this specific initiative. Ask: can this person approve, block, accelerate, or veto the work? That is influence. Title alone is not.
 
-- Initiative / product: Route Optimization Platform
-- PM: Jordan Rivera
-- Date: March 2026
+- **Treating Interest and Influence as Binary:** Use Medium deliberately. Reserve High for stakeholders with genuine power or deep engagement with this initiative specifically.
 
----
+- **Building the Map Once and Never Revisiting:** Revisit the map at each major phase boundary. Note what changed and why.
 
-## Stakeholder Table
+- **Assigning Everyone to "Manage Closely":** Force distribution. Reserve "manage closely" for the two to four stakeholders who genuinely require it. Everyone else gets a lighter strategy.
 
-| Name | Role / Team | Interest in This Initiative | Influence | Sentiment |
-|---|---|---|---|---|
-| Marcus Chen | VP Operations | Owns the cost and service KPIs this platform affects | High | Supportive |
-| Linda Osei | Director of Logistics | Day-to-day owner of route planning and dispatcher teams | High | Supportive |
-| Priya Mehta | IT Infrastructure Lead | Responsible for systems the platform must integrate with | High | Skeptical |
-| David Russo | Finance Director | Controls capital budget and must approve tool spend over $50K | High | Neutral |
-| Sandra Kowalski | Legal / Compliance | Reviewing data sharing terms with the carrier API provider | Medium | Unknown |
-| Tomas Vega | Regional Warehouse Manager | Manages the sites piloting the first rollout | Medium | Supportive |
-| Aisha Nkrumah | Customer Success Lead | Escalates customer complaints when delivery windows are missed | Medium | Neutral |
-| Ray Park | Head of Sales | Sells delivery reliability as a competitive differentiator | Low | Supportive |
-| Felix Olawale | Carrier Relations Manager | Manages contracts with the carriers whose data feeds the platform | High | Skeptical |
+- **Writing Engagement Strategies as Communication Schedules:** For every "manage closely" and "keep satisfied" stakeholder, specify at least one type of decision they will be consulted on - not just a communication format. Example: "Involve in go/no-go discussion before framing is complete" is an engagement strategy. "Weekly update email" is not.
 
----
+- **AI Places Stakeholders It Has Never Met:** The PM places each stakeholder from what they have observed. The skill asks for the evidence behind each placement and names roles the PM may have missed.
 
-## Interest / Influence Matrix
+#### References
 
-### Manage Closely (High Influence, High Interest)
-Marcus Chen, Linda Osei, Priya Mehta, Felix Olawale
-- Engagement: Weekly sync with Linda and Priya for operational and technical alignment; biweekly executive brief with Marcus; dedicated working session with Felix to address carrier data concerns before pilot begins
-
-### Keep Satisfied (High Influence, Low Interest)
-David Russo
-- Engagement: Monthly one-page financial summary covering projected savings, spend to date, and risk to budget; flagged immediately when scope or timeline changes affect approved spend
-
-### Keep Informed (Low Influence, High Interest)
-Sandra Kowalski, Tomas Vega, Aisha Nkrumah
-- Engagement: Biweekly written update shared via email covering progress, open decisions, and pilot schedule; Sandra gets a separate heads-up on any change to carrier data handling; Tomas and Aisha invited to pilot demos
-
-### Monitor (Low Influence, Low Interest)
-Ray Park
-- Engagement: Quarterly update on release milestones; notified when the platform reaches GA so Sales can update messaging
-
----
-
-## Risks and Gaps
-
-### Missing stakeholders
-IT Security has not been identified yet. Any platform ingesting real-time carrier GPS and routing data will require a security review. Need to identify the right contact before vendor contracts are signed.
-
-### Potential blockers
-Felix Olawale (Carrier Relations) is skeptical because a previous integration project damaged a key carrier relationship. If he is not involved early in the API design decisions, he may raise concerns at the contract stage that delay the pilot by a quarter.
-
-Priya Mehta (IT Infrastructure) has flagged concerns about the platform's dependency on a cloud infrastructure configuration her team does not currently support. If that is not resolved before development begins, the pilot environment may not be ready in time.
-
-### Political dynamics
-Marcus Chen and David Russo have a documented history of disagreement over technology investment. Marcus has pushed for faster modernization; David has blocked two prior initiatives on ROI grounds. Any proposal to Marcus should be framed with David's financial framing in mind, not just operational benefit.
-```
-
-**Why this works**
-
-- the table includes skeptics (Priya Mehta, Felix Olawale) alongside supporters, which makes the map useful when friction surfaces
-- influence ratings reflect actual power over this initiative, not just title (Felix, a manager-level role, is correctly rated High because of carrier relationship control)
-- Finance is represented even though this is primarily an operations initiative
-- engagement strategies are specific: cadence, format, and content are named for each quadrant
-- the risks section names a concrete blocker with a mechanism (Felix's concern about a prior integration) and a specific consequence (a quarter delay to pilot)
-- IT Security is flagged as a gap before it becomes a problem
-
----
-
-#### Example 2: Weak Stakeholder Map
-
-Same initiative, same company - but the map is incomplete and the engagement strategies are too vague to act on.
-
-```markdown
-# Stakeholder Alignment
-
-## Context
-
-- Initiative / product: Route Optimization Platform
-- PM: Jordan Rivera
-- Date: March 2026
-
----
-
-## Stakeholder Table
-
-| Name | Role / Team | Interest in This Initiative | Influence | Sentiment |
-|---|---|---|---|---|
-| Marcus Chen | VP Operations | Interested in the project | High | Supportive |
-| Linda Osei | Director of Logistics | Key stakeholder | High | Supportive |
-| Tomas Vega | Regional Manager | Involved in pilot | High | Supportive |
-
----
-
-## Interest / Influence Matrix
-
-### Manage Closely (High Influence, High Interest)
-Marcus Chen, Linda Osei, Tomas Vega
-- Engagement: Keep them updated
-
-### Keep Satisfied (High Influence, Low Interest)
-[None identified]
-
-### Keep Informed (Low Influence, High Interest)
-[None identified]
-
-### Monitor (Low Influence, Low Interest)
-[None identified]
-
----
-
-## Risks and Gaps
-
-[None identified]
-```
-
-**Why this fails**
-
-- only three stakeholders, all listed as Supportive - no skeptics, no blockers, no Finance or Legal
-- Tomas Vega is rated High Influence, which inflates the "manage closely" quadrant without justification; his actual influence is Medium
-- interest descriptions are placeholders ("interested in the project," "key stakeholder") with no content
-- "Keep them updated" is not an engagement strategy - it has no cadence, format, or content
-- the risks section is empty, which means the PM will be surprised by Felix Olawale and IT Security when they surface later
-- three quadrants are completely empty, which signals the ratings have not been calibrated against the full stakeholder landscape
-
----
-
-#### Example 3: Drift Bug - Customers Listed as Stakeholders
-
-This is a common misuse. The PM has included the end users of the route optimization platform - the people who will actually use the product in the field - inside the stakeholder table.
-
-```markdown
-## Stakeholder Table
-
-| Name | Role / Team | Interest in This Initiative | Influence | Sentiment |
-|---|---|---|---|---|
-| Marcus Chen | VP Operations | Owns the KPIs this platform affects | High | Supportive |
-| Linda Osei | Director of Logistics | Day-to-day owner of route planning | High | Supportive |
-| Route dispatchers | Operations / Dispatch | Will use the platform daily | Medium | Unknown |
-| Truck drivers | Field / Delivery | Will receive optimized routes from the system | Low | Unknown |
-```
-
-**Why this is a drift bug**
-
-Route dispatchers and truck drivers are the customers the product serves in the field. They experience the problem the platform is solving. They need product discovery and empathy work - interviews, observations, prototype feedback.
-
-They are not stakeholders in the organizational sense. They cannot greenlight or block the initiative. They do not need to be briefed on budget decisions or release timelines. Including them in the stakeholder table creates confusion about who needs organizational engagement vs. who needs discovery work.
-
-The correct destination for route dispatchers and truck drivers is the persona play (ps-proto-persona), where their jobs-to-be-done, pains, and goals can be captured properly.
-
-The stakeholder map covers the people inside the organization who affect whether the initiative succeeds. The persona play covers the people in the field who the product serves. Keep these lists separate.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-stakeholder-alignment) for supporting source material and expanded examples.
 
 ## ps-outcome-tree | Outcome Tree (Sections One and Two)
 
@@ -1288,6 +731,14 @@ Use this skill when you need to:
 - retire product outcomes that no longer hold after customer research (Section Two)
 
 This is not a one-time exercise. The playbook says to revisit regularly, bring it to team meetings, and use it to check assumptions with the team.
+
+##### Usage Notes
+
+- **Two modalities:** Section One (Template 03, Context phase) establishes the strategic context before discovery. Section Two (Template 23, Define/Deliver phase) updates the tree after discovery with validated outcomes, revised metrics, and actuals vs. planned.
+- The template produces a structured artifact with five sections: Business Outcome, Business Success Metrics, Product Outcomes (2-5), Product Success Metrics, and Product Health Metrics.
+- Product outcomes use role names, not persona names.
+- The play cross-references two other plays: Framing the Problem (Problem Statement box) and Solution Hypothesis Statement (Solution Summary box). Neither is a blocking dependency.
+- Upstream: ps-jobs-to-be-done product outcomes feed into this tree. Section Two updates the tree after discovery work.
 
 #### Key Concepts
 
@@ -1356,7 +807,7 @@ This skill covers both sections of the Outcome Tree as two modalities:
 
 **Section One (Template 03, Context phase):** Build the tree before discovery. Define the business outcome, product outcomes, and metrics framework based on the PM's current understanding of strategy and customer needs.
 
-**Section Two (Deliver phase — reuses the Outcome Tree design; the baseline deck labels this occurrence "Template 3 of 24"; the B2B work-in-progress deck numbers it Template 23):** Update the tree after discovery. Revise product outcomes that discovery validated or invalidated. Fill in metrics that were TBD. Add baselines and targets now that real data exists. Record actuals against planned targets. Retire outcomes that turned out to be wrong.
+**Section Two (Deliver phase  -  reuses the Outcome Tree design; the baseline deck labels this occurrence "Template 3 of 24"; the B2B work-in-progress deck numbers it Template 23):** Update the tree after discovery. Revise product outcomes that discovery validated or invalidated. Fill in metrics that were TBD. Add baselines and targets now that real data exists. Record actuals against planned targets. Retire outcomes that turned out to be wrong.
 
 The trigger for Section Two is evidence: completed empathy interviews, validated hypotheses, experiment results, or post-launch measurement data. If the PM has not done discovery work since building Section One, Section Two will just reproduce the same guesses with more confidence. That is not useful.
 
@@ -1370,64 +821,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-outcome-tree / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `02-context.md`, section `ps-outcome-tree / Template`) for the full scaffold.
+Use Template (uploaded reference: `02-context.md`, section `ps-outcome-tree / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_outcome_tree_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -1445,7 +856,7 @@ The artifact comes first. Commentary is secondary.
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-check-section-one.md (uploaded reference: `07-prompts.md`, section `ps-outcome-tree / Companion / 01-check-section-one.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Confirm the Product and Business Context
 
@@ -1626,132 +1037,15 @@ After the Section Two update is complete, offer the user:
 2. **Update the roadmap** using ps-outcome-roadmap (if available) to reflect revised outcomes
 3. **Schedule the next review cycle** to keep the tree current as the product evolves
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `02-context.md`, section `ps-outcome-tree / Examples`).
-
-The example set includes:
-
-- a strong Outcome Tree artifact for a sustainable agriculture platform
-- a weak, vague version of the same scenario
-- a drift-bug example showing product outcomes confused with business outcomes and internal tasks
-- commentary on why the weak versions fail
-
-#### Common Pitfalls
-
-##### Pitfall 1: Confusing Product Outcomes with Business Outcomes
-
-**Symptom:** Product outcomes read like organizational goals: "Increase market share by 15%" or "Reduce operational costs by $2M."
-
-**Consequence:** The tree conflates two levels. The product team cannot act on business outcomes directly, and the causal link between product work and business results disappears.
-
-**Fix:** Ask: who experiences this outcome? If the answer is "the business" or "leadership," it is a business outcome. If the answer is "the customer using the product," it is a product outcome. Keep them in their respective boxes.
-
-##### Pitfall 2: Writing Feature Descriptions as Product Outcomes
-
-**Symptom:** "The product provides a self-service portal" or "Automated notifications for pending tasks."
-
-**Consequence:** The tree describes what the product does instead of what the customer achieves. The team optimizes for shipping features rather than delivering outcomes.
-
-**Fix:** Strip out the product. Ask: what is different for the customer when this feature works? "New employees complete required onboarding steps without waiting for HR availability" is a product outcome. "Self-service onboarding portal" is a feature.
-
-##### Pitfall 3: Setting More Than 5 Product Objectives
-
-**Symptom:** The tree lists 7, 8, or 10 product outcomes.
-
-**Consequence:** The team cannot focus. Every sprint touches a different outcome. Progress is diffuse and unmeasurable.
-
-**Fix:** The playbook limit is 2-5 product outcomes per tree. If you have more, either consolidate related outcomes or split into multiple trees for different business outcomes.
-
-##### Pitfall 4: Making Business Outcomes Too Vague
-
-**Symptom:** "Grow the business," "Improve customer satisfaction," "Be more innovative."
-
-**Consequence:** The business outcome cannot be measured, so the entire tree has no anchor. The team cannot tell if the product is contributing to business success.
-
-**Fix:** Add a direction, a metric, and a target. "Improve customer satisfaction" becomes "Increase Net Promoter Score from 32 to 50 within 12 months." If the user cannot specify a target, at least specify a direction and a metric.
-
-##### Pitfall 5: Defaulting to Tech-Role Language in Product Outcomes
-
-**Symptom:** "Data engineers can build pipelines 40% faster" or "Platform architects can deploy microservices with fewer configuration errors."
-
-**Consequence:** The product outcomes reflect LLM training bias toward technical roles, not the actual customer population.
-
-**Fix:** Before writing product outcomes, confirm who the product actually serves. Most products serve people whose primary job is not writing code. An HR platform serves HR managers and employees, not data engineers.
-
-##### Pitfall 6: Treating This as a One-Time Exercise
-
-**Symptom:** The team builds the Outcome Tree once, files it away, and never revisits it.
-
-**Consequence:** The tree becomes stale. Business outcomes shift, product outcomes are achieved or abandoned, and metrics change. The artifact stops reflecting reality.
-
-**Fix:** The playbook says to revisit regularly and bring it to team meetings. Schedule periodic reviews and update the tree as strategy evolves.
-
-##### Pitfall 7: Skipping Product Success Metrics
-
-**Symptom:** Product outcomes are defined but their success metrics are left permanently blank.
-
-**Consequence:** The team cannot tell if an outcome is being achieved. Product outcomes without metrics are aspirational statements, not actionable targets.
-
-**Fix:** Even if exact metrics are not known yet, define the type of measurement. "TBD" is acceptable as a starting point, but flag it as a gap that must be resolved before the next planning cycle.
-
-##### Pitfall 8: Confusing Product Health Metrics with Product Success Metrics
-
-**Symptom:** "99.9% uptime" listed as a product success metric for an outcome like "HR managers spend less time on tactical tasks."
-
-**Consequence:** The team conflates operational health (is the product working?) with outcome achievement (is the product delivering value?). A product can have perfect uptime and still fail to move outcomes.
-
-**Fix:** Keep them in separate sections. Product health metrics (uptime, latency, error rates) go in the health section. Product success metrics (task completion rates, time savings, adoption of key workflows) go next to their respective outcomes.
-
-##### Pitfall 9: AI Writes the Tree
-
-**Symptom:** The PM asks for an outcome tree for their product and gets a complete one: business outcome, five product outcomes, metrics, targets.
-
-**Consequence:** The targets have no baseline, and the outcomes are the model's view of the business. The tree looks like strategy and is a guess.
-
-**Fix:** The PM drafts; the skill checks each outcome and metric. Targets and baselines come from the PM's data or are marked to be set.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `02-context.md`, section `ps-outcome-tree / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-outcome-tree / Companion / README.md`) - copy-paste prompts for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `02-context.md`, section `ps-outcome-tree / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Related Skills
-
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - product outcomes from JTBD feed into this tree
-- ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) - problem statement feeds the Problem Statement box
-- ps-solution-hypothesis (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Instructions`) - solution summary feeds the Solution Summary box
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - persona work informs who the product outcomes serve
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_outcome_tree_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 11-13 and 106-108: Template 03 and 23 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
-
 ### ps-outcome-tree / Template
 
-### Outcome Tree - Section One
-
-#### When to Use This
+##### When to Use This
 
 Use this template during the **Context** phase to connect your product work to a measurable business goal. This is foundational: until you can articulate what the business is trying to achieve and how the product supports that, prioritization and roadmap decisions lack an anchor.
 
 Revisit this artifact regularly. Bring it to team meetings. Use it to share success metrics and check assumptions with the team.
 
-#### Template
+##### Template
 
 ```markdown
 # Outcome Tree - Section One
@@ -1858,9 +1152,9 @@ How do you measure whether the product itself is working correctly?
 - Cross-references to resolve:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Start with **Product Context** to anchor who this is for.
 2. Add the **Problem Statement** if one exists from previous work.
@@ -1872,7 +1166,7 @@ How do you measure whether the product itself is working correctly?
 8. Add the **Solution Summary** if one exists.
 9. Walk through the **Causal Chain Review** to verify connections.
 
-##### How Many Product Outcomes
+###### How Many Product Outcomes
 
 The playbook sets a hard limit of 2-5. Default to 2-3 for a focused product. Use 4-5 only when the product serves multiple distinct user roles or the business outcome is broad enough to require multiple paths.
 
@@ -1881,7 +1175,7 @@ If you find yourself writing more than 5, either:
 - consolidate related outcomes into a single, broader outcome
 - split into multiple trees, each with a different business outcome
 
-##### What Goes in the Product Outcome Statements
+###### What Goes in the Product Outcome Statements
 
 Write each product outcome as a statement about the customer's improved state. Use role names (e.g., "HR managers," "field technicians," "compliance officers"), not individual persona names (e.g., "Maya," "Carlos").
 
@@ -1892,7 +1186,7 @@ Do not use:
 - business metrics ("Revenue increases by...")
 - internal team goals ("The engineering team ships...")
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-framing-the-problem provides the Problem Statement; ps-solution-hypothesis provides the Solution Summary
 - **Parallel:** ps-jobs-to-be-done produces product outcomes that may feed into this tree
@@ -1900,11 +1194,11 @@ Do not use:
 
 ---
 
-#### Section Two: Updating the Outcome Tree After Discovery
+##### Section Two: Updating the Outcome Tree After Discovery
 
 Use this scaffold when returning to the Outcome Tree after completing discovery work. This is not a new artifact. It is an update pass on the Section One artifact above.
 
-##### Prerequisites
+###### Prerequisites
 
 Before running Section Two, the PM should have completed at least one of:
 
@@ -1914,7 +1208,7 @@ Before running Section Two, the PM should have completed at least one of:
 - market or customer research
 - post-launch measurement data
 
-##### Update Scaffold
+###### Update Scaffold
 
 For each section of the Section One artifact, walk through:
 
@@ -1964,7 +1258,7 @@ Discovery activities completed since Section One:
 - Metrics revised:
 ```
 
-##### When to Run Section Two
+###### When to Run Section Two
 
 Section Two adds value when the PM has new evidence that changes the tree. Common triggers:
 
@@ -1979,9 +1273,9 @@ Section Two does not add value when:
 - The PM has not done discovery work since Section One (the tree will not change)
 - The only change is cosmetic rewording (edit the Section One artifact directly)
 
-##### Capacity Reference
+###### Capacity Reference
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the exact word and character budgets per field.
+See Template and capacity guidance (uploaded reference: `02-context.md`, section `ps-outcome-tree / Template`) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -1993,184 +1287,36 @@ See [technical/data/canonical_template_budgets.yaml](https://github.com/Products
 
 ### ps-outcome-tree / Examples
 
-### Outcome Tree - Section One: Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Productside-Style Outcome Tree
+- **Strong:** For irrigation management, connect business results to farm managers reducing avoidable water use, then define success and health measures. Revisit planned outcomes against actual evidence in Section Two.
+- **Weak:** A tree with no customer outcomes jumps directly from financial targets to features.
+- **Drift to avoid:** Layer confusion: "Ship sensors" is an output; "increase subscription revenue" is a business result. Neither substitutes for customer progress.
 
-Scenario: A sustainable agriculture technology company building a precision irrigation platform for regional farm operations managers and agronomists.
 
-```markdown
-# Outcome Tree - Section One
+#### Common Pitfalls
 
-## Product Context
+- **Confusing Product Outcomes with Business Outcomes:** Ask: who experiences this outcome? If the answer is "the business" or "leadership," it is a business outcome. If the answer is "the customer using the product," it is a product outcome. Keep them in their respective boxes.
 
-- Product or service: AquaPrecision - precision irrigation management platform
-- Business or organization: AgriTech Solutions (mid-market agricultural technology provider)
-- Primary customer/user role: Regional Farm Operations Manager
-- Buyer (if different): VP of Agricultural Operations
+- **Writing Feature Descriptions as Product Outcomes:** Strip out the product. Ask: what is different for the customer when this feature works? "New employees complete required onboarding steps without waiting for HR availability" is a product outcome. "Self-service onboarding portal" is a feature.
 
-## Problem Statement (from Framing the Problem play, if available)
+- **Setting More Than 5 Product Objectives:** The playbook limit is 2-5 product outcomes per tree. If you have more, either consolidate related outcomes or split into multiple trees for different business outcomes.
 
-> Regional farm operations managers currently rely on manual field inspections and weather forecasts to schedule irrigation, resulting in 25-35% water waste and inconsistent crop yields across managed acreage. They need a way to make irrigation decisions based on real-time soil and weather data so they can reduce water usage while maintaining or improving yield consistency.
+- **Making Business Outcomes Too Vague:** Add a direction, a metric, and a target. "Improve customer satisfaction" becomes "Increase Net Promoter Score from 32 to 50 within 12 months." If the user cannot specify a target, at least specify a direction and a metric.
 
-## 1. Business Outcome
+- **Defaulting to Tech-Role Language in Product Outcomes:** Before writing product outcomes, confirm who the product actually serves. Most products serve people whose primary job is not writing code. An HR platform serves HR managers and employees, not data engineers.
 
-| Business Outcome |
-|------------------|
-| Reduce water consumption across managed farm operations by 20% within 18 months while maintaining crop yield targets |
+- **Treating This as a One-Time Exercise:** The playbook says to revisit regularly and bring it to team meetings. Schedule periodic reviews and update the tree as strategy evolves.
 
-## 2. Business Success Metrics
+- **Skipping Product Success Metrics:** Even if exact metrics are not known yet, define the type of measurement. "TBD" is acceptable as a starting point, but flag it as a gap that must be resolved before the next planning cycle.
 
-| # | Business Success Metric | Status |
-|---|------------------------|--------|
-| 1 | Total water usage per acre across all managed properties (gallons/acre/season) | Defined |
-| 2 | Crop yield variance from target across managed properties (percentage) | Defined |
-| 3 | Irrigation-related operational cost per acre (dollars/acre/season) | TBD |
+- **Confusing Product Health Metrics with Product Success Metrics:** Keep them in separate sections. Product health metrics (uptime, latency, error rates) go in the health section. Product success metrics (task completion rates, time savings, adoption of key workflows) go next to their respective outcomes.
 
-## 3. Product Outcomes (2-5)
+- **AI Writes the Tree:** The PM drafts; the skill checks each outcome and metric. Targets and baselines come from the PM's data or are marked to be set.
 
-| # | Product Outcome |
-|---|----------------|
-| 1 | Regional farm operations managers make irrigation scheduling decisions based on current field conditions rather than manual inspections |
-| 2 | Agronomists identify water stress across multiple fields before visible crop damage occurs |
-| 3 | Field technicians complete irrigation system adjustments in a single site visit instead of multiple trips |
+#### References
 
-## 4. Product Success Metrics
-
-| # | Product Success Metric | Related Outcome | Status |
-|---|----------------------|-----------------|--------|
-| 1 | Percentage of irrigation decisions made using platform data vs. manual inspection | 1 | TBD |
-| 2 | Average time from water stress onset to agronomist awareness (hours) | 2 | TBD |
-| 3 | Average number of site visits per irrigation adjustment cycle | 3 | Defined |
-| 4 | Percentage of managed acres with active sensor coverage | 1, 2 | Defined |
-
-## 5. Product Health Metrics
-
-| # | Product Health Metric | Target |
-|---|---------------------|--------|
-| 1 | Sensor data ingestion uptime | 99.5% |
-| 2 | Average time from sensor reading to dashboard update | < 15 minutes |
-| 3 | Weekly active users as percentage of licensed accounts | > 70% |
-
-## Solution Summary (from Solution Hypothesis Statement play, if available)
-
-> Not yet defined
-
-## Causal Chain Review
-
-- Product Outcome 1 (data-driven irrigation decisions) directly reduces water waste by replacing imprecise manual scheduling.
-- Product Outcome 2 (early stress detection) prevents yield loss that would otherwise offset water savings.
-- Product Outcome 3 (single-visit adjustments) reduces operational cost per acre, supporting the cost metric.
-- Gap: No product outcome addresses seasonal planning or long-term water budgeting. This may be needed if the 20% reduction target requires structural changes, not just better daily decisions.
-```
-
-##### Why This Works
-
-- **Clear causal chain.** Each product outcome connects logically to the business outcome. Reducing water consumption requires better irrigation decisions (Outcome 1), preventing crop damage that undermines savings (Outcome 2), and reducing operational cost of the changes (Outcome 3).
-- **Business outcome is specific and measurable.** "Reduce water consumption by 20% within 18 months while maintaining yield targets" has a direction, a metric, a target, and a timeframe.
-- **Product outcomes are customer-centered.** Each describes what a specific role achieves, not what the product does. "Regional farm operations managers make irrigation scheduling decisions based on current field conditions" is about the manager's changed behavior, not a product feature.
-- **Role names, not persona names.** "Regional farm operations managers," "agronomists," and "field technicians" are roles. No individual names like "Carlos" or "Priya."
-- **Metrics are distinguished by type.** Business success metrics (water per acre, yield variance) are separate from product success metrics (decisions using platform data, time to awareness) and product health metrics (uptime, latency, adoption). No confusion between levels.
-- **Honest about gaps.** The causal chain review flags a gap in seasonal planning. TBD metrics are marked as such rather than invented.
-
----
-
-#### Example 2: Weak Generic Outcome Tree
-
-Same scenario, written poorly.
-
-```markdown
-# Outcome Tree - Section One
-
-## Product Context
-
-- Product or service: Smart irrigation system
-- Business or organization: AgriTech company
-- Primary customer/user role: Farmer
-- Buyer (if different): Same
-
-## 1. Business Outcome
-
-| Business Outcome |
-|------------------|
-| Grow the business and improve sustainability |
-
-## 2. Business Success Metrics
-
-| # | Business Success Metric | Status |
-|---|------------------------|--------|
-| 1 | Revenue growth | TBD |
-| 2 | Customer satisfaction | TBD |
-
-## 3. Product Outcomes (2-5)
-
-| # | Product Outcome |
-|---|----------------|
-| 1 | Better water management |
-| 2 | Improved crop yields |
-| 3 | Reduced costs |
-| 4 | Increased efficiency |
-| 5 | Better data visibility |
-| 6 | Faster decision making |
-| 7 | Improved sustainability metrics |
-
-## 4. Product Success Metrics
-
-| # | Product Success Metric | Related Outcome | Status |
-|---|----------------------|-----------------|--------|
-| 1 | User satisfaction | All | TBD |
-
-## 5. Product Health Metrics
-
-| # | Product Health Metric | Target |
-|---|---------------------|--------|
-| 1 | System uptime | High |
-```
-
-##### Why This Fails
-
-- **Business outcome is unmeasurable.** "Grow the business and improve sustainability" has no direction, no metric, and no target. Nobody can tell if it happened.
-- **Product outcomes are vague abstractions.** "Better water management" and "increased efficiency" could mean anything. They do not describe a customer's changed state.
-- **Too many product outcomes.** Seven outcomes exceeds the 2-5 limit. The team cannot focus.
-- **No customer roles.** "Farmer" is too generic. Which farmer? The operations manager, the agronomist, the field technician? Different roles have different outcomes.
-- **Metrics are absent or generic.** "User satisfaction" as a single metric for all outcomes provides no signal. "High" is not a target.
-- **No causal chain.** There is no visible logic connecting product outcomes to the business outcome. The tree is a wish list, not a strategy artifact.
-
----
-
-#### Example 3: Drift Bug - Product Outcomes Confused with Business Outcomes and Internal Tasks
-
-```markdown
-## 3. Product Outcomes (2-5)
-
-| # | Product Outcome |
-|---|----------------|
-| 1 | Increase market share in the precision agriculture segment by 15% |
-| 2 | Achieve $5M in annual recurring revenue from irrigation management subscriptions |
-| 3 | Ship the Q3 release with sensor integration on time |
-| 4 | Reduce customer churn rate to below 8% annually |
-| 5 | Complete SOC 2 compliance certification before fiscal year end |
-```
-
-##### Why This Is Wrong
-
-Every entry confuses the level of the tree it belongs in:
-
-- **"Increase market share by 15%"** is a business outcome, not a product outcome. Market share is a business-level metric. The product team cannot directly control market share. This belongs in the Business Outcome box, not in the Product Outcomes section.
-- **"Achieve $5M in ARR"** is a business financial target. It tells you nothing about what the customer achieves. Revenue is a consequence of delivering product outcomes, not a product outcome itself.
-- **"Ship the Q3 release on time"** is an internal team task. It describes what the engineering team does, not what the customer gets. Shipping on time may be necessary, but it is not a product outcome.
-- **"Reduce customer churn to below 8%"** is a business retention metric. Churn rate is a lagging business indicator. The product outcome would describe what changed for the customer that made them stay.
-- **"Complete SOC 2 compliance certification"** is an internal operational task. It may be a prerequisite for selling to certain customers, but it is not something the customer achieves.
-
-**Fix:** For each entry, ask: "Who experiences this? Is it the customer using the product, or is it the business/team?" Then rewrite:
-
-- "Increase market share by 15%" becomes the Business Outcome (or a business metric)
-- "$5M ARR" becomes a Business Success Metric
-- "Ship Q3 release" gets removed entirely (this is a project milestone, not an outcome at any level)
-- "Reduce churn to below 8%" becomes a Business Success Metric
-- "SOC 2 certification" gets removed or noted as a prerequisite, not an outcome
-
-The actual product outcomes would describe what farm operations managers, agronomists, or field technicians achieve differently because the product exists.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-outcome-tree) for supporting source material and expanded examples.
 
 ## ps-market-selection-sizing | Market Selection & Sizing
 
@@ -2198,6 +1344,15 @@ Use this skill when you need to:
 This is not a financial forecast or a business case. It is a first pass, fast and simple, that the team revisits as it learns more. And it is never a place for numbers without sources.
 
 **Source status:** this Play exists only in the B2B work-in-progress deck (Template 04 of 24), which is not yet ratified. The baseline deck has no equivalent.
+
+##### Usage Notes
+
+- **Type:** component. **Phase:** Context. **Evidence:** web research + user artifacts.
+- **Every number needs a source.** Sizing is written as formulas whose inputs carry source IDs or `[TO SOURCE]`, in one counting unit, as ranges, with SOM ≤ SAM ≤ TAM.
+- **AI may propose, never invent.** Following the Playbook's own prompts, the skill proposes market definitions, PESTEL entries, and segments with its reasoning visible, and cites what it finds. It never fills a sizing blank with a plausible number.
+- **SOM can wait:** it is estimated only when there is a product to price. Otherwise it is deferred until solutions are ideated.
+- **Downstream:** ps-jobs-to-be-done, ps-proto-persona, ps-empathy-interviews, and ps-positioning-statement use the segments and the people named in them.
+- The source deck is not yet ratified, and its pages are not objectified (no named shapes). The budget entry in `technical/data/canonical_template_budgets.yaml` has guidance only, no shape budgets.
 
 #### Key Concepts
 
@@ -2265,64 +1420,24 @@ In this Play, the Playbook's own prompts ask AI to research, propose segments, a
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-market-selection-sizing / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `02-context.md`, section `ps-market-selection-sizing / Template`) for the scaffold.
+Use Template (uploaded reference: `02-context.md`, section `ps-market-selection-sizing / Template`) for the scaffold.
 
-See the source play pages in assets/ps_market_selection_sizing_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -2422,136 +1537,15 @@ Offer, as options:
 
 The user decides what comes next. Revisit this artifact as discovery produces evidence.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `02-context.md`, section `ps-market-selection-sizing / Examples`).
-
-The example set includes:
-
-- a strong market analysis for municipal water-utility pump-station monitoring, with sourced inputs, cut logic, and ranges (figures are illustrative)
-- a weak version in the same domain: confident unsourced numbers, demographic segments, and a generic PESTEL
-- a drift-bug example, "the free five percent," showing an SOM built on an assumed share
-
-#### Common Pitfalls
-
-##### Pitfall 1: AI Invents the Market Size
-
-**Symptom:** The TAM box says "$4.2B, growing 9% annually," with no source, or with a source no one can find.
-
-**Consequence:** A guess dressed as a finding goes into a leadership deck. The first person who asks "where did this come from?" ends the PM's credibility on the topic.
-
-**Fix:** Every number carries a source ID or `[TO SOURCE]`. Never fill a blank with a plausible figure.
-
-##### Pitfall 2: Competitor Numbers No One Can Know
-
-**Symptom:** "Competitor X has 30% share and $80M in revenue in this segment," for a private company with no disclosures.
-
-**Consequence:** The SOM rests on invented competitive data.
-
-**Fix:** Use only competitive facts a filing, a report, or a named source states. Otherwise describe the competitor qualitatively and mark the gap.
-
-##### Pitfall 3: A Generic PESTEL
-
-**Symptom:** "Political: regulation is increasing. Technological: AI is changing everything. Economic: inflation."
-
-**Consequence:** The analysis fits every market and informs none. The team learns nothing about this market's forces.
-
-**Fix:** One specific entry per force, tied to this market, with a source, or an honest open question.
-
-##### Pitfall 4: Segments for Show
-
-**Symptom:** Segments are "Small, Medium, Enterprise" or "Healthcare, Finance, Retail," with tidy cuts that would fit any market.
-
-**Consequence:** Customers inside a segment don't share needs, so jobs, personas, and positioning built on the segment don't hold.
-
-**Fix:** Define segments by shared needs, goals, and behaviors, and state the cut logic so it can be tested. Use size or industry only as a boundary.
-
-##### Pitfall 5: Segments With No People in Them
-
-**Symptom:** Each segment has a name and a description, but no one in it: no user, buyer, or influencer.
-
-**Consequence:** The next plays (Jobs-to-Be-Done, Personas) have no one to write about. The Playbook names this trap: segments with no real persona.
-
-**Fix:** Name the users, buyers, and influencers in every segment. Think broadly.
-
-##### Pitfall 6: The Market at the Wrong Altitude
-
-**Symptom:** The market is "software" or "healthcare," or it is one customer's workflow.
-
-**Consequence:** Too broad can't be analyzed. Too narrow can't be sized or segmented.
-
-**Fix:** Run the three altitude questions. Center the definition on who the product is for and the benefit it provides.
-
-##### Pitfall 7: The Free Five Percent
-
-**Symptom:** "If we capture just 5% of the SAM..." with no reason why 5%.
-
-**Consequence:** The SOM is a wish. It ignores competition, which the Playbook says SOM must consider.
-
-**Fix:** State the share basis: the alternatives customers use, how many the team can reach, a win-rate assumption, and delivery capacity over a named horizon. If there is no basis yet, show SOM as a conditional formula and say what would anchor it.
-
-##### Pitfall 8: Mixed Counting Units
-
-**Symptom:** TAM counts companies, SAM counts sites, SOM multiplies employees by a per-seat price.
-
-**Consequence:** The math is wrong in a way that looks right. SOM can exceed SAM without anyone noticing.
-
-**Fix:** Name one counting unit, convert explicitly when needed, and check SOM ≤ SAM ≤ TAM.
-
-##### Pitfall 9: One Source, One Number
-
-**Symptom:** A single search result becomes the TAM, presented to the dollar.
-
-**Consequence:** False precision. The conversation becomes a defense of the number instead of a discussion of risk.
-
-**Fix:** Triangulate with three approaches and present ranges.
-
-##### Pitfall 10: Professional-Looking Logic, Never Tested
-
-**Symptom:** A polished analysis with clean formulas and confident segment names that no one has checked against a customer or an expert.
-
-**Consequence:** The structure is mistaken for rigor, and the team commits to a segment on untested logic.
-
-**Fix:** Tag AI-suggested cut logic for validation, rank the open questions, and revisit the analysis as discovery produces evidence.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `02-context.md`, section `ps-market-selection-sizing / Template`) - market analysis scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-market-selection-sizing / Companion / README.md`) - copy-paste prompts for chat-based AI tools (4, run in order in one chat)
-- examples/sample.md (uploaded reference: `02-context.md`, section `ps-market-selection-sizing / Examples`) - strong, weak, and drift-bug examples
-- assets/ps_market_selection_sizing_playbook_pages.pdf (source material, not included in this upload kit) - source pages from the B2B work-in-progress deck (slides 14-18)
-
-##### Related Skills
-
-- ps-outcome-tree (uploaded reference: `02-context.md`, section `ps-outcome-tree / Instructions`) - Context-phase neighbor; the business outcome this market should serve
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - downstream; jobs for the people in the chosen segments
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - downstream; a persona for the center of a chosen segment
-- ps-positioning-statement (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Instructions`) - downstream; positioning for one persona in one segment
-
-##### Related Project Docs
-
-- [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml)
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-
-##### Source Material
-
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 14-18: Template 04 of 24, with the AI overview on slide 16 and prompts on slide 17. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- assets/ps_market_selection_sizing_playbook_pages.pdf (source material, not included in this upload kit)
-
 ### ps-market-selection-sizing / Template
 
-### Market Selection & Sizing
-
-#### When to Use This
+##### When to Use This
 
 Use this template in the **Context** phase, before Jobs-to-Be-Done and Personas, to name the market a product serves, understand the forces acting on it, cut it into segments, and size the opportunity. It is a first pass you will revisit as you learn more.
 
 Downstream: the segments and the people named in them feed ps-jobs-to-be-done, ps-proto-persona, ps-empathy-interviews, and ps-positioning-statement.
 
-#### Template
+##### Template
 
 ```markdown
 # Market Selection & Sizing
@@ -2636,7 +1630,7 @@ Ranked by how much the answer could change the sizing.
 3.
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
 - Work the three parts in order: market, then segments, then size.
 - Keep entries compact. The canonical template's PESTEL cells, segment boxes, and sizing boxes are small.
@@ -2646,151 +1640,35 @@ Ranked by how much the answer could change the sizing.
 
 ### ps-market-selection-sizing / Examples
 
-### ps-market-selection-sizing Examples
+Illustrative and fictional, not customer evidence.
 
-All three examples use the same domain: remote monitoring for water and wastewater pump stations, sold to U.S. utilities.
+- **Strong:** For pump-station monitoring, name utilities and their operators, count stations consistently, and source every population and price input. Leave unknown inputs open.
+- **Weak:** "Every utility is our market" leaves segment needs and purchasing conditions undefined.
+- **Drift to avoid:** The free five percent: SOM is not an arbitrary percentage of a larger market. Show reachable accounts, capacity, adoption assumptions, and evidence.
 
-**Every figure and source below is illustrative.** The numbers show the shape of the reasoning, not real market data. Do not reuse them as facts.
 
-#### Example 1: Strong Market Analysis
+#### Common Pitfalls
 
-Scenario: a company with an existing pump-station monitoring product (cellular sensors and alerting) is deciding which utility segments to explore next.
+- **AI Invents the Market Size:** Every number carries a source ID or `[TO SOURCE]`. Never fill a blank with a plausible figure.
 
-```markdown
-# Market Selection & Sizing
+- **Competitor Numbers No One Can Know:** Use only competitive facts a filing, a report, or a named source states. Otherwise describe the competitor qualitatively and mark the gap.
 
-## Context
-- Product or product idea: Existing. Cellular sensors and alerting for unattended pump and lift stations
-- Who it is for, and the benefit it provides: Utilities that run unattended pump stations; earlier warning of failures and overflows
-- Decision this analysis informs: Which segment to run discovery in next quarter
-- Counting unit: pump stations (priced per station per year)
+- **A Generic PESTEL:** One specific entry per force, tied to this market, with a source, or an honest open question.
 
-## 1. Market Selection
-- Market: Remote monitoring of unattended pump and lift stations for U.S. water and wastewater utilities
+- **Segments for Show:** Define segments by shared needs, goals, and behaviors, and state the cut logic so it can be tested. Use size or industry only as a boundary.
 
-### PESTEL
-| Force | Entry | Source or status |
-|---|---|---|
-| Political | State revolving-fund grants now prioritize resilience upgrades | [S1] |
-| Economic | Rate caps squeeze operating budgets; capital spend is easier to fund | [S2] |
-| Social | Licensed operators retiring faster than they are replaced | [S3] |
-| Technological | Cellular sensors replacing legacy radio telemetry at small sites | [S4] |
-| Environmental | Heavier storms overloading lift stations in some regions | OPEN QUESTION: which regions, how often? |
-| Legal | Overflow reporting rules raise penalty exposure for missed alarms | [S5] |
+- **Segments With No People in Them:** Name the users, buyers, and influencers in every segment. Think broadly.
 
-## Total Addressable Market (TAM)
-- Sized fact 1: 48,000-52,000 utilities operate at least one pump or lift station [S6]
-- Sized fact 2: 3-4 stations per utility on average, across all sizes [S7]
-- TAM: 145,000-210,000 pump stations
+- **The Market at the Wrong Altitude:** Run the three altitude questions. Center the definition on who the product is for and the benefit it provides.
 
-## 2. Segments
+- **The Free Five Percent:** State the share basis: the alternatives customers use, how many the team can reach, a win-rate assumption, and delivery capacity over a named horizon. If there is no basis yet, show SOM as a conditional formula and say what would anchor it.
 
-### Segment 1: Mid-size systems with stretched on-call crews
-- Description: Serve 10,000-100,000 people; stations unattended; a small crew covers nights by rotation; overflow fines are a board-level worry
-- Cut logic: Staffing model (rotating on-call crew, no 24/7 control room) and penalty exposure, not population alone [AI-SUGGESTED, VALIDATE THIS]
-- Users: Lead operators, on-call technicians
-- Buyers: Utility director, public works director
-- Influencers: Consulting engineers, state regulators, city council
+- **Mixed Counting Units:** Name one counting unit, convert explicitly when needed, and check SOM ≤ SAM ≤ TAM.
 
-### Segment 2: Small rural systems with a shared circuit-rider operator
-- Description: Serve under 10,000 people; one licensed operator covers several systems part-time; upgrades depend on grants
-- Cut logic: One operator across multiple systems, and a grant-funded buying path [FROM YOU]
-- Users: Circuit-rider operator
-- Buyers: Town manager, water board chair
-- Influencers: State rural water association technical assistants, grant administrators
+- **One Source, One Number:** Triangulate with three approaches and present ranges.
 
-## 3. Size the Market & Segments
+- **Professional-Looking Logic, Never Tested:** Tag AI-suggested cut logic for validation, rank the open questions, and revisit the analysis as discovery produces evidence.
 
-### Serviceable Addressable Market (SAM)
-| Segment | Counting logic (formula) | Inputs and sources | SAM (range) |
-|---|---|---|---|
-| 1 | systems x stations per system | 4,000-5,000 systems [S6]; 8-15 stations each [S8] | 32,000-75,000 stations |
-| 2 | systems x stations per system | 20,000-25,000 systems [S6]; 1-3 stations each [S8, TO SOURCE for under-3,300] | 20,000-75,000 stations |
+#### References
 
-Triangulation: top-down from the system inventory [S6], bottom-up from 12 customer station counts [S9], and two consulting engineers' estimates [S10]. Segment 1 agrees within 20%. Segment 2's bottom-up runs low; see Open Questions.
-
-### Serviceable Obtainable Market (SOM), annual revenue
-| Segment | Share basis (competition, reach, win rate, capacity, horizon) | Units x annual price | SOM (range) |
-|---|---|---|---|
-| 1 | Three SCADA-bundled competitors [S11]. Reach 120-200 utilities in 24 months through two regional partners [S12]. Win rate 20-30% (assumption, from last year's pilots [S9]). | 24-60 utilities x 10 stations x $1,200-1,800 per station per year (current list price [S13]) | $0.29M-$1.08M per year at month 24 |
-| 2 | No validated product fit for single-operator systems yet | Deferred until solutions are ideated | Deferred |
-
-## Source Register
-| ID | Source | Date | What it supports |
-|---|---|---|---|
-| S1-S13 | (Illustrative placeholders: a federal system inventory, a state grant program, an operator workforce report, regulator rules, company sales and pricing data, customer counts, and engineer interviews) | n/a | As cited above |
-
-## Open Questions
-1. Segment 2 stations per system: bottom-up suggests 1-2, not 1-3. This could halve Segment 2's SAM.
-2. Win rate: two years of pilots is a thin basis. Confirm with partner pipeline data.
-3. Environmental: which regions see storm-driven overloads, and is that a buying trigger?
-```
-
-**Why this works**
-
-- **The market is named at the right altitude:** who it serves (utilities with unattended stations) and the benefit (earlier warning), narrow enough to size.
-- **The PESTEL is specific.** Every entry is about this market, with a source, and the one the team couldn't source is an honest open question.
-- **Segments differ by behavior, not just size.** The cut is staffing model and buying path, and each segment names real users, buyers, and influencers.
-- **The sizing is a formula with a source on every input,** in one counting unit (stations), as ranges, triangulated three ways, with SOM ≤ SAM ≤ TAM.
-- **The SOM share has a basis:** competitors, partner reach, a win rate traced to pilots, a horizon, and the price is the company's own list price.
-- **Segment 2's SOM is deferred,** because there is no product fit to price yet. That is what the Playbook asks for.
-- **Provenance is visible.** The team's own cut is `[FROM YOU]`; the model's suggestion is tagged for validation.
-
-#### Example 2: Weak Market Analysis
-
-```markdown
-# Market Selection & Sizing
-
-## 1. Market Selection
-- Market: Smart water
-
-### PESTEL
-| Force | Entry |
-|---|---|
-| Political | Government regulation is increasing |
-| Economic | Inflation is affecting budgets |
-| Social | Sustainability matters more to people |
-| Technological | AI and IoT are transforming the industry |
-| Environmental | Climate change |
-| Legal | Compliance requirements |
-
-## Total Addressable Market (TAM)
-- The global smart water management market is $18.4B, growing at 12.3% CAGR
-
-## 2. Segments
-### Segment 1: Large utilities
-### Segment 2: Small utilities
-
-## 3. Size the Market & Segments
-- SAM: $4.1B (North America)
-- SOM: 2% of SAM = $82M
-```
-
-**Why this fails**
-
-- **"Smart water" is too broad** to analyze. It isn't centered on who the product serves or the benefit it provides.
-- **Every PESTEL entry is generic.** Each would fit any market, and none has a source.
-- **The TAM is a guess dressed as a finding:** a precise global figure with no source, in a different unit (dollars, global) from anything the product sells.
-- **The segments are size labels** with no description, no cut logic, and no users or buyers in them. The next plays have no one to write about.
-- **The SOM is an assumed share** with no competition, reach, or capacity basis, and $82M is not tied to any count of stations or price.
-
-#### Example 3: Drift Bug, "The Free Five Percent"
-
-The market, PESTEL, segments, and SAM are as strong as Example 1. Then the SOM:
-
-```markdown
-### Serviceable Obtainable Market (SOM), annual revenue
-| Segment | Share basis | Units x annual price | SOM (range) |
-|---|---|---|---|
-| 1 | Capture 5% of SAM in 24 months | 5% x 32,000-75,000 stations x $1,500 | $2.4M-$5.6M per year |
-| 2 | Capture 5% of SAM in 24 months | 5% x 20,000-75,000 stations x $1,500 | $1.5M-$5.6M per year |
-```
-
-**Why this fails**
-
-- **The share is a wish.** Nothing explains why 5%: no competitors, no reach, no win rate, no delivery capacity. The Playbook says SOM must consider competition.
-- **It inflates by up to 5x.** Example 1's grounded basis gives Segment 1 $0.29M-$1.08M. The free five percent gives $2.4M-$5.6M.
-- **It prices a segment with no product fit.** Segment 2 gets a confident SOM for a product that has not been shown to work for single-operator systems.
-- **It's easy to miss,** because everything above it is rigorous. Rigor upstream lends false credibility to the assumption downstream.
-
-**Fix:** Build the share from the bottom up: utilities the team can reach over the horizon × a win rate with a stated basis, capped by delivery capacity. Defer SOM for any segment without a product to price. If there is no basis yet, show a conditional formula and name what would anchor it.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-market-selection-sizing) for supporting source material and expanded examples.

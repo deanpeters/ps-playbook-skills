@@ -28,7 +28,7 @@ These files are reference documents. No skills are installed. You can ask by nam
 - `04-discover-define.md`: solution exploration, hypotheses, positioning, experiments, Storyboarding, risks, and Product Outcome Canvas.
 - `05-create.md`: roadmaps, tiny discovery acts, prioritization, launch, and readiness.
 - `06-deliver.md`: measurement and retrospectives.
-- `07-prompts.md`: deck prompts and Play companion prompts, with source labels.
+- `07-prompts.md`: standalone deck prompts, with source labels.
 - `08-license.md`: Productside license and attribution.
 
 ## Keep the work grounded
@@ -41,6 +41,6 @@ Keep unrelated products and clients in separate Projects. Before sharing, review
 
 November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
-Source: deanpeters/ps-playbook-skills. Content fingerprint: `07d2769427fff2ec`. This is an uploaded snapshot; changing GitHub does not update these files. Replace the complete upload set when updating. PDF excerpts, full source decks, and external maintenance documents are not included. References to them in the preserved Play text describe provenance, not material the assistant has read.
+Source: deanpeters/ps-playbook-skills. Content fingerprint: `54396bfeb5295f99`. This is an uploaded snapshot; changing GitHub does not update these files. Replace the complete upload set when updating. PDF excerpts, full source decks, and external maintenance documents are not included. References to them in the preserved Play text describe provenance, not material the assistant has read.
 
 Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. See 08-license.md.

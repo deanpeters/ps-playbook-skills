@@ -20,6 +20,7 @@ scenarios:
   - "Help me document the solution we chose, its risks, and the assumptions we need to validate"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Solution Hypothesis Statement artifact** that documents a proposed solution, its benefits and risks, and produces two linked If/Then hypothesis statements.
@@ -42,6 +43,14 @@ Use this skill when you need to:
 - create a reviewable artifact for leadership or gate review processes
 
 This is not a PRD or feature specification. If the output reads like a requirements document or a feature list, the hypothesis has drifted into implementation territory.
+
+### Usage Notes
+
+- The template produces a single artifact with five sections: Problem Statement (imported), Solution Summary, Solution Benefits, Risks and Assumptions, and Solution Hypothesis Statement (two-column If/Then).
+- Two hypothesis statements are required, not one: customer-focused (IF solution THEN customer benefit) and business-focused (IF customer benefit THEN business outcome). The THEN of the first becomes the IF of the second.
+- Evidence gathering is **artifacts only** - no web research offered. This skill synthesizes the PM's problem framing and solution exploration work.
+- Upstream: ps-framing-the-problem, ps-exploring-solution-space, ps-positioning-statement.
+- Downstream: lo-fi experimentation, risk assessment, roadmap planning, outcome tree alignment.
 
 ## Key Concepts
 
@@ -106,64 +115,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_solution_hypothesis_playbook_pages.pdf](assets/ps_solution_hypothesis_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -179,7 +148,7 @@ That means:
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-pressure-test-solution-hypothesis.md](prompts/01-pressure-test-solution-hypothesis.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Confirm the Product and Customer Context
 
@@ -299,124 +268,176 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Define** when you have a validated problem statement and have explored the solution space. You are ready to express your chosen solution direction as a testable hypothesis with expected customer and business outcomes.
+
+Upstream work that feeds this template: framing the problem (ps-framing-the-problem), exploring the solution space (ps-exploring-solution-space), positioning statement (ps-positioning-statement, if available).
+
+### Template
+
+```markdown
+# Solution Hypothesis Statement
+
+## Product Context
+
+- Product or service:
+- Target market segment:
+- Primary customer (the person who uses or buys the product):
+
+## 1. Problem Statement
+
+Import from your Framing the Problem output. Do not rewrite.
+
+
+> Quality check: Is this a validated problem statement, or an assumption? If it is an assumption, flag it.
+> Quality check: Is the problem written from the customer's perspective, not the product team's?
+> Capacity check: ~40-50 words (matching the final problem statement from ps-framing-the-problem).
+
+## 2. Solution Summary
+
+Describe the proposed solution in one paragraph. What does the solution provide to the customer?
+
+
+> Quality check: Is this specific enough to be testable? "Build a better platform" is not testable.
+> Quality check: Does the summary describe what the solution does for the customer, not how it is built?
+> Quality check: Is there a clear connection between this solution and the problem statement above?
+> Capacity check: ~30-40 words.
+
+## 3. Solution Benefits
+
+List 3-5 specific benefits. Each benefit should describe an outcome, not a feature.
+
+-
+-
+-
+-
+
+> Quality check: Does each benefit answer "so what?" or does it just describe a capability?
+> Quality check: Are there both customer-facing and business-facing benefits in the list?
+> Quality check: Do benefits use role names ("HR specialists"), not persona names ("Henry")?
+> Capacity check: ~5-10 words per benefit, 3-5 benefits.
+
+## 4. Risks and Assumptions
+
+List 3-5 specific risks or assumptions that need to be validated.
+
+-
+-
+-
+-
+
+> Quality check: Is each risk specific enough to investigate? "Things might go wrong" is not specific.
+> Quality check: Are these risks relevant to this solution, not generic business risks?
+> Quality check: Could the team design a test or investigation for each risk?
+> Capacity check: ~5-10 words per risk, 3-5 risks.
+
+## 5. Solution Hypothesis Statement
+
+### Customer-Focused Hypothesis
+
+IF we [describe what the solution provides to customers],
+THEN [describe the specific benefit customers experience].
+
+
+### Business-Focused Hypothesis
+
+IF we [restate the customer benefit from above],
+THEN [describe the measurable business outcome].
+
+
+> Quality check: Does the THEN of the customer-focused hypothesis match the IF of the business-focused hypothesis? This chain must connect.
+> Quality check: Is the customer-focused hypothesis about customer value, not business metrics?
+> Quality check: Is the business-focused hypothesis about a measurable business outcome, not a vague improvement?
+> Quality check: Are both written as If/Then statements, not as feature descriptions?
+> Quality check: Do hypotheses use role names, not persona names?
+> Capacity check: ~30-40 words per hypothesis.
+
+## Evidence Notes (optional)
+
+- Upstream artifacts used:
+- What is well-supported by evidence:
+- What is still assumption:
+- Recommended next validation steps:
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Start with **Product Context** to anchor who this is for and whose problem the solution addresses.
+2. **Import the Problem Statement** from ps-framing-the-problem. Do not rewrite it.
+3. Write the **Solution Summary** as one paragraph describing what the solution provides.
+4. List **Solution Benefits** as outcomes, not features. Push each one past "what it does" to "why it matters."
+5. List **Risks and Assumptions** with enough specificity that each one can be investigated.
+6. Write the **Customer-Focused Hypothesis** first. Then write the **Business-Focused Hypothesis** using the THEN of the first as the IF of the second.
+7. Verify the chain between the two hypotheses.
+8. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
+
+#### The Five Sections Build in Order
+
+Do not skip ahead to writing hypotheses without completing the preceding sections. The problem statement grounds the solution. The solution grounds the benefits. The benefits and risks inform the hypothesis. Writing the hypothesis without the groundwork produces untethered speculation.
+
+#### What Goes Where
+
+| Section | Contains | Does NOT Contain |
+|---------|----------|------------------|
+| Problem Statement | Validated problem from upstream | New problem framing or solution language |
+| Solution Summary | What the solution provides to customers | Implementation details, architecture, feature specs |
+| Solution Benefits | Outcomes for customers and the business | Feature names, capability descriptions |
+| Risks and Assumptions | Specific, testable failure modes or beliefs | Generic worries, vague concerns |
+| Customer Hypothesis | IF solution THEN customer benefit | Business metrics, revenue targets |
+| Business Hypothesis | IF customer benefit THEN business outcome | Feature lists, solution descriptions |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-framing-the-problem provides the problem statement. ps-exploring-solution-space provides the chosen solution direction. ps-positioning-statement provides framing for how the solution fits the market.
+- **Downstream:** The validated hypothesis drives lo-fi experimentation, risk assessment, and roadmap planning. The business outcome in hypothesis 2 should connect to the outcome tree if one exists.
+
+#### Capacity Reference
+
+See [Template and capacity guidance](#template) for the exact word and character budgets per field.
+
+| Field | Word Budget | Guidance |
+|-------|-------------|----------|
+| Problem Statement | ~40-50 | Imported from ps-framing-the-problem |
+| Solution Summary | ~30-40 | One paragraph, specific and testable |
+| Solution Benefits | ~5-10 each | 3-5 outcome statements, not feature names |
+| Risks and Assumptions | ~5-10 each | 3-5 specific, testable risks |
+| Customer Hypothesis | ~30-40 | IF solution THEN customer benefit |
+| Business Hypothesis | ~30-40 | IF customer benefit THEN business outcome |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** If produce distributors receive earlier shipment-condition signals, then they can intervene before spoilage; if spoilage falls, then the business may improve margin. Define tests for both links.
+- **Weak:** "Add tracking, alerts, and dashboards" lists features without predicting a testable change.
+- **Drift to avoid:** Feature list as hypothesis: an If clause alone is insufficient. The Then clause must specify a customer or business result.
 
-- a strong Productside-style solution hypothesis with all five sections, two chained If/Then statements, and specific benefits and risks
-- a weak, generic version with vague solution summary, feature-as-benefit language, and a single merged hypothesis
-- a drift-bug example showing the hypothesis written as a feature list instead of an If/Then chain
-- commentary on why the weak versions fail
 
 ## Common Pitfalls
 
-### Pitfall 1: Writing a Feature List Instead of an If/Then Hypothesis
+- **Writing a Feature List Instead of an If/Then Hypothesis:** Rewrite as an If/Then statement. The IF describes the solution. The THEN describes the expected outcome for the customer or business. "IF we provide automated workflows that reduce manual data entry, THEN field engineers will complete inspections 40% faster."
 
-**Symptom:** The "Solution Hypothesis Statement" section lists features: "We will build automated workflows, a self-service portal, and a reporting dashboard."
+- **Merging the Two Hypotheses into One:** Separate into two statements. The customer-focused hypothesis connects solution to customer benefit. The business-focused hypothesis connects customer benefit to business outcome. The THEN of the first becomes the IF of the second.
 
-**Consequence:** The team has a build plan but no expected outcome to validate against. There is no testable prediction, just a list of things to construct.
+- **Making the Solution Summary Too Vague to Test:** The solution summary must be specific enough that someone could design a test for it. "Implement an integrated HR management system with automated task workflows, centralized employee records, and a self-service portal for common requests" is testable.
 
-**Fix:** Rewrite as an If/Then statement. The IF describes the solution. The THEN describes the expected outcome for the customer or business. "IF we provide automated workflows that reduce manual data entry, THEN field engineers will complete inspections 40% faster."
+- **Listing Generic Risks:** Each risk should name a specific failure mode. "Resistance to change from employees accustomed to the current manual process" is specific. "Integration with the legacy HRIS may require custom middleware not in the current budget" is specific.
 
-### Pitfall 2: Merging the Two Hypotheses into One
+- **Starting Without a Validated Problem Statement:** Complete ps-framing-the-problem first. If that is not possible, at minimum draft a problem statement and flag it as unvalidated. The hypothesis artifact should make visible whether the problem foundation is solid or assumed.
 
-**Symptom:** A single statement tries to cover both customer value and business outcome: "If we build this platform, then customers will be happier and we will grow revenue."
+- **Using Persona Names Instead of Role Names in the Hypothesis:** Use role names: "IF we save HR specialists time on manual tasks, THEN they will redirect effort to strategic initiatives like talent development and workforce planning."
 
-**Consequence:** The chain from customer value to business outcome is lost. The team cannot tell whether they are testing for customer adoption or business impact, and they cannot diagnose which link broke if results disappoint.
+- **Writing Benefits That Are Just Restated Features:** Push each benefit one level further. "Automated data entry" becomes "Time recovered from manual data entry, allowing specialists to focus on higher-value work." The feature is the mechanism; the benefit is the outcome the customer cares about.
 
-**Fix:** Separate into two statements. The customer-focused hypothesis connects solution to customer benefit. The business-focused hypothesis connects customer benefit to business outcome. The THEN of the first becomes the IF of the second.
+- **Writing a Business-Focused Hypothesis with No Measurable Outcome:** The business outcome must include a specific metric or target: "THEN we will reduce new employee onboarding time by 30%" or "THEN we will increase field inspection completion rates from 60% to 85% per quarter."
 
-### Pitfall 3: Making the Solution Summary Too Vague to Test
-
-**Symptom:** "Build a better platform for our customers" or "Create an integrated solution."
-
-**Consequence:** The hypothesis is untestable because the solution is undefined. What platform? Better how? Integrated with what?
-
-**Fix:** The solution summary must be specific enough that someone could design a test for it. "Implement an integrated HR management system with automated task workflows, centralized employee records, and a self-service portal for common requests" is testable.
-
-### Pitfall 4: Listing Generic Risks
-
-**Symptom:** "Things might not work." "There could be challenges." "Users might not adopt it."
-
-**Consequence:** The team has no actionable risk mitigation plan. Generic risks cannot be investigated or resolved.
-
-**Fix:** Each risk should name a specific failure mode. "Resistance to change from employees accustomed to the current manual process" is specific. "Integration with the legacy HRIS may require custom middleware not in the current budget" is specific.
-
-### Pitfall 5: Starting Without a Validated Problem Statement
-
-**Symptom:** The problem statement section is blank or contains a one-line assumption. The hypothesis jumps straight to "here is what we should build."
-
-**Consequence:** The hypothesis solves a problem that may not exist. Without a validated problem, the team cannot tell if the solution is addressing real customer friction or imagined friction.
-
-**Fix:** Complete ps-framing-the-problem first. If that is not possible, at minimum draft a problem statement and flag it as unvalidated. The hypothesis artifact should make visible whether the problem foundation is solid or assumed.
-
-### Pitfall 6: Using Persona Names Instead of Role Names in the Hypothesis
-
-**Symptom:** "IF we save Henry time on manual tasks, THEN Henry will focus on strategic initiatives."
-
-**Consequence:** The hypothesis sounds like it serves one person rather than a customer population. Leadership cannot tell whether this is a scalable solution or a custom accommodation.
-
-**Fix:** Use role names: "IF we save HR specialists time on manual tasks, THEN they will redirect effort to strategic initiatives like talent development and workforce planning."
-
-### Pitfall 7: Writing Benefits That Are Just Restated Features
-
-**Symptom:** The benefits list reads like a feature spec: "Automated data entry. Dashboard reporting. Self-service portal."
-
-**Consequence:** The team confuses what the product does with why it matters. Benefits should answer "so what?" Features answer "what does it do?"
-
-**Fix:** Push each benefit one level further. "Automated data entry" becomes "Time recovered from manual data entry, allowing specialists to focus on higher-value work." The feature is the mechanism; the benefit is the outcome the customer cares about.
-
-### Pitfall 8: Writing a Business-Focused Hypothesis with No Measurable Outcome
-
-**Symptom:** "IF customers are happier, THEN the business will do better."
-
-**Consequence:** There is no way to tell whether the hypothesis was confirmed or refuted. "Do better" is not measurable.
-
-**Fix:** The business outcome must include a specific metric or target: "THEN we will reduce new employee onboarding time by 30%" or "THEN we will increase field inspection completion rates from 60% to 85% per quarter."
-
-### Pitfall 9: AI Writes the Bet
-
-**Symptom:** The PM asks for a solution hypothesis and gets a complete, confident If/Then chain with benefits, risks, and a business outcome.
-
-**Consequence:** No one on the team chose the bet. When the test results come in, nobody knows which link was the real assumption.
-
-**Fix:** The PM drafts the chain; the skill tests each link. Rewrites come after the critique, as options.
+- **AI Writes the Bet:** The PM drafts the chain; the skill tests each link. Rewrites come after the critique, as options.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Related Skills
-
-#### Upstream (input to this skill)
-
-- [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) - validated problem statement that anchors the hypothesis
-- [ps-exploring-solution-space](../ps-exploring-solution-space/) - solution exploration that identifies the proposed solution direction
-- [ps-positioning-statement](../ps-positioning-statement/SKILL.md) - positioning work that informs how the solution is framed
-
-#### Downstream (uses output from this skill)
-
-- Outcome tree - the business outcome in hypothesis 2 should align with outcome tree metrics
-- Lo-fi experimentation - the testable hypothesis drives experiment design
-- Roadmap planning - the validated hypothesis informs what goes on the roadmap
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_solution_hypothesis_playbook_pages.pdf](assets/ps_solution_hypothesis_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 57-59: Template 12 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-solution-hypothesis) for supporting source material and expanded examples.

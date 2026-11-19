@@ -20,6 +20,7 @@ scenarios:
   - "Help me run a risk assessment session and build mitigation plans for the top threats"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Risk Assessment artifact** from a collaborative team review of a product in development.
@@ -70,7 +71,7 @@ The assessment is not a one-time checkpoint. Risks change as the product is buil
 
 Risk names, mitigation tactics, and contingency plans should be paste-ready for the playbook template. Keep entries specific but compact.
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for canonical field budgets.
+See [Template and capacity guidance](#template) for canonical field budgets.
 
 ### How AI Supports This Play
 
@@ -82,64 +83,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_risk_assessment_playbook_pages.pdf](assets/ps_risk_assessment_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -156,7 +117,7 @@ That means:
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-widen-and-test-risks.md](prompts/01-widen-and-test-risks.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Apply Tech-Role Bias Guard
 
@@ -263,113 +224,199 @@ At the end of the artifact, offer three options:
 2. Carry the risk summary forward into ps-product-outcome-canvas when that play is run
 3. Share the assessment with stakeholders identified in the Risk Raised By column to validate completeness and confirm Points of Contact
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Define** after completing your solution hypothesis and before committing to a build plan. Run it as a collaborative session with your project manager and relevant stakeholders.
+
+Upstream artifacts that feed this template:
+- Solution hypothesis (ps-solution-hypothesis): defines what is being built and what must be true for it to succeed
+- Problem framing (ps-framing-the-problem): provides customer and context grounding for adoption risks
+- Stakeholder Alignment artifact (if available): helps identify Points of Contact for each risk
+
+### Template
+
+```markdown
+# Risk Assessment
+
+## Product Context
+
+- Product or initiative:
+- Stage (discovery, build, pre-launch, post-launch):
+- Session participants:
+- Date of assessment:
+
+---
+
+## Section 1: Identify Risks
+
+Brainstorm the risks that could impact the success of this product or initiative.
+Aim for exactly six. Cover adoption, technical, organizational, market, compliance, and resource categories.
+
+| # | Risk Name | Risk Raised By |
+|---|-----------|----------------|
+| 01 | | |
+| 02 | | |
+| 03 | | |
+| 04 | | |
+| 05 | | |
+| 06 | | |
+
+> Quality check: Does each Risk Name name a specific concern, not a category? ("Workflow Disruption: clinicians resist new documentation steps" not "User Resistance")
+> Quality check: Are risks spread across at least three distinct categories (adoption, technical, organizational, market, compliance, resource)?
+> Quality check: Is each Risk Raised By a specific person, not a team or function?
+> Capacity check: Risk Name should be ~5-8 words.
+
+---
+
+## Section 2: Plot Level of Risk
+
+For each risk, classify Impact Severity and Occurrence Probability, then derive Priority.
+
+Impact Severity: How severely would this affect the business or product outcome if it occurred? (High / Medium / Low)
+Occurrence Probability: How likely is it to occur given what we know? (High / Medium / Low)
+
+Priority guide:
+- High Impact + High or Medium Probability = Critical
+- High Impact + Low Probability = Monitor
+- Medium Impact + High Probability = Critical
+- Medium Impact + Medium Probability = Manage
+- Medium Impact + Low Probability = Accept
+- Low Impact + any Probability = Manage or Accept
+
+---
+
+Risk 01: [Risk Name]
+  Impact Severity: [High / Medium / Low]
+  Occurrence Probability: [High / Medium / Low]
+  Priority: [Critical / Monitor / Manage / Accept]
+
+Risk 02: [Risk Name]
+  Impact Severity: [High / Medium / Low]
+  Occurrence Probability: [High / Medium / Low]
+  Priority: [Critical / Monitor / Manage / Accept]
+
+Risk 03: [Risk Name]
+  Impact Severity: [High / Medium / Low]
+  Occurrence Probability: [High / Medium / Low]
+  Priority: [Critical / Monitor / Manage / Accept]
+
+Risk 04: [Risk Name]
+  Impact Severity: [High / Medium / Low]
+  Occurrence Probability: [High / Medium / Low]
+  Priority: [Critical / Monitor / Manage / Accept]
+
+Risk 05: [Risk Name]
+  Impact Severity: [High / Medium / Low]
+  Occurrence Probability: [High / Medium / Low]
+  Priority: [Critical / Monitor / Manage / Accept]
+
+Risk 06: [Risk Name]
+  Impact Severity: [High / Medium / Low]
+  Occurrence Probability: [High / Medium / Low]
+  Priority: [Critical / Monitor / Manage / Accept]
+
+---
+
+> Quality check: Are priorities meaningfully differentiated? Not every risk should be Critical.
+> Quality check: Is Impact Severity rated on business impact, not team inconvenience?
+> Quality check: Are Critical risks clearly more urgent than Monitor or Manage risks?
+
+---
+
+## Section 3: Begin Risk Management
+
+Complete this table for all Critical-priority risks. Include Monitor-priority risks if capacity allows.
+Accept-priority risks may be listed without management rows.
+
+| Risk Name | Mitigation Tactics | Contingency Plans | Point of Contact | Notes |
+|-----------|-------------------|-------------------|------------------|-------|
+| | | | | |
+| | | | | |
+| | | | | |
+
+> Quality check: Is each Mitigation Tactic a specific proactive action that reduces the chance the risk occurs? ("Run pilot with 10 early adopters before full rollout" not "test more thoroughly")
+> Quality check: Is each Contingency Plan a specific reactive response for if the risk occurs despite mitigation? ("Halt rollout and reconvene with adoption lead within 5 business days" not "communicate better")
+> Quality check: Are Mitigation and Contingency clearly distinct from each other for every row?
+> Quality check: Is each Point of Contact a named individual, not a team or role?
+> Capacity check: Mitigation Tactics ~15-25 words; Contingency Plans ~15-25 words; Notes ~10-20 words.
+
+---
+
+## Revisit Note
+
+Mark at least one future decision point where this assessment will be reviewed and updated:
+
+- Next scheduled review:
+- Trigger for unscheduled review (e.g., "if competitive landscape changes" or "at first major build decision"):
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Complete **Product Context** to anchor who is in the room and what stage the product is at.
+2. Work through **Section 1** as a group. Push for specificity in Risk Names and for breadth across categories.
+3. Complete **Section 2** risk by risk. Differentiate priorities. Resist the urge to rate everything Critical.
+4. Complete **Section 3** starting with the highest-priority risks. Mitigation before contingency for each row.
+5. Add the **Revisit Note** before closing the session.
+
+#### What Goes Where
+
+| Column | Contains | Does NOT Contain |
+|--------|----------|------------------|
+| Risk Name | Type + specific concern | Generic category labels |
+| Risk Raised By | Named individual | "Team" or "Stakeholders" |
+| Impact Severity | Business impact rating | Team inconvenience rating |
+| Mitigation Tactics | Proactive prevention actions | Responses to the risk occurring |
+| Contingency Plans | Reactive response if risk occurs | Duplicate of mitigation |
+| Point of Contact | Named accountable individual | Team, function, or role title |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-solution-hypothesis provides the solution context that grounds the risk identification. ps-framing-the-problem provides the customer and problem context.
+- **Downstream:** ps-product-outcome-canvas (Batch 5) draws the risk summary from this assessment. ps-lofi-experimentation can convert high-priority testable assumptions from this assessment into structured experiments.
+
+#### Capacity Reference
+
+| Field | Target Length | Guidance |
+|-------|--------------|----------|
+| Risk Name | 5-8 words | Type label plus specific concern |
+| Risk Raised By | 2-3 words | First name and last name or role |
+| Mitigation Tactics | 15-25 words | Specific proactive action |
+| Contingency Plans | 15-25 words | Specific reactive response |
+| Notes | 10-20 words | Timing, dependencies, escalation |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For shipment tracking, name a specific threat, assess severity and likelihood, and distinguish prevention from the contingency if it occurs.
+- **Weak:** "Technical risk: high" gives no event, consequence, or response.
+- **Drift to avoid:** Response confusion: mitigation reduces likelihood or impact; contingency says what to do if the risk happens.
 
-- a strong Productside-style risk assessment with clear prioritization and distinct mitigation and contingency plans
-- a weak version with generic risk names, uniform High/High ratings, and no real distinction between mitigation and contingency
-- a drift-bug example with commentary on the mitigation-contingency swap failure and how to fix it
 
 ## Common Pitfalls
 
-### Pitfall 1: All Technical Risks, No Adoption Risks
+- **All Technical Risks, No Adoption Risks:** Before finalizing the list, explicitly ask: what are the customer behavior change risks? What are the organizational readiness risks? What could cause the product to be technically correct but commercially unsuccessful?
 
-**Symptom:** The risk list contains only engineering concerns: performance degradation, API failures, integration complexity.
+- **Confusing Mitigation with Contingency:** Mitigation happens before the risk occurs and reduces the chance it will. Contingency happens after the risk occurs and limits the damage. Both are required.
 
-**Consequence:** The team ships a technically sound product that fails in the market because adoption risks were never surfaced or planned for.
+- **Point of Contact as a Role, Not a Person:** Name a specific individual. If you cannot name one, that is a signal that the risk is unowned and needs an owner before the assessment is complete.
 
-**Fix:** Before finalizing the list, explicitly ask: what are the customer behavior change risks? What are the organizational readiness risks? What could cause the product to be technically correct but commercially unsuccessful?
+- **Risk Names That Are Categories, Not Concerns:** Follow the pattern: `[Risk Type]: [Specific Concern]`. "Market Risk" becomes "Competitive Timing: new entrant launches similar feature before our release."
 
-### Pitfall 2: Confusing Mitigation with Contingency
+- **Completing Risk Management Only for Easy Risks:** Start the Risk Management table with the Critical-priority risks. If time is limited, leave Accept-priority risks without management rows rather than leaving Critical ones blank.
 
-**Symptom:** The Mitigation Tactics and Contingency Plans columns contain the same type of content, usually responses to the risk having already occurred.
+- **Treating the Assessment as a One-Time Artifact:** Mark at least one specific future date or decision point where the assessment will be reviewed and updated.
 
-**Consequence:** The team has a reactive plan but no proactive plan. When the risk materializes, the "mitigation" was never executed because it was actually a contingency.
+- **Inflating Everything to High Severity:** Push the team to differentiate. If more than three risks are truly Critical, the team needs to re-examine whether the ratings reflect business impact or anxiety. Not every risk deserves equal attention.
 
-**Fix:** Mitigation happens before the risk occurs and reduces the chance it will. Contingency happens after the risk occurs and limits the damage. Both are required.
+- **Running the Assessment Alone:** Run this as a collaborative session. The project manager leads the facilitation. Stakeholders surface risks the PM team would not see from inside the product team.
 
-### Pitfall 3: Point of Contact as a Role, Not a Person
-
-**Symptom:** The Point of Contact column contains entries like "IT Team," "Product Management," or "Stakeholders."
-
-**Consequence:** No one is actually accountable. When the risk materializes, everyone assumes someone else owns it.
-
-**Fix:** Name a specific individual. If you cannot name one, that is a signal that the risk is unowned and needs an owner before the assessment is complete.
-
-### Pitfall 4: Risk Names That Are Categories, Not Concerns
-
-**Symptom:** Risk names read as: "Technical Risk," "Market Risk," "User Adoption Risk."
-
-**Consequence:** The risk is too abstract to assess, plan for, or communicate to stakeholders.
-
-**Fix:** Follow the pattern: `[Risk Type]: [Specific Concern]`. "Market Risk" becomes "Competitive Timing: new entrant launches similar feature before our release."
-
-### Pitfall 5: Completing Risk Management Only for Easy Risks
-
-**Symptom:** The Risk Management table is fully completed for low-priority risks and left sparse for Critical ones.
-
-**Consequence:** The highest-stakes risks have the weakest plans.
-
-**Fix:** Start the Risk Management table with the Critical-priority risks. If time is limited, leave Accept-priority risks without management rows rather than leaving Critical ones blank.
-
-### Pitfall 6: Treating the Assessment as a One-Time Artifact
-
-**Symptom:** The risk assessment is completed at project kickoff and never revisited.
-
-**Consequence:** Risks that have increased in probability or severity go unmanaged. New risks that emerged during development are invisible.
-
-**Fix:** Mark at least one specific future date or decision point where the assessment will be reviewed and updated.
-
-### Pitfall 7: Inflating Everything to High Severity
-
-**Symptom:** Every risk is rated High Impact and High Probability. Everything is Critical.
-
-**Consequence:** Prioritization is impossible. The team cannot distinguish between risks that demand immediate action and risks worth acknowledging but not investing in heavily.
-
-**Fix:** Push the team to differentiate. If more than three risks are truly Critical, the team needs to re-examine whether the ratings reflect business impact or anxiety. Not every risk deserves equal attention.
-
-### Pitfall 8: Running the Assessment Alone
-
-**Symptom:** The PM completes the risk assessment without the project manager or relevant stakeholders.
-
-**Consequence:** Organizational, operational, and customer-facing blind spots remain invisible. The resulting plan lacks the breadth to be credible or actionable.
-
-**Fix:** Run this as a collaborative session. The project manager leads the facilitation. Stakeholders surface risks the PM team would not see from inside the product team.
-
-### Pitfall 9: A Risk List the Team Never Discussed
-
-**Symptom:** The PM asks the agent for six risks and gets a tidy, plausible list with severity, likelihood, and mitigations filled in.
-
-**Consequence:** The list covers generic risks and misses the ones only the team knows. Nobody owns the mitigations, because nobody chose them.
-
-**Fix:** The team brainstorms first. The skill widens the list with categories and candidates, and the team places and owns each risk.
+- **A Risk List the Team Never Discussed:** The team brainstorms first. The skill widens the list with categories and candidates, and the team places and owns each risk.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) defines what is being de-risked; [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) provides customer and problem context
-- **Downstream:** ps-product-outcome-canvas (Batch 5): the Risk field draws from this skill's output
-- **Related:** ps-lofi-experimentation: high-priority testable assumptions from this assessment may become lo-fi experiments
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_risk_assessment_playbook_pages.pdf](assets/ps_risk_assessment_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 72-74: Template 15 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-risk-assessment) for supporting source material and expanded examples.

@@ -26,7 +26,7 @@ ChatGPT Projects use shared files and project instructions across their chats. S
 | [04-discover-define.md](uploads/04-discover-define.md) | Solution definition, experiments, Storyboarding, risks, and Product Outcome Canvas |
 | [05-create.md](uploads/05-create.md) | Roadmaps, ongoing discovery, prioritization, launch, and readiness |
 | [06-deliver.md](uploads/06-deliver.md) | Measurement and retrospectives |
-| [07-prompts.md](uploads/07-prompts.md) | Deck prompts and Play companion prompts, with their source labels |
+| [07-prompts.md](uploads/07-prompts.md) | Standalone deck prompts, with their source labels |
 | [08-license.md](uploads/08-license.md) | Productside attribution and unchanged license |
 
 ## How ChatGPT finds a Play
@@ -39,7 +39,7 @@ The navigator's catalog is the lookup table. For example:
 >
 > Sections: ps-jobs-to-be-done / Instructions, Template, and Examples
 
-Each Play's full instructions, template, and examples are included as named sections. Cross-Play links are rewritten to an uploaded filename and section. ChatGPT is instructed to read those sections before applying the Play. This guides reference use; uploading files does not guarantee the model will retrieve or follow every relevant passage. Check actual behavior with the trial requests.
+Each Play's single SKILL.md contains its instructions, template, and compact examples. The generator gives those parts named sections in the upload files. Cross-Play links are rewritten to an uploaded filename and section. ChatGPT is instructed to read those sections before applying the Play. This guides reference use; uploading files does not guarantee the model will retrieve or follow every relevant passage. Check actual behavior with the trial requests.
 
 The preserved source sometimes says "skill" or "agent." Project instructions explain that these mean applying the Play from the reference library. A `ps-` identifier is a lookup label, not an installed tool or a command.
 

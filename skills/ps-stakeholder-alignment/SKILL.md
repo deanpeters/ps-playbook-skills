@@ -21,6 +21,7 @@ scenarios:
   - "Help me figure out who to keep informed versus who needs active engagement on this project"
 ---
 
+
 ## Purpose
 
 Build a **complete stakeholder map** before discovery begins.
@@ -76,14 +77,14 @@ The Interest/Influence matrix places stakeholders in one of four quadrants, each
 
 ### Engagement Modes Are About Decision Rights, Not Just Communication
 
-This is the distinction that matters most. Engagement modes are not a comms schedule — they determine who has input on which decisions and at what depth.
+This is the distinction that matters most. Engagement modes are not a comms schedule  -  they determine who has input on which decisions and at what depth.
 
 - **Manage Closely** stakeholders are in the room for trade-off discussions. They have a voice in decisions, not just updates.
 - **Keep Satisfied** stakeholders are briefed on outcomes and key decisions, but they are not consulted in the decision process itself. They need altitude-appropriate information, not operational depth.
 - **Keep Informed** stakeholders receive regular updates but do not affect decisions. Their value is advocacy and downstream adoption, not direction-setting.
 - **Monitor** stakeholders are not in the decision loop at all. Periodic check-ins prevent surprises, but they do not shape the work.
 
-Treating all engagement as a communication cadence question misses this. A PM who sends weekly updates to all stakeholders has not done stakeholder management — they have sent emails. The quadrant assignment determines who the PM brings into decisions, not just who receives communications.
+Treating all engagement as a communication cadence question misses this. A PM who sends weekly updates to all stakeholders has not done stakeholder management  -  they have sent emails. The quadrant assignment determines who the PM brings into decisions, not just who receives communications.
 
 ### The Map is a Working Tool
 
@@ -106,9 +107,9 @@ If the map skews entirely positive, something is missing.
 
 ### Stakeholders Are Teammates, Not Opponents
 
-Different functions bring different priorities: legal thinks about risk, finance thinks about returns, engineering thinks about technical feasibility. Those differences create friction — but they do not make stakeholders adversaries.
+Different functions bring different priorities: legal thinks about risk, finance thinks about returns, engineering thinks about technical feasibility. Those differences create friction  -  but they do not make stakeholders adversaries.
 
-The playbook is explicit: you may have different roles, but you are all working on the same team. A skeptical legal counsel who raises a compliance concern in week two is not an obstacle — they are a teammate whose input prevented a problem at launch. A finance stakeholder who pushes back on scope is not blocking the product — they are enforcing a constraint that is real for the business.
+The playbook is explicit: you may have different roles, but you are all working on the same team. A skeptical legal counsel who raises a compliance concern in week two is not an obstacle  -  they are a teammate whose input prevented a problem at launch. A finance stakeholder who pushes back on scope is not blocking the product  -  they are enforcing a constraint that is real for the business.
 
 Approach every stakeholder as someone who shares the organization's goals, even if they express those goals differently than you do. The map is a tool for building a communication strategy across that diversity, not a list of people to manage around.
 
@@ -122,68 +123,28 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the source pages from the canonical playbook in [assets/ps_stakeholder_alignment_playbook_pages.pdf](assets/ps_stakeholder_alignment_playbook_pages.pdf).
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-pressure-test-stakeholder-map.md](prompts/01-pressure-test-stakeholder-map.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Tech-Role Bias Guard
 
@@ -258,104 +219,128 @@ Three things to capture before closing the map:
 
 **Political dynamics:** Relationships between stakeholders that create complexity. For example: two stakeholders who have a history of conflict, or a senior stakeholder whose opinion a key influencer defers to entirely.
 
+## Template
+
+Use this template to build a **Productside-style stakeholder map** before discovery begins.
+
+If some stakeholders are not yet identified, note that in the Risks and Gaps section rather than leaving the table sparse. A complete map with unknowns flagged is more useful than a partial map that looks tidy.
+
+### When to Use This
+
+Use this during the Context phase, before empathy interviews or discovery work begins. The stakeholder map tells you who to involve, who to brief, and who to watch.
+
+### Template
+
+```markdown
+# Stakeholder Alignment
+
+## Context
+
+- Initiative / product: [name]
+- PM: [name]
+- Date: [date]
+
+---
+
+## Stakeholder Table
+
+| Name | Role / Team | Interest in This Initiative | Influence | Sentiment |
+|---|---|---|---|---|
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+| | | | High / Medium / Low | Supportive / Neutral / Skeptical / Unknown |
+
+> Aim for at least 6-10 stakeholders. Include skeptics and potential blockers, not just supporters.
+
+---
+
+## Interest / Influence Matrix
+
+### Manage Closely (High Influence, High Interest)
+[List names]
+- Engagement: [frequency and format - e.g., "weekly 1:1, shared decision log, involved in key trade-off discussions"]
+
+### Keep Satisfied (High Influence, Low Interest)
+[List names]
+- Engagement: [frequency and format - e.g., "monthly executive brief, flagged when decisions affect scope or budget"]
+
+### Keep Informed (Low Influence, High Interest)
+[List names]
+- Engagement: [frequency and format - e.g., "biweekly async update via shared doc or Slack, invited to demos"]
+
+### Monitor (Low Influence, Low Interest)
+[List names]
+- Engagement: [frequency and format - e.g., "quarterly check-in, notified of major milestones only"]
+
+---
+
+## Risks and Gaps
+
+### Missing stakeholders
+[Anyone who should be here but is not yet identified]
+
+### Potential blockers
+[Stakeholders who could slow or stop progress if not engaged early]
+
+### Political dynamics
+[Relationships between stakeholders that could affect how you engage them]
+
+---
+
+> **Quality checks**
+> - Does the stakeholder table include skeptics and blockers, not just supporters?
+> - Is "influence" based on actual power over this initiative, not just seniority?
+> - Are engagement strategies specific enough to act on (cadence, format, content)?
+> - Is the map distinguishing stakeholders from customers? Customers belong in the persona play, not here.
+> - Have you checked across legal, finance, sales, marketing, operations, and executive functions - not just engineering?
+
+> **Capacity notes**
+> - Interest description: aim for one clear sentence per stakeholder (10-15 words)
+> - Engagement strategy: one to two sentences per quadrant
+> - Name field: 4 words maximum
+> - Role / Team field: 6 words maximum
+```
+
+### Usage Guidance
+
+- Build this map before empathy interviews begin.
+- Rate influence based on actual power over this initiative, not title alone.
+- Keep stakeholders and customers separate. Customers who use the product belong in ps-proto-persona.
+- Revisit this map at each major phase boundary (after framing, after discovery, before launch).
+- A map with no skeptics or blockers should be treated as incomplete, not as good news.
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For a route-optimization initiative, assess internal stakeholders' interest and influence and choose Manage Closely, Keep Satisfied, Keep Informed, or Monitor accordingly.
+- **Weak:** Sending every stakeholder the same weekly update ignores differences in decision involvement.
+- **Drift to avoid:** Customers as internal stakeholders: keep discovery subjects distinct from the organizational stakeholder map.
 
-- a strong stakeholder map (complete, balanced, with actionable engagement strategies)
-- a weak version (supporters only, vague strategies, empty risks)
-- a drift bug example (customers listed as stakeholders)
 
 ## Common Pitfalls
 
-### Pitfall 1: Listing Only Supporters
+- **Listing Only Supporters:** Before closing the map, ask explicitly: who might push back? Who was not consulted on similar initiatives? Add them.
 
-**Symptom:** The map contains five people, all in "manage closely," all listed as Supportive.
+- **Confusing Stakeholders with Customers:** Customers who use the product in the field belong in the persona play (ps-proto-persona), not here. The stakeholder map covers people who affect the initiative organizationally. Keep these lists separate.
 
-**Consequence:** The first skeptic who surfaces during a key decision is a surprise. The team has no strategy for them.
+- **Equating Influence with Seniority:** Rate influence based on actual power over this specific initiative. Ask: can this person approve, block, accelerate, or veto the work? That is influence. Title alone is not.
 
-**Fix:** Before closing the map, ask explicitly: who might push back? Who was not consulted on similar initiatives? Add them.
+- **Treating Interest and Influence as Binary:** Use Medium deliberately. Reserve High for stakeholders with genuine power or deep engagement with this initiative specifically.
 
-### Pitfall 2: Confusing Stakeholders with Customers
+- **Building the Map Once and Never Revisiting:** Revisit the map at each major phase boundary. Note what changed and why.
 
-**Symptom:** Truck drivers, field technicians, or end users appear in the stakeholder table because they are "affected by" the initiative.
+- **Assigning Everyone to "Manage Closely":** Force distribution. Reserve "manage closely" for the two to four stakeholders who genuinely require it. Everyone else gets a lighter strategy.
 
-**Consequence:** The PM spends time managing internal engagement with people who actually need product discovery and empathy work.
+- **Writing Engagement Strategies as Communication Schedules:** For every "manage closely" and "keep satisfied" stakeholder, specify at least one type of decision they will be consulted on - not just a communication format. Example: "Involve in go/no-go discussion before framing is complete" is an engagement strategy. "Weekly update email" is not.
 
-**Fix:** Customers who use the product in the field belong in the persona play (ps-proto-persona), not here. The stakeholder map covers people who affect the initiative organizationally. Keep these lists separate.
-
-### Pitfall 3: Equating Influence with Seniority
-
-**Symptom:** A VP is rated High Influence for every initiative because of their title. A junior engineer who owns the deployment process is rated Low Influence.
-
-**Consequence:** The engagement strategy misses the people who actually control the outcome.
-
-**Fix:** Rate influence based on actual power over this specific initiative. Ask: can this person approve, block, accelerate, or veto the work? That is influence. Title alone is not.
-
-### Pitfall 4: Treating Interest and Influence as Binary
-
-**Symptom:** Every stakeholder is either High or Low. Nobody is Medium.
-
-**Consequence:** Too many stakeholders end up in "manage closely," diluting attention.
-
-**Fix:** Use Medium deliberately. Reserve High for stakeholders with genuine power or deep engagement with this initiative specifically.
-
-### Pitfall 5: Building the Map Once and Never Revisiting
-
-**Symptom:** The map is filled out during the Context phase and never opened again.
-
-**Consequence:** Relationships that shift during discovery, framing, or launch go untracked. The team is blindsided.
-
-**Fix:** Revisit the map at each major phase boundary. Note what changed and why.
-
-### Pitfall 6: Assigning Everyone to "Manage Closely"
-
-**Symptom:** All stakeholders are rated High Influence and High Interest.
-
-**Consequence:** The PM tries to manage every stakeholder at the same depth and exhausts themselves. Nobody is getting the right level of attention.
-
-**Fix:** Force distribution. Reserve "manage closely" for the two to four stakeholders who genuinely require it. Everyone else gets a lighter strategy.
-
-### Pitfall 7: Writing Engagement Strategies as Communication Schedules
-
-**Symptom:** Every strategy reads as a cadence: "monthly update email," "weekly Slack message," "invite to demo." No strategy specifies what the stakeholder has input on.
-
-**Consequence:** The PM manages the cadence but not the relationship. Stakeholders in "manage closely" who are never brought into actual trade-off discussions will feel sidelined and surface objections at the wrong moment.
-
-**Fix:** For every "manage closely" and "keep satisfied" stakeholder, specify at least one type of decision they will be consulted on - not just a communication format. Example: "Involve in go/no-go discussion before framing is complete" is an engagement strategy. "Weekly update email" is not.
-
-### Pitfall 8: AI Places Stakeholders It Has Never Met
-
-**Symptom:** The PM pastes ten names and titles and asks the agent to place them on the power/interest grid. The grid comes back filled in.
-
-**Consequence:** Placements rest on job titles, not on how these people actually decide. The PM manages the wrong relationships.
-
-**Fix:** The PM places each stakeholder from what they have observed. The skill asks for the evidence behind each placement and names roles the PM may have missed.
+- **AI Places Stakeholders It Has Never Met:** The PM places each stakeholder from what they have observed. The skill asks for the evidence behind each placement and names roles the PM may have missed.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-
-
-### Source Material
-
-- Source: [assets/ps_stakeholder_alignment_playbook_pages.pdf](assets/ps_stakeholder_alignment_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 8-10: Template 02 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Template: [template.md](template.md)
-- Examples: [examples/sample.md](examples/sample.md)
-- Budget data: [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-
-### Adjacent Skills
-
-- **ps-outcome-strategy-discussion** - identifies who to have the guided discussion with; the stakeholder map informs that list
-- **ps-empathy-interviews** - the stakeholder map helps identify who to recruit for interviews and who to brief before fieldwork begins
-- **ps-proto-persona** - the destination for customers who should not be in the stakeholder map
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-stakeholder-alignment) for supporting source material and expanded examples.

@@ -21,6 +21,7 @@ scenarios:
   - "Help me consolidate customer jobs, pains, and gains from our discovery research"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Problem Identification artifact** from customer research.
@@ -35,7 +36,15 @@ This skill helps a Product Manager turn customer understanding into a compact wo
 
 The point is not to produce a long explanation of the problem space. The point is to help the human complete the play.
 
-This artifact is also a **cross-functional alignment tool.** The output makes customer understanding visible, shareable, and debatable across product, design, engineering, and leadership — not just useful to the PM who ran the discovery.
+This artifact is also a **cross-functional alignment tool.** The output makes customer understanding visible, shareable, and debatable across product, design, engineering, and leadership  -  not just useful to the PM who ran the discovery.
+
+### Usage Notes
+
+- This exemplar follows the `ps-` naming contract
+- It is intentionally budget-aware and template-capacity-aware
+- Most default outputs should stay sticky-note-sized or small-cell-sized
+- **Coach by default:** the skill asks the PM for the root cause beneath each pain rather than naming it, and catches features posing as problems
+- **Evidence honesty:** quotes come only from supplied research (unfilled slots are marked `[needs a real quote]`), and unvalidated causes are marked `[CAUSE TO VALIDATE]`
 
 ## Key Concepts
 
@@ -48,7 +57,7 @@ Problem Identification is where earlier discovery work gets pulled together:
 - quotes and lived experience from Empathy Interviews
 - patterns from Affinity Mapping
 
-The skill should therefore synthesize, not restart discovery from scratch. **Jobs brought in from earlier work should be treated as revisable** — as you validate with customers, reframe any job that doesn't hold up. Evidence updates the artifact; don't treat earlier assumptions as fixed truth.
+The skill should therefore synthesize, not restart discovery from scratch. **Jobs brought in from earlier work should be treated as revisable**  -  as you validate with customers, reframe any job that doesn't hold up. Evidence updates the artifact; don't treat earlier assumptions as fixed truth.
 
 ### The Customer Circle Is the Visual Structure
 
@@ -60,7 +69,7 @@ The canonical template organizes this play as a concentric circle:
 - **Outside the circle:** Problems (root causes of pains, barriers to gains)
 - **Sidebar:** Empathy Interview Quotes
 
-This structure is not decoration — it shows how problems relate to jobs and how pains and gains are distinct layers between the customer and the things blocking them. A PM filling this template should be thinking in those concentric layers, not just populating a flat list.
+This structure is not decoration  -  it shows how problems relate to jobs and how pains and gains are distinct layers between the customer and the things blocking them. A PM filling this template should be thinking in those concentric layers, not just populating a flat list.
 
 ### Problem Statements Use a Specific Productside Format
 
@@ -117,7 +126,7 @@ That means the default output must be:
 
 Do not generate mini-essays for fields that behave like notes.
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the real canonical budgets.
+See [Template and capacity guidance](#template) for the real canonical budgets.
 
 ### How AI Supports This Play
 
@@ -129,64 +138,24 @@ The Playbook casts AI as a **coach that separates pains from problems and format
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_problem_identification_playbook_pages.pdf](assets/ps_problem_identification_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -231,7 +200,7 @@ If there is no customer evidence at all, say so plainly. The Playbook advises ag
 
 ### If the PM Brings a Draft
 
-When the PM arrives with pains and a first read on their causes, or with drafted problem statements, work through them rather than redrafting. This mirrors [prompts/01](prompts/01-shape-problem-statements.md).
+When the PM arrives with pains and a first read on their causes, or with drafted problem statements, work through them rather than redrafting. This mirrors the critique guidance in this Play.
 
 1. **For each pain, ask for the root cause.** If the PM's answer is the pain reworded, say so and ask them to dig.
 2. **Watch for solutions in disguise.** If a "problem" is a missing feature, point at it and ask what problem the feature would solve. Don't list candidate causes for the PM to pick from, and don't hint at them as examples or "is it X or Y?" questions; the cause has to come from what they heard. This applies to a cause that looks like a symptom, too: ask why it happens, without guessing the answer.
@@ -332,123 +301,117 @@ Do not add a notes section at all unless:
 - the user asks for it, or
 - the artifact is already fully complete
 
+## Template
+
+Use this template to build a **Productside-style Problem Identification artifact** from customer research.
+
+Most fields in this play are small. Keep entries compact and paste-ready.
+
+### Template
+
+```markdown
+# Problem Identification
+
+## Product Context
+- Product or service:
+- Target persona:
+- Research source:
+
+## Customer Jobs
+- Job 1:
+- Job 2:
+- Job 3:
+- Job 4:
+
+> Quality check: Keep jobs short and concrete. Most should fit in a sticky-note-sized field.
+> Completion rule: Fill all 4.
+
+## Pains
+- Pain 1:
+- Pain 2:
+- Pain 3:
+- Pain 4:
+
+> Quality check: These are obstacles, risks, frustrations, or negative experiences. Keep them compact.
+> Completion rule: Fill all 4.
+
+## Gains
+- Gain 1:
+- Gain 2:
+- Gain 3:
+- Gain 4:
+
+> Quality check: Gains are positive outcomes the customer wants, not just the absence of pains.
+> Completion rule: Fill all 4.
+
+## Empathy Interview Quotes
+- Quote 1:
+- Quote 2:
+- Quote 3:
+- Quote 4:
+- Quote 5:
+- Quote 6:
+
+> Quality check: Every quote was actually said by a customer and is short enough to fit the template.
+> Completion rule: Real quotes only. Mark any unfilled slot `[needs a real quote]`. Never invent one.
+
+## Candidate Problems
+- Problem 1: [Problem] gets in the way of achieving [Outcome] for [Persona].
+- Problem 2: [Problem] gets in the way of achieving [Outcome] for [Persona].
+- Problem 3: [Problem] gets in the way of achieving [Outcome] for [Persona].
+- Problem 4: [Problem] gets in the way of achieving [Outcome] for [Persona].
+- Problem 5: [Problem] gets in the way of achieving [Outcome] for [Persona].
+- Problem 6: [Problem] gets in the way of achieving [Outcome] for [Persona].
+
+> Quality check: Keep each candidate short enough to paste directly into the playbook field. Do not add explanation inside the statement.
+> Quality check: Is each [Problem] a root cause, not a pain reworded and not a missing feature?
+> Evidence check: Append `[CAUSE TO VALIDATE]` to any candidate whose cause is not yet backed by evidence.
+> Completion rule: Fill all 6.
+
+## What To Pressure-Test Next
+- Which problem feels strongest?
+- Which problem feels weakest?
+- What evidence gap still matters?
+```
+
+### Usage Guidance
+
+- Do not turn jobs, pains, gains, or problems into paragraphs.
+- If the user wants explanation, add it after the artifact.
+- Respect the canonical template capacity in [Template and capacity guidance](#template).
+- Do not add the `What To Pressure-Test Next` section unless the artifact is already fully complete.
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** "Late schedule updates get in the way of keeping dock assignments aligned." Connect this candidate to real observations and retain the customer's language.
+- **Weak:** A paragraph combining several problems makes it hard to investigate any one of them.
+- **Drift to avoid:** Missing feature as problem: "No dashboard" is a solution-shaped complaint. Identify the customer progress it obstructs.
 
-- a stronger Productside-style artifact sized for the play
-- a weak overlong version
-- commentary on why the weak version fails
 
 ## Common Pitfalls
 
-### Pitfall 1: Writing Novellas into Sticky-Note Fields
+- **Writing Novellas into Sticky-Note Fields:** Respect the template capacity. Small field means short entry.
 
-**Symptom:** Every job, pain, or gain turns into a mini paragraph.
+- **Pitfall 1b: Underfilling the Template:** Match the template slot count by default.
 
-**Consequence:** The human cannot use the output directly in the playbook.
+- **Confusing Pains with Problems:** Use pains as evidence, then write a candidate problem in the Productside format.
 
-**Fix:** Respect the template capacity. Small field means short entry.
+- **Writing Generic Jobs:** Write short but concrete customer jobs.
 
-### Pitfall 1b: Underfilling the Template
+- **Making Gains a Mirror Image of Pains:** Ask what better looks like for the customer, not just what less-bad looks like.
 
-**Symptom:** The model gives 3 jobs, 3 gains, or 3 problems because it thinks the synthesis is cleaner.
+- **Losing the Quotes:** Include short quotes that support the candidate problems.
 
-**Consequence:** The human still has blank slots to fill.
+- **Letting Commentary Replace the Artifact:** Complete the artifact first. Commentary is optional and trailing only.
 
-**Fix:** Match the template slot count by default.
+- **Naming a Missing Feature as the Problem:** Ask what problem the missing feature would solve, and write that. "Late notice of policy changes gets in the way of achieving compliance for Henry" leaves the solution open.
 
-### Pitfall 2: Confusing Pains with Problems
+- **Format Mistaken for Proof:** Mark every cause not yet backed by evidence `[CAUSE TO VALIDATE]`. Name the evidence base in Product Context. Treat the marked causes as the next round's interview topics.
 
-**Symptom:** The pain itself is restated as the problem statement without naming the barrier or root cause.
-
-**Consequence:** The team addresses symptoms without clarifying the underlying problem.
-
-**Fix:** Use pains as evidence, then write a candidate problem in the Productside format.
-
-### Pitfall 3: Writing Generic Jobs
-
-**Symptom:** "Be efficient" or "improve workflow."
-
-**Consequence:** The artifact becomes too vague to support framing or prioritization.
-
-**Fix:** Write short but concrete customer jobs.
-
-### Pitfall 4: Making Gains a Mirror Image of Pains
-
-**Symptom:** Every gain is just the opposite wording of a pain.
-
-**Consequence:** The play loses the distinction between removing friction and creating positive value.
-
-**Fix:** Ask what better looks like for the customer, not just what less-bad looks like.
-
-### Pitfall 5: Losing the Quotes
-
-**Symptom:** The artifact includes tidy problem statements but no supporting voice-of-customer evidence.
-
-**Consequence:** The output feels polished but ungrounded.
-
-**Fix:** Include short quotes that support the candidate problems.
-
-### Pitfall 6: Letting Commentary Replace the Artifact
-
-**Symptom:** The model gives "strongest candidate" analysis while the main playbook fields are incomplete or too long.
-
-**Consequence:** The human gets interpretation instead of a completed play.
-
-**Fix:** Complete the artifact first. Commentary is optional and trailing only.
-
-### Pitfall 7: Naming a Missing Feature as the Problem
-
-**Symptom:** "Lack of system integration gets in the way of achieving real-time insights for Henry." "No automated alerts gets in the way of achieving compliance."
-
-**Consequence:** The solution is chosen before the problem is understood. Framing the Problem and Exploring the Solution Space inherit a predetermined answer.
-
-**Fix:** Ask what problem the missing feature would solve, and write that. "Late notice of policy changes gets in the way of achieving compliance for Henry" leaves the solution open.
-
-### Pitfall 8: Format Mistaken for Proof
-
-**Symptom:** Six polished problem statements in perfect Productside format, resting on two interviews and the PM's hunches. Nothing marks which causes were heard and which were guessed.
-
-**Consequence:** The statements look right, so they get accepted. Structure is mistaken for rigor, and the team frames a guessed root cause as if it were validated.
-
-**Fix:** Mark every cause not yet backed by evidence `[CAUSE TO VALIDATE]`. Name the evidence base in Product Context. Treat the marked causes as the next round's interview topics.
-
-### Pitfall 9: Inventing Quotes to Fill the Slots
-
-**Symptom:** The research produced three usable quotes, and the artifact shows six. The extra three sound real and were written by the model.
-
-**Consequence:** Fabricated voice-of-customer evidence. It is the most persuasive part of the artifact, and the least true.
-
-**Fix:** Quotes come only from supplied research. Leave unfilled slots as `[needs a real quote]`.
+- **Inventing Quotes to Fill the Slots:** Quotes come only from supplied research. Leave unfilled slots as `[needs a real quote]`.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - compact, paste-ready scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (1: shape problem statements)
-- [examples/sample.md](examples/sample.md) - strong and weak examples
-
-### Related Skills
-
-- [ps-affinity-mapping](../ps-affinity-mapping/SKILL.md) - upstream; themes and key insights
-- [ps-empathy-interviews](../ps-empathy-interviews/SKILL.md) - upstream; quotes, pains, and observations, and where `[CAUSE TO VALIDATE]` items get tested
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - upstream; jobs and outcomes
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - upstream; the persona each problem belongs to
-- [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) - downstream; frames the strongest candidate problem
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_problem_identification_playbook_pages.pdf](assets/ps_problem_identification_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 41-45: Template 09 of 24 there, with the AI overview on slide 43 and the prompt on slide 44. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-problem-identification) for supporting source material and expanded examples.

@@ -23,6 +23,7 @@ scenarios:
   - "Make this persona from our interviews ready for the exec readout"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style proto-persona** for the person your product is serving.
@@ -39,6 +40,14 @@ Use this skill when you need to:
 - identify what still needs customer validation
 
 This is not a validated persona. Until it is grounded in research, it is explicitly a **proto-persona**.
+
+### Usage Notes
+
+- It starts with the **user persona** first, then optionally the buyer and influencer
+- It keeps the profile explicitly **proto** until validated by research
+- **Provenance tags:** every line of a working draft is tagged `[FROM YOU]`, `[RESEARCH]`, or `[AI-SUGGESTED, VALIDATE THIS]`. Invented quotes are always AI-suggested. The committed copy moves the tags out of the fields and keeps a ranked Riskiest Assumptions list.
+- **Two draft paths:** beliefs or notes get drafted field by field with tags; a finished research-based persona gets reviewed against Clarity, Story, Empathy, Relevance, and Focus, and nothing is added that the research did not produce.
+- **Five fields, following the B2B work-in-progress template.** The baseline's separate "What is this persona trying to do?" and "Attitudes & Influences" fields are folded in: what the persona is trying to accomplish goes under Needs | Pains, and attitudes and influences under Desired Outcomes | Goals.
 
 ## Key Concepts
 
@@ -59,7 +68,7 @@ That means the person who actually uses, experiences, or lives with the product 
 
 Only after the user persona is coherent should you repeat the exercise for the buyer.
 
-**Who owns which personas:** Product Managers focus primarily on user personas — the people who experience the product day-to-day. Marketing and Sales typically own buyer and influencer personas. Knowing this scopes the PM's work: go deep on the user, treat the buyer as the secondary pass.
+**Who owns which personas:** Product Managers focus primarily on user personas  -  the people who experience the product day-to-day. Marketing and Sales typically own buyer and influencer personas. Knowing this scopes the PM's work: go deep on the user, treat the buyer as the secondary pass.
 
 The Playbook names three persona types:
 
@@ -129,64 +138,24 @@ The Playbook casts AI as the **drafter of the proto-persona**. Given what the PM
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_proto_persona_playbook_pages.pdf](assets/ps_proto_persona_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -211,9 +180,9 @@ If the PM asks for a clean copy straight away, give it, but still end with the R
 
 There are two kinds of draft. Treat them differently.
 
-**Beliefs, notes, or a rough proto-persona** (before research). Follow the Playbook's drafting order: alliterative name, Bio & Demographics, Desired Outcomes & Goals, Needs | Pains, then Quotes. For each field, review what the PM gave you first, add only where they are thin, and tag every line. Ask one question at a time when a field is too thin to fill honestly. This mirrors [prompts/01](prompts/01-draft-proto-persona.md).
+**Beliefs, notes, or a rough proto-persona** (before research). Follow the Playbook's drafting order: alliterative name, Bio & Demographics, Desired Outcomes & Goals, Needs | Pains, then Quotes. For each field, review what the PM gave you first, add only where they are thin, and tag every line. Ask one question at a time when a field is too thin to fill honestly. This mirrors the critique guidance in this Play.
 
-**A finished, research-based persona.** Do not redraft it. This mirrors [prompts/02](prompts/02-review-research-persona.md):
+**A finished, research-based persona.** Do not redraft it. This mirrors the critique guidance in this Play:
 
 1. Ask who the stakeholder audience is if you don't know.
 2. Give one honest read: is it already good enough to share? If yes, say so plainly and stop.
@@ -225,7 +194,7 @@ There are two kinds of draft. Treat them differently.
 
 The canonical example page has real carrying-capacity limits. Respect them.
 
-Use the budgets in [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml).
+Use the budgets in [Template and capacity guidance](#template).
 
 Default expectations:
 
@@ -391,138 +360,150 @@ As research progresses:
 - split one proto-persona into two if the segment was too broad
 - retire fields that turn out to be wrong
 
+## Template
+
+Use this template to build a **Productside-style proto-persona** for the primary user first, then optionally the buyer.
+
+Tag every line of the working draft with where it came from:
+
+- `[FROM YOU]` - the PM or their stakeholders supplied it
+- `[RESEARCH]` - it came from evidence; name the source under Proto-Persona Caveats
+- `[AI-SUGGESTED, VALIDATE THIS]` - a filled gap; a guess to test first
+
+Tags go at the end of the line and are the only annotation allowed inside the fields. When the PM commits the persona, the clean copy drops the tags from the fields and keeps the Riskiest Assumptions list.
+
+### When to Use This
+
+Use this when you need a working customer profile before full validation, and you want the team to have a shared understanding of who the product is serving.
+
+### Template
+
+```markdown
+# Proto-Persona
+
+## Persona Type
+- User, Buyer, or Influencer:
+- Validation status: Proto-persona / Validated persona
+- Confidence level: Low / Medium / High
+
+## Product Context
+- Product or service:
+- Problem space:
+- Why this persona matters:
+
+## Name & Portrait
+- Name (alliterative, first name + role, e.g. "Henry HR Specialist"):
+- Portrait description:
+
+> Quality check: The persona should feel specific enough to remember and discuss. Avoid placeholders like "User A" unless this is a temporary working draft.
+
+## Bio & Demographics
+- Role / title:
+- Industry or operating context:
+- Organization context:
+- Seniority or experience level:
+- Relevant demographics:
+- Backstory:
+
+> Quality check: Include only demographics and background that actually help the team understand product behavior, needs, or constraints.
+
+## Quotes
+- Quote 1:
+- Quote 2:
+- Quote 3:
+
+> Quality check: Quotes should reveal how this person thinks, speaks, or feels. Avoid generic lines like "I want better tools."
+> Provenance check: Invented quotes are always `[AI-SUGGESTED, VALIDATE THIS]`. Only words a real customer said are `[RESEARCH]`.
+> Capacity check: Keep quotes compact enough to fit the canonical quotes field.
+
+## Needs | Pains
+- Pain or need 1:
+- Pain or need 2:
+- Pain or need 3:
+- What they are trying to accomplish, and the behavior we observe:
+
+> Quality check: These should describe meaningful friction, unmet need, or frustration. Make them specific enough that the team can respond to them.
+> Capacity check: Keep this section concise enough to paste into the canonical pain field.
+
+## Desired Outcomes | Goals
+- Desired outcome or goal 1:
+- Desired outcome or goal 2:
+- Desired outcome or goal 3:
+- Attitudes and influences (beliefs, people and tools they trust, pressures):
+
+> Quality check: Keep this future-state oriented. These are not tasks or features. They are the improvements this person wants in their work or life.
+> Capacity check: Write compact future-state statements, not long rationale.
+
+## Proto-Persona Caveats
+- What still feels provisional:
+- What should be validated next:
+- Highest-priority research gaps:
+- Evidence sources (for `[RESEARCH]` lines):
+
+## Riskiest Assumptions
+The AI-suggested lines that would most change this persona if wrong, ranked by what to test first.
+1.
+2.
+3.
+
+> Quality check: Does every line above carry a provenance tag? Is any AI-suggested line passed off as the PM's belief or as research?
+> Focus check: Does this persona describe the center of one segment, or a blurry everyone?
+
+## Buyer Relationship
+- Is this person also the buyer?
+- If not, who likely buys or approves?
+- What tension might exist between user needs and buyer priorities?
+
+## Research Next Steps
+- Who should we interview next?
+- What should we validate first?
+- Which assumptions are riskiest?
+```
+
+### Usage Guidance
+
+- Build the **user persona first**.
+- Only then create a separate buyer persona if the buyer is materially different.
+- Keep the proto nature explicit until research confirms the profile.
+- Do not use confidential client details in examples or shareable artifacts.
+- Keep provenance tags short and at the end of each line. Keep validation notes concise unless the user explicitly asks for heavier evidence annotation.
+- Complete every main persona section before adding any commentary.
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** Describe the warehouse operations analyst's responsibilities, goals, pains, and workarounds, marking sourced observations separately from assumptions.
+- **Weak:** "Busy professional who values efficiency" cannot guide a specific product decision.
+- **Drift to avoid:** Invented authenticity: a believable customer quote or research label generated by AI is not evidence. Omit it or label it as fictional.
 
-- a stronger Productside-style proto-persona
-- a weak, generic version
-- commentary on why the weak version fails
 
 ## Common Pitfalls
 
-### Pitfall 1: Making the Persona Too Generic
+- **Making the Persona Too Generic:** Add behavioral context, concrete pains, and language that reflects how the person actually works.
 
-**Symptom:** "Operations Manager Olivia wants efficiency."
+- **Treating Assumptions as Research:** Tag every line of the working draft with its provenance, and end with a ranked Riskiest Assumptions list. The clean committed copy drops the tags from the fields but keeps that list.
 
-**Consequence:** The team cannot make real tradeoffs because the persona could mean almost anyone.
+- **Pitfall 2b: Adding Commentary That Displaces the Artifact:** Complete the artifact first. Keep commentary short and trailing.
 
-**Fix:** Add behavioral context, concrete pains, and language that reflects how the person actually works.
+- **Building the Buyer First:** Build the user first. Add buyer second when relevant.
 
-### Pitfall 2: Treating Assumptions as Research
+- **Making the Product Manager the Persona by Default:** Ask explicitly: who experiences the product's value or pain in the field?
 
-**Symptom:** The persona contains confident claims with no indication of evidence.
+- **Defaulting to a Tech Role:** Ask what the customer actually does day-to-day. Most products - even deeply technical ones - serve people whose primary job is not writing code or designing systems. A fleet manager, a logistics director, a clinical operations lead, a utility substation engineer - these are the real customers. If the role does not involve building software as its core function, the persona should not read like a technologist.
 
-**Consequence:** The team mistakes hypothesis for truth and starts building on it.
+- **Confusing Pains with Goals:** Keep friction separate from the future state the persona wants to achieve.
 
-**Fix:** Tag every line of the working draft with its provenance, and end with a ranked Riskiest Assumptions list. The clean committed copy drops the tags from the fields but keeps that list.
+- **Never Updating the Proto-Persona:** Treat the proto-persona as a living document and revise it as discovery produces evidence.
 
-### Pitfall 2b: Adding Commentary That Displaces the Artifact
+- **Exceeding Template Capacity:** Write to the canonical budget, not to the model's appetite for prose.
 
-**Symptom:** The skill spends energy on analysis or caveats while the persona itself stays underfilled or too long.
+- **The Assumptions Are the Model's, Not the Team's:** Review what the PM supplied before adding anything. Add only where they are thin, and tag every addition `[AI-SUGGESTED, VALIDATE THIS]`. If most of the persona is AI-suggested, say so and ask for more of the team's own beliefs before going further.
 
-**Consequence:** The human gets more writing, but less usable playbook output.
+- **A Name and a Face Imply Proof:** Keep validation status visible ("Proto-persona") on the artifact. Keep invented quotes tagged as invented. Route the Riskiest Assumptions into empathy interviews (ps-empathy-interviews) before the persona is shared as a validated profile.
 
-**Fix:** Complete the artifact first. Keep commentary short and trailing.
-
-### Pitfall 3: Building the Buyer First
-
-**Symptom:** The persona centers on the approver while the actual user disappears.
-
-**Consequence:** The product gets shaped around purchasing logic without enough empathy for lived usage.
-
-**Fix:** Build the user first. Add buyer second when relevant.
-
-### Pitfall 4: Making the Product Manager the Persona by Default
-
-**Symptom:** The skill quietly profiles the team building the product instead of the customer-side person they serve.
-
-**Consequence:** The work becomes inward-looking and later discovery artifacts get contaminated.
-
-**Fix:** Ask explicitly: who experiences the product's value or pain in the field?
-
-### Pitfall 5: Defaulting to a Tech Role
-
-**Symptom:** The user asks for a persona for an IoT platform PM's customer and gets a solutions architect, platform engineer, or developer. The user asks for a healthcare PM's customer and gets a health-tech engineer.
-
-**Consequence:** The persona reflects LLM training bias, not the real customer population. The team builds empathy for the wrong person.
-
-**Fix:** Ask what the customer actually does day-to-day. Most products - even deeply technical ones - serve people whose primary job is not writing code or designing systems. A fleet manager, a logistics director, a clinical operations lead, a utility substation engineer - these are the real customers. If the role does not involve building software as its core function, the persona should not read like a technologist.
-
-### Pitfall 6: Confusing Pains with Goals
-
-**Symptom:** Every section says some version of "save time" or "reduce frustration."
-
-**Consequence:** The profile becomes too muddy to inform outcomes, problems, or prioritization.
-
-**Fix:** Keep friction separate from the future state the persona wants to achieve.
-
-### Pitfall 7: Never Updating the Proto-Persona
-
-**Symptom:** The persona remains unchanged even after interviews, observations, or experiments.
-
-**Consequence:** The artifact stops being a tool and becomes wall art.
-
-**Fix:** Treat the proto-persona as a living document and revise it as discovery produces evidence.
-
-### Pitfall 8: Exceeding Template Capacity
-
-**Symptom:** Quotes, pains, or jobs become too long to paste cleanly into the playbook.
-
-**Consequence:** The human Product Manager has to summarize the output before using it.
-
-**Fix:** Write to the canonical budget, not to the model's appetite for prose.
-
-### Pitfall 9: The Assumptions Are the Model's, Not the Team's
-
-**Symptom:** The PM gives two lines of belief and gets back a fully populated persona. Most of it is plausible gap-fill the PM never held, and nothing shows which lines are which.
-
-**Consequence:** The team goes out and validates the model's guesses instead of its own beliefs. Gap-fills nobody caught become "what we think about our customer."
-
-**Fix:** Review what the PM supplied before adding anything. Add only where they are thin, and tag every addition `[AI-SUGGESTED, VALIDATE THIS]`. If most of the persona is AI-suggested, say so and ask for more of the team's own beliefs before going further.
-
-### Pitfall 10: A Name and a Face Imply Proof
-
-**Symptom:** A polished proto-persona with a name, a portrait, and confident quotes goes into a stakeholder deck as if it were researched. Invented quotes get repeated in planning meetings as things customers said.
-
-**Consequence:** The polish makes the guess feel finished. The team builds on a stereotype, and it is never revisited.
-
-**Fix:** Keep validation status visible ("Proto-persona") on the artifact. Keep invented quotes tagged as invented. Route the Riskiest Assumptions into empathy interviews (ps-empathy-interviews) before the persona is shared as a validated profile.
-
-### Pitfall 11: Stretching the Persona to Cover Everyone
-
-**Symptom:** Each field gains another clause so the persona fits one more customer type: "manages one site, or sometimes three," "technical, though some aren't."
-
-**Consequence:** The persona describes a blurry everyone, so it guides no tradeoffs. That is the Focus test failing.
-
-**Fix:** Build for the center of the segment. If the segment really holds two different people, split it into two personas rather than averaging them into one.
+- **Stretching the Persona to Cover Everyone:** Build for the center of the segment. If the segment really holds two different people, split it into two personas rather than averaging them into one.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (2: draft a proto-persona, review a research-based persona)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - build alongside; jobs and desired outcomes feed the persona's goals and pains
-- [ps-empathy-interviews](../ps-empathy-interviews/SKILL.md) - downstream; tests the Riskiest Assumptions and replaces invented quotes with real ones
-- [ps-problem-identification](../ps-problem-identification/SKILL.md) - downstream; uses the persona's pains and jobs
-
-### Related Project Docs
-
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_proto_persona_playbook_pages.pdf](assets/ps_proto_persona_playbook_pages.pdf)
-- Productside Playbook companion document (supplied separately)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 25-30: Template 06 of 24 there, with the AI overview on slide 27 and prompts on slides 28-29. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-proto-persona) for supporting source material and expanded examples.

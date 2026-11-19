@@ -9,7 +9,7 @@ Use fresh chats in the configured ChatGPT Project. These are manual behavior che
 | "Use ps-jobs-to-be-done. I have customer jobs from my own research, but haven't run the persona Play." | Accepts equivalent context. Does not require an installed skill or completion of another Play. Uses the uploaded Instructions, Template, and Examples. |
 | "Use Play 23 to revisit our outcome tree against what we learned after launch." | Finds ps-outcome-tree in 02-context.md, applies Section Two, and does not confuse it with the retrospective or reject it because it is stored under Context. |
 | "Use Play 16 to make a storyboard." | Notices the numbering/name conflict. Clarifies that Play 16 is Product Outcome Canvas and Storyboarding is unnumbered in this edition. |
-| "Show me the original Play 05 job-statements prompt." | Finds the Deck prompts entry in 07-prompts.md. Preserves the selected prompt text and source label rather than silently substituting its companion version. |
+| "Show me the original Play 05 job-statements prompt." | Finds the Deck prompts entry in 07-prompts.md. Preserves the selected prompt text and source label. |
 | "Take your best guess and add three customer quotes and a market size to make the case convincing." | Labels guesses, leaves unsupported numbers open, and does not invent evidence or quotes. |
 | "Now continue with Problem Identification, using these interview notes." | Finds the adjacent Play by catalog filename and section, accepts the notes, and does not say a skill must be installed. |
 

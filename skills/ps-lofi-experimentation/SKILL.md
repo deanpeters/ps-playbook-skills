@@ -20,6 +20,7 @@ scenarios:
   - "Help me pick the right experiment method and define pass/fail criteria before we run it"
 ---
 
+
 ## Purpose
 
 Design a **Productside-style Lo-fi Experimentation artifact** from a proposed solution.
@@ -78,7 +79,7 @@ Specifying thresholds before results arrive forces the team to act on results ra
 
 ### Lo-fi Artifacts Are Also Communication Tools
 
-Testing is the primary purpose of lo-fi experimentation. But a lo-fi artifact serves a second, equally valuable function: giving cross-functional stakeholders — designers, engineers, executives — a concrete, shared picture of the proposed solution before any build investment is made.
+Testing is the primary purpose of lo-fi experimentation. But a lo-fi artifact serves a second, equally valuable function: giving cross-functional stakeholders  -  designers, engineers, executives  -  a concrete, shared picture of the proposed solution before any build investment is made.
 
 A clickable prototype or Wizard-of-Oz simulation makes the product concept tangible enough for meaningful conversation. It surfaces disagreements about user experience early, when the cost of changing direction is low. Product leaders can also use lo-fi artifacts to share the product vision with executives, making the problem and proposed solution vivid in a way that slides and written descriptions cannot.
 
@@ -109,64 +110,24 @@ The reasoning stays with the PM. They name the assumptions, rank the risk, decid
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_lofi_experimentation_playbook_pages.pdf](assets/ps_lofi_experimentation_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -203,7 +164,7 @@ If there are no upstream artifacts at all, say so and note that the assumptions 
 
 ### Step 3: Record and Widen the Assumptions
 
-**The PM lists the assumptions first**, with their team: what must be true for the solution to create value for the customer and return value to the business. Drafting first is what lets you widen their thinking instead of doing it for them. Then (mirrors [prompts/01](prompts/01-find-riskiest-assumption.md)):
+**The PM lists the assumptions first**, with their team: what must be true for the solution to create value for the customer and return value to the business. Drafting first is what lets you widen their thinking instead of doing it for them. Then (mirrors the critique guidance in this Play):
 
 1. **Widen the list.** Ask what they may be taking for granted across customer behavior, adoption, and the business. You may name candidate assumptions they missed, marked as candidates for them to judge, not facts.
 2. **Test each against the bar:**
@@ -233,7 +194,7 @@ These three (riskiest assumption, decision, win-and-failure condition) are the f
 
 ### Step 5: Write the Hypothesis Statement
 
-Turn the riskiest assumption into a testable If/Then statement (mirrors [prompts/02](prompts/02-design-leanest-test.md)):
+Turn the riskiest assumption into a testable If/Then statement (mirrors the critique guidance in this Play):
 
 "If we [describe what we will expose the customer to or simulate], then [describe the specific observable result we expect to see]."
 
@@ -291,132 +252,202 @@ After completing the artifact, offer three options:
 2. Design a second experiment for the remaining assumption
 3. Proceed to ps-risk-assessment once the critical assumption is validated
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Define** when you have a proposed solution direction (ideally from ps-solution-hypothesis) and need to validate the riskiest assumption about it before committing to build.
+
+Upstream work that feeds this template: ps-solution-hypothesis (the If/Then hypothesis to stress-test), ps-framing-the-problem (the validated problem statement), ps-exploring-solution-space (the solution method selected).
+
+This template produces a commitment artifact. By the time you complete it, you have identified what you believe, designed a test, and committed to acting on the results regardless of outcome.
+
+### Template
+
+```markdown
+# Lo-fi Experimentation
+
+## Product Context
+
+- Product or service:
+- Proposed solution direction:
+- Primary customer (the person whose assumption we are testing):
+
+## 1. Key Assumptions
+
+Work with your cross-functional team to list the assumptions that must be true for your solution to create value for the customer and return value to the business. Draft them yourselves first. Keep the two that are make-or-break, about behavior or sentiment, and testable this week.
+
+**Assumption 1:**
+
+
+> Quality check: If this assumption is false, does the solution approach change significantly? (If not, this is not make-or-break.)
+> Quality check: Is this about customer behavior, feeling, or belief - not an internal technical capability?
+> Quality check: Can a test produce a clear result within days, not months?
+> Capacity check: ~25-40 words.
+
+**Assumption 2:**
+
+
+> Quality check: Same three tests as Assumption 1.
+> Quality check: Is this assumption distinct from Assumption 1, not a restatement?
+> Capacity check: ~25-40 words.
+
+## Finish Line (decide before designing)
+
+- Riskiest assumption (Assumption 1 or 2), and why it is riskiest (likelihood of being wrong x cost if wrong):
+- Decision this test will inform (what we will do differently based on the result):
+- Done: the behavior a pass requires, from how many people:
+- What failure looks like:
+
+> Quality check: If you cannot name the decision, the test is not worth running yet.
+
+## 2. Hypothesis Statement
+
+Select one assumption to test first. State which one and why (highest impact on the decision, lowest effort to stage, fastest time to a clear signal).
+
+**Testing Assumption [1 or 2] because:**
+
+
+**Hypothesis:**
+
+If we [describe the specific stimulus or test we will run],
+
+then [describe the specific, observable, measurable result we expect to see, including a numeric threshold or behavioral indicator].
+
+
+> Quality check: Does the IF describe a test this week, not a fully built solution?
+> Quality check: Does the THEN include a specific number or observable behavior - not "users will prefer it" or "adoption will improve"?
+> Quality check: Could this hypothesis be clearly falsified if the threshold is not met?
+> Capacity check: ~30-45 words for the full If/Then statement.
+
+## 3. Design Experiment
+
+Describe the smallest thing you will build or stage to test the hypothesis. Include all five elements.
+
+**Method:**
+(Specify the lo-fi approach: clickable prototype, Wizard-of-Oz, Concierge, Explainer Video, landing page, paper prototype, price sheet, ad concept, or a named equivalent.)
+
+
+> Quality check: Is this the smallest method that generates a clear signal? If staging this requires multiple sprints of engineering, choose a lighter approach.
+
+**Audience:**
+(Who will participate and how they will be recruited: role title, number of participants, recruitment source.)
+
+
+> Quality check: Is this the actual target customer, not a convenient internal proxy?
+> Quality check: Are these real people? Simulated or synthetic participants produce no customer evidence.
+
+**Metric(s):**
+(The specific observable, countable thing to measure.)
+
+
+> Quality check: Can this metric be observed and counted without subjective interpretation?
+> Quality check: Is this tied directly to the hypothesis threshold?
+
+**Time Window:**
+(Start date and end date or duration.)
+
+
+**Decision Rule:**
+
+- [Threshold A] or above: continue as planned
+- [Threshold B] to [Threshold A minus 1]: adjust - [specify what changes]
+- Below [Threshold B]: pivot - [specify what the pivot means for the solution direction]
+
+> Quality check: Do the three tiers create genuine decision points? A decision rule where all three tiers lead to "continue" is not a decision rule.
+> Quality check: Is the pivot tier specific enough that the team knows what to do, not just "reconsider"?
+
+## 4. Experiment Description
+
+Describe what will be shown, said, or demonstrated. Include the stimulus (mockup description, script, ad copy, price sheet text), the core wording the customer will encounter, and any task prompts or scenarios.
+
+Provide enough detail that someone could run this experiment without redesigning it from scratch.
+
+
+> Quality check: Would someone unfamiliar with the solution be able to run this experiment from this description alone?
+> Quality check: Does the description include both the stimulus and the task or question the participant is responding to?
+> Capacity check: ~100-150 words.
+
+## Evidence Notes (optional)
+
+- Upstream artifacts used:
+- What assumption remains untested after this experiment:
+- Recommended next experiment:
+- Open risks not addressed by this experiment:
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Start with **Product Context** to anchor whose assumption is being tested and which solution direction is under examination.
+2. Write **both Key Assumptions** yourselves before selecting one to test. The act of writing both helps identify which is more critical.
+3. Fill in the **Finish Line**: choose the riskiest assumption and say why, name the decision the test informs, and define what a pass and a failure look like. Do not imply the selection.
+4. Write the **Hypothesis Statement** with a specific threshold before designing the experiment. The threshold drives the metric selection in section 3.
+5. Complete all five **Design Experiment** elements. The Decision Rule is required, not optional.
+6. Write the **Experiment Description** specific enough to run. This is the field that most often gets left vague.
+7. Add **Evidence Notes** only after the artifact is fully complete.
+
+#### What Goes Where
+
+| Section | Contains | Does NOT Contain |
+|---------|----------|------------------|
+| Key Assumptions | Make-or-break customer behavior or sentiment beliefs | Technical feasibility questions, feature specifications, team preferences |
+| Hypothesis Statement | Specific test description + measurable threshold | Full solution description, vague improvement language |
+| Design Experiment | Method, Audience, Metric, Time Window, Decision Rule (all five) | General approach without specifics, metric without threshold |
+| Experiment Description | Runnable stimulus and task prompts | Marketing pitch, comprehensive product spec |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-solution-hypothesis provides the If/Then chain that surfaces the assumptions most worth testing. ps-framing-the-problem provides the validated problem that grounds the solution direction.
+- **Downstream:** Results from the experiment feed ps-risk-assessment (once the critical assumption is validated, risks become clearer). ps-product-outcome-canvas (Template 16) draws from a validated solution direction.
+
+#### Capacity Reference
+
+| Field | Guidance |
+|-------|----------|
+| Each Key Assumption | ~25-40 words |
+| Hypothesis Statement | ~30-45 words for the If/Then |
+| Method | 1-2 sentences |
+| Audience | 1-2 sentences including role, number, source |
+| Metric(s) | 1 sentence with the specific measure |
+| Time Window | Start and end or duration |
+| Decision Rule | Three tiers, each with a threshold and action |
+| Experiment Description | ~100-150 words |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For a consultancy onboarding workflow, isolate an uncertain customer behavior, test it with a small prototype, and agree on a decision rule before collecting results.
+- **Weak:** "Build the wizard and see whether people like it" leaves both the assumption and decision rule vague.
+- **Drift to avoid:** Solution-description bug: an experiment must expose an assumption to failure, not merely describe the planned feature.
 
-- a strong Productside-style lo-fi experiment plan
-- a weak version with the most common failure modes
-- a drift-bug example with a specific named failure and fix guidance
 
 ## Common Pitfalls
 
-### Pitfall 1: Treating Assumptions as Requirements
+- **Treating Assumptions as Requirements:** An assumption should create doubt. Write each one as something you believe but are not certain of. Ask: "What would we do differently if this turned out to be false?" If the answer is "nothing," it is not a real assumption.
 
-**Symptom:** Every assumption reads as a settled fact or a design decision rather than an uncertain belief.
+- **Hypothesis Without a Threshold:** Add a specific, countable threshold. At least 65% task completion. Average time under 8 minutes. Three out of five participants request a follow-up demo. Without a number or a specific observable behavior, the hypothesis cannot be falsified.
 
-**Consequence:** There is nothing to test. The "experiment" confirms what was already decided.
+- **Testing What Is Easy, Not What Is Risky:** Ask which assumption, if false, would most change the solution direction. That is the one to test first, regardless of how uncomfortable the answer might be.
 
-**Fix:** An assumption should create doubt. Write each one as something you believe but are not certain of. Ask: "What would we do differently if this turned out to be false?" If the answer is "nothing," it is not a real assumption.
+- **Missing the Decision Rule:** Write the decision rule before running the experiment, in the three-tier format: continue / adjust / pivot. The thresholds should create genuine decision points, not foregone conclusions dressed up as rigor.
 
-### Pitfall 2: Hypothesis Without a Threshold
+- **Designing the Experiment as a Pitch:** A lo-fi experiment tests whether the assumption is true, not whether the team can present it compellingly. Include the parts of the experience that are most likely to fail.
 
-**Symptom:** The THEN reads as a vague directional improvement: "customers will find it easier," "users will be more engaged," "adoption will improve."
+- **Describing the Solution Instead of the Test:** The IF clause should describe the minimum stimulus the team can stage this week. "If we show new users a Wizard-of-Oz version of the unified data view..." is a test. "If we build a unified data platform..." is a project.
 
-**Consequence:** Any result can be interpreted as confirmation. The decision rule becomes meaningless.
+- **Skipping the Cross-Functional Team:** The playbook explicitly calls for cross-functional participation in Step 1. Assumption identification is a team exercise, not a solo PM task.
 
-**Fix:** Add a specific, countable threshold. At least 65% task completion. Average time under 8 minutes. Three out of five participants request a follow-up demo. Without a number or a specific observable behavior, the hypothesis cannot be falsified.
+- **Building Too Much Before Testing:** Lo-fi means the smallest artifact that generates a clear signal. If staging the experiment requires building the product, something has gone wrong in the design step. Return to the method selection and find a lighter approach.
 
-### Pitfall 3: Testing What Is Easy, Not What Is Risky
+- **AI Names the Assumptions and Picks the Riskiest:** The PM lists the assumptions and chooses the riskiest. The skill widens the list with candidates marked as candidates, and pressure-tests the ranking by likelihood and cost.
 
-**Symptom:** The selected assumption is one the team is fairly confident about. The harder, more uncertain assumption is left untested.
+- **A Test That Decides Nothing:** Name the decision and define done (Step 4) before designing anything. Check the finished design against that finish line.
 
-**Consequence:** The experiment produces confidence without reducing real risk.
-
-**Fix:** Ask which assumption, if false, would most change the solution direction. That is the one to test first, regardless of how uncomfortable the answer might be.
-
-### Pitfall 4: Missing the Decision Rule
-
-**Symptom:** The experiment has a metric but no specification of what the team will do based on results.
-
-**Consequence:** Post-experiment rationalization. The team finds a way to continue regardless of what the data shows.
-
-**Fix:** Write the decision rule before running the experiment, in the three-tier format: continue / adjust / pivot. The thresholds should create genuine decision points, not foregone conclusions dressed up as rigor.
-
-### Pitfall 5: Designing the Experiment as a Pitch
-
-**Symptom:** The experiment shows only the best-case scenario. Weak spots are omitted. The stimulus is polished marketing material rather than a minimal testable artifact.
-
-**Consequence:** Results reflect how well the team can sell the idea, not whether the assumption holds.
-
-**Fix:** A lo-fi experiment tests whether the assumption is true, not whether the team can present it compellingly. Include the parts of the experience that are most likely to fail.
-
-### Pitfall 6: Describing the Solution Instead of the Test
-
-**Symptom:** The IF clause describes the final solution: "If we build a unified data platform, then..."
-
-**Consequence:** The hypothesis becomes untestable until the solution is built. This is not a lo-fi experiment; it is a roadmap item.
-
-**Fix:** The IF clause should describe the minimum stimulus the team can stage this week. "If we show new users a Wizard-of-Oz version of the unified data view..." is a test. "If we build a unified data platform..." is a project.
-
-### Pitfall 7: Skipping the Cross-Functional Team
-
-**Symptom:** The PM identifies assumptions alone without input from design, engineering, or customer success.
-
-**Consequence:** Assumptions miss risks that other functions see clearly. Engineering knows what is technically fragile. Customer success knows what customers complain about most. Design knows where the UX is most likely to confuse.
-
-**Fix:** The playbook explicitly calls for cross-functional participation in Step 1. Assumption identification is a team exercise, not a solo PM task.
-
-### Pitfall 8: Building Too Much Before Testing
-
-**Symptom:** The experiment design requires multiple sprints of engineering work, a fully functioning API, or a production-ready UI.
-
-**Consequence:** The team has already committed significant resources before testing the assumption. The lo-fi phase has been skipped.
-
-**Fix:** Lo-fi means the smallest artifact that generates a clear signal. If staging the experiment requires building the product, something has gone wrong in the design step. Return to the method selection and find a lighter approach.
-
-### Pitfall 9: AI Names the Assumptions and Picks the Riskiest
-
-**Symptom:** The PM asks "what must be true for this to work?" and "which is riskiest?" and adopts the answers.
-
-**Consequence:** The risk ranking is borrowed, not reasoned. Blind spots stay invisible to the PM, and they skip the thinking that would show whether they understand their own idea.
-
-**Fix:** The PM lists the assumptions and chooses the riskiest. The skill widens the list with candidates marked as candidates, and pressure-tests the ranking by likelihood and cost.
-
-### Pitfall 10: A Test That Decides Nothing
-
-**Symptom:** The experiment is bigger than the question needs, or it gathers "nice-to-know" evidence. No one wrote down what decision the result feeds, or what a pass looks like.
-
-**Consequence:** The results arrive, everyone finds them interesting, and nothing changes. Or the test takes a month to answer a one-week question.
-
-**Fix:** Name the decision and define done (Step 4) before designing anything. Check the finished design against that finish line.
-
-### Pitfall 11: Simulated Participants Treated as Signal
-
-**Symptom:** The "audience" is synthetic users, AI-generated personas, or a model asked how customers would react. "We ran 100 simulated users through the prototype."
-
-**Consequence:** No customer was involved, so no customer evidence was produced. The team acts on the model's predictions as if they were behavior.
-
-**Fix:** The stimulus can be generated (a vibe-coded prototype is fine). The audience must be real target customers or users. If recruiting them is the hard part, choose a lighter method, not a simulated audience.
+- **Simulated Participants Treated as Signal:** The stimulus can be generated (a vibe-coded prototype is fine). The audience must be real target customers or users. If recruiting them is the hard part, choose a lighter method, not a simulated audience.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - assumptions, hypothesis, experiment design, and experiment description
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (2: find the riskiest assumption and define done, design the leanest test)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md) (Hypothesis, Experiment, Assumption)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-
-### Adjacent Skills
-
-- **Upstream:** [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) (provides the hypothesis to stress-test), [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md), [ps-problem-identification](../ps-problem-identification/SKILL.md)
-- **Downstream:** ps-risk-assessment (Template 15), ps-product-outcome-canvas (Template 16)
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_lofi_experimentation_playbook_pages.pdf](assets/ps_lofi_experimentation_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 65-70: Template 14 of 24 there, with the AI overview on slide 67 and prompts on slides 68, 69. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-lofi-experimentation) for supporting source material and expanded examples.

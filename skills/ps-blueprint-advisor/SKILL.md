@@ -22,11 +22,12 @@ scenarios:
   - "Pressure-test this roadmap decision against the Productside principles"
 ---
 
+
 ## Purpose
 
 Navigate the **Productside Blueprint** and point to the plays that live on it. The play library (ps-outcome-tree, ps-jobs-to-be-done, ps-positioning-statement, and the rest) gives a Product Manager one tool at a time. This skill sits above those plays and answers the questions a single play does not: where are we, what does good look like here, which principle governs this, and what do we do next.
 
-It runs in three modes over one shared knowledge base ([reference/blueprint-stages.md](reference/blueprint-stages.md)):
+It runs in three modes over one shared knowledge base ([Blueprint reference](#blueprint-reference)):
 
 - **Navigate.** Place the team on the Blueprint, show what good and bad look like in that phase, name the governing principle, and point to the next play. Run repeatedly to walk a team end to end.
 - **Coach a phase.** Go deep on one phase: its objective, tasks, anti-patterns, governing principles, and exit criteria.
@@ -40,6 +41,14 @@ Use this skill when:
 - a new Product Manager needs to learn a phase, not just complete a template
 
 This is not a play itself. It does not produce an outcome tree, a persona, or a positioning statement. It diagnoses, teaches, and points to the play that does. It is also not a governance gate: it advises on sequence and principle, it does not approve or block work.
+
+### Usage Notes
+
+- This is a **cross-phase navigator**, not a single canonical play. It sits above the play library and routes into it.
+- Three modes: Navigate (place the team and point to the next play), Coach (go deep on one phase), Audit (test a decision against the five principles).
+- Principle model: the five Optimal Product Process Principles are canonical; phase-level principles inherit and ladder up to them. Three orphan themes (Guardrails, Cross-Functional Ownership, Transparency) are surfaced as open decisions, never asserted as canon.
+- Evidence gathering is **user artifacts only** - no web research offered. It works from the user's own account of their situation.
+- Loose coupling: play names are pointers, never dependencies. If a play is not installed, the skill gives its gist and offers to do the work inline.
 
 ## Key Concepts
 
@@ -94,25 +103,25 @@ The Blueprint pages have no AI page in the B2B work-in-progress deck. This guida
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
+### Guided Mode
 
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+For the navigator, use this mode only when explicitly requested. For a simple routing question, answer with help first.
 
-### Guided Mode (Opt-In Only)
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-Guided mode is for genuinely big or ambiguous requests, or when the user explicitly asks to be walked through something ("walk me through this," "I'm new to this," "take me step by step"). It is not the default and never fires on a small, concrete question.
-
-When it is warranted, lead with a sentence of orientation, then ask one question at a time in plain language. Do not announce an estimated question count or a mode menu unless the user asks how it works. Any options you offer are grounded in what the user has already told you, never generic. When a question asks for evidence only the user has (a root cause, what customers said or did, what the user observed), ask it open, with no options. The moment the user has given you enough to help, stop asking and help.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Reads from [reference/blueprint-stages.md](reference/blueprint-stages.md) for all phase content, principle mappings, and play routing. Use [template.md](template.md) for the audit output scaffold. Worked runs are in [examples/sample.md](examples/sample.md).
+Reads from [Blueprint reference](#blueprint-reference) for all phase content, principle mappings, and play routing. Use [Template](#template) for the audit output scaffold. Worked runs are in [Examples](#examples).
 
 ### Step 1: Answer the Question in Front of You
 
@@ -147,105 +156,203 @@ Take the decision, roadmap, or artifact provided. For each of the five principle
 
 Help first, always. Lead with the useful answer and keep the diagnosis woven in and brief. Name a canonical principle only when it sharpens the point, and when you do, use the canonical five, not a phase-level label. Assume the plays may not be installed: every play you point to carries a one-line gist so the advice works even if the user never opens it, and you offer to do that thinking inline. Length follows the ask: short question, short answer.
 
+## Template
+
+Working scaffold for pressure-testing a decision, roadmap, or artifact against the five Optimal Product Process Principles. Fill the brackets. Lead with violations.
+
+### Under Review
+
+`[one or two sentences: the decision, roadmap, or artifact being audited]`
+
+> Quality check: state a real decision with a commitment attached, not a vague intention. If there is no commitment at stake, this is Coach or Navigate, not Audit.
+
+### Verdict by Principle
+
+Each line: principle, verdict (holds / at risk / violated), evidence from the input.
+
+- **Outcome Obsessed** - `[holds | at risk | violated]` - `[evidence]`
+- **Feedback Driven** - `[holds | at risk | violated]` - `[evidence]`
+- **Environment Adaptive** - `[holds | at risk | violated]` - `[evidence]`
+- **Dynamic Interactivity** - `[holds | at risk | violated]` - `[evidence]`
+- **Ruthlessly Distilled** - `[holds | at risk | violated]` - `[evidence]`
+
+> Quality check: every verdict cites specific evidence from the input, not a general observation. Name the canonical principle, not a phase-level expression.
+
+### Smallest Fixes (violations first)
+
+For each violated or at-risk principle, the smallest change that returns it to holding.
+
+1. `[principle]`: `[smallest useful change]`
+2. `[principle]`: `[smallest useful change]`
+
+> Quality check: a fix is an action the team can take this week, not a restatement of the problem.
+
+### Orphan Flags (if relevant)
+
+`[Guardrails / Cross-Functional Ownership / Transparency, only if the decision clearly raises one]`
+
+> Capacity: keep this to open questions for the Productside team. Do not score orphans as if they were canonical principles.
+
+### Lead Action
+
+`[the single next step, usually the fix for the most damaging violation]`
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md) for the strong, weak, and drift-bug example set, all in one operational domain.
+Illustrative and fictional, not customer evidence.
 
-### Quick Example
+- **Strong:** Dispatchers have not adopted route optimization. Review Deliver signals and return to discovery before planning version two.
+- **Weak:** Accepting the requested version-two roadmap assumes the solution before diagnosing the adoption problem.
+- **Drift to avoid:** Principle drift: presenting a phase-specific theme as a sixth canonical principle. Use the five canonical principles and label unresolved themes.
 
-> **User:** "We've got three or four features to prioritize, what do you suggest?"
-
-Good response, help first, one natural question, diagnosis kept under the surface:
-
-> Happy to help. One quick gut check, because it changes what I'd suggest: are these three or four things you already know customers want, or still bets you're making? If they're solid, you honestly don't need a heavy scoring model for four items. A fast look at value against effort and a short conversation beats the ceremony. If a couple are still guesses, I'd hold off on ranking, since you'd just be putting a confident number on a hunch, and instead get quick evidence on which problem each one actually solves. Which are they, mostly known or mostly bets?
-
-Notice what it does not do: no lecture that this is a "tool question," no mode menu, no `Q1/4`, no demand for a job title. The phase read (are we validating a problem or ordering known work) and the principle (keep it simple, do not fake precision) steer silently. If the user says "mostly bets," that is when help on framing the problem earns its place, whether the user has the `ps-framing-the-problem` play or you walk them through it right there.
 
 ## Common Pitfalls
 
-### Pitfall 1: Process Theater on a Simple Question
+- **Process Theater on a Simple Question:** Help first. Answer the question, keep the diagnosis under the surface, and ask at most one natural question if it genuinely changes the answer. Reserve the full guided flow for when the user asks for it or the request is genuinely broad.
 
-**Symptom:** A small, concrete question ("we've got three or four features to prioritize, what do you suggest?") gets met with a lecture that the question is wrong, a heads-up, an entry-mode menu, a `Qx/n` label, and a demand for the customer's job title, before any help is given.
+- **Answering Blind Instead of Weaving In the One Thing That Matters:** The fix is not to refuse and interrogate, and it is not to answer blind. Give real help and fold in the single check that changes it, in one natural sentence, the way a good colleague would.
 
-**Consequence:** This is the exact "frameworks as laminated bureaucracy" failure. The user got nothing useful, felt graded, and will not come back. It also violates the principle it claims to serve, since the simplest path from problem to solution is not a four-question intake form.
+- **Routing to Plays the User Does Not Have:** Treat play names as optional pointers. Give the gist of each in a line, make the advice stand on its own, and offer to do the work inline.
 
-**Fix:** Help first. Answer the question, keep the diagnosis under the surface, and ask at most one natural question if it genuinely changes the answer. Reserve the full guided flow for when the user asks for it or the request is genuinely broad.
+- **Citing Phase-Level Principles as if They Were Canonical:** Name the canonical principle first (Ruthlessly Distilled), then its phase expression (Segment Ruthlessly).
 
-### Pitfall 2: Answering Blind Instead of Weaving In the One Thing That Matters
+- **Assuming a Software Team Serving Software Users:** Run the silent assumption check in Step 1. Name the actual customer role and team composition, and let them shape the phase call and the routing.
 
-**Symptom:** To avoid process theater, the skill overcorrects and just answers the literal tool question ("use RICE") with no read at all on whether those features are even validated problems.
+- **Forcing a Linear Sequence:** Allow straddling. Name both phases, then prioritize the one carrying the highest unresolved risk.
 
-**Consequence:** The team puts precise numbers on unvalidated guesses. Confident, and wrong.
+- **Absorbing Orphan Themes Silently:** Surface orphans as labeled open decisions, never scored as canonical principles.
 
-**Fix:** The fix is not to refuse and interrogate, and it is not to answer blind. Give real help and fold in the single check that changes it, in one natural sentence, the way a good colleague would.
+## Blueprint Reference
 
-### Pitfall 3: Routing to Plays the User Does Not Have
+Knowledge base for ps-blueprint-advisor. Single source of truth the skill reads from. The five principles stay canonical; the phases inherit from them.
 
-**Symptom:** The response ends with "run ps-jobs-to-be-done, then ps-proto-persona, then ps-outcome-tree" to a user who has none of them installed.
+## The Five Canonical Principles
 
-**Consequence:** The advice is unusable. The skill offloaded the actual thinking onto tools the user cannot open, and reads like a directory rather than a colleague.
+The Blueprint was built on the **Optimal Product Process Principles**. These are process principles: they describe how the process behaves, not how a Product Manager behaves inside one phase. Everything downstream inherits from these five.
 
-**Fix:** Treat play names as optional pointers. Give the gist of each in a line, make the advice stand on its own, and offer to do the work inline.
+1. **Outcome Obsessed.** Produces measurable outcomes directly tied to a well-defined product strategy.
+2. **Feedback Driven.** Incorporates constant learning from end-users and customers.
+3. **Environment Adaptive.** Works regardless of size, type, development methodology, or market conditions.
+4. **Dynamic Interactivity.** Operates in the realistic context of non-linear, concurrent, constant activity.
+5. **Ruthlessly Distilled.** Provides the simplest path from problem to solution, and intentionally discards dead-ends, projects, and products.
 
-### Pitfall 4: Citing Phase-Level Principles as if They Were Canonical
+Design rule: every phase-level principle must ladder up to one of the five. If it cannot, it is either noise to cut or a genuinely new theme that has to earn its way into the canonical set by explicit decision. Two themes do not ladder up cleanly and are marked ORPHAN below: Guardrails, and Cross-Functional Ownership and Enablement.
 
-**Symptom:** The skill says "the principle here is Segment Ruthlessly" without connecting it to the five.
+## The Five Phases
 
-**Consequence:** Principles multiply and the memorable five disappear, which is the exact drift that created the problem this skill addresses.
+The Blueprint has five phases: Context, Discover + Investigate, Discover + Define, Create, Deliver. Context carries three facets a team works in parallel: Internal Values and Strategy, Market Environment, and Customers and Users. They are facets of one phase, not separate phases.
 
-**Fix:** Name the canonical principle first (Ruthlessly Distilled), then its phase expression (Segment Ruthlessly).
+---
 
-### Pitfall 5: Assuming a Software Team Serving Software Users
+## Phase 1: Context
 
-**Symptom:** The diagnosis and routed plays read as if the customer writes code and the team is a standard engineering squad, when the product serves field technicians, clinicians, or dispatchers.
+Objective: clarify strategy, market reality, and customer value into measurable business objectives that guide product decisions. Worked across three facets.
 
-**Consequence:** The phase call and the plays miss the real customer's workflow. The team runs discovery aimed at the wrong person.
+### Facet A: Internal Values and Strategy
 
-**Fix:** Run the silent assumption check in Step 1. Name the actual customer role and team composition, and let them shape the phase call and the routing.
+What good looks like: translate company strategy into product-level business outcomes using outcome trees; define decision guardrails (pricing, regulatory, brand); inventory portfolio dependencies and scope boundaries.
 
-### Pitfall 6: Forcing a Linear Sequence
+What bad looks like: vision theater (lofty narratives without metrics); conflating OKRs with strategy; a roadmap driven by politics instead of declared outcomes.
 
-**Symptom:** The skill insists a team finish Context before touching Discovery.
+Principles (phase to canonical parent): Clarity of Purpose to Outcome Obsessed; Alignment Before Action to Dynamic Interactivity; Outcomes Over Outputs to Outcome Obsessed; Guardrails Matter to ORPHAN; Focus is a Superpower to Ruthlessly Distilled; Strategy is a Living System to Dynamic Interactivity; Humility and Curiosity to Feedback Driven.
 
-**Consequence:** It contradicts Dynamic Interactivity and loses credibility with teams whose reality is concurrent.
+### Facet B: Market Environment
 
-**Fix:** Allow straddling. Name both phases, then prioritize the one carrying the highest unresolved risk.
+What good looks like: PESTEL tied to hypotheses; competitor and substitute analysis beyond feature lists; validate market size and channel economics; segment and find promising opportunities.
 
-### Pitfall 7: Absorbing Orphan Themes Silently
+What bad looks like: feature scorecards ignoring buyer economics; annual market reviews that are never updated.
 
-**Symptom:** The skill presents Guardrails or Cross-Functional Ownership as a sixth principle.
+Principles: External Reality Rules to Environment Adaptive; Continuous Vigilance to Environment Adaptive; Competitors Are Teachers to Feedback Driven; Economics Drive Strategy to Outcome Obsessed; Segment Ruthlessly to Ruthlessly Distilled; Evidence Over Ego to Feedback Driven; Adaptation Is Survival to Environment Adaptive.
 
-**Consequence:** It fabricates canon the Productside team never ratified.
+### Facet C: Customers and Users
 
-**Fix:** Surface orphans as labeled open decisions, never scored as canonical principles.
+What good looks like: segment by job and context, not just firmographics; empathy interviews synthesized with quantitative data; proto-personas and value paths tied to outcomes, then validated.
+
+What bad looks like: treating customers as a monolith; over-reliance on analytics without direct conversations.
+
+Principles: Empathy First to Feedback Driven; Jobs-to-be-Done Over Demographics to Ruthlessly Distilled; Value Is Defined by the Customer to Outcome Obsessed; Diversity of Perspective to Environment Adaptive; Validation Is Continuous to Feedback Driven; Listen Beyond the Obvious to Feedback Driven; Bias Toward Actionable Insight to Ruthlessly Distilled.
+
+Plays for Context: ps-outcome-strategy-discussion, ps-stakeholder-alignment, ps-outcome-tree, ps-market-selection-sizing (Facet B: name the market, PESTEL, segments with real buyers and users, sourced TAM/SAM/SOM), ps-jobs-to-be-done, ps-proto-persona.
+
+Exit criteria: measurable business objectives named, the primary customer and their job defined, and a defensible read of market and economics.
+
+---
+
+## Phase 2: Discover + Investigate
+
+Objective: explore the problem space to surface and prioritize opportunities tied to business outcomes and customer value.
+
+What good looks like: assess pains and gains, frequency, willingness-to-pay; triangulate qualitative, quantitative, and market evidence for early fit signals; frame problems clearly; run empathy interviews and synthesize; validate the problem space with experiments.
+
+What bad looks like: premature solutioning; research without decision questions or kill criteria; one-big-bet thinking without a portfolio of options.
+
+Principles: Problem Before Solution to Ruthlessly Distilled; Evidence Over Assumption to Feedback Driven; Portfolio Thinking to Ruthlessly Distilled; Customer Value as North Star to Outcome Obsessed; Iterative Validation to Feedback Driven; Bias Toward Action to Ruthlessly Distilled; Transparency in Decision-Making to ORPHAN.
+
+Plays: ps-empathy-interviews, ps-affinity-mapping, ps-problem-identification, ps-framing-the-problem.
+
+Exit criteria: a framed, evidence-backed problem worth solving, with a kill criterion, not just a list of ideas.
+
+---
+
+## Phase 3: Discover + Define
+
+Objective: select the best solution approach and de-risk value, feasibility, and viability before scaling.
+
+What good looks like: solution hypotheses and positioning via how-might-we questions; low-fidelity experiments with success metrics set up front; financial and risk analysis; a business model (monetization, channels, go-to-market); a business case tied to outcomes; feasibility checked with stakeholders.
+
+What bad looks like: testing desirability while ignoring viability; treating the MVP as version one instead of a learning vehicle; chasing vanity metrics.
+
+Principles: Solution Fit Is Earned Not Assumed to Feedback Driven; De-Risk Early and Often to Ruthlessly Distilled; Hypotheses Drive Action to Feedback Driven; Success Is Measured Not Declared to Outcome Obsessed; Business Model Awareness to Outcome Obsessed; Stakeholder Engagement Is Continuous to Dynamic Interactivity; Learning Is the Goal to Feedback Driven.
+
+Plays: ps-exploring-solution-space, ps-solution-hypothesis, ps-positioning-statement, ps-lofi-experimentation, ps-storyboarding (a lo-fi way to test the value proposition with real customers), ps-risk-assessment, ps-product-outcome-canvas.
+
+Exit criteria: value, feasibility, and viability each backed by evidence, and a business case tying the chosen solution to a named outcome.
+
+---
+
+## Phase 4: Create
+
+Objective: prepare product and organization for success through roadmaps, specs, enablement, and launch strategy.
+
+What good looks like: outcome-based roadmaps tied to metrics; backlog shaped by decision rules from Context and Define; readiness planned across support, pricing, and go-to-market; controlled rollouts; support and defect pathways instrumented.
+
+What bad looks like: roadmaps as commitment contracts disconnected from learning; over-specifying early and under-specifying late; treating enablement and pricing as marketing's job.
+
+Principles: Readiness Is Holistic to ORPHAN (Cross-Functional Ownership); Outcome-Based Planning to Outcome Obsessed; Specs Match Uncertainty to Ruthlessly Distilled; Enablement Is a Team Sport to ORPHAN (Cross-Functional Ownership); Iterate Toward Launch to Dynamic Interactivity; Decision Rules Are Explicit to Outcome Obsessed; Risk Management Is Proactive to Ruthlessly Distilled.
+
+Plays: ps-outcome-roadmap, ps-tiny-acts-discovery, ps-output-prioritization, ps-go-to-market, ps-product-readiness.
+
+Exit criteria: the product and the organization are both ready, with a controlled rollout plan and explicit backlog decision rules.
+
+---
+
+## Phase 5: Deliver
+
+Objective: ship, learn, and sustain growth through measurement and iteration.
+
+What good looks like: manage the lifecycle as the category evolves; measure the buying journey continuously; evaluate post-launch metrics and make reinvest-or-retire decisions; keep discovery continuous.
+
+What bad looks like: declaring victory and shipping without measurement; success theater with vanity adoption metrics; treating roadmap changes as failure instead of learning.
+
+Principles: Learning Never Stops to Feedback Driven; Value Is Proven Not Assumed to Outcome Obsessed; Health Is Managed Proactively to Environment Adaptive; Transparency in Outcomes to ORPHAN; Customer Advocacy Is Ongoing to Feedback Driven; Cross-Functional Ownership to ORPHAN (Cross-Functional Ownership); Adaptation Is Strength to Environment Adaptive.
+
+Plays: ps-measuring-outcomes, ps-process-retrospective.
+
+Exit criteria: value proven with real metrics, and a clear reinvest-or-retire decision rather than a default to continue.
+
+---
+
+## Orphan Themes (Open Decisions)
+
+These phase-level themes do not ladder up to the five. Do not silently absorb them. Decide.
+
+1. **Guardrails** (ethical, regulatory, brand), appears in Context. Candidate sixth principle, or fold under Outcome Obsessed as a constraint on which outcomes are legitimate.
+2. **Cross-Functional Ownership and Enablement**, appears in Create and Deliver. Candidate sixth principle, or treat as an execution norm rather than a process principle.
+3. **Transparency in Decision-Making and Outcomes**, appears in Discover + Investigate and Deliver. Arguably a practice serving Feedback Driven and Outcome Obsessed rather than a standalone principle.
+
+The advisor surfaces these when relevant but never asserts them as canonical. That decision belongs to the Productside team.
+
 
 ## References
 
-### Skill Files
-
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (1: where are we on the Blueprint; authored for this library)
-- [reference/blueprint-stages.md](reference/blueprint-stages.md) - phase and principle knowledge base
-- [template.md](template.md) - audit output scaffold
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-- [assets/ps_blueprint_advisor_playbook_pages.pdf](assets/ps_blueprint_advisor_playbook_pages.pdf) - source pages 1-3 of the canonical playbook: the Blueprint welcome, the overview with checkpoints, and the full phase map
-
-### Related Plays This Advisor Points To
-
-Loose coupling: point to these when relevant, but never require them. If a play is not installed, give its gist and offer to do the work inline.
-
-- Context: [ps-outcome-strategy-discussion](../ps-outcome-strategy-discussion/SKILL.md), [ps-stakeholder-alignment](../ps-stakeholder-alignment/SKILL.md), [ps-outcome-tree](../ps-outcome-tree/SKILL.md), [ps-market-selection-sizing](../ps-market-selection-sizing/SKILL.md), [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md), [ps-proto-persona](../ps-proto-persona/SKILL.md)
-- Discover + Investigate: [ps-empathy-interviews](../ps-empathy-interviews/SKILL.md), [ps-affinity-mapping](../ps-affinity-mapping/SKILL.md), [ps-problem-identification](../ps-problem-identification/SKILL.md), [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md)
-- Discover + Define: [ps-exploring-solution-space](../ps-exploring-solution-space/SKILL.md), [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md), [ps-positioning-statement](../ps-positioning-statement/SKILL.md), [ps-lofi-experimentation](../ps-lofi-experimentation/SKILL.md), [ps-storyboarding](../ps-storyboarding/SKILL.md), [ps-risk-assessment](../ps-risk-assessment/SKILL.md), [ps-product-outcome-canvas](../ps-product-outcome-canvas/SKILL.md)
-- Create: [ps-outcome-roadmap](../ps-outcome-roadmap/SKILL.md), [ps-tiny-acts-discovery](../ps-tiny-acts-discovery/SKILL.md), [ps-output-prioritization](../ps-output-prioritization/SKILL.md), [ps-go-to-market](../ps-go-to-market/SKILL.md), [ps-product-readiness](../ps-product-readiness/SKILL.md)
-- Deliver: [ps-measuring-outcomes](../ps-measuring-outcomes/SKILL.md), [ps-process-retrospective](../ps-process-retrospective/SKILL.md)
-
-### Note on Repo Fit and Known Deviations
-
-This skill lives in `skills/` but is a cross-phase navigator, not a single canonical play, so it diverges from the repo norm in two places, on purpose and in the open:
-
-1. `blueprint_stage` is `All`. The enum expects one of the five phases; this skill spans them. Resolve deliberately if the enum must hold.
-2. Step 1 leads with help, not the standard scope-confirmation-or-bias-guard opener. The bias guard is kept, but as a silent self-check, because a navigator that opens with an intake form fails the Ruthlessly Distilled principle it teaches.
-
-Its source pages are the front of the canonical playbook (pages 1-3: the Blueprint overview and phase map) in [assets/ps_blueprint_advisor_playbook_pages.pdf](assets/ps_blueprint_advisor_playbook_pages.pdf), distilled into [reference/blueprint-stages.md](reference/blueprint-stages.md).
-
-Maintainer housekeeping still open: wire bi-directional references on the routed plays, and run the 8-check QA protocol in [informative-documents/skill-qa-protocol.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-qa-protocol.md).
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-blueprint-advisor) for supporting source material and expanded examples.

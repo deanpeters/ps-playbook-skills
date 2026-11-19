@@ -34,6 +34,14 @@ Use this skill when you need to:
 
 This is not a solution-generation tool. The agent does not brainstorm solutions on behalf of the team. It helps the PM plan a structured session where the team generates, prioritizes, and tests ideas together.
 
+##### Usage Notes
+
+- This is a **process skill** (`type: process`). The agent helps prepare a design thinking session; the actual ideation happens with the team in real time.
+- Evidence gathering: this skill qualifies for **artifacts only**. The PM brings the validated problem statement, stakeholder alignment, and prior discovery work. No web research needed.
+- The method catalog contains 10 tools from the Productside playbook organized across three activity types: Generating Ideas, Prioritizing Ideas, and Testing. A well-planned session includes at least one from each category.
+- Upstream: ps-framing-the-problem (validated problem statement is required input), ps-empathy-interviews, ps-proto-persona, ps-jobs-to-be-done.
+- Downstream: Solution Hypothesis Statement (the top idea from this session feeds the hypothesis).
+
 #### Key Concepts
 
 ##### The Three Activity Types
@@ -133,64 +141,24 @@ The ideas belong to the team in the session, never to a model beforehand. Which 
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-exploring-solution-space / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `04-discover-define.md`, section `ps-exploring-solution-space / Template`) for the full scaffold.
+Use Template (uploaded reference: `04-discover-define.md`, section `ps-exploring-solution-space / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_exploring_solution_space_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -240,7 +208,7 @@ Example goal: "Using design thinking methods, ideate solution possibilities for 
 
 ##### Step 4: Scope the How Might We Questions
 
-Ask the PM to draft three to five How Might We questions from the problem statement before you suggest anything. Then work through them one at a time (mirrors prompts/01 (uploaded reference: `07-prompts.md`, section `ps-exploring-solution-space / Companion / 01-scope-how-might-we.md`)):
+Ask the PM to draft three to five How Might We questions from the problem statement before you suggest anything. Then work through them one at a time (mirrors the critique guidance in this Play):
 
 1. Say whether the question is too broad, too narrow, or just right, and why.
 2. If a solution hides in the wording, point at the word and ask the PM to cut it.
@@ -279,7 +247,7 @@ Recommend methods based on the session goals, team size, and available time. Key
 - **3-4 methods is the sweet spot** for a single session; more than 4 is too many to execute well
 - **Sequence matters**: Generate first, then prioritize, then test. Do not reverse the order.
 
-Ask the PM what each method should produce before they commit to it, and make them justify each choice. Build the plan with them rather than setting the agenda for them (mirrors prompts/02 (uploaded reference: `07-prompts.md`, section `ps-exploring-solution-space / Companion / 02-plan-ideation-session.md`)).
+Ask the PM what each method should produce before they commit to it, and make them justify each choice. Build the plan with them rather than setting the agenda for them (mirrors the critique guidance in this Play).
 
 For each selected method, provide:
 
@@ -324,7 +292,7 @@ Before finalizing, check:
 
 ##### Step 11: After the Session, Sharpen the Case
 
-When the PM returns with the team's prioritized solutions, help them build the case for the highest-priority one (mirrors prompts/03 (uploaded reference: `07-prompts.md`, section `ps-exploring-solution-space / Companion / 03-sharpen-solution-case.md`)). Do not write the benefits, name the risks, or compose the value story. Make the PM articulate each, then reflect back what is thin, missing, or disconnected:
+When the PM returns with the team's prioritized solutions, help them build the case for the highest-priority one (mirrors the critique guidance in this Play). Do not write the benefits, name the risks, or compose the value story. Make the PM articulate each, then reflect back what is thin, missing, or disconnected:
 
 1. **Benefits:** ask what the solution does for the persona, tied to the specific problem. Point at any benefit that is generic or disconnected.
 2. **Risks:** ask what risks the PM sees. After they answer, ask questions that test whether they looked widely enough (adoption, dependencies, the business) without naming a risk yourself.
@@ -344,150 +312,17 @@ After the session plan is complete, offer the PM up to three next-step options:
 
 Present these as options, not mandatory steps. The PM decides what comes next.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-exploring-solution-space / Examples`).
-
-The example set includes:
-
-- a strong session plan with clear goals, cross-functional participants, and well-selected methods across all three categories
-- a weak version with vague goals, engineering-only participants, and a single method selected
-- a drift-bug example where the PM skips session preparation and asks the agent to generate solutions directly
-- commentary on why the weak versions fail
-
-#### Common Pitfalls
-
-##### Pitfall 1: Skipping the Problem Statement
-
-**Symptom:** The PM jumps straight into brainstorming solutions without a validated problem statement.
-
-**Consequence:** The session generates solutions to an undefined or assumed problem. The team may build something nobody needs because they never validated what problem they are solving.
-
-**Fix:** Require the validated problem statement as input. If the PM cannot state the problem clearly, redirect to ps-framing-the-problem before planning a solution space session.
-
-##### Pitfall 2: Inviting Only Engineers
-
-**Symptom:** The participant list is all engineers and technical leads. No design, no customer success, no sales, no actual customers.
-
-**Consequence:** The session produces technically feasible but customer-blind solutions. The team optimizes for how to build rather than what to build.
-
-**Fix:** Check the participant list for cross-functional diversity. Flag if design, customer-facing roles, or domain experts are missing. A logistics platform PM should have logistics professionals in the session, not only backend developers.
-
-##### Pitfall 3: Selecting Only Divergent Methods
-
-**Symptom:** The PM picks "How Might We?" and "Quantity Over Quality" but no prioritization or testing methods.
-
-**Consequence:** The session produces a long list of ideas with no way to evaluate or narrow them. The team leaves energized but directionless. The ideas sit in a Mural board untouched.
-
-**Fix:** Require at least one method from each activity type. If the PM selects only Generating methods, explicitly ask: "How will you prioritize these ideas? How will you test the top candidates before committing?"
-
-##### Pitfall 4: Treating the Agent as a Substitute for the Team Session
-
-**Symptom:** The PM asks the agent to "brainstorm solutions" or "generate 10 solution ideas" instead of planning a session with the team.
-
-**Consequence:** The solutions come from LLM training data, not from the cross-functional team's collective expertise and customer knowledge. The team has no ownership of the ideas because they did not generate them.
-
-**Fix:** Redirect the PM to session planning. The agent's job is to help prepare a productive session, not to replace it. The team generates the ideas; the agent helps structure the process.
-
-##### Pitfall 5: Making Session Goals Too Vague
-
-**Symptom:** The session goal is "brainstorm solutions" or "ideate on the problem."
-
-**Consequence:** The session has no success criteria. The team cannot tell whether the session was productive or not. There is no clear connection between the session output and the next step (Solution Hypothesis).
-
-**Fix:** Tie goals to the specific problem statement and include measurable outcomes: "Generate at least 15 solution ideas for [problem], prioritize to 3 candidates, and paper-prototype the top candidate."
-
-##### Pitfall 6: Not Allocating Enough Time
-
-**Symptom:** The PM schedules a 30-minute meeting for a multi-method design thinking session.
-
-**Consequence:** The team rushes through generating without time for prioritizing or testing. Surface-level ideas get selected because there was no time to evaluate them properly.
-
-**Fix:** Budget minimum 90 minutes for a single-method session. Multi-method sessions need 2-3 hours. If the calendar does not allow it, split across multiple sessions rather than cramming everything into one.
-
-##### Pitfall 7: Selecting Too Many Methods
-
-**Symptom:** The PM picks 5 or more methods for a single session.
-
-**Consequence:** Each method gets 15-20 minutes, which is not enough for any of them to produce quality output. The session becomes a survey of techniques rather than a productive exploration.
-
-**Fix:** Limit to 3-4 methods per session. If more methods are needed, plan a second session. Depth beats breadth in ideation.
-
-##### Pitfall 8: Forgetting to Document Session Outcomes
-
-**Symptom:** The team has a great session. Ideas are on sticky notes or a Mural board. Nobody writes up the outcomes.
-
-**Consequence:** Within a week, the team's memory of what was prioritized and why fades. The connection between session output and the Solution Hypothesis step is lost. The PM cannot communicate results to stakeholders who were not in the room.
-
-**Fix:** Assign a note-taker during the session. Plan 15 minutes at the end for documenting the top ideas, prioritization rationale, and agreed next steps. The session outcomes should be structured enough to feed the Solution Hypothesis step.
-
-##### Pitfall 9: AI Ranks the Solutions for You
-
-**Symptom:** The team generates ideas, then pastes the list into the agent and asks which ones to pursue. The model judges value, viability, and feasibility, and its top three become the shortlist.
-
-**Consequence:** The decision is quietly outsourced. Enthusiasm for a confident ranking replaces evidence, and the room's knowledge of feasibility is wasted.
-
-**Fix:** Prioritize in the room with the catalog's prioritizing methods (Dot Voting, Money Voting, Value vs. Effort). Afterward, the agent may challenge each shortlisted hypothesis on value, viability, and feasibility. The team decides.
-
-##### Pitfall 10: A How Might We That Is Too Broad, Too Narrow, or Hiding a Solution
-
-**Symptom:** "How might we improve the user experience?" (too broad). "How might we add a dashboard for dispatchers?" (a solution inside the question).
-
-**Consequence:** Too broad, and the session produces ideas for a dozen unrelated problems. Too narrow, and the team builds variants of a solution someone already chose.
-
-**Fix:** Draft three to five, test each for scope, cut any solution word, and check each traces to the problem statement.
-
-##### Pitfall 11: A Shortlist Nobody Can Defend
-
-**Symptom:** The team leaves with a top idea and enthusiasm, but no one can say what it does for the persona, what could go wrong, or how it helps the business.
-
-**Consequence:** The Solution Hypothesis gets written around excitement, and the gaps surface during the build.
-
-**Fix:** Before moving on, the PM writes the case in their own words (Step 11): benefits tied to the problem, risks looked at widely, and the value chain from customer to business.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `04-discover-define.md`, section `ps-exploring-solution-space / Template`) - session plan and post-session documentation scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-exploring-solution-space / Companion / README.md`) - copy-paste prompts for chat-based AI tools (3: scope How Might We, plan the session, sharpen the solution case)
-- examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-exploring-solution-space / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Related Skills
-
-- ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) - upstream; the validated problem statement is the required input for this skill
-- ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`) - upstream; problem identification feeds the problem statement that drives this session
-- ps-empathy-interviews (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Instructions`) - upstream; interview findings provide customer evidence that grounds ideation
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - upstream; persona work helps identify the right participants and grounds the session in customer reality
-- ps-solution-hypothesis (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Instructions`) - downstream; session output (top prioritized idea) feeds the Solution Hypothesis Statement
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_exploring_solution_space_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 49-56: Template 11 of 24 there, with the AI overview on slide 51 and prompts on slides 52, 54, 55. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-
 ### ps-exploring-solution-space / Template
 
-### Exploring the Solution Space
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Define** when you have a validated problem statement and need to plan a design thinking session to explore solution possibilities. This is a process skill for session preparation, not a solution-generation exercise.
 
 Upstream work that feeds this template: validated problem statement (from ps-framing-the-problem), stakeholder alignment, empathy interview findings, proto-persona, jobs-to-be-done.
 
-#### Template
+##### Template
 
-##### Session Plan
+###### Session Plan
 
 ```markdown
 # Exploring the Solution Space: Session Plan
@@ -625,7 +460,7 @@ For each selected method, fill in the details below. Copy this block for each me
 > Capacity check: Setup instructions ~20-30 words. Facilitation flow steps ~10-15 words each.
 ```
 
-##### Post-Session Documentation
+###### Post-Session Documentation
 
 ```markdown
 # Session Outcomes
@@ -688,9 +523,9 @@ If prototyping or journey mapping was conducted, document what was learned.
 - [ ] Schedule prototype testing with real customers if applicable
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Session Flow
+###### Session Flow
 
 A typical session follows this sequence:
 
@@ -700,7 +535,7 @@ A typical session follows this sequence:
 4. **Test (30-45 min)** - Run a testing method on the top candidates. Expose ideas to customer reality.
 5. **Close (15 min)** - Document top ideas, prioritization rationale, and next steps.
 
-##### How Many Methods
+###### How Many Methods
 
 Select 3-4 methods for a single session:
 
@@ -710,7 +545,7 @@ Select 3-4 methods for a single session:
 
 If more methods are needed, plan a second session rather than cramming. Depth produces better ideas than breadth.
 
-##### Time Budgets
+###### Time Budgets
 
 | Session Type | Duration | Methods | Guidance |
 |-------------|----------|---------|----------|
@@ -718,12 +553,12 @@ If more methods are needed, plan a second session rather than cramming. Depth pr
 | Standard | 2 hours | 3-4 methods | Two generating, one prioritizing, one testing |
 | Extended | 3 hours | 4 methods + breaks | Full cycle with deeper exploration |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-framing-the-problem (validated problem statement is required input), ps-empathy-interviews (customer evidence grounds the session), ps-proto-persona (persona context), ps-jobs-to-be-done (jobs and outcomes to solve for)
 - **Downstream:** The top idea from this session feeds into the Solution Hypothesis Statement
 
-##### Capacity Reference
+###### Capacity Reference
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -736,293 +571,40 @@ If more methods are needed, plan a second session rather than cramming. Depth pr
 
 ### ps-exploring-solution-space / Examples
 
-### Exploring the Solution Space - Examples
-
-#### Example 1: Strong Session Plan
+Illustrative and fictional, not customer evidence.
 
-Scenario: A fleet management company building a predictive maintenance platform for regional fleet managers at a mid-size trucking company.
-
-##### Session Plan
-
-```markdown
-# Exploring the Solution Space: Session Plan
-
-## Product Context
-
-- Product or service: FleetSense - predictive maintenance platform for commercial trucking
-- Target market segment: Mid-size regional trucking fleets (200-500 vehicles)
-- Target customer (the person the product serves): Regional Fleet Manager
-
-## Validated Problem Statement
-
-"I am a regional fleet manager overseeing 300+ vehicles across 8 depots. I am trying to minimize unplanned breakdowns that strand drivers and delay deliveries. But I rely on scheduled maintenance intervals and driver-reported issues, which miss emerging mechanical failures. Because there is no way to detect early warning signs across the fleet without physically inspecting each vehicle. Which makes me feel anxious every morning that today will be the day a truck breaks down on a highway with a full load."
-
-## Session Parameters
-
-### Goals and Objectives
-
-1. Using design thinking methods, ideate at least 15 solution possibilities that address early detection of mechanical failures across a distributed fleet
-2. Prioritize ideas against two criteria: impact on reducing unplanned breakdowns and feasibility with current fleet hardware
-3. Paper-prototype the top candidate to test whether a depot manager can understand the alert workflow in under 2 minutes
-
-### Participants
-
-| Name / Role | Function | Perspective They Bring |
-|-------------|----------|----------------------|
-| Maria Chen (PM) | Product | Facilitator; owns the problem definition and roadmap context |
-| Derek Williams | UX Design | User workflow and interface feasibility; depot manager mental models |
-| Priya Nair | Engineering | Sensor data and telemetry constraints; what is technically feasible today |
-| Tom Ramirez | Customer Success | Direct depot manager relationships; hears their complaints weekly |
-| Sandra Lee | Fleet Operations SME | 12 years as a fleet manager; understands the daily reality of maintenance scheduling |
-| James Park | Data Science | Predictive model capabilities; what patterns telemetry data can reveal |
-
-### Session Resources Needed
-
-- Collaboration tool: Mural board (template pre-built with problem statement and method sections)
-- Meeting setup: Conference room with large screen for Mural; video bridge for Sandra (remote)
-- Time allocated: 2.5 hours (including 15-minute break)
-- Pre-work for participants: Read the validated problem statement and empathy interview summary (shared via email 3 days before session)
-- Documentation plan: James takes notes in Mural during session; Maria writes up outcomes within 24 hours
-
-### Notes
-
-- Sandra (Fleet Operations SME) is remote from the Dallas depot; ensure she has Mural access and a working camera
-- May need a follow-up session for deeper prototyping if the first prototype raises new questions
-- Session outcomes feed directly into the Solution Hypothesis Statement, scheduled for next sprint planning
-
-## Method Selection
-
-| # | Method | Activity Type | Selected? |
-|---|--------|--------------|-----------|
-| 1 | How Might We? | Generating Ideas | [x] |
-| 2 | "Bad Ideas" First Brainstorming | Generating Ideas | [ ] |
-| 3 | Quantity Over Quality | Generating Ideas | [x] |
-| 4 | Mind Mapping | Generating Ideas | [ ] |
-| 5 | 2x2 Matrix | Prioritizing Ideas | [x] |
-| 6 | Dot Voting | Prioritizing Ideas | [ ] |
-| 7 | Money Voting | Prioritizing Ideas | [ ] |
-| 8 | 6-3-5 Method | Generating + Prioritizing | [ ] |
-| 9 | SCAMPER | Generating + Prioritizing | [ ] |
-| 10 | Prototyping | Testing | [x] |
-| 11 | Customer Journey Maps | Generating + Testing | [ ] |
+- **Strong:** For a fleet manager facing unexpected breakdowns, frame a How Might We question, choose an ideation method, and plan the team session before comparing ideas.
+- **Weak:** A session plan that begins with a chosen predictive-maintenance feature skips exploration.
+- **Drift to avoid:** Agent substitutes for the room: an AI-generated solution list is an explicitly requested draft, not evidence of team ideation or agreement.
 
-### Selected Method Details
 
-#### Method: How Might We?
+#### Common Pitfalls
 
-- **Activity type:** Generating Ideas
-- **Why this method fits this session:** Reframes the validated problem statement into multiple solution angles. The problem has several dimensions (detection, communication, workflow) and HMW questions will help the team see each one as a separate opportunity.
-- **Time needed:** 20 minutes
-- **Setup instructions:** Pre-write the core problem statement on the Mural board. Prepare 3-4 starter HMW reframes as examples.
-- **Facilitation flow:**
-  1. Read the problem statement aloud (2 min)
-  2. Each participant writes HMW questions individually on sticky notes (8 min)
-  3. Share and cluster similar HMW questions on the board (10 min)
-- **Expected output:** 12-20 HMW questions clustered into 3-5 themes
-- **Common facilitation mistakes to avoid:** Do not let HMW questions become solution statements ("HMW build a dashboard" is a solution, not a question). Keep them open-ended.
-- **How the output feeds the next method:** HMW clusters become the prompt categories for Quantity Over Quality ideation.
+- **Skipping the Problem Statement:** Require the validated problem statement as input. If the PM cannot state the problem clearly, redirect to ps-framing-the-problem before planning a solution space session.
 
-#### Method: Quantity Over Quality
+- **Inviting Only Engineers:** Check the participant list for cross-functional diversity. Flag if design, customer-facing roles, or domain experts are missing. A logistics platform PM should have logistics professionals in the session, not only backend developers.
 
-- **Activity type:** Generating Ideas
-- **Why this method fits this session:** The team has strong analytical tendencies (data science, engineering). This method deliberately suppresses evaluation and pushes for volume, which counteracts the team's instinct to filter too early.
-- **Time needed:** 25 minutes
-- **Setup instructions:** Set a target of 50 ideas total across the team. Put a visible timer on screen. Each HMW cluster gets its own column on the Mural board.
-- **Facilitation flow:**
-  1. Assign each HMW cluster to the board (2 min)
-  2. Set timer for 15 minutes; everyone writes ideas silently on sticky notes (15 min)
-  3. Quick read-through of all ideas, no discussion or evaluation (8 min)
-- **Expected output:** 40-60 raw solution ideas across all HMW clusters
-- **Common facilitation mistakes to avoid:** Do not allow discussion or critique during the generation phase. If someone says "that won't work," redirect: "Write it down anyway."
-- **How the output feeds the next method:** The raw list of 40-60 ideas becomes the input for 2x2 Matrix prioritization.
+- **Selecting Only Divergent Methods:** Require at least one method from each activity type. If the PM selects only Generating methods, explicitly ask: "How will you prioritize these ideas? How will you test the top candidates before committing?"
 
-#### Method: 2x2 Matrix
-
-- **Activity type:** Prioritizing Ideas
-- **Why this method fits this session:** The team needs to evaluate ideas against two dimensions that matter for this problem: (1) impact on reducing unplanned breakdowns, and (2) feasibility given current fleet hardware and sensor capabilities.
-- **Time needed:** 30 minutes
-- **Setup instructions:** Draw the 2x2 grid on the Mural board. Label axes: X = Feasibility with current fleet hardware, Y = Impact on reducing unplanned breakdowns. Pre-define what "high" and "low" mean for each axis.
-- **Facilitation flow:**
-  1. Review the two axes and definitions (5 min)
-  2. As a group, place each idea on the matrix; brief discussion per idea (20 min)
-  3. Identify the top 3-5 ideas from the high-impact, high-feasibility quadrant (5 min)
-- **Expected output:** 3-5 prioritized solution ideas with the team aligned on why they rank highest
-- **Common facilitation mistakes to avoid:** Do not spend more than 1-2 minutes debating placement of any single idea. If there is disagreement, place it at the boundary and move on.
-- **How the output feeds the next method:** The top-ranked idea becomes the subject for paper prototyping.
-
-#### Method: Prototyping
-
-- **Activity type:** Testing
-- **Why this method fits this session:** The top idea needs a quick reality check before the team commits. A paper prototype of the alert workflow will reveal whether a depot manager can understand it without training.
-- **Time needed:** 35 minutes
-- **Setup instructions:** Prepare blank paper, markers, and sticky notes (physical or Mural equivalents). Sandra (the fleet operations SME) will role-play the depot manager receiving the alert.
-- **Facilitation flow:**
-  1. Derek sketches 3-4 screens or steps of the alert workflow (10 min)
-  2. Sandra walks through the prototype as if she received the alert at her desk (10 min)
-  3. Team observes and notes where Sandra hesitates, asks questions, or gets confused (during walkthrough)
-  4. Debrief: what worked, what confused, what is missing (15 min)
-- **Expected output:** A validated or revised alert workflow concept with specific feedback from a domain expert
-- **Common facilitation mistakes to avoid:** Do not explain the prototype to Sandra before she tries it. Let her figure it out. The confusion is the data.
-- **How the output feeds the next method:** Prototype feedback informs the Solution Hypothesis Statement.
-```
-
-##### Why This Works
-
-- **The problem statement is present and specific.** Every session goal connects back to "reducing unplanned breakdowns across a distributed fleet." The team knows exactly what problem they are solving.
-- **Participants are cross-functional.** Engineering and data science are present, but so are UX design, customer success, and an actual fleet operations expert. The fleet SME brings the customer perspective into the room.
-- **Methods cover all three activity types.** Generating (How Might We + Quantity Over Quality), Prioritizing (2x2 Matrix), and Testing (Prototyping). The team will not leave with just a list of ideas; they will leave with a tested concept.
-- **Methods are sequenced correctly.** Diverge first (HMW, then Quantity Over Quality), converge (2x2 Matrix), then test (Prototyping). Each method's output feeds the next.
-- **Time is realistic.** 2.5 hours for four methods, including a break. Each method has a specific time allocation that adds up correctly.
-- **Pre-work is defined.** Participants will arrive having read the problem statement and interview summary, so the session does not waste 30 minutes on context-setting.
-- **Facilitation guidance is concrete.** Each method includes step-by-step instructions, time budgets, and common mistakes. The PM can run this session even if they have never facilitated a design thinking workshop before.
+- **Treating the Agent as a Substitute for the Team Session:** Redirect the PM to session planning. The agent's job is to help prepare a productive session, not to replace it. The team generates the ideas; the agent helps structure the process.
 
----
-
-#### Example 2: Weak Session Plan
+- **Making Session Goals Too Vague:** Tie goals to the specific problem statement and include measurable outcomes: "Generate at least 15 solution ideas for [problem], prioritize to 3 candidates, and paper-prototype the top candidate."
 
-Same scenario, written poorly.
+- **Not Allocating Enough Time:** Budget minimum 90 minutes for a single-method session. Multi-method sessions need 2-3 hours. If the calendar does not allow it, split across multiple sessions rather than cramming everything into one.
 
-##### Session Plan (Weak)
+- **Selecting Too Many Methods:** Limit to 3-4 methods per session. If more methods are needed, plan a second session. Depth beats breadth in ideation.
 
-```markdown
-# Exploring the Solution Space: Session Plan
+- **Forgetting to Document Session Outcomes:** Assign a note-taker during the session. Plan 15 minutes at the end for documenting the top ideas, prioritization rationale, and agreed next steps. The session outcomes should be structured enough to feed the Solution Hypothesis step.
 
-## Product Context
+- **AI Ranks the Solutions for You:** Prioritize in the room with the catalog's prioritizing methods (Dot Voting, Money Voting, Value vs. Effort). Afterward, the agent may challenge each shortlisted hypothesis on value, viability, and feasibility. The team decides.
 
-- Product or service: Fleet maintenance tool
-- Target market segment: Trucking
-- Target customer: Fleet manager
+- **A How Might We That Is Too Broad, Too Narrow, or Hiding a Solution:** Draft three to five, test each for scope, cut any solution word, and check each traces to the problem statement.
 
-## Validated Problem Statement
+- **A Shortlist Nobody Can Defend:** Before moving on, the PM writes the case in their own words (Step 11): benefits tied to the problem, risks looked at widely, and the value chain from customer to business.
 
-Trucks break down and it's a problem.
+#### References
 
-## Session Parameters
-
-### Goals and Objectives
-
-1. Brainstorm solutions
-
-### Participants
-
-| Name / Role | Function | Perspective They Bring |
-|-------------|----------|----------------------|
-| Priya Nair | Engineering | Backend architecture |
-| James Park | Data Science | ML models |
-| Alex Kim | Engineering | Frontend development |
-| Wei Zhang | Engineering | DevOps and infrastructure |
-
-### Session Resources Needed
-
-- Collaboration tool: Zoom call
-- Meeting setup: Regular standup time slot
-- Time allocated: 30 minutes
-- Pre-work for participants: None
-- Documentation plan: Someone will take notes
-
-### Notes
-
-(none)
-
-## Method Selection
-
-| # | Method | Activity Type | Selected? |
-|---|--------|--------------|-----------|
-| 1 | How Might We? | Generating Ideas | [ ] |
-| 2 | "Bad Ideas" First Brainstorming | Generating Ideas | [ ] |
-| 3 | Quantity Over Quality | Generating Ideas | [x] |
-| 4 | Mind Mapping | Generating Ideas | [ ] |
-| 5 | 2x2 Matrix | Prioritizing Ideas | [ ] |
-| 6 | Dot Voting | Prioritizing Ideas | [ ] |
-| 7 | Money Voting | Prioritizing Ideas | [ ] |
-| 8 | 6-3-5 Method | Generating + Prioritizing | [ ] |
-| 9 | SCAMPER | Generating + Prioritizing | [ ] |
-| 10 | Prototyping | Testing | [ ] |
-| 11 | Customer Journey Maps | Generating + Testing | [ ] |
-
-### Selected Method Details
-
-#### Method: Quantity Over Quality
-
-- **Activity type:** Generating Ideas
-- **Why this method fits this session:** Good for brainstorming.
-- **Time needed:** 30 minutes
-- **Setup instructions:** Open a shared doc.
-- **Facilitation flow:**
-  1. Everyone writes ideas
-- **Expected output:** A list of ideas
-- **Common facilitation mistakes to avoid:** None noted
-- **How the output feeds the next method:** N/A (only one method)
-```
-
-##### Why This Fails
-
-- **No real problem statement.** "Trucks break down and it's a problem" is not a validated problem statement. It gives the team no direction for ideation. Solutions generated from this are solving a generic complaint, not a specific customer pain.
-- **Session goal is too vague.** "Brainstorm solutions" has no measurable outcome, no connection to the problem, and no way to tell if the session succeeded.
-- **Participants are all engineers.** No design, no customer success, no fleet operations expertise. The session will produce technically interesting ideas that may have no connection to what fleet managers actually need.
-- **30 minutes is not enough.** Barely enough time for introductions and one round of ideation. No time to prioritize, no time to test, no time to discuss.
-- **Only one method from one category.** Generating ideas with no plan to prioritize or test them. The team will leave with a list of ideas and no criteria to evaluate which ones are worth pursuing.
-- **No pre-work.** Participants arrive cold, so the first 10 minutes are spent explaining the context, leaving 20 minutes for actual work.
-- **No documentation plan.** "Someone will take notes" means nobody will. Session outcomes will be lost.
-- **No facilitation flow.** "Everyone writes ideas" is not facilitation guidance. There are no time limits, no rules about suspending judgment, no structure for sharing or discussing.
-
----
-
-#### Example 3: Drift Bug - Asking the Agent to Generate Solutions
-
-This example shows a common misuse pattern where the PM skips session preparation entirely.
-
-##### The Interaction
-
-```
-PM: "I have a validated problem statement about fleet managers not being able to
-detect mechanical failures early. Can you brainstorm 10 solution ideas for me?"
-
-Agent: [Should NOT generate solutions. Should redirect to session planning.]
-```
-
-##### What the PM Expects
-
-The PM expects the agent to act as a brainstorming partner, generating a list of solution concepts (e.g., "IoT sensor dashboard," "predictive maintenance alerts," "driver mobile app") that the PM can evaluate and select from.
-
-##### Why This Is Wrong
-
-This skips the entire purpose of Exploring the Solution Space. The skill exists to help the PM plan a **team session** where diverse perspectives generate, evaluate, and test ideas together.
-
-When the agent generates solutions:
-
-- **The ideas come from training data, not from the team.** The agent has no access to the engineering team's knowledge of sensor capabilities, the customer success team's understanding of depot workflows, or the fleet SME's practical experience with maintenance scheduling.
-- **The team has no ownership.** Ideas generated by an AI tool feel like assignments, not like creative contributions. The team builds on and champions ideas they generated themselves.
-- **Divergent thinking is short-circuited.** A single AI response cannot replicate the generative energy of six people building on each other's ideas in real time. The 6-3-5 method works because Person B reads Person A's idea and sees something Person A did not. That iterative building cannot happen with agent-generated lists.
-- **Prioritization is hollow.** If the PM asks the agent to also rank the ideas, the ranking reflects training data patterns, not the team's specific context, constraints, and strategic priorities.
-
-##### The Correct Response
-
-```
-Agent: "I can help you plan a design thinking session to explore solutions with
-your team, but I should not generate the solutions for you. The value of this
-step comes from your cross-functional team generating, prioritizing, and testing
-ideas together.
-
-Let me help you prepare:
-- What is your validated problem statement? (You mentioned fleet managers and
-  mechanical failure detection.)
-- Who should be in the room for this session?
-- What collaboration tools does your team use?
-
-We will select methods from the Productside catalog that fit your team size and
-available time, and I will provide facilitation guidance for each method."
-```
-
-##### The Deeper Pattern
-
-This drift bug is not unique to this skill. It appears whenever a process skill is involved:
-
-- In ps-empathy-interviews, the PM asks the agent to "generate interview findings" without conducting an interview
-- In ps-exploring-solution-space, the PM asks the agent to "brainstorm solutions" without running a session
-- In both cases, the agent produces plausible-sounding output that has no grounding in reality
-
-The guard is the same: the agent helps **prepare** and **document**, but the actual human activity (interviewing, brainstorming, facilitating) cannot be replaced.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-exploring-solution-space) for supporting source material and expanded examples.
 
 ## ps-solution-hypothesis | Solution Hypothesis
 
@@ -1052,6 +634,14 @@ Use this skill when you need to:
 - create a reviewable artifact for leadership or gate review processes
 
 This is not a PRD or feature specification. If the output reads like a requirements document or a feature list, the hypothesis has drifted into implementation territory.
+
+##### Usage Notes
+
+- The template produces a single artifact with five sections: Problem Statement (imported), Solution Summary, Solution Benefits, Risks and Assumptions, and Solution Hypothesis Statement (two-column If/Then).
+- Two hypothesis statements are required, not one: customer-focused (IF solution THEN customer benefit) and business-focused (IF customer benefit THEN business outcome). The THEN of the first becomes the IF of the second.
+- Evidence gathering is **artifacts only** - no web research offered. This skill synthesizes the PM's problem framing and solution exploration work.
+- Upstream: ps-framing-the-problem, ps-exploring-solution-space, ps-positioning-statement.
+- Downstream: lo-fi experimentation, risk assessment, roadmap planning, outcome tree alignment.
 
 #### Key Concepts
 
@@ -1116,64 +706,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-solution-hypothesis / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Template`) for the full scaffold.
+Use Template (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_solution_hypothesis_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -1189,7 +739,7 @@ That means:
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-pressure-test-solution-hypothesis.md (uploaded reference: `07-prompts.md`, section `ps-solution-hypothesis / Companion / 01-pressure-test-solution-hypothesis.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Confirm the Product and Customer Context
 
@@ -1309,139 +859,15 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Examples`).
-
-The example set includes:
-
-- a strong Productside-style solution hypothesis with all five sections, two chained If/Then statements, and specific benefits and risks
-- a weak, generic version with vague solution summary, feature-as-benefit language, and a single merged hypothesis
-- a drift-bug example showing the hypothesis written as a feature list instead of an If/Then chain
-- commentary on why the weak versions fail
-
-#### Common Pitfalls
-
-##### Pitfall 1: Writing a Feature List Instead of an If/Then Hypothesis
-
-**Symptom:** The "Solution Hypothesis Statement" section lists features: "We will build automated workflows, a self-service portal, and a reporting dashboard."
-
-**Consequence:** The team has a build plan but no expected outcome to validate against. There is no testable prediction, just a list of things to construct.
-
-**Fix:** Rewrite as an If/Then statement. The IF describes the solution. The THEN describes the expected outcome for the customer or business. "IF we provide automated workflows that reduce manual data entry, THEN field engineers will complete inspections 40% faster."
-
-##### Pitfall 2: Merging the Two Hypotheses into One
-
-**Symptom:** A single statement tries to cover both customer value and business outcome: "If we build this platform, then customers will be happier and we will grow revenue."
-
-**Consequence:** The chain from customer value to business outcome is lost. The team cannot tell whether they are testing for customer adoption or business impact, and they cannot diagnose which link broke if results disappoint.
-
-**Fix:** Separate into two statements. The customer-focused hypothesis connects solution to customer benefit. The business-focused hypothesis connects customer benefit to business outcome. The THEN of the first becomes the IF of the second.
-
-##### Pitfall 3: Making the Solution Summary Too Vague to Test
-
-**Symptom:** "Build a better platform for our customers" or "Create an integrated solution."
-
-**Consequence:** The hypothesis is untestable because the solution is undefined. What platform? Better how? Integrated with what?
-
-**Fix:** The solution summary must be specific enough that someone could design a test for it. "Implement an integrated HR management system with automated task workflows, centralized employee records, and a self-service portal for common requests" is testable.
-
-##### Pitfall 4: Listing Generic Risks
-
-**Symptom:** "Things might not work." "There could be challenges." "Users might not adopt it."
-
-**Consequence:** The team has no actionable risk mitigation plan. Generic risks cannot be investigated or resolved.
-
-**Fix:** Each risk should name a specific failure mode. "Resistance to change from employees accustomed to the current manual process" is specific. "Integration with the legacy HRIS may require custom middleware not in the current budget" is specific.
-
-##### Pitfall 5: Starting Without a Validated Problem Statement
-
-**Symptom:** The problem statement section is blank or contains a one-line assumption. The hypothesis jumps straight to "here is what we should build."
-
-**Consequence:** The hypothesis solves a problem that may not exist. Without a validated problem, the team cannot tell if the solution is addressing real customer friction or imagined friction.
-
-**Fix:** Complete ps-framing-the-problem first. If that is not possible, at minimum draft a problem statement and flag it as unvalidated. The hypothesis artifact should make visible whether the problem foundation is solid or assumed.
-
-##### Pitfall 6: Using Persona Names Instead of Role Names in the Hypothesis
-
-**Symptom:** "IF we save Henry time on manual tasks, THEN Henry will focus on strategic initiatives."
-
-**Consequence:** The hypothesis sounds like it serves one person rather than a customer population. Leadership cannot tell whether this is a scalable solution or a custom accommodation.
-
-**Fix:** Use role names: "IF we save HR specialists time on manual tasks, THEN they will redirect effort to strategic initiatives like talent development and workforce planning."
-
-##### Pitfall 7: Writing Benefits That Are Just Restated Features
-
-**Symptom:** The benefits list reads like a feature spec: "Automated data entry. Dashboard reporting. Self-service portal."
-
-**Consequence:** The team confuses what the product does with why it matters. Benefits should answer "so what?" Features answer "what does it do?"
-
-**Fix:** Push each benefit one level further. "Automated data entry" becomes "Time recovered from manual data entry, allowing specialists to focus on higher-value work." The feature is the mechanism; the benefit is the outcome the customer cares about.
-
-##### Pitfall 8: Writing a Business-Focused Hypothesis with No Measurable Outcome
-
-**Symptom:** "IF customers are happier, THEN the business will do better."
-
-**Consequence:** There is no way to tell whether the hypothesis was confirmed or refuted. "Do better" is not measurable.
-
-**Fix:** The business outcome must include a specific metric or target: "THEN we will reduce new employee onboarding time by 30%" or "THEN we will increase field inspection completion rates from 60% to 85% per quarter."
-
-##### Pitfall 9: AI Writes the Bet
-
-**Symptom:** The PM asks for a solution hypothesis and gets a complete, confident If/Then chain with benefits, risks, and a business outcome.
-
-**Consequence:** No one on the team chose the bet. When the test results come in, nobody knows which link was the real assumption.
-
-**Fix:** The PM drafts the chain; the skill tests each link. Rewrites come after the critique, as options.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-solution-hypothesis / Companion / README.md`) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Related Skills
-
-###### Upstream (input to this skill)
-
-- ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) - validated problem statement that anchors the hypothesis
-- ps-exploring-solution-space (uploaded reference: `04-discover-define.md`, section `ps-exploring-solution-space / Instructions`) - solution exploration that identifies the proposed solution direction
-- ps-positioning-statement (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Instructions`) - positioning work that informs how the solution is framed
-
-###### Downstream (uses output from this skill)
-
-- Outcome tree - the business outcome in hypothesis 2 should align with outcome tree metrics
-- Lo-fi experimentation - the testable hypothesis drives experiment design
-- Roadmap planning - the validated hypothesis informs what goes on the roadmap
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_solution_hypothesis_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 57-59: Template 12 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
-
 ### ps-solution-hypothesis / Template
 
-### Solution Hypothesis Statement
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Define** when you have a validated problem statement and have explored the solution space. You are ready to express your chosen solution direction as a testable hypothesis with expected customer and business outcomes.
 
 Upstream work that feeds this template: framing the problem (ps-framing-the-problem), exploring the solution space (ps-exploring-solution-space), positioning statement (ps-positioning-statement, if available).
 
-#### Template
+##### Template
 
 ```markdown
 # Solution Hypothesis Statement
@@ -1528,9 +954,9 @@ THEN [describe the measurable business outcome].
 - Recommended next validation steps:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Start with **Product Context** to anchor who this is for and whose problem the solution addresses.
 2. **Import the Problem Statement** from ps-framing-the-problem. Do not rewrite it.
@@ -1541,11 +967,11 @@ THEN [describe the measurable business outcome].
 7. Verify the chain between the two hypotheses.
 8. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
 
-##### The Five Sections Build in Order
+###### The Five Sections Build in Order
 
 Do not skip ahead to writing hypotheses without completing the preceding sections. The problem statement grounds the solution. The solution grounds the benefits. The benefits and risks inform the hypothesis. Writing the hypothesis without the groundwork produces untethered speculation.
 
-##### What Goes Where
+###### What Goes Where
 
 | Section | Contains | Does NOT Contain |
 |---------|----------|------------------|
@@ -1556,14 +982,14 @@ Do not skip ahead to writing hypotheses without completing the preceding section
 | Customer Hypothesis | IF solution THEN customer benefit | Business metrics, revenue targets |
 | Business Hypothesis | IF customer benefit THEN business outcome | Feature lists, solution descriptions |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-framing-the-problem provides the problem statement. ps-exploring-solution-space provides the chosen solution direction. ps-positioning-statement provides framing for how the solution fits the market.
 - **Downstream:** The validated hypothesis drives lo-fi experimentation, risk assessment, and roadmap planning. The business outcome in hypothesis 2 should connect to the outcome tree if one exists.
 
-##### Capacity Reference
+###### Capacity Reference
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the exact word and character budgets per field.
+See Template and capacity guidance (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Template`) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -1576,153 +1002,36 @@ See [technical/data/canonical_template_budgets.yaml](https://github.com/Products
 
 ### ps-solution-hypothesis / Examples
 
-### Solution Hypothesis Statement - Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Productside-Style Solution Hypothesis
+- **Strong:** If produce distributors receive earlier shipment-condition signals, then they can intervene before spoilage; if spoilage falls, then the business may improve margin. Define tests for both links.
+- **Weak:** "Add tracking, alerts, and dashboards" lists features without predicting a testable change.
+- **Drift to avoid:** Feature list as hypothesis: an If clause alone is insufficient. The Then clause must specify a customer or business result.
 
-Scenario: An agricultural technology company building a supply chain visibility platform for regional produce distributors managing perishable inventory across multiple grower relationships.
 
-```markdown
-# Solution Hypothesis Statement
+#### Common Pitfalls
 
-## Product Context
+- **Writing a Feature List Instead of an If/Then Hypothesis:** Rewrite as an If/Then statement. The IF describes the solution. The THEN describes the expected outcome for the customer or business. "IF we provide automated workflows that reduce manual data entry, THEN field engineers will complete inspections 40% faster."
 
-- Product or service: FreshTrack - perishable supply chain visibility platform
-- Target market segment: Regional produce distributors (50-200 grower relationships)
-- Primary customer (the person who uses or buys the product): Distribution Operations Manager
+- **Merging the Two Hypotheses into One:** Separate into two statements. The customer-focused hypothesis connects solution to customer benefit. The business-focused hypothesis connects customer benefit to business outcome. The THEN of the first becomes the IF of the second.
 
-## 1. Problem Statement
+- **Making the Solution Summary Too Vague to Test:** The solution summary must be specific enough that someone could design a test for it. "Implement an integrated HR management system with automated task workflows, centralized employee records, and a self-service portal for common requests" is testable.
 
-I am a Distribution Operations Manager coordinating perishable produce shipments from dozens of independent growers using phone calls, spreadsheets, and faxed invoices. Trying to minimize spoilage losses and fill customer orders completely from available inventory. But harvest timing, transit delays, and cold chain gaps cause spoilage and stockouts that I discover only when trucks arrive at the warehouse. Because each grower tracks their own harvest and shipment schedule independently, and there is no shared visibility into what is in transit or at what temperature. Which makes me feel unable to plan reliably and anxious about the margin erosion I cannot prevent.
+- **Listing Generic Risks:** Each risk should name a specific failure mode. "Resistance to change from employees accustomed to the current manual process" is specific. "Integration with the legacy HRIS may require custom middleware not in the current budget" is specific.
 
-## 2. Solution Summary
+- **Starting Without a Validated Problem Statement:** Complete ps-framing-the-problem first. If that is not possible, at minimum draft a problem statement and flag it as unvalidated. The hypothesis artifact should make visible whether the problem foundation is solid or assumed.
 
-Provide a supply chain visibility platform that connects grower harvest logs, transit tracking, and cold chain monitoring into a single shared view, giving distribution operations managers advance notice of what is arriving, when, and in what condition.
+- **Using Persona Names Instead of Role Names in the Hypothesis:** Use role names: "IF we save HR specialists time on manual tasks, THEN they will redirect effort to strategic initiatives like talent development and workforce planning."
 
-## 3. Solution Benefits
+- **Writing Benefits That Are Just Restated Features:** Push each benefit one level further. "Automated data entry" becomes "Time recovered from manual data entry, allowing specialists to focus on higher-value work." The feature is the mechanism; the benefit is the outcome the customer cares about.
 
-- Early warning of spoilage risk, allowing rerouting before product loss occurs
-- Improved order fill rates through better visibility into available inventory
-- Reduced manual coordination time spent calling growers and carriers for status updates
-- Stronger grower relationships through shared data and fewer disputed shipments
+- **Writing a Business-Focused Hypothesis with No Measurable Outcome:** The business outcome must include a specific metric or target: "THEN we will reduce new employee onboarding time by 30%" or "THEN we will increase field inspection completion rates from 60% to 85% per quarter."
 
-## 4. Risks and Assumptions
+- **AI Writes the Bet:** The PM drafts the chain; the skill tests each link. Rewrites come after the critique, as options.
 
-- Growers with limited technology adoption may resist installing tracking hardware or using a new system
-- Cold chain sensor hardware costs may exceed what small distributors can absorb upfront
-- Cellular connectivity gaps in rural growing regions may cause data transmission delays
-- Existing ERP systems at distributor warehouses may require custom integration work
+#### References
 
-## 5. Solution Hypothesis Statement
-
-### Customer-Focused Hypothesis
-
-IF we provide distribution operations managers with a shared supply chain view that connects grower harvest data, transit tracking, and cold chain monitoring in one platform, THEN they will reduce spoilage losses and improve order fill rates by catching problems before trucks arrive at the warehouse.
-
-### Business-Focused Hypothesis
-
-IF distribution operations managers reduce spoilage losses and improve order fill rates through early problem detection, THEN we will achieve our goal of reducing distributor spoilage-related margin loss by 25% within the first growing season and increasing average order fill rates from 82% to 93%.
-```
-
-##### Why This Works
-
-- **All five sections present and in order.** Problem statement, solution summary, benefits, risks, and two-column hypothesis are all complete.
-- **Problem statement is imported, not rewritten.** It reads as a ps-framing-the-problem output, with the five-stem structure visible in the narrative.
-- **Solution summary is specific and testable.** "Connects grower harvest logs, transit tracking, and cold chain monitoring into a single shared view" describes a concrete solution. Not "build a better platform."
-- **Benefits are outcomes, not features.** "Early warning of spoilage risk, allowing rerouting before product loss occurs" is an outcome. "Dashboard" would be a feature.
-- **Risks are specific and testable.** "Growers with limited technology adoption may resist installing tracking hardware" is a risk the team can investigate through grower interviews. "Things might go wrong" is not.
-- **Two hypotheses chain correctly.** The THEN of hypothesis 1 ("reduce spoilage losses and improve order fill rates") becomes the IF of hypothesis 2. The chain is unbroken.
-- **Customer hypothesis focuses on customer value.** It describes what the customer gains, not what the business earns.
-- **Business hypothesis includes measurable outcomes.** "Reducing spoilage-related margin loss by 25%" and "increasing order fill rates from 82% to 93%" are specific, verifiable targets.
-- **Role names used throughout.** "Distribution operations managers" appears in both hypotheses, not a persona name like "Carlos."
-- **No implementation details.** The solution summary describes what the platform provides, not how it is architected.
-
----
-
-#### Example 2: Weak Generic Solution Hypothesis
-
-Same scenario, written poorly.
-
-```markdown
-# Solution Hypothesis Statement
-
-## Product Context
-
-- Product or service: Supply chain platform
-- Target market segment: Agriculture
-- Primary customer (the person who uses or buys the product): Supply chain professional
-
-## 1. Problem Statement
-
-Supply chain management is challenging in the agriculture industry due to the perishable nature of products and complex logistics networks.
-
-## 2. Solution Summary
-
-Build a better platform that helps with supply chain visibility and efficiency improvements.
-
-## 3. Solution Benefits
-
-- Better visibility
-- Improved efficiency
-- Cost savings
-- Better relationships
-
-## 4. Risks and Assumptions
-
-- Users might not adopt the new system
-- There could be technical challenges
-- Budget constraints
-- Competition from other solutions
-
-## 5. Solution Hypothesis Statement
-
-If we build an integrated supply chain platform with real-time tracking, automated alerts, cold chain monitoring, dashboards, grower portals, and API integrations, then our customers will be happier and more efficient, which will help us grow revenue and expand into new markets.
-```
-
-##### Why This Fails
-
-- **Problem statement is not imported from upstream.** It is a generic one-sentence observation about the industry, not a validated problem framed from the customer's perspective. There is no five-stem structure, no specific persona, no emotional impact.
-- **Solution summary is untestable.** "Build a better platform" describes nothing specific. Better than what? Platform for whom? What does it actually do?
-- **Benefits are feature labels, not outcomes.** "Better visibility" and "improved efficiency" are abstract words with no concrete meaning. Visibility into what? Efficiency measured how? These cannot be validated.
-- **Risks are generic worries.** "Users might not adopt" and "technical challenges" apply to any product in any industry. They give the team nothing to investigate.
-- **Only one hypothesis, not two.** The customer-to-business chain is collapsed into a single run-on sentence. There is no separation between customer value and business outcome.
-- **The hypothesis is a feature list.** "Real-time tracking, automated alerts, cold chain monitoring, dashboards, grower portals, and API integrations" is a feature spec, not an If/Then hypothesis. It says what to build, not what outcome to expect.
-- **"Happier and more efficient" is not measurable.** There is no specific outcome. How would the team know if this hypothesis was confirmed or refuted?
-- **No role specificity.** "Supply chain professional" and "our customers" are too broad. Who, specifically, benefits?
-
----
-
-#### Example 3: Drift Bug - Feature List Disguised as Hypothesis
-
-```markdown
-## 5. Solution Hypothesis Statement
-
-### Customer-Focused Hypothesis
-
-IF we build a platform with the following features:
-- Real-time GPS tracking for all shipments
-- IoT temperature sensors with automated alerts
-- Grower self-service portal for harvest reporting
-- Warehouse receiving dashboard with ETA predictions
-- Mobile app for drivers with delivery confirmation
-
-THEN distribution operations managers will have better tools for managing their supply chain.
-
-### Business-Focused Hypothesis
-
-IF distribution operations managers have better tools, THEN we will be able to charge a premium subscription price, expand into adjacent verticals like dairy and seafood, and build a defensible market position through data network effects.
-```
-
-##### Why This Is Wrong
-
-The structure looks like two If/Then statements, but both are broken:
-
-- **Hypothesis 1 is a feature list, not a solution description.** The IF lists five specific features rather than describing the value the solution provides. A hypothesis should say what the solution does for the customer, not enumerate every component. "IF we provide a shared supply chain view connecting harvest data, transit, and cold chain monitoring" is a solution description. A bulleted feature roadmap is not.
-- **The THEN of hypothesis 1 is vague.** "Better tools for managing their supply chain" is not a specific customer benefit. Better how? What outcome changes? "Reduce spoilage losses and improve order fill rates" is specific. "Better tools" is a tautology.
-- **Hypothesis 2 jumps to go-to-market strategy.** Premium pricing, vertical expansion, and data network effects are business strategy items, not outcomes tied to the customer benefit above. The business hypothesis should say: if we achieve X customer benefit, then Y measurable business result follows. Instead, it leaps from "better tools" to a three-part strategy pitch.
-- **The chain is broken.** The THEN of hypothesis 1 ("better tools") does not clearly become the IF of hypothesis 2 ("have better tools"). Technically the words match, but because "better tools" is meaningless, the chain carries no information. The connection is syntactic, not logical.
-
-**Fix:** Rewrite hypothesis 1 with a solution description (not a feature list) in the IF and a specific customer outcome in the THEN. Then write hypothesis 2 where the IF restates that customer outcome and the THEN names a measurable business result. Strip the go-to-market strategy into a separate document; it does not belong in the hypothesis.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-solution-hypothesis) for supporting source material and expanded examples.
 
 ## ps-positioning-statement | Positioning Statement
 
@@ -1751,6 +1060,17 @@ Use this skill when you need to:
 - document competitive differentiation in outcome terms, not feature lists
 
 Most Product Managers are working on a product that is already out in market. If that is your situation, find your product's existing positioning statement and see if adjustments are needed. If there is no existing positioning, you will craft one here.
+
+##### Usage Notes
+
+- The positioning statement uses the Productside seven-element formula: For / Who / The / Is a / That / Unlike / Our product gives. The order is fixed and all elements are required.
+- The formula splits into two halves: Value Proposition (For through That) and Statement of Differentiation (Unlike, Our product gives).
+- "That" must be a benefit (customer outcome), not a feature (product capability).
+- "Unlike" must name a real competitive alternative, including status quo.
+- "Our product gives" must use outcome language, not feature language.
+- Upstream: ps-proto-persona (For element), ps-jobs-to-be-done (Who element), ps-problem-identification (need/opportunity).
+- Downstream: solution hypothesis, product requirements, marketing messaging.
+- This skill qualifies for both web research and user artifacts during evidence gathering.
 
 #### Key Concepts
 
@@ -1839,64 +1159,24 @@ The Playbook casts AI as a **critic of a draft the PM has already written**. It 
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-positioning-statement / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Template`) for the full scaffold.
+Use Template (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_positioning_statement_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -1919,7 +1199,7 @@ The artifact comes first. Commentary is secondary.
 
 ##### If the PM Brings a Draft
 
-Work through it one point at a time and wait for the PM's answers before rewriting (mirrors prompts/01 (uploaded reference: `07-prompts.md`, section `ps-positioning-statement / Companion / 01-pressure-test-positioning.md`)):
+Work through it one point at a time and wait for the PM's answers before rewriting (mirrors the critique guidance in this Play):
 
 1. **Format:** is every element of the formula present?
 2. **One persona:** if the statement could fit any customer, point at the words that make it generic.
@@ -2068,146 +1348,15 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Examples`).
-
-The example set includes:
-
-- a strong Productside-style positioning statement with competitive matrix
-- a weak, generic version with feature-based differentiation
-- a drift-bug example showing feature-list differentiation masquerading as outcomes
-- commentary on why the weak versions fail
-
-#### Common Pitfalls
-
-##### Pitfall 1: Features Instead of Benefits in the "That" Element
-
-**Symptom:** "That provides real-time dashboards, automated alerts, and API integrations."
-
-**Consequence:** The positioning statement reads like a product spec, not a value proposition. Stakeholders cannot use it to align on why the product matters to customers.
-
-**Fix:** Rewrite the "That" element as the outcome the customer experiences: "That gives operations teams immediate visibility into site performance without waiting for weekly reports."
-
-##### Pitfall 2: Strawman Competitor in the "Unlike" Element
-
-**Symptom:** The PM names a weak, obscure, or irrelevant competitor to make differentiation easy. "Unlike SmallStartupNobodyUses..."
-
-**Consequence:** The positioning statement does not address the real competitive threat. The sales team cannot use it because customers are comparing against different alternatives.
-
-**Fix:** Name the alternative the target customer would actually choose. If the biggest competitor is Salesforce, name Salesforce. If the real alternative is the status quo (spreadsheets and email), name that. The "Unlike" should make sales reps nod, not roll their eyes.
-
-##### Pitfall 3: Empty Adjectives in Differentiation
-
-**Symptom:** "Our product gives innovative, seamless, best-in-class, cutting-edge solutions."
-
-**Consequence:** The differentiation is meaningless. Every competitor claims the same adjectives. The statement provides no filter for product decisions or purchasing.
-
-**Fix:** Replace adjectives with specific outcomes. "Innovative" becomes "reduces onboarding time from weeks to days." "Seamless" becomes "works within the tools the team already uses without requiring migration."
-
-##### Pitfall 4: Product Category Too Broad or Too Narrow
-
-**Symptom:** "Is a software platform" (too broad) or "Is a cloud-native Kubernetes-orchestrated microservices framework" (too narrow).
-
-**Consequence:** Too broad - the customer does not know what to compare it to. Too narrow - the customer does not know what it is.
-
-**Fix:** Use the category label the target customer would use when searching for solutions or describing the product to a colleague. "HR automation tool" - an HR specialist knows what that means and can compare it to alternatives in the same category.
-
-##### Pitfall 5: Target Customer Too Generic or Defaulting to a Tech Role
-
-**Symptom:** "For businesses" or "For data engineers and DevOps teams" when the product actually serves operations managers.
-
-**Consequence:** The positioning statement does not resonate with the actual buyer or user because it was written for the wrong audience.
-
-**Fix:** Name the person who experiences the product's value in the field. If the product is a warehouse labor coordination platform, the target customer is "regional distribution center operations managers," not "businesses" and not "software engineers."
-
-##### Pitfall 6: The Need/Opportunity Does Not Match Discovery Work
-
-**Symptom:** The "Who" element uses generic language ("who want to be more efficient") that does not connect to validated jobs, pains, or outcomes from prior discovery.
-
-**Consequence:** The positioning statement floats free of evidence. The team has done discovery work but the positioning ignores it.
-
-**Fix:** Pull the "Who" language directly from JTBD artifacts, problem identification work, or empathy interview findings. The need should sound like something a customer actually said, not something a marketer assumed.
-
-##### Pitfall 7: Differentiation in Feature Terms Instead of Outcome Terms
-
-**Symptom:** "Our product gives AI-powered analytics, real-time dashboards, and seamless integration with existing systems."
-
-**Consequence:** The differentiation describes what the product has, not what the customer gets. Competitors can (and will) match features. Outcome-based differentiation is harder to copy.
-
-**Fix:** Rewrite as outcomes: "Our product gives real-time data access, streamlined workflows and automates repetitive tasks." The customer can verify these claims from their own experience.
-
-##### Pitfall 8: Forgetting Status Quo as a Valid Competitive Alternative
-
-**Symptom:** The PM only considers named software competitors and ignores that many customers are currently using spreadsheets, email, manual processes, or doing nothing.
-
-**Consequence:** The positioning misses the most common competitive alternative. In many markets, the biggest competitor is not another product - it is inertia.
-
-**Fix:** Ask: what is the customer doing today without your product? If the answer is "spreadsheets and manual processes," that is a valid and often the most important "Unlike" to address.
-
-##### Pitfall 9: AI Drafts Before the PM Does
-
-**Symptom:** The PM asks for a positioning statement, gets a polished one, and keeps it because it sounds good.
-
-**Consequence:** The words are the model's, not the team's. No one has decided what the claims are, so no one can defend them to a customer or a sales team.
-
-**Fix:** Coach the PM to draft first, then critique. If the PM asks for a draft, tag it `[AI-SUGGESTED, VALIDATE THIS]` and run the same critique on it.
-
-##### Pitfall 10: One Statement Stretched Across Segments
-
-**Symptom:** A single statement tries to speak to the frontline user, the budget holder, and two different industries at once. "For operations teams and executives across logistics and manufacturing who..."
-
-**Consequence:** No persona recognizes their need in it. It loses every one of them to a competitor that speaks to them directly.
-
-**Fix:** One persona, one statement. Rerun the exercise for each additional persona.
-
-##### Pitfall 11: Claims Stronger Than the Evidence
-
-**Symptom:** "Cuts dispatch time in half" or "the only platform that..." with no customer evidence or competitive research behind it. Competitor details came from the model and were never checked.
-
-**Consequence:** Polish is mistaken for proof. The claim fails the first time a prospect or a competitor tests it.
-
-**Fix:** Test every claim for relevance, credibility, and differentiation. Verify competitor details before they shape the "Unlike" element. Soften or drop any claim the evidence can't carry.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Template`) - competitive matrix and seven-element positioning formula
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-positioning-statement / Companion / README.md`) - copy-paste prompt for chat-based AI tools (1: pressure-test your positioning statement, rerun per persona)
-- examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Related Skills
-
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - the "For" element should align with the persona built here
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - the "Who" element should echo validated jobs and outcomes
-- ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`) - validated problems inform the need/opportunity element
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_positioning_statement_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 60-64: Template 13 of 24 there, with the AI overview on slide 62 and prompt on slide 63. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-
 ### ps-positioning-statement / Template
 
-### Positioning Statement
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Define** to articulate your product's unique value proposition and differentiation. This is where you cross from investigation into definition - the positioning statement aligns stakeholders, guides marketing, and filters product decisions.
 
 Most Product Managers are working on a product already in market. If that is your situation, find your product's existing positioning statement first and evaluate whether it needs adjustment.
 
-#### Template
+##### Template
 
 ```markdown
 # Positioning Statement
@@ -2277,9 +1426,9 @@ Map your product and competitors on the grid to identify positioning opportunity
 - Recommended next validation steps:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Start with **Product Context** to anchor who this is for and whether existing positioning exists.
 2. Optionally fill the **Competitive Matrix** to identify differentiating dimensions and positioning opportunity. Skip if you already know your competitive landscape.
@@ -2287,7 +1436,7 @@ Map your product and competitors on the grid to identify positioning opportunity
 4. Run the quality checks before finalizing.
 5. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
 
-##### The Seven Elements
+###### The Seven Elements
 
 The Productside formula has a fixed structure. Fill each element in order:
 
@@ -2301,7 +1450,7 @@ The Productside formula has a fixed structure. Fill each element in order:
 | Unlike | Competitive alternative | ~8-12 | Real alternative the customer would actually choose |
 | Our product gives | Primary differentiation | ~15-20 | Outcome-based, NOT feature-based |
 
-##### Hard Constraints
+###### Hard Constraints
 
 These are not suggestions - they are rules:
 
@@ -2310,15 +1459,15 @@ These are not suggestions - they are rules:
 - **"Our product gives" must use outcome language.** If it reads like a feature list, rewrite it as customer results.
 - **No empty adjectives.** Strip out "innovative," "seamless," "best-in-class," "cutting-edge," and similar filler.
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** Proto-persona (the "For" element should match), JTBD (the "Who" element should echo validated jobs and outcomes), Problem Identification (validated problems inform the need)
 - **Downstream:** Solution hypothesis, product requirements, marketing messaging
 - **Parallel:** The competitive matrix can inform or be informed by market sizing work
 
-##### Capacity Reference
+###### Capacity Reference
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the exact word and character budgets per field.
+See Template and capacity guidance (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Template`) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -2334,131 +1483,40 @@ See [technical/data/canonical_template_budgets.yaml](https://github.com/Products
 
 ### ps-positioning-statement / Examples
 
-### Positioning Statement - Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Productside-Style Positioning Statement
+- **Strong:** For farm operations managers who need timely soil decisions, position the monitoring product around that benefit and a real alternative such as periodic manual sampling. Fill all seven elements.
+- **Weak:** "An innovative platform for everyone" provides neither a specific customer nor a credible distinction.
+- **Drift to avoid:** Feature-list differentiation: sensors and dashboards are capabilities. Explain the customer outcome that makes the alternative less attractive.
 
-Scenario: A sustainable agriculture technology company building a soil health monitoring platform for mid-size row crop farm operations managers.
 
-```markdown
-# Positioning Statement
+#### Common Pitfalls
 
-## Product Context
+- **Features Instead of Benefits in the "That" Element:** Rewrite the "That" element as the outcome the customer experiences: "That gives operations teams immediate visibility into site performance without waiting for weekly reports."
 
-- Product or service: TerraSync - soil health monitoring platform
-- Target market segment: Mid-size row crop farming operations (500-5,000 acres)
-- Primary user persona: Farm Operations Manager
-- Buyer persona (if different): Farm Owner / Operator
+- **Strawman Competitor in the "Unlike" Element:** Name the alternative the target customer would actually choose. If the biggest competitor is Salesforce, name Salesforce. If the real alternative is the status quo (spreadsheets and email), name that. The "Unlike" should make sales reps nod, not roll their eyes.
 
-## 1. Competitive Matrix
+- **Empty Adjectives in Differentiation:** Replace adjectives with specific outcomes. "Innovative" becomes "reduces onboarding time from weeks to days." "Seamless" becomes "works within the tools the team already uses without requiring migration."
 
-| | Low Real-Time Monitoring | High Real-Time Monitoring |
-|---|---|---|
-| **High Agronomic Insight** | County extension services | **TerraSync** |
-| **Low Agronomic Insight** | Manual soil sampling labs | IoT sensor vendors (Arable, CropX) |
+- **Product Category Too Broad or Too Narrow:** Use the category label the target customer would use when searching for solutions or describing the product to a colleague. "HR automation tool" - an HR specialist knows what that means and can compare it to alternatives in the same category.
 
-- X-Axis differentiating factor: Real-Time Monitoring
-- Y-Axis differentiating factor: Agronomic Insight (actionable recommendations, not just data)
-- Competitors mapped: County extension services (high insight, low real-time), manual soil sampling labs (low both), IoT sensor vendors like Arable and CropX (high real-time, low agronomic insight)
-- Positioning opportunity: High real-time monitoring AND high agronomic insight - sensor vendors give data but not recommendations; extension services give recommendations but not continuous monitoring
+- **Target Customer Too Generic or Defaulting to a Tech Role:** Name the person who experiences the product's value in the field. If the product is a warehouse labor coordination platform, the target customer is "regional distribution center operations managers," not "businesses" and not "software engineers."
 
-## 2. Positioning Statement
+- **The Need/Opportunity Does Not Match Discovery Work:** Pull the "Who" language directly from JTBD artifacts, problem identification work, or empathy interview findings. The need should sound like something a customer actually said, not something a marketer assumed.
 
-### Value Proposition
+- **Differentiation in Feature Terms Instead of Outcome Terms:** Rewrite as outcomes: "Our product gives real-time data access, streamlined workflows and automates repetitive tasks." The customer can verify these claims from their own experience.
 
-**For** farm operations managers responsible for soil health across hundreds to thousands of acres
+- **Forgetting Status Quo as a Valid Competitive Alternative:** Ask: what is the customer doing today without your product? If the answer is "spreadsheets and manual processes," that is a valid and often the most important "Unlike" to address.
 
-**Who** need to make timely input decisions without waiting weeks for lab results or relying on calendar-based application schedules
+- **AI Drafts Before the PM Does:** Coach the PM to draft first, then critique. If the PM asks for a draft, tag it `[AI-SUGGESTED, VALIDATE THIS]` and run the same critique on it.
 
-**The** TerraSync
+- **One Statement Stretched Across Segments:** One persona, one statement. Rerun the exercise for each additional persona.
 
-**Is a** soil health monitoring platform
+- **Claims Stronger Than the Evidence:** Test every claim for relevance, credibility, and differentiation. Verify competitor details before they shape the "Unlike" element. Soften or drop any claim the evidence can't carry.
 
-**That** enables operations managers to make confident input decisions based on current field conditions instead of outdated assumptions
+#### References
 
-### Statement of Differentiation
-
-**Unlike** manual soil sampling and calendar-based application schedules
-
-**Our product gives** continuous field-level visibility into soil nutrient status so operations managers can reduce input waste and respond to conditions before crop stress becomes visible
-```
-
-##### Why This Works
-
-- **"For" names the actual customer.** "Farm operations managers responsible for soil health across hundreds to thousands of acres" - you can picture this person. It is not "businesses" or "farmers" (too broad) and not a tech role.
-- **"Who" echoes real pain.** "Need to make timely input decisions without waiting weeks for lab results" - this is language that comes from validated discovery, not generic filler. The pain is specific and recognizable to anyone in row crop operations.
-- **"That" is a benefit, not a feature.** "Enables operations managers to make confident input decisions based on current field conditions" - the customer gets confidence and timeliness. The statement does not say "provides IoT sensors and machine learning analytics."
-- **"Unlike" names the real alternative.** "Manual soil sampling and calendar-based application schedules" - this is what the customer actually does today. It is not a strawman competitor. For most mid-size farms, the real competitor is the status quo, not another software product.
-- **"Our product gives" uses outcome language.** "Continuous field-level visibility... so operations managers can reduce input waste and respond to conditions before crop stress becomes visible" - the differentiation is stated as what the customer experiences, not what the product contains.
-- **Competitive matrix identifies real white space.** The matrix reveals that IoT sensor vendors give data without agronomic insight, while extension services give insight without real-time data. TerraSync's positioning occupies the high-high quadrant.
-
----
-
-#### Example 2: Weak Generic Positioning Statement
-
-Same scenario, written poorly.
-
-```markdown
-# Positioning Statement
-
-## 2. Positioning Statement
-
-### Value Proposition
-
-**For** agricultural businesses
-
-**Who** want to improve efficiency
-
-**The** TerraSync Platform
-
-**Is a** innovative software solution
-
-**That** provides cutting-edge IoT sensors, AI-powered analytics dashboards, and seamless API integration with existing farm management systems
-
-### Statement of Differentiation
-
-**Unlike** other farm tech startups
-
-**Our product gives** best-in-class soil monitoring with innovative machine learning algorithms, real-time sensor connectivity, and a seamless user experience
-```
-
-##### Why This Fails
-
-- **"For" is too generic.** "Agricultural businesses" could mean anything from a backyard greenhouse to Cargill. The positioning does not tell you who the customer is.
-- **"Who" is meaningless.** "Want to improve efficiency" applies to every business on earth. It does not connect to any validated customer need.
-- **"Is a" claims a non-category.** "Innovative software solution" is not a product category anyone searches for or describes to a colleague. "Soil health monitoring platform" is a category. "Innovative software solution" is marketing filler.
-- **"That" is a feature list.** "Provides cutting-edge IoT sensors, AI-powered analytics dashboards, and seamless API integration" - this is a product spec, not a benefit. The customer does not care about API integration. They care about making better input decisions.
-- **"Unlike" is a strawman.** "Other farm tech startups" - which ones? This avoids naming the real alternative, which makes the differentiation meaningless. The real competitor is often manual soil sampling and calendar-based schedules, not "other startups."
-- **"Our product gives" is feature-based with empty adjectives.** "Best-in-class," "innovative," "seamless" - these words add no information. Every competitor uses them. The differentiation describes what the product has (machine learning algorithms, sensor connectivity), not what the customer gets (reduced input waste, timely decisions).
-- **No competitive matrix.** Without the matrix exercise, the PM has not identified which dimensions actually differentiate their product. The result is generic positioning that could describe any ag-tech product.
-
----
-
-#### Example 3: Drift Bug - Feature-List Differentiation
-
-```markdown
-### Statement of Differentiation
-
-**Unlike** CropX and Arable sensor platforms
-
-**Our product gives** AI-powered predictive analytics, real-time soil nutrient dashboards, automated irrigation recommendations, integration with John Deere Operations Center and Climate FieldView, and a mobile-first interface optimized for in-field use
-```
-
-##### Why This Is Wrong
-
-The "Our product gives" element is a feature inventory, not an outcome statement. Each item describes what the product has, not what the customer gets:
-
-- "AI-powered predictive analytics" - this is a technology choice, not a customer outcome. The outcome is "the ability to anticipate soil nutrient deficiency before it affects yield."
-- "Real-time soil nutrient dashboards" - a dashboard is a feature. The outcome is "continuous visibility into field conditions without waiting for lab results."
-- "Automated irrigation recommendations" - a capability. The outcome is "confidence that water inputs match actual field needs."
-- "Integration with John Deere Operations Center and Climate FieldView" - an implementation detail. The outcome is "working within the tools the operations manager already uses, without requiring data migration."
-- "Mobile-first interface optimized for in-field use" - a design decision. The outcome is "access to field-level data while standing in the field, not just from the office."
-
-**Fix:** Rewrite the differentiation as outcomes the customer experiences:
-
-**Our product gives** continuous field-level insight that lets operations managers anticipate nutrient needs before crop stress appears, reduce unnecessary input applications, and act on current conditions from wherever they are - field, truck, or office
-
-The customer can verify every claim from their own experience. They cannot verify "AI-powered predictive analytics" - that is something the engineering team knows, not something the farm operations manager sees.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-positioning-statement) for supporting source material and expanded examples.
 
 ## ps-lofi-experimentation | Lo-fi Experimentation
 
@@ -2524,7 +1582,7 @@ Specifying thresholds before results arrive forces the team to act on results ra
 
 ##### Lo-fi Artifacts Are Also Communication Tools
 
-Testing is the primary purpose of lo-fi experimentation. But a lo-fi artifact serves a second, equally valuable function: giving cross-functional stakeholders — designers, engineers, executives — a concrete, shared picture of the proposed solution before any build investment is made.
+Testing is the primary purpose of lo-fi experimentation. But a lo-fi artifact serves a second, equally valuable function: giving cross-functional stakeholders  -  designers, engineers, executives  -  a concrete, shared picture of the proposed solution before any build investment is made.
 
 A clickable prototype or Wizard-of-Oz simulation makes the product concept tangible enough for meaningful conversation. It surfaces disagreements about user experience early, when the cost of changing direction is low. Product leaders can also use lo-fi artifacts to share the product vision with executives, making the problem and proposed solution vivid in a way that slides and written descriptions cannot.
 
@@ -2555,64 +1613,24 @@ The reasoning stays with the PM. They name the assumptions, rank the risk, decid
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-lofi-experimentation / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `04-discover-define.md`, section `ps-lofi-experimentation / Template`) for the scaffold.
+Use Template (uploaded reference: `04-discover-define.md`, section `ps-lofi-experimentation / Template`) for the scaffold.
 
-See the source play pages in assets/ps_lofi_experimentation_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -2649,7 +1667,7 @@ If there are no upstream artifacts at all, say so and note that the assumptions 
 
 ##### Step 3: Record and Widen the Assumptions
 
-**The PM lists the assumptions first**, with their team: what must be true for the solution to create value for the customer and return value to the business. Drafting first is what lets you widen their thinking instead of doing it for them. Then (mirrors prompts/01 (uploaded reference: `07-prompts.md`, section `ps-lofi-experimentation / Companion / 01-find-riskiest-assumption.md`)):
+**The PM lists the assumptions first**, with their team: what must be true for the solution to create value for the customer and return value to the business. Drafting first is what lets you widen their thinking instead of doing it for them. Then (mirrors the critique guidance in this Play):
 
 1. **Widen the list.** Ask what they may be taking for granted across customer behavior, adoption, and the business. You may name candidate assumptions they missed, marked as candidates for them to judge, not facts.
 2. **Test each against the bar:**
@@ -2679,7 +1697,7 @@ These three (riskiest assumption, decision, win-and-failure condition) are the f
 
 ##### Step 5: Write the Hypothesis Statement
 
-Turn the riskiest assumption into a testable If/Then statement (mirrors prompts/02 (uploaded reference: `07-prompts.md`, section `ps-lofi-experimentation / Companion / 02-design-leanest-test.md`)):
+Turn the riskiest assumption into a testable If/Then statement (mirrors the critique guidance in this Play):
 
 "If we [describe what we will expose the customer to or simulate], then [describe the specific observable result we expect to see]."
 
@@ -2737,141 +1755,9 @@ After completing the artifact, offer three options:
 2. Design a second experiment for the remaining assumption
 3. Proceed to ps-risk-assessment once the critical assumption is validated
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-lofi-experimentation / Examples`).
-
-The example set includes:
-
-- a strong Productside-style lo-fi experiment plan
-- a weak version with the most common failure modes
-- a drift-bug example with a specific named failure and fix guidance
-
-#### Common Pitfalls
-
-##### Pitfall 1: Treating Assumptions as Requirements
-
-**Symptom:** Every assumption reads as a settled fact or a design decision rather than an uncertain belief.
-
-**Consequence:** There is nothing to test. The "experiment" confirms what was already decided.
-
-**Fix:** An assumption should create doubt. Write each one as something you believe but are not certain of. Ask: "What would we do differently if this turned out to be false?" If the answer is "nothing," it is not a real assumption.
-
-##### Pitfall 2: Hypothesis Without a Threshold
-
-**Symptom:** The THEN reads as a vague directional improvement: "customers will find it easier," "users will be more engaged," "adoption will improve."
-
-**Consequence:** Any result can be interpreted as confirmation. The decision rule becomes meaningless.
-
-**Fix:** Add a specific, countable threshold. At least 65% task completion. Average time under 8 minutes. Three out of five participants request a follow-up demo. Without a number or a specific observable behavior, the hypothesis cannot be falsified.
-
-##### Pitfall 3: Testing What Is Easy, Not What Is Risky
-
-**Symptom:** The selected assumption is one the team is fairly confident about. The harder, more uncertain assumption is left untested.
-
-**Consequence:** The experiment produces confidence without reducing real risk.
-
-**Fix:** Ask which assumption, if false, would most change the solution direction. That is the one to test first, regardless of how uncomfortable the answer might be.
-
-##### Pitfall 4: Missing the Decision Rule
-
-**Symptom:** The experiment has a metric but no specification of what the team will do based on results.
-
-**Consequence:** Post-experiment rationalization. The team finds a way to continue regardless of what the data shows.
-
-**Fix:** Write the decision rule before running the experiment, in the three-tier format: continue / adjust / pivot. The thresholds should create genuine decision points, not foregone conclusions dressed up as rigor.
-
-##### Pitfall 5: Designing the Experiment as a Pitch
-
-**Symptom:** The experiment shows only the best-case scenario. Weak spots are omitted. The stimulus is polished marketing material rather than a minimal testable artifact.
-
-**Consequence:** Results reflect how well the team can sell the idea, not whether the assumption holds.
-
-**Fix:** A lo-fi experiment tests whether the assumption is true, not whether the team can present it compellingly. Include the parts of the experience that are most likely to fail.
-
-##### Pitfall 6: Describing the Solution Instead of the Test
-
-**Symptom:** The IF clause describes the final solution: "If we build a unified data platform, then..."
-
-**Consequence:** The hypothesis becomes untestable until the solution is built. This is not a lo-fi experiment; it is a roadmap item.
-
-**Fix:** The IF clause should describe the minimum stimulus the team can stage this week. "If we show new users a Wizard-of-Oz version of the unified data view..." is a test. "If we build a unified data platform..." is a project.
-
-##### Pitfall 7: Skipping the Cross-Functional Team
-
-**Symptom:** The PM identifies assumptions alone without input from design, engineering, or customer success.
-
-**Consequence:** Assumptions miss risks that other functions see clearly. Engineering knows what is technically fragile. Customer success knows what customers complain about most. Design knows where the UX is most likely to confuse.
-
-**Fix:** The playbook explicitly calls for cross-functional participation in Step 1. Assumption identification is a team exercise, not a solo PM task.
-
-##### Pitfall 8: Building Too Much Before Testing
-
-**Symptom:** The experiment design requires multiple sprints of engineering work, a fully functioning API, or a production-ready UI.
-
-**Consequence:** The team has already committed significant resources before testing the assumption. The lo-fi phase has been skipped.
-
-**Fix:** Lo-fi means the smallest artifact that generates a clear signal. If staging the experiment requires building the product, something has gone wrong in the design step. Return to the method selection and find a lighter approach.
-
-##### Pitfall 9: AI Names the Assumptions and Picks the Riskiest
-
-**Symptom:** The PM asks "what must be true for this to work?" and "which is riskiest?" and adopts the answers.
-
-**Consequence:** The risk ranking is borrowed, not reasoned. Blind spots stay invisible to the PM, and they skip the thinking that would show whether they understand their own idea.
-
-**Fix:** The PM lists the assumptions and chooses the riskiest. The skill widens the list with candidates marked as candidates, and pressure-tests the ranking by likelihood and cost.
-
-##### Pitfall 10: A Test That Decides Nothing
-
-**Symptom:** The experiment is bigger than the question needs, or it gathers "nice-to-know" evidence. No one wrote down what decision the result feeds, or what a pass looks like.
-
-**Consequence:** The results arrive, everyone finds them interesting, and nothing changes. Or the test takes a month to answer a one-week question.
-
-**Fix:** Name the decision and define done (Step 4) before designing anything. Check the finished design against that finish line.
-
-##### Pitfall 11: Simulated Participants Treated as Signal
-
-**Symptom:** The "audience" is synthetic users, AI-generated personas, or a model asked how customers would react. "We ran 100 simulated users through the prototype."
-
-**Consequence:** No customer was involved, so no customer evidence was produced. The team acts on the model's predictions as if they were behavior.
-
-**Fix:** The stimulus can be generated (a vibe-coded prototype is fine). The audience must be real target customers or users. If recruiting them is the hard part, choose a lighter method, not a simulated audience.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `04-discover-define.md`, section `ps-lofi-experimentation / Template`) - assumptions, hypothesis, experiment design, and experiment description
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-lofi-experimentation / Companion / README.md`) - copy-paste prompts for chat-based AI tools (2: find the riskiest assumption and define done, design the leanest test)
-- examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-lofi-experimentation / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md) (Hypothesis, Experiment, Assumption)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-
-##### Adjacent Skills
-
-- **Upstream:** ps-solution-hypothesis (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Instructions`) (provides the hypothesis to stress-test), ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`), ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`)
-- **Downstream:** ps-risk-assessment (Template 15), ps-product-outcome-canvas (Template 16)
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_lofi_experimentation_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 65-70: Template 14 of 24 there, with the AI overview on slide 67 and prompts on slides 68, 69. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
-
 ### ps-lofi-experimentation / Template
 
-### Lo-fi Experimentation
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Define** when you have a proposed solution direction (ideally from ps-solution-hypothesis) and need to validate the riskiest assumption about it before committing to build.
 
@@ -2879,7 +1765,7 @@ Upstream work that feeds this template: ps-solution-hypothesis (the If/Then hypo
 
 This template produces a commitment artifact. By the time you complete it, you have identified what you believe, designed a test, and committed to acting on the results regardless of outcome.
 
-#### Template
+##### Template
 
 ```markdown
 # Lo-fi Experimentation
@@ -2993,9 +1879,9 @@ Provide enough detail that someone could run this experiment without redesigning
 - Open risks not addressed by this experiment:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Start with **Product Context** to anchor whose assumption is being tested and which solution direction is under examination.
 2. Write **both Key Assumptions** yourselves before selecting one to test. The act of writing both helps identify which is more critical.
@@ -3005,7 +1891,7 @@ Provide enough detail that someone could run this experiment without redesigning
 6. Write the **Experiment Description** specific enough to run. This is the field that most often gets left vague.
 7. Add **Evidence Notes** only after the artifact is fully complete.
 
-##### What Goes Where
+###### What Goes Where
 
 | Section | Contains | Does NOT Contain |
 |---------|----------|------------------|
@@ -3014,12 +1900,12 @@ Provide enough detail that someone could run this experiment without redesigning
 | Design Experiment | Method, Audience, Metric, Time Window, Decision Rule (all five) | General approach without specifics, metric without threshold |
 | Experiment Description | Runnable stimulus and task prompts | Marketing pitch, comprehensive product spec |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-solution-hypothesis provides the If/Then chain that surfaces the assumptions most worth testing. ps-framing-the-problem provides the validated problem that grounds the solution direction.
 - **Downstream:** Results from the experiment feed ps-risk-assessment (once the critical assumption is validated, risks become clearer). ps-product-outcome-canvas (Template 16) draws from a validated solution direction.
 
-##### Capacity Reference
+###### Capacity Reference
 
 | Field | Guidance |
 |-------|----------|
@@ -3034,154 +1920,40 @@ Provide enough detail that someone could run this experiment without redesigning
 
 ### ps-lofi-experimentation / Examples
 
-### Lo-fi Experimentation: Examples
+Illustrative and fictional, not customer evidence.
 
-These examples use a B2B SaaS onboarding scenario (not HR). The product is a project management tool for small professional services firms (consultancies, agencies, law firms). The proposed solution is a guided onboarding wizard that replaces the current self-serve setup experience.
+- **Strong:** For a consultancy onboarding workflow, isolate an uncertain customer behavior, test it with a small prototype, and agree on a decision rule before collecting results.
+- **Weak:** "Build the wizard and see whether people like it" leaves both the assumption and decision rule vague.
+- **Drift to avoid:** Solution-description bug: an experiment must expose an assumption to failure, not merely describe the planned feature.
 
----
 
-#### Strong Example
+#### Common Pitfalls
 
-**Why This Works:** Both assumptions are make-or-break, about customer behavior, and testable within days. The hypothesis names a specific test stimulus and a numeric threshold that can be clearly met or missed. The Decision Rule creates genuine decision points - the pivot tier has real teeth. The Experiment Description is specific enough to hand off to another person to run.
+- **Treating Assumptions as Requirements:** An assumption should create doubt. Write each one as something you believe but are not certain of. Ask: "What would we do differently if this turned out to be false?" If the answer is "nothing," it is not a real assumption.
 
----
+- **Hypothesis Without a Threshold:** Add a specific, countable threshold. At least 65% task completion. Average time under 8 minutes. Three out of five participants request a follow-up demo. Without a number or a specific observable behavior, the hypothesis cannot be falsified.
 
-##### Lo-fi Experimentation
+- **Testing What Is Easy, Not What Is Risky:** Ask which assumption, if false, would most change the solution direction. That is the one to test first, regardless of how uncomfortable the answer might be.
 
-**Product Context**
+- **Missing the Decision Rule:** Write the decision rule before running the experiment, in the three-tier format: continue / adjust / pivot. The thresholds should create genuine decision points, not foregone conclusions dressed up as rigor.
 
-- Product or service: Runtrack - project management for professional services firms
-- Proposed solution direction: Guided onboarding wizard that walks new accounts through workspace setup in a structured sequence rather than an open canvas
-- Primary customer: Operations lead at a 10-30 person consultancy, typically the person who evaluates and sets up new software for the team
+- **Designing the Experiment as a Pitch:** A lo-fi experiment tests whether the assumption is true, not whether the team can present it compellingly. Include the parts of the experience that are most likely to fail.
 
-**1. Key Assumptions**
+- **Describing the Solution Instead of the Test:** The IF clause should describe the minimum stimulus the team can stage this week. "If we show new users a Wizard-of-Oz version of the unified data view..." is a test. "If we build a unified data platform..." is a project.
 
-**Assumption 1:** Operations leads at small consultancies expect to complete initial workspace setup in a single session and will abandon a setup experience that requires them to return later to finish.
+- **Skipping the Cross-Functional Team:** The playbook explicitly calls for cross-functional participation in Step 1. Assumption identification is a team exercise, not a solo PM task.
 
-**Assumption 2:** When shown a step-by-step guided wizard, operations leads feel confident enough to invite team members without first consulting a support resource or watching a tutorial video.
+- **Building Too Much Before Testing:** Lo-fi means the smallest artifact that generates a clear signal. If staging the experiment requires building the product, something has gone wrong in the design step. Return to the method selection and find a lighter approach.
 
-**2. Hypothesis Statement**
+- **AI Names the Assumptions and Picks the Riskiest:** The PM lists the assumptions and chooses the riskiest. The skill widens the list with candidates marked as candidates, and pressure-tests the ranking by likelihood and cost.
 
-Testing Assumption 1 because it is higher-impact: if ops leads abandon mid-setup, no amount of wizard polish recovers the account. Assumption 2 matters, but abandonment is the upstream risk.
+- **A Test That Decides Nothing:** Name the decision and define done (Step 4) before designing anything. Check the finished design against that finish line.
 
-**Hypothesis:**
+- **Simulated Participants Treated as Signal:** The stimulus can be generated (a vibe-coded prototype is fine). The audience must be real target customers or users. If recruiting them is the hard part, choose a lighter method, not a simulated audience.
 
-If we walk 8 operations leads through a Concierge-facilitated simulation of the guided onboarding wizard using a screen-share and a clickable Figma prototype,
+#### References
 
-then at least 6 of the 8 (75%) will complete all four setup stages in a single session under 20 minutes without requesting to pause or return later.
-
-**3. Design Experiment**
-
-**Method:** Concierge session using a Figma clickable prototype. The PM plays the role of the guided wizard, narrating each step and clicking through the prototype while sharing screen with the participant. No working code required.
-
-**Audience:** 8 operations leads recruited from current trial accounts that have not yet completed setup. Recruited via in-app message to trial users with fewer than 3 team members invited and account age under 7 days.
-
-**Metric(s):** Completion rate - the percentage of participants who complete all four setup stages (workspace name, first project, first task template, first team member invite) within a single 20-minute session without requesting to stop or return later.
-
-**Time Window:** 5 business days (recruit on days 1-2, run sessions on days 3-5).
-
-**Decision Rule:**
-
-- 75% or above (6 of 8 participants complete): continue to development with the wizard as designed
-- 50% to 74% (4-5 of 8 complete): adjust - identify where participants stall, redesign those stages, and run a second experiment before development
-- Below 50% (3 or fewer of 8 complete): pivot - the single-session assumption is wrong; redesign the onboarding model around save-and-return checkpoints before investing further
-
-**4. Experiment Description**
-
-Each session runs as a 30-minute video call. The first 5 minutes are introduction and context-setting: "You've just signed up for Runtrack for your team. I'm going to walk you through what the setup experience will look like. Please tell me what you're thinking as we go."
-
-The PM then shares a Figma prototype and narrates each screen as if it were the wizard: "This is your workspace name screen - what would you type here?" Participants interact verbally; the PM advances the prototype.
-
-The four stages are timed: workspace naming (target 2 min), first project creation (target 5 min), template selection (target 5 min), team member invite (target 3 min).
-
-Session ends when the participant completes all four stages or asks to stop. Time and completion status are recorded.
-
-**Evidence Notes**
-
-- Upstream artifacts used: ps-solution-hypothesis output (guided wizard If/Then chain), 6 empathy interview notes from operations leads citing "confusing initial setup" as primary churn driver
-- Assumption remaining untested: Assumption 2 (confidence to invite without support) - design a second Concierge session focused on the team invite stage once Assumption 1 is resolved
-- Recommended next experiment: If Assumption 1 validates, run a 5-person Wizard-of-Oz test of the template selection step with real template options to test Assumption 2
-- Open risk not addressed: whether the 20-minute target holds when the operations lead is interrupted mid-session (test in a later, longer-running unmoderated prototype study)
-
----
-
-#### Weak Example
-
-**Why This Fails:** The assumptions read like requirements, not uncertain beliefs. Neither one would change the solution direction if false. The hypothesis has no threshold - "find it more intuitive" is not falsifiable. The Decision Rule does not have a pivot tier; all outcomes lead to continuing. The Experiment Description describes the desired product experience rather than a specific, runnable test.
-
----
-
-##### Lo-fi Experimentation
-
-**Product Context**
-
-- Product or service: Runtrack
-- Proposed solution direction: Improved onboarding
-- Primary customer: New users
-
-**1. Key Assumptions**
-
-**Assumption 1:** Users need a guided onboarding experience to get started with the product.
-
-**Assumption 2:** The new wizard will make setup faster and easier for teams.
-
-**2. Hypothesis Statement**
-
-Testing Assumption 1.
-
-**Hypothesis:**
-
-If we build the guided onboarding wizard, then users will find it more intuitive than the current setup experience.
-
-**3. Design Experiment**
-
-**Method:** Show users a demo of the new wizard.
-
-**Audience:** Some current users and potential users.
-
-**Metric(s):** User feedback on whether the new wizard is better.
-
-**Time Window:** Next two weeks.
-
-**Decision Rule:**
-
-- If feedback is positive: continue building
-- If feedback is mixed: get more feedback
-- If feedback is negative: get more feedback and iterate
-
-**4. Experiment Description**
-
-We will show users the planned onboarding wizard and explain how it will work. We will describe the four setup stages and ask them if they think it will be helpful. We will collect their impressions and use the feedback to improve the design before we build the full experience. This will help us understand whether users want a guided onboarding wizard.
-
----
-
-#### Drift-Bug Example: The Solution Description Bug
-
-**Named Failure:** Solution Description Bug
-
-**What it looks like:** The Hypothesis Statement describes what the solution does rather than what observable result will confirm or deny the assumption. The IF clause describes building or deploying the solution, not running a test. The THEN clause describes a feature outcome rather than a measurable signal.
-
-**Example of the bug:**
-
-> **Hypothesis:**
->
-> If we build a guided onboarding wizard that walks users through workspace setup in four stages,
->
-> then users will have a structured setup experience that reduces confusion and improves time-to-value.
-
-**Why this fails:** "Builds a guided onboarding wizard" in the IF is a project milestone, not a test stimulus. "Reduces confusion and improves time-to-value" in the THEN is a description of what the solution is intended to do - not an observable, countable result. This hypothesis cannot be tested without building the product first, and it cannot be falsified even then.
-
-**Fix:**
-
-Identify the specific stimulus you can stage this week and the specific observable result you expect to see.
-
-> **Corrected Hypothesis:**
->
-> If we walk 8 new users through a Concierge simulation of the four-stage onboarding wizard using a Figma prototype,
->
-> then at least 6 of the 8 (75%) will complete all four stages in a single session under 20 minutes without requesting help or asking to pause.
-
-The corrected version names a test that can be run without engineering work, names a countable threshold, and can be clearly met or missed.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-lofi-experimentation) for supporting source material and expanded examples.
 
 ## ps-storyboarding | Storyboarding
 
@@ -3198,6 +1970,15 @@ This skill helps a Product Manager build a six-panel story centered on their tar
 The storyboard belongs in the **Discover + Define phase** of the Productside Playbook. The B2B work-in-progress deck gives it no template number and places its instruction page right after Lo-fi Experimentation; the baseline deck had it as Template 16 of 24 in Create. It is explicitly low-fidelity. The playbook says it plainly: "Don't spend a lot of time building your storyboard; it doesn't need to look pretty!" Speed and clarity of thinking matter here. Aesthetics do not.
 
 The storyboard does two things: it tests whether the PM's story about the customer rings true, and it gives stakeholders and real users something concrete enough to react to.
+
+##### Usage Notes
+
+- This is a component skill that produces a paste-ready six-panel narrative artifact.
+- The Solution Hypothesis Statement (from ps-solution-hypothesis) anchors the top of every storyboard.
+- Low fidelity is a design principle, not a limitation. Speed and clarity of thinking matter; aesthetics do not.
+- The tech-role bias guard in Step 1 of Application is the single most important step in this skill.
+- Upstream: ps-solution-hypothesis, ps-proto-persona, ps-framing-the-problem.
+- Downstream: leadership alignment, executive communication, Go-to-Market narrative.
 
 #### Key Concepts
 
@@ -3249,9 +2030,9 @@ Storyboarding is a validation technique, not just a communication tool. Validati
 
 ##### The Storyboard Is Also a Product Visualization Tool
 
-Validation with real users is the primary purpose of storyboarding. But the same artifact serves a second function: giving cross-functional stakeholders — designers, engineers, executives — a concrete, shared picture of the proposed solution before any build investment is made.
+Validation with real users is the primary purpose of storyboarding. But the same artifact serves a second function: giving cross-functional stakeholders  -  designers, engineers, executives  -  a concrete, shared picture of the proposed solution before any build investment is made.
 
-A well-constructed six-panel story makes the product's user experience visible in a way that wireframes and feature lists cannot. Stakeholders see the flow: the problem the product addresses, the moment of first contact with the solution, the breakthrough, the lasting change. They understand what the product actually does for the customer — its key capabilities and overall user value — without reading a requirements document.
+A well-constructed six-panel story makes the product's user experience visible in a way that wireframes and feature lists cannot. Stakeholders see the flow: the problem the product addresses, the moment of first contact with the solution, the breakthrough, the lasting change. They understand what the product actually does for the customer  -  its key capabilities and overall user value  -  without reading a requirements document.
 
 Product leaders can use the storyboard to share the product vision with executives, making the problem and proposed solution vivid in a way that slides and written descriptions cannot. Build it once; show it to users for validation, show it to the team for alignment, and show it to leadership for direction-setting.
 
@@ -3273,68 +2054,28 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-storyboarding / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `04-discover-define.md`, section `ps-storyboarding / Template`) for the scaffold.
+Use Template (uploaded reference: `04-discover-define.md`, section `ps-storyboarding / Template`) for the scaffold.
 
-See the source play pages in assets/ps_storyboarding_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-pressure-test-storyboard.md (uploaded reference: `07-prompts.md`, section `ps-storyboarding / Companion / 01-pressure-test-storyboard.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Tech-Role Bias Guard
 
@@ -3435,121 +2176,9 @@ After completing the storyboard, offer three options:
 2. Share with leadership: the storyboard is an effective executive alignment tool. It makes the problem and solution concrete without requiring a slide deck.
 3. Use in Go-to-Market messaging: the six-panel arc - problem, escalation, discovery, breakthrough, new normal - maps directly to launch narrative and sales enablement content.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-storyboarding / Examples`).
-
-The example set includes:
-
-- a strong storyboard with vivid conflict, named emotion, and specific lasting change
-- a weak storyboard with vague panels, feature-list Panel 4, and a hollow Panel 6
-- a drift-bug example showing tech-role inversion, where the persona is a developer when the product serves field technicians
-
-#### Common Pitfalls
-
-##### Pitfall 1: The Solution Is the Hero
-
-**Symptom:** The storyboard describes what the product does rather than what the persona experiences. Panel 4 reads like a product spec. Panel 5 is about the product's capability, not the persona's success.
-
-**Consequence:** The story is not actually about a person. Stakeholders and users cannot place themselves in it. The validation fails because there is no character to resonate with.
-
-**Fix:** Rewrite every panel from the persona's perspective. What does the persona do, see, feel, or decide? The product should appear as the enabler of those actions, not the subject of the story.
-
-##### Pitfall 2: Tech-Role Bias - Developer Persona for a Non-Developer Product
-
-**Symptom:** The persona is a software developer, data engineer, or architect when the product actually serves operations staff, clinical workers, field technicians, line managers, or other non-builder roles. Panels 1 and 2 describe a coding or deployment workflow.
-
-**Consequence:** The story is written for the wrong audience. When shown to real users, they cannot recognize their world. Discovery findings are invalidated.
-
-**Fix:** Before writing Panel 1, confirm who the product is built for. Read the product description. Ask: who uses this in the field? Write for that person.
-
-##### Pitfall 3: Polished and Long Panels
-
-**Symptom:** Each panel caption is three to five sentences with context, caveats, and explanation. The storyboard looks like a business case.
-
-**Consequence:** The low-fidelity speed advantage is lost. A polished storyboard creates the impression that the story is finished and validated, when it is not. Stakeholders treat it as a commitment rather than a draft to react to.
-
-**Fix:** Each panel caption should be one to three sentences at most. The prompt phrase does the framing work. The caption adds the specific, concrete detail. Keep it rough.
-
-##### Pitfall 4: Missing the Conflict - Panel 3 Is Vague
-
-**Symptom:** Panel 3 says something like "they were dealing with some challenges" or "the problem was getting harder to manage."
-
-**Consequence:** There are no stakes. The reader has no reason to believe the solution matters. Users cannot confirm or deny a vague conflict.
-
-**Fix:** Name a specific event. Something breaks, fails, or causes visible harm. The more concrete the consequence, the more useful the feedback. "She submitted the wrong version of the report and the audit had to restart" is testable. "She had challenges with the process" is not.
-
-##### Pitfall 5: Story Disconnected from the Hypothesis
-
-**Symptom:** The conflict in Panel 3 and the resolution in Panel 4 describe a problem and solution different from the If/Then statement at the top of the storyboard.
-
-**Consequence:** The storyboard does not actually validate the hypothesis. The PM gets feedback on a story, but not on the thing they are planning to build.
-
-**Fix:** After completing all six panels, read the If/Then statement and then read Panel 3 and Panel 4. Are they about the same problem and the same solution? If not, the story has drifted. Rewrite to align.
-
-##### Pitfall 6: Panel 6 Is Too Vague
-
-**Symptom:** Panel 6 says "life is better now" or "the team was much happier." No specific change is described.
-
-**Consequence:** The lasting value of the solution is unverifiable. Stakeholders cannot connect the storyboard to business outcomes. Users cannot confirm that this actually changes their world.
-
-**Fix:** Name what the persona can now do, build, prevent, or decide that was impossible before. "She can now submit the monthly compliance report in one day instead of four, and she stops dreading the end of each quarter" is specific. "Things improved" is not.
-
-##### Pitfall 7: Running This Before the Solution Hypothesis Exists
-
-**Symptom:** The storyboard is built from a rough product idea with no If/Then statement. The Solution Hypothesis Statement at the top is blank or improvised.
-
-**Consequence:** The storyboard is untethered from a testable claim. Feedback from users or stakeholders cannot be connected to a hypothesis that needs validating.
-
-**Fix:** Before running this skill, produce at least a rough If/Then statement using ps-solution-hypothesis. Even an informal hypothesis ("IF we automate the reconciliation step, THEN the operations manager can close the books without waiting on the data team") is enough to anchor the story.
-
-##### Pitfall 8: Jumping to Product Features in Panel 4
-
-**Symptom:** Panel 4 says "they used the platform, which provides real-time dashboards, automated alerts, one-click reporting, and an API integration layer."
-
-**Consequence:** The panel has become a product feature list. The persona's experience is invisible. The Aha moment in Panel 5 has no emotional setup.
-
-**Fix:** Panel 4 describes the persona's first experience, not the product's capabilities. "She logged in for the first time and saw her three overdue tasks organized by the system - she did not have to create the list herself" is an experience. A feature list is not.
-
-##### Pitfall 9: Predicted Reactions Instead of a Test
-
-**Symptom:** After drafting the storyboard, the PM asks how customers would react, and records the model's answer as validation.
-
-**Consequence:** The storyboard was never tested. The team believes the value proposition resonates because a model said so.
-
-**Fix:** Show the storyboard to real target customers and record their reactions. Treat any predicted reaction as a guess to test.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `04-discover-define.md`, section `ps-storyboarding / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-storyboarding / Companion / README.md`) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-storyboarding / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-- **Upstream:** ps-solution-hypothesis (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Instructions`) provides the If/Then statement that anchors the storyboard; ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) provides the character; ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) provides the conflict source
-- **Downstream:** Leadership and executive alignment (the storyboard communicates product vision); Go-to-Market enablement (the six-panel arc informs launch narrative and sales messaging)
-
-##### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-##### Source Material
-
-- assets/ps_storyboarding_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slide 71: an instruction page only, with no overview page or template number. No AI page; the prompt is authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
-
 ### ps-storyboarding / Template
 
-### Storyboard
-
-#### When to Use This
+##### When to Use This
 
 Use this template during the **Create phase** after you have a Solution Hypothesis in hand. The storyboard validates your hypothesis by telling the customer's story - from their everyday world through the problem crisis into the solution and beyond.
 
@@ -3560,7 +2189,7 @@ Upstream artifacts that feed this template:
 
 You can run this with only a product description if needed. The hypothesis and persona can be sketched on the fly. Do not block the exercise on missing upstream artifacts.
 
-#### Template
+##### Template
 
 ```markdown
 # Storyboard
@@ -3681,9 +2310,9 @@ Who will you show this storyboard to?
 - Key question to test: [Which panel are you most uncertain about? What do you most need to hear from users?]
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Paste or write the Solution Hypothesis Statement at the top before writing any panel.
 2. Fill in the Three Story Elements check - character, conflict, resolution - before Panel 1.
@@ -3691,7 +2320,7 @@ Who will you show this storyboard to?
 4. After writing all six panels, do the Hypothesis Alignment Check.
 5. Add visual descriptions last, if at all.
 
-##### What Goes Where
+###### What Goes Where
 
 | Panel | Contains | Does NOT Contain |
 |-------|----------|-----------------|
@@ -3702,12 +2331,12 @@ Who will you show this storyboard to?
 | Panel 5 | A named emotion plus the success moment | The product's achievement (not the persona's) |
 | Panel 6 | Specific behavioral change going forward | Vague happiness or "life is better now" |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-solution-hypothesis provides the If/Then statement; ps-proto-persona provides the character; ps-framing-the-problem provides the conflict source
 - **Downstream:** the storyboard feeds leadership alignment, executive communication, and Go-to-Market narrative
 
-##### Capacity Reference
+###### Capacity Reference
 
 | Field | Target Length | Guidance |
 |-------|-------------|---------|
@@ -3719,260 +2348,36 @@ Who will you show this storyboard to?
 
 ### ps-storyboarding / Examples
 
-### Storyboarding Examples
+Illustrative and fictional, not customer evidence.
 
-The three examples below use a **manufacturing quality control** scenario. A PM is building a product that helps quality inspectors at a mid-size precision parts manufacturer catch and document defects before components leave the facility.
+- **Strong:** A manufacturing quality inspector encounters a defect, faces its consequences, uses the proposed solution, and reaches a changed outcome across six frames.
+- **Weak:** Six screenshots demonstrate an interface without telling a customer story.
+- **Drift to avoid:** Tech-role inversion: the inspector is the protagonist; do not replace them with the developer building the tool.
 
----
 
-#### Example 1 (Strong)
+#### Common Pitfalls
 
-**Context:** Vera Martinez is a quality inspector at a contract manufacturer supplying aerospace components. The PM's product is a mobile inspection logging tool that replaces paper checklists and spreadsheet-based defect tracking. The solution hypothesis is in hand.
+- **The Solution Is the Hero:** Rewrite every panel from the persona's perspective. What does the persona do, see, feel, or decide? The product should appear as the enabler of those actions, not the subject of the story.
 
----
+- **Tech-Role Bias - Developer Persona for a Non-Developer Product:** Before writing Panel 1, confirm who the product is built for. Read the product description. Ask: who uses this in the field? Write for that person.
 
-##### Storyboard
+- **Polished and Long Panels:** Each panel caption should be one to three sentences at most. The prompt phrase does the framing work. The caption adds the specific, concrete detail. Keep it rough.
 
-**Solution Hypothesis Statement:**
+- **Missing the Conflict - Panel 3 Is Vague:** Name a specific event. Something breaks, fails, or causes visible harm. The more concrete the consequence, the more useful the feedback. "She submitted the wrong version of the report and the audit had to restart" is testable. "She had challenges with the process" is not.
 
-IF we give quality inspectors a mobile-first logging tool that captures defect data at the point of inspection, THEN inspectors can close daily reports in under 30 minutes and defect escape rate drops below 0.5%. IF defect escape rate drops below 0.5%, THEN the facility retains its AS9100 certification and avoids the $2M annual rework cost from returned components.
+- **Story Disconnected from the Hypothesis:** After completing all six panels, read the If/Then statement and then read Panel 3 and Panel 4. Are they about the same problem and the same solution? If not, the story has drifted. Rewrite to align.
 
----
+- **Panel 6 Is Too Vague:** Name what the persona can now do, build, prevent, or decide that was impossible before. "She can now submit the monthly compliance report in one day instead of four, and she stops dreading the end of each quarter" is specific. "Things improved" is not.
 
-**Three Story Elements Check**
+- **Running This Before the Solution Hypothesis Exists:** Before running this skill, produce at least a rough If/Then statement using ps-solution-hypothesis. Even an informal hypothesis ("IF we automate the reconciliation step, THEN the operations manager can close the books without waiting on the data team") is enough to anchor the story.
 
-- Character: Vera Martinez, quality inspector, aerospace components, 12 years on the floor
-- Conflict: defects escape to the customer because paper logs are transcribed hours after inspection and discrepancies are caught too late to pull parts
-- Resolution: mobile logging at the point of inspection closes the transcription gap and enables same-day defect review
+- **Jumping to Product Features in Panel 4:** Panel 4 describes the persona's first experience, not the product's capabilities. "She logged in for the first time and saw her three overdue tasks organized by the system - she did not have to create the list herself" is an experience. A feature list is not.
 
----
+- **Predicted Reactions Instead of a Test:** Show the storyboard to real target customers and record their reactions. Treat any predicted reaction as a guess to test.
 
-**Panel 1: "Once upon a time..."**
+#### References
 
-Vera Martinez has inspected aerospace components for twelve years. She knows the tolerance specs by memory, flags the subtle surface irregularities that junior inspectors miss, and takes pride in the zero-escape months she has put together.
-
-Visual description: Inspector with calipers at a machining floor inspection station, clipboard nearby.
-
----
-
-**Panel 2: "Every day..."**
-
-After each shift, Vera sits in the break room and transcribes her paper inspection notes into a shared spreadsheet. She works from memory and handwritten shorthand. On busy days, the notes from the morning inspection are four hours old by the time they are entered.
-
-Visual description: Person at a breakroom table, hand-transcribing from a paper checklist into a laptop.
-
----
-
-**Panel 3: "Until one day..."**
-
-A batch of 80 precision bushings she flagged verbally at the line - but had not yet entered into the log - shipped to the airline customer before she could update the spreadsheet. The customer rejected the full shipment. The facility paid $140,000 in rework and expedite fees. The customer issued a corrective action request that put the AS9100 certification review at risk.
-
-Visual description: Red "Customer Return - Full Batch" label on a shipping pallet; inspector looking at her notes in disbelief.
-
----
-
-**Panel 4: "Because of that..."**
-
-The operations director asked Vera to pilot a mobile inspection app that logged directly to a shared system at the moment of inspection. The first morning she used it, she flagged a surface deviation on a batch mid-line, saw it appear instantly in the shared queue, and watched the production lead pull the batch for reinspection before it moved to final assembly.
-
-Visual description: Inspector photographing a part with a mobile device; defect flag appears in real time on a shared queue screen behind her.
-
----
-
-**Panel 5: "Until finally..."**
-
-Three weeks into the pilot, Vera submitted her end-of-shift summary from the floor in eight minutes. She felt a relief she had not expected - not just that the work was faster, but that she was no longer carrying the risk of a transcription error in her head for the rest of the day.
-
-Visual description: Inspector walking to the parking lot at the end of shift, phone in hand, report already filed.
-
----
-
-**Panel 6: "And every day after that..."**
-
-Vera stops staying late to transcribe. Her defect logs are live as she walks the floor. The monthly quality review now uses her data directly, without a cleanup pass from the quality manager. She has trained two junior inspectors on the system and is the informal go-to for the pilot expansion across two other lines.
-
-Visual description: Vera leading a short training huddle with two junior inspectors, each with a mobile device.
-
----
-
-##### Why This Works
-
-- **Character is grounded.** Vera has a name, a role, a tenure, and a specific thing she is proud of. The reader knows her before the problem starts.
-- **Conflict is specific and consequential.** Panel 3 names a dollar figure, a customer consequence, and a certification risk. Vague conflict would produce vague feedback. This panel can be tested: show it to a quality manager and ask "does this happen?"
-- **Panel 4 is an experience, not a feature list.** The first thing Vera notices is what the system does for her without being asked - the part flag appearing in the shared queue. She did not configure anything.
-- **Panel 5 names the emotion.** Relief. And the relief is specific: not just time saved, but the end of carrying mental risk through the day.
-- **Panel 6 shows behavioral change.** Vera stops doing the late transcription. Her data is used differently. She becomes a trainer. All of this is observable and verifiable.
-- **The story follows the hypothesis.** The IF/THEN statement matches the conflict in Panel 3 (transcription gap, defect escape) and the resolution in Panels 4-6 (real-time logging, same-day review, certification protection).
-
----
-
-#### Example 2 (Weak)
-
-**Context:** Same scenario. Same product. Weaker execution.
-
----
-
-##### Storyboard
-
-**Solution Hypothesis Statement:**
-
-IF we improve the inspection logging process, THEN quality will be better.
-
----
-
-**Three Story Elements Check**
-
-- Character: a quality inspector
-- Conflict: inefficient process
-- Resolution: the new tool helps
-
----
-
-**Panel 1: "Once upon a time..."**
-
-There was a quality inspector who worked at a manufacturing facility and had been doing inspections for a long time. She was experienced and took her job seriously.
-
-Visual description: A person at a factory.
-
----
-
-**Panel 2: "Every day..."**
-
-She followed the standard quality inspection process, which involved a lot of paperwork and manual steps. This created some inefficiencies in her workflow.
-
-Visual description: Person doing paperwork.
-
----
-
-**Panel 3: "Until one day..."**
-
-The team started having some issues with the current quality tracking approach and it became clear that something needed to change. There were some problems with customer returns.
-
-Visual description: A problem.
-
----
-
-**Panel 4: "Because of that..."**
-
-She started using the new mobile inspection platform, which provides real-time logging, automated defect categorization, photo documentation, bulk status updates, integration with the ERP system, and a role-based dashboard for the quality manager.
-
-Visual description: Mobile app on a phone.
-
----
-
-**Panel 5: "Until finally..."**
-
-The new system made her work much faster and easier. She was able to complete her reports more quickly and the whole process was improved significantly.
-
-Visual description: Happy inspector.
-
----
-
-**Panel 6: "And every day after that..."**
-
-Everything was better. The quality process was more efficient and the team was happier with the new way of working.
-
-Visual description: Happy team.
-
----
-
-##### Why This Fails
-
-- **The hypothesis is empty.** "Improve the process" and "quality will be better" are not testable claims. There is nothing to validate.
-- **The character has no world.** The inspector is unnamed, her tenure is irrelevant, her pride in her work is absent. There is no one to root for.
-- **Panel 2 is generic.** "A lot of paperwork and manual steps" applies to almost any back-office process. It does not ground the story in the specific friction of quality inspection.
-- **Panel 3 has no stakes.** "Some issues" and "some problems" give the reader nothing to react to. A real quality manager or inspector will not recognize this as their crisis because there is no crisis.
-- **Panel 4 is a feature list.** Seven product capabilities are named without any description of what the inspector experiences. The persona has disappeared from the story.
-- **Panel 5 names no emotion.** "Much faster and easier" is speed, not feeling. What did she feel? When did she know it was working?
-- **Panel 6 is entirely vague.** "Everything was better" and "team was happier" are not behavioral changes. This panel could be removed without losing any information.
-
----
-
-#### Example 3 (Drift Bug - Tech-Role Inversion)
-
-**Context:** Same manufacturing quality control product. The PM has defaulted to a developer persona for a product that serves quality inspectors - non-technical floor staff who have never written a line of code.
-
----
-
-##### Storyboard
-
-**Solution Hypothesis Statement:**
-
-IF we build a modern API-integrated inspection logging system with a React frontend and real-time data sync, THEN developers can deploy quality tracking features faster.
-
----
-
-**Three Story Elements Check**
-
-- Character: a software developer building the quality tracking system
-- Conflict: legacy codebase and manual deployment pipeline slow down feature releases
-- Resolution: new platform with better developer tooling and automated CI/CD
-
----
-
-**Panel 1: "Once upon a time..."**
-
-There was a software developer at a manufacturing technology company responsible for maintaining the legacy quality management system. He spent most of his time managing technical debt, handling hotfix deployments, and trying to keep the system stable during production runs.
-
-Visual description: Developer at a laptop with multiple terminal windows open.
-
----
-
-**Panel 2: "Every day..."**
-
-He spent two to three hours per week manually deploying updates to the QMS across fourteen factory sites. Each deployment required coordination with the on-site IT contact and a rollback procedure if something went wrong.
-
-Visual description: Deployment pipeline diagram with multiple failure points highlighted.
-
----
-
-**Panel 3: "Until one day..."**
-
-A critical defect tracking script failed silently during a high-volume production run and no one noticed until the next morning. He spent the weekend writing a patch and coordinating emergency rollouts.
-
-Visual description: Developer on a video call at midnight, error logs on screen.
-
----
-
-**Panel 4: "Because of that..."**
-
-He convinced his manager to approve a migration to the new platform. He set up the dev environment in four hours, connected the REST API to the existing ERP, and had the first automated test suite running by end of week.
-
-Visual description: Clean terminal output showing all tests passing.
-
----
-
-**Panel 5: "Until finally..."**
-
-He deployed the full system to all fourteen sites in one afternoon using the automated pipeline. He closed his laptop at 5pm for the first time in three months.
-
-Visual description: Developer leaving the office on time, laptop closed.
-
----
-
-**Panel 6: "And every day after that..."**
-
-He monitors the system from a single dashboard, deploys updates across all sites in under an hour, and spends the time he used to burn on maintenance actually building new features.
-
-Visual description: Clean dashboard with green status indicators across all sites.
-
----
-
-##### What Went Wrong
-
-This is a **tech-role inversion**. The product is a mobile inspection logging tool for quality inspectors who work on manufacturing floors. The hero of this storyboard is a software developer managing a deployment pipeline.
-
-The developer's problems (legacy codebase, manual deployments, CI/CD friction) are real problems in their own right - but they are not the problem the product was built to solve. The product was built for Vera, not for the developer who builds the system Vera uses.
-
-This failure has a specific trigger: when no persona is specified and the PM does not provide upstream artifacts, the default assumption tends toward the kind of person who builds software. This is the tech-role bias described in Step 1.
-
-**How to fix it:**
-
-1. Stop at Step 1. Ask: "Who is the product built for?" The answer is the quality inspector - the person on the floor with the calipers, not the developer in the office with the CI/CD pipeline.
-2. Re-read the product description. Does it describe a tool for inspectors or a tool for developers? If it describes a tool for inspectors, the developer is an implementation concern, not the hero.
-3. Rebuild the Three Story Elements check with the inspector as the character. The developer can appear in the storyboard as a supporting role if relevant, but the persona - the hero - is the person who uses the product in the field.
-
-A storyboard built around the wrong persona cannot be validated. When you show it to quality inspectors, they will not recognize their world. When you show it to developers, they will recognize their world but have no stake in whether the inspection logging tool succeeds.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-storyboarding) for supporting source material and expanded examples.
 
 ## ps-risk-assessment | Risk Assessment
 
@@ -4030,7 +2435,7 @@ The assessment is not a one-time checkpoint. Risks change as the product is buil
 
 Risk names, mitigation tactics, and contingency plans should be paste-ready for the playbook template. Keep entries specific but compact.
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for canonical field budgets.
+See Template and capacity guidance (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Template`) for canonical field budgets.
 
 ##### How AI Supports This Play
 
@@ -4042,64 +2447,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-risk-assessment / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Template`) for the scaffold.
+Use Template (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Template`) for the scaffold.
 
-See the source play pages in assets/ps_risk_assessment_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -4116,7 +2481,7 @@ That means:
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-widen-and-test-risks.md (uploaded reference: `07-prompts.md`, section `ps-risk-assessment / Companion / 01-widen-and-test-risks.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Apply Tech-Role Bias Guard
 
@@ -4223,122 +2588,9 @@ At the end of the artifact, offer three options:
 2. Carry the risk summary forward into ps-product-outcome-canvas when that play is run
 3. Share the assessment with stakeholders identified in the Risk Raised By column to validate completeness and confirm Points of Contact
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Examples`).
-
-The example set includes:
-
-- a strong Productside-style risk assessment with clear prioritization and distinct mitigation and contingency plans
-- a weak version with generic risk names, uniform High/High ratings, and no real distinction between mitigation and contingency
-- a drift-bug example with commentary on the mitigation-contingency swap failure and how to fix it
-
-#### Common Pitfalls
-
-##### Pitfall 1: All Technical Risks, No Adoption Risks
-
-**Symptom:** The risk list contains only engineering concerns: performance degradation, API failures, integration complexity.
-
-**Consequence:** The team ships a technically sound product that fails in the market because adoption risks were never surfaced or planned for.
-
-**Fix:** Before finalizing the list, explicitly ask: what are the customer behavior change risks? What are the organizational readiness risks? What could cause the product to be technically correct but commercially unsuccessful?
-
-##### Pitfall 2: Confusing Mitigation with Contingency
-
-**Symptom:** The Mitigation Tactics and Contingency Plans columns contain the same type of content, usually responses to the risk having already occurred.
-
-**Consequence:** The team has a reactive plan but no proactive plan. When the risk materializes, the "mitigation" was never executed because it was actually a contingency.
-
-**Fix:** Mitigation happens before the risk occurs and reduces the chance it will. Contingency happens after the risk occurs and limits the damage. Both are required.
-
-##### Pitfall 3: Point of Contact as a Role, Not a Person
-
-**Symptom:** The Point of Contact column contains entries like "IT Team," "Product Management," or "Stakeholders."
-
-**Consequence:** No one is actually accountable. When the risk materializes, everyone assumes someone else owns it.
-
-**Fix:** Name a specific individual. If you cannot name one, that is a signal that the risk is unowned and needs an owner before the assessment is complete.
-
-##### Pitfall 4: Risk Names That Are Categories, Not Concerns
-
-**Symptom:** Risk names read as: "Technical Risk," "Market Risk," "User Adoption Risk."
-
-**Consequence:** The risk is too abstract to assess, plan for, or communicate to stakeholders.
-
-**Fix:** Follow the pattern: `[Risk Type]: [Specific Concern]`. "Market Risk" becomes "Competitive Timing: new entrant launches similar feature before our release."
-
-##### Pitfall 5: Completing Risk Management Only for Easy Risks
-
-**Symptom:** The Risk Management table is fully completed for low-priority risks and left sparse for Critical ones.
-
-**Consequence:** The highest-stakes risks have the weakest plans.
-
-**Fix:** Start the Risk Management table with the Critical-priority risks. If time is limited, leave Accept-priority risks without management rows rather than leaving Critical ones blank.
-
-##### Pitfall 6: Treating the Assessment as a One-Time Artifact
-
-**Symptom:** The risk assessment is completed at project kickoff and never revisited.
-
-**Consequence:** Risks that have increased in probability or severity go unmanaged. New risks that emerged during development are invisible.
-
-**Fix:** Mark at least one specific future date or decision point where the assessment will be reviewed and updated.
-
-##### Pitfall 7: Inflating Everything to High Severity
-
-**Symptom:** Every risk is rated High Impact and High Probability. Everything is Critical.
-
-**Consequence:** Prioritization is impossible. The team cannot distinguish between risks that demand immediate action and risks worth acknowledging but not investing in heavily.
-
-**Fix:** Push the team to differentiate. If more than three risks are truly Critical, the team needs to re-examine whether the ratings reflect business impact or anxiety. Not every risk deserves equal attention.
-
-##### Pitfall 8: Running the Assessment Alone
-
-**Symptom:** The PM completes the risk assessment without the project manager or relevant stakeholders.
-
-**Consequence:** Organizational, operational, and customer-facing blind spots remain invisible. The resulting plan lacks the breadth to be credible or actionable.
-
-**Fix:** Run this as a collaborative session. The project manager leads the facilitation. Stakeholders surface risks the PM team would not see from inside the product team.
-
-##### Pitfall 9: A Risk List the Team Never Discussed
-
-**Symptom:** The PM asks the agent for six risks and gets a tidy, plausible list with severity, likelihood, and mitigations filled in.
-
-**Consequence:** The list covers generic risks and misses the ones only the team knows. Nobody owns the mitigations, because nobody chose them.
-
-**Fix:** The team brainstorms first. The skill widens the list with categories and candidates, and the team places and owns each risk.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-risk-assessment / Companion / README.md`) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-- **Upstream:** ps-solution-hypothesis (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Instructions`) defines what is being de-risked; ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) provides customer and problem context
-- **Downstream:** ps-product-outcome-canvas (Batch 5): the Risk field draws from this skill's output
-- **Related:** ps-lofi-experimentation: high-priority testable assumptions from this assessment may become lo-fi experiments
-
-##### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-##### Source Material
-
-- assets/ps_risk_assessment_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 72-74: Template 15 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
-
 ### ps-risk-assessment / Template
 
-### Risk Assessment
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Define** after completing your solution hypothesis and before committing to a build plan. Run it as a collaborative session with your project manager and relevant stakeholders.
 
@@ -4347,7 +2599,7 @@ Upstream artifacts that feed this template:
 - Problem framing (ps-framing-the-problem): provides customer and context grounding for adoption risks
 - Stakeholder Alignment artifact (if available): helps identify Points of Contact for each risk
 
-#### Template
+##### Template
 
 ```markdown
 # Risk Assessment
@@ -4464,9 +2716,9 @@ Mark at least one future decision point where this assessment will be reviewed a
 - Trigger for unscheduled review (e.g., "if competitive landscape changes" or "at first major build decision"):
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Complete **Product Context** to anchor who is in the room and what stage the product is at.
 2. Work through **Section 1** as a group. Push for specificity in Risk Names and for breadth across categories.
@@ -4474,7 +2726,7 @@ Mark at least one future decision point where this assessment will be reviewed a
 4. Complete **Section 3** starting with the highest-priority risks. Mitigation before contingency for each row.
 5. Add the **Revisit Note** before closing the session.
 
-##### What Goes Where
+###### What Goes Where
 
 | Column | Contains | Does NOT Contain |
 |--------|----------|------------------|
@@ -4485,12 +2737,12 @@ Mark at least one future decision point where this assessment will be reviewed a
 | Contingency Plans | Reactive response if risk occurs | Duplicate of mitigation |
 | Point of Contact | Named accountable individual | Team, function, or role title |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-solution-hypothesis provides the solution context that grounds the risk identification. ps-framing-the-problem provides the customer and problem context.
 - **Downstream:** ps-product-outcome-canvas (Batch 5) draws the risk summary from this assessment. ps-lofi-experimentation can convert high-priority testable assumptions from this assessment into structured experiments.
 
-##### Capacity Reference
+###### Capacity Reference
 
 | Field | Target Length | Guidance |
 |-------|--------------|----------|
@@ -4502,214 +2754,36 @@ Mark at least one future decision point where this assessment will be reviewed a
 
 ### ps-risk-assessment / Examples
 
-### Risk Assessment Examples
+Illustrative and fictional, not customer evidence.
 
-#### Strong Example
+- **Strong:** For shipment tracking, name a specific threat, assess severity and likelihood, and distinguish prevention from the contingency if it occurs.
+- **Weak:** "Technical risk: high" gives no event, consequence, or response.
+- **Drift to avoid:** Response confusion: mitigation reduces likelihood or impact; contingency says what to do if the risk happens.
 
-**Context:** B2B supply chain visibility platform. A product team is preparing to launch a real-time shipment tracking feature for mid-market logistics coordinators. The solution hypothesis is complete. The team is running this assessment collaboratively with the project manager and representatives from sales, engineering, and customer success before committing to the build plan.
 
----
+#### Common Pitfalls
 
-##### Risk Assessment
+- **All Technical Risks, No Adoption Risks:** Before finalizing the list, explicitly ask: what are the customer behavior change risks? What are the organizational readiness risks? What could cause the product to be technically correct but commercially unsuccessful?
 
-**Product or initiative:** Real-time shipment tracking for mid-market logistics coordinators
-**Stage:** Pre-build, post-hypothesis
-**Session participants:** Priya Sharma (PM), Marcus Webb (Project Manager), Dana Okonkwo (Engineering Lead), Lila Chen (Customer Success Lead), Rafael Torres (Sales Lead)
-**Date of assessment:** June 26, 2026
+- **Confusing Mitigation with Contingency:** Mitigation happens before the risk occurs and reduces the chance it will. Contingency happens after the risk occurs and limits the damage. Both are required.
 
----
+- **Point of Contact as a Role, Not a Person:** Name a specific individual. If you cannot name one, that is a signal that the risk is unowned and needs an owner before the assessment is complete.
 
-**Section 1: Identify Risks**
+- **Risk Names That Are Categories, Not Concerns:** Follow the pattern: `[Risk Type]: [Specific Concern]`. "Market Risk" becomes "Competitive Timing: new entrant launches similar feature before our release."
 
-| # | Risk Name | Risk Raised By |
-|---|-----------|----------------|
-| 01 | Carrier Data Gaps: key carriers lack real-time API coverage | Dana Okonkwo |
-| 02 | Coordinator Resistance: dispatchers prefer phone-based status checks | Lila Chen |
-| 03 | Integration Complexity: customer ERP systems vary widely in structure | Dana Okonkwo |
-| 04 | Regulatory Variance: cross-border shipment data rules differ by region | Rafael Torres |
-| 05 | Adoption Plateau: feature is available but not embedded in daily workflow | Priya Sharma |
-| 06 | Competitive Timing: incumbent vendor announces similar feature this quarter | Marcus Webb |
+- **Completing Risk Management Only for Easy Risks:** Start the Risk Management table with the Critical-priority risks. If time is limited, leave Accept-priority risks without management rows rather than leaving Critical ones blank.
 
----
+- **Treating the Assessment as a One-Time Artifact:** Mark at least one specific future date or decision point where the assessment will be reviewed and updated.
 
-**Section 2: Plot Level of Risk**
+- **Inflating Everything to High Severity:** Push the team to differentiate. If more than three risks are truly Critical, the team needs to re-examine whether the ratings reflect business impact or anxiety. Not every risk deserves equal attention.
 
-Risk 01: Carrier Data Gaps: key carriers lack real-time API coverage
-  Impact Severity: High
-  Occurrence Probability: High
-  Priority: Critical
+- **Running the Assessment Alone:** Run this as a collaborative session. The project manager leads the facilitation. Stakeholders surface risks the PM team would not see from inside the product team.
 
-Risk 02: Coordinator Resistance: dispatchers prefer phone-based status checks
-  Impact Severity: High
-  Occurrence Probability: Medium
-  Priority: Critical
+- **A Risk List the Team Never Discussed:** The team brainstorms first. The skill widens the list with categories and candidates, and the team places and owns each risk.
 
-Risk 03: Integration Complexity: customer ERP systems vary widely in structure
-  Impact Severity: Medium
-  Occurrence Probability: High
-  Priority: Critical
+#### References
 
-Risk 04: Regulatory Variance: cross-border shipment data rules differ by region
-  Impact Severity: High
-  Occurrence Probability: Low
-  Priority: Monitor
-
-Risk 05: Adoption Plateau: feature is available but not embedded in daily workflow
-  Impact Severity: Medium
-  Occurrence Probability: Medium
-  Priority: Manage
-
-Risk 06: Competitive Timing: incumbent vendor announces similar feature this quarter
-  Impact Severity: Medium
-  Occurrence Probability: Low
-  Priority: Accept
-
----
-
-**Section 3: Begin Risk Management**
-
-| Risk Name | Mitigation Tactics | Contingency Plans | Point of Contact | Notes |
-|-----------|-------------------|-------------------|------------------|-------|
-| Carrier Data Gaps: key carriers lack real-time API coverage | Audit the top 20 carriers used by pilot customers before build begins; partner only with carriers that have production-ready APIs | Launch with manual status input for non-covered carriers; communicate coverage scope clearly in onboarding | Dana Okonkwo | Audit needed in first two weeks; gates build kickoff |
-| Coordinator Resistance: dispatchers prefer phone-based status checks | Conduct structured workflow observations with 5 coordinators before finalizing feature design; co-design the notification format with dispatcher input | Pause rollout at the first pilot site; schedule 3 facilitated sessions with coordinators to identify adoption blockers and redesign as needed | Lila Chen | Pilot site selection to be confirmed with Rafael Torres |
-| Integration Complexity: customer ERP systems vary widely in structure | Build a connector layer with three pre-certified ERP schemas; document integration requirements in sales discovery before contract sign | Offer a manual CSV import path for customers whose ERP is outside the certified set; flag unsupported ERPs during onboarding | Dana Okonkwo | Connector layer adds 3 weeks to build estimate; confirmed with Marcus Webb |
-| Regulatory Variance: cross-border shipment data rules differ by region | Identify the three highest-volume cross-border corridors in the customer base; complete regulatory review for those corridors before launch | Geo-restrict the feature for non-reviewed corridors at launch; expand coverage in phased releases after regulatory sign-off | Rafael Torres | Legal review to be initiated by Marcus Webb; 4-week lead time |
-
-**Revisit Note:**
-- Next scheduled review: at build kickoff (carrier audit complete)
-- Trigger for unscheduled review: if any pilot customer reports integration failure or if carrier API coverage drops below 60% of their shipment volume
-
----
-
-##### Why This Works
-
-- Risk Names follow the `[Type]: [Specific Concern]` pattern. Each one names something specific, not a category.
-- Six risks span four distinct categories: technical (01, 03), adoption (02, 05), compliance (04), and competitive (06). No single category dominates.
-- Priorities are meaningfully differentiated. Three Critical, one Monitor, one Manage, one Accept. The Accept risk (competitive timing) is acknowledged but not over-invested in given its low probability.
-- Mitigation Tactics are proactive and specific: conducting an audit, running workflow observations, building a connector layer. None say "test more thoroughly."
-- Contingency Plans are clearly reactive and distinct from mitigation: pausing rollout, geo-restricting, offering a manual path. Each describes what happens after the risk occurs, not before.
-- Every Point of Contact is a named individual. Dana Okonkwo owns technical risks. Lila Chen owns the adoption risk. Rafael Torres owns the regulatory and competitive risks.
-- The Revisit Note names a specific trigger, not just a vague intention to "check in later."
-
----
-
-#### Weak Example
-
-**Context:** Same supply chain visibility platform. Different attempt at the same assessment.
-
----
-
-##### Risk Assessment
-
-**Product or initiative:** Shipment tracking feature
-**Stage:** Development
-**Session participants:** Product team
-
----
-
-**Section 1: Identify Risks**
-
-| # | Risk Name | Risk Raised By |
-|---|-----------|----------------|
-| 01 | Technical Risk | Team |
-| 02 | User Adoption Risk | Team |
-| 03 | Integration Risk | Team |
-| 04 | Compliance Risk | Team |
-| 05 | Resource Risk | Team |
-| 06 | Market Risk | Team |
-
----
-
-**Section 2: Plot Level of Risk**
-
-Risk 01: Technical Risk
-  Impact Severity: High
-  Occurrence Probability: High
-  Priority: Critical
-
-Risk 02: User Adoption Risk
-  Impact Severity: High
-  Occurrence Probability: High
-  Priority: Critical
-
-Risk 03: Integration Risk
-  Impact Severity: High
-  Occurrence Probability: High
-  Priority: Critical
-
-Risk 04: Compliance Risk
-  Impact Severity: High
-  Occurrence Probability: High
-  Priority: Critical
-
-Risk 05: Resource Risk
-  Impact Severity: High
-  Occurrence Probability: High
-  Priority: Critical
-
-Risk 06: Market Risk
-  Impact Severity: High
-  Occurrence Probability: High
-  Priority: Critical
-
----
-
-**Section 3: Begin Risk Management**
-
-| Risk Name | Mitigation Tactics | Contingency Plans | Point of Contact | Notes |
-|-----------|-------------------|-------------------|------------------|-------|
-| Technical Risk | Test more thoroughly before launch | Test more thoroughly if issues arise | Product Team | TBD |
-| User Adoption Risk | Communicate the feature to users | Communicate more if adoption is low | Product Team | TBD |
-
----
-
-##### Why This Fails
-
-**Risk names are categories, not concerns.** "Technical Risk" does not identify a risk. It names a bucket. The team cannot assess likelihood, plan for it, or communicate it to stakeholders.
-
-**Every risk is rated High/High/Critical.** When everything is Critical, nothing is prioritized. The team has no signal about where to concentrate effort or which risks warrant the most investment.
-
-**Risk Raised By is "Team" for every row.** No individual is accountable. When something goes wrong, accountability evaporates.
-
-**Mitigation and Contingency are identical.** "Test more thoroughly before launch" and "test more thoroughly if issues arise" are not two different plans. They are the same vague instruction applied to two different moments in time, and neither one is actually specific.
-
-**Risk Management rows are incomplete.** Six risks were identified; only two have management rows. The four that were skipped include compliance, resource, and market risks that could be significant.
-
-**The session was run alone.** "Product team" is not a collaborative review. The project manager and relevant stakeholders are not in the room.
-
----
-
-#### Drift-Bug Example
-
-**Named failure: Mitigation-Contingency Swap Bug**
-
-**What it looks like:**
-
-The Mitigation Tactics and Contingency Plans columns contain the same type of content: both describe what the team will do after the risk has already occurred.
-
-Example from a risk of low user adoption after launch:
-
-| Risk Name | Mitigation Tactics | Contingency Plans | Point of Contact | Notes |
-|-----------|-------------------|-------------------|------------------|-------|
-| Coordinator Resistance: dispatchers avoid the new tracking dashboard | Provide additional training to users if adoption is below 40% at week four | Offer extended support hours if adoption remains slow after training | Lila Chen | Check adoption metrics at week four |
-
-Both entries describe a response to adoption having already failed. Neither one attempts to prevent the adoption failure from occurring in the first place.
-
-**Why it fails:**
-
-Mitigation happens before the risk occurs. The goal is to reduce the probability that adoption fails. The current "Mitigation" is actually a contingency response to adoption already being below target.
-
-**The fix:**
-
-| Risk Name | Mitigation Tactics | Contingency Plans | Point of Contact | Notes |
-|-----------|-------------------|-------------------|------------------|-------|
-| Coordinator Resistance: dispatchers avoid the new tracking dashboard | Conduct workflow observations with five dispatchers before finalizing the interface; incorporate dispatcher input into the notification format and dashboard layout to match existing habits | If adoption falls below 40% at week four, pause rollout, conduct five structured interviews with non-adopters within two weeks, and redesign the highest-friction touchpoints before resuming | Lila Chen | Observation sessions to be scheduled before build kickoff |
-
-Now Mitigation is proactive: observe real workflows and co-design with users to reduce the chance resistance occurs. Contingency is reactive: pause, learn, redesign. The two are clearly distinct and serve different moments in the risk lifecycle.
-
-**How to spot this bug in your own artifact:**
-
-Ask for each row: "If we execute the Mitigation Tactic perfectly, does it reduce the chance the risk occurs?" If the answer is "only if the risk has already occurred," the content belongs in the Contingency column, not the Mitigation column.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-risk-assessment) for supporting source material and expanded examples.
 
 ## ps-product-outcome-canvas | Product Outcome Canvas
 
@@ -4784,64 +2858,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-product-outcome-canvas / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `04-discover-define.md`, section `ps-product-outcome-canvas / Template`) for the scaffold.
+Use Template (uploaded reference: `04-discover-define.md`, section `ps-product-outcome-canvas / Template`) for the scaffold.
 
-See the source play pages in assets/ps_product_outcome_canvas_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -4858,7 +2892,7 @@ That means:
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-review-canvas.md (uploaded reference: `07-prompts.md`, section `ps-product-outcome-canvas / Companion / 01-review-canvas.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Tech-Role Bias Guard
 
@@ -5002,126 +3036,9 @@ After delivering the artifact, offer three options:
 2. Enter the Create phase by transitioning to build planning, user story mapping, or roadmap work
 3. Schedule a structured review session to pressure-test The Ask and the risk picture before presenting
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-product-outcome-canvas / Examples`).
-
-The example set includes:
-
-- a strong canvas with vivid customer stories, specific metrics, and a concrete Ask
-- a weak canvas with PM-centric stories, vague metrics, and a TBD Ask
-- a drift-bug example with tech-role bias and invented upstream data
-
-#### Common Pitfalls
-
-##### Pitfall 1: Stories About the PM's Process Instead of the Customer's Experience
-
-**Symptom:** Story 1 or Story 2 describes the PM running discovery, writing requirements, facilitating sprint planning, or presenting to stakeholders.
-
-**Consequence:** Leadership hears a story about the product team's work, not about the customer's problem. The stories fail to make the case for the product.
-
-**Fix:** The protagonist of every story is the customer or buyer. Read the first sentence of each story. If the subject is a PM, a designer, a developer, or a team, rewrite it. The story must anchor to the customer's day and the customer's experience.
-
-##### Pitfall 2: Listing Every Risk Instead of the Top Three
-
-**Symptom:** The Risks section on the canvas contains all six risks from the risk assessment, including Accept-priority risks.
-
-**Consequence:** Leadership cannot distinguish which risks the team considers serious from which risks are background noise.
-
-**Fix:** The canvas shows the top 3 risks by priority. Accept-priority risks belong in the full Risk Assessment artifact, not on the canvas. The canvas is a summary, not a transcript of the assessment.
-
-##### Pitfall 3: The Ask Is Too Vague
-
-**Symptom:** The Ask section reads "We will need engineering, design, and data resources" or "Timeline TBD."
-
-**Consequence:** Leadership cannot approve what they cannot evaluate. A vague Ask signals that the team is not ready to enter the Create phase.
-
-**Fix:** The Ask names specific roles ("2 Senior Engineers, 1 UX Designer, 1 Data Analyst at 80% time"), gives a percentage allocation, and names a timeline. If this information is not yet available, the canvas is premature. Run the planning work before presenting.
-
-##### Pitfall 4: Treating the Canvas as a One-Time Artifact
-
-**Symptom:** The canvas is completed for the initial Go/No Go decision and never revisited.
-
-**Consequence:** As the product evolves through the Create phase, the canvas becomes disconnected from current reality. When leadership asks for a status update, the team has to rebuild from scratch.
-
-**Fix:** Treat the canvas as a living document. Update the Version number and Date when outcomes shift, risks change, or The Ask needs revision. The canvas should reflect the current state of the product investment, not just its initial framing.
-
-##### Pitfall 5: Using Generic Placeholder Persona Names in Stories
-
-**Symptom:** Stories use placeholder names like "User A," "The Buyer," or "Jane Doe" without specific role context.
-
-**Consequence:** The stories feel generic and fail to make the problem tangible. Leadership cannot picture a real person in a real situation.
-
-**Fix:** Use a specific, realistic name that reflects the persona's role and demographic diversity. Pair the name with a concrete job title and situation. "Priya Nair, a logistics coordinator at a mid-market distribution company, spends the first two hours of every morning..." is credible. "The user opens the dashboard..." is not.
-
-##### Pitfall 6: Filling the Canvas Without Any Upstream Artifacts
-
-**Symptom:** The canvas is populated entirely from the agent's inference, without asking the PM for problem statements, hypothesis outputs, or outcome tree data.
-
-**Consequence:** The canvas reflects what the agent imagined the product to be, not what the PM's discovery work established. The content may sound coherent but will not match the team's actual findings.
-
-**Fix:** Before drafting any field, ask for the upstream artifacts or equivalent direct input. If no artifacts exist, flag the gap and offer to run the relevant upstream skill. Never invent the content of a field that is supposed to come from customer research or team validation.
-
-##### Pitfall 7: Tech-Role Bias in the Customer Stories
-
-**Symptom:** The story protagonist is a software developer, data engineer, or architect when the product serves operations staff, field workers, clinicians, or other non-technical roles.
-
-**Consequence:** Leadership hears a story about engineering concerns rather than customer problems. The canvas misrepresents who the product is for.
-
-**Fix:** Run the tech-role bias guard in Step 1 before writing any content. Confirm the customer's job title and daily workflow. If the product serves non-technical users, the story must reflect non-technical concerns: task completion, time, accuracy, confidence, and visibility rather than system architecture or code quality.
-
-##### Pitfall 8: Confusing Key Features with Product Outcomes
-
-**Symptom:** The Key Features section lists outcomes ("Logistics coordinators resolve shipment exceptions 40% faster") instead of capabilities ("Real-time shipment exception alerts").
-
-**Consequence:** The canvas double-counts outcomes in both the Project Boundaries and Key Features sections, obscuring the distinction between what the product does and what the customer achieves.
-
-**Fix:** Key Features are capabilities (what the product does). Product Outcomes are results (what the customer achieves). Each field serves a different purpose. If the same content appears in both sections, one of them is wrong.
-
-##### Pitfall 9: A Canvas Built From Nothing
-
-**Symptom:** The PM asks for a Product Outcome Canvas for a new idea and gets every section filled: stories, metrics, features, risks, and an Ask.
-
-**Consequence:** Leadership makes a Go/No Go decision on a document that summarizes work nobody did.
-
-**Fix:** Assemble the canvas only from upstream artifacts. Mark any section with no source as a gap, and say which play fills it.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `04-discover-define.md`, section `ps-product-outcome-canvas / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-product-outcome-canvas / Companion / README.md`) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `04-discover-define.md`, section `ps-product-outcome-canvas / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-- **Upstream:** ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) provides the Problem Statement; ps-solution-hypothesis (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Instructions`) provides the Solution Summary; ps-positioning-statement (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Instructions`) provides the seven-element Positioning Statement; ps-outcome-tree (uploaded reference: `02-context.md`, section `ps-outcome-tree / Instructions`) provides Outcomes and Metrics; ps-risk-assessment (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Instructions`) provides the top Risks; ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) provides persona context for the stories
-- **Downstream:** ps-product-readiness (uploaded reference: `05-create.md`, section `ps-product-readiness / Instructions`) is the next Key Decision Point — the beta test plan gates Deliver phase entry; run ps-product-readiness after completing Create phase work
-- **Downstream:** ps-go-to-market (uploaded reference: `05-create.md`, section `ps-go-to-market / Instructions`) imports the Problem Statement, Positioning Statement, and Key Features fields from this canvas at launch time
-
-##### Dependency Map
-
-See [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md) for the full upstream/downstream table.
-
-##### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-##### Source Material
-
-- assets/ps_product_outcome_canvas_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 75-77: Template 16 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
-
 ### ps-product-outcome-canvas / Template
 
-### Product Outcome Canvas
-
-#### When to Use This
+##### When to Use This
 
 Use this template at the **Go/No Go decision point** at the end of the Discover + Define phase, before the team commits to entering the Create (build) phase. Present the completed canvas to your leadership sponsor or investment committee.
 
@@ -5135,7 +3052,7 @@ Upstream artifacts that feed this template:
 
 Loose coupling rule: if an upstream artifact is not available, provide the information directly or ask the agent to run the relevant skill before proceeding. No field should be left as TBD in the final canvas.
 
-#### Template
+##### Template
 
 ```markdown
 # Product Outcome Canvas
@@ -5313,9 +3230,9 @@ Format guide:
 > Capacity check: 5-10 words.
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Start with **Section 1: Core Information** to anchor the document.
 2. Complete **Section 2: Summary** starting with the Problem Statement, which grounds everything that follows.
@@ -5324,7 +3241,7 @@ Format guide:
 5. Complete **Section 3: Project Boundaries** by importing from upstream artifacts wherever possible.
 6. Write The Ask after reviewing all other sections; the resource request should reflect the full scope of what the canvas describes.
 
-##### What Goes Where
+###### What Goes Where
 
 | Section | Contains | Does NOT Contain |
 |---------|----------|-----------------|
@@ -5335,12 +3252,12 @@ Format guide:
 | Product Outcomes | What customers achieve (role names) | Persona names, product features |
 | The Ask | Roles, percentages, timeline, requirements | Vague functions, TBD timelines |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-framing-the-problem (Problem Statement), ps-solution-hypothesis (Solution Summary), ps-positioning-statement (Positioning Statement), ps-outcome-tree (Outcomes and Metrics), ps-risk-assessment (Risks), ps-proto-persona (persona context for stories)
 - **Downstream:** Go-to-Market Enablement (Template 20) imports Problem Statement, Positioning Statement, and Key Features
 
-##### Capacity Reference
+###### Capacity Reference
 
 | Field | Target Length | Guidance |
 |-------|--------------|----------|
@@ -5360,257 +3277,33 @@ Format guide:
 
 ### ps-product-outcome-canvas / Examples
 
-### Product Outcome Canvas Examples
+Illustrative and fictional, not customer evidence.
 
-#### Strong Example
+- **Strong:** For a hospital bed-coordination concept, consolidate the charge nurse's problem, tested hypothesis, outcomes, evidence, and risks for leadership's Go/No Go decision.
+- **Weak:** A persuasive feature pitch without discovery evidence cannot support an informed investment decision.
+- **Drift to avoid:** Decision substitution: a polished canvas does not constitute leadership approval or permission to proceed.
 
-**Context:** Healthcare operations platform. A PM at a regional hospital network has completed the Discover + Define phase for a bed management coordination tool. The product helps hospital charge nurses track bed availability and patient transfer readiness across units in real time. The PM has completed ps-framing-the-problem, ps-solution-hypothesis, ps-positioning-statement, ps-outcome-tree, ps-risk-assessment, and ps-proto-persona. She is presenting the canvas to the VP of Operations and CFO for the Go/No Go decision.
 
----
+#### Common Pitfalls
 
-##### Product Outcome Canvas
+- **Stories About the PM's Process Instead of the Customer's Experience:** The protagonist of every story is the customer or buyer. Read the first sentence of each story. If the subject is a PM, a designer, a developer, or a team, rewrite it. The story must anchor to the customer's day and the customer's experience.
 
-**Product Name:** BedSight
-**Date:** June 26, 2026
-**Product Manager:** Elena Vasquez, Product Manager, Patient Operations
-**Version:** v1.0
+- **Listing Every Risk Instead of the Top Three:** The canvas shows the top 3 risks by priority. Accept-priority risks belong in the full Risk Assessment artifact, not on the canvas. The canvas is a summary, not a transcript of the assessment.
 
----
+- **The Ask Is Too Vague:** The Ask names specific roles ("2 Senior Engineers, 1 UX Designer, 1 Data Analyst at 80% time"), gives a percentage allocation, and names a timeline. If this information is not yet available, the canvas is premature. Run the planning work before presenting.
 
-**Section 2: Summary**
+- **Treating the Canvas as a One-Time Artifact:** Treat the canvas as a living document. Update the Version number and Date when outcomes shift, risks change, or The Ask needs revision. The canvas should reflect the current state of the product investment, not just its initial framing.
 
-**Problem Statement**
+- **Using Generic Placeholder Persona Names in Stories:** Use a specific, realistic name that reflects the persona's role and demographic diversity. Pair the name with a concrete job title and situation. "Priya Nair, a logistics coordinator at a mid-market distribution company, spends the first two hours of every morning..." is credible. "The user opens the dashboard..." is not.
 
-Hospital charge nurses responsible for unit-level bed management spend 45-60 minutes per shift reconciling bed status across three disconnected systems, phone calls, and whiteboards. This manual coordination delays patient transfers by an average of 2.3 hours, increases ED boarding time, and creates capacity bottlenecks that affect patient throughput and staff fatigue.
+- **Filling the Canvas Without Any Upstream Artifacts:** Before drafting any field, ask for the upstream artifacts or equivalent direct input. If no artifacts exist, flag the gap and offer to run the relevant upstream skill. Never invent the content of a field that is supposed to come from customer research or team validation.
 
-**Solution Summary**
+- **Tech-Role Bias in the Customer Stories:** Run the tech-role bias guard in Step 1 before writing any content. Confirm the customer's job title and daily workflow. If the product serves non-technical users, the story must reflect non-technical concerns: task completion, time, accuracy, confidence, and visibility rather than system architecture or code quality.
 
-If we provide charge nurses with a unified, real-time bed status dashboard that integrates housekeeping, nursing, and transport workflows, then nurses can confirm bed readiness and initiate patient transfers without manual coordination across systems, reducing transfer delays and freeing 30-45 minutes per shift for direct patient care.
+- **Confusing Key Features with Product Outcomes:** Key Features are capabilities (what the product does). Product Outcomes are results (what the customer achieves). Each field serves a different purpose. If the same content appears in both sections, one of them is wrong.
 
-**Positioning Statement**
+- **A Canvas Built From Nothing:** Assemble the canvas only from upstream artifacts. Mark any section with no source as a gap, and say which play fills it.
 
-For hospital charge nurses in acute care units who need real-time visibility into bed readiness to coordinate patient transfers without relying on phone calls and disconnected systems, BedSight is a bed management coordination platform that eliminates transfer delays caused by status ambiguity. Unlike manual phone-and-whiteboard coordination and legacy ADT systems, our product gives charge nurses a single confirmed view of bed readiness across housekeeping, nursing, and transport, so transfers happen when the bed is actually ready, not when someone finally gets an answer.
+#### References
 
-**Story 1: User Persona**
-
-Before BedSight launched, Charge Nurse Amara Diallo started every morning shift at St. Clement Medical Center the same way: three phone calls to housekeeping, a check of the whiteboard in the nurse station, and a handoff message to transport that she already knew might be wrong by the time it arrived. On a busy Tuesday in February, a patient ready for transfer to step-down sat in the ED for four hours because no one could confirm whether the receiving unit's bed had cleared. With BedSight running for six weeks, Amara opens a single screen at shift start, sees three beds confirmed ready in step-down, and the first transfer is underway within 40 minutes.
-
-**Story 2: Buyer Persona**
-
-Three months after BedSight launched, Facilities VP Marcus Thorpe pulled the first quarter capacity utilization report expecting the usual mix of good intentions and inconclusive data. Instead, he saw average transfer delay down from 2.3 hours to 58 minutes across all acute units, ED boarding time reduced by 22%, and charge nurse overtime hours down 11% versus the same quarter last year. For the first time, he could attribute measurable throughput improvement to a specific operational change, and he had the data to take to the CFO when the annual budget review came around.
-
-**Key Features**
-
-- Real-time bed status board across all acute units
-- Integrated housekeeping and transport workflow triggers
-- Transfer readiness confirmation with one-click nurse signoff
-- Shift handoff summary with unresolved transfer queue
-- Mobile-accessible view for charge nurses on rounds
-
----
-
-**Section 3: Project Boundaries**
-
-**Business Outcomes**
-
-Increase acute care bed utilization by 15% within 12 months of launch, reduce ED boarding hours by 20%, and eliminate the manual coordination overhead that drives charge nurse overtime costs.
-
-**Product Outcomes**
-
-- Charge nurses confirm bed readiness without cross-system calls or whiteboard checks
-- Transport coordinators receive transfer requests with confirmed bed and patient status
-- Unit managers view real-time occupancy without requesting manual reports
-
-**Business Success Metrics**
-
-- Average patient transfer delay decreases from 2.3 hours to under 75 minutes within 6 months of launch
-- ED boarding time (door-to-bed) decreases by 20% within 12 months
-- Charge nurse overtime hours decrease by 10% in acute care units within 6 months
-
-**Product Success Metrics**
-
-- 80% of charge nurses use BedSight as primary bed status source within 60 days of unit rollout
-- Manual bed status calls (tracked via ADT system logs) decrease by 70% within 90 days
-- Transfer readiness confirmation time (from nurse signoff to transport dispatch) falls below 8 minutes
-
-**Risks**
-
-1. EHR Integration: ADT system exports require IT approval and testing cycle
-2. Workflow Resistance: experienced charge nurses resist changing established phone habits
-3. Housekeeping Adoption: housekeeping staff must update status in system for data to be accurate
-
-**What's Next: The Ask**
-
-2 Senior Engineers at 80% time; 1 UX Designer at 60% time; 1 Clinical Integration Specialist at 40% time. Initial build phase: 10 weeks beginning September 2026. Change management: 2 charge nurse champions needed per unit for pilot facilitation.
-
-**Introduction Date**
-
-Pilot launch Q4 2026; full acute care rollout Q1 2027.
-
----
-
-##### Why This Works
-
-- Both stories use a concrete time anchor and a specific named person in a real job. Amara Diallo is a charge nurse dealing with a bed management problem, not a PM running a sprint. Marcus Thorpe is a buyer who cares about throughput data and budget justification, not a product manager reviewing metrics.
-- The Problem Statement describes the current state without solution language. The numbers (45-60 minutes, 2.3 hours) are specific and credible.
-- The Solution Summary uses the If/Then format from ps-solution-hypothesis and connects directly to the problem.
-- Key Features are capabilities ("Real-time bed status board," "Transfer readiness confirmation") not outcomes ("Nurses save 30 minutes").
-- Product Outcomes use role names ("charge nurses," "transport coordinators") not persona names.
-- The Ask names specific roles, percentages, a timeline, and a change management requirement. Leadership can evaluate it.
-- The three risks are named specifically, cover distinct categories (technical, adoption, data quality), and are clearly the top priorities rather than an exhaustive list.
-
----
-
-#### Weak Example
-
-**Context:** Same healthcare operations scenario, same BedSight product. Different attempt at the canvas.
-
----
-
-##### Product Outcome Canvas
-
-**Product Name:** Bed Management Tool
-**Date:** June 2026
-**Product Manager:** Elena
-**Version:** Draft
-
----
-
-**Section 2: Summary**
-
-**Problem Statement**
-
-There is a problem with how we manage beds in the hospital. We need a better system so that patients can be moved faster and the nurses have what they need. The current process is inefficient.
-
-**Solution Summary**
-
-We will build a tool that improves bed management and helps the team work better together. The tool will make things easier for everyone involved.
-
-**Positioning Statement**
-
-For hospitals who need better bed management, our tool is a software solution that helps nurses and other staff coordinate patient transfers. Unlike the old way of doing things, our product gives better results and improves efficiency.
-
-**Story 1: User Persona**
-
-As a PM working on this project, I've been talking to nurses and learning about their pain points. After several discovery sessions and stakeholder interviews, I now understand the problem well. We designed a prototype and tested it with users. The feedback was positive, and we believe the solution will work.
-
-**Story 2: Buyer Persona**
-
-The VP of Operations wants to see metrics improve. Leadership is concerned about patient throughput and would like to see better data. We will present our solution to the investment committee and show how the tool will improve outcomes. The business case is strong.
-
-**Key Features**
-
-- Better coordination between teams
-- Improved data visibility for charge nurses
-- Faster patient transfers and less waste
-- Easier to use than the current system
-
----
-
-**Section 3: Project Boundaries**
-
-**Business Outcomes**
-
-Improve patient throughput and reduce costs.
-
-**Product Outcomes**
-
-- Users will have a better experience
-- The hospital will run more efficiently
-- Nurses will save time
-
-**Business Success Metrics**
-
-- Improve NPS
-- Reduce costs
-- Better throughput numbers
-
-**Product Success Metrics**
-
-- High adoption rate
-- Positive user feedback
-- Less manual work
-
-**Risks**
-
-1. User adoption
-2. Technical issues
-3. Change management
-
-**What's Next: The Ask**
-
-We will need engineering and design resources. Timeline TBD.
-
-**Introduction Date**
-
-TBD
-
----
-
-##### Why This Fails
-
-**The Problem Statement is vague.** "There is a problem with how we manage beds" names a topic, not a problem. No numbers, no specific customer role, no root cause. Leadership cannot evaluate the severity of a problem this loosely described.
-
-**The Positioning Statement is generic.** "Unlike the old way of doing things, our product gives better results" could describe any product in any category. The seven-element formula is not used; the benefit and differentiation are both absent.
-
-**Story 1 is about the PM, not the customer.** The protagonist is the product manager running discovery sessions and testing prototypes. A customer story should anchor to a customer's experience, not the PM's process of building the product. This is the most common story failure.
-
-**Story 2 is about leadership expectations, not the buyer's experience.** "Leadership is concerned about patient throughput" is not a story. There is no named person, no concrete moment, no before-and-after.
-
-**Key Features are outcomes or descriptions, not capabilities.** "Better coordination between teams" and "faster patient transfers" are results, not product capabilities. A feature should be specific: "Real-time bed status board," not "better data visibility."
-
-**Metrics are directional, not measurable.** "Improve NPS," "reduce costs," and "high adoption rate" are not metrics. Each one lacks a direction, a current baseline, a target, and a timeframe.
-
-**Risks are categories, not concerns.** "User adoption," "Technical issues," and "Change management" are buckets, not risks. Each one needs a specific concern attached: what kind of adoption problem? Which technical issue?
-
-**The Ask is incomplete.** "Engineering and design resources" does not specify roles, headcount, or time allocation. "Timeline TBD" means the team is not ready to enter the Create phase.
-
----
-
-#### Drift-Bug Example
-
-**Named failure: Tech-Role Bias Bug + Invented Upstream Data**
-
-**What it looks like:**
-
-The PM for BedSight provides only a one-sentence product description: "We're building a real-time bed management platform for hospital operations." No upstream artifacts, no persona descriptions, no problem framing documents.
-
-The agent, rather than asking for more information or offering to run upstream skills, proceeds to fill the canvas using its training data and defaults.
-
-**The result:**
-
-**Story 1: User Persona**
-
-Six weeks after BedSight launched, Senior Software Engineer Nikhil Patel was able to deploy the new real-time API integration with the hospital's ADT system in under two hours. The GraphQL endpoints made it straightforward to pipe bed status updates into the dashboard without writing custom transformation logic. The system handled 400 concurrent connections during the morning peak with no degradation, which was the main concern from the architecture review.
-
-**Story 2: Buyer Persona**
-
-The CTO reviewed the system architecture and was pleased with the microservices approach the team had chosen. The containerized deployment meant that scaling would be handled at the infrastructure level, and the DevOps team would not need to intervene for routine capacity events. She approved the next phase of development and asked the team to prepare a technical roadmap for the security review.
-
-**Risks:**
-
-1. API Rate Limiting: ADT vendor imposes call limits during peak hours
-2. Containerization Overhead: Kubernetes orchestration adds latency during pod scaling
-3. GraphQL Schema Drift: upstream EHR schema changes break the query layer
-
----
-
-**Why it fails:**
-
-Both stories have the same tech-role protagonist (engineer, CTO) despite the fact that the product serves charge nurses and hospital operations leaders, people who do not think about GraphQL endpoints, microservices, or Kubernetes orchestration. The tech-role bias has entirely replaced the intended customer population.
-
-The risks are all technical and engineering-oriented, when the most significant risks for a hospital operations product typically involve clinical workflow adoption, housekeeping system integration, and charge nurse behavior change.
-
-None of the content was drawn from upstream artifacts because no artifacts were provided and the agent did not ask for them. The Problem Statement, Positioning Statement, and Outcomes were invented from the product description alone.
-
-**How to spot this bug:**
-
-Read the first sentence of each story. If the protagonist holds a technical role (engineer, architect, developer, CTO reviewing technical decisions) when the product serves a non-technical customer population, the tech-role bias has taken over.
-
-Check the Risks section. If all three risks are technical and none involve adoption, organizational change, or customer behavior, the risk identification has been filtered through a technical lens.
-
-Ask: "Where did this content come from?" If the answer is "the agent inferred it from the product description," the upstream artifact step was skipped.
-
-**The fix:**
-
-Before drafting any field, the agent should ask: "Which upstream artifacts do you have available? For example: problem framing, solution hypothesis, positioning statement, outcome tree, risk assessment, persona descriptions." If none are available, offer to run the relevant upstream skills starting with ps-proto-persona to establish who the customer is. Do not fill the canvas from inference alone.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-product-outcome-canvas) for supporting source material and expanded examples.

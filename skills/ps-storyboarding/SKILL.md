@@ -22,6 +22,7 @@ scenarios:
   - "Help me build a six-panel storyboard showing how our customer goes from pain to resolution"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Storyboard** that validates a solution hypothesis through narrative.
@@ -31,6 +32,15 @@ This skill helps a Product Manager build a six-panel story centered on their tar
 The storyboard belongs in the **Discover + Define phase** of the Productside Playbook. The B2B work-in-progress deck gives it no template number and places its instruction page right after Lo-fi Experimentation; the baseline deck had it as Template 16 of 24 in Create. It is explicitly low-fidelity. The playbook says it plainly: "Don't spend a lot of time building your storyboard; it doesn't need to look pretty!" Speed and clarity of thinking matter here. Aesthetics do not.
 
 The storyboard does two things: it tests whether the PM's story about the customer rings true, and it gives stakeholders and real users something concrete enough to react to.
+
+### Usage Notes
+
+- This is a component skill that produces a paste-ready six-panel narrative artifact.
+- The Solution Hypothesis Statement (from ps-solution-hypothesis) anchors the top of every storyboard.
+- Low fidelity is a design principle, not a limitation. Speed and clarity of thinking matter; aesthetics do not.
+- The tech-role bias guard in Step 1 of Application is the single most important step in this skill.
+- Upstream: ps-solution-hypothesis, ps-proto-persona, ps-framing-the-problem.
+- Downstream: leadership alignment, executive communication, Go-to-Market narrative.
 
 ## Key Concepts
 
@@ -82,9 +92,9 @@ Storyboarding is a validation technique, not just a communication tool. Validati
 
 ### The Storyboard Is Also a Product Visualization Tool
 
-Validation with real users is the primary purpose of storyboarding. But the same artifact serves a second function: giving cross-functional stakeholders — designers, engineers, executives — a concrete, shared picture of the proposed solution before any build investment is made.
+Validation with real users is the primary purpose of storyboarding. But the same artifact serves a second function: giving cross-functional stakeholders  -  designers, engineers, executives  -  a concrete, shared picture of the proposed solution before any build investment is made.
 
-A well-constructed six-panel story makes the product's user experience visible in a way that wireframes and feature lists cannot. Stakeholders see the flow: the problem the product addresses, the moment of first contact with the solution, the breakthrough, the lasting change. They understand what the product actually does for the customer — its key capabilities and overall user value — without reading a requirements document.
+A well-constructed six-panel story makes the product's user experience visible in a way that wireframes and feature lists cannot. Stakeholders see the flow: the problem the product addresses, the moment of first contact with the solution, the breakthrough, the lasting change. They understand what the product actually does for the customer  -  its key capabilities and overall user value  -  without reading a requirements document.
 
 Product leaders can use the storyboard to share the product vision with executives, making the problem and proposed solution vivid in a way that slides and written descriptions cannot. Build it once; show it to users for validation, show it to the team for alignment, and show it to leadership for direction-setting.
 
@@ -106,68 +116,28 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_storyboarding_playbook_pages.pdf](assets/ps_storyboarding_playbook_pages.pdf).
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-pressure-test-storyboard.md](prompts/01-pressure-test-storyboard.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Tech-Role Bias Guard
 
@@ -268,112 +238,205 @@ After completing the storyboard, offer three options:
 2. Share with leadership: the storyboard is an effective executive alignment tool. It makes the problem and solution concrete without requiring a slide deck.
 3. Use in Go-to-Market messaging: the six-panel arc - problem, escalation, discovery, breakthrough, new normal - maps directly to launch narrative and sales enablement content.
 
+## Template
+
+### When to Use This
+
+Use this template during the **Create phase** after you have a Solution Hypothesis in hand. The storyboard validates your hypothesis by telling the customer's story - from their everyday world through the problem crisis into the solution and beyond.
+
+Upstream artifacts that feed this template:
+- Solution Hypothesis (ps-solution-hypothesis): the If/Then statement that anchors Panel 1 and must survive to Panel 6
+- User Persona (ps-proto-persona): the character - name, role, world, pains, goals
+- Problem Framing (ps-framing-the-problem): the source of the conflict in Panel 3
+
+You can run this with only a product description if needed. The hypothesis and persona can be sketched on the fly. Do not block the exercise on missing upstream artifacts.
+
+### Template
+
+```markdown
+# Storyboard
+
+## Solution Hypothesis Statement
+
+IF we [describe the solution], THEN [describe the customer benefit].
+IF [customer benefit], THEN [describe the business outcome].
+
+---
+
+## Three Story Elements Check
+
+Before writing the panels, confirm these three elements:
+
+- Character (who is the persona?):
+- Conflict (what is the problem - must echo the Problem Statement):
+- Resolution (what does the solution enable - must align with the Hypothesis):
+
+---
+
+## Panel 1: "Once upon a time..."
+
+Introduce the persona and their world. Who are they, what is their day like, and what do they care about?
+
+[Write your caption here]
+
+Visual description: [optional - what image or icon would represent this moment?]
+
+> Quality check: Does the reader now know who this person is, what they do, and what matters to them? Avoid generic descriptions. Name the role and give one or two concrete details about their world.
+> Capacity check: 20-35 words per caption; 5-15 words for visual description.
+
+---
+
+## Panel 2: "Every day..."
+
+Show the routine or status quo that leads toward the problem. What does the broken normal look like?
+
+[Write your caption here]
+
+Visual description: [optional]
+
+> Quality check: Is this a pattern, not an event? Panel 2 shows the friction that precedes the crisis. The crisis belongs in Panel 3.
+> Capacity check: 20-35 words.
+
+---
+
+## Panel 3: "Until one day..."
+
+The escalation moment. Something tips from friction into failure. Make it specific and high-stakes.
+
+[Write your caption here]
+
+Visual description: [optional]
+
+> Quality check: Is the consequence specific and concrete? A vague conflict ("some challenges arose") produces no useful feedback. Name what breaks, who is affected, and what the cost is. This panel must earn the stakes of the story.
+> Capacity check: 25-40 words.
+
+---
+
+## Panel 4: "Because of that..."
+
+The persona tries something new - first contact with the solution. Write the experience, not the feature list.
+
+[Write your caption here]
+
+Visual description: [optional]
+
+> Quality check: Is this written as an experience the persona has, or as a product capability list? "She discovered the system had already grouped the exceptions by type" is an experience. "The platform provides automated categorization, real-time alerts, and bulk actions" is a feature list. Write the experience.
+> Capacity check: 20-35 words.
+
+---
+
+## Panel 5: "Until finally..."
+
+The Aha moment. Success arrives. Name the emotion.
+
+[Write your caption here]
+
+Visual description: [optional]
+
+> Quality check: Does this panel name a specific emotion (relief, confidence, pride, surprise) in addition to describing what the persona achieved? The emotion is what makes the story resonate with real users.
+> Capacity check: 20-35 words.
+
+---
+
+## Panel 6: "And every day after that..."
+
+The lasting change. What is now possible that was not possible before? Show the behavioral difference, not just the happiness.
+
+[Write your caption here]
+
+Visual description: [optional]
+
+> Quality check: Does this panel describe a specific behavioral change - something the persona now does, builds, prevents, or decides that was out of reach before? "She feels much better" is not a lasting change. "She now closes the compliance cycle on Tuesday instead of Friday and uses the saved time to coach her junior analysts" is.
+> Capacity check: 20-35 words.
+
+---
+
+## Hypothesis Alignment Check
+
+After completing all six panels, re-read the Solution Hypothesis Statement at the top. Then ask:
+
+- Does the conflict in Panel 3 match the problem named in the IF clause?
+- Does the solution in Panel 4 match the solution named in the IF clause?
+- Does the outcome in Panels 5 and 6 match the THEN clause?
+
+If the story has drifted from the hypothesis, revise before sharing.
+
+---
+
+## Validation Plan
+
+Who will you show this storyboard to?
+
+- User validation (3-5 real users or customers):
+- Stakeholder validation (executive or cross-functional review):
+- Key question to test: [Which panel are you most uncertain about? What do you most need to hear from users?]
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Paste or write the Solution Hypothesis Statement at the top before writing any panel.
+2. Fill in the Three Story Elements check - character, conflict, resolution - before Panel 1.
+3. Write all six panels in order. Resist the urge to skip to Panel 4.
+4. After writing all six panels, do the Hypothesis Alignment Check.
+5. Add visual descriptions last, if at all.
+
+#### What Goes Where
+
+| Panel | Contains | Does NOT Contain |
+|-------|----------|-----------------|
+| Panel 1 | Named persona, concrete world details | Generic "busy professional" descriptions |
+| Panel 2 | The recurring friction pattern | The crisis event (that belongs in Panel 3) |
+| Panel 3 | A specific, consequential failure event | Vague struggle or "some challenges" |
+| Panel 4 | The persona's experience of first contact | A feature list or product spec |
+| Panel 5 | A named emotion plus the success moment | The product's achievement (not the persona's) |
+| Panel 6 | Specific behavioral change going forward | Vague happiness or "life is better now" |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-solution-hypothesis provides the If/Then statement; ps-proto-persona provides the character; ps-framing-the-problem provides the conflict source
+- **Downstream:** the storyboard feeds leadership alignment, executive communication, and Go-to-Market narrative
+
+#### Capacity Reference
+
+| Field | Target Length | Guidance |
+|-------|-------------|---------|
+| Solution Hypothesis Statement | 40-70 words | Full If/Then statement from ps-solution-hypothesis |
+| Panel 1-2 captions | 20-35 words each | One to three sentences; specific but not overlong |
+| Panel 3 caption | 25-40 words | Slightly more room - the conflict needs enough specificity to be testable |
+| Panel 4-6 captions | 20-35 words each | One to three sentences |
+| Visual descriptions | 5-15 words each | Optional; describe the image, not the story |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** A manufacturing quality inspector encounters a defect, faces its consequences, uses the proposed solution, and reaches a changed outcome across six frames.
+- **Weak:** Six screenshots demonstrate an interface without telling a customer story.
+- **Drift to avoid:** Tech-role inversion: the inspector is the protagonist; do not replace them with the developer building the tool.
 
-- a strong storyboard with vivid conflict, named emotion, and specific lasting change
-- a weak storyboard with vague panels, feature-list Panel 4, and a hollow Panel 6
-- a drift-bug example showing tech-role inversion, where the persona is a developer when the product serves field technicians
 
 ## Common Pitfalls
 
-### Pitfall 1: The Solution Is the Hero
+- **The Solution Is the Hero:** Rewrite every panel from the persona's perspective. What does the persona do, see, feel, or decide? The product should appear as the enabler of those actions, not the subject of the story.
 
-**Symptom:** The storyboard describes what the product does rather than what the persona experiences. Panel 4 reads like a product spec. Panel 5 is about the product's capability, not the persona's success.
+- **Tech-Role Bias - Developer Persona for a Non-Developer Product:** Before writing Panel 1, confirm who the product is built for. Read the product description. Ask: who uses this in the field? Write for that person.
 
-**Consequence:** The story is not actually about a person. Stakeholders and users cannot place themselves in it. The validation fails because there is no character to resonate with.
+- **Polished and Long Panels:** Each panel caption should be one to three sentences at most. The prompt phrase does the framing work. The caption adds the specific, concrete detail. Keep it rough.
 
-**Fix:** Rewrite every panel from the persona's perspective. What does the persona do, see, feel, or decide? The product should appear as the enabler of those actions, not the subject of the story.
+- **Missing the Conflict - Panel 3 Is Vague:** Name a specific event. Something breaks, fails, or causes visible harm. The more concrete the consequence, the more useful the feedback. "She submitted the wrong version of the report and the audit had to restart" is testable. "She had challenges with the process" is not.
 
-### Pitfall 2: Tech-Role Bias - Developer Persona for a Non-Developer Product
+- **Story Disconnected from the Hypothesis:** After completing all six panels, read the If/Then statement and then read Panel 3 and Panel 4. Are they about the same problem and the same solution? If not, the story has drifted. Rewrite to align.
 
-**Symptom:** The persona is a software developer, data engineer, or architect when the product actually serves operations staff, clinical workers, field technicians, line managers, or other non-builder roles. Panels 1 and 2 describe a coding or deployment workflow.
+- **Panel 6 Is Too Vague:** Name what the persona can now do, build, prevent, or decide that was impossible before. "She can now submit the monthly compliance report in one day instead of four, and she stops dreading the end of each quarter" is specific. "Things improved" is not.
 
-**Consequence:** The story is written for the wrong audience. When shown to real users, they cannot recognize their world. Discovery findings are invalidated.
+- **Running This Before the Solution Hypothesis Exists:** Before running this skill, produce at least a rough If/Then statement using ps-solution-hypothesis. Even an informal hypothesis ("IF we automate the reconciliation step, THEN the operations manager can close the books without waiting on the data team") is enough to anchor the story.
 
-**Fix:** Before writing Panel 1, confirm who the product is built for. Read the product description. Ask: who uses this in the field? Write for that person.
+- **Jumping to Product Features in Panel 4:** Panel 4 describes the persona's first experience, not the product's capabilities. "She logged in for the first time and saw her three overdue tasks organized by the system - she did not have to create the list herself" is an experience. A feature list is not.
 
-### Pitfall 3: Polished and Long Panels
-
-**Symptom:** Each panel caption is three to five sentences with context, caveats, and explanation. The storyboard looks like a business case.
-
-**Consequence:** The low-fidelity speed advantage is lost. A polished storyboard creates the impression that the story is finished and validated, when it is not. Stakeholders treat it as a commitment rather than a draft to react to.
-
-**Fix:** Each panel caption should be one to three sentences at most. The prompt phrase does the framing work. The caption adds the specific, concrete detail. Keep it rough.
-
-### Pitfall 4: Missing the Conflict - Panel 3 Is Vague
-
-**Symptom:** Panel 3 says something like "they were dealing with some challenges" or "the problem was getting harder to manage."
-
-**Consequence:** There are no stakes. The reader has no reason to believe the solution matters. Users cannot confirm or deny a vague conflict.
-
-**Fix:** Name a specific event. Something breaks, fails, or causes visible harm. The more concrete the consequence, the more useful the feedback. "She submitted the wrong version of the report and the audit had to restart" is testable. "She had challenges with the process" is not.
-
-### Pitfall 5: Story Disconnected from the Hypothesis
-
-**Symptom:** The conflict in Panel 3 and the resolution in Panel 4 describe a problem and solution different from the If/Then statement at the top of the storyboard.
-
-**Consequence:** The storyboard does not actually validate the hypothesis. The PM gets feedback on a story, but not on the thing they are planning to build.
-
-**Fix:** After completing all six panels, read the If/Then statement and then read Panel 3 and Panel 4. Are they about the same problem and the same solution? If not, the story has drifted. Rewrite to align.
-
-### Pitfall 6: Panel 6 Is Too Vague
-
-**Symptom:** Panel 6 says "life is better now" or "the team was much happier." No specific change is described.
-
-**Consequence:** The lasting value of the solution is unverifiable. Stakeholders cannot connect the storyboard to business outcomes. Users cannot confirm that this actually changes their world.
-
-**Fix:** Name what the persona can now do, build, prevent, or decide that was impossible before. "She can now submit the monthly compliance report in one day instead of four, and she stops dreading the end of each quarter" is specific. "Things improved" is not.
-
-### Pitfall 7: Running This Before the Solution Hypothesis Exists
-
-**Symptom:** The storyboard is built from a rough product idea with no If/Then statement. The Solution Hypothesis Statement at the top is blank or improvised.
-
-**Consequence:** The storyboard is untethered from a testable claim. Feedback from users or stakeholders cannot be connected to a hypothesis that needs validating.
-
-**Fix:** Before running this skill, produce at least a rough If/Then statement using ps-solution-hypothesis. Even an informal hypothesis ("IF we automate the reconciliation step, THEN the operations manager can close the books without waiting on the data team") is enough to anchor the story.
-
-### Pitfall 8: Jumping to Product Features in Panel 4
-
-**Symptom:** Panel 4 says "they used the platform, which provides real-time dashboards, automated alerts, one-click reporting, and an API integration layer."
-
-**Consequence:** The panel has become a product feature list. The persona's experience is invisible. The Aha moment in Panel 5 has no emotional setup.
-
-**Fix:** Panel 4 describes the persona's first experience, not the product's capabilities. "She logged in for the first time and saw her three overdue tasks organized by the system - she did not have to create the list herself" is an experience. A feature list is not.
-
-### Pitfall 9: Predicted Reactions Instead of a Test
-
-**Symptom:** After drafting the storyboard, the PM asks how customers would react, and records the model's answer as validation.
-
-**Consequence:** The storyboard was never tested. The team believes the value proposition resonates because a model said so.
-
-**Fix:** Show the storyboard to real target customers and record their reactions. Treat any predicted reaction as a guess to test.
+- **Predicted Reactions Instead of a Test:** Show the storyboard to real target customers and record their reactions. Treat any predicted reaction as a guess to test.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) provides the If/Then statement that anchors the storyboard; [ps-proto-persona](../ps-proto-persona/SKILL.md) provides the character; [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) provides the conflict source
-- **Downstream:** Leadership and executive alignment (the storyboard communicates product vision); Go-to-Market enablement (the six-panel arc informs launch narrative and sales messaging)
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_storyboarding_playbook_pages.pdf](assets/ps_storyboarding_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slide 71: an instruction page only, with no overview page or template number. No AI page; the prompt is authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-storyboarding) for supporting source material and expanded examples.

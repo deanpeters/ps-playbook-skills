@@ -20,6 +20,7 @@ scenarios:
   - "Help me define Go/No Go criteria for our pre-launch readiness test"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Product Readiness artifact** from a structured pre-launch test plan.
@@ -46,7 +47,7 @@ Before planning the readiness test, confirm that earlier testing has occurred. I
 
 ### Readiness Testing Also Catches Technical Issues Before Launch
 
-Beyond the Go/No Go decision, the readiness test is an opportunity to surface bugs, defects, and configuration failures in a controlled setting before they reach the full market. When participants encounter a broken workflow, a missing integration, or unexpected system behavior, that is signal — not noise.
+Beyond the Go/No Go decision, the readiness test is an opportunity to surface bugs, defects, and configuration failures in a controlled setting before they reach the full market. When participants encounter a broken workflow, a missing integration, or unexpected system behavior, that is signal  -  not noise.
 
 This is one reason a dedicated technical support person on the test team is not optional. Bugs surface during real customer use in ways that internal QA and staging environments cannot predict. A readiness test with real participants using the product in their actual context will expose failure modes that controlled testing misses.
 
@@ -96,64 +97,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_product_readiness_playbook_pages.pdf](assets/ps_product_readiness_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -170,7 +131,7 @@ That means:
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-pressure-test-readiness-plan.md](prompts/01-pressure-test-readiness-plan.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Tech-Role Bias Guard
 
@@ -275,113 +236,238 @@ After delivering the artifact, offer three options:
 2. Carry the readiness test goals and outcomes forward into post-launch retrospective planning
 3. Review the Assumptions and Risks section with stakeholders to confirm alignment on scope limits before the test begins
 
+## Template
+
+### When to Use This
+
+Use this template when preparing a **pre-launch beta program** to validate the product with real customers before market release. This is a Key Decision Point: the results determine whether to launch (Go) or hold (No Go).
+
+Before running this template, confirm that earlier rounds of user testing have occurred. This is the final validation before launch, not the first time users see the product.
+
+Upstream artifacts that feed this template:
+- Solution hypothesis (ps-solution-hypothesis): defines what is being validated
+- Product success metrics from ps-outcome-tree: provides measurement anchors for the Goals table
+- Risk assessment (ps-risk-assessment): surfaces known risks that may define scope limits
+- Persona profiles (ps-proto-persona): helps define who to recruit as beta participants
+
+---
+
+### Template
+
+```markdown
+# Product Readiness Test Plan
+
+## Product Context
+
+- Product or initiative:
+- Stage: Pre-launch beta program
+- Date:
+- Test Lead (PM):
+
+---
+
+## Section 1: Product Readiness Test Plan
+
+### Who are we testing with (Customer profiles)?
+
+Describe each type of participant. Go beyond job titles: include role, company type, company size, experience level, and what this profile represents in the target market.
+
+- Profile 1:
+- Profile 2:
+- Profile 3 (if applicable):
+
+> Quality check: Does each profile describe a real-context participant (role, company type, experience level, and what they represent) rather than just a job title?
+> Quality check: Do the profiles represent the actual customer population, not internal team members or users who are already familiar with the product?
+
+---
+
+### How many customers will test?
+
+State the total count, broken down by participant type.
+
+Total: [number]
+  - [Type 1]: [count] participants
+  - [Type 2]: [count] participants (if applicable, e.g., internal cohort for comparison)
+
+> Quality check: Does the breakdown name the participant types and counts, not just a total number?
+> Capacity check: 1-2 lines, approximately 10-15 words total.
+
+---
+
+### How long will the test run?
+
+Define the duration in terms of product usage cycles, minimum usage expectations, or task completion. Calendar days alone are not sufficient.
+
+Duration: [time box or cycle definition]
+Usage anchor: [one billing cycle / three sessions per week / first end-to-end workflow completed]
+
+> Quality check: Is the duration anchored to something meaningful about how the product is used, not only a calendar window?
+> Capacity check: 10-20 words total.
+
+---
+
+### Test team roles and responsibilities
+
+Name a specific individual for each role. If a role is unfilled, flag it as an open assignment before starting the test.
+
+| Role | Name | Responsibility |
+|------|------|----------------|
+| Test Lead | | Runs the test, owns the schedule, holds the Go/No Go call |
+| Account/Client Contact | | Manages participant expectations, scheduling, and relationships |
+| Technical Support | | Triages bugs, handles configuration issues, responds to participant technical questions |
+| Quote Collector | | Captures memorable participant statements for use in launch communications |
+
+> Quality check: Is each role filled with a named individual, not a team or function?
+> Quality check: Is a Technical Support person named? If not, flag it as a risk before starting.
+> Quality check: Is a Quote Collector named? This is a deliverable, not optional.
+
+---
+
+## Section 2: Product Readiness Goals
+
+| Goal/Objective | Measure/Metric | Target |
+|----------------|----------------|--------|
+| [Specific named goal, not "test the product"] | [Named metric: survey score, task completion rate, time-on-task, error count, uptime] | [Numeric or percentage threshold: e.g., 4.2/5 or 70% or 99.5%] |
+| | | |
+| | | |
+| | | |
+
+Suggested goal areas (4-5 rows covering distinct measurement types):
+- Row 1: Workload or efficiency (e.g., reduction in time spent on a named task)
+- Row 2: User satisfaction or experience (e.g., post-use survey score)
+- Row 3: Self-service adoption rate (e.g., task completion without support assistance)
+- Row 4: System reliability (e.g., uptime or error rate)
+- Row 5: Optional: coverage, volume, or secondary metric
+
+> Quality check: Does every Target cell contain a number or percentage, not a directional aspiration?
+> Quality check: Are goals specific and named (e.g., "Confirm the reconciliation workflow can be completed without support") rather than generic ("test usability")?
+> Capacity check: Goal/Objective approximately 4-8 words; Measure/Metric approximately 5-12 words; Target approximately 3-8 words.
+
+---
+
+### Pre-Committed Go/No Go Criteria
+
+Complete this section BEFORE running the test.
+
+Must-pass goals (all must be met for a Go decision):
+- [Goal name from table above]
+- [Goal name from table above]
+
+Aspirational goals (failure does not block Go, but will be flagged and tracked):
+- [Goal name from table above]
+- [Goal name from table above]
+
+> Quality check: Have the must-pass goals been agreed in writing before the test begins?
+> Quality check: Is this section completed before any test results are visible?
+
+---
+
+## Section 3: Assumptions and Risks
+
+What cannot be tested in this program? What assumptions remain open? Be specific about scope limits and why they exist.
+
+- [Scope limit 1: name the constraint and the reason it is out of scope]
+- [Scope limit 2]
+- [Scope limit 3]
+- [Scope limit 4 if applicable]
+- [Scope limit 5 if applicable]
+
+> Quality check: Does each bullet name a specific, real constraint rather than a generic acknowledgment that risks exist?
+> Quality check: Are there at least 3 specific scope limits named? If the list is empty, the test scope has not been fully examined.
+> Capacity check: Each bullet approximately 15-25 words.
+
+---
+
+## Post-Test Go/No Go Call
+
+Complete after the test concludes.
+
+| Must-Pass Goal | Target | Actual Result | Met? |
+|----------------|--------|---------------|------|
+| | | | Yes / No |
+| | | | Yes / No |
+
+**Decision:**
+- [ ] Go: all must-pass goals met
+- [ ] No Go: one or more must-pass goals not met
+- [ ] Conditional Go: [describe condition]
+
+**Decision owner:**
+**Date of call:**
+**Memorable quotes captured:**
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Complete **Product Context** to anchor the product, stage, and test lead.
+2. Answer all four **Test Plan questions** with specific content before planning the test logistics.
+3. Write the **Goals table** before recruiting participants. The goals define what the test is designed to measure.
+4. Complete **Pre-Committed Go/No Go Criteria** before the test begins. This is the most commonly skipped step.
+5. Fill the **Assumptions and Risks section** before finalizing participant communication.
+6. Return to complete the **Post-Test Go/No Go Call** after results are in.
+
+#### What Goes Where
+
+| Section | Contains | Does NOT Contain |
+|---------|----------|------------------|
+| Customer Profiles | Role + company type + experience level + what they represent | Job titles alone |
+| How Many | Total count broken down by participant type | A single total number |
+| Test Duration | Usage cycle or task completion anchor | Calendar days alone |
+| Test Team Roles | Named individuals with specific functions | "The PM" or "the engineering team" |
+| Goal/Objective | Specific named outcome the test confirms | Generic placeholders like "test usability" |
+| Target | Number or percentage | Directional aspirations |
+| Assumptions and Risks | Specific named scope limits with reasons | Blank or generic acknowledgment |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-solution-hypothesis (defines what is being validated), ps-outcome-tree (product success metrics), ps-risk-assessment (known risks), ps-proto-persona (who to recruit)
+- **Downstream:** Post-launch retrospective; launch communications (customer quotes)
+- **Related:** ps-lofi-experimentation (if earlier rounds of user testing have not occurred, use this skill before planning a readiness test)
+
+#### Capacity Reference
+
+| Field | Target Length | Guidance |
+|-------|--------------|----------|
+| Customer Profile bullet | 15-25 words | Role, company type, experience level, what they represent |
+| How Many | 10-15 words total | Count broken down by type |
+| Test Duration | 10-20 words | Usage cycle or task completion anchor |
+| Team role responsibility | 10-15 words per role | Specific function, not generic ownership |
+| Goal/Objective | 4-8 words | Named outcome, not a category |
+| Measure/Metric | 5-12 words | Named, countable signal |
+| Target | 3-8 words | Numeric or percentage threshold |
+| Assumptions/Risks bullet | 15-25 words | Named constraint with reason |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** A field-service beta plan names real technician participants, workflows, success criteria, health guardrails, and the owner of the Go/No Go call before testing.
+- **Weak:** "Try the app and report bugs" does not establish readiness criteria.
+- **Drift to avoid:** False readiness: internal checks or plausible simulated results cannot stand in for observed customer testing.
 
-- a strong readiness test plan with specific customer profiles, numeric targets, pre-committed Go/No Go criteria, and a named scope limits section
-- a weak version with vague profiles, directional goals without numbers, and a blank Assumptions and Risks section
-- a drift-bug example showing internal-only testing when the product serves field customers, with commentary on what that systematically misses
 
 ## Common Pitfalls
 
-### Pitfall 1: Testing with Internal Users Only
+- **Testing with Internal Users Only:** The participant list must represent the actual customer population. If internal users are included for comparison, name them as an internal cohort and do not let them substitute for external customer participants. Name this as a risk in the Assumptions and Risks section if external participants cannot be secured.
 
-**Symptom:** The beta participant list consists of engineers, QA staff, internal operations staff, or other employees who are familiar with the product, when the product serves external customers.
+- **Goals Table Has Directional Aspirations Instead of Numeric Targets:** Every Target cell must contain a number or percentage. "Reduce time spent on monthly reconciliation by 30% or more." "User satisfaction score of 4.0 or above on a 5-point scale." If the team cannot agree on a number before the test, that disagreement is itself a problem to resolve before the test begins.
 
-**Consequence:** Internal users do not expose the failure modes that matter to real customers: unfamiliar workflows, different mental models, limited training, domain-specific constraints. The test passes cleanly and the launch fails in the field.
+- **No Pre-Committed Go/No Go Criteria:** After writing the Goals table but before running the test, explicitly name which goals are must-pass. Document it. This pre-commitment is the only thing that makes the Go/No Go call credible.
 
-**Fix:** The participant list must represent the actual customer population. If internal users are included for comparison, name them as an internal cohort and do not let them substitute for external customer participants. Name this as a risk in the Assumptions and Risks section if external participants cannot be secured.
+- **Assumptions and Risks Section Left Blank:** Every readiness test has scope limits. Name them. Incomplete integrations, missing training materials, single-segment coverage, deferred security testing: these are real and nameable. Documenting them is not weakness. It is honesty.
 
-### Pitfall 2: Goals Table Has Directional Aspirations Instead of Numeric Targets
+- **This Is the First Time Users Have Tested the Product:** Confirm that earlier testing has occurred before planning a readiness test. If it has not, the better path is lo-fi experimentation (ps-lofi-experimentation) or a structured discovery session, not a formal beta program.
 
-**Symptom:** Goal rows read as "improve efficiency," "increase user satisfaction," or "reduce support volume" with no accompanying number in the Target column.
+- **Test Duration Defined Only in Calendar Days:** Anchor duration to a product usage cycle ("one full scheduling cycle"), a minimum usage expectation ("three sessions of at least 30 minutes each within the two-week window"), or a task completion definition ("the test ends when participants have completed their first end-to-end workflow"). Calendar time is secondary.
 
-**Consequence:** The team cannot make a clean Go/No Go call because there is no threshold to cross. Post-test rationalization becomes the only path.
+- **No One Assigned to Technical Support:** Name a technical support person before the test begins. This person is on call during the test to triage bugs, resolve configuration issues, and provide participant-facing technical help. If no one can be assigned, name it as a risk in the Assumptions and Risks section and describe the contingency.
 
-**Fix:** Every Target cell must contain a number or percentage. "Reduce time spent on monthly reconciliation by 30% or more." "User satisfaction score of 4.0 or above on a 5-point scale." If the team cannot agree on a number before the test, that disagreement is itself a problem to resolve before the test begins.
+- **Forgetting to Collect Quotes:** Designate one person to capture memorable user statements during the test, before it begins. Brief them on what kinds of quotes are useful. Budget time in each participant session to ask open-ended questions that surface quotable responses.
 
-### Pitfall 3: No Pre-Committed Go/No Go Criteria
-
-**Symptom:** The Goals table is complete, but no one has named which goals are must-pass before seeing results.
-
-**Consequence:** When results are mixed (two goals met, two not), the team debates in real time which goals should have been must-pass. The team that is most motivated to launch wins the argument, not the data.
-
-**Fix:** After writing the Goals table but before running the test, explicitly name which goals are must-pass. Document it. This pre-commitment is the only thing that makes the Go/No Go call credible.
-
-### Pitfall 4: Assumptions and Risks Section Left Blank
-
-**Symptom:** The Assumptions and Risks section is empty or contains only a vague note like "standard product risks apply."
-
-**Consequence:** Stakeholders believe the test covered all dimensions of readiness. When post-launch issues emerge in areas the test did not cover, the team has no documentation that those areas were out of scope.
-
-**Fix:** Every readiness test has scope limits. Name them. Incomplete integrations, missing training materials, single-segment coverage, deferred security testing: these are real and nameable. Documenting them is not weakness. It is honesty.
-
-### Pitfall 5: This Is the First Time Users Have Tested the Product
-
-**Symptom:** The readiness test is being planned before any earlier rounds of user testing have occurred: no lo-fi experiments, no prototype walkthroughs, no pilot access.
-
-**Consequence:** The readiness test is carrying the burden of all earlier validation that was never done. It will surface basic usability problems and conceptual mismatches that should have been caught months earlier, making it neither a readiness test nor a meaningful learning event.
-
-**Fix:** Confirm that earlier testing has occurred before planning a readiness test. If it has not, the better path is lo-fi experimentation (ps-lofi-experimentation) or a structured discovery session, not a formal beta program.
-
-### Pitfall 6: Test Duration Defined Only in Calendar Days
-
-**Symptom:** The test duration says "two weeks" or "one month" with no reference to how many times participants are expected to use the product or what usage cycle the product supports.
-
-**Consequence:** For a product that supports a monthly process, a two-week test means participants may use the product only once or not at all. The test produces no meaningful usage data.
-
-**Fix:** Anchor duration to a product usage cycle ("one full scheduling cycle"), a minimum usage expectation ("three sessions of at least 30 minutes each within the two-week window"), or a task completion definition ("the test ends when participants have completed their first end-to-end workflow"). Calendar time is secondary.
-
-### Pitfall 7: No One Assigned to Technical Support
-
-**Symptom:** The Test Team Roles section names a test lead and an account contact but has no one assigned to handle bugs, configuration issues, or technical questions during the test.
-
-**Consequence:** When participants encounter a bug or a configuration problem, they wait. The test stalls. Participants disengage. The team gets no signal about product behavior because the test became a support event.
-
-**Fix:** Name a technical support person before the test begins. This person is on call during the test to triage bugs, resolve configuration issues, and provide participant-facing technical help. If no one can be assigned, name it as a risk in the Assumptions and Risks section and describe the contingency.
-
-### Pitfall 8: Forgetting to Collect Quotes
-
-**Symptom:** The test concludes with quantitative data but no direct participant statements. The launch team has metrics but nothing to say in the voice of the customer.
-
-**Consequence:** A missed opportunity for launch marketing, internal alignment, and sales conversations. Quotes captured during a readiness test carry the weight of real pre-launch customer experience, which is harder to generate after launch.
-
-**Fix:** Designate one person to capture memorable user statements during the test, before it begins. Brief them on what kinds of quotes are useful. Budget time in each participant session to ask open-ended questions that surface quotable responses.
-
-### Pitfall 9: Thresholds Nobody Chose
-
-**Symptom:** The PM asks for Go/No Go criteria and gets "Go if task success is above 85% and CSAT is above 4.2."
-
-**Consequence:** The thresholds have no baseline and no owner. When results land at 83%, nobody knows whether to stop the launch.
-
-**Fix:** The PM sets each threshold with its basis. The skill asks what baseline it rests on and whether the team would really stop the launch at that number.
+- **Thresholds Nobody Chose:** The PM sets each threshold with its basis. The skill asks what baseline it rests on and whether the team would really stop the launch at that number.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) defines what is being validated; [ps-outcome-tree](../ps-outcome-tree/SKILL.md) provides the product success metrics that Goals table targets should reflect; [ps-risk-assessment](../ps-risk-assessment/SKILL.md) surfaces risks that may define scope limits; [ps-proto-persona](../ps-proto-persona/SKILL.md) helps define who to recruit for the test
-- **Downstream:** Post-launch retrospective; launch communications (uses quotes captured during the test)
-- **Related:** ps-lofi-experimentation: if earlier rounds of user testing have not occurred, this skill should precede the readiness test
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_product_readiness_playbook_pages.pdf](assets/ps_product_readiness_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 98-100: Template 21 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-product-readiness) for supporting source material and expanded examples.

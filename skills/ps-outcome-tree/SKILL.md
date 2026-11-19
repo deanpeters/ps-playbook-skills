@@ -24,6 +24,7 @@ scenarios:
   - "We finished discovery and I need to update our outcome tree with validated evidence"
 ---
 
+
 ## Purpose
 
 Create and maintain a **Productside-style Outcome Tree artifact** for your product.
@@ -48,6 +49,14 @@ Use this skill when you need to:
 - retire product outcomes that no longer hold after customer research (Section Two)
 
 This is not a one-time exercise. The playbook says to revisit regularly, bring it to team meetings, and use it to check assumptions with the team.
+
+### Usage Notes
+
+- **Two modalities:** Section One (Template 03, Context phase) establishes the strategic context before discovery. Section Two (Template 23, Define/Deliver phase) updates the tree after discovery with validated outcomes, revised metrics, and actuals vs. planned.
+- The template produces a structured artifact with five sections: Business Outcome, Business Success Metrics, Product Outcomes (2-5), Product Success Metrics, and Product Health Metrics.
+- Product outcomes use role names, not persona names.
+- The play cross-references two other plays: Framing the Problem (Problem Statement box) and Solution Hypothesis Statement (Solution Summary box). Neither is a blocking dependency.
+- Upstream: ps-jobs-to-be-done product outcomes feed into this tree. Section Two updates the tree after discovery work.
 
 ## Key Concepts
 
@@ -116,7 +125,7 @@ This skill covers both sections of the Outcome Tree as two modalities:
 
 **Section One (Template 03, Context phase):** Build the tree before discovery. Define the business outcome, product outcomes, and metrics framework based on the PM's current understanding of strategy and customer needs.
 
-**Section Two (Deliver phase — reuses the Outcome Tree design; the baseline deck labels this occurrence "Template 3 of 24"; the B2B work-in-progress deck numbers it Template 23):** Update the tree after discovery. Revise product outcomes that discovery validated or invalidated. Fill in metrics that were TBD. Add baselines and targets now that real data exists. Record actuals against planned targets. Retire outcomes that turned out to be wrong.
+**Section Two (Deliver phase  -  reuses the Outcome Tree design; the baseline deck labels this occurrence "Template 3 of 24"; the B2B work-in-progress deck numbers it Template 23):** Update the tree after discovery. Revise product outcomes that discovery validated or invalidated. Fill in metrics that were TBD. Add baselines and targets now that real data exists. Record actuals against planned targets. Retire outcomes that turned out to be wrong.
 
 The trigger for Section Two is evidence: completed empathy interviews, validated hypotheses, experiment results, or post-launch measurement data. If the PM has not done discovery work since building Section One, Section Two will just reproduce the same guesses with more confidence. That is not useful.
 
@@ -130,64 +139,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_outcome_tree_playbook_pages.pdf](assets/ps_outcome_tree_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -205,7 +174,7 @@ The artifact comes first. Commentary is secondary.
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-check-section-one.md](prompts/01-check-section-one.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Confirm the Product and Business Context
 
@@ -386,117 +355,283 @@ After the Section Two update is complete, offer the user:
 2. **Update the roadmap** using ps-outcome-roadmap (if available) to reflect revised outcomes
 3. **Schedule the next review cycle** to keep the tree current as the product evolves
 
+## Template
+
+### When to Use This
+
+Use this template during the **Context** phase to connect your product work to a measurable business goal. This is foundational: until you can articulate what the business is trying to achieve and how the product supports that, prioritization and roadmap decisions lack an anchor.
+
+Revisit this artifact regularly. Bring it to team meetings. Use it to share success metrics and check assumptions with the team.
+
+### Template
+
+```markdown
+# Outcome Tree - Section One
+
+## Product Context
+
+- Product or service:
+- Business or organization:
+- Primary customer/user role:
+- Buyer (if different):
+
+## Problem Statement (from Framing the Problem play, if available)
+
+> [Paste or summarize the problem statement here, or note "Not yet defined"]
+
+## 1. Business Outcome
+
+What is the business trying to achieve? Write a specific, measurable business outcome.
+
+| Business Outcome |
+|------------------|
+| |
+
+> Quality check: Is this a business-level goal, not a product feature?
+> Quality check: Does it include a direction and a metric (even if approximate)?
+> Quality check: Could you tell if it happened?
+
+## 2. Business Success Metrics
+
+How does the business measure progress toward the business outcome?
+
+| # | Business Success Metric | Status |
+|---|------------------------|--------|
+| 1 | | Defined / TBD |
+| 2 | | Defined / TBD |
+| 3 | | Defined / TBD |
+
+> Quality check: Are these metrics owned by or visible to business leadership?
+> Quality check: Are they measurable (a number, percentage, or rate)?
+
+## 3. Product Outcomes (2-5)
+
+What must the customer/user achieve for the business outcome to follow? Use role names, not persona names.
+
+| # | Product Outcome |
+|---|----------------|
+| 1 | |
+| 2 | |
+| 3 | |
+| 4 | |
+| 5 | |
+
+> Quality check: Does each outcome describe value from the customer's perspective?
+> Quality check: Is each outcome distinct from the business outcome? (Product outcomes are customer-level, not business-level.)
+> Quality check: Have you avoided feature descriptions? ("Self-service portal" is a feature, not an outcome.)
+> Quality check: Do you have between 2 and 5 product outcomes? No more than 5.
+> Quality check: Do the product outcomes use role names (e.g., "HR managers"), not individual persona names (e.g., "Maya")?
+> Capacity check: Product outcome statements should be ~15-20 words.
+
+## 4. Product Success Metrics
+
+How do you measure whether each product outcome is being achieved?
+
+| # | Product Success Metric | Related Outcome | Status |
+|---|----------------------|-----------------|--------|
+| 1 | | | Defined / TBD |
+| 2 | | | Defined / TBD |
+| 3 | | | Defined / TBD |
+| 4 | | | Defined / TBD |
+| 5 | | | Defined / TBD |
+
+> Quality check: Are these leading indicators that the product team can measure?
+> Quality check: Is each metric tied to a specific product outcome?
+> Quality check: Are these about outcome achievement, not product health? (Uptime is health, not success.)
+
+## 5. Product Health Metrics
+
+How do you measure whether the product itself is working correctly?
+
+| # | Product Health Metric | Target |
+|---|---------------------|--------|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+
+> Quality check: Are these operational metrics (uptime, performance, error rates, adoption)?
+> Quality check: Are they separate from product success metrics?
+
+## Solution Summary (from Solution Hypothesis Statement play, if available)
+
+> [Paste or summarize the solution hypothesis here, or note "Not yet defined"]
+
+## Causal Chain Review
+
+- Do the product outcomes collectively support the business outcome?
+- Are there gaps in the chain?
+- Are any product outcomes actually business outcomes in disguise?
+- Are any product outcomes actually features?
+
+## Notes (optional)
+
+- Metrics that need further definition:
+- Assumptions to validate:
+- Cross-references to resolve:
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Start with **Product Context** to anchor who this is for.
+2. Add the **Problem Statement** if one exists from previous work.
+3. Define the **Business Outcome** first. Everything else flows from it.
+4. Add **Business Success Metrics** (even if some are TBD).
+5. Define **Product Outcomes** (2-5). These describe what the customer achieves.
+6. Add **Product Success Metrics** for each product outcome.
+7. Add **Product Health Metrics** for the product itself.
+8. Add the **Solution Summary** if one exists.
+9. Walk through the **Causal Chain Review** to verify connections.
+
+#### How Many Product Outcomes
+
+The playbook sets a hard limit of 2-5. Default to 2-3 for a focused product. Use 4-5 only when the product serves multiple distinct user roles or the business outcome is broad enough to require multiple paths.
+
+If you find yourself writing more than 5, either:
+
+- consolidate related outcomes into a single, broader outcome
+- split into multiple trees, each with a different business outcome
+
+#### What Goes in the Product Outcome Statements
+
+Write each product outcome as a statement about the customer's improved state. Use role names (e.g., "HR managers," "field technicians," "compliance officers"), not individual persona names (e.g., "Maya," "Carlos").
+
+Do not use:
+
+- feature descriptions ("The product provides...")
+- implementation details ("Automated workflow for...")
+- business metrics ("Revenue increases by...")
+- internal team goals ("The engineering team ships...")
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-framing-the-problem provides the Problem Statement; ps-solution-hypothesis provides the Solution Summary
+- **Parallel:** ps-jobs-to-be-done produces product outcomes that may feed into this tree
+- **Downstream:** Section Two (this skill, Modality 2) updates the tree after discovery and define work
+
+---
+
+### Section Two: Updating the Outcome Tree After Discovery
+
+Use this scaffold when returning to the Outcome Tree after completing discovery work. This is not a new artifact. It is an update pass on the Section One artifact above.
+
+#### Prerequisites
+
+Before running Section Two, the PM should have completed at least one of:
+
+- empathy interviews (ps-empathy-interviews)
+- solution hypothesis validation (ps-solution-hypothesis)
+- lo-fi experimentation (ps-lofi-experimentation)
+- market or customer research
+- post-launch measurement data
+
+#### Update Scaffold
+
+For each section of the Section One artifact, walk through:
+
+```markdown
+## Section Two: Outcome Tree Update
+
+Date of update:
+Discovery activities completed since Section One:
+
+### Product Outcome Review
+
+| # | Original Product Outcome | Status | Revised Product Outcome (if changed) | Evidence |
+|---|-------------------------|--------|--------------------------------------|----------|
+| 1 | [from Section One] | Validated / Invalidated / Revised / New | [updated text or "unchanged"] | [what discovery revealed] |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
+| 5 | | | | |
+
+> Quality check: Is each status decision backed by specific evidence, not intuition?
+> Quality check: Are you still within 2-5 product outcomes after revisions?
+> Quality check: Did you retire outcomes that discovery invalidated rather than keeping them "just in case"?
+
+### Metrics Update
+
+| Metric Type | Metric | Baseline | Target | Actual (if post-launch) | Status Change |
+|-------------|--------|----------|--------|------------------------|---------------|
+| Business Success | | | | | Was TBD, now Defined / Unchanged / Revised |
+| Product Success | | | | | |
+| Product Health | | | | | |
+
+> Quality check: Have all TBD metrics from Section One been resolved or explicitly deferred with a reason?
+> Quality check: Are baselines grounded in real data, not estimates?
+
+### Causal Chain Reassessment
+
+- Which links in the chain did discovery strengthen?
+- Which links did discovery weaken or break?
+- Are there new gaps that Section One missed?
+
+### Changes Summary
+
+- Product outcomes added:
+- Product outcomes retired:
+- Product outcomes revised:
+- Metrics defined (were TBD):
+- Metrics revised:
+```
+
+#### When to Run Section Two
+
+Section Two adds value when the PM has new evidence that changes the tree. Common triggers:
+
+- Completed empathy interviews revealed different customer priorities than assumed
+- Solution hypothesis testing invalidated an assumed product outcome
+- Market research shifted the competitive context
+- Post-launch data shows actual vs. planned variance
+- Business strategy changed, altering the business outcome or its metrics
+
+Section Two does not add value when:
+
+- The PM has not done discovery work since Section One (the tree will not change)
+- The only change is cosmetic rewording (edit the Section One artifact directly)
+
+#### Capacity Reference
+
+See [Template and capacity guidance](#template) for the exact word and character budgets per field.
+
+| Field | Word Budget | Guidance |
+|-------|-------------|----------|
+| Business Outcome | ~15-25 | Specific, measurable business goal |
+| Business Success Metric | ~10-15 | Measurable indicator with units |
+| Product Outcome | ~15-20 | Customer-centered value statement |
+| Product Success Metric | ~10-15 | Leading indicator tied to an outcome |
+| Product Health Metric | ~5-10 | Operational metric with target |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For irrigation management, connect business results to farm managers reducing avoidable water use, then define success and health measures. Revisit planned outcomes against actual evidence in Section Two.
+- **Weak:** A tree with no customer outcomes jumps directly from financial targets to features.
+- **Drift to avoid:** Layer confusion: "Ship sensors" is an output; "increase subscription revenue" is a business result. Neither substitutes for customer progress.
 
-- a strong Outcome Tree artifact for a sustainable agriculture platform
-- a weak, vague version of the same scenario
-- a drift-bug example showing product outcomes confused with business outcomes and internal tasks
-- commentary on why the weak versions fail
 
 ## Common Pitfalls
 
-### Pitfall 1: Confusing Product Outcomes with Business Outcomes
+- **Confusing Product Outcomes with Business Outcomes:** Ask: who experiences this outcome? If the answer is "the business" or "leadership," it is a business outcome. If the answer is "the customer using the product," it is a product outcome. Keep them in their respective boxes.
 
-**Symptom:** Product outcomes read like organizational goals: "Increase market share by 15%" or "Reduce operational costs by $2M."
+- **Writing Feature Descriptions as Product Outcomes:** Strip out the product. Ask: what is different for the customer when this feature works? "New employees complete required onboarding steps without waiting for HR availability" is a product outcome. "Self-service onboarding portal" is a feature.
 
-**Consequence:** The tree conflates two levels. The product team cannot act on business outcomes directly, and the causal link between product work and business results disappears.
+- **Setting More Than 5 Product Objectives:** The playbook limit is 2-5 product outcomes per tree. If you have more, either consolidate related outcomes or split into multiple trees for different business outcomes.
 
-**Fix:** Ask: who experiences this outcome? If the answer is "the business" or "leadership," it is a business outcome. If the answer is "the customer using the product," it is a product outcome. Keep them in their respective boxes.
+- **Making Business Outcomes Too Vague:** Add a direction, a metric, and a target. "Improve customer satisfaction" becomes "Increase Net Promoter Score from 32 to 50 within 12 months." If the user cannot specify a target, at least specify a direction and a metric.
 
-### Pitfall 2: Writing Feature Descriptions as Product Outcomes
+- **Defaulting to Tech-Role Language in Product Outcomes:** Before writing product outcomes, confirm who the product actually serves. Most products serve people whose primary job is not writing code. An HR platform serves HR managers and employees, not data engineers.
 
-**Symptom:** "The product provides a self-service portal" or "Automated notifications for pending tasks."
+- **Treating This as a One-Time Exercise:** The playbook says to revisit regularly and bring it to team meetings. Schedule periodic reviews and update the tree as strategy evolves.
 
-**Consequence:** The tree describes what the product does instead of what the customer achieves. The team optimizes for shipping features rather than delivering outcomes.
+- **Skipping Product Success Metrics:** Even if exact metrics are not known yet, define the type of measurement. "TBD" is acceptable as a starting point, but flag it as a gap that must be resolved before the next planning cycle.
 
-**Fix:** Strip out the product. Ask: what is different for the customer when this feature works? "New employees complete required onboarding steps without waiting for HR availability" is a product outcome. "Self-service onboarding portal" is a feature.
+- **Confusing Product Health Metrics with Product Success Metrics:** Keep them in separate sections. Product health metrics (uptime, latency, error rates) go in the health section. Product success metrics (task completion rates, time savings, adoption of key workflows) go next to their respective outcomes.
 
-### Pitfall 3: Setting More Than 5 Product Objectives
-
-**Symptom:** The tree lists 7, 8, or 10 product outcomes.
-
-**Consequence:** The team cannot focus. Every sprint touches a different outcome. Progress is diffuse and unmeasurable.
-
-**Fix:** The playbook limit is 2-5 product outcomes per tree. If you have more, either consolidate related outcomes or split into multiple trees for different business outcomes.
-
-### Pitfall 4: Making Business Outcomes Too Vague
-
-**Symptom:** "Grow the business," "Improve customer satisfaction," "Be more innovative."
-
-**Consequence:** The business outcome cannot be measured, so the entire tree has no anchor. The team cannot tell if the product is contributing to business success.
-
-**Fix:** Add a direction, a metric, and a target. "Improve customer satisfaction" becomes "Increase Net Promoter Score from 32 to 50 within 12 months." If the user cannot specify a target, at least specify a direction and a metric.
-
-### Pitfall 5: Defaulting to Tech-Role Language in Product Outcomes
-
-**Symptom:** "Data engineers can build pipelines 40% faster" or "Platform architects can deploy microservices with fewer configuration errors."
-
-**Consequence:** The product outcomes reflect LLM training bias toward technical roles, not the actual customer population.
-
-**Fix:** Before writing product outcomes, confirm who the product actually serves. Most products serve people whose primary job is not writing code. An HR platform serves HR managers and employees, not data engineers.
-
-### Pitfall 6: Treating This as a One-Time Exercise
-
-**Symptom:** The team builds the Outcome Tree once, files it away, and never revisits it.
-
-**Consequence:** The tree becomes stale. Business outcomes shift, product outcomes are achieved or abandoned, and metrics change. The artifact stops reflecting reality.
-
-**Fix:** The playbook says to revisit regularly and bring it to team meetings. Schedule periodic reviews and update the tree as strategy evolves.
-
-### Pitfall 7: Skipping Product Success Metrics
-
-**Symptom:** Product outcomes are defined but their success metrics are left permanently blank.
-
-**Consequence:** The team cannot tell if an outcome is being achieved. Product outcomes without metrics are aspirational statements, not actionable targets.
-
-**Fix:** Even if exact metrics are not known yet, define the type of measurement. "TBD" is acceptable as a starting point, but flag it as a gap that must be resolved before the next planning cycle.
-
-### Pitfall 8: Confusing Product Health Metrics with Product Success Metrics
-
-**Symptom:** "99.9% uptime" listed as a product success metric for an outcome like "HR managers spend less time on tactical tasks."
-
-**Consequence:** The team conflates operational health (is the product working?) with outcome achievement (is the product delivering value?). A product can have perfect uptime and still fail to move outcomes.
-
-**Fix:** Keep them in separate sections. Product health metrics (uptime, latency, error rates) go in the health section. Product success metrics (task completion rates, time savings, adoption of key workflows) go next to their respective outcomes.
-
-### Pitfall 9: AI Writes the Tree
-
-**Symptom:** The PM asks for an outcome tree for their product and gets a complete one: business outcome, five product outcomes, metrics, targets.
-
-**Consequence:** The targets have no baseline, and the outcomes are the model's view of the business. The tree looks like strategy and is a guess.
-
-**Fix:** The PM drafts; the skill checks each outcome and metric. Targets and baselines come from the PM's data or are marked to be set.
+- **AI Writes the Tree:** The PM drafts; the skill checks each outcome and metric. Targets and baselines come from the PM's data or are marked to be set.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Related Skills
-
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - product outcomes from JTBD feed into this tree
-- [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) - problem statement feeds the Problem Statement box
-- [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) - solution summary feeds the Solution Summary box
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - persona work informs who the product outcomes serve
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_outcome_tree_playbook_pages.pdf](assets/ps_outcome_tree_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 11-13 and 106-108: Template 03 and 23 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-outcome-tree) for supporting source material and expanded examples.

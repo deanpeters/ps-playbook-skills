@@ -33,6 +33,16 @@ Use this skill when you need to:
 
 This is not a solution specification. Until you know what the customer is trying to accomplish, you are not ready to define what to build.
 
+##### Usage Notes
+
+- **Two steps:** Step One (job statements + personas) can be done pre-discovery. Step Two (product outcomes) is strongest after empathy interviews provide evidence. Both steps can be completed in one session if evidence exists.
+- **Review path:** if the PM brings a draft, the skill pressure-tests it first (verdict per job and outcome) before offering rewrites. This matches the Playbook's AI prompts.
+- The template produces two artifacts: a Job Statement + Persona table and a Product Outcome & Context table.
+- Job statements use three Productside formats: Functional, Emotional, Social.
+- Product outcomes use the Direction + Metric + Context format. "Optimize," "enhance," and "improve" are never a direction.
+- Upstream (B2B work-in-progress deck): Market Selection & Sizing defines the segment these jobs belong to.
+- Downstream: ps-problem-identification uses jobs and outcomes from this skill as input. Product outcomes feed into ps-outcome-tree.
+
 #### Key Concepts
 
 ##### Three Types of Jobs
@@ -71,9 +81,9 @@ Product outcomes express what the customer wants to achieve. They are not intern
 
 Format: `Direction + Metric + Context/Circumstance`
 
-The metric names what is being measured. **Default to including a quantified target** — a percentage, ratio, range, or exact number. When in doubt, put something in. The PM can refine it; a vague direction cannot be refined.
+The metric names what is being measured. **Default to including a quantified target**  -  a percentage, ratio, range, or exact number. When in doubt, put something in. The PM can refine it; a vague direction cannot be refined.
 
-Preference order for the quantified value: **percentage > ratio > range > exact number**. For time-based outcomes, use a range ("by Q3", "by H2", "by EOY") rather than an exact date — specific dates stale out quickly.
+Preference order for the quantified value: **percentage > ratio > range > exact number**. For time-based outcomes, use a range ("by Q3", "by H2", "by EOY") rather than an exact date  -  specific dates stale out quickly.
 
 Examples:
 - "Reduce payroll data entry errors by 30% during quarterly onboarding cycles" (percentage)
@@ -81,9 +91,9 @@ Examples:
 - "Add 3 new regional customers through HR partner channel by Q4" (exact number + range)
 - "Increase HR self-service revenue to $1.2M by H2" (dollar figure + range)
 
-Every outcome must have a direction. Direction + named metric ("Reduce time to complete payroll data entry") is the minimum viable form — acceptable when the PM has no basis for a threshold yet, but always the starting point to improve from. Add the quantified threshold ("by 30%", "from 2-day to same-day") when any evidence supports it.
+Every outcome must have a direction. Direction + named metric ("Reduce time to complete payroll data entry") is the minimum viable form  -  acceptable when the PM has no basis for a threshold yet, but always the starting point to improve from. Add the quantified threshold ("by 30%", "from 2-day to same-day") when any evidence supports it.
 
-Avoid: "improve efficiency," "faster onboarding," "better HR tools" — these are not metrics, just sentiment. **"Optimize," "enhance," and "improve" are never a direction.** They don't say which way the metric moves. Use increase/decrease, faster/slower, expand/contract, reduce, or eliminate.
+Avoid: "improve efficiency," "faster onboarding," "better HR tools"  -  these are not metrics, just sentiment. **"Optimize," "enhance," and "improve" are never a direction.** They don't say which way the metric moves. Use increase/decrease, faster/slower, expand/contract, reduce, or eliminate.
 
 Metrics can be quantitative (time, cost, quantity) or qualitative (confidence, trust, satisfaction). Qualitative metrics are especially useful for emotional and social jobs: "Increase confidence in incident-handling procedures" is a real outcome. When a qualitative metric can be measured, name how (for example, "trust scores on passenger security surveys").
 
@@ -103,7 +113,7 @@ The Playbook gives three tests:
 
 The playbook states this directly: *"Customers experience Pains when they are unable to achieve the desired Outcomes when executing a Job."*
 
-This is load-bearing for the next play. Pains do not float free — they arise when a Job is hard to execute and the desired Outcome is out of reach. Writing precise, measurable Outcomes in this play is what makes Problem Identification tractable: the PM already knows what "success" looks like for each Job, so the Pains become specific gaps between where the customer is and where they want to be.
+This is load-bearing for the next play. Pains do not float free  -  they arise when a Job is hard to execute and the desired Outcome is out of reach. Writing precise, measurable Outcomes in this play is what makes Problem Identification tractable: the PM already knows what "success" looks like for each Job, so the Pains become specific gaps between where the customer is and where they want to be.
 
 ##### Jobs, Outcomes, and Solutions Are Not the Same
 
@@ -155,64 +165,24 @@ What AI cannot do is say what customers are trying to accomplish. Jobs come from
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-jobs-to-be-done / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Template`) for the full scaffold.
+Use Template (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_jobs_to_be_done_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -231,7 +201,7 @@ The artifact comes first. Commentary is secondary.
 
 ##### If the PM Brings a Draft
 
-When the user arrives with drafted job statements or outcomes, review the draft instead of drafting from scratch. This is the path the Playbook's AI prompts take (prompts/01 (uploaded reference: `07-prompts.md`, section `ps-jobs-to-be-done / Companion / 01-check-job-statements.md`), prompts/02 (uploaded reference: `07-prompts.md`, section `ps-jobs-to-be-done / Companion / 02-check-product-outcomes.md`)).
+When the user arrives with drafted job statements or outcomes, review the draft instead of drafting from scratch. This is the path the Playbook's AI prompts take (the critique guidance in this Play, the critique guidance in this Play).
 
 1. **Confirm the segment.** If it is unnamed or vague, resolve it first (Step 1). Do not review jobs for a segment no one can name.
 2. **Review each job.** Give a verdict per row: clean, wrong format, contaminated with an outcome, or contaminated with a solution. Quote the words that cause the problem.
@@ -350,8 +320,8 @@ For each job, express the product outcomes the customer wants to achieve.
 
 Format: `Direction + Metric + Context/Circumstance`
 
-- **Direction**: Increase, Decrease, Expand, Contract, Reduce, Eliminate — always required, never optional
-- **Metric**: what is being measured (time, errors, satisfaction, revenue, customer count) — default to including a quantified target: percentage, ratio, range, or exact number ($3.5M, 3 new regional customers). Use a time range ("by Q3", "by H2") rather than an exact date. When in doubt, put a number in — the PM can refine it.
+- **Direction**: Increase, Decrease, Expand, Contract, Reduce, Eliminate  -  always required, never optional
+- **Metric**: what is being measured (time, errors, satisfaction, revenue, customer count)  -  default to including a quantified target: percentage, ratio, range, or exact number ($3.5M, 3 new regional customers). Use a time range ("by Q3", "by H2") rather than an exact date. When in doubt, put a number in  -  the PM can refine it.
 - **Context**: the specific circumstance that bounds the outcome
 
 Each job can have one or more outcomes. Produce at least 10 outcomes total across all jobs.
@@ -416,124 +386,9 @@ After the current step is complete, offer context-appropriate options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Examples`).
-
-The example set includes:
-
-- a stronger Productside-style JTBD artifact with all three job types
-- a weak, generic version
-- a drift-bug example showing jobs written as solutions
-- commentary on why the weak versions fail
-
-#### Common Pitfalls
-
-##### Pitfall 1: Writing Only Functional Jobs
-
-**Symptom:** Every job is a task ("process orders," "generate reports," "track shipments") with no emotional or social dimension.
-
-**Consequence:** The team builds a tool that does the job but nobody wants to use because it ignores how people feel about their work and how they want to be perceived.
-
-**Fix:** After writing functional jobs, explicitly ask: how does this person want to feel while doing this work? How do they want to be seen by their peers and leadership? Write at least 1-2 emotional and 1-2 social jobs.
-
-##### Pitfall 2: Confusing Jobs with Solutions
-
-**Symptom:** "Use our analytics dashboard to track KPIs" or "Integrate data from multiple systems."
-
-**Consequence:** The team starts from a solution and works backward, skipping the customer need entirely.
-
-**Fix:** Strip out any mention of products, features, tools, or implementation. Rewrite as the underlying customer progress: "Track regional performance against quarterly targets."
-
-##### Pitfall 3: Making Outcomes Vague
-
-**Symptom:** "Improve efficiency," "Better visibility," "Streamline processes."
-
-**Consequence:** The outcome cannot be measured, so nobody can tell if the product is working.
-
-**Fix:** Use the Direction + Metric + Context format, and never use "optimize," "enhance," or "improve" as the direction. "Improve efficiency" becomes "Reduce time spent reconciling data across multiple HR systems." Adding a specific threshold ("by 40% during month-end close") makes it stronger when you have the evidence — but even without a number, a named metric beats a vague direction.
-
-##### Pitfall 4: Defaulting to a Tech Role
-
-**Symptom:** The user asks about an IoT platform PM's customers and gets job statements for a solutions architect or platform engineer.
-
-**Consequence:** The JTBD artifact reflects LLM training bias, not the real customer population.
-
-**Fix:** Ask what the customer actually does day-to-day. Most products serve people whose primary job is not writing code. A fleet manager's jobs involve route optimization, driver coordination, and compliance reporting - not API integration or system architecture.
-
-##### Pitfall 5: Writing Internal Team Tasks as Customer Jobs
-
-**Symptom:** "Prioritize the product backlog," "Align stakeholders on the roadmap," "Define acceptance criteria."
-
-**Consequence:** The JTBD artifact describes the Product Manager's own work, not the customer's.
-
-**Fix:** Ask: who experiences the product's value in the field? That person's jobs go in the template. The PM's jobs belong in process docs, not in customer discovery artifacts.
-
-##### Pitfall 6: Restating Jobs as Outcomes
-
-**Symptom:** Job: "Onboard new employees." Outcome: "Onboarding is faster."
-
-**Consequence:** The outcome adds no new information. The team cannot tell what "better" means.
-
-**Fix:** Outcomes should describe a measurable result: "Reduce time to complete payroll data entry." "Reduce errors in new employee form submissions." Where the PM has evidence for a specific threshold, adding it strengthens the outcome — but a named metric without a number beats a vague direction every time. The outcome is what success looks like *for the customer* when the job goes well.
-
-##### Pitfall 7: Exceeding Template Capacity
-
-**Symptom:** Job statements become full sentences with context clauses. Outcomes turn into multi-sentence explanations.
-
-**Consequence:** The human cannot paste the output into the playbook without rewriting it.
-
-**Fix:** Job statements: ~8-10 words. Outcomes: ~12-14 words. Persona entries: 2-3 words. Write for the template cell, not for the model's appetite for prose.
-
-##### Pitfall 8: Underfilling the Template
-
-**Symptom:** The model produces 3-5 jobs and 3-5 outcomes because it thinks the synthesis is cleaner.
-
-**Consequence:** The human has blank rows to fill, missing job types, and incomplete role coverage.
-
-**Fix:** Default to 10 job rows covering all three types (Functional, Emotional, Social) with at least 10 outcomes. Distribute rows across multiple personas - do not repeat one role in every row.
-
-##### Pitfall 9: Presenting AI-Drafted Jobs as Findings
-
-**Symptom:** A best-guess JTBD table, plausible and well formatted, goes into a stakeholder deck or straight into Problem Identification as if customers had said it. Nothing marks which jobs came from research and which came from the model.
-
-**Consequence:** The team validates nothing and builds on a stereotype. The Playbook names this the first AI trap: AI standing in for the customer.
-
-**Fix:** Label every drafted job and outcome as a hypothesis, and end with Assumptions to Validate. Route the hypotheses into empathy interviews (ps-empathy-interviews) before treating any of them as evidence.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-jobs-to-be-done / Companion / README.md`) - copy-paste prompts for chat-based AI tools (2, in order)
-- examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Related Skills
-
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - build a persona before or alongside this skill
-- ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`) - uses jobs from this skill as input
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_jobs_to_be_done_playbook_pages.pdf (source material, not included in this upload kit)
-- Productside Playbook companion document (supplied separately)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 19-24: Template 05 of 24 there, with the AI overview on slide 21 and prompts on slides 22-23. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-
 ### ps-jobs-to-be-done / Template
 
-### Jobs-to-Be-Done & Outcomes
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Investigate** to capture what your target customers are trying to accomplish and what success looks like for them. Pair this with persona work - the playbook says to consider Jobs-to-Be-Done and Persona at the same time.
 
@@ -542,7 +397,7 @@ This template supports **two steps** that can be completed together or at differ
 - **Step One:** Fill the Job Statements & Personas table (Section 1). This can be done pre-discovery.
 - **Step Two:** Fill the Product Outcomes table (Section 2). This is often done after empathy interviews provide evidence about what outcomes customers actually care about.
 
-#### Template
+##### Template
 
 ```markdown
 # Jobs-to-Be-Done & Outcomes
@@ -611,9 +466,9 @@ For each job, express the desired product outcomes using:
 - Recommended next validation steps:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 **Step One (can be done pre-discovery):**
 
@@ -625,7 +480,7 @@ For each job, express the desired product outcomes using:
 3. Fill **Product Outcomes** for each job. One job can have multiple outcomes. Use Direction + Metric + Context. If you completed empathy interviews between steps, let customer language inform the outcome statements.
 4. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
 
-##### How Many Rows
+###### How Many Rows
 
 The canonical template has 12 rows. Default to 10 filled rows:
 
@@ -637,7 +492,7 @@ The canonical template has 12 rows. Default to 10 filled rows:
 
 Add more rows if the evidence supports them. Do not pad with vague jobs to fill the template.
 
-##### What Goes in the Persona Column
+###### What Goes in the Persona Column
 
 Use a concrete role title that reflects the actual customer - the person who has this job in the field. If you built a proto-persona already, reuse that persona name.
 
@@ -646,15 +501,15 @@ Do not use:
 - "Stakeholder" (too abstract)
 - The Product Manager's own title (unless the product truly serves PMs)
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** Proto-persona (the persona names in this template should match)
 - **Downstream:** Problem Identification uses the jobs, pains, and outcomes from this artifact
 - **Parallel:** The Outcome Tree (Template 03) uses product outcomes from this skill as input
 
-##### Capacity Reference
+###### Capacity Reference
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the exact word and character budgets per field.
+See Template and capacity guidance (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Template`) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -664,129 +519,36 @@ See [technical/data/canonical_template_budgets.yaml](https://github.com/Products
 
 ### ps-jobs-to-be-done / Examples
 
-### Jobs-to-Be-Done & Outcomes - Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Productside-Style JTBD Artifact
+- **Strong:** Warehouse planner: Functional, "Coordinate daily labor assignments"; Emotional, "Feel confident when reallocating crews"; Social, "Seen as dependable by site supervisors." Outcome: "Reduce reassignment delays during shift changes."
+- **Weak:** "Improve efficiency" has no named metric or clear direction.
+- **Drift to avoid:** Jobs as solutions: "Use the scheduling dashboard" describes a product interaction. State what the planner is trying to accomplish.
 
-Scenario: A logistics technology company building a warehouse labor coordination platform for regional distribution center operations managers.
 
-```markdown
-# Jobs-to-Be-Done & Outcomes
+#### Common Pitfalls
 
-## Product Context
+- **Writing Only Functional Jobs:** After writing functional jobs, explicitly ask: how does this person want to feel while doing this work? How do they want to be seen by their peers and leadership? Write at least 1-2 emotional and 1-2 social jobs.
 
-- Product or service: ShiftSync - warehouse labor coordination platform
-- Target market segment: Regional distribution center operations
-- Primary user persona: Regional Operations Planner
-- Buyer persona (if different): VP of Distribution
+- **Confusing Jobs with Solutions:** Strip out any mention of products, features, tools, or implementation. Rewrite as the underlying customer progress: "Track regional performance against quarterly targets."
 
-## 1. Job Statements & Personas
+- **Making Outcomes Vague:** Use the Direction + Metric + Context format, and never use "optimize," "enhance," or "improve" as the direction. "Improve efficiency" becomes "Reduce time spent reconciling data across multiple HR systems." Adding a specific threshold ("by 40% during month-end close") makes it stronger when you have the evidence  -  but even without a number, a named metric beats a vague direction.
 
-| # | Type | Job Statement | Persona |
-|---|------|---------------|---------|
-| 1 | F | Reconcile shift schedules across three warehouse sites | Regional Operations Planner |
-| 2 | F | Rebalance labor allocation when demand spikes unexpectedly | Regional Operations Planner |
-| 3 | F | Track dock-door utilization against carrier arrival windows | Dock Supervisor |
-| 4 | F | Report weekly labor cost variances to regional leadership | Regional Operations Planner |
-| 5 | E | Feel in control when managing schedule changes across multiple sites | Regional Operations Planner |
-| 6 | E | Feel confident that staffing gaps will not cause missed shipments | Dock Supervisor |
-| 7 | S | Be seen as the person who keeps operations running smoothly by site GMs | Regional Operations Planner |
+- **Defaulting to a Tech Role:** Ask what the customer actually does day-to-day. Most products serve people whose primary job is not writing code. A fleet manager's jobs involve route optimization, driver coordination, and compliance reporting - not API integration or system architecture.
 
-## 2. Product Outcomes
+- **Writing Internal Team Tasks as Customer Jobs:** Ask: who experiences the product's value in the field? That person's jobs go in the template. The PM's jobs belong in process docs, not in customer discovery artifacts.
 
-| # | Product Outcome & Context | Related Job(s) |
-|---|--------------------------|-----------------|
-| 1 | Reduce time spent reconciling schedules across warehouse sites | 1 |
-| 2 | Reduce frequency of last-minute overtime approvals during demand spikes | 2 |
-| 3 | Increase dock-door utilization rate during peak carrier windows | 3 |
-| 4 | Reduce time to produce weekly labor cost variance reports | 4 |
-| 5 | Minimize staffing gaps that lead to missed outbound shipments | 2, 6 |
-| 6 | Increase confidence in next-day staffing levels before end of shift | 5, 6 |
-| 7 | Reduce the number of scheduling conflicts escalated to site GMs | 7 |
+- **Restating Jobs as Outcomes:** Outcomes should describe a measurable result: "Reduce time to complete payroll data entry." "Reduce errors in new employee form submissions." Where the PM has evidence for a specific threshold, adding it strengthens the outcome  -  but a named metric without a number beats a vague direction every time. The outcome is what success looks like *for the customer* when the job goes well.
 
-## Evidence Notes (optional)
+- **Exceeding Template Capacity:** Job statements: ~8-10 words. Outcomes: ~12-14 words. Persona entries: 2-3 words. Write for the template cell, not for the model's appetite for prose.
 
-- What is well-supported: Jobs 1-3 came from interviews with two operations planners at Southeast distribution hubs.
-- What is still assumption: Social job (7) is inferred from planner language, not directly stated. Dock Supervisor jobs need validation.
-- Recommended next: Interview a Dock Supervisor directly. Validate labor cost reporting pain with finance stakeholders.
-```
+- **Underfilling the Template:** Default to 10 job rows covering all three types (Functional, Emotional, Social) with at least 10 outcomes. Distribute rows across multiple personas - do not repeat one role in every row.
 
-##### Why This Works
+- **Presenting AI-Drafted Jobs as Findings:** Label every drafted job and outcome as a hypothesis, and end with Assumptions to Validate. Route the hypotheses into empathy interviews (ps-empathy-interviews) before treating any of them as evidence.
 
-- **All three job types present.** Four functional jobs ground the artifact in real operational work. Two emotional jobs capture the anxiety behind schedule coordination. One social job reveals the career motivation driving the planner's behavior.
-- **Jobs are customer-centered.** Every job describes what the operations planner or dock supervisor does - not what the product does. No feature names, no product references.
-- **Outcomes are measurable.** Each outcome uses Direction + Metric + Context. "Reduce time spent reconciling schedules across warehouse sites" - you can measure that. "Improve efficiency" - you cannot.
-- **Persona column is concrete.** "Regional Operations Planner" and "Dock Supervisor" are people you could find in an org chart. Not "User" or "Stakeholder."
-- **Fits the template.** Job statements are 6-9 words. Outcomes are 8-12 words. Persona entries are 2-3 words. All paste-ready.
-- **Evidence notes are honest and trailing.** They identify what needs validation without cluttering the artifact itself.
+#### References
 
----
-
-#### Example 2: Weak Generic JTBD Artifact
-
-Same scenario, written poorly.
-
-```markdown
-# Jobs-to-Be-Done & Outcomes
-
-## Product Context
-
-- Product or service: Warehouse management solution
-- Target market segment: Logistics
-- Primary user persona: Operations Manager
-- Buyer persona (if different): Executive
-
-## 1. Job Statements & Personas
-
-| # | Type | Job Statement | Persona |
-|---|------|---------------|---------|
-| 1 | F | Manage warehouse operations efficiently | Operations Manager |
-| 2 | F | Improve workforce productivity | Operations Manager |
-| 3 | F | Optimize scheduling | Operations Manager |
-| 4 | F | Reduce costs | Executive |
-
-## 2. Product Outcomes
-
-| # | Product Outcome & Context | Related Job(s) |
-|---|--------------------------|-----------------|
-| 1 | Better efficiency | 1 |
-| 2 | Improved productivity | 2 |
-| 3 | More optimized schedules | 3 |
-| 4 | Lower operational costs | 4 |
-```
-
-##### Why This Fails
-
-- **No emotional or social jobs.** Four functional jobs, all generic. The team has no insight into what motivates the customer beyond "do things better."
-- **Jobs are too vague.** "Manage warehouse operations efficiently" could mean anything. It does not help the team make tradeoffs or prioritize features.
-- **Outcomes restate the jobs.** "Improve workforce productivity" → "Improved productivity." No new information. No measurable metric. No context.
-- **Persona is generic.** "Operations Manager" is a job family, not a specific person. "Executive" tells you nothing about who actually approves the purchase.
-- **Only 4 rows.** The template expects 7 minimum. The team has blank slots and missing coverage.
-- **No evidence notes.** Every claim looks equally confident, but none are grounded.
-
----
-
-#### Example 3: Drift Bug - Jobs Written as Solutions
-
-```markdown
-| # | Type | Job Statement | Persona |
-|---|------|---------------|---------|
-| 1 | F | Use the ShiftSync dashboard to view schedules | Operations Manager |
-| 2 | F | Integrate ShiftSync with the existing WMS system | IT Administrator |
-| 3 | F | Set up automated alerts for staffing shortages | Operations Manager |
-| 4 | F | Configure the reporting module for weekly exports | Operations Manager |
-```
-
-##### Why This Is Wrong
-
-Every "job" is actually a product feature or implementation task:
-
-- "Use the ShiftSync dashboard" - that is a solution, not a job. The job is "Reconcile shift schedules across sites."
-- "Integrate ShiftSync with the existing WMS" - that is an IT task, not a customer job. And the persona has drifted to IT Administrator, which is not the customer the product serves.
-- "Set up automated alerts" - that is a configuration step, not something the customer is trying to accomplish in their work life.
-- "Configure the reporting module" - same problem. The customer job is "Report weekly labor cost variances to leadership." How the report gets configured is a solution detail.
-
-**Fix:** Strip out every mention of the product. Ask: what was this person trying to do *before* your product existed? That is the job.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-jobs-to-be-done) for supporting source material and expanded examples.
 
 ## ps-proto-persona | Personas & Proto-Personas
 
@@ -811,6 +573,14 @@ Use this skill when you need to:
 
 This is not a validated persona. Until it is grounded in research, it is explicitly a **proto-persona**.
 
+##### Usage Notes
+
+- It starts with the **user persona** first, then optionally the buyer and influencer
+- It keeps the profile explicitly **proto** until validated by research
+- **Provenance tags:** every line of a working draft is tagged `[FROM YOU]`, `[RESEARCH]`, or `[AI-SUGGESTED, VALIDATE THIS]`. Invented quotes are always AI-suggested. The committed copy moves the tags out of the fields and keeps a ranked Riskiest Assumptions list.
+- **Two draft paths:** beliefs or notes get drafted field by field with tags; a finished research-based persona gets reviewed against Clarity, Story, Empathy, Relevance, and Focus, and nothing is added that the research did not produce.
+- **Five fields, following the B2B work-in-progress template.** The baseline's separate "What is this persona trying to do?" and "Attitudes & Influences" fields are folded in: what the persona is trying to accomplish goes under Needs | Pains, and attitudes and influences under Desired Outcomes | Goals.
+
 #### Key Concepts
 
 ##### Persona vs. Proto-Persona
@@ -830,7 +600,7 @@ That means the person who actually uses, experiences, or lives with the product 
 
 Only after the user persona is coherent should you repeat the exercise for the buyer.
 
-**Who owns which personas:** Product Managers focus primarily on user personas — the people who experience the product day-to-day. Marketing and Sales typically own buyer and influencer personas. Knowing this scopes the PM's work: go deep on the user, treat the buyer as the secondary pass.
+**Who owns which personas:** Product Managers focus primarily on user personas  -  the people who experience the product day-to-day. Marketing and Sales typically own buyer and influencer personas. Knowing this scopes the PM's work: go deep on the user, treat the buyer as the secondary pass.
 
 The Playbook names three persona types:
 
@@ -900,64 +670,24 @@ The Playbook casts AI as the **drafter of the proto-persona**. Given what the PM
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-proto-persona / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Template`) for the full scaffold.
+Use Template (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_proto_persona_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -982,9 +712,9 @@ If the PM asks for a clean copy straight away, give it, but still end with the R
 
 There are two kinds of draft. Treat them differently.
 
-**Beliefs, notes, or a rough proto-persona** (before research). Follow the Playbook's drafting order: alliterative name, Bio & Demographics, Desired Outcomes & Goals, Needs | Pains, then Quotes. For each field, review what the PM gave you first, add only where they are thin, and tag every line. Ask one question at a time when a field is too thin to fill honestly. This mirrors prompts/01 (uploaded reference: `07-prompts.md`, section `ps-proto-persona / Companion / 01-draft-proto-persona.md`).
+**Beliefs, notes, or a rough proto-persona** (before research). Follow the Playbook's drafting order: alliterative name, Bio & Demographics, Desired Outcomes & Goals, Needs | Pains, then Quotes. For each field, review what the PM gave you first, add only where they are thin, and tag every line. Ask one question at a time when a field is too thin to fill honestly. This mirrors the critique guidance in this Play.
 
-**A finished, research-based persona.** Do not redraft it. This mirrors prompts/02 (uploaded reference: `07-prompts.md`, section `ps-proto-persona / Companion / 02-review-research-persona.md`):
+**A finished, research-based persona.** Do not redraft it. This mirrors the critique guidance in this Play:
 
 1. Ask who the stakeholder audience is if you don't know.
 2. Give one honest read: is it already good enough to share? If yes, say so plainly and stop.
@@ -996,7 +726,7 @@ There are two kinds of draft. Treat them differently.
 
 The canonical example page has real carrying-capacity limits. Respect them.
 
-Use the budgets in [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml).
+Use the budgets in Template and capacity guidance (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Template`).
 
 Default expectations:
 
@@ -1162,145 +892,7 @@ As research progresses:
 - split one proto-persona into two if the segment was too broad
 - retire fields that turn out to be wrong
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Examples`).
-
-The example set includes:
-
-- a stronger Productside-style proto-persona
-- a weak, generic version
-- commentary on why the weak version fails
-
-#### Common Pitfalls
-
-##### Pitfall 1: Making the Persona Too Generic
-
-**Symptom:** "Operations Manager Olivia wants efficiency."
-
-**Consequence:** The team cannot make real tradeoffs because the persona could mean almost anyone.
-
-**Fix:** Add behavioral context, concrete pains, and language that reflects how the person actually works.
-
-##### Pitfall 2: Treating Assumptions as Research
-
-**Symptom:** The persona contains confident claims with no indication of evidence.
-
-**Consequence:** The team mistakes hypothesis for truth and starts building on it.
-
-**Fix:** Tag every line of the working draft with its provenance, and end with a ranked Riskiest Assumptions list. The clean committed copy drops the tags from the fields but keeps that list.
-
-##### Pitfall 2b: Adding Commentary That Displaces the Artifact
-
-**Symptom:** The skill spends energy on analysis or caveats while the persona itself stays underfilled or too long.
-
-**Consequence:** The human gets more writing, but less usable playbook output.
-
-**Fix:** Complete the artifact first. Keep commentary short and trailing.
-
-##### Pitfall 3: Building the Buyer First
-
-**Symptom:** The persona centers on the approver while the actual user disappears.
-
-**Consequence:** The product gets shaped around purchasing logic without enough empathy for lived usage.
-
-**Fix:** Build the user first. Add buyer second when relevant.
-
-##### Pitfall 4: Making the Product Manager the Persona by Default
-
-**Symptom:** The skill quietly profiles the team building the product instead of the customer-side person they serve.
-
-**Consequence:** The work becomes inward-looking and later discovery artifacts get contaminated.
-
-**Fix:** Ask explicitly: who experiences the product's value or pain in the field?
-
-##### Pitfall 5: Defaulting to a Tech Role
-
-**Symptom:** The user asks for a persona for an IoT platform PM's customer and gets a solutions architect, platform engineer, or developer. The user asks for a healthcare PM's customer and gets a health-tech engineer.
-
-**Consequence:** The persona reflects LLM training bias, not the real customer population. The team builds empathy for the wrong person.
-
-**Fix:** Ask what the customer actually does day-to-day. Most products - even deeply technical ones - serve people whose primary job is not writing code or designing systems. A fleet manager, a logistics director, a clinical operations lead, a utility substation engineer - these are the real customers. If the role does not involve building software as its core function, the persona should not read like a technologist.
-
-##### Pitfall 6: Confusing Pains with Goals
-
-**Symptom:** Every section says some version of "save time" or "reduce frustration."
-
-**Consequence:** The profile becomes too muddy to inform outcomes, problems, or prioritization.
-
-**Fix:** Keep friction separate from the future state the persona wants to achieve.
-
-##### Pitfall 7: Never Updating the Proto-Persona
-
-**Symptom:** The persona remains unchanged even after interviews, observations, or experiments.
-
-**Consequence:** The artifact stops being a tool and becomes wall art.
-
-**Fix:** Treat the proto-persona as a living document and revise it as discovery produces evidence.
-
-##### Pitfall 8: Exceeding Template Capacity
-
-**Symptom:** Quotes, pains, or jobs become too long to paste cleanly into the playbook.
-
-**Consequence:** The human Product Manager has to summarize the output before using it.
-
-**Fix:** Write to the canonical budget, not to the model's appetite for prose.
-
-##### Pitfall 9: The Assumptions Are the Model's, Not the Team's
-
-**Symptom:** The PM gives two lines of belief and gets back a fully populated persona. Most of it is plausible gap-fill the PM never held, and nothing shows which lines are which.
-
-**Consequence:** The team goes out and validates the model's guesses instead of its own beliefs. Gap-fills nobody caught become "what we think about our customer."
-
-**Fix:** Review what the PM supplied before adding anything. Add only where they are thin, and tag every addition `[AI-SUGGESTED, VALIDATE THIS]`. If most of the persona is AI-suggested, say so and ask for more of the team's own beliefs before going further.
-
-##### Pitfall 10: A Name and a Face Imply Proof
-
-**Symptom:** A polished proto-persona with a name, a portrait, and confident quotes goes into a stakeholder deck as if it were researched. Invented quotes get repeated in planning meetings as things customers said.
-
-**Consequence:** The polish makes the guess feel finished. The team builds on a stereotype, and it is never revisited.
-
-**Fix:** Keep validation status visible ("Proto-persona") on the artifact. Keep invented quotes tagged as invented. Route the Riskiest Assumptions into empathy interviews (ps-empathy-interviews) before the persona is shared as a validated profile.
-
-##### Pitfall 11: Stretching the Persona to Cover Everyone
-
-**Symptom:** Each field gains another clause so the persona fits one more customer type: "manages one site, or sometimes three," "technical, though some aren't."
-
-**Consequence:** The persona describes a blurry everyone, so it guides no tradeoffs. That is the Focus test failing.
-
-**Fix:** Build for the center of the segment. If the segment really holds two different people, split it into two personas rather than averaging them into one.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-proto-persona / Companion / README.md`) - copy-paste prompts for chat-based AI tools (2: draft a proto-persona, review a research-based persona)
-- examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - build alongside; jobs and desired outcomes feed the persona's goals and pains
-- ps-empathy-interviews (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Instructions`) - downstream; tests the Riskiest Assumptions and replaces invented quotes with real ones
-- ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`) - downstream; uses the persona's pains and jobs
-
-##### Related Project Docs
-
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_proto_persona_playbook_pages.pdf (source material, not included in this upload kit)
-- Productside Playbook companion document (supplied separately)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 25-30: Template 06 of 24 there, with the AI overview on slide 27 and prompts on slides 28-29. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-
 ### ps-proto-persona / Template
-
-### ps-proto-persona Template
 
 Use this template to build a **Productside-style proto-persona** for the primary user first, then optionally the buyer.
 
@@ -1312,11 +904,11 @@ Tag every line of the working draft with where it came from:
 
 Tags go at the end of the line and are the only annotation allowed inside the fields. When the PM commits the persona, the clean copy drops the tags from the fields and keeps the Riskiest Assumptions list.
 
-#### When to Use This
+##### When to Use This
 
 Use this when you need a working customer profile before full validation, and you want the team to have a shared understanding of who the product is serving.
 
-#### Template
+##### Template
 
 ```markdown
 # Proto-Persona
@@ -1400,7 +992,7 @@ The AI-suggested lines that would most change this persona if wrong, ranked by w
 - Which assumptions are riskiest?
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
 - Build the **user persona first**.
 - Only then create a separate buyer persona if the buyer is materially different.
@@ -1411,152 +1003,42 @@ The AI-suggested lines that would most change this persona if wrong, ranked by w
 
 ### ps-proto-persona / Examples
 
-### ps-proto-persona Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Productside-Style Proto-Persona
+- **Strong:** Describe the warehouse operations analyst's responsibilities, goals, pains, and workarounds, marking sourced observations separately from assumptions.
+- **Weak:** "Busy professional who values efficiency" cannot guide a specific product decision.
+- **Drift to avoid:** Invented authenticity: a believable customer quote or research label generated by AI is not evidence. Omit it or label it as fictional.
 
-This example is intentionally sanitized and fictionalized. It shows the **working draft**, with a provenance tag on every line. The committed copy has the same content with the tags moved out of the fields.
 
-```markdown
-# Proto-Persona
+#### Common Pitfalls
 
-## Persona Type
-- User, Buyer, or Influencer: User
-- Validation status: Proto-persona
-- Confidence level: Medium
+- **Making the Persona Too Generic:** Add behavioral context, concrete pains, and language that reflects how the person actually works.
 
-## Product Context
-- Product or service: Multi-site warehouse scheduling and exception-management platform
-- Problem space: Coordinating labor, carrier timing, and dock availability across shifting daily demand
-- Why this persona matters: This person experiences the operational chaos the product is meant to reduce
+- **Treating Assumptions as Research:** Tag every line of the working draft with its provenance, and end with a ranked Riskiest Assumptions list. The clean committed copy drops the tags from the fields but keeps that list.
 
-## Name & Portrait
-- Name: Alicia Operations Analyst
-- Portrait description: Early-career operations analyst managing same-day schedule changes across three warehouse sites
+- **Pitfall 2b: Adding Commentary That Displaces the Artifact:** Complete the artifact first. Keep commentary short and trailing.
 
-## Bio & Demographics
-- Role / title: Operations Analyst [FROM YOU]
-- Industry or operating context: Regional logistics network [FROM YOU]
-- Organization context: Mid-sized distribution company with three warehouses and mixed in-house / third-party carriers [FROM YOU]
-- Seniority or experience level: 4 years in operations planning [AI-SUGGESTED, VALIDATE THIS]
-- Relevant demographics: Comfortable with spreadsheets and operations systems; not deeply technical [RESEARCH]
-- Backstory: Alicia inherited a patchwork planning process and is now the person everyone pings when inbound and outbound schedules break [FROM YOU]
+- **Building the Buyer First:** Build the user first. Add buyer second when relevant.
 
-## Quotes
-- Quote 1: "I rework half the day by hand." [AI-SUGGESTED, VALIDATE THIS]
-- Quote 2: "We have five versions of the schedule." [AI-SUGGESTED, VALIDATE THIS]
-- Quote 3: "I need fewer surprises at 2 p.m." [AI-SUGGESTED, VALIDATE THIS]
+- **Making the Product Manager the Persona by Default:** Ask explicitly: who experiences the product's value or pain in the field?
 
-## Needs | Pains
-- Pain or need 1: Manual reconciliation across tools [RESEARCH]
-- Pain or need 2: Low confidence in one shared plan [FROM YOU]
-- Pain or need 3: Blame for downstream delays [AI-SUGGESTED, VALIDATE THIS]
-- Trying to accomplish: keep schedules aligned, resolve daily exceptions, prevent avoidable delays [FROM YOU]
+- **Defaulting to a Tech Role:** Ask what the customer actually does day-to-day. Most products - even deeply technical ones - serve people whose primary job is not writing code or designing systems. A fleet manager, a logistics director, a clinical operations lead, a utility substation engineer - these are the real customers. If the role does not involve building software as its core function, the persona should not read like a technologist.
 
-## Desired Outcomes | Goals
-- Desired outcome or goal 1: Less time on reconciliation [FROM YOU]
-- Desired outcome or goal 2: One trusted operating plan [FROM YOU]
-- Desired outcome or goal 3: Fewer preventable delays [AI-SUGGESTED, VALIDATE THIS]
-- Attitudes and influences: Trusts warehouse supervisors and peer planners [FROM YOU]; won't adopt anything that slows shift-start [RESEARCH]; values tools that reduce fire-drills over "visibility" [AI-SUGGESTED, VALIDATE THIS]
+- **Confusing Pains with Goals:** Keep friction separate from the future state the persona wants to achieve.
 
-## Proto-Persona Caveats
-- This is still a proto-persona, not a validated persona.
-- Likely areas to validate next: desired confidence threshold, precise influence network, and what information Alicia trusts first during live disruption.
-- Evidence sources: support ticket themes from two sites (reconciliation, duplicate entry); a public operations analyst job posting (tools and technical level)
+- **Never Updating the Proto-Persona:** Treat the proto-persona as a living document and revise it as discovery produces evidence.
 
-## Riskiest Assumptions
-1. Blame for downstream delays is a top pain, not just a frustration (test first: it shapes the whole emotional story)
-2. The 2 p.m. surprise pattern is real across sites, not just at one
-3. She trusts tools that fit existing routines over tools that change them
+- **Exceeding Template Capacity:** Write to the canonical budget, not to the model's appetite for prose.
 
-## Buyer Relationship
-- Is this person also the buyer? No
-- If not, who likely buys or approves? Operations director or VP of supply chain
-- What tension might exist between user needs and buyer priorities? Buyer may focus on cost and throughput while Alicia cares about fewer surprises and clearer coordination
+- **The Assumptions Are the Model's, Not the Team's:** Review what the PM supplied before adding anything. Add only where they are thin, and tag every addition `[AI-SUGGESTED, VALIDATE THIS]`. If most of the persona is AI-suggested, say so and ask for more of the team's own beliefs before going further.
 
-## Research Next Steps
-- Who should we interview next? Warehouse supervisors, transportation manager, second-site planner
-- What should we validate first? Whether exception resolution speed is more painful than schedule creation itself
-- Which assumptions are riskiest? What "good enough coordination" looks like during live operational pressure
-```
+- **A Name and a Face Imply Proof:** Keep validation status visible ("Proto-persona") on the artifact. Keep invented quotes tagged as invented. Route the Riskiest Assumptions into empathy interviews (ps-empathy-interviews) before the persona is shared as a validated profile.
 
-**Why this works**
+- **Stretching the Persona to Cover Everyone:** Build for the center of the segment. If the segment really holds two different people, split it into two personas rather than averaging them into one.
 
-- customer-side person is clear
-- quotes sound like a real operator, not marketing copy
-- pains and desired outcomes are separated
-- the main sections are compact enough to paste back into the playbook
-- proto status is explicit, and every line shows whether it came from the team, from research, or from the model
-- invented quotes are tagged as invented, so nobody repeats them as customer evidence
-- the Riskiest Assumptions list turns the AI-suggested lines into a research plan
-- buyer is acknowledged without replacing the user
-- tags sit at the end of each line, so the committed copy is clean once they are moved out of the fields
+#### References
 
-#### Example 2: Weak Generic Persona
-
-```markdown
-# Proto-Persona
-
-## Persona Type
-- User or Buyer: User
-- Validation status: Proto-persona
-- Confidence level: High
-
-## Product Context
-- Product or service: Software
-- Problem space: Efficiency
-- Why this persona matters: Important user
-
-## Name & Portrait
-- Name: Olivia
-- Portrait description: Professional person
-
-## Bio & Demographics
-- Role / title: Manager
-- Industry or operating context: Operations
-- Organization context: Company
-- Seniority or experience level: Experienced
-- Relevant demographics: 30-50 years old
-- Backstory: Works hard
-
-## Quotes
-- Quote 1: "I want better tools."
-- Quote 2: "Efficiency is important."
-- Quote 3: "We need innovation."
-
-## Needs | Pains
-- Pain or need 1: Processes are bad
-- Pain or need 2: Things take too long
-- Pain or need 3: Needs more visibility
-
-## Desired Outcomes | Goals
-- Desired outcome or goal 1: Save time
-- Desired outcome or goal 2: Reduce frustration
-- Desired outcome or goal 3: Improve efficiency
-```
-
-**Why this fails**
-
-- too abstract to guide any real decision
-- title, pains, and goals could describe almost anyone
-- no visible difference between evidence and assumption
-- language sounds like business cliché, not a person
-- confidence is overstated without research support
-
-#### Example 3: Drift Bug to Avoid
-
-This is a common misuse in playbook work:
-
-```markdown
-Persona: Product Manager Priya
-Reason: She is the person filling out the playbook.
-```
-
-**Why this is usually wrong**
-
-The person filling out the playbook is not automatically the person the product serves.
-
-Unless the product truly serves Product Managers, the persona should stay on the **customer side of the value chain**.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-proto-persona) for supporting source material and expanded examples.
 
 ## ps-empathy-interviews | Empathy Interviews
 
@@ -1588,6 +1070,17 @@ Use this skill when you need to:
 
 This is not a survey design tool, a usability test script, or a sales call framework. Empathy interviews are discovery conversations - open-ended, story-seeking, and judgment-free.
 
+##### Usage Notes
+
+- This is a **process skill** (`type: process`), not a component skill. It spans preparation, interview conduct, and findings documentation across multiple sessions.
+- The agent helps with preparation (Phase 1) and documentation (Phase 3). The PM conducts the actual interview (Phase 2) in the field - the agent cannot substitute for real customer conversation.
+- **Preparation follows the Playbook's AI pages:** name the decision, set learning objectives, choose 4-5 topic areas, and review the PM's own questions (leading, closed, solution-fishing, no objective). The agent drafts questions only on request, labeled as a starting draft.
+- **Rehearsal (optional):** the agent can play the persona in a technique drill, one tough moment at a time, then review the PM's technique. It is practice, never research. Nothing from a rehearsal goes into findings.
+- Evidence gathering: this skill qualifies for **web research + user artifacts**. Web research grounds the PM in the interviewee's domain before the interview. User artifacts (persona work, JTBD output, prior research) inform question preparation.
+- The findings board produces structured output that feeds downstream skills: Jobs-to-Be-Done, Desired Outcomes, Problems, and Feels/Appears.
+- Upstream: ps-proto-persona (persona grounds the interview target), ps-jobs-to-be-done (provides assumptions to test).
+- Downstream: ps-problem-identification (uses problems and jobs from findings), ps-proto-persona (refine with real quotes and observations).
+
 #### Key Concepts
 
 ##### The 70/30 Rule
@@ -1612,7 +1105,7 @@ Leading questions ("Don't you think a dashboard would help?") confirm the PM's h
 
 ##### Confirm Understanding by Reflecting Back
 
-After the interviewee shares something significant, repeat back what you heard in your own words: "So if I understand correctly, you're saying..." This does two things: it confirms you captured their meaning accurately, and it often prompts the interviewee to correct, expand, or go deeper — surfacing nuance a follow-up probe alone might miss.
+After the interviewee shares something significant, repeat back what you heard in your own words: "So if I understand correctly, you're saying..." This does two things: it confirms you captured their meaning accurately, and it often prompts the interviewee to correct, expand, or go deeper  -  surfacing nuance a follow-up probe alone might miss.
 
 ##### The Findings Board Maps to Downstream Artifacts
 
@@ -1663,64 +1156,24 @@ What AI cannot do is be the person being interviewed. The whole point of this Pl
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-empathy-interviews / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Template`) for the full scaffold.
+Use Template (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_empathy_interviews_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -1733,7 +1186,7 @@ The PM returns to the agent after conducting the interview (Phase 2) to get help
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with draft questions or topic areas, review them before writing anything new. This mirrors prompts/01 (uploaded reference: `07-prompts.md`, section `ps-empathy-interviews / Companion / 01-prepare-interview-guide.md`).
+When the PM arrives with draft questions or topic areas, review them before writing anything new. This mirrors the critique guidance in this Play.
 
 1. **Confirm the persona and the decision.** If no learning objectives exist, get them first (Step 3).
 2. **Review each question.** Flag leading questions, closed (yes/no) questions, and questions that fish for the PM's solution. Quote the words at fault.
@@ -1815,7 +1268,7 @@ Before the PM goes into the field, surface the conduct reference card:
 
 ##### Step 6: Rehearse Technique (Optional)
 
-If the PM wants to practice, run a rehearsal drill. This mirrors prompts/02 (uploaded reference: `07-prompts.md`, section `ps-empathy-interviews / Companion / 02-rehearse-technique.md`).
+If the PM wants to practice, run a rehearsal drill. This mirrors the critique guidance in this Play.
 
 1. **Say what this is.** It's practice, not data, and nothing from it goes into findings. Suggest voice mode if the PM's tool has one.
 2. **Present one realistic interview moment at a time**, playing the persona: a one-word answer, a jump to a feature request, saying one thing while describing the opposite, going quiet. Respond to the PM's moves as the persona plausibly would, then present the next moment.
@@ -1874,138 +1327,15 @@ After the findings are documented, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Examples`).
-
-The example set includes:
-
-- a strong empathy interview artifact with well-prepared questions and structured findings
-- a weak, generic version with no learning objectives and unstructured findings
-- a bias-bug example showing questions that lead the interviewee toward a predetermined solution
-- commentary on why the weak versions fail
-
-#### Common Pitfalls
-
-##### Pitfall 1: Asking Leading Questions
-
-**Symptom:** "Don't you think it would be better if you had a real-time dashboard?" or "Would you agree that the current system is too slow?"
-
-**Consequence:** The interviewee agrees to be polite or because the question frames the answer. The PM leaves with "validated" assumptions that were never actually tested.
-
-**Fix:** Strip the question of any solution language or implied answer. "How do you currently monitor [process]?" lets the customer describe their reality. "Don't you think a dashboard would help?" tells them what to say.
-
-##### Pitfall 2: Asking Yes/No Questions
-
-**Symptom:** "Do you find data reconciliation frustrating?" "Is the current process slow?"
-
-**Consequence:** The PM gets confirmation without understanding. "Yes, it's frustrating" tells you nothing about why, how often, or what it costs.
-
-**Fix:** Convert to open-ended: "Can you walk me through the last time you had to reconcile data across systems? What happened?"
-
-##### Pitfall 3: Talking More Than 30%
-
-**Symptom:** The PM explains the product vision, describes the roadmap, or pitches features during the interview.
-
-**Consequence:** The interview becomes a sales call. The customer mirrors the PM's language back instead of sharing their own experience.
-
-**Fix:** Set a physical reminder (a sticky note that says "LISTEN"). After asking a question, wait. Count to five silently before saying anything else. Silence prompts the customer to fill the gap with real insight.
-
-##### Pitfall 4: Asking About Features Instead of Problems
-
-**Symptom:** "How would you feel about a tool that automates X?" or "What features would you want in a solution?"
-
-**Consequence:** The customer designs your product for you - poorly, because they are not product managers. You get a feature wish list instead of problem understanding.
-
-**Fix:** Ask about their current reality, not a hypothetical future. "What happens today when X goes wrong?" reveals the problem. "What features would fix it?" reveals the customer's guess about a solution, which is not the same thing.
-
-##### Pitfall 5: Not Digging Deeper on Surface-Level Answers
-
-**Symptom:** Customer says "It's fine" or "We manage." PM moves to the next question.
-
-**Consequence:** The real pain is buried under social politeness. "It's fine" often means "I've accepted the pain because I have no alternative."
-
-**Fix:** Probe: "Can you tell me more about how you manage it?" or "What does 'fine' look like on a bad day?" The second layer is almost always richer than the first.
-
-##### Pitfall 6: Skipping Documentation
-
-**Symptom:** The PM conducts the interview, has a vivid memory of the conversation, but never structures the findings.
-
-**Consequence:** Within 48 hours, the nuance fades. Within a week, the PM remembers their interpretation, not the customer's words. The team never sees the raw evidence.
-
-**Fix:** Document findings within 24 hours of the interview. Use the findings board structure - it forces categorization and makes the data usable by the rest of the team.
-
-##### Pitfall 7: Defaulting to a Tech Role
-
-**Symptom:** The PM is building a supply chain platform but prepares interview questions for a DevOps engineer or data architect.
-
-**Consequence:** The interview explores technical implementation concerns instead of the operational workflow of the actual customer (a supply chain planner, a procurement manager, a logistics coordinator).
-
-**Fix:** Before drafting questions, confirm: is this the person who uses or buys the product in the field? If their primary job is not writing code or designing systems, the questions should reflect their actual daily work.
-
-##### Pitfall 8: Treating This as a Content-Generation Skill
-
-**Symptom:** The PM asks the agent to "generate empathy interview findings" without having conducted an interview.
-
-**Consequence:** The findings are fiction. They reflect LLM training data, not the customer's reality. The team makes decisions based on plausible-sounding but unvalidated assumptions.
-
-**Fix:** Phase 3 (Document Findings) requires real interview data as input. If the PM has not talked to a customer, the agent should help with Phase 1 (Prepare Questions) and send the PM into the field. Do not fabricate findings.
-
-##### Pitfall 9: Treating a Rehearsal as Research
-
-**Symptom:** The PM runs an AI rehearsal, or asks AI to "interview" a synthetic customer, then pastes the simulated answers into the findings board as quotes or problems.
-
-**Consequence:** The findings are the model's guesses in a customer's voice. The real conversation gets skipped, and the team believes it has validated something it never tested. The Playbook calls this the Play being corrupted.
-
-**Fix:** Label every rehearsal as practice at the start and the end. Refuse to document findings from a simulated interview. If the PM has no real interviews yet, help them recruit and schedule them.
-
-##### Pitfall 10: Reading the Question List Like a Script
-
-**Symptom:** The PM works through the prepared questions in order, word for word, and moves on as soon as each one is answered.
-
-**Consequence:** The interviewee never gets to steer, so the stories that matter never come out. The interview confirms the PM's list instead of the customer's reality.
-
-**Fix:** Prepare around topic areas, not a script. Treat questions as starting points, follow the thread the interviewee opens, and use "Why?" and "Tell me more" to go deeper. Rehearsal (Step 6) builds the reflex.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Template`) - three-phase scaffold: preparation, conduct guidance, findings
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-empathy-interviews / Companion / README.md`) - copy-paste prompts for chat-based AI tools (2: prepare an interview guide, rehearse technique)
-- examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Examples`) - strong, weak, and bias-bug examples
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Related Skills
-
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - upstream; persona work grounds interview question preparation; interview findings refine the persona
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - parallel; JTBD output can inform interview questions; interview findings produce new job and outcome discoveries
-- ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`) - downstream; interview findings feed directly into problem identification
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_empathy_interviews_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 31-35: Template 07 of 24 there, with the AI overview on slide 33 and both prompts on slide 34. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-
 ### ps-empathy-interviews / Template
 
-### Empathy Interviews
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Investigate** to prepare for empathy interviews, guide conduct, and document findings. This is a process skill that spans three phases - preparation, interview conduct (PM does this in the field), and documentation.
 
-#### Template
+##### Template
 
-##### Phase 1: Interview Preparation
+###### Phase 1: Interview Preparation
 
 ```markdown
 # Empathy Interview Preparation
@@ -2071,7 +1401,7 @@ Prepare 5-8 open-ended questions in your own words, a few per topic area. Do not
 > Capacity check: Questions should be ~15-20 words. Follow-up probes should be ~8-12 words.
 ```
 
-##### Phase 2: Conduct Guidance (Reference Card)
+###### Phase 2: Conduct Guidance (Reference Card)
 
 ```markdown
 # Interview Conduct Reference Card
@@ -2120,7 +1450,7 @@ Prepare 5-8 open-ended questions in your own words, a few per topic area. Do not
 - [ ] Note what surprised you - surprises are the highest-signal findings
 ```
 
-##### Phase 3: Document Findings
+###### Phase 3: Document Findings
 
 ```markdown
 # Empathy Interview Findings
@@ -2229,9 +1559,9 @@ Emotional and behavioral observations. What the customer appeared to feel, not j
 - Recommended next steps:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### The Three Phases
+###### The Three Phases
 
 This template covers a multi-session process:
 
@@ -2241,7 +1571,7 @@ This template covers a multi-session process:
 
 The PM may complete Phase 1, leave for days or weeks, and return for Phase 3. That is normal.
 
-##### How Many Questions
+###### How Many Questions
 
 The canonical template has 6 question slots. Default to 5-8 questions:
 
@@ -2252,7 +1582,7 @@ The canonical template has 6 question slots. Default to 5-8 questions:
 
 Add follow-up probes for each question. Do not over-prepare - 8 questions is a ceiling, not a target.
 
-##### Findings Board Sizing
+###### Findings Board Sizing
 
 The findings board maps to the canonical template's sticky-note grid:
 
@@ -2264,15 +1594,15 @@ The findings board maps to the canonical template's sticky-note grid:
 | Feels/Appears | 4 | ~6-10 | Emotional and behavioral |
 | Raw Quotes | 4-6 | ~15-20 | Customer's actual words |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** Proto-persona (grounds the interview target and questions); JTBD (provides assumptions to test)
 - **Downstream:** Problem Identification uses the problems and jobs from this artifact; proto-persona refinement uses the quotes and emotional observations
 - **Parallel:** JTBD can be updated with newly discovered jobs and outcomes from the interview
 
-##### Capacity Reference
+###### Capacity Reference
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the exact word and character budgets per field.
+See Template and capacity guidance (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Template`) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -2286,248 +1616,38 @@ See [technical/data/canonical_template_budgets.yaml](https://github.com/Products
 
 ### ps-empathy-interviews / Examples
 
-### Empathy Interviews - Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Empathy Interview Artifact
+- **Strong:** Ask a regional store manager: "Tell me about the last time inventory differed across your stores." Record the real interview separately from preparation.
+- **Weak:** "Would a real-time dashboard solve your inventory problem?" leads the witness toward the proposed solution.
+- **Drift to avoid:** Rehearsal as research: simulated interview answers must never enter findings as customer evidence.
 
-Scenario: A retail technology company building an inventory management platform for regional store managers at a mid-size grocery chain.
 
-##### Phase 1: Interview Preparation
+#### Common Pitfalls
 
-```markdown
-# Empathy Interview Preparation
+- **Asking Leading Questions:** Strip the question of any solution language or implied answer. "How do you currently monitor [process]?" lets the customer describe their reality. "Don't you think a dashboard would help?" tells them what to say.
 
-## Product Context
+- **Asking Yes/No Questions:** Convert to open-ended: "Can you walk me through the last time you had to reconcile data across systems? What happened?"
 
-- Product or service: StockPulse - inventory management platform for grocery retail
-- Target market segment: Mid-size grocery chains (50-200 stores)
-- Target interviewee role: Regional Store Manager
-- Interviewee's primary job: Oversees inventory, staffing, and merchandising across 8-12 store locations
+- **Talking More Than 30%:** Set a physical reminder (a sticky note that says "LISTEN"). After asking a question, wait. Count to five silently before saying anything else. Silence prompts the customer to fill the gap with real insight.
 
-## Decision These Interviews Inform
+- **Asking About Features Instead of Problems:** Ask about their current reality, not a hypothetical future. "What happens today when X goes wrong?" reveals the problem. "What features would fix it?" reveals the customer's guess about a solution, which is not the same thing.
 
-- Decision: Whether the first release targets cross-store stockouts or weekly reconciliation
-- Who makes it, and by when: Product lead and engineering lead, before Q3 planning
+- **Not Digging Deeper on Surface-Level Answers:** Probe: "Can you tell me more about how you manage it?" or "What does 'fine' look like on a bad day?" The second layer is almost always richer than the first.
 
-## Learning Objectives
+- **Skipping Documentation:** Document findings within 24 hours of the interview. Use the findings board structure - it forces categorization and makes the data usable by the rest of the team.
 
-1. We assume regional managers spend 3+ hours per week on manual inventory reconciliation - is that accurate?
-2. We do not know how they currently handle stockouts across multiple stores - what workarounds exist?
-3. We need to understand the emotional cost of shrinkage reporting to corporate leadership.
-4. We need to learn what information they wish they had before their Monday morning review meetings.
+- **Defaulting to a Tech Role:** Before drafting questions, confirm: is this the person who uses or buys the product in the field? If their primary job is not writing code or designing systems, the questions should reflect their actual daily work.
 
-## Topic Areas
+- **Treating This as a Content-Generation Skill:** Phase 3 (Document Findings) requires real interview data as input. If the PM has not talked to a customer, the agent should help with Phase 1 (Prepare Questions) and send the PM into the field. Do not fabricate findings.
 
-| # | Topic Area | Learning Objective It Serves | Example Open-Ended Question |
-|---|------------|------------------------------|-----------------------------|
-| 1 | The weekly inventory rhythm | 1, 4 | "Walk me through last Monday's review." |
-| 2 | Stockouts across stores | 2 | "Tell me about the last stockout that surprised you." |
-| 3 | Workarounds between stores | 2 | "What have you tried when one store runs low?" |
-| 4 | Reporting up to corporate | 3 | "What happens in the room when shrinkage comes up?" |
+- **Treating a Rehearsal as Research:** Label every rehearsal as practice at the start and the end. Refuse to document findings from a simulated interview. If the PM has no real interviews yet, help them recruit and schedule them.
 
-## Interview Questions
+- **Reading the Question List Like a Script:** Prepare around topic areas, not a script. Treat questions as starting points, follow the thread the interviewee opens, and use "Why?" and "Tell me more" to go deeper. Rehearsal (Step 6) builds the reflex.
 
-| # | Question | Follow-Up Probes | Objective |
-|---|----------|-----------------|-----------|
-| 1 | Can you walk me through a typical Monday morning when you're reviewing inventory across your stores? | What do you look at first? What takes the longest? | 1 |
-| 2 | What are the most frustrating parts of keeping track of stock levels across multiple locations? | Can you tell me about a recent time that was especially frustrating? | 1 |
-| 3 | Tell me about the last time a stockout at one of your stores caught you off guard. | What happened next? How did you find out about it? | 2 |
-| 4 | How does your team currently handle moving inventory between stores when one location runs low? | Why did you end up doing it that way? Who else is involved? | 2 |
-| 5 | How does shrinkage reporting affect your work and your relationship with corporate? | Can you describe what that review process feels like? | 3 |
-| 6 | What information do you wish you had at the start of each week that you currently don't? | How would having that change what you do on Monday? | 4 |
-| 7 | Is there anything else you'd like to share about how you manage inventory today? | | All |
-```
+#### References
 
-##### Phase 3: Document Findings (after interview)
-
-```markdown
-# Empathy Interview Findings
-
-## Interview Context
-
-- Interviewee role: Regional Store Manager (oversees 10 stores, Southeast region)
-- Date: 2026-06-18
-- Interview duration: 45 minutes
-- Product context: StockPulse inventory management platform
-- Interviewer(s): PM (lead), UX Designer (notes)
-
-## Raw Quotes
-
-| # | Quote |
-|---|-------|
-| 1 | "By the time I find out a store is out of something, a customer has already complained to corporate." |
-| 2 | "I spend my Monday mornings calling store managers one by one to piece together what happened over the weekend." |
-| 3 | "The shrinkage report is the thing I dread most - it feels like I'm always defending numbers I can't fully explain." |
-| 4 | "We move product between stores in the back of someone's personal truck. It works, but it's not exactly a system." |
-| 5 | "I wish I could see on Sunday night what's going to be a problem on Monday morning." |
-
-## Findings Board
-
-### Jobs-to-Be-Done
-
-| # | Job (Functional / Emotional / Social) |
-|---|---------------------------------------|
-| 1 | [F] Reconcile inventory across 10 store locations weekly |
-| 2 | [F] Redistribute stock between stores before stockouts hit |
-| 3 | [F] Prepare shrinkage explanations for corporate review |
-| 4 | [E] Feel prepared before Monday morning inventory reviews |
-| 5 | [E] Feel in control of stock levels across the region |
-| 6 | [S] Be seen as reliable by corporate leadership on loss prevention |
-
-### Desired Outcomes
-
-| # | Desired Outcome |
-|---|-----------------|
-| 1 | Reduce time spent reconciling inventory data across store locations |
-| 2 | Reduce frequency of stockouts discovered by customer complaints |
-| 3 | Increase confidence in shrinkage numbers before corporate reviews |
-| 4 | Minimize manual coordination for cross-store inventory transfers |
-
-### Problems
-
-| # | Problem |
-|---|---------|
-| 1 | No visibility into store-level stock until Monday phone calls |
-| 2 | Stockouts discovered reactively through customer complaints to corporate |
-| 3 | Cross-store transfers are informal and untracked |
-| 4 | Shrinkage numbers require manual reconciliation with no audit trail |
-| 5 | Weekend inventory changes are invisible until Monday morning |
-
-### Feels / Appears
-
-| # | Observation |
-|---|-------------|
-| 1 | Appears anxious about Monday morning reviews |
-| 2 | Feels exposed when presenting shrinkage data to corporate |
-| 3 | Seems resigned to informal transfer workarounds |
-| 4 | Feels pride in knowing each store manager personally |
-
-## Key Insights
-
-- What surprised you: The informal truck-based transfer system - nobody tracks cross-store moves, which contaminates shrinkage data.
-- What confirmed prior assumptions: Manual reconciliation time is real (estimated 3-4 hours/week, consistent with our assumption).
-- What contradicted prior assumptions: We assumed stockouts were the primary pain; shrinkage reporting and the associated corporate pressure is the bigger emotional burden.
-- What needs more interviews to validate: Whether the informal transfer problem is unique to this region or systemic across the chain.
-
-## Evidence Notes
-
-- What is well-supported: Jobs 1-3, Problems 1-4 - directly from the interviewee's own stories and language.
-- What is still a single data point: Social job (6) is inferred from tone when discussing corporate reviews, not stated directly.
-- Recommended next steps: Interview a Store Manager (individual contributor level) to understand the other side of the Monday phone calls. Interview a corporate loss prevention lead to understand their perspective on shrinkage reports.
-```
-
-##### Why This Works
-
-- **A decision sits behind the whole guide.** The team named what the interviews must decide (stockouts or reconciliation first), so every learning objective has a reason to exist.
-- **Learning objectives drove the questions.** Each question names the objective it serves, and the topic areas let the interviewee steer within them. The PM did not ask random "tell me about your day" questions.
-- **Questions are open-ended and product-neutral.** No mention of StockPulse, dashboards, or features. Every question explores the customer's current reality.
-- **Follow-up probes dig deeper.** "Can you tell me about a recent time?" and "What happened next?" get past surface-level answers.
-- **Findings use real customer language.** The raw quotes capture how the customer actually talks about their work ("piece together what happened," "back of someone's personal truck"). This language is gold for the team.
-- **The findings board is structured and sized for the template.** Jobs are 6-8 words. Problems are 8-12 words. Outcomes use Direction + Metric + Context. Everything is paste-ready.
-- **Surprises are highlighted.** The most valuable finding - that shrinkage reporting is a bigger emotional burden than stockouts - contradicted the team's assumption. That is exactly what empathy interviews are for.
-- **Evidence notes are honest.** They distinguish what came from the customer directly from what was inferred.
-
----
-
-#### Example 2: Weak Generic Artifact
-
-Same scenario, written poorly.
-
-##### Phase 1: Interview Preparation (Weak)
-
-```markdown
-# Empathy Interview Preparation
-
-## Product Context
-
-- Product or service: Inventory management tool
-- Target market segment: Grocery
-- Target interviewee role: Manager
-- Interviewee's primary job: Manages inventory
-
-## Learning Objectives
-
-(none defined)
-
-## Interview Questions
-
-| # | Question | Follow-Up Probes |
-|---|----------|-----------------|
-| 1 | Tell me about your day. | |
-| 2 | What challenges do you face? | |
-| 3 | How do you manage inventory? | |
-| 4 | Is the current process slow? | |
-| 5 | Do you like your current tools? | |
-```
-
-##### Phase 3: Document Findings (Weak)
-
-```markdown
-# Empathy Interview Findings
-
-## Interview Context
-
-- Interviewee role: Manager
-- Date: Last week
-- Interview duration: 20 minutes
-
-## Raw Quotes
-
-(none captured)
-
-## Findings
-
-The manager said inventory is hard and takes a lot of time. They don't like the current system. They want something better and more automated. They feel stressed about reporting. The process is manual and could be improved with technology.
-```
-
-##### Why This Fails
-
-- **No learning objectives.** The PM went in without knowing what they needed to learn, so the questions wander aimlessly.
-- **Questions are too vague.** "Tell me about your day" and "What challenges do you face?" are so broad they produce shallow answers. The PM learns nothing specific.
-- **Two questions are yes/no.** "Is the current process slow?" gets "yes." "Do you like your current tools?" gets "not really." Neither produces actionable insight.
-- **No follow-up probes.** Every question is a dead end. When the customer gives a surface answer, there is no path to dig deeper.
-- **No raw quotes captured.** The team has no evidence - only the PM's memory, which will fade within days.
-- **Findings are unstructured prose.** A wall of text that mixes observations, assumptions, and the PM's own opinions. No way to feed this into downstream skills (JTBD, problem identification).
-- **Product context is vague.** "Manager" of what? "Grocery" at what scale? Without specificity, the questions cannot be tailored.
-- **20-minute interview.** Barely enough time to get past warm-up. Real empathy interviews need 30-60 minutes.
-
----
-
-#### Example 3: Bias Bug - Leading Questions That Poison the Well
-
-```markdown
-## Interview Questions
-
-| # | Question | Follow-Up Probes |
-|---|----------|-----------------|
-| 1 | How would you feel about a dashboard that shows real-time inventory across all your stores? | Would that save you time? |
-| 2 | Don't you think automated alerts for low stock would help you respond faster? | How much time do you think that would save? |
-| 3 | Our platform can predict stockouts 48 hours in advance - would that be valuable to you? | Would you pay for that feature? |
-| 4 | If you could see shrinkage data in real-time, wouldn't that make your corporate reviews easier? | |
-| 5 | Would you prefer a mobile app or a desktop tool for tracking inventory? | |
-```
-
-##### Why This Is Wrong
-
-Every question tells the customer what the "right" answer is:
-
-- **"How would you feel about a dashboard..."** - This is pitching, not interviewing. The customer is now evaluating your solution idea instead of describing their problem. They will say "that sounds great" because it costs them nothing to be agreeable.
-- **"Don't you think automated alerts would help..."** - A leading question with the answer embedded. "Don't you think" almost always produces "yes." The PM learns nothing except that customers are polite.
-- **"Our platform can predict stockouts..."** - The PM is demonstrating the product during a discovery interview. The customer is now reacting to a feature pitch instead of sharing their experience. This is the opposite of empathy.
-- **"Wouldn't that make your corporate reviews easier?"** - The question assumes the current reviews are hard (which may be true, but the customer should say so unprompted) and frames the solution as the answer.
-- **"Would you prefer mobile or desktop?"** - A false binary that skips the real question: how and where do they actually manage inventory today? The answer to "mobile or desktop" tells you nothing about their workflow.
-
-**The damage:** The PM leaves this interview believing they have validated their product concept. They have not. They have confirmed that customers are agreeable when presented with solutions that sound plausible. Every finding from this interview is contaminated by the framing of the questions.
-
-**The fix:** Strip every question of product references, feature descriptions, and implied answers. Ask about the customer's current reality:
-
-| Biased Version | Neutral Version |
-|----------------|-----------------|
-| "How would you feel about a real-time dashboard?" | "How do you currently check stock levels across your stores?" |
-| "Don't you think automated alerts would help?" | "Tell me about the last time a stockout caught you off guard." |
-| "Our platform can predict stockouts..." | "What signals tell you a store might run low on something?" |
-| "Wouldn't real-time shrinkage data make reviews easier?" | "Can you walk me through your last shrinkage review with corporate?" |
-| "Would you prefer mobile or desktop?" | "Where are you when you need to check inventory? What do you use?" |
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-empathy-interviews) for supporting source material and expanded examples.
 
 ## ps-affinity-mapping | Affinity Mapping
 
@@ -2546,6 +1666,12 @@ This skill helps a Product Manager synthesize raw observations from empathy inte
 - key insights that translate patterns into product-relevant implications
 
 The point is not to produce a summary of what customers said. The point is to surface what the observations collectively reveal.
+
+##### Usage Notes
+
+- **Coach by default.** With real notes, the skill walks the PM through the Playbook's five-step method (orient, split, immerse, group, name) and the PM does the grouping, labeling, and insights.
+- **Draft on request.** If the PM asks the skill to group the notes, it produces a map labeled "AI draft grouping: for the team to challenge."
+- **No real notes, no map.** The skill will not map invented observations. It routes to ps-empathy-interviews instead.
 
 #### Key Concepts
 
@@ -2606,64 +1732,24 @@ The clustering, the labels, and the insights stay the PM's calls. AI makes the m
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-affinity-mapping / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `03-discover-investigate.md`, section `ps-affinity-mapping / Template`) for the scaffold.
+Use Template (uploaded reference: `03-discover-investigate.md`, section `ps-affinity-mapping / Template`) for the scaffold.
 
-See the source play pages in assets/ps_affinity_mapping_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -2707,7 +1793,7 @@ Do not skip this ask.
 
 ##### Step 3: Coach the Method (Default)
 
-Unless the PM asks you to group the notes, walk them through the Playbook's method one step at a time. Do not move on until they finish the current step. This mirrors prompts/01 (uploaded reference: `07-prompts.md`, section `ps-affinity-mapping / Companion / 01-learn-affinity-mapping.md`).
+Unless the PM asks you to group the notes, walk them through the Playbook's method one step at a time. Do not move on until they finish the current step. This mirrors the critique guidance in this Play.
 
 1. **Orient.** In a few sentences, explain what affinity mapping is and what a good result looks like.
 2. **Break notes into observations.** Coach the PM to put each distinct observation on its own note. Show one example of splitting a note that holds two ideas, then have them check theirs.
@@ -2778,131 +1864,9 @@ After delivering the completed affinity map, offer three paths:
 2. **Review the insights as a team** to identify which pattern represents the highest-priority problem to pursue.
 3. **Re-run affinity mapping with a different grouping lens** to check whether a different clustering reveals patterns the first pass missed.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-affinity-mapping / Examples`).
-
-The example set includes:
-
-- a strong affinity map from a B2B logistics domain with well-labeled themes and product-relevant insights
-- a weak version with vague topic labels and insights that restate rather than infer
-- a drift-bug example showing the Observation Overlap Bug and how to resolve it
-
-#### Common Pitfalls
-
-##### Pitfall 1: Naming Themes by Topic, Not Pattern
-
-**Symptom:** Theme labels like "Communication," "Technology," or "People."
-
-**Consequence:** The label holds almost any observation. The clustering reveals nothing about what is actually happening for the customer.
-
-**Fix:** Name what is happening, not what it is about. "Fragmented Communication Tools Slow Handoffs" has diagnostic value. "Communication" does not.
-
-##### Pitfall 2: Treating Key Insights as Summaries
-
-**Symptom:** The key insight paragraph restates the theme label in slightly more words. Example: "Theme: Scheduling Delays. Insight: Scheduling delays are a problem for customers."
-
-**Consequence:** The synthesis step adds no value. The PM is no closer to knowing what to do.
-
-**Fix:** Write insights that answer "so what?" and "what does this mean for what we prioritize or build?" If the insight paragraph could have been inferred from the label alone, it is not yet an insight.
-
-##### Pitfall 3: Discarding Outlier Observations
-
-**Symptom:** Observations that do not fit neatly into existing clusters are dropped or lumped into an "Other" category.
-
-**Consequence:** The outliers often signal the most overlooked or underserved problems. Discarding them creates a false sense of clean data.
-
-**Fix:** Keep outlier observations visible. If multiple outliers cluster loosely together, name that as an emerging theme. If a single observation stands alone, flag it in the completeness review.
-
-##### Pitfall 4: Collapsing Distinct Themes to Hit a Target Count
-
-**Symptom:** Two different patterns are merged into one theme because both involve, for example, "slow processes." The merged label becomes "Slow Processes."
-
-**Consequence:** The distinction between two different root causes disappears. The PM ends up solving for the combined label rather than the separate problems.
-
-**Fix:** Keep themes separate if the underlying observations point to different root causes or different customer roles. Six specific themes are more useful than three bloated ones.
-
-##### Pitfall 5: Mapping Team Opinions Instead of Customer Evidence
-
-**Symptom:** The observations read like a backlog grooming session. Entries like "we need better reporting" or "the API is too slow" appear in the clustering.
-
-**Consequence:** The affinity map reflects what the team already believed, not what customers actually said. The insights confirm existing assumptions rather than challenging them.
-
-**Fix:** Return to Step 1. Replace internal opinion entries with direct customer observations. If no customer-side data exists yet, run ps-empathy-interviews before mapping.
-
-##### Pitfall 6: Stopping at the Cluster, Skipping the Insight
-
-**Symptom:** The output has labeled clusters with grouped observations but no key insights section. The PM presents the clusters as the deliverable.
-
-**Consequence:** The analytical value of affinity mapping lives in the inference step. Clusters are intermediate work. Without key insights, the PM still has to make the synthesis leap alone, which is where the exercise was supposed to help.
-
-**Fix:** Always complete the key insights section before treating the affinity map as done.
-
-##### Pitfall 7: Running Affinity Mapping Alone
-
-**Symptom:** A single PM reviews the interview notes and produces the affinity map without involving other team members.
-
-**Consequence:** The map reflects one person's interpretation. Disagreements that would have surfaced in a group session go unresolved. Team members do not develop shared ownership of the findings.
-
-**Fix:** Run affinity mapping as a cross-functional team exercise. The process of debating where an observation belongs is part of the value. When the group agrees on a theme label, they have done the sensemaking together.
-
-##### Pitfall 8: Writing Insights Too Narrowly to Be Actionable
-
-**Symptom:** A key insight is scoped to one customer's specific complaint. Example: "Insight: Lisa at Acme Corp had trouble logging in on her mobile device."
-
-**Consequence:** A single-customer observation is not a pattern. Acting on it produces a fix for one person rather than a solution for a segment.
-
-**Fix:** Key insights should reflect patterns across multiple observations from multiple customers or sources. If only one observation supports a theme, the theme may not yet be valid.
-
-##### Pitfall 9: AI's Themes Quietly Become the Team's
-
-**Symptom:** The PM pastes the notes, the skill returns tidy clusters, and the team adopts them unchallenged. Nobody can say why a note sits where it does.
-
-**Consequence:** The grouping looks authoritative and goes unchecked. The team skips the sense-making, which is where affinity mapping creates its value.
-
-**Fix:** Coach by default (Step 3). If the PM asks for a draft grouping, label it as one, show why each cluster holds together, and have the team challenge it before anything moves downstream.
-
-##### Pitfall 10: Guided Is Mistaken for Validated
-
-**Symptom:** The team works every step of the method, and finishing the steps starts to feel like proof. The themes get presented as findings even though they rest on two interviews.
-
-**Consequence:** Confidence rises while evidence does not. No one re-checks the finished map. Process rigor replaces data rigor.
-
-**Fix:** State the evidence base on the map (number and type of sources). Mark themes resting on thin evidence as provisional, and name what more research would confirm them.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `03-discover-investigate.md`, section `ps-affinity-mapping / Template`) - affinity map scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-affinity-mapping / Companion / README.md`) - copy-paste prompt for chat-based AI tools (1: learn affinity mapping by doing it)
-- examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-affinity-mapping / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Skills
-
-- ps-empathy-interviews (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Instructions`) (primary upstream source of observations)
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) (upstream: jobs and outcomes as additional input)
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) (upstream: persona context for interpreting observations)
-- ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`) (downstream: key insights feed candidate problem statements)
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md) (Evidence, Discovery, Assumption)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_affinity_mapping_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 36-40: Template 08 of 24 there, with the AI overview on slide 38 and the prompt on slide 39. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
-
 ### ps-affinity-mapping / Template
 
-### Affinity Mapping
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Investigate** after you have collected qualitative observations from customer research. You are ready to map when you have raw notes from empathy interviews, customer feedback, survey responses, or other customer-side sources and need to organize them into patterns.
 
@@ -2910,7 +1874,7 @@ Upstream work that feeds this template: ps-empathy-interviews (primary), ps-jobs
 
 Downstream: the key insights from this map feed ps-problem-identification.
 
-#### Template
+##### Template
 
 ```markdown
 # Affinity Map
@@ -3019,9 +1983,9 @@ Before treating this map as final, confirm:
 - Open questions for follow-up:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Start with **Research Context** to anchor what data went into this map.
 2. Fill **Theme Clusters** one at a time. Label the theme only after you have seen what observations belong together - resist naming the theme before clustering.
@@ -3029,7 +1993,7 @@ Before treating this map as final, confirm:
 4. Run the **Completeness Check** before treating the map as done.
 5. The **Notes** section is optional. Use it if there are outlier observations or re-grouping ideas worth capturing.
 
-##### If You Have No Observation Data Yet
+###### If You Have No Observation Data Yet
 
 Affinity mapping requires input data. If no customer-side observations are available:
 
@@ -3037,7 +2001,7 @@ Affinity mapping requires input data. If no customer-side observations are avail
 - If the user wants a scaffold to use in an upcoming workshop, fill the theme and insight sections with labeled placeholder sections and explain that they should be completed collaboratively with the team after data is collected.
 - Do not generate observations from the agent's training data and present them as customer findings.
 
-##### What Goes Where
+###### What Goes Where
 
 | Section | Contains | Does NOT Contain |
 |---------|----------|------------------|
@@ -3046,12 +2010,12 @@ Affinity mapping requires input data. If no customer-side observations are avail
 | Key Insights | Inferences about what the patterns mean for the product | Restatements of theme labels, feature recommendations |
 | Notes | Outliers, open questions, re-grouping ideas | The main deliverable content |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** ps-empathy-interviews provides the raw observation notes. ps-jobs-to-be-done and ps-proto-persona provide additional customer context that can inform how observations are grouped.
 - **Downstream:** The key insights from this map feed ps-problem-identification. The strongest insight often becomes the focal point for the candidate problem that gets developed in ps-framing-the-problem.
 
-##### Capacity Reference
+###### Capacity Reference
 
 | Field | Guidance |
 |-------|----------|
@@ -3062,184 +2026,38 @@ Affinity mapping requires input data. If no customer-side observations are avail
 
 ### ps-affinity-mapping / Examples
 
-### Affinity Mapping Examples
+Illustrative and fictional, not customer evidence.
 
-#### Strong Example
+- **Strong:** Freight-broker observations about chasing shipment updates form a pattern: visibility gaps create reactive operations. Keep each observation in one cluster and explain the implication.
+- **Weak:** A cluster called "Visibility" names a topic without showing a pattern.
+- **Drift to avoid:** Observation overlap: putting the same note in several clusters inflates the apparent evidence. Assign its primary meaning or split genuinely separate observations.
 
-**Domain:** B2B logistics tracking software (freight brokers and carriers)
 
-**Why This Works**
+#### Common Pitfalls
 
-- Theme labels name patterns, not topics. "Real-Time Visibility Gaps Create Reactive Operations" tells you what is happening; "Visibility" does not.
-- Observation bullets are short, specific, and grounded in what customers said or did.
-- Key insights answer "so what?" and have clear product implications. Each insight paragraph connects the pattern to what the product team should understand, not just what customers complained about.
-- Four clusters cover distinct root causes. They do not bleed into each other.
-- The insights were written after seeing all four clusters together, so they reflect the full picture of the data.
-- The team did the grouping. The map says so, which tells readers the themes were argued over, not accepted from a draft.
+- **Naming Themes by Topic, Not Pattern:** Name what is happening, not what it is about. "Fragmented Communication Tools Slow Handoffs" has diagnostic value. "Communication" does not.
 
----
+- **Treating Key Insights as Summaries:** Write insights that answer "so what?" and "what does this mean for what we prioritize or build?" If the insight paragraph could have been inferred from the label alone, it is not yet an insight.
 
-**Affinity Map**
+- **Discarding Outlier Observations:** Keep outlier observations visible. If multiple outliers cluster loosely together, name that as an emerging theme. If a single observation stands alone, flag it in the completeness review.
 
-**Research Context**
+- **Collapsing Distinct Themes to Hit a Target Count:** Keep themes separate if the underlying observations point to different root causes or different customer roles. Six specific themes are more useful than three bloated ones.
 
-- Product or service: FreightView, a shipment tracking and carrier communication platform for freight brokers
-- Research conducted: 8 empathy interviews with freight brokers, 3 with carrier dispatch managers, 22 support ticket themes
-- Number of observation sources: 33
-- Date mapped: June 2026
-- Grouped by: The team (coached), with the PM facilitating
+- **Mapping Team Opinions Instead of Customer Evidence:** Return to Step 1. Replace internal opinion entries with direct customer observations. If no customer-side data exists yet, run ps-empathy-interviews before mapping.
 
-**Theme Clusters**
+- **Stopping at the Cluster, Skipping the Insight:** Always complete the key insights section before treating the affinity map as done.
 
-**Theme 1: Real-Time Visibility Gaps Create Reactive Operations**
+- **Running Affinity Mapping Alone:** Run affinity mapping as a cross-functional team exercise. The process of debating where an observation belongs is part of the value. When the group agrees on a theme label, they have done the sensemaking together.
 
-- Brokers check carrier portals manually every 2-3 hours to find status updates
-- Customers call brokers asking for ETAs that brokers do not have
-- Brokers described spending 30-40% of their day chasing status from carriers
-- Dispatch managers paste updates into email threads rather than updating the system
-- Late status updates discovered only when the customer escalates
-- One broker said "I find out there is a problem at the same time my customer does"
-- Brokers build personal relationships with specific carrier reps to get faster callbacks
+- **Writing Insights Too Narrowly to Be Actionable:** Key insights should reflect patterns across multiple observations from multiple customers or sources. If only one observation supports a theme, the theme may not yet be valid.
 
-**Theme 2: Multi-System Fragmentation Slows Every Handoff**
+- **AI's Themes Quietly Become the Team's:** Coach by default (Step 3). If the PM asks for a draft grouping, label it as one, show why each cluster holds together, and have the team challenge it before anything moves downstream.
 
-- Brokers use 3-4 separate tools for quoting, booking, tracking, and invoicing
-- Copy-pasting shipment details between systems is described as a daily ritual
-- Errors introduced during manual data transfer cause invoice disputes
-- Carrier contact info stored in spreadsheets outside the main system
-- Brokers maintain personal notebooks with carrier preference notes not captured anywhere shared
-- New brokers spend weeks learning which systems hold which information
+- **Guided Is Mistaken for Validated:** State the evidence base on the map (number and type of sources). Mark themes resting on thin evidence as provisional, and name what more research would confirm them.
 
-**Theme 3: Exception Handling Depends on Institutional Knowledge**
+#### References
 
-- Senior brokers handle exceptions quickly because they know which carriers respond to calls vs. texts
-- Junior brokers escalate nearly all exceptions because they lack the informal carrier knowledge
-- No standard process for rerouting a delayed shipment; each broker improvises
-- Teams described "tribal knowledge" as both essential and fragile
-- When a senior broker leaves, their carrier relationship knowledge leaves with them
-- Onboarding a new broker takes 3-6 months before they handle exceptions independently
-
-**Theme 4: Billing Disputes Consume Disproportionate Time After Delivery**
-
-- Invoice reconciliation done manually against original quotes after every shipment
-- Accessorial charges (detention, fuel surcharges) appear unexpectedly on final invoices
-- Disputes require pulling email threads and screenshots as evidence
-- Some brokers described keeping a separate spreadsheet just to track disputed charges
-- Average dispute resolution takes 5-7 business days
-- Customers blame brokers for charges they did not authorize, even when the carrier added them
-
-**Key Insights**
-
-**Key Insight 1: Brokers Are Running a Status Lookup Business Inside a Logistics Business**
-
-The volume of manual status-checking work that brokers described is not a minor friction point. It is structurally crowding out the relationship and problem-solving work that earns their margin. When brokers spend 30-40% of their day chasing ETAs, they cannot spend that time on exceptions, new business, or carrier development. A product that reduces reactive status-checking directly frees capacity for higher-value broker work.
-
-**Key Insight 2: Fragmentation Is Not Just Inconvenient, It Is a Source of Revenue Leakage**
-
-The errors introduced during manual data transfer between systems result in invoice disputes that take days to resolve. This is not a usability complaint; it is a margin problem. The fragmentation creates both direct costs (staff time on reconciliation) and indirect costs (customer trust erosion from unexpected charges). Reducing the number of system-to-system handoffs is likely to show up in measurable financial outcomes, not just satisfaction scores.
-
-**Key Insight 3: Exception Handling Is a Knowledge Management Problem Disguised as a Process Problem**
-
-The variation in how brokers handle exceptions is not caused by a missing workflow. It is caused by the fact that the most valuable knowledge for resolving exceptions lives in senior brokers' heads and informal relationships, not in the system. This creates a compounding problem: performance is dependent on tenure, onboarding is slow, and organizational knowledge walks out the door when people leave. The product has an opportunity to capture and surface the informal knowledge that currently only experts carry.
-
-**Completeness Check**
-
-- [x] All major clusters from the raw data are labeled
-- [x] No observation appears in more than one theme cluster
-- [x] Each key insight answers "so what?"
-- [x] Three themes and three insights minimum present (four themes, three insights)
-- [x] Observation bullets are 8-12 words each
-
----
-
-#### Weak Example
-
-**Domain:** B2B logistics tracking software (same domain, different execution)
-
-**Why This Fails**
-
-- Theme labels name topics, not patterns. "Process Issues," "Technology Problems," and "People Challenges" could hold almost any observation from any domain. They reveal nothing about what is actually happening for this customer.
-- Several observations are actually team opinions or solution suggestions, not customer-side evidence. "The system needs better reporting" is what the PM thinks, not what a customer said.
-- Key insights restate theme labels rather than making inferences. "Process issues are causing problems for our customers" adds zero analytical value beyond the label.
-- Only three clusters when the data likely warrants more, and the clusters bleed into each other.
-
----
-
-**Affinity Map (Weak)**
-
-**Theme Clusters**
-
-**Theme 1: Process Issues**
-
-- Brokers waste time on manual work
-- The current process does not scale
-- We need to automate more of the workflow
-- Status updates take too long
-- Invoicing is complicated
-
-**Theme 2: Technology Problems**
-
-- The system needs better reporting
-- Too many tools to manage
-- The interface is confusing
-- Data does not sync properly
-- We should build a mobile app
-
-**Theme 3: People Challenges**
-
-- New brokers take a long time to get up to speed
-- Senior brokers are a bottleneck
-- Communication between teams is poor
-- Customers are frustrated
-
-**Key Insights**
-
-**Key Insight 1: Process Issues Are Causing Problems**
-
-Process issues are causing significant problems for our customers. The manual nature of many workflows is slowing things down and creating frustration. Improving processes would help brokers work more efficiently and serve customers better.
-
-**Key Insight 2: Technology Is Not Meeting User Needs**
-
-The current technology is not meeting user needs. Brokers are struggling with too many systems and poor data quality. Better technology would address these problems and improve the overall experience.
-
-**Key Insight 3: People and Training Need Improvement**
-
-People-related challenges, including onboarding and communication, are creating friction. Investing in training and better communication tools would help teams work together more effectively.
-
----
-
-#### Drift-Bug Example: Observation Overlap Bug
-
-**Named failure:** Observation Overlap Bug
-
-**What it looks like**
-
-The affinity map appears complete: four labeled themes, five or more observations per cluster, three key insights. But several observations appear in two or more theme clusters simultaneously, either because the team was uncertain where they belonged or because the observations were written broadly enough to fit multiple patterns.
-
-Example (using the logistics domain):
-
-Theme 1: "Brokers use multiple systems for different tasks" appears here.
-Theme 2: "Brokers use multiple systems for different tasks" also appears here (slightly rephrased as "Too many tools slow the workflow").
-
-The same underlying observation about system fragmentation has been counted twice. If both Theme 1 and Theme 2 generate a key insight about fragmentation, the PM will over-weight fragmentation as a priority relative to the other patterns.
-
-**Why it happens**
-
-Overlapping observations are often a sign that the clustering was done too quickly, or that the observation was written at a level of generality that made it fit multiple buckets. Observations like "the process is slow" or "there are too many steps" are common culprits because they describe a symptom that shows up across multiple root causes.
-
-**The consequence**
-
-The artifact looks complete, but the double-counting inflates the apparent importance of the overlapping observations. Key insights built on inflated clusters produce distorted prioritization signals.
-
-**The fix**
-
-During the completeness check, scan every observation across all clusters. For each observation that appears in more than one cluster:
-
-1. Decide which cluster it primarily belongs to and move it there. Remove it from the others.
-2. If the observation genuinely reflects two different underlying patterns, rewrite it as two separate, more specific observations and assign each to its correct cluster.
-3. If multiple overlapping observations cluster loosely together across themes, ask whether there is a cross-cutting pattern that deserves its own named theme.
-
-The goal is one home per observation. An observation that belongs everywhere belongs nowhere.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-affinity-mapping) for supporting source material and expanded examples.
 
 ## ps-problem-identification | Problem Identification
 
@@ -3261,7 +2079,15 @@ This skill helps a Product Manager turn customer understanding into a compact wo
 
 The point is not to produce a long explanation of the problem space. The point is to help the human complete the play.
 
-This artifact is also a **cross-functional alignment tool.** The output makes customer understanding visible, shareable, and debatable across product, design, engineering, and leadership — not just useful to the PM who ran the discovery.
+This artifact is also a **cross-functional alignment tool.** The output makes customer understanding visible, shareable, and debatable across product, design, engineering, and leadership  -  not just useful to the PM who ran the discovery.
+
+##### Usage Notes
+
+- This exemplar follows the `ps-` naming contract
+- It is intentionally budget-aware and template-capacity-aware
+- Most default outputs should stay sticky-note-sized or small-cell-sized
+- **Coach by default:** the skill asks the PM for the root cause beneath each pain rather than naming it, and catches features posing as problems
+- **Evidence honesty:** quotes come only from supplied research (unfilled slots are marked `[needs a real quote]`), and unvalidated causes are marked `[CAUSE TO VALIDATE]`
 
 #### Key Concepts
 
@@ -3274,7 +2100,7 @@ Problem Identification is where earlier discovery work gets pulled together:
 - quotes and lived experience from Empathy Interviews
 - patterns from Affinity Mapping
 
-The skill should therefore synthesize, not restart discovery from scratch. **Jobs brought in from earlier work should be treated as revisable** — as you validate with customers, reframe any job that doesn't hold up. Evidence updates the artifact; don't treat earlier assumptions as fixed truth.
+The skill should therefore synthesize, not restart discovery from scratch. **Jobs brought in from earlier work should be treated as revisable**  -  as you validate with customers, reframe any job that doesn't hold up. Evidence updates the artifact; don't treat earlier assumptions as fixed truth.
 
 ##### The Customer Circle Is the Visual Structure
 
@@ -3286,7 +2112,7 @@ The canonical template organizes this play as a concentric circle:
 - **Outside the circle:** Problems (root causes of pains, barriers to gains)
 - **Sidebar:** Empathy Interview Quotes
 
-This structure is not decoration — it shows how problems relate to jobs and how pains and gains are distinct layers between the customer and the things blocking them. A PM filling this template should be thinking in those concentric layers, not just populating a flat list.
+This structure is not decoration  -  it shows how problems relate to jobs and how pains and gains are distinct layers between the customer and the things blocking them. A PM filling this template should be thinking in those concentric layers, not just populating a flat list.
 
 ##### Problem Statements Use a Specific Productside Format
 
@@ -3343,7 +2169,7 @@ That means the default output must be:
 
 Do not generate mini-essays for fields that behave like notes.
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the real canonical budgets.
+See Template and capacity guidance (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Template`) for the real canonical budgets.
 
 ##### How AI Supports This Play
 
@@ -3355,64 +2181,24 @@ The Playbook casts AI as a **coach that separates pains from problems and format
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-problem-identification / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Template`) for the scaffold.
+Use Template (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Template`) for the scaffold.
 
-See the source play pages in assets/ps_problem_identification_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -3457,7 +2243,7 @@ If there is no customer evidence at all, say so plainly. The Playbook advises ag
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with pains and a first read on their causes, or with drafted problem statements, work through them rather than redrafting. This mirrors prompts/01 (uploaded reference: `07-prompts.md`, section `ps-problem-identification / Companion / 01-shape-problem-statements.md`).
+When the PM arrives with pains and a first read on their causes, or with drafted problem statements, work through them rather than redrafting. This mirrors the critique guidance in this Play.
 
 1. **For each pain, ask for the root cause.** If the PM's answer is the pain reworded, say so and ask them to dig.
 2. **Watch for solutions in disguise.** If a "problem" is a missing feature, point at it and ask what problem the feature would solve. Don't list candidate causes for the PM to pick from, and don't hint at them as examples or "is it X or Y?" questions; the cause has to come from what they heard. This applies to a cause that looks like a symptom, too: ask why it happens, without guessing the answer.
@@ -3558,136 +2344,13 @@ Do not add a notes section at all unless:
 - the user asks for it, or
 - the artifact is already fully complete
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Examples`).
-
-The example set includes:
-
-- a stronger Productside-style artifact sized for the play
-- a weak overlong version
-- commentary on why the weak version fails
-
-#### Common Pitfalls
-
-##### Pitfall 1: Writing Novellas into Sticky-Note Fields
-
-**Symptom:** Every job, pain, or gain turns into a mini paragraph.
-
-**Consequence:** The human cannot use the output directly in the playbook.
-
-**Fix:** Respect the template capacity. Small field means short entry.
-
-##### Pitfall 1b: Underfilling the Template
-
-**Symptom:** The model gives 3 jobs, 3 gains, or 3 problems because it thinks the synthesis is cleaner.
-
-**Consequence:** The human still has blank slots to fill.
-
-**Fix:** Match the template slot count by default.
-
-##### Pitfall 2: Confusing Pains with Problems
-
-**Symptom:** The pain itself is restated as the problem statement without naming the barrier or root cause.
-
-**Consequence:** The team addresses symptoms without clarifying the underlying problem.
-
-**Fix:** Use pains as evidence, then write a candidate problem in the Productside format.
-
-##### Pitfall 3: Writing Generic Jobs
-
-**Symptom:** "Be efficient" or "improve workflow."
-
-**Consequence:** The artifact becomes too vague to support framing or prioritization.
-
-**Fix:** Write short but concrete customer jobs.
-
-##### Pitfall 4: Making Gains a Mirror Image of Pains
-
-**Symptom:** Every gain is just the opposite wording of a pain.
-
-**Consequence:** The play loses the distinction between removing friction and creating positive value.
-
-**Fix:** Ask what better looks like for the customer, not just what less-bad looks like.
-
-##### Pitfall 5: Losing the Quotes
-
-**Symptom:** The artifact includes tidy problem statements but no supporting voice-of-customer evidence.
-
-**Consequence:** The output feels polished but ungrounded.
-
-**Fix:** Include short quotes that support the candidate problems.
-
-##### Pitfall 6: Letting Commentary Replace the Artifact
-
-**Symptom:** The model gives "strongest candidate" analysis while the main playbook fields are incomplete or too long.
-
-**Consequence:** The human gets interpretation instead of a completed play.
-
-**Fix:** Complete the artifact first. Commentary is optional and trailing only.
-
-##### Pitfall 7: Naming a Missing Feature as the Problem
-
-**Symptom:** "Lack of system integration gets in the way of achieving real-time insights for Henry." "No automated alerts gets in the way of achieving compliance."
-
-**Consequence:** The solution is chosen before the problem is understood. Framing the Problem and Exploring the Solution Space inherit a predetermined answer.
-
-**Fix:** Ask what problem the missing feature would solve, and write that. "Late notice of policy changes gets in the way of achieving compliance for Henry" leaves the solution open.
-
-##### Pitfall 8: Format Mistaken for Proof
-
-**Symptom:** Six polished problem statements in perfect Productside format, resting on two interviews and the PM's hunches. Nothing marks which causes were heard and which were guessed.
-
-**Consequence:** The statements look right, so they get accepted. Structure is mistaken for rigor, and the team frames a guessed root cause as if it were validated.
-
-**Fix:** Mark every cause not yet backed by evidence `[CAUSE TO VALIDATE]`. Name the evidence base in Product Context. Treat the marked causes as the next round's interview topics.
-
-##### Pitfall 9: Inventing Quotes to Fill the Slots
-
-**Symptom:** The research produced three usable quotes, and the artifact shows six. The extra three sound real and were written by the model.
-
-**Consequence:** Fabricated voice-of-customer evidence. It is the most persuasive part of the artifact, and the least true.
-
-**Fix:** Quotes come only from supplied research. Leave unfilled slots as `[needs a real quote]`.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Template`) - compact, paste-ready scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-problem-identification / Companion / README.md`) - copy-paste prompt for chat-based AI tools (1: shape problem statements)
-- examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Examples`) - strong and weak examples
-
-##### Related Skills
-
-- ps-affinity-mapping (uploaded reference: `03-discover-investigate.md`, section `ps-affinity-mapping / Instructions`) - upstream; themes and key insights
-- ps-empathy-interviews (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Instructions`) - upstream; quotes, pains, and observations, and where `[CAUSE TO VALIDATE]` items get tested
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - upstream; jobs and outcomes
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - upstream; the persona each problem belongs to
-- ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`) - downstream; frames the strongest candidate problem
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_problem_identification_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 41-45: Template 09 of 24 there, with the AI overview on slide 43 and the prompt on slide 44. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
-
 ### ps-problem-identification / Template
-
-### ps-problem-identification Template
 
 Use this template to build a **Productside-style Problem Identification artifact** from customer research.
 
 Most fields in this play are small. Keep entries compact and paste-ready.
 
-#### Template
+##### Template
 
 ```markdown
 # Problem Identification
@@ -3754,120 +2417,47 @@ Most fields in this play are small. Keep entries compact and paste-ready.
 - What evidence gap still matters?
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
 - Do not turn jobs, pains, gains, or problems into paragraphs.
 - If the user wants explanation, add it after the artifact.
-- Respect the canonical template capacity in [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml).
+- Respect the canonical template capacity in Template and capacity guidance (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Template`).
 - Do not add the `What To Pressure-Test Next` section unless the artifact is already fully complete.
 
 ### ps-problem-identification / Examples
 
-### ps-problem-identification Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Productside-Style Artifact
+- **Strong:** "Late schedule updates get in the way of keeping dock assignments aligned." Connect this candidate to real observations and retain the customer's language.
+- **Weak:** A paragraph combining several problems makes it hard to investigate any one of them.
+- **Drift to avoid:** Missing feature as problem: "No dashboard" is a solution-shaped complaint. Identify the customer progress it obstructs.
 
-This example is intentionally sanitized and fictionalized.
 
-```markdown
-# Problem Identification
+#### Common Pitfalls
 
-## Product Context
-- Product or service: Multi-site warehouse scheduling and exception-management platform
-- Target persona: Alicia Operations Analyst
-- Research source: 12 operations interviews plus dispatch-shadowing notes
+- **Writing Novellas into Sticky-Note Fields:** Respect the template capacity. Small field means short entry.
 
-## Customer Jobs
-- Keep schedules aligned across sites
-- Resolve daily exceptions quickly
-- Share the latest plan with supervisors
-- Prevent avoidable dock delays
+- **Pitfall 1b: Underfilling the Template:** Match the template slot count by default.
 
-## Pains
-- Schedule changes arrive from too many channels
-- Teams work from conflicting versions
-- Exception handling depends on manual reconciliation
-- Delays surface too late to prevent downstream disruption
+- **Confusing Pains with Problems:** Use pains as evidence, then write a candidate problem in the Productside format.
 
-## Gains
-- One trusted operational plan
-- Faster exception resolution
-- Early warning on schedule risk
-- More time for active coordination
+- **Writing Generic Jobs:** Write short but concrete customer jobs.
 
-## Empathy Interview Quotes
-- "I spend half my shift figuring out which version is real."
-- "By the time we see the issue, the dock is already backed up."
-- "Every team swears they're using the latest schedule."
-- "I don't need another dashboard. I need fewer surprises."
-- "Most of the job is chasing changes across disconnected tools."
-- "When a carrier shifts late, the whole day unravels."
+- **Making Gains a Mirror Image of Pains:** Ask what better looks like for the customer, not just what less-bad looks like.
 
-## Candidate Problems
-- Fragmented schedule updates get in the way of achieving one trusted operating plan for Alicia.
-- Manual reconciliation gets in the way of achieving fast exception resolution for Alicia.
-- Late visibility into schedule risk gets in the way of achieving preventable delay reduction for Alicia.
-- Conflicting plan versions get in the way of achieving coordinated supervisor action for Alicia.
-- Disconnected operational tools get in the way of achieving reliable daily execution for Alicia.
-- Reactive exception handling gets in the way of achieving more time for active coordination for Alicia. [CAUSE TO VALIDATE]
-```
+- **Losing the Quotes:** Include short quotes that support the candidate problems.
 
-**Why this works**
+- **Letting Commentary Replace the Artifact:** Complete the artifact first. Commentary is optional and trailing only.
 
-- jobs, pains, and gains are compact enough to paste into the template
-- quotes sound like lived operational frustration
-- problems use the Productside sentence structure
-- all expected slots are filled before any commentary appears
-- every quote comes from the 12 interviews named in Product Context
-- each problem names a cause, not a pain reworded or a missing feature
-- the one cause only two interviewees mentioned is marked `[CAUSE TO VALIDATE]`
+- **Naming a Missing Feature as the Problem:** Ask what problem the missing feature would solve, and write that. "Late notice of policy changes gets in the way of achieving compliance for Henry" leaves the solution open.
 
-#### Example 2: Weak Overwritten Artifact
+- **Format Mistaken for Proof:** Mark every cause not yet backed by evidence `[CAUSE TO VALIDATE]`. Name the evidence base in Product Context. Treat the marked causes as the next round's interview topics.
 
-```markdown
-# Problem Identification
+- **Inventing Quotes to Fill the Slots:** Quotes come only from supplied research. Leave unfilled slots as `[needs a real quote]`.
 
-## Customer Jobs
-- Alicia is trying to orchestrate a highly dynamic multi-party logistics environment in a way that balances timing, labor coordination, and dock throughput while also maintaining communication quality across the regional network.
+#### References
 
-## Pains
-- Alicia often experiences a wide range of coordination-related breakdowns that create frustration, uncertainty, duplicated work, emotional fatigue, and downstream execution confusion that affects the quality of the operating day.
-
-## Gains
-- Alicia would ideally like a future-state operating environment in which every participant has real-time shared awareness and a frictionless planning process that feels coordinated, predictable, and strategically empowering.
-```
-
-**Why this fails**
-
-- too long to paste into the playbook
-- abstract language replaces usable entries
-- no supporting quotes
-- turns the artifact into cleanup work for the human
-
-#### Example 3: Weak Problem Statement Pattern
-
-```markdown
-- Problem 1: Alicia is frustrated and the current workflow is not ideal.
-```
-
-**Why this fails**
-
-- not in the Productside problem format
-- too vague to guide framing
-- describes dissatisfaction without naming the barrier to the outcome
-
-#### Example 4: Drift Bug: Missing Feature Named as Problem
-
-```markdown
-- Problem 1: No real-time dashboard gets in the way of achieving one trusted operating plan for Alicia.
-- Problem 2: Lack of carrier integration gets in the way of achieving fast exception resolution for Alicia.
-```
-
-**Why this fails**
-
-- each "problem" is a solution described by its absence
-- the team inherits a predetermined answer before framing the problem
-- fix: ask what problem the feature would solve. "Fragmented schedule updates" and "late carrier changes arriving by phone and email" keep the solution space open
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-problem-identification) for supporting source material and expanded examples.
 
 ## ps-framing-the-problem | Framing the Problem
 
@@ -3900,13 +2490,21 @@ Use this skill when you need to:
 
 This is not a solution specification. If the output mentions features, tools, or implementation approaches, the framing has drifted into solution space.
 
+##### Usage Notes
+
+- The template produces a single artifact with three sections: Problem Framing (five stems), Context and Constraints, and Final Problem Statement.
+- The five-stem sequence is fixed order: I am / Trying to / But / Because / Which makes me feel.
+- Evidence gathering is **user artifacts only** - no web research offered. This skill synthesizes the PM's own discovery work.
+- Upstream: ps-proto-persona, ps-jobs-to-be-done, ps-problem-identification, empathy interviews.
+- Downstream: solution hypothesis, positioning, exploring the solution space (Discover + Define phase).
+
 #### Key Concepts
 
 ##### Focus on the Why, and the Outcomes Will Follow
 
 The playbook puts it simply: *"Focus on the 'why,' and the outcomes will follow."*
 
-A problem frame that nails the root cause — the **Because** stem — gives the team more clarity about what to build than any amount of solution sketching. Don't rush to "what we need to build" before the "why this problem exists" is solid.
+A problem frame that nails the root cause  -  the **Because** stem  -  gives the team more clarity about what to build than any amount of solution sketching. Don't rush to "what we need to build" before the "why this problem exists" is solid.
 
 This is also a human-centered design exercise. It starts with the person experiencing the problem, not the solution space, and leaves room for creativity and imagination once the why is clear.
 
@@ -3965,64 +2563,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-framing-the-problem / Companion / README.md`).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ##### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Use template.md (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Template`) for the full scaffold.
+Use Template (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Template`) for the full scaffold.
 
-See the original three-page playbook source in assets/ps_framing_the_problem_playbook_pages.pdf (source material, not included in this upload kit).
 
 ##### Required Output Convention
 
@@ -4038,7 +2596,7 @@ That means:
 
 ##### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in prompts/01-pressure-test-problem-frame.md (uploaded reference: `07-prompts.md`, section `ps-framing-the-problem / Companion / 01-pressure-test-problem-frame.md`) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ##### Step 1: Confirm the Product and Persona
 
@@ -4167,139 +2725,15 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Examples`).
-
-The example set includes:
-
-- a strong Productside-style problem frame with all five stems, context, and a synthesized final statement
-- a weak, generic version with vague barriers and missing emotional stem
-- a drift-bug example showing the frame written from the product team's perspective
-- commentary on why the weak versions fail
-
-#### Common Pitfalls
-
-##### Pitfall 1: Jumping to Solutions in the Problem Frame
-
-**Symptom:** The "But" or "Because" stem mentions products, features, or tools. "But there is no integrated dashboard" is a solution statement disguised as a barrier.
-
-**Consequence:** The team skips problem validation and starts building the first solution that comes to mind. The problem frame becomes a requirements doc.
-
-**Fix:** Strip out any mention of products, features, tools, or technologies. Rewrite barriers as the customer's experienced friction: "But manual processes across disconnected systems create delays and errors."
-
-##### Pitfall 2: Writing from the Product Team's Perspective
-
-**Symptom:** "I am a product team trying to build a better platform." The stems describe the team's challenge, not the customer's.
-
-**Consequence:** The problem frame justifies the team's existence instead of documenting a real customer problem. Leadership cannot tell if this is a customer need or an internal project.
-
-**Fix:** Every stem must be written from the customer's point of view. The "I am" is the customer. The emotions in "Which makes me feel" are the customer's emotions. If the frame sounds like a project brief, the perspective has drifted.
-
-##### Pitfall 3: Making the "But" Too Vague
-
-**Symptom:** "But things are hard" or "But there are challenges" or "But the current situation is not ideal."
-
-**Consequence:** The team cannot identify what to solve. Vague barriers produce vague solutions.
-
-**Fix:** Name concrete, observable barriers. What specifically blocks the persona? What do they run into? What fails, breaks, or takes too long? "But manual data reconciliation across three disconnected systems creates weekly reporting delays of 2-3 days."
-
-##### Pitfall 4: Skipping the Emotional Stem
-
-**Symptom:** The "Which makes me feel" stem is blank, one word ("frustrated"), or removed entirely.
-
-**Consequence:** The problem frame loses its human dimension. Leadership sees a process problem but not a severity signal. The emotional stem is what distinguishes "inconvenient" from "career-threatening."
-
-**Fix:** Write 2-3 specific emotions with context. "Frustrated" alone is not enough. "Frustrated by the gap between what leadership expects and what current tools allow, and anxious about being seen as ineffective" tells a story.
-
-##### Pitfall 5: Conflating Constraints with Barriers
-
-**Symptom:** Regulatory requirements, budget limitations, or geographic restrictions appear in the "But" stem instead of Context and Constraints.
-
-**Consequence:** The barrier analysis is muddied. The team cannot distinguish between what blocks the persona (barriers) and what bounds the solution space (constraints).
-
-**Fix:** Barriers go in "But" - these are things the persona runs into while trying to achieve their outcome. Constraints go in Context and Constraints - these are conditions the solution must operate within. A barrier is "manual processes create delays." A constraint is "the industry requires SOC 2 compliance."
-
-##### Pitfall 6: Final Statement Does Not Match the Stems
-
-**Symptom:** The final problem statement introduces new barriers, changes the persona, or drops the emotional impact.
-
-**Consequence:** The frame is internally inconsistent. A reader who sees the stems and the statement will question which version is correct.
-
-**Fix:** The final statement is a synthesis of the stems, not a rewrite. Every element in the statement should trace back to a stem. If the statement needs new information, update the stems first.
-
-##### Pitfall 7: Defaulting to a Tech Role as the Persona
-
-**Symptom:** "I am a data engineer overwhelmed by pipeline complexity" when the product actually serves clinical operations leads or field engineers.
-
-**Consequence:** The problem frame reflects LLM training bias toward technical roles, not the real customer population.
-
-**Fix:** Before writing "I am," confirm who actually uses or buys the product in the field. Most products serve people whose primary job is not writing code. A clinical data platform's customer is a clinical operations lead, not a data engineer.
-
-##### Pitfall 8: Exceeding Template Capacity
-
-**Symptom:** The "I am" stem becomes a three-paragraph backstory. The final statement is 150 words.
-
-**Consequence:** The human cannot paste the output into the playbook without rewriting it.
-
-**Fix:** Respect the word budgets. "I am" is ~30-40 words. "Trying to" is ~15-20. "But" is ~20-25. "Because" is ~20-25. "Which makes me feel" is ~15-20. Context is ~30-40. Final statement is ~40-50. Write for the template field, not for the model's appetite for prose.
-
-##### Pitfall 9: A Frame With No Evidence Under It
-
-**Symptom:** The PM asks for a problem frame for a persona they have not interviewed, and gets five well-formed stems and a crisp statement.
-
-**Consequence:** The frame passes the decision point on its polish. The team commits to a problem no customer confirmed.
-
-**Fix:** Ask what evidence backs each stem. Mark any stem without evidence as a hypothesis, and route back to discovery before the decision point.
-
-#### References
-
-##### Skill Files
-
-- template.md (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Template`) - working scaffold
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-framing-the-problem / Companion / README.md`) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- examples/sample.md (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Examples`) - strong, weak, and drift-bug examples
-
-##### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-##### Related Skills
-
-###### Upstream (input to this skill)
-
-- ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`) - persona work that identifies who has the problem
-- ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`) - jobs and outcomes that feed the "Trying to" stem
-- ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`) - pains, gains, and candidate problem statements that feed the barrier and root cause stems
-
-###### Downstream (uses output from this skill)
-
-- Solution hypothesis - the validated problem frame justifies moving into solution definition
-- Positioning - the problem frame sharpens how the product is positioned
-- Exploring the solution space - the framed problem guides what solution territory to explore
-
-##### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- assets/ps_framing_the_problem_playbook_pages.pdf (source material, not included in this upload kit)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 46-48: Template 10 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
-
 ### ps-framing-the-problem / Template
 
-### Framing the Problem
-
-#### When to Use This
+##### When to Use This
 
 Use this template during **Discover + Investigate** when you have enough discovery evidence to frame a validated problem and craft a problem statement. This is a **Key Decision Point** - the output goes to leadership and product governance to justify moving into solution definition.
 
 Upstream work that feeds this template: proto-persona, jobs-to-be-done, empathy interviews, problem identification, affinity mapping.
 
-#### Template
+##### Template
 
 ```markdown
 # Framing the Problem
@@ -4365,9 +2799,9 @@ Synthesize the five stems into one cohesive statement.
 - Recommended next validation steps:
 ```
 
-#### Usage Guidance
+##### Usage Guidance
 
-##### Filling the Template
+###### Filling the Template
 
 1. Start with **Product Context** to anchor who this is for and whose problem it is.
 2. Fill the **five stems in order** - do not skip or reorder. Each stem builds on the previous one.
@@ -4375,7 +2809,7 @@ Synthesize the five stems into one cohesive statement.
 4. Write the **Final Problem Statement** last, synthesizing all five stems into one cohesive narrative.
 5. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
 
-##### The Stem Sequence Is Fixed
+###### The Stem Sequence Is Fixed
 
 The five stems must appear in this exact order:
 
@@ -4387,7 +2821,7 @@ The five stems must appear in this exact order:
 
 Do not merge stems, skip stems, or reorder them. Each has a distinct function in building the problem frame.
 
-##### What Goes Where
+###### What Goes Where
 
 | Section | Contains | Does NOT Contain |
 |---------|----------|------------------|
@@ -4399,14 +2833,14 @@ Do not merge stems, skip stems, or reorder them. Each has a distinct function in
 | Context and Constraints | Industry, regulatory, budget, technology, geographic conditions | Barriers (those go in But) |
 | Final Problem Statement | Synthesis of all five stems | New information not in the stems |
 
-##### Connecting to Other Skills
+###### Connecting to Other Skills
 
 - **Upstream:** Proto-persona provides the "I am." JTBD provides the "Trying to." Problem Identification provides barriers, root causes, and candidate problems. Empathy interviews provide emotional evidence.
 - **Downstream:** The validated problem statement justifies moving into Discover + Define - solution hypothesis, positioning, exploring the solution space.
 
-##### Capacity Reference
+###### Capacity Reference
 
-See [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml) for the exact word and character budgets per field.
+See Template and capacity guidance (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Template`) for the exact word and character budgets per field.
 
 | Field | Word Budget | Guidance |
 |-------|-------------|----------|
@@ -4420,149 +2854,33 @@ See [technical/data/canonical_template_budgets.yaml](https://github.com/Products
 
 ### ps-framing-the-problem / Examples
 
-### Framing the Problem - Examples
+Illustrative and fictional, not customer evidence.
 
-#### Example 1: Strong Productside-Style Problem Frame
+- **Strong:** A superintendent is trying to coordinate trades, but learns of sequencing changes too late because crews rely on disconnected updates, leaving them anxious about rework. Develop all five stems.
+- **Weak:** "We need a scheduling dashboard" names a solution rather than a customer problem.
+- **Drift to avoid:** Perspective inversion: "Our team needs to ship faster" frames the product team's work, not the superintendent's experience.
 
-Scenario: A construction technology company building a project scheduling platform for commercial general contractors managing multi-trade coordination on large jobsites.
 
-```markdown
-# Framing the Problem
+#### Common Pitfalls
 
-## Product Context
+- **Jumping to Solutions in the Problem Frame:** Strip out any mention of products, features, tools, or technologies. Rewrite barriers as the customer's experienced friction: "But manual processes across disconnected systems create delays and errors."
 
-- Product or service: BuildSync - commercial construction project scheduling platform
-- Target market segment: Commercial general contractors (projects $10M-$100M)
-- Primary persona (the customer with the problem): Senior Project Superintendent
+- **Writing from the Product Team's Perspective:** Every stem must be written from the customer's point of view. The "I am" is the customer. The emotions in "Which makes me feel" are the customer's emotions. If the frame sounds like a project brief, the perspective has drifted.
 
-## 1. Problem Framing
+- **Making the "But" Too Vague:** Name concrete, observable barriers. What specifically blocks the persona? What do they run into? What fails, breaks, or takes too long? "But manual data reconciliation across three disconnected systems creates weekly reporting delays of 2-3 days."
 
-**I am:**
-A Senior Project Superintendent managing 4-6 active trades on a commercial jobsite. Coordinating daily work sequences across concrete, mechanical, electrical, and finishing crews. Relying on paper-based logs, phone calls, and weekly coordination meetings that are outdated before they end.
+- **Skipping the Emotional Stem:** Write 2-3 specific emotions with context. "Frustrated" alone is not enough. "Frustrated by the gap between what leadership expects and what current tools allow, and anxious about being seen as ineffective" tells a story.
 
-**Trying to:**
-Keep all trades progressing on schedule without conflicts, so the project delivers on time and within the liquidated damages window.
+- **Conflating Constraints with Barriers:** Barriers go in "But" - these are things the persona runs into while trying to achieve their outcome. Constraints go in Context and Constraints - these are conditions the solution must operate within. A barrier is "manual processes create delays." A constraint is "the industry requires SOC 2 compliance."
 
-**But:**
-Trade schedule conflicts are discovered on-site rather than in advance, causing crews to stand idle or rework completed sections. Change orders cascade unpredictably across the critical path.
+- **Final Statement Does Not Match the Stems:** The final statement is a synthesis of the stems, not a rewrite. Every element in the statement should trace back to a stem. If the statement needs new information, update the stems first.
 
-**Because:**
-Each trade subcontractor maintains their own schedule independently, and there is no shared view of interdependencies until crews physically arrive and find conflicts on the ground.
+- **Defaulting to a Tech Role as the Persona:** Before writing "I am," confirm who actually uses or buys the product in the field. Most products serve people whose primary job is not writing code. A clinical data platform's customer is a clinical operations lead, not a data engineer.
 
-**Which makes me feel:**
-Constantly behind, unable to stay ahead of problems despite 14-hour days on-site, and worried that schedule slips will damage my reputation with the owner and my firm's leadership.
+- **Exceeding Template Capacity:** Respect the word budgets. "I am" is ~30-40 words. "Trying to" is ~15-20. "But" is ~20-25. "Because" is ~20-25. "Which makes me feel" is ~15-20. Context is ~30-40. Final statement is ~40-50. Write for the template field, not for the model's appetite for prose.
 
-## 2. Context and Constraints
+- **A Frame With No Evidence Under It:** Ask what evidence backs each stem. Mark any stem without evidence as a hypothesis, and route back to discovery before the decision point.
 
-Commercial construction operates under contractual milestone deadlines with liquidated damages for delays. Trade subcontractors are independent companies with limited technology adoption. Jobsite connectivity is unreliable. The superintendent's authority is coordination-based, not contractual - they cannot direct subcontractor labor.
+#### References
 
-## 3. Final Problem Statement
-
-I am a Senior Project Superintendent coordinating multiple trades on a commercial jobsite using disconnected, manual scheduling methods. Trying to keep all trades progressing without conflicts and deliver on time. But schedule conflicts are discovered on-site, causing idle crews and rework. Because each subcontractor maintains their own schedule with no shared view of interdependencies. Which makes me feel constantly behind and anxious about my professional reputation.
-
-## Evidence Notes (optional)
-
-- Discovery sources: Interviews with three superintendents at Southeast commercial GCs, jobsite shadowing (2 days).
-- Well-supported: Trade coordination friction, on-site conflict discovery, paper-based scheduling.
-- Still assumption: Liquidated damages anxiety is inferred from contract language, not directly stated by interviewees.
-- Next steps: Interview a subcontractor project manager to validate their side of the coordination gap.
-```
-
-##### Why This Works
-
-- **All five stems present and in order.** The sequence builds logically: who they are, what they want, what blocks them, why, and how it feels.
-- **Customer perspective throughout.** Every stem is written from the superintendent's point of view. The product team is never mentioned.
-- **Barriers are concrete.** "Trade schedule conflicts are discovered on-site" is specific and observable. Not "things are challenging" or "there are issues."
-- **Root cause goes deeper than the barrier.** The barrier is on-site conflict discovery. The root cause is independent scheduling with no shared view. These are different things.
-- **Emotional stem is specific.** "Constantly behind" and "worried about reputation" are concrete emotions with context. Not just "frustrated."
-- **Constraints are separate from barriers.** Liquidated damages, subcontractor independence, and jobsite connectivity are external conditions, not things blocking the superintendent's day-to-day work.
-- **Final statement synthesizes cleanly.** Every element traces back to a stem. No new information. A manager could read it alone and understand the problem.
-- **No solution language.** The frame does not mention the product, features, dashboards, or tools. It describes the problem as it exists today.
-- **Fits the template.** Each stem is within its word budget. The artifact is paste-ready.
-
----
-
-#### Example 2: Weak Generic Problem Frame
-
-Same scenario, written poorly.
-
-```markdown
-# Framing the Problem
-
-## Product Context
-
-- Product or service: Construction scheduling solution
-- Target market segment: Construction
-- Primary persona (the customer with the problem): Construction Manager
-
-## 1. Problem Framing
-
-**I am:**
-A construction professional dealing with scheduling challenges in a complex environment.
-
-**Trying to:**
-Improve project outcomes and efficiency across all workstreams.
-
-**But:**
-Current processes are inefficient and outdated, creating various challenges for the team.
-
-**Because:**
-The industry has been slow to adopt modern technology solutions.
-
-**Which makes me feel:**
-(not included)
-
-## 2. Context and Constraints
-
-Construction is a large and complex industry with many stakeholders and regulatory requirements.
-
-## 3. Final Problem Statement
-
-Construction managers face scheduling challenges due to outdated processes and slow technology adoption. A modern platform could streamline coordination and improve project outcomes, helping teams work more efficiently and meet deadlines.
-```
-
-##### Why This Fails
-
-- **"I am" is generic.** "A construction professional dealing with scheduling challenges" could describe anyone. No role specificity, no concrete experience points, no evidence of real customer understanding.
-- **"Trying to" is vague.** "Improve project outcomes and efficiency" is a corporate platitude, not a customer's desired outcome. What outcomes? What efficiency? What does success look like to this person?
-- **"But" is empty.** "Current processes are inefficient and outdated" says nothing specific. What processes? Inefficient how? What actually breaks or fails?
-- **"Because" blames the industry.** "Slow to adopt technology" is an external observation, not a root cause. Why are schedules disconnected? Why do conflicts happen on-site? The root cause should explain the mechanism.
-- **"Which makes me feel" is missing entirely.** The emotional stem was skipped, removing the human dimension. Leadership sees a process problem but has no sense of severity.
-- **Constraints are one vague sentence.** No specific regulatory, contractual, or technology constraints are named.
-- **Final statement contains solution language.** "A modern platform could streamline coordination" is a solution pitch, not a problem statement. The problem frame has become a product justification.
-- **Nothing is paste-ready.** The content is too vague to act on and too generic to present to governance.
-
----
-
-#### Example 3: Drift Bug - Frame Written from the Product Team's Perspective
-
-```markdown
-## 1. Problem Framing
-
-**I am:**
-A product team building a scheduling platform for the construction industry. We have been investigating the market for six months and have identified significant opportunities in the commercial GC segment.
-
-**Trying to:**
-Build a differentiated scheduling product that captures market share from legacy tools and positions us as the innovation leader in construction technology.
-
-**But:**
-Our competitors have a head start in the market and existing customer relationships are difficult to break. Our engineering team is small and we cannot build all features at once.
-
-**Because:**
-The construction technology market is fragmented and buyers are risk-averse, making it hard to gain traction with a new entrant.
-
-**Which makes me feel:**
-Under pressure to show traction before the next board meeting and concerned about runway if we do not close enterprise deals soon.
-```
-
-##### Why This Is Wrong
-
-Every stem is written from the product team's perspective instead of the customer's:
-
-- **"I am" describes the team, not the customer.** The persona is "a product team," not the superintendent or project manager who experiences the problem. The problem frame should document the customer's world, not the team's go-to-market challenges.
-- **"Trying to" is a business objective.** "Capture market share" and "position as innovation leader" are company goals, not customer outcomes. The customer is trying to keep trades on schedule and avoid liquidated damages - they do not care about the product team's competitive positioning.
-- **"But" lists the team's competitive barriers.** "Competitors have a head start" and "engineering team is small" are the team's problems, not the customer's. The customer's barriers are about schedule conflicts and manual coordination.
-- **"Because" explains market dynamics.** Market fragmentation and buyer risk-aversion are business analysis, not root causes for the customer's problem.
-- **"Which makes me feel" captures team anxiety.** "Board meeting pressure" and "runway concerns" are the founders' emotions, not the customer's. The customer feels behind, overwhelmed, and worried about their professional reputation.
-
-**Fix:** Rewrite every stem from the customer's point of view. Ask: who uses this product in the field? What is their day like? What frustrates them? The problem frame documents their experience, not the team's business case. If the team needs to document their own competitive challenges, that belongs in a strategy doc, not in a problem frame.
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-framing-the-problem) for supporting source material and expanded examples.

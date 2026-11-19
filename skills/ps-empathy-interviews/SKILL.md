@@ -21,6 +21,7 @@ scenarios:
   - "I just finished three customer interviews and need help structuring the findings"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Empathy Interview artifact** for your target customer.
@@ -44,6 +45,17 @@ Use this skill when you need to:
 - build empathy across the product team by documenting first-person customer language
 
 This is not a survey design tool, a usability test script, or a sales call framework. Empathy interviews are discovery conversations - open-ended, story-seeking, and judgment-free.
+
+### Usage Notes
+
+- This is a **process skill** (`type: process`), not a component skill. It spans preparation, interview conduct, and findings documentation across multiple sessions.
+- The agent helps with preparation (Phase 1) and documentation (Phase 3). The PM conducts the actual interview (Phase 2) in the field - the agent cannot substitute for real customer conversation.
+- **Preparation follows the Playbook's AI pages:** name the decision, set learning objectives, choose 4-5 topic areas, and review the PM's own questions (leading, closed, solution-fishing, no objective). The agent drafts questions only on request, labeled as a starting draft.
+- **Rehearsal (optional):** the agent can play the persona in a technique drill, one tough moment at a time, then review the PM's technique. It is practice, never research. Nothing from a rehearsal goes into findings.
+- Evidence gathering: this skill qualifies for **web research + user artifacts**. Web research grounds the PM in the interviewee's domain before the interview. User artifacts (persona work, JTBD output, prior research) inform question preparation.
+- The findings board produces structured output that feeds downstream skills: Jobs-to-Be-Done, Desired Outcomes, Problems, and Feels/Appears.
+- Upstream: ps-proto-persona (persona grounds the interview target), ps-jobs-to-be-done (provides assumptions to test).
+- Downstream: ps-problem-identification (uses problems and jobs from findings), ps-proto-persona (refine with real quotes and observations).
 
 ## Key Concepts
 
@@ -69,7 +81,7 @@ Leading questions ("Don't you think a dashboard would help?") confirm the PM's h
 
 ### Confirm Understanding by Reflecting Back
 
-After the interviewee shares something significant, repeat back what you heard in your own words: "So if I understand correctly, you're saying..." This does two things: it confirms you captured their meaning accurately, and it often prompts the interviewee to correct, expand, or go deeper — surfacing nuance a follow-up probe alone might miss.
+After the interviewee shares something significant, repeat back what you heard in your own words: "So if I understand correctly, you're saying..." This does two things: it confirms you captured their meaning accurately, and it often prompts the interviewee to correct, expand, or go deeper  -  surfacing nuance a follow-up probe alone might miss.
 
 ### The Findings Board Maps to Downstream Artifacts
 
@@ -120,64 +132,24 @@ What AI cannot do is be the person being interviewed. The whole point of this Pl
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_empathy_interviews_playbook_pages.pdf](assets/ps_empathy_interviews_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -190,7 +162,7 @@ The PM returns to the agent after conducting the interview (Phase 2) to get help
 
 ### If the PM Brings a Draft
 
-When the PM arrives with draft questions or topic areas, review them before writing anything new. This mirrors [prompts/01](prompts/01-prepare-interview-guide.md).
+When the PM arrives with draft questions or topic areas, review them before writing anything new. This mirrors the critique guidance in this Play.
 
 1. **Confirm the persona and the decision.** If no learning objectives exist, get them first (Step 3).
 2. **Review each question.** Flag leading questions, closed (yes/no) questions, and questions that fish for the PM's solution. Quote the words at fault.
@@ -272,7 +244,7 @@ Before the PM goes into the field, surface the conduct reference card:
 
 ### Step 6: Rehearse Technique (Optional)
 
-If the PM wants to practice, run a rehearsal drill. This mirrors [prompts/02](prompts/02-rehearse-technique.md).
+If the PM wants to practice, run a rehearsal drill. This mirrors the critique guidance in this Play.
 
 1. **Say what this is.** It's practice, not data, and nothing from it goes into findings. Suggest voice mode if the PM's tool has one.
 2. **Present one realistic interview moment at a time**, playing the persona: a one-word answer, a jump to a feature request, saying one thing while describing the opposite, going quiet. Respond to the PM's moves as the persona plausibly would, then present the next moment.
@@ -331,123 +303,324 @@ After the findings are documented, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Investigate** to prepare for empathy interviews, guide conduct, and document findings. This is a process skill that spans three phases - preparation, interview conduct (PM does this in the field), and documentation.
+
+### Template
+
+#### Phase 1: Interview Preparation
+
+```markdown
+# Empathy Interview Preparation
+
+## Product Context
+
+- Product or service:
+- Target market segment:
+- Target interviewee role:
+- Interviewee's primary job:
+
+## Decision These Interviews Inform
+
+- Decision:
+- Who makes it, and by when:
+
+## Learning Objectives
+
+What do we need to learn to make that decision? What assumptions need testing?
+
+1.
+2.
+3.
+4.
+5.
+
+> Quality check: Are these learning objectives specific enough to guide question selection?
+> Quality check: Do they focus on the customer's reality, not on validating a feature idea?
+> Quality check: Does every learning objective trace to the decision above?
+
+## Topic Areas
+
+4-5 areas to explore. They let the interviewee steer and tell stories while you dig deeper. Aim them at the persona's jobs, desired outcomes, and the root-cause problems behind their pains.
+
+| # | Topic Area | Learning Objective It Serves | Example Open-Ended Question |
+|---|------------|------------------------------|-----------------------------|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+| 4 | | | |
+| 5 | | | |
+
+## Interview Questions
+
+Prepare 5-8 open-ended questions in your own words, a few per topic area. Do not follow this list rigidly - explore deeper when the customer opens a thread.
+
+| # | Question | Follow-Up Probes | Objective |
+|---|----------|-----------------|-----------|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+| 4 | | | |
+| 5 | | | |
+| 6 | | | |
+| 7 | | | |
+| 8 | | | |
+
+> Quality check: Does every question start with "Can you...", "Tell me about...", "What...", "How...", or "Why..."?
+> Quality check: Does any question mention the product name, a feature, or a specific solution? If yes, rewrite it.
+> Quality check: Could any question be answered with just "yes" or "no"? If yes, convert to open-ended.
+> Quality check: Do the questions cover: daily workflow, pain points, current solutions, impact, and emotional experience?
+> Quality check: Does every question name the learning objective it serves? Cut any that don't.
+> Capacity check: Questions should be ~15-20 words. Follow-up probes should be ~8-12 words.
+```
+
+#### Phase 2: Conduct Guidance (Reference Card)
+
+```markdown
+# Interview Conduct Reference Card
+
+## Before the Interview
+- [ ] Rehearse your technique (optional): one tough moment at a time, out loud if you can. Practice only; nothing from it goes into findings.
+- [ ] Review learning objectives
+- [ ] Have questions accessible but not as a rigid script
+- [ ] Set up note-taking (or have a teammate take notes)
+- [ ] Test recording equipment if applicable (with permission)
+
+## During the Interview
+
+**Opening**
+- Introduce yourself and explain why you are talking with them
+- Set expectations: "There are no right or wrong answers - I want to learn from your experience"
+- Ask permission to take notes or record
+
+**Core Rules**
+- 70% listening, 30% talking
+- Ask about specific recent occurrences ("Tell me about the last time...")
+- Dig deeper on surface answers ("Why?", "Can you say more about that?", "What happened next?")
+- Do NOT mention the product, pitch features, or suggest solutions
+- Do NOT ask yes/no questions - convert to open-ended
+- Do NOT ask "Would you use a tool that...?" or "How would you feel about...?"
+
+**Watch For**
+- Inconsistencies between what they say, feel, do, and think
+- Emotional reactions - frustration, pride, resignation, anxiety
+- Workarounds and hacks they have built
+- Language they use to describe their work (capture exact words)
+
+**If You Get Stuck**
+- Ask "Why?"
+- Ask "Tell me more"
+- Ask "Can you give me a specific example?"
+
+**Closing**
+- "Is there anything else you'd like to share about your experience?"
+- Thank them
+- Ask if they are open to further conversations or testing
+
+## After the Interview
+- [ ] Document findings within 24 hours (use Phase 3)
+- [ ] Share raw notes with teammates who listened in
+- [ ] Note what surprised you - surprises are the highest-signal findings
+```
+
+#### Phase 3: Document Findings
+
+```markdown
+# Empathy Interview Findings
+
+## Interview Context
+
+- Interviewee role:
+- Date:
+- Interview duration:
+- Product context:
+- Interviewer(s):
+
+## Raw Quotes
+
+Capture 4-6 direct quotes - the customer's actual words, not paraphrased.
+
+| # | Quote |
+|---|-------|
+| 1 | |
+| 2 | |
+| 3 | |
+| 4 | |
+| 5 | |
+| 6 | |
+
+> Quality check: Are these the customer's actual words, or a paraphrase? Use their language.
+> Capacity check: Quotes should be ~15-20 words each.
+
+## Findings Board
+
+### Jobs-to-Be-Done
+
+What is the customer trying to accomplish? Discovered from their stories.
+
+| # | Job (Functional / Emotional / Social) |
+|---|---------------------------------------|
+| 1 | |
+| 2 | |
+| 3 | |
+| 4 | |
+| 5 | |
+| 6 | |
+
+> Quality check: Do these jobs come from what the customer said, not what you assumed before the interview?
+> Quality check: Are all three job types represented if the evidence supports them?
+> Capacity check: ~6-8 words per entry (sticky-note sized).
+
+### Desired Outcomes
+
+What does success look like for the customer? Use Direction + Metric + Context.
+
+| # | Desired Outcome |
+|---|-----------------|
+| 1 | |
+| 2 | |
+| 3 | |
+| 4 | |
+
+> Quality check: Does every outcome use the Direction + Metric + Context format?
+> Quality check: Are these the customer's desired outcomes, not your product's value propositions?
+> Capacity check: ~8-12 words per entry.
+
+### Problems
+
+Friction, blockers, and pain points observed during the interview.
+
+| # | Problem |
+|---|---------|
+| 1 | |
+| 2 | |
+| 3 | |
+| 4 | |
+| 5 | |
+| 6 | |
+
+> Quality check: Are these concrete and specific, not abstract categories like "inefficiency"?
+> Quality check: Did the customer describe this problem, or are you inferring it?
+> Capacity check: ~8-12 words per entry (sticky-note sized).
+
+### Feels / Appears
+
+Emotional and behavioral observations. What the customer appeared to feel, not just what they said.
+
+| # | Observation |
+|---|-------------|
+| 1 | |
+| 2 | |
+| 3 | |
+| 4 | |
+
+> Quality check: Do these capture emotions and behaviors, not just opinions?
+> Quality check: Did you note any say/feel/do/think inconsistencies?
+> Capacity check: ~6-10 words per entry (sticky-note sized).
+
+## Key Insights
+
+- What surprised you:
+- What confirmed prior assumptions:
+- What contradicted prior assumptions:
+- What needs more interviews to validate:
+
+## Evidence Notes
+
+- What is well-supported by this interview:
+- What is still a single data point:
+- Recommended next steps:
+```
+
+### Usage Guidance
+
+#### The Three Phases
+
+This template covers a multi-session process:
+
+1. **Phase 1 (Preparation)** - the agent helps name the decision, define learning objectives, choose topic areas, review the PM's questions, and optionally rehearse technique. This happens before the interview.
+2. **Phase 2 (Conduct)** - the PM takes the reference card into the field and conducts the interview. The agent cannot do this step.
+3. **Phase 3 (Documentation)** - the PM returns with raw notes. The agent helps structure findings into the board format.
+
+The PM may complete Phase 1, leave for days or weeks, and return for Phase 3. That is normal.
+
+#### How Many Questions
+
+The canonical template has 6 question slots. Default to 5-8 questions:
+
+- 1-2 opening questions about the person's role and daily work
+- 2-3 core questions exploring the target problem area
+- 1-2 questions about current solutions and impact
+- 1 closing question
+
+Add follow-up probes for each question. Do not over-prepare - 8 questions is a ceiling, not a target.
+
+#### Findings Board Sizing
+
+The findings board maps to the canonical template's sticky-note grid:
+
+| Section | Entries | Words per Entry | Guidance |
+|---------|---------|-----------------|----------|
+| Jobs-to-Be-Done | 4-6 | ~6-8 | Use Productside JTBD formats |
+| Desired Outcomes | 3-4 | ~8-12 | Direction + Metric + Context |
+| Problems | 4-6 | ~8-12 | Concrete, specific observations |
+| Feels/Appears | 4 | ~6-10 | Emotional and behavioral |
+| Raw Quotes | 4-6 | ~15-20 | Customer's actual words |
+
+#### Connecting to Other Skills
+
+- **Upstream:** Proto-persona (grounds the interview target and questions); JTBD (provides assumptions to test)
+- **Downstream:** Problem Identification uses the problems and jobs from this artifact; proto-persona refinement uses the quotes and emotional observations
+- **Parallel:** JTBD can be updated with newly discovered jobs and outcomes from the interview
+
+#### Capacity Reference
+
+See [Template and capacity guidance](#template) for the exact word and character budgets per field.
+
+| Field | Word Budget | Guidance |
+|-------|-------------|----------|
+| Interview Question | ~15-20 | Open-ended, no product mentions |
+| Follow-Up Probe | ~8-12 | Dig deeper: "Why?", "Tell me more" |
+| Raw Quote | ~15-20 | Customer's actual words |
+| Job-to-Be-Done | ~6-8 | Sticky-note sized; Productside format |
+| Desired Outcome | ~8-12 | Direction + Metric + Context |
+| Problem | ~8-12 | Sticky-note sized; concrete observation |
+| Feels/Appears | ~6-10 | Sticky-note sized; emotional/behavioral |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** Ask a regional store manager: "Tell me about the last time inventory differed across your stores." Record the real interview separately from preparation.
+- **Weak:** "Would a real-time dashboard solve your inventory problem?" leads the witness toward the proposed solution.
+- **Drift to avoid:** Rehearsal as research: simulated interview answers must never enter findings as customer evidence.
 
-- a strong empathy interview artifact with well-prepared questions and structured findings
-- a weak, generic version with no learning objectives and unstructured findings
-- a bias-bug example showing questions that lead the interviewee toward a predetermined solution
-- commentary on why the weak versions fail
 
 ## Common Pitfalls
 
-### Pitfall 1: Asking Leading Questions
+- **Asking Leading Questions:** Strip the question of any solution language or implied answer. "How do you currently monitor [process]?" lets the customer describe their reality. "Don't you think a dashboard would help?" tells them what to say.
 
-**Symptom:** "Don't you think it would be better if you had a real-time dashboard?" or "Would you agree that the current system is too slow?"
+- **Asking Yes/No Questions:** Convert to open-ended: "Can you walk me through the last time you had to reconcile data across systems? What happened?"
 
-**Consequence:** The interviewee agrees to be polite or because the question frames the answer. The PM leaves with "validated" assumptions that were never actually tested.
+- **Talking More Than 30%:** Set a physical reminder (a sticky note that says "LISTEN"). After asking a question, wait. Count to five silently before saying anything else. Silence prompts the customer to fill the gap with real insight.
 
-**Fix:** Strip the question of any solution language or implied answer. "How do you currently monitor [process]?" lets the customer describe their reality. "Don't you think a dashboard would help?" tells them what to say.
+- **Asking About Features Instead of Problems:** Ask about their current reality, not a hypothetical future. "What happens today when X goes wrong?" reveals the problem. "What features would fix it?" reveals the customer's guess about a solution, which is not the same thing.
 
-### Pitfall 2: Asking Yes/No Questions
+- **Not Digging Deeper on Surface-Level Answers:** Probe: "Can you tell me more about how you manage it?" or "What does 'fine' look like on a bad day?" The second layer is almost always richer than the first.
 
-**Symptom:** "Do you find data reconciliation frustrating?" "Is the current process slow?"
+- **Skipping Documentation:** Document findings within 24 hours of the interview. Use the findings board structure - it forces categorization and makes the data usable by the rest of the team.
 
-**Consequence:** The PM gets confirmation without understanding. "Yes, it's frustrating" tells you nothing about why, how often, or what it costs.
+- **Defaulting to a Tech Role:** Before drafting questions, confirm: is this the person who uses or buys the product in the field? If their primary job is not writing code or designing systems, the questions should reflect their actual daily work.
 
-**Fix:** Convert to open-ended: "Can you walk me through the last time you had to reconcile data across systems? What happened?"
+- **Treating This as a Content-Generation Skill:** Phase 3 (Document Findings) requires real interview data as input. If the PM has not talked to a customer, the agent should help with Phase 1 (Prepare Questions) and send the PM into the field. Do not fabricate findings.
 
-### Pitfall 3: Talking More Than 30%
+- **Treating a Rehearsal as Research:** Label every rehearsal as practice at the start and the end. Refuse to document findings from a simulated interview. If the PM has no real interviews yet, help them recruit and schedule them.
 
-**Symptom:** The PM explains the product vision, describes the roadmap, or pitches features during the interview.
-
-**Consequence:** The interview becomes a sales call. The customer mirrors the PM's language back instead of sharing their own experience.
-
-**Fix:** Set a physical reminder (a sticky note that says "LISTEN"). After asking a question, wait. Count to five silently before saying anything else. Silence prompts the customer to fill the gap with real insight.
-
-### Pitfall 4: Asking About Features Instead of Problems
-
-**Symptom:** "How would you feel about a tool that automates X?" or "What features would you want in a solution?"
-
-**Consequence:** The customer designs your product for you - poorly, because they are not product managers. You get a feature wish list instead of problem understanding.
-
-**Fix:** Ask about their current reality, not a hypothetical future. "What happens today when X goes wrong?" reveals the problem. "What features would fix it?" reveals the customer's guess about a solution, which is not the same thing.
-
-### Pitfall 5: Not Digging Deeper on Surface-Level Answers
-
-**Symptom:** Customer says "It's fine" or "We manage." PM moves to the next question.
-
-**Consequence:** The real pain is buried under social politeness. "It's fine" often means "I've accepted the pain because I have no alternative."
-
-**Fix:** Probe: "Can you tell me more about how you manage it?" or "What does 'fine' look like on a bad day?" The second layer is almost always richer than the first.
-
-### Pitfall 6: Skipping Documentation
-
-**Symptom:** The PM conducts the interview, has a vivid memory of the conversation, but never structures the findings.
-
-**Consequence:** Within 48 hours, the nuance fades. Within a week, the PM remembers their interpretation, not the customer's words. The team never sees the raw evidence.
-
-**Fix:** Document findings within 24 hours of the interview. Use the findings board structure - it forces categorization and makes the data usable by the rest of the team.
-
-### Pitfall 7: Defaulting to a Tech Role
-
-**Symptom:** The PM is building a supply chain platform but prepares interview questions for a DevOps engineer or data architect.
-
-**Consequence:** The interview explores technical implementation concerns instead of the operational workflow of the actual customer (a supply chain planner, a procurement manager, a logistics coordinator).
-
-**Fix:** Before drafting questions, confirm: is this the person who uses or buys the product in the field? If their primary job is not writing code or designing systems, the questions should reflect their actual daily work.
-
-### Pitfall 8: Treating This as a Content-Generation Skill
-
-**Symptom:** The PM asks the agent to "generate empathy interview findings" without having conducted an interview.
-
-**Consequence:** The findings are fiction. They reflect LLM training data, not the customer's reality. The team makes decisions based on plausible-sounding but unvalidated assumptions.
-
-**Fix:** Phase 3 (Document Findings) requires real interview data as input. If the PM has not talked to a customer, the agent should help with Phase 1 (Prepare Questions) and send the PM into the field. Do not fabricate findings.
-
-### Pitfall 9: Treating a Rehearsal as Research
-
-**Symptom:** The PM runs an AI rehearsal, or asks AI to "interview" a synthetic customer, then pastes the simulated answers into the findings board as quotes or problems.
-
-**Consequence:** The findings are the model's guesses in a customer's voice. The real conversation gets skipped, and the team believes it has validated something it never tested. The Playbook calls this the Play being corrupted.
-
-**Fix:** Label every rehearsal as practice at the start and the end. Refuse to document findings from a simulated interview. If the PM has no real interviews yet, help them recruit and schedule them.
-
-### Pitfall 10: Reading the Question List Like a Script
-
-**Symptom:** The PM works through the prepared questions in order, word for word, and moves on as soon as each one is answered.
-
-**Consequence:** The interviewee never gets to steer, so the stories that matter never come out. The interview confirms the PM's list instead of the customer's reality.
-
-**Fix:** Prepare around topic areas, not a script. Treat questions as starting points, follow the thread the interviewee opens, and use "Why?" and "Tell me more" to go deeper. Rehearsal (Step 6) builds the reflex.
+- **Reading the Question List Like a Script:** Prepare around topic areas, not a script. Treat questions as starting points, follow the thread the interviewee opens, and use "Why?" and "Tell me more" to go deeper. Rehearsal (Step 6) builds the reflex.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - three-phase scaffold: preparation, conduct guidance, findings
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (2: prepare an interview guide, rehearse technique)
-- [examples/sample.md](examples/sample.md) - strong, weak, and bias-bug examples
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Related Skills
-
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - upstream; persona work grounds interview question preparation; interview findings refine the persona
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - parallel; JTBD output can inform interview questions; interview findings produce new job and outcome discoveries
-- [ps-problem-identification](../ps-problem-identification/SKILL.md) - downstream; interview findings feed directly into problem identification
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_empathy_interviews_playbook_pages.pdf](assets/ps_empathy_interviews_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 31-35: Template 07 of 24 there, with the AI overview on slide 33 and both prompts on slide 34. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-empathy-interviews) for supporting source material and expanded examples.

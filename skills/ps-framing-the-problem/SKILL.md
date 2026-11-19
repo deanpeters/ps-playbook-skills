@@ -21,6 +21,7 @@ scenarios:
   - "Help me frame the problem we discovered so I can present it at our define review"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Framing the Problem artifact** that documents a validated problem and produces a clear problem statement.
@@ -46,13 +47,21 @@ Use this skill when you need to:
 
 This is not a solution specification. If the output mentions features, tools, or implementation approaches, the framing has drifted into solution space.
 
+### Usage Notes
+
+- The template produces a single artifact with three sections: Problem Framing (five stems), Context and Constraints, and Final Problem Statement.
+- The five-stem sequence is fixed order: I am / Trying to / But / Because / Which makes me feel.
+- Evidence gathering is **user artifacts only** - no web research offered. This skill synthesizes the PM's own discovery work.
+- Upstream: ps-proto-persona, ps-jobs-to-be-done, ps-problem-identification, empathy interviews.
+- Downstream: solution hypothesis, positioning, exploring the solution space (Discover + Define phase).
+
 ## Key Concepts
 
 ### Focus on the Why, and the Outcomes Will Follow
 
 The playbook puts it simply: *"Focus on the 'why,' and the outcomes will follow."*
 
-A problem frame that nails the root cause — the **Because** stem — gives the team more clarity about what to build than any amount of solution sketching. Don't rush to "what we need to build" before the "why this problem exists" is solid.
+A problem frame that nails the root cause  -  the **Because** stem  -  gives the team more clarity about what to build than any amount of solution sketching. Don't rush to "what we need to build" before the "why this problem exists" is solid.
 
 This is also a human-centered design exercise. It starts with the person experiencing the problem, not the solution space, and leaves room for creativity and imagination once the why is clear.
 
@@ -111,64 +120,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_framing_the_problem_playbook_pages.pdf](assets/ps_framing_the_problem_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -184,7 +153,7 @@ That means:
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-pressure-test-problem-frame.md](prompts/01-pressure-test-problem-frame.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Confirm the Product and Persona
 
@@ -313,124 +282,162 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Investigate** when you have enough discovery evidence to frame a validated problem and craft a problem statement. This is a **Key Decision Point** - the output goes to leadership and product governance to justify moving into solution definition.
+
+Upstream work that feeds this template: proto-persona, jobs-to-be-done, empathy interviews, problem identification, affinity mapping.
+
+### Template
+
+```markdown
+# Framing the Problem
+
+## Product Context
+
+- Product or service:
+- Target market segment:
+- Primary persona (the customer with the problem):
+
+## 1. Problem Framing
+
+**I am:**
+Describe the user persona's experience with the problem in 3-4 key points
+
+
+**Trying to:**
+List the outcome they care about
+
+
+**But:**
+Describe what problem barriers stand in the way
+
+
+**Because:**
+Enter the root cause of why the problem or barrier exists
+
+
+**Which makes me feel:**
+Describe the emotions from the customer's point of view
+
+
+> Quality check: Is every stem written from the customer's perspective, not the product team's?
+> Quality check: Does the "But" name concrete, observable barriers - not vague "challenges"?
+> Quality check: Is the "Because" a root cause, not a restatement of the barrier?
+> Quality check: Is the "Which makes me feel" stem present with specific emotions, not just "frustrated"?
+> Quality check: Is there any solution language in the stems (product names, features, tools)? Remove it.
+> Capacity check: I am ~30-40 words. Trying to ~15-20 words. But ~20-25 words. Because ~20-25 words. Which makes me feel ~15-20 words.
+
+## 2. Context and Constraints
+
+Describe the industry, regulatory, geographic, technology, budget, or population constraints surrounding the problem.
+
+
+> Quality check: Are these external conditions, not barriers? Barriers go in "But." Constraints describe the environment the solution must operate within.
+> Capacity check: ~30-40 words.
+
+## 3. Final Problem Statement
+
+Synthesize the five stems into one cohesive statement.
+
+
+> Quality check: Does the statement follow the stem structure (I am / Trying to / But / Because / Which makes me feel)?
+> Quality check: Is every element in the statement traceable to a stem above? No new information should appear here.
+> Quality check: Could a manager read this statement alone and understand the problem without seeing the stems?
+> Capacity check: ~40-50 words.
+
+## Evidence Notes (optional)
+
+- Discovery sources used:
+- What is well-supported by evidence:
+- What is still assumption:
+- Recommended next validation steps:
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Start with **Product Context** to anchor who this is for and whose problem it is.
+2. Fill the **five stems in order** - do not skip or reorder. Each stem builds on the previous one.
+3. Fill **Context and Constraints** separately - these are external conditions, not part of the problem frame itself.
+4. Write the **Final Problem Statement** last, synthesizing all five stems into one cohesive narrative.
+5. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
+
+#### The Stem Sequence Is Fixed
+
+The five stems must appear in this exact order:
+
+1. I am
+2. Trying to
+3. But
+4. Because
+5. Which makes me feel
+
+Do not merge stems, skip stems, or reorder them. Each has a distinct function in building the problem frame.
+
+#### What Goes Where
+
+| Section | Contains | Does NOT Contain |
+|---------|----------|------------------|
+| I am | Persona role, situation, 3-4 key experience points | Product features, team perspective |
+| Trying to | The desired outcome | Task lists, feature requests |
+| But | Concrete, observable barriers | Constraints (those go in Context) |
+| Because | Root cause of the barrier | Surface-level restatements |
+| Which makes me feel | Specific customer emotions | "Bad" or "frustrated" alone |
+| Context and Constraints | Industry, regulatory, budget, technology, geographic conditions | Barriers (those go in But) |
+| Final Problem Statement | Synthesis of all five stems | New information not in the stems |
+
+#### Connecting to Other Skills
+
+- **Upstream:** Proto-persona provides the "I am." JTBD provides the "Trying to." Problem Identification provides barriers, root causes, and candidate problems. Empathy interviews provide emotional evidence.
+- **Downstream:** The validated problem statement justifies moving into Discover + Define - solution hypothesis, positioning, exploring the solution space.
+
+#### Capacity Reference
+
+See [Template and capacity guidance](#template) for the exact word and character budgets per field.
+
+| Field | Word Budget | Guidance |
+|-------|-------------|----------|
+| I am | ~30-40 | Role + situation + 3-4 key experience points |
+| Trying to | ~15-20 | One clear outcome statement |
+| But | ~20-25 | Concrete barriers, not vague "challenges" |
+| Because | ~20-25 | Root cause, not barrier restatement |
+| Which makes me feel | ~15-20 | 2-3 specific emotions with context |
+| Context and Constraints | ~30-40 | External conditions bounding the solution space |
+| Final Problem Statement | ~40-50 | Cohesive synthesis of all five stems |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** A superintendent is trying to coordinate trades, but learns of sequencing changes too late because crews rely on disconnected updates, leaving them anxious about rework. Develop all five stems.
+- **Weak:** "We need a scheduling dashboard" names a solution rather than a customer problem.
+- **Drift to avoid:** Perspective inversion: "Our team needs to ship faster" frames the product team's work, not the superintendent's experience.
 
-- a strong Productside-style problem frame with all five stems, context, and a synthesized final statement
-- a weak, generic version with vague barriers and missing emotional stem
-- a drift-bug example showing the frame written from the product team's perspective
-- commentary on why the weak versions fail
 
 ## Common Pitfalls
 
-### Pitfall 1: Jumping to Solutions in the Problem Frame
+- **Jumping to Solutions in the Problem Frame:** Strip out any mention of products, features, tools, or technologies. Rewrite barriers as the customer's experienced friction: "But manual processes across disconnected systems create delays and errors."
 
-**Symptom:** The "But" or "Because" stem mentions products, features, or tools. "But there is no integrated dashboard" is a solution statement disguised as a barrier.
+- **Writing from the Product Team's Perspective:** Every stem must be written from the customer's point of view. The "I am" is the customer. The emotions in "Which makes me feel" are the customer's emotions. If the frame sounds like a project brief, the perspective has drifted.
 
-**Consequence:** The team skips problem validation and starts building the first solution that comes to mind. The problem frame becomes a requirements doc.
+- **Making the "But" Too Vague:** Name concrete, observable barriers. What specifically blocks the persona? What do they run into? What fails, breaks, or takes too long? "But manual data reconciliation across three disconnected systems creates weekly reporting delays of 2-3 days."
 
-**Fix:** Strip out any mention of products, features, tools, or technologies. Rewrite barriers as the customer's experienced friction: "But manual processes across disconnected systems create delays and errors."
+- **Skipping the Emotional Stem:** Write 2-3 specific emotions with context. "Frustrated" alone is not enough. "Frustrated by the gap between what leadership expects and what current tools allow, and anxious about being seen as ineffective" tells a story.
 
-### Pitfall 2: Writing from the Product Team's Perspective
+- **Conflating Constraints with Barriers:** Barriers go in "But" - these are things the persona runs into while trying to achieve their outcome. Constraints go in Context and Constraints - these are conditions the solution must operate within. A barrier is "manual processes create delays." A constraint is "the industry requires SOC 2 compliance."
 
-**Symptom:** "I am a product team trying to build a better platform." The stems describe the team's challenge, not the customer's.
+- **Final Statement Does Not Match the Stems:** The final statement is a synthesis of the stems, not a rewrite. Every element in the statement should trace back to a stem. If the statement needs new information, update the stems first.
 
-**Consequence:** The problem frame justifies the team's existence instead of documenting a real customer problem. Leadership cannot tell if this is a customer need or an internal project.
+- **Defaulting to a Tech Role as the Persona:** Before writing "I am," confirm who actually uses or buys the product in the field. Most products serve people whose primary job is not writing code. A clinical data platform's customer is a clinical operations lead, not a data engineer.
 
-**Fix:** Every stem must be written from the customer's point of view. The "I am" is the customer. The emotions in "Which makes me feel" are the customer's emotions. If the frame sounds like a project brief, the perspective has drifted.
+- **Exceeding Template Capacity:** Respect the word budgets. "I am" is ~30-40 words. "Trying to" is ~15-20. "But" is ~20-25. "Because" is ~20-25. "Which makes me feel" is ~15-20. Context is ~30-40. Final statement is ~40-50. Write for the template field, not for the model's appetite for prose.
 
-### Pitfall 3: Making the "But" Too Vague
-
-**Symptom:** "But things are hard" or "But there are challenges" or "But the current situation is not ideal."
-
-**Consequence:** The team cannot identify what to solve. Vague barriers produce vague solutions.
-
-**Fix:** Name concrete, observable barriers. What specifically blocks the persona? What do they run into? What fails, breaks, or takes too long? "But manual data reconciliation across three disconnected systems creates weekly reporting delays of 2-3 days."
-
-### Pitfall 4: Skipping the Emotional Stem
-
-**Symptom:** The "Which makes me feel" stem is blank, one word ("frustrated"), or removed entirely.
-
-**Consequence:** The problem frame loses its human dimension. Leadership sees a process problem but not a severity signal. The emotional stem is what distinguishes "inconvenient" from "career-threatening."
-
-**Fix:** Write 2-3 specific emotions with context. "Frustrated" alone is not enough. "Frustrated by the gap between what leadership expects and what current tools allow, and anxious about being seen as ineffective" tells a story.
-
-### Pitfall 5: Conflating Constraints with Barriers
-
-**Symptom:** Regulatory requirements, budget limitations, or geographic restrictions appear in the "But" stem instead of Context and Constraints.
-
-**Consequence:** The barrier analysis is muddied. The team cannot distinguish between what blocks the persona (barriers) and what bounds the solution space (constraints).
-
-**Fix:** Barriers go in "But" - these are things the persona runs into while trying to achieve their outcome. Constraints go in Context and Constraints - these are conditions the solution must operate within. A barrier is "manual processes create delays." A constraint is "the industry requires SOC 2 compliance."
-
-### Pitfall 6: Final Statement Does Not Match the Stems
-
-**Symptom:** The final problem statement introduces new barriers, changes the persona, or drops the emotional impact.
-
-**Consequence:** The frame is internally inconsistent. A reader who sees the stems and the statement will question which version is correct.
-
-**Fix:** The final statement is a synthesis of the stems, not a rewrite. Every element in the statement should trace back to a stem. If the statement needs new information, update the stems first.
-
-### Pitfall 7: Defaulting to a Tech Role as the Persona
-
-**Symptom:** "I am a data engineer overwhelmed by pipeline complexity" when the product actually serves clinical operations leads or field engineers.
-
-**Consequence:** The problem frame reflects LLM training bias toward technical roles, not the real customer population.
-
-**Fix:** Before writing "I am," confirm who actually uses or buys the product in the field. Most products serve people whose primary job is not writing code. A clinical data platform's customer is a clinical operations lead, not a data engineer.
-
-### Pitfall 8: Exceeding Template Capacity
-
-**Symptom:** The "I am" stem becomes a three-paragraph backstory. The final statement is 150 words.
-
-**Consequence:** The human cannot paste the output into the playbook without rewriting it.
-
-**Fix:** Respect the word budgets. "I am" is ~30-40 words. "Trying to" is ~15-20. "But" is ~20-25. "Because" is ~20-25. "Which makes me feel" is ~15-20. Context is ~30-40. Final statement is ~40-50. Write for the template field, not for the model's appetite for prose.
-
-### Pitfall 9: A Frame With No Evidence Under It
-
-**Symptom:** The PM asks for a problem frame for a persona they have not interviewed, and gets five well-formed stems and a crisp statement.
-
-**Consequence:** The frame passes the decision point on its polish. The team commits to a problem no customer confirmed.
-
-**Fix:** Ask what evidence backs each stem. Mark any stem without evidence as a hypothesis, and route back to discovery before the decision point.
+- **A Frame With No Evidence Under It:** Ask what evidence backs each stem. Mark any stem without evidence as a hypothesis, and route back to discovery before the decision point.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Related Skills
-
-#### Upstream (input to this skill)
-
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - persona work that identifies who has the problem
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - jobs and outcomes that feed the "Trying to" stem
-- [ps-problem-identification](../ps-problem-identification/SKILL.md) - pains, gains, and candidate problem statements that feed the barrier and root cause stems
-
-#### Downstream (uses output from this skill)
-
-- Solution hypothesis - the validated problem frame justifies moving into solution definition
-- Positioning - the problem frame sharpens how the product is positioned
-- Exploring the solution space - the framed problem guides what solution territory to explore
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_framing_the_problem_playbook_pages.pdf](assets/ps_framing_the_problem_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 46-48: Template 10 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-framing-the-problem) for supporting source material and expanded examples.

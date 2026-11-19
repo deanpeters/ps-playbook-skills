@@ -23,6 +23,7 @@ scenarios:
   - "Our segments are just industries and company sizes; help me find segments that actually differ"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Market Selection & Sizing artifact** for the market a product serves.
@@ -43,6 +44,15 @@ Use this skill when you need to:
 This is not a financial forecast or a business case. It is a first pass, fast and simple, that the team revisits as it learns more. And it is never a place for numbers without sources.
 
 **Source status:** this Play exists only in the B2B work-in-progress deck (Template 04 of 24), which is not yet ratified. The baseline deck has no equivalent.
+
+### Usage Notes
+
+- **Type:** component. **Phase:** Context. **Evidence:** web research + user artifacts.
+- **Every number needs a source.** Sizing is written as formulas whose inputs carry source IDs or `[TO SOURCE]`, in one counting unit, as ranges, with SOM ≤ SAM ≤ TAM.
+- **AI may propose, never invent.** Following the Playbook's own prompts, the skill proposes market definitions, PESTEL entries, and segments with its reasoning visible, and cites what it finds. It never fills a sizing blank with a plausible number.
+- **SOM can wait:** it is estimated only when there is a product to price. Otherwise it is deferred until solutions are ideated.
+- **Downstream:** ps-jobs-to-be-done, ps-proto-persona, ps-empathy-interviews, and ps-positioning-statement use the segments and the people named in them.
+- The source deck is not yet ratified, and its pages are not objectified (no named shapes). The budget entry in `technical/data/canonical_template_budgets.yaml` has guidance only, no shape budgets.
 
 ## Key Concepts
 
@@ -110,64 +120,24 @@ In this Play, the Playbook's own prompts ask AI to research, propose segments, a
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_market_selection_sizing_playbook_pages.pdf](assets/ps_market_selection_sizing_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -267,121 +237,138 @@ Offer, as options:
 
 The user decides what comes next. Revisit this artifact as discovery produces evidence.
 
+## Template
+
+### When to Use This
+
+Use this template in the **Context** phase, before Jobs-to-Be-Done and Personas, to name the market a product serves, understand the forces acting on it, cut it into segments, and size the opportunity. It is a first pass you will revisit as you learn more.
+
+Downstream: the segments and the people named in them feed ps-jobs-to-be-done, ps-proto-persona, ps-empathy-interviews, and ps-positioning-statement.
+
+### Template
+
+```markdown
+# Market Selection & Sizing
+
+## Context
+- Product or product idea (existing / new):
+- Who it is for, and the benefit it provides:
+- Decision this analysis informs:
+- Counting unit (sites, firms, accounts, people, ...):
+
+## 1. Market Selection
+- Market:
+
+### PESTEL
+| Force | Entry | Source or status |
+|---|---|---|
+| Political | | [S#] / OPEN QUESTION |
+| Economic | | |
+| Social | | |
+| Technological | | |
+| Environmental | | |
+| Legal | | |
+
+> Quality check: Is the market named around who the product is for and the benefit, at a level you can analyze and size?
+> Quality check: Is every entry specific to this market? A force that fits any market is generic. Replace it, or mark it OPEN QUESTION.
+> Capacity check: One short line per force.
+
+## Total Addressable Market (TAM)
+- Sized fact 1: [S#]
+- Sized fact 2: [S#]
+- TAM (range, in the counting unit):
+
+## 2. Segments
+
+### Segment 1:
+- Description (traits, goals, preferences, behaviors that make it unique):
+- Cut logic (what distinguishes it from Segment 2, stated so it can be tested):
+- Users:
+- Buyers:
+- Influencers:
+
+### Segment 2:
+- Description:
+- Cut logic:
+- Users:
+- Buyers:
+- Influencers:
+
+> Quality check: Do the segments differ by needs, goals, and behaviors, not just by industry or size?
+> Quality check: Does every segment have a real user and buyer in it?
+> Provenance check: Tag suggested segments and cut logic `[AI-SUGGESTED, VALIDATE THIS]` until the team or a source confirms them.
+
+## 3. Size the Market & Segments
+
+### Serviceable Addressable Market (SAM)
+| Segment | Counting logic (formula) | Inputs and sources | SAM (range) |
+|---|---|---|---|
+| 1 | | | |
+| 2 | | | |
+
+### Serviceable Obtainable Market (SOM), annual revenue
+| Segment | Share basis (competition, reach, win rate, capacity, horizon) | Units x annual price | SOM (range) |
+|---|---|---|---|
+| 1 | | | |
+| 2 | | | |
+
+> Quality check: Does every input have a source ID or `[TO SOURCE]`? No guessed values.
+> Quality check: Same counting unit throughout? Is SOM <= SAM <= TAM?
+> Quality check: Is every market share justified by competition and capacity, not assumed?
+> Quality check: Ranges, not single numbers? Triangulated from more than one approach?
+> SOM rule: With no product yet, write "deferred until solutions are ideated," or show a conditional formula with the price marked as an assumption.
+
+## Source Register
+| ID | Source (title, publisher, link) | Date | What it supports |
+|---|---|---|---|
+| S1 | | | |
+
+## Open Questions
+Ranked by how much the answer could change the sizing.
+1.
+2.
+3.
+```
+
+### Usage Guidance
+
+- Work the three parts in order: market, then segments, then size.
+- Keep entries compact. The canonical template's PESTEL cells, segment boxes, and sizing boxes are small.
+- Every number needs a source the PM can check. A number without one is `[TO SOURCE]`.
+- The "is it worth it" judgment stays with the PM and their team.
+- Revisit this artifact as discovery produces evidence.
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For pump-station monitoring, name utilities and their operators, count stations consistently, and source every population and price input. Leave unknown inputs open.
+- **Weak:** "Every utility is our market" leaves segment needs and purchasing conditions undefined.
+- **Drift to avoid:** The free five percent: SOM is not an arbitrary percentage of a larger market. Show reachable accounts, capacity, adoption assumptions, and evidence.
 
-- a strong market analysis for municipal water-utility pump-station monitoring, with sourced inputs, cut logic, and ranges (figures are illustrative)
-- a weak version in the same domain: confident unsourced numbers, demographic segments, and a generic PESTEL
-- a drift-bug example, "the free five percent," showing an SOM built on an assumed share
 
 ## Common Pitfalls
 
-### Pitfall 1: AI Invents the Market Size
+- **AI Invents the Market Size:** Every number carries a source ID or `[TO SOURCE]`. Never fill a blank with a plausible figure.
 
-**Symptom:** The TAM box says "$4.2B, growing 9% annually," with no source, or with a source no one can find.
+- **Competitor Numbers No One Can Know:** Use only competitive facts a filing, a report, or a named source states. Otherwise describe the competitor qualitatively and mark the gap.
 
-**Consequence:** A guess dressed as a finding goes into a leadership deck. The first person who asks "where did this come from?" ends the PM's credibility on the topic.
+- **A Generic PESTEL:** One specific entry per force, tied to this market, with a source, or an honest open question.
 
-**Fix:** Every number carries a source ID or `[TO SOURCE]`. Never fill a blank with a plausible figure.
+- **Segments for Show:** Define segments by shared needs, goals, and behaviors, and state the cut logic so it can be tested. Use size or industry only as a boundary.
 
-### Pitfall 2: Competitor Numbers No One Can Know
+- **Segments With No People in Them:** Name the users, buyers, and influencers in every segment. Think broadly.
 
-**Symptom:** "Competitor X has 30% share and $80M in revenue in this segment," for a private company with no disclosures.
+- **The Market at the Wrong Altitude:** Run the three altitude questions. Center the definition on who the product is for and the benefit it provides.
 
-**Consequence:** The SOM rests on invented competitive data.
+- **The Free Five Percent:** State the share basis: the alternatives customers use, how many the team can reach, a win-rate assumption, and delivery capacity over a named horizon. If there is no basis yet, show SOM as a conditional formula and say what would anchor it.
 
-**Fix:** Use only competitive facts a filing, a report, or a named source states. Otherwise describe the competitor qualitatively and mark the gap.
+- **Mixed Counting Units:** Name one counting unit, convert explicitly when needed, and check SOM ≤ SAM ≤ TAM.
 
-### Pitfall 3: A Generic PESTEL
+- **One Source, One Number:** Triangulate with three approaches and present ranges.
 
-**Symptom:** "Political: regulation is increasing. Technological: AI is changing everything. Economic: inflation."
-
-**Consequence:** The analysis fits every market and informs none. The team learns nothing about this market's forces.
-
-**Fix:** One specific entry per force, tied to this market, with a source, or an honest open question.
-
-### Pitfall 4: Segments for Show
-
-**Symptom:** Segments are "Small, Medium, Enterprise" or "Healthcare, Finance, Retail," with tidy cuts that would fit any market.
-
-**Consequence:** Customers inside a segment don't share needs, so jobs, personas, and positioning built on the segment don't hold.
-
-**Fix:** Define segments by shared needs, goals, and behaviors, and state the cut logic so it can be tested. Use size or industry only as a boundary.
-
-### Pitfall 5: Segments With No People in Them
-
-**Symptom:** Each segment has a name and a description, but no one in it: no user, buyer, or influencer.
-
-**Consequence:** The next plays (Jobs-to-Be-Done, Personas) have no one to write about. The Playbook names this trap: segments with no real persona.
-
-**Fix:** Name the users, buyers, and influencers in every segment. Think broadly.
-
-### Pitfall 6: The Market at the Wrong Altitude
-
-**Symptom:** The market is "software" or "healthcare," or it is one customer's workflow.
-
-**Consequence:** Too broad can't be analyzed. Too narrow can't be sized or segmented.
-
-**Fix:** Run the three altitude questions. Center the definition on who the product is for and the benefit it provides.
-
-### Pitfall 7: The Free Five Percent
-
-**Symptom:** "If we capture just 5% of the SAM..." with no reason why 5%.
-
-**Consequence:** The SOM is a wish. It ignores competition, which the Playbook says SOM must consider.
-
-**Fix:** State the share basis: the alternatives customers use, how many the team can reach, a win-rate assumption, and delivery capacity over a named horizon. If there is no basis yet, show SOM as a conditional formula and say what would anchor it.
-
-### Pitfall 8: Mixed Counting Units
-
-**Symptom:** TAM counts companies, SAM counts sites, SOM multiplies employees by a per-seat price.
-
-**Consequence:** The math is wrong in a way that looks right. SOM can exceed SAM without anyone noticing.
-
-**Fix:** Name one counting unit, convert explicitly when needed, and check SOM ≤ SAM ≤ TAM.
-
-### Pitfall 9: One Source, One Number
-
-**Symptom:** A single search result becomes the TAM, presented to the dollar.
-
-**Consequence:** False precision. The conversation becomes a defense of the number instead of a discussion of risk.
-
-**Fix:** Triangulate with three approaches and present ranges.
-
-### Pitfall 10: Professional-Looking Logic, Never Tested
-
-**Symptom:** A polished analysis with clean formulas and confident segment names that no one has checked against a customer or an expert.
-
-**Consequence:** The structure is mistaken for rigor, and the team commits to a segment on untested logic.
-
-**Fix:** Tag AI-suggested cut logic for validation, rank the open questions, and revisit the analysis as discovery produces evidence.
+- **Professional-Looking Logic, Never Tested:** Tag AI-suggested cut logic for validation, rank the open questions, and revisit the analysis as discovery produces evidence.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - market analysis scaffold
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (4, run in order in one chat)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-- [assets/ps_market_selection_sizing_playbook_pages.pdf](assets/ps_market_selection_sizing_playbook_pages.pdf) - source pages from the B2B work-in-progress deck (slides 14-18)
-
-### Related Skills
-
-- [ps-outcome-tree](../ps-outcome-tree/SKILL.md) - Context-phase neighbor; the business outcome this market should serve
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - downstream; jobs for the people in the chosen segments
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - downstream; a persona for the center of a chosen segment
-- [ps-positioning-statement](../ps-positioning-statement/SKILL.md) - downstream; positioning for one persona in one segment
-
-### Related Project Docs
-
-- [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml)
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-
-### Source Material
-
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 14-18: Template 04 of 24, with the AI overview on slide 16 and prompts on slide 17. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [assets/ps_market_selection_sizing_playbook_pages.pdf](assets/ps_market_selection_sizing_playbook_pages.pdf)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-market-selection-sizing) for supporting source material and expanded examples.

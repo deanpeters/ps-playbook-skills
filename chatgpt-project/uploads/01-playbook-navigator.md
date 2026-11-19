@@ -154,7 +154,7 @@ Playbook number: Unnumbered. Phase: Navigator (cross-phase).
 
 Navigate the **Productside Blueprint** and point to the plays that live on it. The play library (ps-outcome-tree, ps-jobs-to-be-done, ps-positioning-statement, and the rest) gives a Product Manager one tool at a time. This skill sits above those plays and answers the questions a single play does not: where are we, what does good look like here, which principle governs this, and what do we do next.
 
-It runs in three modes over one shared knowledge base (reference/blueprint-stages.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Reference blueprint-stages`)):
+It runs in three modes over one shared knowledge base (Blueprint reference (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Instructions`)):
 
 - **Navigate.** Place the team on the Blueprint, show what good and bad look like in that phase, name the governing principle, and point to the next play. Run repeatedly to walk a team end to end.
 - **Coach a phase.** Go deep on one phase: its objective, tasks, anti-patterns, governing principles, and exit criteria.
@@ -168,6 +168,14 @@ Use this skill when:
 - a new Product Manager needs to learn a phase, not just complete a template
 
 This is not a play itself. It does not produce an outcome tree, a persona, or a positioning statement. It diagnoses, teaches, and points to the play that does. It is also not a governance gate: it advises on sequence and principle, it does not approve or block work.
+
+##### Usage Notes
+
+- This is a **cross-phase navigator**, not a single canonical play. It sits above the play library and routes into it.
+- Three modes: Navigate (place the team and point to the next play), Coach (go deep on one phase), Audit (test a decision against the five principles).
+- Principle model: the five Optimal Product Process Principles are canonical; phase-level principles inherit and ladder up to them. Three orphan themes (Guardrails, Cross-Functional Ownership, Transparency) are surfaced as open decisions, never asserted as canon.
+- Evidence gathering is **user artifacts only** - no web research offered. It works from the user's own account of their situation.
+- Loose coupling: play names are pointers, never dependencies. If a play is not installed, the skill gives its gist and offers to do the work inline.
 
 #### Key Concepts
 
@@ -222,25 +230,25 @@ The Blueprint pages have no AI page in the B2B work-in-progress deck. This guida
 
 ##### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
+##### Guided Mode
 
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in prompts/ (uploaded reference: `07-prompts.md`, section `ps-blueprint-advisor / Companion / README.md`).
+For the navigator, use this mode only when explicitly requested. For a simple routing question, answer with help first.
 
-##### Guided Mode (Opt-In Only)
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-Guided mode is for genuinely big or ambiguous requests, or when the user explicitly asks to be walked through something ("walk me through this," "I'm new to this," "take me step by step"). It is not the default and never fires on a small, concrete question.
-
-When it is warranted, lead with a sentence of orientation, then ask one question at a time in plain language. Do not announce an estimated question count or a mode menu unless the user asks how it works. Any options you offer are grounded in what the user has already told you, never generic. When a question asks for evidence only the user has (a root cause, what customers said or did, what the user observed), ask it open, with no options. The moment the user has given you enough to help, stop asking and help.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 #### Application
 
-Reads from reference/blueprint-stages.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Reference blueprint-stages`) for all phase content, principle mappings, and play routing. Use template.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Template`) for the audit output scaffold. Worked runs are in examples/sample.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Examples`).
+Reads from Blueprint reference (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Instructions`) for all phase content, principle mappings, and play routing. Use Template (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Template`) for the audit output scaffold. Worked runs are in Examples (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Examples`).
 
 ##### Step 1: Answer the Question in Front of You
 
@@ -275,122 +283,17 @@ Take the decision, roadmap, or artifact provided. For each of the five principle
 
 Help first, always. Lead with the useful answer and keep the diagnosis woven in and brief. Name a canonical principle only when it sharpens the point, and when you do, use the canonical five, not a phase-level label. Assume the plays may not be installed: every play you point to carries a one-line gist so the advice works even if the user never opens it, and you offer to do that thinking inline. Length follows the ask: short question, short answer.
 
-#### Examples
-
-See examples/sample.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Examples`) for the strong, weak, and drift-bug example set, all in one operational domain.
-
-##### Quick Example
-
-> **User:** "We've got three or four features to prioritize, what do you suggest?"
-
-Good response, help first, one natural question, diagnosis kept under the surface:
-
-> Happy to help. One quick gut check, because it changes what I'd suggest: are these three or four things you already know customers want, or still bets you're making? If they're solid, you honestly don't need a heavy scoring model for four items. A fast look at value against effort and a short conversation beats the ceremony. If a couple are still guesses, I'd hold off on ranking, since you'd just be putting a confident number on a hunch, and instead get quick evidence on which problem each one actually solves. Which are they, mostly known or mostly bets?
-
-Notice what it does not do: no lecture that this is a "tool question," no mode menu, no `Q1/4`, no demand for a job title. The phase read (are we validating a problem or ordering known work) and the principle (keep it simple, do not fake precision) steer silently. If the user says "mostly bets," that is when help on framing the problem earns its place, whether the user has the `ps-framing-the-problem` play or you walk them through it right there.
-
-#### Common Pitfalls
-
-##### Pitfall 1: Process Theater on a Simple Question
-
-**Symptom:** A small, concrete question ("we've got three or four features to prioritize, what do you suggest?") gets met with a lecture that the question is wrong, a heads-up, an entry-mode menu, a `Qx/n` label, and a demand for the customer's job title, before any help is given.
-
-**Consequence:** This is the exact "frameworks as laminated bureaucracy" failure. The user got nothing useful, felt graded, and will not come back. It also violates the principle it claims to serve, since the simplest path from problem to solution is not a four-question intake form.
-
-**Fix:** Help first. Answer the question, keep the diagnosis under the surface, and ask at most one natural question if it genuinely changes the answer. Reserve the full guided flow for when the user asks for it or the request is genuinely broad.
-
-##### Pitfall 2: Answering Blind Instead of Weaving In the One Thing That Matters
-
-**Symptom:** To avoid process theater, the skill overcorrects and just answers the literal tool question ("use RICE") with no read at all on whether those features are even validated problems.
-
-**Consequence:** The team puts precise numbers on unvalidated guesses. Confident, and wrong.
-
-**Fix:** The fix is not to refuse and interrogate, and it is not to answer blind. Give real help and fold in the single check that changes it, in one natural sentence, the way a good colleague would.
-
-##### Pitfall 3: Routing to Plays the User Does Not Have
-
-**Symptom:** The response ends with "run ps-jobs-to-be-done, then ps-proto-persona, then ps-outcome-tree" to a user who has none of them installed.
-
-**Consequence:** The advice is unusable. The skill offloaded the actual thinking onto tools the user cannot open, and reads like a directory rather than a colleague.
-
-**Fix:** Treat play names as optional pointers. Give the gist of each in a line, make the advice stand on its own, and offer to do the work inline.
-
-##### Pitfall 4: Citing Phase-Level Principles as if They Were Canonical
-
-**Symptom:** The skill says "the principle here is Segment Ruthlessly" without connecting it to the five.
-
-**Consequence:** Principles multiply and the memorable five disappear, which is the exact drift that created the problem this skill addresses.
-
-**Fix:** Name the canonical principle first (Ruthlessly Distilled), then its phase expression (Segment Ruthlessly).
-
-##### Pitfall 5: Assuming a Software Team Serving Software Users
-
-**Symptom:** The diagnosis and routed plays read as if the customer writes code and the team is a standard engineering squad, when the product serves field technicians, clinicians, or dispatchers.
-
-**Consequence:** The phase call and the plays miss the real customer's workflow. The team runs discovery aimed at the wrong person.
-
-**Fix:** Run the silent assumption check in Step 1. Name the actual customer role and team composition, and let them shape the phase call and the routing.
-
-##### Pitfall 6: Forcing a Linear Sequence
-
-**Symptom:** The skill insists a team finish Context before touching Discovery.
-
-**Consequence:** It contradicts Dynamic Interactivity and loses credibility with teams whose reality is concurrent.
-
-**Fix:** Allow straddling. Name both phases, then prioritize the one carrying the highest unresolved risk.
-
-##### Pitfall 7: Absorbing Orphan Themes Silently
-
-**Symptom:** The skill presents Guardrails or Cross-Functional Ownership as a sixth principle.
-
-**Consequence:** It fabricates canon the Productside team never ratified.
-
-**Fix:** Surface orphans as labeled open decisions, never scored as canonical principles.
-
-#### References
-
-##### Skill Files
-
-- prompts/ (uploaded reference: `07-prompts.md`, section `ps-blueprint-advisor / Companion / README.md`) - copy-paste prompt for chat-based AI tools (1: where are we on the Blueprint; authored for this library)
-- reference/blueprint-stages.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Reference blueprint-stages`) - phase and principle knowledge base
-- template.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Template`) - audit output scaffold
-- examples/sample.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Examples`) - strong, weak, and drift-bug examples
-- assets/ps_blueprint_advisor_playbook_pages.pdf (source material, not included in this upload kit) - source pages 1-3 of the canonical playbook: the Blueprint welcome, the overview with checkpoints, and the full phase map
-
-##### Related Plays This Advisor Points To
-
-Loose coupling: point to these when relevant, but never require them. If a play is not installed, give its gist and offer to do the work inline.
-
-- Context: ps-outcome-strategy-discussion (uploaded reference: `02-context.md`, section `ps-outcome-strategy-discussion / Instructions`), ps-stakeholder-alignment (uploaded reference: `02-context.md`, section `ps-stakeholder-alignment / Instructions`), ps-outcome-tree (uploaded reference: `02-context.md`, section `ps-outcome-tree / Instructions`), ps-market-selection-sizing (uploaded reference: `02-context.md`, section `ps-market-selection-sizing / Instructions`), ps-jobs-to-be-done (uploaded reference: `03-discover-investigate.md`, section `ps-jobs-to-be-done / Instructions`), ps-proto-persona (uploaded reference: `03-discover-investigate.md`, section `ps-proto-persona / Instructions`)
-- Discover + Investigate: ps-empathy-interviews (uploaded reference: `03-discover-investigate.md`, section `ps-empathy-interviews / Instructions`), ps-affinity-mapping (uploaded reference: `03-discover-investigate.md`, section `ps-affinity-mapping / Instructions`), ps-problem-identification (uploaded reference: `03-discover-investigate.md`, section `ps-problem-identification / Instructions`), ps-framing-the-problem (uploaded reference: `03-discover-investigate.md`, section `ps-framing-the-problem / Instructions`)
-- Discover + Define: ps-exploring-solution-space (uploaded reference: `04-discover-define.md`, section `ps-exploring-solution-space / Instructions`), ps-solution-hypothesis (uploaded reference: `04-discover-define.md`, section `ps-solution-hypothesis / Instructions`), ps-positioning-statement (uploaded reference: `04-discover-define.md`, section `ps-positioning-statement / Instructions`), ps-lofi-experimentation (uploaded reference: `04-discover-define.md`, section `ps-lofi-experimentation / Instructions`), ps-storyboarding (uploaded reference: `04-discover-define.md`, section `ps-storyboarding / Instructions`), ps-risk-assessment (uploaded reference: `04-discover-define.md`, section `ps-risk-assessment / Instructions`), ps-product-outcome-canvas (uploaded reference: `04-discover-define.md`, section `ps-product-outcome-canvas / Instructions`)
-- Create: ps-outcome-roadmap (uploaded reference: `05-create.md`, section `ps-outcome-roadmap / Instructions`), ps-tiny-acts-discovery (uploaded reference: `05-create.md`, section `ps-tiny-acts-discovery / Instructions`), ps-output-prioritization (uploaded reference: `05-create.md`, section `ps-output-prioritization / Instructions`), ps-go-to-market (uploaded reference: `05-create.md`, section `ps-go-to-market / Instructions`), ps-product-readiness (uploaded reference: `05-create.md`, section `ps-product-readiness / Instructions`)
-- Deliver: ps-measuring-outcomes (uploaded reference: `06-deliver.md`, section `ps-measuring-outcomes / Instructions`), ps-process-retrospective (uploaded reference: `06-deliver.md`, section `ps-process-retrospective / Instructions`)
-
-##### Note on Repo Fit and Known Deviations
-
-This skill lives in `skills/` but is a cross-phase navigator, not a single canonical play, so it diverges from the repo norm in two places, on purpose and in the open:
-
-1. `blueprint_stage` is `All`. The enum expects one of the five phases; this skill spans them. Resolve deliberately if the enum must hold.
-2. Step 1 leads with help, not the standard scope-confirmation-or-bias-guard opener. The bias guard is kept, but as a silent self-check, because a navigator that opens with an intake form fails the Ruthlessly Distilled principle it teaches.
-
-Its source pages are the front of the canonical playbook (pages 1-3: the Blueprint overview and phase map) in assets/ps_blueprint_advisor_playbook_pages.pdf (source material, not included in this upload kit), distilled into reference/blueprint-stages.md (uploaded reference: `01-playbook-navigator.md`, section `ps-blueprint-advisor / Reference blueprint-stages`).
-
-Maintainer housekeeping still open: wire bi-directional references on the routed plays, and run the 8-check QA protocol in [informative-documents/skill-qa-protocol.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-qa-protocol.md).
-
 ### ps-blueprint-advisor / Template
-
-### Audit Scaffold (Audit mode)
 
 Working scaffold for pressure-testing a decision, roadmap, or artifact against the five Optimal Product Process Principles. Fill the brackets. Lead with violations.
 
-#### Under Review
+##### Under Review
 
 `[one or two sentences: the decision, roadmap, or artifact being audited]`
 
 > Quality check: state a real decision with a commitment attached, not a vague intention. If there is no commitment at stake, this is Coach or Navigate, not Audit.
 
-#### Verdict by Principle
+##### Verdict by Principle
 
 Each line: principle, verdict (holds / at risk / violated), evidence from the input.
 
@@ -402,7 +305,7 @@ Each line: principle, verdict (holds / at risk / violated), evidence from the in
 
 > Quality check: every verdict cites specific evidence from the input, not a general observation. Name the canonical principle, not a phase-level expression.
 
-#### Smallest Fixes (violations first)
+##### Smallest Fixes (violations first)
 
 For each violated or at-risk principle, the smallest change that returns it to holding.
 
@@ -411,70 +314,42 @@ For each violated or at-risk principle, the smallest change that returns it to h
 
 > Quality check: a fix is an action the team can take this week, not a restatement of the problem.
 
-#### Orphan Flags (if relevant)
+##### Orphan Flags (if relevant)
 
 `[Guardrails / Cross-Functional Ownership / Transparency, only if the decision clearly raises one]`
 
 > Capacity: keep this to open questions for the Productside team. Do not score orphans as if they were canonical principles.
 
-#### Lead Action
+##### Lead Action
 
 `[the single next step, usually the fix for the most damaging violation]`
 
 ### ps-blueprint-advisor / Examples
 
-### Worked Examples: ps-blueprint-advisor
+Illustrative and fictional, not customer evidence.
 
-Three examples in one operational domain, following the Productside three-example pattern: a strong Navigate diagnosis, a weak one, and a named drift-bug. Same scenario throughout so the failure modes are isolable.
+- **Strong:** Dispatchers have not adopted route optimization. Review Deliver signals and return to discovery before planning version two.
+- **Weak:** Accepting the requested version-two roadmap assumes the solution before diagnosing the adoption problem.
+- **Drift to avoid:** Principle drift: presenting a phase-specific theme as a sixth canonical principle. Use the five canonical principles and label unresolved themes.
 
-**Domain and scenario (constant across all three):** A field service software company sells dispatch and work-order software to HVAC service businesses. The customer is the dispatcher who assigns technicians to jobs. The team shipped a route-optimization feature ten weeks ago to 60 accounts. Adoption is flat and two mid-size accounts have hinted they may not renew. Leadership wants a "v2 route-optimization roadmap" next week.
 
----
+#### Common Pitfalls
 
-#### Strong Example
+- **Process Theater on a Simple Question:** Help first. Answer the question, keep the diagnosis under the surface, and ask at most one natural question if it genuinely changes the answer. Reserve the full guided flow for when the user asks for it or the request is genuinely broad.
 
-**Advisor:**
+- **Answering Blind Instead of Weaving In the One Thing That Matters:** The fix is not to refuse and interrogate, and it is not to answer blind. Give real help and fold in the single check that changes it, in one natural sentence, the way a good colleague would.
 
-First, the customer here is the **dispatcher**, not a software engineer, and the team is a product team serving service businesses, so the diagnosis stays in the dispatcher's workflow.
+- **Routing to Plays the User Does Not Have:** Treat play names as optional pointers. Give the gist of each in a line, make the advice stand on its own, and offer to do the work inline.
 
-You are in **Deliver**, straddling back into **Discover + Investigate**. You have a live feature producing signal (Deliver), but flat adoption plus renewal risk means the problem this feature was meant to solve is not settled (Discover).
+- **Citing Phase-Level Principles as if They Were Canonical:** Name the canonical principle first (Ruthlessly Distilled), then its phase expression (Segment Ruthlessly).
 
-*What good looks like in Deliver:* evaluate post-launch metrics and make a reinvest-or-retire decision, and keep discovery continuous. You are doing the first half, not the second.
+- **Assuming a Software Team Serving Software Users:** Run the silent assumption check in Step 1. Name the actual customer role and team composition, and let them shape the phase call and the routing.
 
-*What bad looks like here:* jumping to a v2 roadmap before you know why dispatchers are not adopting route optimization. That is treating a roadmap as the answer to a question you have not asked.
+- **Forcing a Linear Sequence:** Allow straddling. Name both phases, then prioritize the one carrying the highest unresolved risk.
 
-*Governing principle:* **Feedback Driven** (Learning Never Stops). Flat adoption is the feedback. A v2 built before you understand it is a guess with a timeline.
+- **Absorbing Orphan Themes Silently:** Surface orphans as labeled open decisions, never scored as canonical principles.
 
-*Next plays:*
-1. `ps-measuring-outcomes` to separate whether this is a discovery problem (dispatchers do not want it), an activation problem (they cannot find or trust it), or a wrong-segment problem.
-2. `ps-empathy-interviews` with three low-adoption dispatchers this week, because the usage data will not tell you why they route by hand.
-3. Only then `ps-outcome-roadmap` for the v2, anchored to a measured dispatcher outcome, not a feature list.
-
-**Why it works:** it confirms the real customer before diagnosing, names both phases honestly rather than forcing one, cites the canonical principle before the tactic, and routes to real ps- plays each with a reason.
-
----
-
-#### Weak Example
-
-**Advisor:**
-
-You are in **Create**, since you need a v2 roadmap. Run `ps-outcome-roadmap` to lay out the next quarter of route-optimization features, and use a prioritization pass to rank them. That will give leadership what they asked for.
-
-**Why it fails:** plausibly wrong, not obviously bad. It accepts leadership's framing ("we need a roadmap") as the phase call and lands on Create, when the flat adoption and renewal risk put the team in Deliver looping into Discover. It never asks why adoption is flat, so it routes straight to planning on top of an unvalidated feature. The failure mode is **taking the requested deliverable as the diagnosis** instead of diagnosing the situation. Fix direction: diagnose from the situation (adoption, renewal risk), not from the artifact the stakeholder named.
-
----
-
-#### Drift Bug: Phase-Level Principle Asserted as Canonical
-
-**Advisor:**
-
-You are in Deliver moving into Discovery. The principle that applies here is **Health Is Managed Proactively**, so watch your adoption and retention metrics closely, and also **Learning Never Stops** and **Customer Advocacy Is Ongoing**. Keep an eye on all three as you plan v2.
-
-**Why it fails and how it differs from the weak example:** the phase call is actually right, so this is not the weak example's mistake. The failure is different and more specific. It cites three **phase-level** principles (Health Is Managed Proactively, Customer Advocacy Is Ongoing) as if they were the operative principles, and never grounds them in the canonical five. This is the exact drift the skill exists to prevent: principles multiply, the memorable five vanish, and the advice becomes an unmemorable list. Named failure mode: **principle proliferation, five ignored.** Fix direction: lead with the canonical principle, **Feedback Driven**, then, only if useful, note its phase expression (Learning Never Stops). One principle named correctly beats three named loosely.
-
-### ps-blueprint-advisor / Reference blueprint-stages
-
-### Blueprint Phases and Principles (Reference)
+#### Blueprint Reference
 
 Knowledge base for ps-blueprint-advisor. Single source of truth the skill reads from. The five principles stay canonical; the phases inherit from them.
 
@@ -603,3 +478,8 @@ These phase-level themes do not ladder up to the five. Do not silently absorb th
 3. **Transparency in Decision-Making and Outcomes**, appears in Discover + Investigate and Deliver. Arguably a practice serving Feedback Driven and Outcome Obsessed rather than a standalone principle.
 
 The advisor surfaces these when relevant but never asserts them as canonical. That decision belongs to the Productside team.
+
+
+#### References
+
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-blueprint-advisor) for supporting source material and expanded examples.

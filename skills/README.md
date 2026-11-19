@@ -1,10 +1,12 @@
 # Skills
 
-A skill gives your AI assistant instructions for working through a Productside Playbook Play with you. Choose one below. Each folder includes the instructions, a working template, examples, prompts, and source excerpts.
+A skill gives your AI assistant instructions for working through a Productside Playbook Play with you. Choose one below. Each Play folder contains only `SKILL.md`, with instructions, a working template, compact examples, and quality checks in that file.
 
-For a chat, attach the chosen skill's `SKILL.md` and `template.md`, then describe your product and the help you need. Ask: "Walk me through this one question at a time."
+For a chat, attach the chosen Play's `SKILL.md`, then describe your product and the help you need. Ask: "Walk me through this one question at a time."
 
 For an agent tool that supports skill folders, use the complete `ps-...` folder and follow that tool's installation instructions.
+
+For copy-and-paste prompts, use the separate [prompt collection](../prompts/README.md). No prompts or source PDFs are duplicated inside the skill folders.
 
 25 skills cover all 24 numbered Plays, plus a Blueprint navigator and Storyboarding. The Outcome Tree covers two numbered Plays. Numbers follow the November 2026 B2B work-in-progress Playbook, which is not yet ratified.
 

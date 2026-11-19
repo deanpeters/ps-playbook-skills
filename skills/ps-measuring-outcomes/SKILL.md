@@ -20,6 +20,7 @@ scenarios:
   - "Help me connect our product analytics to the business outcomes in our Outcome Tree"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Measuring Outcomes dashboard** from the Product Manager's Outcome Tree and product analytics baseline.
@@ -29,6 +30,14 @@ This is a **Deliver phase** skill. It runs after launch, when real data begins t
 The point is not to list every possible metric. The point is to build a focused, regularly updated signal system that tells the PM and senior leadership whether the product is delivering on what it promised. The playbook says this belongs in front of the CEO.
 
 This is a living document, not a one-time artifact. A dashboard that is built at launch and never updated has failed at its job.
+
+### Usage Notes
+
+- Upstream dependency: ps-outcome-tree (Business Outcome and Product Outcome fields)
+- Deliver-phase endpoint: no skills currently feed downstream from this one
+- One product outcome per dashboard; multiple dashboards for multiple outcomes
+- The two-table structure (Product Success Metrics / Product Health Metrics) is load-bearing - do not conflate the tables
+- Baseline data is required before the dashboard is considered active
 
 ## Key Concepts
 
@@ -66,7 +75,7 @@ If a PM only tracks one type, they will be blindsided by the other.
 
 ### The Dashboard Is an Action Trigger, Not Just a Report
 
-Tracking metrics is only the first step. The dashboard's value is realized when the PM and team respond to what the data shows — not just observe it.
+Tracking metrics is only the first step. The dashboard's value is realized when the PM and team respond to what the data shows  -  not just observe it.
 
 When success metrics are not moving in the expected direction, that is a signal to investigate: Is the product being used as intended? Is the customer behavior assumption correct? Does the product outcome itself need revision?
 
@@ -104,64 +113,24 @@ The Playbook casts AI as a **grader of the metrics the PM drafted**. It sorts th
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_measuring_outcomes_playbook_pages.pdf](assets/ps_measuring_outcomes_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -209,7 +178,7 @@ Budget: 15-25 words.
 
 ### Step 5: Identify 3-4 Product Success Metrics
 
-**The PM drafts the metrics; the skill grades them** (mirrors [prompts/01](prompts/01-grade-success-metrics.md)). One metric at a time:
+**The PM drafts the metrics; the skill grades them** (mirrors the critique guidance in this Play). One metric at a time:
 
 1. Ask what customer behavior it captures and how that shows progress toward this specific product outcome.
 2. If it's really a business result (revenue, churn), say so. That is a lagging outcome pointing at the business, not a leading product metric.
@@ -273,128 +242,118 @@ After delivering the artifact, offer three options:
 2. Share the dashboard with senior leadership, including the business outcomes header as context
 3. Connect this dashboard back to the Outcome Tree - if metrics are consistently off-target by Q2, consider whether the product outcome itself needs to be revised
 
+## Template
+
+**Template 22 of 24 | Phase: Deliver | Type: Component**
+
+---
+
+### Header: Business Outcomes and Product Outcome
+
+**Business Outcomes**
+
+> _Copy the Business Outcome verbatim from your Outcome Tree. This is the business-level goal your product is intended to drive - a specific, measurable direction at the organizational level. Budget: 15-25 words._
+
+[Business Outcome from ps-outcome-tree]
+
+**Quality check:** Does this describe a business-level result (revenue, cost, efficiency, retention) with a measurable direction? If it describes what the product does rather than what the business achieves, revise before proceeding.
+
+---
+
+**Product Outcome**
+
+> _Copy the Product Outcome verbatim from your Outcome Tree. This is what the customer achieves through using the product - the specific change in their behavior, capability, or results. Track one product outcome per dashboard. Budget: 15-25 words._
+
+[Product Outcome from ps-outcome-tree]
+
+**Quality check:** Does this describe what the customer achieves, not what the engineering team shipped? If the subject of this sentence is your product or your team rather than your customer, it needs to be reframed.
+
+---
+
+### Section 1: Product Success Metrics
+
+Product Success Metrics measure progress toward the specific product outcome above. Each metric answers: are customers achieving what the product promised them?
+
+| Product Success Metric | Measurement Tool | Baseline Data | Quarterly Update 1 | Quarterly Update 2 | Quarterly Update 3 | Annual Update |
+|---|---|---|---|---|---|---|
+| _[Metric Name: specific directional target. Example: "Reduce Manual Tasks: decrease manual data entry by 40%". Budget: 8-15 words.]_ | _[Name the actual platform or method - Power BI, Celonis, Qualtrics, Salesforce. Not "analytics" or "TBD". Budget: 2-5 words.]_ | _[Current state before or at launch - number, unit, timeframe. Example: "3.2 days average as of Q1 2026". Budget: 3-8 words.]_ | _[Fill post-launch]_ | _[Fill post-launch]_ | _[Fill post-launch]_ | _[Fill post-launch]_ |
+| _[Second success metric. Name specifically - what is being measured and in what direction. Budget: 8-15 words.]_ | _[Measurement tool name. Budget: 2-5 words.]_ | _[Baseline number, unit, timeframe. Budget: 3-8 words.]_ | | | | |
+| _[Third success metric. Cover a different dimension than rows 1 and 2 - time savings, error reduction, volume changes, or quality. Budget: 8-15 words.]_ | _[Measurement tool name. Budget: 2-5 words.]_ | _[Baseline number, unit, timeframe. Budget: 3-8 words.]_ | | | | |
+| _[Optional fourth success metric. Include only if it adds a dimension not covered above. Budget: 8-15 words.]_ | _[Measurement tool name. Budget: 2-5 words.]_ | _[Baseline number, unit, timeframe. Budget: 3-8 words.]_ | | | | |
+
+> **Quality check:** Every metric in this table should change when customers succeed - not when the team ships. If a metric would improve regardless of whether customers are achieving the product outcome, it belongs in the health metrics table or should be removed. Every Measurement Tool cell must name a real tool, not "TBD." Every Baseline Data cell must have a number or a concrete plan to collect one.
+
+---
+
+### Section 2: Product Health Metrics
+
+Product Health Metrics measure the day-to-day operational health of the product. Each metric answers: is the product working well and being used sustainably?
+
+These are different from Product Success Metrics. Success metrics measure outcome progress. Health metrics measure product performance. If your two tables overlap, one of them is misclassified.
+
+| Product Health Metric | Measurement Tool | Baseline Data | Quarterly Update 1 | Quarterly Update 2 | Quarterly Update 3 | Annual Update |
+|---|---|---|---|---|---|---|
+| _[Health metric name and directional target. Examples: "NPS: maintain above 40," "System Uptime: 99.5% or higher," "Churn Rate: under 5% monthly." Budget: 3-8 words.]_ | _[Name the actual tool - Qualtrics, Mixpanel, internal monitoring dashboard. Budget: 2-5 words.]_ | _[Baseline at launch or note if first measurement becomes baseline. Budget: 3-8 words.]_ | _[Fill post-launch]_ | _[Fill post-launch]_ | _[Fill post-launch]_ | _[Fill post-launch]_ |
+| _[Second health metric. Cover a different dimension - satisfaction, reliability, or usage pattern. Budget: 3-8 words.]_ | _[Measurement tool name. Budget: 2-5 words.]_ | _[Baseline number, unit, timeframe. Budget: 3-8 words.]_ | | | | |
+| _[Third health metric. Include at least one early warning indicator - something that would signal deterioration before it becomes a crisis. Budget: 3-8 words.]_ | _[Measurement tool name. Budget: 2-5 words.]_ | _[Baseline number, unit, timeframe. Budget: 3-8 words.]_ | | | | |
+| _[Optional fourth health metric. Include only if it signals something the other rows do not. Budget: 3-8 words.]_ | _[Measurement tool name. Budget: 2-5 words.]_ | _[Baseline number, unit, timeframe. Budget: 3-8 words.]_ | | | | |
+
+> **Quality check:** Every metric in this table should measure how the product performs operationally - not what customers achieve through it. If a health metric and a success metric are measuring the same thing, one is misclassified. Include at least one metric that would signal deterioration, not just metrics that track improvement.
+
+---
+
+### Metric Tension Review
+
+Before sharing this dashboard, check for patterns where improving one metric could put pressure on another:
+
+- Are any success metrics likely to improve in ways that strain health metrics? (Example: pushing volume throughput could increase error rates)
+- Are any health metrics likely to decline if success metrics are pushed aggressively? (Example: accelerating onboarding pace could lower CSAT)
+
+_[Note any tensions observed between your two tables. If none are apparent at launch, flag this as something to watch in Q1. A dashboard that never surfaces tension either has no tension to surface, or is not being read carefully enough.]_
+
+---
+
+### Update Cadence
+
+First quarterly update due: [date]
+
+Owner responsible for pulling data: [name and role]
+
+This dashboard is shared with: [audience - including leadership level]
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For utility field maintenance, track customer repair turnaround as a success metric and service reliability as a distinct health metric; identify baselines and measurement tools.
+- **Weak:** "Customers are happier" cannot be tracked consistently without a defined measure.
+- **Drift to avoid:** Outputs as outcomes: number of features shipped does not show whether technicians resolve faults more effectively.
 
-- a strong dashboard with clearly distinct success and health metrics, named tools, established baselines, and a metric tension note
-- a weak version with generic metric names, no measurement tools, no baseline data, and indistinguishable tables
-- a drift-bug example where success metrics have drifted to tracking engineering outputs instead of customer outcomes, with commentary on how to fix it
 
 ## Common Pitfalls
 
-### Pitfall 1: Success Metrics and Health Metrics That Are the Same Thing
+- **Success Metrics and Health Metrics That Are the Same Thing:** Before finalizing, ask: "Do these two tables measure categorically different things?" Success metrics should describe what customers achieve. Health metrics should describe how the product performs operationally. If the two tables could be merged without losing anything, the distinction has not been made.
 
-**Symptom:** Both tables contain similar metrics - user satisfaction appears in both, or process time appears in both under different names.
+- **Generic Metric Names:** Use the pattern: `[Metric Name]: [specific directional target]`. "Efficiency" becomes "Reduce Cycle Time: decrease average order processing time from 3.2 days to under 1 day." The metric name should tell someone exactly what to measure and what the target is.
 
-**Consequence:** The two-table structure provides no useful signal. When one table trends up and the other trends down, the PM cannot tell which is the real story because the metrics are not measuring different dimensions.
+- **No Baseline Data:** Baseline data collection is a prerequisite for the dashboard, not an afterthought. If data is not yet available, identify what needs to be done to collect it before the dashboard is considered active.
 
-**Fix:** Before finalizing, ask: "Do these two tables measure categorically different things?" Success metrics should describe what customers achieve. Health metrics should describe how the product performs operationally. If the two tables could be merged without losing anything, the distinction has not been made.
+- **Measurement Tool Left Blank or Written as "TBD":** Name the actual tool before the dashboard is shared with leadership. If the tool genuinely does not exist yet, establishing it is a prerequisite for the dashboard - not a follow-on task.
 
-### Pitfall 2: Generic Metric Names
+- **Metrics That Measure Outputs Instead of Outcomes:** Ask "Does this metric change when customers succeed, or does it change when the team ships?" Output metrics change when the team does something. Outcome metrics change when customers achieve something. Keep outcome metrics in the success table. Move output metrics out entirely or into a separate engineering dashboard.
 
-**Symptom:** Metrics are named "Efficiency," "User Satisfaction," "Adoption," or "Performance."
+- **Only Positive Metrics Tracked:** Include at least one metric per table that would signal deterioration: error rate, churn, support ticket volume, CSAT decline. These should be in the health metrics table by design.
 
-**Consequence:** These names cannot be tracked, compared quarter to quarter, or presented to leadership with credibility. They measure nothing because they name nothing.
+- **Dashboard Built Once and Never Updated:** Before the session ends, name a date for the first quarterly update and the person responsible for pulling the data. Add it to a recurring calendar event. The dashboard is not complete until the update cadence is established.
 
-**Fix:** Use the pattern: `[Metric Name]: [specific directional target]`. "Efficiency" becomes "Reduce Cycle Time: decrease average order processing time from 3.2 days to under 1 day." The metric name should tell someone exactly what to measure and what the target is.
+- **Too Many Metrics:** Limit to 3-4 metrics per table, for a total of 6-8 signals. If a metric is not connected to the product outcome or operational health, it does not belong here. Stakeholder-specific metrics belong in stakeholder dashboards, not the outcomes dashboard.
 
-### Pitfall 3: No Baseline Data
+- **Business Outcomes Disguised as Product Success:** Keep business results with the business outcome. For each, ask which customer behavior should move first, and measure that.
 
-**Symptom:** The Baseline Data column is blank, marked "TBD," or contains a vague description ("currently high error rates").
+- **Health Metrics Posing as Success:** Move operational guardrails to the health table. Success metrics are customer behaviors that lead the outcome.
 
-**Consequence:** All future quarterly updates are uninterpretable. There is no starting point against which to measure change. After two quarters, the PM cannot tell whether the metric moved, or moved enough, or in the right direction.
-
-**Fix:** Baseline data collection is a prerequisite for the dashboard, not an afterthought. If data is not yet available, identify what needs to be done to collect it before the dashboard is considered active.
-
-### Pitfall 4: Measurement Tool Left Blank or Written as "TBD"
-
-**Symptom:** The Measurement Tool column contains "TBD," "analytics," "to be determined," or is left empty.
-
-**Consequence:** No one will collect the data. A metric with no named tool is aspirational, not operational. At Q1 review, the column will still be blank.
-
-**Fix:** Name the actual tool before the dashboard is shared with leadership. If the tool genuinely does not exist yet, establishing it is a prerequisite for the dashboard - not a follow-on task.
-
-### Pitfall 5: Metrics That Measure Outputs Instead of Outcomes
-
-**Symptom:** Success metrics include things like "Features shipped: 12 per quarter," "API response time: under 200ms," or "Deployments: weekly cadence."
-
-**Consequence:** The dashboard tells the engineering team they are busy, but tells no one - including the PM - whether customers are achieving anything. These are output metrics, not outcome metrics.
-
-**Fix:** Ask "Does this metric change when customers succeed, or does it change when the team ships?" Output metrics change when the team does something. Outcome metrics change when customers achieve something. Keep outcome metrics in the success table. Move output metrics out entirely or into a separate engineering dashboard.
-
-### Pitfall 6: Only Positive Metrics Tracked
-
-**Symptom:** Every metric in both tables is a positive trend signal. There are no early warning indicators for when things go wrong.
-
-**Consequence:** The dashboard cannot distinguish between "everything is fine" and "we have not yet caught the problem." By the time a negative trend is visible in positive-only dashboards, it is usually too late to intervene before a leadership conversation.
-
-**Fix:** Include at least one metric per table that would signal deterioration: error rate, churn, support ticket volume, CSAT decline. These should be in the health metrics table by design.
-
-### Pitfall 7: Dashboard Built Once and Never Updated
-
-**Symptom:** The dashboard is completed at launch, shared with leadership, and then not revisited. The quarterly columns remain blank indefinitely.
-
-**Consequence:** The entire investment in building the dashboard is wasted. A static artifact cannot surface metric tensions, track outcome progress, or inform product decisions.
-
-**Fix:** Before the session ends, name a date for the first quarterly update and the person responsible for pulling the data. Add it to a recurring calendar event. The dashboard is not complete until the update cadence is established.
-
-### Pitfall 8: Too Many Metrics
-
-**Symptom:** The dashboard tracks 10-15 metrics across both tables. Every stakeholder's preferred signal has been included.
-
-**Consequence:** No single metric carries enough weight to drive a decision. The quarterly review becomes a data dump. Leadership cannot identify which signals matter most.
-
-**Fix:** Limit to 3-4 metrics per table, for a total of 6-8 signals. If a metric is not connected to the product outcome or operational health, it does not belong here. Stakeholder-specific metrics belong in stakeholder dashboards, not the outcomes dashboard.
-
-### Pitfall 9: Business Outcomes Disguised as Product Success
-
-**Symptom:** The success table lists "Increase revenue 15%," "Reduce churn to 5%," "Grow ARR."
-
-**Consequence:** These lag. By the time they move, the quarter is over, and they can't tell the team whether customers are behaving the way the product outcome predicts. Customer behavior is never measured.
-
-**Fix:** Keep business results with the business outcome. For each, ask which customer behavior should move first, and measure that.
-
-### Pitfall 10: Health Metrics Posing as Success
-
-**Symptom:** "99.9% uptime" or "API latency under 200ms" sits in the success table.
-
-**Consequence:** Plumbing is mistaken for value. The product can run perfectly while customers' behavior never changes.
-
-**Fix:** Move operational guardrails to the health table. Success metrics are customer behaviors that lead the outcome.
-
-### Pitfall 11: AI Picks the Metrics
-
-**Symptom:** The PM asks "what should we measure?" and adopts the list. The metrics sound right, but no one on the team chose them or knows how they'd be collected.
-
-**Consequence:** Nobody owns the metrics, and the dashboard tracks the model's idea of the outcome rather than the team's.
-
-**Fix:** The PM drafts; the skill grades each metric and widens the options. Suggested metrics are candidates the PM accepts or rejects.
+- **AI Picks the Metrics:** The PM drafts; the skill grades each metric and widens the options. Suggested metrics are candidates the PM accepts or rejects.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - outcomes dashboard scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (1: grade your success metrics)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-outcome-tree](../ps-outcome-tree/SKILL.md) - Business Outcomes and Product Outcome fields come from here; do not invent new outcomes for this dashboard
-- **Downstream:** this is a Deliver-phase endpoint; no skills currently feed from it
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_measuring_outcomes_playbook_pages.pdf](assets/ps_measuring_outcomes_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 101-105: Template 22 of 24 there, with the AI overview on slide 103 and prompt on slide 104. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-measuring-outcomes) for supporting source material and expanded examples.

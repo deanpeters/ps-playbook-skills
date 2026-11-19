@@ -23,6 +23,7 @@ scenarios:
   - "Help me run a prioritization session with the team using a four-quadrant grid"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Output Prioritization artifact** from a collaborative team review of candidate product outputs.
@@ -34,6 +35,15 @@ The point is not to build everything eventually. The point is to help the team m
 The skill works in two moments. **Before the session**, it prepares the PM to facilitate: the center-point anchor, the moves that keep value and cost honest, and rehearsal for the hard personalities. **After the session**, it records the room's placements in the four-quadrant artifact and checks them. It does not rank the outputs itself.
 
 This is a team exercise. It is not a solo PM exercise. Customer value requires discovery data or validated insight. Business cost requires input from engineering, a project manager, or a technical lead. A solo prioritization session produces outputs ranked by the PM's assumptions, not by evidence.
+
+### Usage Notes
+
+- This skill is a component (content-fill) skill producing a paste-ready four-quadrant artifact.
+- **Two moments:** before the session, it prepares the PM to facilitate (center-point anchor, moves against inflation, rehearsal of hard personalities). After the session, it records the room's placements and checks them. It does not rank the outputs itself.
+- Center point anchoring is required before any other classification. Skipping it produces inflation.
+- Value is always customer value. Business metrics on the value axis are the primary drift bug.
+- Cost classification requires engineering or project manager input. PM-only cost estimates are not sufficient.
+- Downstream: Quadrant I outputs feed the Outcome-Based Roadmap (Template 17) as "Outputs to Develop."
 
 ## Key Concepts
 
@@ -108,64 +118,24 @@ The Playbook casts AI as a **facilitation coach**. It rehearses the session with
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_output_prioritization_playbook_pages.pdf](assets/ps_output_prioritization_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -213,7 +183,7 @@ Aim for completeness. A prioritization exercise with only three candidates is no
 
 ### Step 4: Prepare to Facilitate the Session (Default)
 
-Unless the PM is returning with the room's placements, prepare them to lead the session (mirrors [prompts/01](prompts/01-rehearse-prioritization-session.md)). Do not rank, plot, or score the outputs, and do not pick the top items.
+Unless the PM is returning with the room's placements, prepare them to lead the session (mirrors the critique guidance in this Play). Do not rank, plot, or score the outputs, and do not pick the top items.
 
 1. **Pressure-test the PM's center-point pick** (Step 5). Is it genuinely middle of the road on both value and cost? If not, help them reason toward a better anchor. They choose it.
 2. **Walk the session:** place the anchor first, then have the group plot every other output relative to it.
@@ -303,122 +273,148 @@ After delivering the artifact, offer three options:
 2. Place Quadrant II outputs in "Output Concepts to Validate" and run ps-lofi-experimentation on the highest-uncertainty ones
 3. Share the classification with stakeholders to surface any Quadrant IV items that carry political weight and document the tradeoff decision explicitly
 
+## Template
+
+Use this scaffold to produce a paste-ready four-quadrant output prioritization artifact in Productside format.
+
+Complete all four sections in order. Do not skip the center point step - it is required for valid quadrant placements.
+
+---
+
+### Section 1: Identify Outputs
+
+List all candidate outputs (features, capabilities) that could be developed as part of the solution. This is a brainstorm - do not filter or rank yet. Include everything the team has proposed.
+
+**Product or initiative:** [name of the product or feature set being prioritized]
+**Customer role:** [who the product is built for - the person who uses or buys it]
+**Session participants:** [names and roles of everyone involved in this classification]
+**Date:** [date of session]
+
+**Candidate outputs:**
+
+- [Output 1: short name, 3-8 words]
+- [Output 2: short name, 3-8 words]
+- [Output 3: short name, 3-8 words]
+- [Output 4: short name, 3-8 words]
+- [Output 5: short name, 3-8 words]
+- [Output 6: short name, 3-8 words]
+- [Add additional outputs as needed]
+
+> **Quality check:** Does every item name a specific, buildable feature or capability? Remove anything that is an outcome ("faster resolution times"), a goal ("improve user satisfaction"), or a vague category ("better reporting"). Each item should be concrete enough that an engineer could scope it.
+
+---
+
+### Section 2: Center Point Output
+
+The team must agree on one output that is medium cost and medium value - the anchor for all other placements. All other outputs will be classified relative to this center point.
+
+**Center point output:** [name the output]
+
+**Why this is medium/medium:** [1-2 sentences explaining why the team agreed this output represents neither extreme on value or cost - not the most impactful for the customer, not the most expensive to build]
+
+> **Quality check:** Did the whole team agree on this anchor, or did the PM choose it alone? The center point requires team agreement. If only one person chose it, revisit before proceeding.
+
+---
+
+### Section 3: Four Quadrant Classification
+
+Classify each candidate output (except the center point) by Value and Cost relative to the center point. Then assign each to a quadrant.
+
+**Quadrant layout reference:**
+- Quadrant I: High Value, Low Cost (upper right) - start here
+- Quadrant II: High Value, High Cost (upper left) - plan carefully
+- Quadrant III: Low Value, Low Cost (lower right) - deprioritize
+- Quadrant IV: Low Value, High Cost (lower left) - avoid or cut
+
+| Output | Value (H/M/L) | Value Rationale | Cost (H/M/L) | Cost Rationale | Quadrant | Priority |
+|--------|--------------|-----------------|-------------|----------------|----------|----------|
+| [Center point output] | M | Anchor - all other outputs are relative to this | M | Anchor - all other outputs are relative to this | Center | Reference |
+| [Output 2] | [H/M/L] | [1-2 sentence customer-outcome rationale] | [H/M/L] | [1-2 sentence technical/engineering rationale] | [I/II/III/IV] | [Start / Plan / Deprioritize / Cut] |
+| [Output 3] | [H/M/L] | [1-2 sentence customer-outcome rationale] | [H/M/L] | [1-2 sentence technical/engineering rationale] | [I/II/III/IV] | [Start / Plan / Deprioritize / Cut] |
+| [Output 4] | [H/M/L] | [1-2 sentence customer-outcome rationale] | [H/M/L] | [1-2 sentence technical/engineering rationale] | [I/II/III/IV] | [Start / Plan / Deprioritize / Cut] |
+| [Output 5] | [H/M/L] | [1-2 sentence customer-outcome rationale] | [H/M/L] | [1-2 sentence technical/engineering rationale] | [I/II/III/IV] | [Start / Plan / Deprioritize / Cut] |
+| [Output 6] | [H/M/L] | [1-2 sentence customer-outcome rationale] | [H/M/L] | [1-2 sentence technical/engineering rationale] | [I/II/III/IV] | [Start / Plan / Deprioritize / Cut] |
+
+> **Quality check:** Review the Value column. Does every rationale name a customer benefit or a product outcome - not a business benefit, not an internal metric? If any rationale says "this will drive upsell" or "this will help sales," it is measuring business value, not customer value. Rewrite before finalizing. Review the Cost column. Did engineering or a project manager provide input on cost estimates, or is this PM intuition? Flag any row where cost was estimated without a technical voice.
+
+---
+
+### Section 4: Quadrant Summary and Action Guidance
+
+Organize outputs by quadrant and document the action for each.
+
+**Quadrant I - Start Here (Low Cost, High Value)**
+
+| Output | Product Outcome Supported |
+|--------|--------------------------|
+| [Output name] | [Name the product outcome this output drives - what does the customer achieve?] |
+| [Output name] | [Name the product outcome this output drives] |
+
+Action: Prioritize these outputs for the first development cycle. Carry them into the Outcome-Based Roadmap as "Outputs to Develop."
+
+**Quadrant II - Plan Carefully (High Cost, High Value)**
+
+| Output | Key Assumption to Validate | Recommendation |
+|--------|---------------------------|----------------|
+| [Output name] | [What assumption about value or cost needs to be validated before committing?] | [Lo-fi experiment / further technical sizing / staged delivery] |
+
+Action: Do not commit these to the build plan until the key assumption is validated. Place them in "Output Concepts to Validate" in the roadmap. Consider ps-lofi-experimentation for the highest-uncertainty items.
+
+**Quadrant III - Deprioritize (Low Cost, Low Value)**
+
+- [Output name] - Deferred. Easy to build but does not drive meaningful customer progress at this stage.
+- [Output name] - Deferred. Revisit if a product outcome changes or new discovery reveals higher value.
+
+Action: Remove from the current cycle. Do not build these because they are cheap - build them only if customer evidence improves the value case.
+
+**Quadrant IV - Avoid or Cut (High Cost, Low Value)**
+
+- [Output name] - Cut. Poor return on investment. [Note any stakeholder tradeoff that needs to be surfaced explicitly.]
+- [Output name] - Cut. [Note any dependencies or cleanup required.]
+
+Action: Do not schedule. If stakeholders press to keep these, document the specific Quadrant I or II investment that would be displaced and ask for an explicit decision.
+
+> **Quality check:** Is every output placed in exactly one quadrant? Is at least one output in Quadrant IV actually cut, not just deferred? If the entire list landed in Quadrant I and II, the classification has not done its job - revisit the center point and recheck the value rationales.
+
+---
+
+**Next Steps**
+
+1. Feed Quadrant I outputs into the Outcome-Based Roadmap (Template 17) as "Outputs to Develop"
+2. Move Quadrant II outputs to "Output Concepts to Validate" and plan validation for the highest-uncertainty items
+3. Share the full classification with stakeholders to surface any Quadrant IV political items and document the tradeoff decisions
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** A care-coordination team compares candidate outputs against an agreed center-point output using relative customer value and business cost; the room records its judgments.
+- **Weak:** Unanchored scores appear precise while participants use different scales.
+- **Drift to avoid:** Value as revenue: do not replace customer value with business revenue impact or invent the team's placements.
 
-- a strong classification with genuine spread across quadrants, Quadrant I outputs linked to product outcomes, and Quadrant IV outputs actually cut
-- a weak version where all outputs are rated high value, no center point is established, and classifications are made without engineering input or customer data
-- a drift-bug example where value is defined as business revenue impact rather than customer outcome impact, producing a ranking that serves internal priorities rather than customer needs
 
 ## Common Pitfalls
 
-### Pitfall 1: Defining Value from the Business Perspective
+- **Defining Value from the Business Perspective:** Before classifying any output, re-read the product outcomes from the Outcome Tree. Each value classification must name what the customer achieves. If the rationale names only what the business gains, rewrite it from the customer's perspective.
 
-**Symptom:** Value classifications reference revenue potential, upsell opportunity, investor appeal, or internal cost savings rather than customer outcome impact.
+- **Skipping the Center Point Anchor:** Name the center point output first. Get team agreement before any other classification begins. All subsequent placements are relative to that anchor.
 
-**Consequence:** Outputs that are most beneficial to the business rank higher than outputs that most relieve customer pain or drive customer progress. The product delivers for the business but underserves the customer - and adoption suffers.
+- **Running This Without Engineering Input on Cost:** Do not finalize cost classifications without a technical voice. At minimum, run a rough sizing conversation with an engineering lead or project manager before locking the grid.
 
-**Fix:** Before classifying any output, re-read the product outcomes from the Outcome Tree. Each value classification must name what the customer achieves. If the rationale names only what the business gains, rewrite it from the customer's perspective.
+- **Confusing Outputs with Outcomes:** Every item on the candidate list must be a concrete, buildable thing: a specific feature, integration, interface, or capability. If the team is listing outcomes, redirect to the Outcome Tree (ps-outcome-tree) and then ask: what outputs could be built to drive that outcome?
 
-### Pitfall 2: Skipping the Center Point Anchor
+- **Treating Quadrant II as "Do Next" Without Validation:** For every Quadrant II output, name the key assumptions about value that need to be validated before committing to the full build. Consider lo-fi experimentation (ps-lofi-experimentation) for high-uncertainty Quadrant II items before the development commitment is made.
 
-**Symptom:** The team classifies each output as High, Medium, or Low on absolute scales without agreeing on a shared reference point.
+- **Never Cutting Quadrant IV Outputs:** Document the Quadrant IV designation explicitly and surface the tradeoff to the stakeholder. "We can build this, but it will displace [specific Quadrant I output] that [customer outcome]. Is that the right call?" Force the explicit decision rather than letting Quadrant IV items survive by default.
 
-**Consequence:** "High value" means different things to different people on the team. Everything trends toward High Value because no one wants to downgrade their preferred feature. The grid fills up in the upper half and prioritization is impossible.
+- **Treating Quadrant Positions as Permanent:** Treat the grid as a living artifact. Revisit it when cost estimates change significantly (after technical investigation), when discovery reveals new information about customer value, or when the solution hypothesis changes.
 
-**Fix:** Name the center point output first. Get team agreement before any other classification begins. All subsequent placements are relative to that anchor.
+- **Using Internal Metrics as Value:** For each value classification, ask: how does this output change what the customer can achieve? If the answer is only about internal operations, the classification is measuring the wrong thing. A support ticket reduction is only customer value if it means the customer gets unblocked faster - and that customer impact should be the stated rationale.
 
-### Pitfall 3: Running This Without Engineering Input on Cost
+- **AI Does the Ranking:** Prepare the PM to facilitate (Step 4). The room plots relative to the anchor, tech scopes cost, and the PM and stakeholders decide. The skill records and checks the result.
 
-**Symptom:** The PM classifies all costs alone, using judgment about what "seems" expensive.
-
-**Consequence:** Cost estimates are wrong. Cheap-looking outputs turn out to be expensive due to integration complexity or technical debt. Expensive-looking outputs may be straightforward. The grid is misleading and the roadmap it generates is unworkable.
-
-**Fix:** Do not finalize cost classifications without a technical voice. At minimum, run a rough sizing conversation with an engineering lead or project manager before locking the grid.
-
-### Pitfall 4: Confusing Outputs with Outcomes
-
-**Symptom:** The candidate list contains items like "increased retention," "better user experience," or "faster time to value." These are outcomes, not outputs.
-
-**Consequence:** The team is not actually prioritizing what to build - they are prioritizing goals. The grid cannot function because outcomes cannot be placed on a development cost axis.
-
-**Fix:** Every item on the candidate list must be a concrete, buildable thing: a specific feature, integration, interface, or capability. If the team is listing outcomes, redirect to the Outcome Tree (ps-outcome-tree) and then ask: what outputs could be built to drive that outcome?
-
-### Pitfall 5: Treating Quadrant II as "Do Next" Without Validation
-
-**Symptom:** Quadrant II outputs (High Value, High Cost) are moved directly into the sprint plan alongside Quadrant I outputs, without additional investigation.
-
-**Consequence:** The team commits significant capacity to high-cost builds whose value assumptions have not been validated. When the output ships and adoption is weak, the team discovers the value was overestimated - too late.
-
-**Fix:** For every Quadrant II output, name the key assumptions about value that need to be validated before committing to the full build. Consider lo-fi experimentation (ps-lofi-experimentation) for high-uncertainty Quadrant II items before the development commitment is made.
-
-### Pitfall 6: Never Cutting Quadrant IV Outputs
-
-**Symptom:** The team acknowledges that certain outputs are High Cost and Low Value but keeps them on the list because a stakeholder "really wants it" or because the feature was promised.
-
-**Consequence:** Capacity is drained by outputs that deliver poor customer value. Quadrant I and II investments are deferred to accommodate Quadrant IV items.
-
-**Fix:** Document the Quadrant IV designation explicitly and surface the tradeoff to the stakeholder. "We can build this, but it will displace [specific Quadrant I output] that [customer outcome]. Is that the right call?" Force the explicit decision rather than letting Quadrant IV items survive by default.
-
-### Pitfall 7: Treating Quadrant Positions as Permanent
-
-**Symptom:** The team runs this exercise once and treats the quadrant placements as fixed for the life of the product.
-
-**Consequence:** Cost estimates that were based on incomplete technical knowledge remain unchanged even after the team learns the true scope. Value estimates that were based on assumptions remain unchanged even after discovery reveals the customer does not care about that output.
-
-**Fix:** Treat the grid as a living artifact. Revisit it when cost estimates change significantly (after technical investigation), when discovery reveals new information about customer value, or when the solution hypothesis changes.
-
-### Pitfall 8: Using Internal Metrics as Value
-
-**Symptom:** Value classifications cite internal business metrics: "this output will reduce support tickets by 20%," "this output will accelerate our sales cycle," "this output will improve the demo."
-
-**Consequence:** The product gets built to serve internal teams rather than the customer. Support cost reduction is a valid business goal, but it is not the same as customer value. A feature that reduces support tickets may or may not reduce customer pain.
-
-**Fix:** For each value classification, ask: how does this output change what the customer can achieve? If the answer is only about internal operations, the classification is measuring the wrong thing. A support ticket reduction is only customer value if it means the customer gets unblocked faster - and that customer impact should be the stated rationale.
-
-### Pitfall 9: AI Does the Ranking
-
-**Symptom:** The PM pastes the feature list and asks which to build first. The agent sorts it into quadrants, and its top three become the plan.
-
-**Consequence:** There's no real cost data and no buy-in behind the ranking. The team never weighs in, and the PM can't defend the ranking when a stakeholder pushes back.
-
-**Fix:** Prepare the PM to facilitate (Step 4). The room plots relative to the anchor, tech scopes cost, and the PM and stakeholders decide. The skill records and checks the result.
-
-### Pitfall 10: Everything Wins
-
-**Symptom:** Each output is rated on its own merits, and almost all of them land high-value. Cost is waved away rather than scoped. Nothing gets cut.
-
-**Consequence:** The four-quadrant grid becomes one crowded quadrant, and the prioritization decides nothing.
-
-**Fix:** Anchor every placement against the center point. Ask for the outcome and evidence behind each value claim, and make tech scope cost out loud.
+- **Everything Wins:** Anchor every placement against the center point. Ask for the outcome and evidence behind each value claim, and make tech scope cost out loud.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - four-quadrant scaffold with quality checks
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (1: rehearse your prioritization session)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-outcome-tree](../ps-outcome-tree/SKILL.md) provides product outcomes used to evaluate output value; [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) defines the solution being decomposed into candidate outputs
-- **Upstream (optional):** ps-tiny-acts-discovery populates the candidate output list; [ps-empathy-interviews](../ps-empathy-interviews/SKILL.md) and [ps-problem-identification](../ps-problem-identification/SKILL.md) calibrate which customer pains are most severe
-- **Downstream:** Outcome-Based Roadmap (Template 17) - Quadrant I outputs feed "Outputs to Develop"; Quadrant II candidates may feed "Output Concepts to Validate"
-- **Related:** [ps-lofi-experimentation](../ps-lofi-experimentation/SKILL.md) - high-uncertainty Quadrant II outputs are candidates for lo-fi experiments before full build commitment
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_output_prioritization_playbook_pages.pdf](assets/ps_output_prioritization_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 87-91: Template 19 of 24 there, with the AI overview on slide 89 and prompt on slide 90. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-output-prioritization) for supporting source material and expanded examples.

@@ -22,6 +22,7 @@ scenarios:
   - "Help me translate our discovery findings into materials the go-to-market team can use"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Go-to-Market Enablement artifact** that prepares internal teams to execute a product launch.
@@ -108,64 +109,24 @@ The Playbook casts AI as a **critic of the two parts the PM writes fresh here**:
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_go_to_market_playbook_pages.pdf](assets/ps_go_to_market_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -259,7 +220,7 @@ Target length: 60-90 words for the full statement.
 
 ### Step 8: Write Key Messages for Each Persona
 
-**The PM drafts the messages; the skill critiques them** (mirrors [prompts/01](prompts/01-pressure-test-messages.md)). Working one persona at a time:
+**The PM drafts the messages; the skill critiques them** (mirrors the critique guidance in this Play). Working one persona at a time:
 
 1. Confirm there is at least one user and one buyer persona. If not, ask who uses the product and who decides to buy it.
 2. Check each message is a benefit this persona cares about. If it's a feature, ask "so that what?" until the PM reaches the benefit.
@@ -282,7 +243,7 @@ If a bullet could appear in a product spec or a feature announcement ("real-time
 
 ### Step 9: Write Launch Goals
 
-**The PM drafts the goals and sets the targets; the skill questions them** (mirrors [prompts/02](prompts/02-pressure-test-launch-goals.md)). One goal at a time:
+**The PM drafts the goals and sets the targets; the skill questions them** (mirrors the critique guidance in this Play). One goal at a time:
 
 1. Does the goal belong to launch, or to readiness? If it proves the product is ready to ship, say so.
 2. Is it really a launch task (train sales, publish a page)? If so, ask what result that task should produce.
@@ -320,124 +281,222 @@ At the end of the artifact, offer the user three options:
 2. Share with marketing to align on the Positioning Statement as the messaging anchor for launch campaigns
 3. Schedule a launch readiness review with all GTM stakeholders to walk through the artifact together and confirm each function knows what they need to execute
 
+## Template
+
+### When to Use This
+
+Use this template during the **Create phase** after completing positioning, solution hypothesis, and proto-persona work. Run it collaboratively with sales, marketing, and customer support stakeholders before setting the launch timeline.
+
+Upstream artifacts that feed this template:
+- Problem framing (ps-framing-the-problem): provides the five-stem structure to translate into persona voice
+- Solution hypothesis (ps-solution-hypothesis): provides the solution framing for plain-language translation
+- Positioning statement (ps-positioning-statement): provides the seven-element formula to copy verbatim
+- Proto-persona (ps-proto-persona): identifies the personas and their pains for Key Messages and Target Audience
+
+### Template
+
+```markdown
+# Go-to-Market Enablement
+
+## Product Context
+
+- Product or initiative:
+- Launch target date:
+- GTM participants and functions represented:
+- Date prepared:
+
+---
+
+## Section 1: Problem Statement
+
+Write this section in first-person from the customer's perspective.
+Use this scaffold: "I am a [role] [doing/struggling with X]. [Pain]. Because [root cause]. Which makes me feel [emotional consequence]."
+
+[Write the persona-voice Problem Statement here]
+
+> Quality check: Is this written in first-person from the customer's perspective, not as a business case summary?
+> Quality check: Does it name a specific role, a specific pain, a root cause, and an emotional consequence?
+> Quality check: Could a sales representative read this aloud and recognize it as something a customer would actually say?
+> Capacity check: 50-80 words. This is a narrative, not a sentence.
+
+---
+
+## Section 2: Target Audience
+
+Answer these three questions in prose:
+- Who is the target customer?
+- Who are the product personas?
+- What are the target market segments?
+
+[Write the Target Audience paragraph here]
+
+> Quality check: Are the personas the people who use or buy the product - not the PM or the product team?
+> Quality check: Are market segments specific enough to guide a sales territory or a marketing campaign?
+> Capacity check: 30-50 words. This is orientation, not a market analysis.
+
+---
+
+## Section 3: Solution Summary
+
+Write a plain-language description of the product: what it is, what it does, what it improves.
+Do not use the If/Then hypothesis format. Do not use product jargon, technical vocabulary, or PM terminology.
+
+[Write the Solution Summary here]
+
+> Quality check: Could a customer support representative read this aloud to a customer who has never heard of the product?
+> Quality check: Is every technical or PM term translated into plain language a non-PM would understand?
+> Capacity check: 40-60 words.
+
+---
+
+## Section 4: Positioning Statement
+
+Use the seven-element formula verbatim. Do not paraphrase or combine elements. Do not omit the "Unlike" element.
+
+For: [target customer]
+Who: [statement of need or opportunity]
+The: [product name]
+Is a: [product category]
+That: [key benefit - a customer outcome, not a feature]
+Unlike: [primary competitive alternative - name it, including "spreadsheets and manual processes" if that is the real alternative]
+Our product gives: [primary differentiation - outcome language, not feature language]
+
+> Quality check: Does "That" describe what the customer gains, not what the product does?
+> Quality check: Does "Unlike" name a real alternative that customers would actually choose instead?
+> Quality check: Does "Our product gives" use outcome language, not feature language?
+> Quality check: Are all seven elements present and clearly distinct?
+> Capacity check: 60-90 words for the full statement.
+
+---
+
+## Section 5: Key Messages
+
+Complete one row per persona (2-3 personas typical), with at least one user and one buyer. Each bullet answers: what is in it for this person?
+Write benefit statements - what changes for the customer - not feature descriptions - what the product does. Back each persona's messages with proof points they would trust.
+
+| Persona | Key Messages | Proof Points |
+|---------|-------------|--------------|
+| [User persona] | - [Benefit bullet: what changes for this person in their work] | - [Proof this persona would trust, or "To gather: ..."] |
+| | - [Benefit bullet] | - [Proof] |
+| | - [Benefit bullet] | |
+| | - [Benefit bullet] | |
+| [Buyer persona] | - [Benefit bullet] | - [Proof] |
+| | - [Benefit bullet] | - [Proof] |
+| | - [Benefit bullet] | |
+| | - [Benefit bullet] | |
+| [Persona 3 role, if applicable] | - [Benefit bullet] | - [Proof] |
+| | - [Benefit bullet] | |
+| | - [Benefit bullet] | |
+
+> Quality check: Is every bullet written from the customer's perspective on what they gain, not from the product team's perspective on what they built?
+> Quality check: Would these bullets survive the "so what?" test? ("Automated routing" -> so what? -> "no more manual decisions on every order" -> that is a benefit)
+> Quality check: Does each persona row address that persona's specific concerns, not a generic product overview?
+> Quality check: Is there at least one user and one buyer persona? Do their messages differ?
+> Proof check: Is every proof point real (testimonial, pilot result, case study, benchmark)? Mark proof you don't have yet "To gather." Never invent it.
+> Capacity check: 3-5 bullets per persona, 10-15 words each.
+
+---
+
+## Section 6: Launch Goals
+
+Complete 3-4 rows. These are launch-window success metrics, not long-term product success metrics.
+Every Target cell must contain a number or percentage - not "improve" or "increase."
+
+| Goal/Objective | Measure/Metric | Target |
+|----------------|----------------|--------|
+| [Named success area for the launch window] | [Specific thing being measured] | [Number or percentage] |
+| | | |
+| | | |
+| | | |
+
+> Quality check: Is every Target cell numeric or percentage-based? If it says "improve" or "increase," it is not a target.
+> Quality check: Are these launch-window metrics (30-90 days post-launch), not long-term product metrics?
+> Quality check: Is each a launch goal (the market responded), not a readiness goal (ready to ship) or a launch task?
+> Quality check: Does every target rest on a baseline, benchmark, or evidence, with a measure someone can actually collect?
+> Quality check: Is each Goal/Objective a named success area, not a vague aspiration?
+> Capacity check: Goal/Objective ~5-8 words; Measure/Metric ~5-10 words; Target ~3-8 words including the number.
+
+---
+
+## Next Steps
+
+- [ ] Share with sales leadership for Key Messages review
+- [ ] Share with marketing as the messaging anchor for launch campaigns
+- [ ] Schedule launch readiness review with all GTM stakeholders
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Complete **Product Context** to anchor who participated and what the launch timeline is.
+2. Write the **Problem Statement** last, after reading the framing from ps-framing-the-problem. Translate from analytical to emotional and first-person.
+3. Write **Target Audience** from the proto-persona work - personas should match what has already been validated.
+4. Write the **Solution Summary** as if explaining the product to a new support hire on day one.
+5. Copy the **Positioning Statement** verbatim from ps-positioning-statement output. If that play has not been run, construct it fresh using the formula.
+6. Build **Key Messages** persona by persona. Start with the primary user, then the buyer, then any other affected roles.
+7. Set **Launch Goals** by working backward from the launch date - what does success look like at 30, 60, and 90 days?
+
+#### What Goes Where
+
+| Section | Contains | Does NOT Contain |
+|---------|----------|-----------------|
+| Problem Statement | First-person customer narrative with emotion | Third-person business case language |
+| Target Audience | Named personas and market segments | The PM or product team as the audience |
+| Solution Summary | Plain-language product description | Technical vocabulary, PM jargon, hypothesis format |
+| Positioning Statement | Seven-element formula verbatim | Paraphrasing, narrative description, incomplete elements |
+| Key Messages | Benefit bullets per persona | Feature descriptions, capability lists |
+| Launch Goals | Numeric targets for the launch window | Directional language without numbers, long-term metrics |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-framing-the-problem provides the Problem Statement structure for translation. ps-proto-persona provides the personas. ps-solution-hypothesis provides the solution framing. ps-positioning-statement provides the Positioning Statement verbatim.
+- **Downstream:** This skill is an endpoint. The artifact feeds into sales enablement, marketing campaigns, and launch readiness reviews - but no other playbook skills consume it.
+
+#### Capacity Reference
+
+| Field | Target Length | Guidance |
+|-------|--------------|----------|
+| Problem Statement | 50-80 words | First-person narrative, specific and emotional |
+| Target Audience | 30-50 words | Prose paragraph, orientation not analysis |
+| Solution Summary | 40-60 words | Plain product description, no jargon |
+| Positioning Statement | 60-90 words | Seven elements verbatim, all required |
+| Key Message bullet | 10-15 words | Benefit, not feature; customer perspective |
+| Launch Goal/Objective | 5-8 words | Named success area |
+| Measure/Metric | 5-10 words | Specific, countable signal |
+| Target | 3-8 words | Number or percentage required |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** Separate messages for field technicians and operations managers; connect each message to that persona's problem and an evidenced benefit.
+- **Weak:** One generic feature announcement gives sales no customer-specific reason to care.
+- **Drift to avoid:** Invented proof: do not add fabricated testimonials or launch results to make the message persuasive.
 
-- a strong go-to-market artifact for a supply chain scenario with vivid persona-voice Problem Statement, benefit-focused Key Messages, and numeric Launch Goals
-- a weak version with a business-case Problem Statement, feature-list Key Messages, and vague Launch Goals
-- a drift-bug example where Key Messages are written from the product team's technical perspective, not from the customer's perspective on their gains
 
 ## Common Pitfalls
 
-### Pitfall 1: Problem Statement Written in Third-Person Business Case Voice
+- **Problem Statement Written in Third-Person Business Case Voice:** Rewrite in first-person from the customer's perspective using the scaffold: "I am a [role]... [pain]. Because [root cause]. Which makes me feel [emotion]." The voice must come from the customer's experience, not the PM's analysis of it.
 
-**Symptom:** The Problem Statement reads like an executive summary: "Our research indicates that supply chain coordinators experience significant inefficiencies in shipment tracking, resulting in productivity losses estimated at..."
+- **Key Messages That List Features Instead of Benefits:** For each bullet, ask "so what?" until you reach a customer outcome. "Automated order routing" becomes "orders routed to the right warehouse without manual intervention, so coordinators focus on exceptions rather than every transaction."
 
-**Consequence:** Sales and support teams cannot use this to empathize with customers. It sounds like an analyst report, not a customer's lived experience. The persona voice is what makes this section useful.
+- **Positioning Statement Paraphrased or Incomplete:** Use the seven-element formula verbatim: For / Who / The / Is a / That / Unlike / Our product gives. Every element must appear. The "Unlike" element must name a real alternative (including "manual processes using spreadsheets" if that is the real competitor).
 
-**Fix:** Rewrite in first-person from the customer's perspective using the scaffold: "I am a [role]... [pain]. Because [root cause]. Which makes me feel [emotion]." The voice must come from the customer's experience, not the PM's analysis of it.
+- **PM Builds the Artifact Alone:** Treat the artifact as a starting draft for collaborative review, not a finished deliverable. Share it with each function and explicitly ask: "Is this how you would describe the customer's problem? Does this messaging match what you hear in the field? What would you add or change?"
 
-### Pitfall 2: Key Messages That List Features Instead of Benefits
+- **Launch Goals Are Directional Instead of Numeric:** Every Target cell in the table must contain a number or percentage. "Improve user adoption" becomes "75% of licensed users complete onboarding within 14 days of provisioning."
 
-**Symptom:** The Key Messages bullets read like release notes: "Automated order routing," "Real-time inventory sync," "Multi-warehouse visibility dashboard."
+- **Solution Summary Filled with Product Jargon:** Write a product description that your best customer could read aloud to a colleague. Test it against the question: "could a new account executive on their second week explain this to a prospect?" If not, simplify.
 
-**Consequence:** Sales and marketing cannot translate these into customer conversations. Features describe what the product does, not what the customer gains. Non-PM audiences cannot bridge that gap on their own.
+- **Key Messages Written for Only One Persona:** Build Key Messages for each distinct persona: at minimum the primary user and the economic buyer. If the product serves three distinct roles, write three rows.
 
-**Fix:** For each bullet, ask "so what?" until you reach a customer outcome. "Automated order routing" becomes "orders routed to the right warehouse without manual intervention, so coordinators focus on exceptions rather than every transaction."
+- **Tech-Role Bias in Key Messages:** Apply the perspective test to every bullet. Ask: who is the subject of this sentence? If it is the product, the platform, or the system, the bullet is a feature. If it is the customer and what they can now do or stop doing, it is a benefit. Rewrite every technical subject into a customer subject.
 
-### Pitfall 3: Positioning Statement Paraphrased or Incomplete
+- **Claims With No Proof Behind Them:** Every message gets proof the persona would trust, or the proof is listed as "still to gather before launch." Never invent testimonials, quotes, or results.
 
-**Symptom:** The Positioning Statement section contains a narrative description of the product's value rather than the seven-element formula. Or the "Unlike" element is missing because it felt awkward to name a competitor.
-
-**Consequence:** Downstream messaging loses precision. Marketing campaigns, sales pitches, and support scripts all drift because the anchor they share is not structured. The "Unlike" element in particular is what makes positioning distinct - without it, the statement could describe any competitor's product.
-
-**Fix:** Use the seven-element formula verbatim: For / Who / The / Is a / That / Unlike / Our product gives. Every element must appear. The "Unlike" element must name a real alternative (including "manual processes using spreadsheets" if that is the real competitor).
-
-### Pitfall 4: PM Builds the Artifact Alone
-
-**Symptom:** The GTM document is drafted without input from sales, marketing, or customer support. It is polished and complete but reflects only the PM's perspective.
-
-**Consequence:** The document misses what each function actually needs. Sales will have different questions than marketing. Support will need different language than sales. A solo-authored GTM document rarely survives first contact with the field.
-
-**Fix:** Treat the artifact as a starting draft for collaborative review, not a finished deliverable. Share it with each function and explicitly ask: "Is this how you would describe the customer's problem? Does this messaging match what you hear in the field? What would you add or change?"
-
-### Pitfall 5: Launch Goals Are Directional Instead of Numeric
-
-**Symptom:** The Launch Goals table contains rows like: "Improve user adoption," "Increase customer satisfaction," "Reduce onboarding friction."
-
-**Consequence:** The team cannot evaluate launch success. Directional goals pass every test and fail every real measurement. Without a number, there is no way to know if the launch succeeded.
-
-**Fix:** Every Target cell in the table must contain a number or percentage. "Improve user adoption" becomes "75% of licensed users complete onboarding within 14 days of provisioning."
-
-### Pitfall 6: Solution Summary Filled with Product Jargon
-
-**Symptom:** The Solution Summary reads: "A cloud-native SaaS platform with real-time API integrations that orchestrates multi-system workflow automation across ERP and WMS environments."
-
-**Consequence:** Support representatives, account executives, and marketing managers cannot explain the product. This reads as a technical architecture description, not a product description. It communicates nothing useful to a non-PM audience.
-
-**Fix:** Write a product description that your best customer could read aloud to a colleague. Test it against the question: "could a new account executive on their second week explain this to a prospect?" If not, simplify.
-
-### Pitfall 7: Key Messages Written for Only One Persona
-
-**Symptom:** The Key Messages table has one row for the primary user persona and nothing for the buyer persona or other affected roles.
-
-**Consequence:** Marketing campaigns and sales conversations with buyers (who are different from users) have no messaging anchor. The buyer often controls the purchase decision but has different concerns than the daily user - cost, risk, visibility, and control rather than workflow efficiency.
-
-**Fix:** Build Key Messages for each distinct persona: at minimum the primary user and the economic buyer. If the product serves three distinct roles, write three rows.
-
-### Pitfall 8: Tech-Role Bias in Key Messages
-
-**Symptom:** Key Messages emphasize technical impressiveness: "The platform's real-time data integration engine delivers sub-200ms sync latency across all connected systems." The bullets celebrate what the engineering team built, not what changes for the customer.
-
-**Consequence:** The GTM document reads as an engineering achievement report. Sales and marketing cannot translate this into customer benefit language because there is no customer benefit language to translate - only technical specifications.
-
-**Fix:** Apply the perspective test to every bullet. Ask: who is the subject of this sentence? If it is the product, the platform, or the system, the bullet is a feature. If it is the customer and what they can now do or stop doing, it is a benefit. Rewrite every technical subject into a customer subject.
-
-### Pitfall 9: Claims With No Proof Behind Them
-
-**Symptom:** Key messages that promise outcomes ("cut dispatch time in half") with nothing in the proof column, or with proof the model wrote: a testimonial no customer gave, a pilot result no pilot produced.
-
-**Consequence:** Sales repeats a claim it can't back up. The first skeptical buyer asks for evidence, and the message loses credibility for the whole launch.
-
-**Fix:** Every message gets proof the persona would trust, or the proof is listed as "still to gather before launch." Never invent testimonials, quotes, or results.
-
-### Pitfall 10: Goals That Prove Nothing
-
-**Symptom:** Launch goals like "train the sales team" (a task), "zero critical defects in beta" (a readiness goal), or "40% adoption in 30 days" with no baseline behind the target.
-
-**Consequence:** The team hits every goal and still can't say whether the go-to-market plan worked.
-
-**Fix:** Keep only goals that show the market responded. Move readiness goals to Product Readiness. Turn tasks into the result they should produce. Give every target a baseline or evidence, a measure someone can collect, and a timeframe.
+- **Goals That Prove Nothing:** Keep only goals that show the market responded. Move readiness goals to Product Readiness. Turn tasks into the result they should produce. Give every target a baseline or evidence, a measure someone can collect, and a timeframe.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - six-section GTM handoff scaffold, with proof points
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (2: key messages and proof points, launch goals)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) provides the Problem Statement for translation into persona voice
-- **Upstream:** [ps-proto-persona](../ps-proto-persona/SKILL.md) provides the personas for Key Messages and Target Audience
-- **Upstream:** [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) provides the solution framing for the Solution Summary
-- **Upstream:** [ps-positioning-statement](../ps-positioning-statement/SKILL.md) provides the Positioning Statement verbatim
-- **Upstream:** [ps-product-outcome-canvas](../ps-product-outcome-canvas/SKILL.md) consolidates the Problem Statement, Positioning Statement, and Key Features fields; use the canvas as the source of truth when it is available
-- **Downstream:** none (this is a launch enablement output, not a discovery input for any other skill)
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_go_to_market_playbook_pages.pdf](assets/ps_go_to_market_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 92-97: Template 20 of 24 there, with the AI overview on slide 94 and prompts on slides 95, 96. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-go-to-market) for supporting source material and expanded examples.

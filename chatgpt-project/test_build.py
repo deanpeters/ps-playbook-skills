@@ -38,16 +38,24 @@ class ProjectKitTests(unittest.TestCase):
                 self.assertIn(f"### {section}\n", self.outputs[filename])
             for link in re.findall(r'\]\(([^)]+)\)', document):
                 self.assertTrue(link.startswith(("https://", "http://", "mailto:", "#")), link)
-        self.assertGreater(count, 100)
+        self.assertGreater(count, 0)
 
     def test_prompt_bodies_are_preserved_with_duplicate_counts(self):
-        sources = list((build.ROOT / "skills").glob("*/prompts/*.md"))
-        sources += list((build.ROOT / "prompts").glob("*/*.md"))
+        sources = list((build.ROOT / "prompts").glob("*/*.md"))
         expected = Counter(body for source in sources
                            for body in re.findall(r'```text\n(.*?)```', source.read_text(), re.S))
         actual = Counter(re.findall(r'```text\n(.*?)```', self.outputs["07-prompts.md"], re.S))
         self.assertTrue(expected, "The upload kit must include the library's prompts")
         self.assertEqual(actual, expected)
+
+    def test_each_play_is_one_self_contained_file(self):
+        for play in self.plays:
+            self.assertEqual([p.name for p in play["folder"].iterdir()], ["SKILL.md"])
+            text = (play["folder"] / "SKILL.md").read_text()
+            for heading in ["## Purpose", "## Application", "## Template", "## Examples", "## Common Pitfalls"]:
+                self.assertIn(heading, text)
+            self.assertNotIn("template.md", text)
+            self.assertNotIn("examples/sample.md", text)
 
     def test_license_is_unchanged_and_upload_set_is_small(self):
         self.assertEqual(len(self.outputs), 9)

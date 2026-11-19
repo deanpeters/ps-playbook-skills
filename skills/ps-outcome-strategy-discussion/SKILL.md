@@ -17,6 +17,7 @@ scenarios:
   - "Help me prepare for a strategy conversation with my executive sponsor about what success looks like"
 ---
 
+
 ## Purpose
 
 Run the opening play of the Productside Playbook.
@@ -103,64 +104,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the working scaffold.
+Use [Template](#template) for the working scaffold.
 
-See the source pages from the canonical playbook in [assets/ps_outcome_strategy_discussion_playbook_pages.pdf](assets/ps_outcome_strategy_discussion_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -178,7 +139,7 @@ The summary comes first. Commentary is secondary.
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-prepare-discussion-guide.md](prompts/01-prepare-discussion-guide.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Confirm Scope and Participants
 
@@ -273,102 +234,148 @@ After the summary is complete, the PM makes an explicit Key Decision Point decis
 
 The agent can help draft the KDP statement, but the call belongs to the PM.
 
+## Template
+
+### When to Use This
+
+Use this template before discovery begins to document the alignment conversation between a PM and their manager or executive sponsor. The conversation must happen first. Fill in the outcome section after the discussion, not before.
+
+Completing this template is the exit condition for this play. Do not begin discovery work until the Key Decision Point is marked.
+
+---
+
+### Template
+
+```markdown
+# Outcome & Strategy: Guided Discussion
+
+## Scope
+
+- Discussion with: [name and role]
+- Initiative or product: [name]
+- Date: [date]
+- Time horizon: [quarter / year / multi-year]
+
+---
+
+## Discussion Guide
+
+Use these questions to facilitate the conversation. They are prompts, not a script. Follow the thread wherever it leads, and return to unanswered areas before the meeting ends.
+
+### 1. Business Outcome
+
+- What does the business need to achieve in the next [time horizon]?
+- How does this connect to our broader strategy or annual goals?
+- How will we know, in [X months], that we achieved it?
+
+### 2. Why Now
+
+- What changed that makes this the priority now?
+- What happens if we do not address this this quarter or year?
+
+### 3. Customer
+
+- Who is the primary customer this outcome serves?
+- Are there secondary customers or stakeholders whose needs we must also respect?
+
+### 4. Success Criteria
+
+- What would measurable success look like at [time horizon]?
+- Are there existing metrics or targets we are accountable to?
+
+### 5. Constraints and Non-Negotiables
+
+- What is already decided - budget, timeline, technology choices?
+- What is off-limits or outside scope?
+- Are there dependencies we must work around?
+
+---
+
+## Outcome of the Discussion
+
+Complete this section after the conversation.
+
+### Business Outcome (one sentence)
+
+[Write the agreed business outcome here. It must name a measurable change, not a project or a feature.]
+
+### Why It Matters Now
+
+[One to two sentences covering the rationale and urgency.]
+
+### Customer
+
+[Who the product serves - a job title and context, not a persona name at this stage. Example: mid-market shipper operations manager responsible for carrier selection and freight cost management.]
+
+### Success Criteria
+
+| Criteria | Metric or Signal | Target |
+|---|---|---|
+| | | |
+| | | |
+| | | |
+
+### Constraints
+
+- [Constraint or non-negotiable]
+- [Constraint or non-negotiable]
+- [Constraint or non-negotiable]
+
+### Open Questions and Gaps
+
+List anything that was contested, unclear, or left unresolved. Do not omit these to make the summary look complete.
+
+- [Open question or gap]
+- [Open question or gap]
+
+---
+
+## Key Decision Point
+
+Mark one.
+
+- [ ] Go: alignment is clear across all five areas. Proceed to discovery.
+- [ ] Partial: [specify which areas need follow-up and by what date]
+- [ ] No-go: [specify what needs escalation or re-discussion before continuing]
+
+---
+
+> **Quality checks**
+> - Is the business outcome written as a measurable change, not a feature or project milestone?
+> - Does the customer statement name a real role in a real context, not an org or a function?
+> - Are the success criteria specific enough that a third party could assess them?
+> - Are open questions documented rather than papered over with placeholder language?
+> - Is the KDP explicitly marked?
+
+> **Capacity note**
+> The discussion summary should be readable in under five minutes. If it runs longer, consolidate. The purpose of this document is shared alignment, not comprehensive documentation.
+```
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For shipper retention, align with the manager on the business result, customer, decision boundaries, and evidence needed before discovery.
+- **Weak:** "Improve retention somehow" leaves the result and authority unclear.
+- **Drift to avoid:** Outcome as project: "Launch a shipper portal" is an output. Establish the business change it is expected to produce.
 
-- a strong guided discussion summary for a logistics software scenario
-- a weak version of the same scenario showing vague answers accepted as complete
-- a drift bug example where the business outcome was captured as a project milestone
 
 ## Common Pitfalls
 
-### Pitfall 1: Treating the Discussion as a Requirements Intake
+- **Treating the Discussion as a Requirements Intake:** Before the meeting, reframe the purpose: the PM is there to understand what the business needs to achieve, not what to build. If the manager jumps to solutions, the PM redirects: "That sounds like one approach - can we first align on what success looks like for the business overall?"
 
-**Symptom:** The PM enters the meeting ready to record what the manager tells them to build. They leave with a feature list instead of a business outcome.
+- **Accepting Vague Outcomes Without Pressing:** Press for specifics. "Improve customer satisfaction" needs a metric and a direction: "Increase NPS from 32 to 50 within 12 months." If the manager cannot provide a specific target, write "TBD" and flag it as a gap that must be resolved before discovery begins.
 
-**Consequence:** Discovery is framed around delivering the feature, not solving the customer problem. The business outcome is never explicitly agreed on.
+- **Skipping the KDP:** Treat the KDP as a required output, not an optional reflection. Before starting discovery, the PM should have a written KDP statement on file.
 
-**Fix:** Before the meeting, reframe the purpose: the PM is there to understand what the business needs to achieve, not what to build. If the manager jumps to solutions, the PM redirects: "That sounds like one approach - can we first align on what success looks like for the business overall?"
+- **Letting the Manager Dictate the Solution:** Solutions that emerge during an outcomes conversation are hypotheses, not decisions. Record them in the open questions section and flag them for validation during discovery.
 
-### Pitfall 2: Accepting Vague Outcomes Without Pressing
+- **Documenting the Conversation Without Identifying the Gaps:** In the open questions section, be explicit about what was not resolved. A summary with two or three open questions documented is more useful than a summary with five areas filled in with uncertain answers.
 
-**Symptom:** The business outcome is recorded as "improve customer satisfaction" or "grow the business" and the PM moves on.
+- **Confusing Internal Stakeholders with the Customer:** The customer field in this play refers to who the product serves in the field - the person who uses or buys the thing the PM is building. If the product is built for external users, the customer is external. If the product is internal tooling, the customer is the internal user population (not the sponsoring executive).
 
-**Consequence:** The outcome is unmeasurable. Discovery produces findings that no one can act on because there is no shared standard for success.
-
-**Fix:** Press for specifics. "Improve customer satisfaction" needs a metric and a direction: "Increase NPS from 32 to 50 within 12 months." If the manager cannot provide a specific target, write "TBD" and flag it as a gap that must be resolved before discovery begins.
-
-### Pitfall 3: Skipping the KDP
-
-**Symptom:** The conversation ends, the PM writes up notes, and begins discovery the next day without making an explicit proceed or escalate decision.
-
-**Consequence:** Discovery begins on an unstable foundation. If the business outcome is still contested, the research findings will be contested too.
-
-**Fix:** Treat the KDP as a required output, not an optional reflection. Before starting discovery, the PM should have a written KDP statement on file.
-
-### Pitfall 4: Letting the Manager Dictate the Solution
-
-**Symptom:** During the outcomes conversation, the manager proposes a specific feature, technology, or approach, and the PM records it as the solution rather than redirecting to the outcome.
-
-**Consequence:** Discovery is bypassed. The PM goes directly from alignment conversation to building something the manager suggested, without validating whether it solves the customer problem.
-
-**Fix:** Solutions that emerge during an outcomes conversation are hypotheses, not decisions. Record them in the open questions section and flag them for validation during discovery.
-
-### Pitfall 5: Documenting the Conversation Without Identifying the Gaps
-
-**Symptom:** The PM writes a complete-looking summary that covers all five areas, but fills in vague or placeholder answers in the areas where the conversation was unclear.
-
-**Consequence:** The summary looks complete but is not. The PM and the manager may have different memories of what was agreed.
-
-**Fix:** In the open questions section, be explicit about what was not resolved. A summary with two or three open questions documented is more useful than a summary with five areas filled in with uncertain answers.
-
-### Pitfall 6: Confusing Internal Stakeholders with the Customer
-
-**Symptom:** The PM documents "our customers" as "the PM team," "engineering," or "the business unit" - the internal stakeholders they work with, not the people who use or buy the product.
-
-**Consequence:** Discovery targets internal processes instead of customer problems. The play produces internal alignment but no customer insight.
-
-**Fix:** The customer field in this play refers to who the product serves in the field - the person who uses or buys the thing the PM is building. If the product is built for external users, the customer is external. If the product is internal tooling, the customer is the internal user population (not the sponsoring executive).
-
-### Pitfall 7: AI Answers for the Manager
-
-**Symptom:** The PM asks the agent to fill the discussion template "with what leadership probably wants" before the conversation happens.
-
-**Consequence:** The business outcome and success criteria are the model's guesses. The PM walks into discovery aligned with a document, not with their manager.
-
-**Fix:** Prepare questions, not answers. Fill the template only from notes of the real discussion, and mark anything still unconfirmed.
+- **AI Answers for the Manager:** Prepare questions, not answers. Fill the template only from notes of the real discussion, and mark anything still unconfirmed.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-
-
-### Source Material
-
-- [assets/ps_outcome_strategy_discussion_playbook_pages.pdf](assets/ps_outcome_strategy_discussion_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 5-7: Template 01 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-
-### Template and Examples
-
-- [template.md](template.md)
-- [examples/sample.md](examples/sample.md)
-
-### Budget Data
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-
-### Adjacent Skills
-
-- [ps-outcome-tree](../ps-outcome-tree/SKILL.md) - builds on the alignment reached here; takes the business outcome and product outcomes from this play as inputs
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - starts from the customer identified in this play
-- [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) - problem statement work that follows from the customer context established here
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-outcome-strategy-discussion) for supporting source material and expanded examples.

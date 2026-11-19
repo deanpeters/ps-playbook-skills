@@ -20,6 +20,7 @@ scenarios:
   - "Help me prepare the business case presentation for leadership before we enter the Create phase"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Product Outcome Canvas** from the artifacts produced during the Discover + Define phase.
@@ -87,64 +88,24 @@ This Play has no AI page in the B2B work-in-progress deck. This guidance applies
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the scaffold.
+Use [Template](#template) for the scaffold.
 
-See the source play pages in [assets/ps_product_outcome_canvas_playbook_pages.pdf](assets/ps_product_outcome_canvas_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -161,7 +122,7 @@ That means:
 
 ### If the PM Brings a Draft
 
-When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in [prompts/01-review-canvas.md](prompts/01-review-canvas.md) one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
+When the PM arrives with a draft (or, for a session-based Play, with notes from the session), review it before writing anything new. Work through the checks in the critique guidance in this Play one at a time, quote the words at fault, and offer rewrites last, as options to accept, adapt, or reject. If the PM asks you to draft instead, or chooses best guess mode, tag what you supply `[AI-SUGGESTED, VALIDATE THIS]` and never invent evidence, data, or what other people said. Numbers stay the PM's even then: leave every target, threshold, baseline, and rating as `[PM TO SET]` with a note on what evidence would anchor it.
 
 ### Step 1: Tech-Role Bias Guard
 
@@ -305,117 +266,274 @@ After delivering the artifact, offer three options:
 2. Enter the Create phase by transitioning to build planning, user story mapping, or roadmap work
 3. Schedule a structured review session to pressure-test The Ask and the risk picture before presenting
 
+## Template
+
+### When to Use This
+
+Use this template at the **Go/No Go decision point** at the end of the Discover + Define phase, before the team commits to entering the Create (build) phase. Present the completed canvas to your leadership sponsor or investment committee.
+
+Upstream artifacts that feed this template:
+- Problem Statement (ps-framing-the-problem or equivalent)
+- Solution Summary (ps-solution-hypothesis or equivalent)
+- Positioning Statement (ps-positioning-statement or equivalent)
+- Business Outcomes, Product Outcomes, and Metrics (ps-outcome-tree or equivalent)
+- Top Risks (ps-risk-assessment or equivalent)
+- Persona context (ps-proto-persona or equivalent, for story anchoring)
+
+Loose coupling rule: if an upstream artifact is not available, provide the information directly or ask the agent to run the relevant skill before proceeding. No field should be left as TBD in the final canvas.
+
+### Template
+
+```markdown
+# Product Outcome Canvas
+
+## Section 1: Core Information
+
+- Product Name:
+- Date:
+- Product Manager:
+- Version:
+
+---
+
+## Section 2: Summary
+
+### Problem Statement
+
+[Describe the customer problem in 2-4 sentences. Who is affected, what are they trying to do, what is blocking them, and why does it matter to the business? No solution language.]
+
+> Quality check: Does the problem statement describe a current state without referencing the proposed solution?
+> Quality check: Is the problem specific enough that leadership can picture who is affected and why it matters?
+> Capacity check: 40-60 words.
+
+---
+
+### Solution Summary
+
+[Describe the proposed solution in 1-2 sentences using If/Then format where possible. What does the product do, and what does it enable the customer to do that they cannot do today?]
+
+> Quality check: Is the solution summary specific enough to be meaningful but general enough not to lock in implementation details?
+> Quality check: Does the solution address the problem statement directly?
+> Capacity check: 30-50 words.
+
+---
+
+### Positioning Statement
+
+[Seven-element formula: For [target customer], who [need or opportunity], the [product name] is a [product category] that [key benefit]. Unlike [primary competitive alternative], our product gives [primary differentiation].]
+
+> Quality check: Is the "That" element a benefit (what the customer achieves), not a feature (what the product does)?
+> Quality check: Does the "Unlike" element name a real competitive alternative the customer would actually choose?
+> Quality check: Does "Our product gives" use outcome language, not feature language?
+> Capacity check: 50-70 words.
+
+---
+
+### Story 1: User Persona
+
+[Write a 2-4 sentence close-third or first-person narrative anchored to a specific moment. Use a concrete time anchor ("Six weeks after the launch of X, [Name]..."). Show the customer's experience before and after the product, or show a specific moment where the product makes a critical difference. The protagonist is the customer, not the PM, not the product team.]
+
+Narrative format guide:
+- Open with a concrete time anchor and a specific name and role
+- Show the specific friction or challenge the customer faces without the product, OR show the moment the product resolves it
+- Close with the customer's changed experience or outcome
+- Example anchor: "Before ClearRoute launched, Marcos Delgado, a procurement coordinator at a regional hospital network, spent three hours each Monday reconciling delivery confirmations across four supplier portals..."
+
+> Quality check: Is the protagonist the customer or buyer? The PM, an engineer, or a product team member should never be the protagonist.
+> Quality check: Does the story make a specific moment tangible rather than describing general benefits?
+> Quality check: Is the persona name specific and realistic (not a placeholder like "User A")?
+> Capacity check: 50-80 words.
+
+---
+
+### Story 2: Buyer Persona
+
+[Write a 2-4 sentence narrative for the buyer persona: the person who approves or funds the product. Use the same format as Story 1. Buyer stories often center on visibility, accountability, risk reduction, or operational efficiency rather than day-to-day task completion. The protagonist is the buyer, not the PM, not the team.]
+
+> Quality check: Is the buyer persona distinct from the user persona? If they are the same person, note this and adjust the story accordingly.
+> Quality check: Does the story reflect a buyer's concern (investment, oversight, outcomes) rather than a user's concern (task completion)?
+> Capacity check: 50-80 words.
+
+---
+
+### Key Features
+
+[List the top 3-5 capabilities of the proposed solution. These are what the product does, not what the customer achieves. Short bullets, paste-ready.]
+
+- [Feature 1: ~5-8 words]
+- [Feature 2: ~5-8 words]
+- [Feature 3: ~5-8 words]
+- [Feature 4: ~5-8 words (optional)]
+- [Feature 5: ~5-8 words (optional)]
+
+> Quality check: Are these features (capabilities) rather than outcomes (results)? "Real-time exception alerts" is a feature. "40% faster resolution" is an outcome.
+> Quality check: Are the features specific to this product rather than generic to any product in the category?
+> Capacity check: 3-5 bullets at 5-8 words each.
+
+---
+
+## Section 3: Project Boundaries
+
+### Business Outcomes
+
+[What the business gains from this product's success. Use outcome language: revenue, efficiency, retention, compliance, market position. 1-2 sentences or a compact bulleted list.]
+
+> Quality check: Are these business-level outcomes (what the company gains), not product-level outcomes (what the customer achieves)?
+> Quality check: Do the outcomes connect to a measurable business goal?
+> Capacity check: 15-25 words.
+
+---
+
+### Product Outcomes
+
+[What the customer/user achieves through using the product. Use role names, not persona names. Bulleted list.]
+
+- [Role] [achievement]: [context or measure]
+- [Role] [achievement]: [context or measure]
+
+> Quality check: Do these outcomes use role names (e.g., "logistics coordinators") not persona names (e.g., "Priya")?
+> Quality check: Are these outcomes (what the customer achieves) distinct from Key Features (what the product does)?
+> Capacity check: 15-25 words total.
+
+---
+
+### Business Success Metrics
+
+[2-3 measurable business-level indicators. Each should be specific enough to track. Include direction, metric, and target where possible.]
+
+- [Metric 1: direction + metric + target, ~10-15 words]
+- [Metric 2: direction + metric + target, ~10-15 words]
+- [Metric 3: optional, ~10-15 words]
+
+> Quality check: Is each metric specific enough to measure ("NPS increases from 32 to 45 within 12 months") rather than directional only ("improve NPS")?
+> Capacity check: 2-3 items at 10-15 words each.
+
+---
+
+### Product Success Metrics
+
+[2-3 measurable product-level indicators. These track customer behavior and product performance, not business-level results.]
+
+- [Metric 1: direction + metric + target, ~10-15 words]
+- [Metric 2: direction + metric + target, ~10-15 words]
+- [Metric 3: optional, ~10-15 words]
+
+> Quality check: Are these product-level indicators (usage, task completion, error rate) distinct from business success metrics (revenue, retention)?
+> Capacity check: 2-3 items at 10-15 words each.
+
+---
+
+### Risks
+
+[Top 3 risks from the Risk Assessment, by priority. Names only; do not include the full mitigation and contingency plans. Format: [Risk Type]: [Specific Concern].]
+
+1. [Risk Name: 5-8 words]
+2. [Risk Name: 5-8 words]
+3. [Risk Name: 5-8 words]
+
+> Quality check: Are these the highest-priority risks (Critical first) rather than an exhaustive list?
+> Quality check: Does each risk name a specific concern, not just a category ("Carrier Data Gaps: top 3 carriers lack real-time API" not "Technical Risk")?
+> Capacity check: 3 items at 5-8 words each.
+
+---
+
+### What's Next: The Ask
+
+[Name the resources needed to enter the Create phase: team roles, percentage of time, timeline, and any change management or infrastructure requirements. This must be specific enough for leadership to approve or negotiate.]
+
+Format guide:
+- Team: [Role] at [%] time, [Role] at [%] time
+- Timeline: [duration and start date or quarter]
+- Change management or infrastructure: [any requirements outside standard team capacity]
+
+> Quality check: Does The Ask name specific roles and percentages rather than generic functions ("engineering and design resources")?
+> Quality check: Is the timeline specific enough to evaluate (not "TBD" or "as soon as possible")?
+> Capacity check: 30-50 words.
+
+---
+
+### Introduction Date
+
+[Target launch or release date: when the product reaches customers. Accept a specific date, a target quarter, or a milestone anchor.]
+
+> Quality check: Is the date specific enough to anchor planning? If TBD, note what decision would unlock it.
+> Capacity check: 5-10 words.
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Start with **Section 1: Core Information** to anchor the document.
+2. Complete **Section 2: Summary** starting with the Problem Statement, which grounds everything that follows.
+3. Write the Positioning Statement before the stories; the positioning clarifies who each story is about.
+4. Write the stories last in Section 2, after confirming the persona identities from ps-proto-persona or direct PM input.
+5. Complete **Section 3: Project Boundaries** by importing from upstream artifacts wherever possible.
+6. Write The Ask after reviewing all other sections; the resource request should reflect the full scope of what the canvas describes.
+
+#### What Goes Where
+
+| Section | Contains | Does NOT Contain |
+|---------|----------|-----------------|
+| Problem Statement | Customer-facing problem in current state | Solution language, product features |
+| Solution Summary | What the product does and enables | Implementation details, technical specs |
+| Stories | Customer or buyer experience, specific moments | PM process, team activities, feature lists |
+| Key Features | Product capabilities (what it does) | Customer outcomes (what customers achieve) |
+| Product Outcomes | What customers achieve (role names) | Persona names, product features |
+| The Ask | Roles, percentages, timeline, requirements | Vague functions, TBD timelines |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-framing-the-problem (Problem Statement), ps-solution-hypothesis (Solution Summary), ps-positioning-statement (Positioning Statement), ps-outcome-tree (Outcomes and Metrics), ps-risk-assessment (Risks), ps-proto-persona (persona context for stories)
+- **Downstream:** Go-to-Market Enablement (Template 20) imports Problem Statement, Positioning Statement, and Key Features
+
+#### Capacity Reference
+
+| Field | Target Length | Guidance |
+|-------|--------------|----------|
+| Problem Statement | 40-60 words | Describes current state without solution language |
+| Solution Summary | 30-50 words | If/Then format where possible |
+| Positioning Statement | 50-70 words | Seven-element formula, benefit not feature in "That" |
+| Story 1 | 50-80 words | Concrete time anchor, customer protagonist |
+| Story 2 | 50-80 words | Buyer protagonist, visibility or accountability focus |
+| Key Features | 3-5 bullets, 5-8 words each | Capabilities, not outcomes |
+| Business Outcomes | 15-25 words | Business-level, not product-level |
+| Product Outcomes | 15-25 words | Role names, not persona names |
+| Business Success Metrics | 2-3 items, 10-15 words each | Direction + metric + target |
+| Product Success Metrics | 2-3 items, 10-15 words each | Usage and behavior indicators |
+| Risks | 3 items, 5-8 words each | Top priority risks, names only |
+| The Ask | 30-50 words | Roles + percentages + timeline |
+| Introduction Date | 5-10 words | Specific date, quarter, or milestone |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For a hospital bed-coordination concept, consolidate the charge nurse's problem, tested hypothesis, outcomes, evidence, and risks for leadership's Go/No Go decision.
+- **Weak:** A persuasive feature pitch without discovery evidence cannot support an informed investment decision.
+- **Drift to avoid:** Decision substitution: a polished canvas does not constitute leadership approval or permission to proceed.
 
-- a strong canvas with vivid customer stories, specific metrics, and a concrete Ask
-- a weak canvas with PM-centric stories, vague metrics, and a TBD Ask
-- a drift-bug example with tech-role bias and invented upstream data
 
 ## Common Pitfalls
 
-### Pitfall 1: Stories About the PM's Process Instead of the Customer's Experience
+- **Stories About the PM's Process Instead of the Customer's Experience:** The protagonist of every story is the customer or buyer. Read the first sentence of each story. If the subject is a PM, a designer, a developer, or a team, rewrite it. The story must anchor to the customer's day and the customer's experience.
 
-**Symptom:** Story 1 or Story 2 describes the PM running discovery, writing requirements, facilitating sprint planning, or presenting to stakeholders.
+- **Listing Every Risk Instead of the Top Three:** The canvas shows the top 3 risks by priority. Accept-priority risks belong in the full Risk Assessment artifact, not on the canvas. The canvas is a summary, not a transcript of the assessment.
 
-**Consequence:** Leadership hears a story about the product team's work, not about the customer's problem. The stories fail to make the case for the product.
+- **The Ask Is Too Vague:** The Ask names specific roles ("2 Senior Engineers, 1 UX Designer, 1 Data Analyst at 80% time"), gives a percentage allocation, and names a timeline. If this information is not yet available, the canvas is premature. Run the planning work before presenting.
 
-**Fix:** The protagonist of every story is the customer or buyer. Read the first sentence of each story. If the subject is a PM, a designer, a developer, or a team, rewrite it. The story must anchor to the customer's day and the customer's experience.
+- **Treating the Canvas as a One-Time Artifact:** Treat the canvas as a living document. Update the Version number and Date when outcomes shift, risks change, or The Ask needs revision. The canvas should reflect the current state of the product investment, not just its initial framing.
 
-### Pitfall 2: Listing Every Risk Instead of the Top Three
+- **Using Generic Placeholder Persona Names in Stories:** Use a specific, realistic name that reflects the persona's role and demographic diversity. Pair the name with a concrete job title and situation. "Priya Nair, a logistics coordinator at a mid-market distribution company, spends the first two hours of every morning..." is credible. "The user opens the dashboard..." is not.
 
-**Symptom:** The Risks section on the canvas contains all six risks from the risk assessment, including Accept-priority risks.
+- **Filling the Canvas Without Any Upstream Artifacts:** Before drafting any field, ask for the upstream artifacts or equivalent direct input. If no artifacts exist, flag the gap and offer to run the relevant upstream skill. Never invent the content of a field that is supposed to come from customer research or team validation.
 
-**Consequence:** Leadership cannot distinguish which risks the team considers serious from which risks are background noise.
+- **Tech-Role Bias in the Customer Stories:** Run the tech-role bias guard in Step 1 before writing any content. Confirm the customer's job title and daily workflow. If the product serves non-technical users, the story must reflect non-technical concerns: task completion, time, accuracy, confidence, and visibility rather than system architecture or code quality.
 
-**Fix:** The canvas shows the top 3 risks by priority. Accept-priority risks belong in the full Risk Assessment artifact, not on the canvas. The canvas is a summary, not a transcript of the assessment.
+- **Confusing Key Features with Product Outcomes:** Key Features are capabilities (what the product does). Product Outcomes are results (what the customer achieves). Each field serves a different purpose. If the same content appears in both sections, one of them is wrong.
 
-### Pitfall 3: The Ask Is Too Vague
-
-**Symptom:** The Ask section reads "We will need engineering, design, and data resources" or "Timeline TBD."
-
-**Consequence:** Leadership cannot approve what they cannot evaluate. A vague Ask signals that the team is not ready to enter the Create phase.
-
-**Fix:** The Ask names specific roles ("2 Senior Engineers, 1 UX Designer, 1 Data Analyst at 80% time"), gives a percentage allocation, and names a timeline. If this information is not yet available, the canvas is premature. Run the planning work before presenting.
-
-### Pitfall 4: Treating the Canvas as a One-Time Artifact
-
-**Symptom:** The canvas is completed for the initial Go/No Go decision and never revisited.
-
-**Consequence:** As the product evolves through the Create phase, the canvas becomes disconnected from current reality. When leadership asks for a status update, the team has to rebuild from scratch.
-
-**Fix:** Treat the canvas as a living document. Update the Version number and Date when outcomes shift, risks change, or The Ask needs revision. The canvas should reflect the current state of the product investment, not just its initial framing.
-
-### Pitfall 5: Using Generic Placeholder Persona Names in Stories
-
-**Symptom:** Stories use placeholder names like "User A," "The Buyer," or "Jane Doe" without specific role context.
-
-**Consequence:** The stories feel generic and fail to make the problem tangible. Leadership cannot picture a real person in a real situation.
-
-**Fix:** Use a specific, realistic name that reflects the persona's role and demographic diversity. Pair the name with a concrete job title and situation. "Priya Nair, a logistics coordinator at a mid-market distribution company, spends the first two hours of every morning..." is credible. "The user opens the dashboard..." is not.
-
-### Pitfall 6: Filling the Canvas Without Any Upstream Artifacts
-
-**Symptom:** The canvas is populated entirely from the agent's inference, without asking the PM for problem statements, hypothesis outputs, or outcome tree data.
-
-**Consequence:** The canvas reflects what the agent imagined the product to be, not what the PM's discovery work established. The content may sound coherent but will not match the team's actual findings.
-
-**Fix:** Before drafting any field, ask for the upstream artifacts or equivalent direct input. If no artifacts exist, flag the gap and offer to run the relevant upstream skill. Never invent the content of a field that is supposed to come from customer research or team validation.
-
-### Pitfall 7: Tech-Role Bias in the Customer Stories
-
-**Symptom:** The story protagonist is a software developer, data engineer, or architect when the product serves operations staff, field workers, clinicians, or other non-technical roles.
-
-**Consequence:** Leadership hears a story about engineering concerns rather than customer problems. The canvas misrepresents who the product is for.
-
-**Fix:** Run the tech-role bias guard in Step 1 before writing any content. Confirm the customer's job title and daily workflow. If the product serves non-technical users, the story must reflect non-technical concerns: task completion, time, accuracy, confidence, and visibility rather than system architecture or code quality.
-
-### Pitfall 8: Confusing Key Features with Product Outcomes
-
-**Symptom:** The Key Features section lists outcomes ("Logistics coordinators resolve shipment exceptions 40% faster") instead of capabilities ("Real-time shipment exception alerts").
-
-**Consequence:** The canvas double-counts outcomes in both the Project Boundaries and Key Features sections, obscuring the distinction between what the product does and what the customer achieves.
-
-**Fix:** Key Features are capabilities (what the product does). Product Outcomes are results (what the customer achieves). Each field serves a different purpose. If the same content appears in both sections, one of them is wrong.
-
-### Pitfall 9: A Canvas Built From Nothing
-
-**Symptom:** The PM asks for a Product Outcome Canvas for a new idea and gets every section filled: stories, metrics, features, risks, and an Ask.
-
-**Consequence:** Leadership makes a Go/No Go decision on a document that summarizes work nobody did.
-
-**Fix:** Assemble the canvas only from upstream artifacts. Mark any section with no source as a gap, and say which play fills it.
+- **A Canvas Built From Nothing:** Assemble the canvas only from upstream artifacts. Mark any section with no source as a gap, and say which play fills it.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - working scaffold
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (authored for this library; the deck has no AI page for this Play)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Skills
-
-- **Upstream:** [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) provides the Problem Statement; [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) provides the Solution Summary; [ps-positioning-statement](../ps-positioning-statement/SKILL.md) provides the seven-element Positioning Statement; [ps-outcome-tree](../ps-outcome-tree/SKILL.md) provides Outcomes and Metrics; [ps-risk-assessment](../ps-risk-assessment/SKILL.md) provides the top Risks; [ps-proto-persona](../ps-proto-persona/SKILL.md) provides persona context for the stories
-- **Downstream:** [ps-product-readiness](../ps-product-readiness/SKILL.md) is the next Key Decision Point — the beta test plan gates Deliver phase entry; run ps-product-readiness after completing Create phase work
-- **Downstream:** [ps-go-to-market](../ps-go-to-market/SKILL.md) imports the Problem Statement, Positioning Statement, and Key Features fields from this canvas at launch time
-
-### Dependency Map
-
-See [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md) for the full upstream/downstream table.
-
-### Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [informative-documents/framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [informative-documents/skill-dependency-map.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-dependency-map.md)
-
-### Source Material
-
-- [assets/ps_product_outcome_canvas_playbook_pages.pdf](assets/ps_product_outcome_canvas_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 75-77: Template 16 of 24 there. No AI page for this Play; the prompts are authored for this library. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- Productside Playbook companion document (supplied separately)
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-product-outcome-canvas) for supporting source material and expanded examples.

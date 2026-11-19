@@ -22,6 +22,7 @@ scenarios:
   - "Our messaging feels generic and I need to sharpen who we serve and how we differ"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Positioning Statement** for your product, service, or brand.
@@ -43,6 +44,17 @@ Use this skill when you need to:
 - document competitive differentiation in outcome terms, not feature lists
 
 Most Product Managers are working on a product that is already out in market. If that is your situation, find your product's existing positioning statement and see if adjustments are needed. If there is no existing positioning, you will craft one here.
+
+### Usage Notes
+
+- The positioning statement uses the Productside seven-element formula: For / Who / The / Is a / That / Unlike / Our product gives. The order is fixed and all elements are required.
+- The formula splits into two halves: Value Proposition (For through That) and Statement of Differentiation (Unlike, Our product gives).
+- "That" must be a benefit (customer outcome), not a feature (product capability).
+- "Unlike" must name a real competitive alternative, including status quo.
+- "Our product gives" must use outcome language, not feature language.
+- Upstream: ps-proto-persona (For element), ps-jobs-to-be-done (Who element), ps-problem-identification (need/opportunity).
+- Downstream: solution hypothesis, product requirements, marketing messaging.
+- This skill qualifies for both web research and user artifacts during evidence gathering.
 
 ## Key Concepts
 
@@ -131,64 +143,24 @@ The Playbook casts AI as a **critic of a draft the PM has already written**. It 
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_positioning_statement_playbook_pages.pdf](assets/ps_positioning_statement_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -211,7 +183,7 @@ The artifact comes first. Commentary is secondary.
 
 ### If the PM Brings a Draft
 
-Work through it one point at a time and wait for the PM's answers before rewriting (mirrors [prompts/01](prompts/01-pressure-test-positioning.md)):
+Work through it one point at a time and wait for the PM's answers before rewriting (mirrors the critique guidance in this Play):
 
 1. **Format:** is every element of the formula present?
 2. **One persona:** if the statement could fit any customer, point at the words that make it generic.
@@ -360,131 +332,172 @@ After the artifact is complete, offer the user up to three next-step options:
 
 Present these as options, not as mandatory steps. The user decides what comes next.
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Define** to articulate your product's unique value proposition and differentiation. This is where you cross from investigation into definition - the positioning statement aligns stakeholders, guides marketing, and filters product decisions.
+
+Most Product Managers are working on a product already in market. If that is your situation, find your product's existing positioning statement first and evaluate whether it needs adjustment.
+
+### Template
+
+```markdown
+# Positioning Statement
+
+## Product Context
+
+- Product or service:
+- Target market segment:
+- Primary user persona:
+- Buyer persona (if different):
+- Existing positioning (if any):
+
+## 1. Competitive Matrix (optional)
+
+Select two of the strongest differentiating factors in your industry.
+Map your product and competitors on the grid to identify positioning opportunity.
+
+| | Low [X-Axis Factor] | High [X-Axis Factor] |
+|---|---|---|
+| **High [Y-Axis Factor]** | [Competitor] | [Your Product / Competitor] |
+| **Low [Y-Axis Factor]** | [Competitor] | [Competitor] |
+
+- X-Axis differentiating factor:
+- Y-Axis differentiating factor:
+- Competitors mapped:
+- Positioning opportunity identified:
+
+## 2. Positioning Statement
+
+### Value Proposition
+
+**For** _______________________________________________
+[target customer]
+
+**Who** _______________________________________________
+[statement of the need or opportunity]
+
+**The** _______________________________________________
+[product name]
+
+**Is a** _______________________________________________
+[product category]
+
+**That** _______________________________________________
+[statement of key benefit]
+
+### Statement of Differentiation
+
+**Unlike** _______________________________________________
+[primary competitive alternative]
+
+**Our product gives** _______________________________________________
+[statement of primary differentiation]
+
+> Quality check: Is the "That" element a benefit (what the customer gets), not a feature (what the product does)?
+> Quality check: Does the "Unlike" name a REAL competitive alternative the customer would actually consider?
+> Quality check: Is the "Our product gives" element stated in outcome terms, not feature terms?
+> Quality check: Are claims credible and compatible with the company brand?
+> Quality check: Would a skeptical customer find this believable?
+> Quality check: Are there any empty adjectives (innovative, seamless, best-in-class, cutting-edge)?
+> Capacity check: For ~10-15 words. Who ~10-15 words. The ~3-5 words. Is a ~3-5 words. That ~10-15 words. Unlike ~8-12 words. Our product gives ~15-20 words.
+
+## Evidence Notes (optional)
+
+- What is well-supported by evidence:
+- What is still assumption:
+- Recommended next validation steps:
+```
+
+### Usage Guidance
+
+#### Filling the Template
+
+1. Start with **Product Context** to anchor who this is for and whether existing positioning exists.
+2. Optionally fill the **Competitive Matrix** to identify differentiating dimensions and positioning opportunity. Skip if you already know your competitive landscape.
+3. Fill the **Positioning Statement** elements in order - the seven elements are a fixed sequence. Do not reorder or skip elements.
+4. Run the quality checks before finalizing.
+5. The **Evidence Notes** section is optional and trailing. Do not let it displace or delay the main artifact.
+
+#### The Seven Elements
+
+The Productside formula has a fixed structure. Fill each element in order:
+
+| Element | What It Is | Word Budget | Guidance |
+|---------|-----------|-------------|----------|
+| For | Target customer | ~10-15 | Specific enough to picture, general enough to represent a segment |
+| Who | Need or opportunity | ~10-15 | Use language from validated discovery, not generic pain |
+| The | Product name | ~3-5 | Actual product name the customer knows |
+| Is a | Product category | ~3-5 | Category the customer would use when searching or describing |
+| That | Key benefit | ~10-15 | Outcome the customer experiences, NOT a feature |
+| Unlike | Competitive alternative | ~8-12 | Real alternative the customer would actually choose |
+| Our product gives | Primary differentiation | ~15-20 | Outcome-based, NOT feature-based |
+
+#### Hard Constraints
+
+These are not suggestions - they are rules:
+
+- **"That" must be a benefit.** If it describes what the product does instead of what the customer gets, rewrite it.
+- **"Unlike" must name a real alternative.** No strawmen. Status quo counts as a real alternative.
+- **"Our product gives" must use outcome language.** If it reads like a feature list, rewrite it as customer results.
+- **No empty adjectives.** Strip out "innovative," "seamless," "best-in-class," "cutting-edge," and similar filler.
+
+#### Connecting to Other Skills
+
+- **Upstream:** Proto-persona (the "For" element should match), JTBD (the "Who" element should echo validated jobs and outcomes), Problem Identification (validated problems inform the need)
+- **Downstream:** Solution hypothesis, product requirements, marketing messaging
+- **Parallel:** The competitive matrix can inform or be informed by market sizing work
+
+#### Capacity Reference
+
+See [Template and capacity guidance](#template) for the exact word and character budgets per field.
+
+| Field | Word Budget | Guidance |
+|-------|-------------|----------|
+| For (target customer) | ~10-15 | Specific role + context |
+| Who (need/opportunity) | ~10-15 | Echo validated discovery language |
+| The (product name) | ~3-5 | Actual product name |
+| Is a (product category) | ~3-5 | Customer-recognizable category |
+| That (key benefit) | ~10-15 | Outcome, not feature |
+| Unlike (competitor) | ~8-12 | Real alternative |
+| Our product gives (differentiation) | ~15-20 | Outcome-based differentiation |
+| Competitive matrix X-axis | ~3-5 | Differentiating factor label |
+| Competitive matrix Y-axis | ~3-5 | Differentiating factor label |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For farm operations managers who need timely soil decisions, position the monitoring product around that benefit and a real alternative such as periodic manual sampling. Fill all seven elements.
+- **Weak:** "An innovative platform for everyone" provides neither a specific customer nor a credible distinction.
+- **Drift to avoid:** Feature-list differentiation: sensors and dashboards are capabilities. Explain the customer outcome that makes the alternative less attractive.
 
-- a strong Productside-style positioning statement with competitive matrix
-- a weak, generic version with feature-based differentiation
-- a drift-bug example showing feature-list differentiation masquerading as outcomes
-- commentary on why the weak versions fail
 
 ## Common Pitfalls
 
-### Pitfall 1: Features Instead of Benefits in the "That" Element
+- **Features Instead of Benefits in the "That" Element:** Rewrite the "That" element as the outcome the customer experiences: "That gives operations teams immediate visibility into site performance without waiting for weekly reports."
 
-**Symptom:** "That provides real-time dashboards, automated alerts, and API integrations."
+- **Strawman Competitor in the "Unlike" Element:** Name the alternative the target customer would actually choose. If the biggest competitor is Salesforce, name Salesforce. If the real alternative is the status quo (spreadsheets and email), name that. The "Unlike" should make sales reps nod, not roll their eyes.
 
-**Consequence:** The positioning statement reads like a product spec, not a value proposition. Stakeholders cannot use it to align on why the product matters to customers.
+- **Empty Adjectives in Differentiation:** Replace adjectives with specific outcomes. "Innovative" becomes "reduces onboarding time from weeks to days." "Seamless" becomes "works within the tools the team already uses without requiring migration."
 
-**Fix:** Rewrite the "That" element as the outcome the customer experiences: "That gives operations teams immediate visibility into site performance without waiting for weekly reports."
+- **Product Category Too Broad or Too Narrow:** Use the category label the target customer would use when searching for solutions or describing the product to a colleague. "HR automation tool" - an HR specialist knows what that means and can compare it to alternatives in the same category.
 
-### Pitfall 2: Strawman Competitor in the "Unlike" Element
+- **Target Customer Too Generic or Defaulting to a Tech Role:** Name the person who experiences the product's value in the field. If the product is a warehouse labor coordination platform, the target customer is "regional distribution center operations managers," not "businesses" and not "software engineers."
 
-**Symptom:** The PM names a weak, obscure, or irrelevant competitor to make differentiation easy. "Unlike SmallStartupNobodyUses..."
+- **The Need/Opportunity Does Not Match Discovery Work:** Pull the "Who" language directly from JTBD artifacts, problem identification work, or empathy interview findings. The need should sound like something a customer actually said, not something a marketer assumed.
 
-**Consequence:** The positioning statement does not address the real competitive threat. The sales team cannot use it because customers are comparing against different alternatives.
+- **Differentiation in Feature Terms Instead of Outcome Terms:** Rewrite as outcomes: "Our product gives real-time data access, streamlined workflows and automates repetitive tasks." The customer can verify these claims from their own experience.
 
-**Fix:** Name the alternative the target customer would actually choose. If the biggest competitor is Salesforce, name Salesforce. If the real alternative is the status quo (spreadsheets and email), name that. The "Unlike" should make sales reps nod, not roll their eyes.
+- **Forgetting Status Quo as a Valid Competitive Alternative:** Ask: what is the customer doing today without your product? If the answer is "spreadsheets and manual processes," that is a valid and often the most important "Unlike" to address.
 
-### Pitfall 3: Empty Adjectives in Differentiation
+- **AI Drafts Before the PM Does:** Coach the PM to draft first, then critique. If the PM asks for a draft, tag it `[AI-SUGGESTED, VALIDATE THIS]` and run the same critique on it.
 
-**Symptom:** "Our product gives innovative, seamless, best-in-class, cutting-edge solutions."
+- **One Statement Stretched Across Segments:** One persona, one statement. Rerun the exercise for each additional persona.
 
-**Consequence:** The differentiation is meaningless. Every competitor claims the same adjectives. The statement provides no filter for product decisions or purchasing.
-
-**Fix:** Replace adjectives with specific outcomes. "Innovative" becomes "reduces onboarding time from weeks to days." "Seamless" becomes "works within the tools the team already uses without requiring migration."
-
-### Pitfall 4: Product Category Too Broad or Too Narrow
-
-**Symptom:** "Is a software platform" (too broad) or "Is a cloud-native Kubernetes-orchestrated microservices framework" (too narrow).
-
-**Consequence:** Too broad - the customer does not know what to compare it to. Too narrow - the customer does not know what it is.
-
-**Fix:** Use the category label the target customer would use when searching for solutions or describing the product to a colleague. "HR automation tool" - an HR specialist knows what that means and can compare it to alternatives in the same category.
-
-### Pitfall 5: Target Customer Too Generic or Defaulting to a Tech Role
-
-**Symptom:** "For businesses" or "For data engineers and DevOps teams" when the product actually serves operations managers.
-
-**Consequence:** The positioning statement does not resonate with the actual buyer or user because it was written for the wrong audience.
-
-**Fix:** Name the person who experiences the product's value in the field. If the product is a warehouse labor coordination platform, the target customer is "regional distribution center operations managers," not "businesses" and not "software engineers."
-
-### Pitfall 6: The Need/Opportunity Does Not Match Discovery Work
-
-**Symptom:** The "Who" element uses generic language ("who want to be more efficient") that does not connect to validated jobs, pains, or outcomes from prior discovery.
-
-**Consequence:** The positioning statement floats free of evidence. The team has done discovery work but the positioning ignores it.
-
-**Fix:** Pull the "Who" language directly from JTBD artifacts, problem identification work, or empathy interview findings. The need should sound like something a customer actually said, not something a marketer assumed.
-
-### Pitfall 7: Differentiation in Feature Terms Instead of Outcome Terms
-
-**Symptom:** "Our product gives AI-powered analytics, real-time dashboards, and seamless integration with existing systems."
-
-**Consequence:** The differentiation describes what the product has, not what the customer gets. Competitors can (and will) match features. Outcome-based differentiation is harder to copy.
-
-**Fix:** Rewrite as outcomes: "Our product gives real-time data access, streamlined workflows and automates repetitive tasks." The customer can verify these claims from their own experience.
-
-### Pitfall 8: Forgetting Status Quo as a Valid Competitive Alternative
-
-**Symptom:** The PM only considers named software competitors and ignores that many customers are currently using spreadsheets, email, manual processes, or doing nothing.
-
-**Consequence:** The positioning misses the most common competitive alternative. In many markets, the biggest competitor is not another product - it is inertia.
-
-**Fix:** Ask: what is the customer doing today without your product? If the answer is "spreadsheets and manual processes," that is a valid and often the most important "Unlike" to address.
-
-### Pitfall 9: AI Drafts Before the PM Does
-
-**Symptom:** The PM asks for a positioning statement, gets a polished one, and keeps it because it sounds good.
-
-**Consequence:** The words are the model's, not the team's. No one has decided what the claims are, so no one can defend them to a customer or a sales team.
-
-**Fix:** Coach the PM to draft first, then critique. If the PM asks for a draft, tag it `[AI-SUGGESTED, VALIDATE THIS]` and run the same critique on it.
-
-### Pitfall 10: One Statement Stretched Across Segments
-
-**Symptom:** A single statement tries to speak to the frontline user, the budget holder, and two different industries at once. "For operations teams and executives across logistics and manufacturing who..."
-
-**Consequence:** No persona recognizes their need in it. It loses every one of them to a competitor that speaks to them directly.
-
-**Fix:** One persona, one statement. Rerun the exercise for each additional persona.
-
-### Pitfall 11: Claims Stronger Than the Evidence
-
-**Symptom:** "Cuts dispatch time in half" or "the only platform that..." with no customer evidence or competitive research behind it. Competitor details came from the model and were never checked.
-
-**Consequence:** Polish is mistaken for proof. The claim fails the first time a prospect or a competitor tests it.
-
-**Fix:** Test every claim for relevance, credibility, and differentiation. Verify competitor details before they shape the "Unlike" element. Soften or drop any claim the evidence can't carry.
+- **Claims Stronger Than the Evidence:** Test every claim for relevance, credibility, and differentiation. Verify competitor details before they shape the "Unlike" element. Soften or drop any claim the evidence can't carry.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - competitive matrix and seven-element positioning formula
-- [prompts/](prompts/README.md) - copy-paste prompt for chat-based AI tools (1: pressure-test your positioning statement, rerun per persona)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Related Skills
-
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - the "For" element should align with the persona built here
-- [ps-jobs-to-be-done](../ps-jobs-to-be-done/SKILL.md) - the "Who" element should echo validated jobs and outcomes
-- [ps-problem-identification](../ps-problem-identification/SKILL.md) - validated problems inform the need/opportunity element
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_positioning_statement_playbook_pages.pdf](assets/ps_positioning_statement_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 60-64: Template 13 of 24 there, with the AI overview on slide 62 and prompt on slide 63. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-positioning-statement) for supporting source material and expanded examples.

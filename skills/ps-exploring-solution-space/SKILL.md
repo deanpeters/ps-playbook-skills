@@ -21,6 +21,7 @@ scenarios:
   - "Help me prepare a design thinking session to explore solutions for our framed problem"
 ---
 
+
 ## Purpose
 
 Create a **Productside-style Exploring the Solution Space artifact** for your validated problem.
@@ -44,6 +45,14 @@ Use this skill when you need to:
 - prepare participants and resources for a productive session
 
 This is not a solution-generation tool. The agent does not brainstorm solutions on behalf of the team. It helps the PM plan a structured session where the team generates, prioritizes, and tests ideas together.
+
+### Usage Notes
+
+- This is a **process skill** (`type: process`). The agent helps prepare a design thinking session; the actual ideation happens with the team in real time.
+- Evidence gathering: this skill qualifies for **artifacts only**. The PM brings the validated problem statement, stakeholder alignment, and prior discovery work. No web research needed.
+- The method catalog contains 10 tools from the Productside playbook organized across three activity types: Generating Ideas, Prioritizing Ideas, and Testing. A well-planned session includes at least one from each category.
+- Upstream: ps-framing-the-problem (validated problem statement is required input), ps-empathy-interviews, ps-proto-persona, ps-jobs-to-be-done.
+- Downstream: Solution Hypothesis Statement (the top idea from this session feeds the hypothesis).
 
 ## Key Concepts
 
@@ -144,64 +153,24 @@ The ideas belong to the team in the session, never to a model beforehand. Which 
 
 ### Working With AI
 
-The Productside Playbook sets one rule for every AI-assisted Play: **the Product Manager does the thinking, and AI pressure-tests it.** In this skill, you are the AI. Hold yourself to these rules:
-
-1. **Pressure-test before you produce.** When the user brings a draft, critique it against the Play's formats and criteria first. Point at the specific words that fail and ask the user to fix them. Offer rewrites only after the critique, as options to accept, adapt, or reject.
-2. **Never stand in for the customer.** Do not present jobs, quotes, needs, or pains you generated as research, and do not answer as the persona as if your answers were evidence. Anything you draft about customers is a hypothesis, labeled as one, to validate with real people. Role-play is allowed only as rehearsal where the Play calls for it, labeled as practice, and nothing from it goes into findings.
-3. **Never stand in for the team's judgment.** Do not put unsourced figures into the artifact, and do not make calls the team should own. A number without a source is a blank to fill, so mark it that way.
-4. **Work the five habits.** *Context:* ask for the persona, market, outcome, and constraints when they are missing. *Guide:* offer competing views and welcome pushback. *Enforce:* work inside the Play's template, not around it. *Outcome:* tie the work to the decision it supports. *Iterate:* go step by step rather than one-shot.
-5. **Keep best guess honest.** Best guess mode is allowed. When you use it, label every inferred detail inline and end with **Assumptions to Validate**. A best guess is a starting point to test, never a finding.
-
-For people working in a chat tool without this skill, the Play's copy-paste prompts are in [prompts/](prompts/README.md).
+The Product Manager does the thinking, and AI pressure-tests it. Critique a supplied draft against this Play before offering rewrites. Never invent customer quotes, research findings, or unsupported figures. Label inferred customer details as hypotheses, mark unknown numbers as blanks, and keep decisions with the user or team. Rehearsal is practice, not evidence. Follow this Play's specific AI boundaries below and in the Application.
 
 ### Guided Mode
 
-When a user asks to be walked through this skill, signals unfamiliarity, or invokes it without enough context, run in guided mode. **Do NOT batch multiple questions into one turn. Do NOT list everything you need up front. One question per turn, every turn.**
+When asked for guidance, when the user is unfamiliar, or when context is missing:
 
-1. **Open with a heads-up.** State what the skill produces, the estimated number of questions, and where you will stop for the user's decision. Offer three entry paths:
-   - (1) **Guided** - one question at a time with recommendations
-   - (2) **Context dump** - paste what you know and I will ask only what is missing
-   - (3) **Best guess** - I will infer what I can and label every assumption
-
-   Then ask the first question immediately (do not wait for the user to pick a mode - Guided is the default).
-
-2. **Start from what is already supplied.** Treat text in the request, pasted notes, attached files, upstream Play artifacts, and decisions made earlier in the conversation as answers already given. Do not ask for them again. Begin at the first real gap, and keep the progress label honest about what remains.
-
-3. **One question per turn.** Every turn follows this exact format:
-
-   > `Context Q2/5`
-   >
-   > **Who are the primary users of this product?**
-   >
-   > Some options to consider:
-   > 1. Clinical data managers who run queries against study databases
-   > 2. Research scientists who need self-service access to trial data
-   > 3. Biostatisticians who build analysis-ready datasets
-   > 4. Other (describe your users)
-   >
-   > Pick one or more (e.g. `1`, `1,3`, `1 and 3`), or describe in your own words.
-
-   The progress label (e.g. `Context Q2/5`) is mandatory on every turn. Recommendations must always be numbered `1.`, `2.`, `3.`, `4. Other` - never presented as bullet points or unnumbered prose. The three recommendations must be specific to the skill, the industry, and the context gathered so far - never generic placeholders. If you lack domain context for good recommendations, do a web search first to ground your options in real roles, real products, or real workflows. Explain why a question matters when that is not obvious, and ask a follow-up only when the answer could change the artifact or the decision.
-
-   **Exception: evidence only the user has.** When a question asks for something only the user can know (a root cause, what customers said or did, what the user observed, a number they must set), ask it as an open question with no numbered options, and say why there are none. Options there would put guesses in the user's mouth.
-
-4. **Recommendations get smarter each turn.** Each answer becomes context for the next question's recommendations. By the mid-point, options should reflect the specific product, customer, and situation the user has described - not generic suggestions. Early questions can use industry-typical examples; later questions must incorporate what the user has already told you.
-
-5. **In context dump mode, show what you extracted first.** Before asking anything, give a short **Known / Assumed / Missing / Conflicting** summary of what the user supplied. Credit where each item came from, and keep what a source reported separate from what has been verified. Then ask only the questions that would most change the artifact.
-
-6. **Interruption-safe.** Handle any of these mid-session:
-   - **Meta questions** ("how many left?", "what does this term mean?"): answer directly, restate progress, restate the pending question, then wait.
-   - **Mode switch** ("just take your best guess", "here is everything I know"): switch to the requested mode immediately. For best guess, infer remaining answers from context gathered so far, generate the artifact, and end with an explicit **Assumptions to Validate** list, ranked by how much each could change the decision. For context dump, parse what was provided and ask only about gaps.
-   - **Correction** ("actually, go back to Q2"): revisit that question with the original recommendations updated for current context.
-   - **Pause or stop**: stop immediately. On resume, summarize what was captured, what is still open, and the next question.
-
-7. **Finish with a summary, then hand back the decision.** After the context is gathered, recap in a few short bullets: what was supplied, what was inferred, what remains unknown or disputed, and whether the work is ready for a decision. Confirm before generating the artifact. If best guess mode was used at any point, end with an explicit **Assumptions to Validate** list. When the user faces a choice (which option, which next Play, whether to proceed), present a numbered ladder: the option the evidence favors first, labeled `(Recommended)`, then two or three genuinely distinct alternatives, each with its tradeoff in one sentence, then `Other`. Allow combining options where it makes sense. The user decides.
+1. Explain the output and estimated question count. Offer Guided, Context dump, or Best guess; default to Guided and ask the first question immediately.
+2. Use supplied context instead of asking again. In Context dump mode, summarize Known / Assumed / Missing / Conflicting first.
+3. Ask one bolded question per turn with a progress label, three context-specific numbered recommendations, option 4 Other, and an input hint. For facts only the user can know, ask openly without suggested answers and explain why. Ground unfamiliar domain options in research when needed.
+4. Adapt recommendations to the answers. Explain why a question matters when helpful.
+5. Answer interruptions, honor corrections and mode switches, and stop when asked. Resume with a brief recap and the pending question.
+6. Recap supplied facts, assumptions, gaps, and readiness; confirm before generating a guided artifact. When the user faces a decision, recommend an option with reasons and offer distinct alternatives. The user decides.
+7. Best guess may proceed immediately: label inferred details inline and end with Assumptions to Validate, ranked by decision impact. With sufficient supplied context, execute directly.
 
 ## Application
 
-Use [template.md](template.md) for the full scaffold.
+Use [Template](#template) for the full scaffold.
 
-See the original three-page playbook source in [assets/ps_exploring_solution_space_playbook_pages.pdf](assets/ps_exploring_solution_space_playbook_pages.pdf).
 
 ### Required Output Convention
 
@@ -251,7 +220,7 @@ Example goal: "Using design thinking methods, ideate solution possibilities for 
 
 ### Step 4: Scope the How Might We Questions
 
-Ask the PM to draft three to five How Might We questions from the problem statement before you suggest anything. Then work through them one at a time (mirrors [prompts/01](prompts/01-scope-how-might-we.md)):
+Ask the PM to draft three to five How Might We questions from the problem statement before you suggest anything. Then work through them one at a time (mirrors the critique guidance in this Play):
 
 1. Say whether the question is too broad, too narrow, or just right, and why.
 2. If a solution hides in the wording, point at the word and ask the PM to cut it.
@@ -290,7 +259,7 @@ Recommend methods based on the session goals, team size, and available time. Key
 - **3-4 methods is the sweet spot** for a single session; more than 4 is too many to execute well
 - **Sequence matters**: Generate first, then prioritize, then test. Do not reverse the order.
 
-Ask the PM what each method should produce before they commit to it, and make them justify each choice. Build the plan with them rather than setting the agenda for them (mirrors [prompts/02](prompts/02-plan-ideation-session.md)).
+Ask the PM what each method should produce before they commit to it, and make them justify each choice. Build the plan with them rather than setting the agenda for them (mirrors the critique guidance in this Play).
 
 For each selected method, provide:
 
@@ -335,7 +304,7 @@ Before finalizing, check:
 
 ### Step 11: After the Session, Sharpen the Case
 
-When the PM returns with the team's prioritized solutions, help them build the case for the highest-priority one (mirrors [prompts/03](prompts/03-sharpen-solution-case.md)). Do not write the benefits, name the risks, or compose the value story. Make the PM articulate each, then reflect back what is thin, missing, or disconnected:
+When the PM returns with the team's prioritized solutions, help them build the case for the highest-priority one (mirrors the critique guidance in this Play). Do not write the benefits, name the risks, or compose the value story. Make the PM articulate each, then reflect back what is thin, missing, or disconnected:
 
 1. **Benefits:** ask what the solution does for the persona, tied to the specific problem. Point at any benefit that is generic or disconnected.
 2. **Risks:** ask what risks the PM sees. After they answer, ask questions that test whether they looked widely enough (adoption, dependencies, the business) without naming a risk yourself.
@@ -355,133 +324,296 @@ After the session plan is complete, offer the PM up to three next-step options:
 
 Present these as options, not mandatory steps. The PM decides what comes next.
 
+## Template
+
+### When to Use This
+
+Use this template during **Discover + Define** when you have a validated problem statement and need to plan a design thinking session to explore solution possibilities. This is a process skill for session preparation, not a solution-generation exercise.
+
+Upstream work that feeds this template: validated problem statement (from ps-framing-the-problem), stakeholder alignment, empathy interview findings, proto-persona, jobs-to-be-done.
+
+### Template
+
+#### Session Plan
+
+```markdown
+# Exploring the Solution Space: Session Plan
+
+## Product Context
+
+- Product or service:
+- Target market segment:
+- Target customer (the person the product serves):
+
+## Validated Problem Statement
+
+Paste the validated problem statement here. If you do not have one, stop and use ps-framing-the-problem first.
+
+> Quality check: Is this a specific, validated problem statement, not a vague "customers struggle with X"?
+> Quality check: Is the problem stated from the customer's perspective, not the product team's?
+
+## Session Parameters
+
+### Goals and Objectives
+
+What should this session accomplish? Tie goals to the problem statement.
+
+1.
+2.
+3.
+
+> Quality check: Are goals specific enough to evaluate whether the session succeeded?
+> Quality check: Do goals reference the validated problem statement, not a generic "brainstorm solutions"?
+> Quality check: Do goals include a measurable outcome (e.g., "generate at least 15 ideas and narrow to 3")?
+
+### How Might We Questions
+
+Draft three to five yourself. Each must trace back to the validated problem statement.
+
+| # | How Might We... | Scope (too broad / too narrow / just right) | Traces to problem? |
+|---|---|---|---|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+
+> Quality check: Is any solution hiding in the wording? Cut it.
+> Quality check: Does each question open the space without choosing what goes in it?
+
+### Ground Rules and Hard Moments
+
+- Rules that protect divergence (e.g. quantity over quality, no judgment while generating):
+- How we keep it safe, engaging, and fun:
+- If the room goes quiet:
+- If one person dominates:
+- If someone shoots down every idea:
+
+### Participants
+
+Who should attend? Include cross-functional representation.
+
+| Name / Role | Function | Perspective They Bring |
+|-------------|----------|----------------------|
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+
+> Quality check: Is the list cross-functional (not only engineers or only technical roles)?
+> Quality check: Is someone with direct customer contact or customer evidence included?
+> Quality check: Is there a designated facilitator and a note-taker?
+> Quality check: Is the group between 5-8 people? Fewer limits diversity; more limits participation.
+
+### Session Resources Needed
+
+- Collaboration tool:
+- Meeting setup:
+- Time allocated:
+- Pre-work for participants:
+- Documentation plan:
+
+> Quality check: Is the time allocation realistic for the number of methods selected (minimum 90 min for single-method, 2-3 hours for multi-method)?
+> Quality check: Is there a plan for how participants should prepare?
+
+### Notes
+
+- Session timing considerations:
+- Multiple sessions needed? (If more than 3-4 methods, split across sessions)
+- Post-session follow-up plan:
+
+## Method Selection
+
+Select 3-4 methods from the catalog below. Choose at least one from each activity type.
+
+### Productside Method Catalog
+
+Mark selected methods. For each selected method, add rationale below.
+
+| # | Method | Activity Type | Selected? |
+|---|--------|--------------|-----------|
+| 1 | How Might We? | Generating Ideas | [ ] |
+| 2 | "Bad Ideas" First Brainstorming | Generating Ideas | [ ] |
+| 3 | Quantity Over Quality | Generating Ideas | [ ] |
+| 4 | Mind Mapping | Generating Ideas | [ ] |
+| 5 | 2x2 Matrix | Prioritizing Ideas | [ ] |
+| 6 | Dot Voting | Prioritizing Ideas | [ ] |
+| 7 | Money Voting | Prioritizing Ideas | [ ] |
+| 8 | 6-3-5 Method | Generating + Prioritizing | [ ] |
+| 9 | SCAMPER | Generating + Prioritizing | [ ] |
+| 10 | Prototyping | Testing | [ ] |
+| 11 | Customer Journey Maps | Generating + Testing | [ ] |
+
+> Quality check: Is at least one Generating method selected?
+> Quality check: Is at least one Prioritizing method selected?
+> Quality check: Is at least one Testing method selected?
+> Quality check: Are 3-4 methods selected total? More than 4 in one session is too many.
+> Quality check: Are methods sequenced correctly (Generate first, then Prioritize, then Test)?
+
+### Selected Method Details
+
+For each selected method, fill in the details below. Copy this block for each method.
+
+#### Method: [Name]
+
+- **Activity type:** [Generating / Prioritizing / Testing]
+- **Why this method fits this session:**
+- **Time needed:** [estimate in minutes]
+- **Setup instructions:**
+- **Facilitation flow:**
+  1.
+  2.
+  3.
+- **Expected output:**
+- **Common facilitation mistakes to avoid:**
+- **How the output feeds the next method:**
+
+> Quality check: Does the facilitation flow include clear time limits for each phase?
+> Quality check: Is the expected output concrete enough to feed the next method or the Solution Hypothesis step?
+> Capacity check: Setup instructions ~20-30 words. Facilitation flow steps ~10-15 words each.
+```
+
+#### Post-Session Documentation
+
+```markdown
+# Session Outcomes
+
+## Session Context
+
+- Date:
+- Duration:
+- Facilitator:
+- Participants:
+- Problem statement addressed:
+
+## Ideas Generated
+
+List all ideas generated during the session (even the ones that were not prioritized).
+
+| # | Idea | Source Method |
+|---|------|-------------|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+
+## Prioritized Ideas
+
+Which ideas rose to the top during prioritization? Include the rationale.
+
+| Rank | Idea | Why It Rose to the Top |
+|------|------|----------------------|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+
+> Quality check: Does the rationale connect back to the validated problem statement?
+> Quality check: Are the top ideas feasible enough to prototype or test?
+
+## Testing Observations
+
+If prototyping or journey mapping was conducted, document what was learned.
+
+-
+-
+-
+
+## Solution Case (highest-priority solution, in the PM's own words)
+
+- Solution:
+- Benefits for the persona (tied to the problem):
+- Risks (adoption, dependencies, business):
+- Customer value:
+- How customer value returns to the business (which business outcome):
+
+> Quality check: Is any benefit generic, or disconnected from the problem?
+> Quality check: Where could the value chain break?
+
+## Next Steps
+
+- [ ] Document and share session outcomes with stakeholders not in the room
+- [ ] Select the top candidate for Solution Hypothesis Statement (ps-solution-hypothesis)
+- [ ] Plan follow-up session if needed
+- [ ] Schedule prototype testing with real customers if applicable
+```
+
+### Usage Guidance
+
+#### Session Flow
+
+A typical session follows this sequence:
+
+1. **Open (10 min)** - Facilitator reviews the problem statement and session goals. Participants align on what they are solving.
+2. **Generate (30-45 min)** - Run one or two generating methods. Focus on volume and creativity.
+3. **Prioritize (20-30 min)** - Run a prioritization method. Narrow the field to 3-5 candidates.
+4. **Test (30-45 min)** - Run a testing method on the top candidates. Expose ideas to customer reality.
+5. **Close (15 min)** - Document top ideas, prioritization rationale, and next steps.
+
+#### How Many Methods
+
+Select 3-4 methods for a single session:
+
+- 1-2 Generating methods (if using two, keep total generating time under 45 minutes)
+- 1 Prioritizing method
+- 1 Testing method
+
+If more methods are needed, plan a second session rather than cramming. Depth produces better ideas than breadth.
+
+#### Time Budgets
+
+| Session Type | Duration | Methods | Guidance |
+|-------------|----------|---------|----------|
+| Focused | 90 min | 3 methods | One generating, one prioritizing, one testing |
+| Standard | 2 hours | 3-4 methods | Two generating, one prioritizing, one testing |
+| Extended | 3 hours | 4 methods + breaks | Full cycle with deeper exploration |
+
+#### Connecting to Other Skills
+
+- **Upstream:** ps-framing-the-problem (validated problem statement is required input), ps-empathy-interviews (customer evidence grounds the session), ps-proto-persona (persona context), ps-jobs-to-be-done (jobs and outcomes to solve for)
+- **Downstream:** The top idea from this session feeds into the Solution Hypothesis Statement
+
+#### Capacity Reference
+
+| Field | Word Budget | Guidance |
+|-------|-------------|----------|
+| Session Goal | ~15-25 | Specific, tied to problem statement |
+| Method Rationale | ~15-25 | Why this method fits this session |
+| Setup Instructions | ~20-30 | What to prepare before starting |
+| Facilitation Step | ~10-15 | Clear, actionable instruction |
+| Idea Description | ~10-15 | Concrete enough to evaluate |
+| Prioritization Rationale | ~15-20 | Why this idea rose to the top |
+
 ## Examples
 
-See [examples/sample.md](examples/sample.md).
+Illustrative and fictional, not customer evidence.
 
-The example set includes:
+- **Strong:** For a fleet manager facing unexpected breakdowns, frame a How Might We question, choose an ideation method, and plan the team session before comparing ideas.
+- **Weak:** A session plan that begins with a chosen predictive-maintenance feature skips exploration.
+- **Drift to avoid:** Agent substitutes for the room: an AI-generated solution list is an explicitly requested draft, not evidence of team ideation or agreement.
 
-- a strong session plan with clear goals, cross-functional participants, and well-selected methods across all three categories
-- a weak version with vague goals, engineering-only participants, and a single method selected
-- a drift-bug example where the PM skips session preparation and asks the agent to generate solutions directly
-- commentary on why the weak versions fail
 
 ## Common Pitfalls
 
-### Pitfall 1: Skipping the Problem Statement
+- **Skipping the Problem Statement:** Require the validated problem statement as input. If the PM cannot state the problem clearly, redirect to ps-framing-the-problem before planning a solution space session.
 
-**Symptom:** The PM jumps straight into brainstorming solutions without a validated problem statement.
+- **Inviting Only Engineers:** Check the participant list for cross-functional diversity. Flag if design, customer-facing roles, or domain experts are missing. A logistics platform PM should have logistics professionals in the session, not only backend developers.
 
-**Consequence:** The session generates solutions to an undefined or assumed problem. The team may build something nobody needs because they never validated what problem they are solving.
+- **Selecting Only Divergent Methods:** Require at least one method from each activity type. If the PM selects only Generating methods, explicitly ask: "How will you prioritize these ideas? How will you test the top candidates before committing?"
 
-**Fix:** Require the validated problem statement as input. If the PM cannot state the problem clearly, redirect to ps-framing-the-problem before planning a solution space session.
+- **Treating the Agent as a Substitute for the Team Session:** Redirect the PM to session planning. The agent's job is to help prepare a productive session, not to replace it. The team generates the ideas; the agent helps structure the process.
 
-### Pitfall 2: Inviting Only Engineers
+- **Making Session Goals Too Vague:** Tie goals to the specific problem statement and include measurable outcomes: "Generate at least 15 solution ideas for [problem], prioritize to 3 candidates, and paper-prototype the top candidate."
 
-**Symptom:** The participant list is all engineers and technical leads. No design, no customer success, no sales, no actual customers.
+- **Not Allocating Enough Time:** Budget minimum 90 minutes for a single-method session. Multi-method sessions need 2-3 hours. If the calendar does not allow it, split across multiple sessions rather than cramming everything into one.
 
-**Consequence:** The session produces technically feasible but customer-blind solutions. The team optimizes for how to build rather than what to build.
+- **Selecting Too Many Methods:** Limit to 3-4 methods per session. If more methods are needed, plan a second session. Depth beats breadth in ideation.
 
-**Fix:** Check the participant list for cross-functional diversity. Flag if design, customer-facing roles, or domain experts are missing. A logistics platform PM should have logistics professionals in the session, not only backend developers.
+- **Forgetting to Document Session Outcomes:** Assign a note-taker during the session. Plan 15 minutes at the end for documenting the top ideas, prioritization rationale, and agreed next steps. The session outcomes should be structured enough to feed the Solution Hypothesis step.
 
-### Pitfall 3: Selecting Only Divergent Methods
+- **AI Ranks the Solutions for You:** Prioritize in the room with the catalog's prioritizing methods (Dot Voting, Money Voting, Value vs. Effort). Afterward, the agent may challenge each shortlisted hypothesis on value, viability, and feasibility. The team decides.
 
-**Symptom:** The PM picks "How Might We?" and "Quantity Over Quality" but no prioritization or testing methods.
+- **A How Might We That Is Too Broad, Too Narrow, or Hiding a Solution:** Draft three to five, test each for scope, cut any solution word, and check each traces to the problem statement.
 
-**Consequence:** The session produces a long list of ideas with no way to evaluate or narrow them. The team leaves energized but directionless. The ideas sit in a Mural board untouched.
-
-**Fix:** Require at least one method from each activity type. If the PM selects only Generating methods, explicitly ask: "How will you prioritize these ideas? How will you test the top candidates before committing?"
-
-### Pitfall 4: Treating the Agent as a Substitute for the Team Session
-
-**Symptom:** The PM asks the agent to "brainstorm solutions" or "generate 10 solution ideas" instead of planning a session with the team.
-
-**Consequence:** The solutions come from LLM training data, not from the cross-functional team's collective expertise and customer knowledge. The team has no ownership of the ideas because they did not generate them.
-
-**Fix:** Redirect the PM to session planning. The agent's job is to help prepare a productive session, not to replace it. The team generates the ideas; the agent helps structure the process.
-
-### Pitfall 5: Making Session Goals Too Vague
-
-**Symptom:** The session goal is "brainstorm solutions" or "ideate on the problem."
-
-**Consequence:** The session has no success criteria. The team cannot tell whether the session was productive or not. There is no clear connection between the session output and the next step (Solution Hypothesis).
-
-**Fix:** Tie goals to the specific problem statement and include measurable outcomes: "Generate at least 15 solution ideas for [problem], prioritize to 3 candidates, and paper-prototype the top candidate."
-
-### Pitfall 6: Not Allocating Enough Time
-
-**Symptom:** The PM schedules a 30-minute meeting for a multi-method design thinking session.
-
-**Consequence:** The team rushes through generating without time for prioritizing or testing. Surface-level ideas get selected because there was no time to evaluate them properly.
-
-**Fix:** Budget minimum 90 minutes for a single-method session. Multi-method sessions need 2-3 hours. If the calendar does not allow it, split across multiple sessions rather than cramming everything into one.
-
-### Pitfall 7: Selecting Too Many Methods
-
-**Symptom:** The PM picks 5 or more methods for a single session.
-
-**Consequence:** Each method gets 15-20 minutes, which is not enough for any of them to produce quality output. The session becomes a survey of techniques rather than a productive exploration.
-
-**Fix:** Limit to 3-4 methods per session. If more methods are needed, plan a second session. Depth beats breadth in ideation.
-
-### Pitfall 8: Forgetting to Document Session Outcomes
-
-**Symptom:** The team has a great session. Ideas are on sticky notes or a Mural board. Nobody writes up the outcomes.
-
-**Consequence:** Within a week, the team's memory of what was prioritized and why fades. The connection between session output and the Solution Hypothesis step is lost. The PM cannot communicate results to stakeholders who were not in the room.
-
-**Fix:** Assign a note-taker during the session. Plan 15 minutes at the end for documenting the top ideas, prioritization rationale, and agreed next steps. The session outcomes should be structured enough to feed the Solution Hypothesis step.
-
-### Pitfall 9: AI Ranks the Solutions for You
-
-**Symptom:** The team generates ideas, then pastes the list into the agent and asks which ones to pursue. The model judges value, viability, and feasibility, and its top three become the shortlist.
-
-**Consequence:** The decision is quietly outsourced. Enthusiasm for a confident ranking replaces evidence, and the room's knowledge of feasibility is wasted.
-
-**Fix:** Prioritize in the room with the catalog's prioritizing methods (Dot Voting, Money Voting, Value vs. Effort). Afterward, the agent may challenge each shortlisted hypothesis on value, viability, and feasibility. The team decides.
-
-### Pitfall 10: A How Might We That Is Too Broad, Too Narrow, or Hiding a Solution
-
-**Symptom:** "How might we improve the user experience?" (too broad). "How might we add a dashboard for dispatchers?" (a solution inside the question).
-
-**Consequence:** Too broad, and the session produces ideas for a dozen unrelated problems. Too narrow, and the team builds variants of a solution someone already chose.
-
-**Fix:** Draft three to five, test each for scope, cut any solution word, and check each traces to the problem statement.
-
-### Pitfall 11: A Shortlist Nobody Can Defend
-
-**Symptom:** The team leaves with a top idea and enthusiasm, but no one can say what it does for the persona, what could go wrong, or how it helps the business.
-
-**Consequence:** The Solution Hypothesis gets written around excitement, and the gaps surface during the build.
-
-**Fix:** Before moving on, the PM writes the case in their own words (Step 11): benefits tied to the problem, risks looked at widely, and the value chain from customer to business.
+- **A Shortlist Nobody Can Defend:** Before moving on, the PM writes the case in their own words (Step 11): benefits tied to the problem, risks looked at widely, and the value chain from customer to business.
 
 ## References
 
-### Skill Files
-
-- [template.md](template.md) - session plan and post-session documentation scaffold
-- [prompts/](prompts/README.md) - copy-paste prompts for chat-based AI tools (3: scope How Might We, plan the session, sharpen the solution case)
-- [examples/sample.md](examples/sample.md) - strong, weak, and drift-bug examples
-
-### Related Project Docs
-
-- [technical/data/canonical_template_budgets.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/canonical_template_budgets.yaml)
-- [framework-glossary.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/framework-glossary.md)
-- [skill-authoring-workflow.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/skill-authoring-workflow.md)
-- [template_conversion_rules.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_rules.md)
-- [template_conversion_usage.md](https://github.com/Productside/Productside-Playbook-Skills/blob/main/docs/template_conversion_usage.md)
-
-### Related Skills
-
-- [ps-framing-the-problem](../ps-framing-the-problem/SKILL.md) - upstream; the validated problem statement is the required input for this skill
-- [ps-problem-identification](../ps-problem-identification/SKILL.md) - upstream; problem identification feeds the problem statement that drives this session
-- [ps-empathy-interviews](../ps-empathy-interviews/SKILL.md) - upstream; interview findings provide customer evidence that grounds ideation
-- [ps-proto-persona](../ps-proto-persona/SKILL.md) - upstream; persona work helps identify the right participants and grounds the session in customer reality
-- [ps-solution-hypothesis](../ps-solution-hypothesis/SKILL.md) - downstream; session output (top prioritized idea) feeds the Solution Hypothesis Statement
-
-### Source Material
-
-- [Baseline Playbook version](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml). Full source PDF supplied separately.
-- [assets/ps_exploring_solution_space_playbook_pages.pdf](assets/ps_exploring_solution_space_playbook_pages.pdf)
-- B2B work-in-progress deck (`wip-b2b-2026-11`), slides 49-56: Template 11 of 24 there, with the AI overview on slide 51 and prompts on slides 52, 54, 55. Not yet ratified. See [technical/data/source_versions.yaml](https://github.com/Productside/Productside-Playbook-Skills/blob/main/technical/data/source_versions.yaml).
+Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. November 2026 B2B work-in-progress Playbook; not yet ratified. See the [original Play reference](https://github.com/Productside/Productside-Playbook-Skills/tree/main/reusable-agent-skills/ps-exploring-solution-space) for supporting source material and expanded examples.
