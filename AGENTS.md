@@ -6,6 +6,8 @@ Read README.md and LICENSE first. Keep this project focused on skills and prompt
 - Keep the `ps-` skill names. One folder serves one coherent job.
 - Each `skills/ps-.../` folder contains only `SKILL.md`. Keep the working template, essential usage notes, compact examples, and quality checks inside that file. Standalone prompts belong in the top-level `prompts/` collection; supporting source material stays in the original project.
 - Keep Playbook prompt text verbatim. Label authored prompts and inferred details honestly.
+- Use Guided, Expert (context dump), and Discovery (spitball) as the three interaction modes. Keep the compact capture contract in `chatgpt-project/project-instructions.txt` aligned with all skill Guided Mode blocks and prompt wrappers. A wrapper is library-authored; preserve the underlying Playbook prompt verbatim in its labeled section. Discovery never supplies invented evidence or team decisions.
+- Guided teaches while completing the work with context-relevant best-guess recommendations. Expert acts on supplied context and offers guidance on any step without restarting intake. Discovery synthesizes missing context and quickly sketches or simulates a walkthrough with just enough guidance; keep synthesized assumptions and simulated outcomes distinct from real evidence.
 - Do not invent customer evidence, quotes, or numbers.
 - Keep reader instructions short, concrete, and accessible to Product Managers who do not code.
 - Do not include secrets, local configuration, private client material, or full source decks.

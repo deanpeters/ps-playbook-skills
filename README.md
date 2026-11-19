@@ -10,6 +10,8 @@ Practical help for product discovery, strategy, planning, and learning, based on
 
 Nothing to install. You do the thinking, and AI pressure-tests it.
 
+Choose **Guided** to complete the work while learning the method step by step, with context-relevant recommendations. Choose **Expert** to bring your context and get the result, asking for guidance on any step when needed. Choose **Discovery** to synthesize missing context and quickly sketch or simulate a walkthrough with assumptions clearly labeled. You can switch modes as you work.
+
 ## Use a skill
 
 [Browse the 25 skills](skills/README.md) for guided help across all 24 Playbook Plays. Each Play is one `SKILL.md` file containing its instructions, working template, examples, and quality checks.

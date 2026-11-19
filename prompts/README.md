@@ -6,6 +6,16 @@ You do the thinking, and AI pressure-tests it. Review its suggestions and record
 
 Start with prompt 1 in a row. Continue in the same chat when the next prompt builds on your answer.
 
+## Choose your mode
+
+- **Guided:** missed a step in training, got distracted, or need a refresher? Complete the work and learn the method one step at a time. The assistant coaches you with context-relevant best-guess recommendations for you to consider, adjust, or reject.
+- **Expert:** know the approach already? Bring a context dump, draft, or artifacts and ask for the result. The assistant uses what you supplied and asks only about consequential gaps. Ask for guidance on any step without restarting the whole walkthrough.
+- **Discovery:** do not have all the context, or need only an early sketch? The assistant synthesizes missing context provisionally and quickly sketches the outcomes you seek. It may guide you just enough to simulate a useful walkthrough, with assumptions labeled and listed for validation.
+
+All modes reuse context already supplied and finish with a visible summary and the decision left with you. You can switch modes at any point. The Blueprint navigator helps first without a mandatory intake.
+
+Each copyable prompt includes this library's guided-capture instructions. In the Playbook-supplied prompts, the original wording is preserved in a labeled section inside the same box; the added interaction instructions are identified separately.
+
 ## Prompts supplied by the Playbook
 
 | I want to…                                                             | Playbook template                | Open a prompt                                                                                          |
@@ -43,7 +53,6 @@ Bring your own context and draft where requested. AI helps you learn, rehearse, 
 
 | I want to… | Playbook template | Open a prompt |
 |---|---|---|
-
 | Prepare an outcome and strategy discussion with my sponsor | 01: Outcome & Strategy Discussion | [Prepare Your Outcome and Strategy Discussion](01-outcome-strategy-discussion/01-prepare-the-strategy-discussion.md) |
 | Check who to involve and how to engage them | 02: Stakeholder Alignment | [Pressure-Test Your Stakeholder Map](02-stakeholder-alignment/01-pressure-test-stakeholder-map.md) |
 | Connect business outcomes to customer progress | 03: Outcome Tree, Section One | [Check Your Outcome Tree Before Discovery](03-outcome-tree-section-one/01-check-outcome-tree.md) |

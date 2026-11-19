@@ -42,6 +42,18 @@ In a ChatGPT Project these are uploaded references. No skills are installed by u
 
 Prompt labels distinguish **Deck**, supplied by the Playbook, from **Library-authored**, added for this library. The additions do not change the Playbook's AI-Enabled designations. Source material follows the November 2026 B2B work-in-progress Playbook, which is not yet ratified.
 
+## Guided, Expert, and Discovery
+
+The skills, copyable prompts, and Project instructions use the same context-capture approach:
+
+- **Guided:** complete the work and learn the method one step at a time. The assistant explains each step and coaches with context-relevant best-guess recommendations, useful when training was missed, forgotten, or interrupted.
+- **Expert:** bring the context, draft, or artifacts and ask for the result. The assistant briefly surfaces what is known, assumed, missing, or conflicting, then acts without unnecessary intake. Ask for coaching on an individual step whenever needed, then continue in Expert mode.
+- **Discovery:** use incomplete context to get a quick sketch of the outcomes sought. The assistant synthesizes missing context with visible assumptions and asks only enough to make a simulated walkthrough useful. Discovery is an interaction mode, not a claim that real customer research occurred.
+
+The assistant reuses supplied context, supports mode switches and interruptions, and finishes with a completion summary and a decision handoff. Questions about facts only you can supply stay open-ended, without suggested answers. A Discovery sketch can illustrate a skill with synthesized assumptions; it must keep simulated outcomes distinct from actual research, team agreement, or test results.
+
+Every prompt now has a library-added capture layer inside its copyable box. The underlying Playbook or authored prompt remains unchanged in a labeled section. The Deck label applies to the underlying prompt; it does not attribute the added capture instructions to the source deck.
+
 ## Share or update
 
 For a team working on one product, use the Project's available sharing controls and verify access with another account. For independent learners or unrelated clients, distribute this setup guide, project-instructions.txt, and the three source files so each person can create a separate Project. Review the audience and accessible content before sharing. Follow the license included in playbook-plays.md.
@@ -71,5 +83,7 @@ python3 -m unittest discover -s chatgpt-project -p 'test_*.py'
 ```
 
 Edit skills, prompts, or project instructions, then rebuild. Do not edit uploads/ by hand. New Plays require updating skills/README.md and the title mapping in build.py. The generator rejects missing or unmapped references, prompts without catalog entries, and unexpected upload files.
+
+The compact shared capture contract lives between GUIDED CONTEXT CAPTURE and PLAY BOUNDARIES in project-instructions.txt. When changing it, update the inline copies in all skills and prompt wrappers before rebuilding. The generator rejects mismatches. Keep the original prompt section intact when editing its wrapper.
 
 Packaging checks verify content, ordering, and references. They do not establish live ChatGPT behavior, sharing access, or Productside approval.

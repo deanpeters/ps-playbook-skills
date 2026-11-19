@@ -93,6 +93,31 @@ class ProjectKitTests(unittest.TestCase):
             self.assertNotIn("template.md", text)
             self.assertNotIn("examples/sample.md", text)
 
+    def test_guided_capture_reaches_every_standalone_skill_and_prompt(self):
+        capture = build.capture_contract()
+        for play in self.plays:
+            text = (play["folder"] / "SKILL.md").read_text()
+            self.assertEqual(text.count(capture), 1)
+        for path in (build.ROOT / "prompts").glob("*/*.md"):
+            body = re.search(r"```text\n(.*?)```", path.read_text(), re.S).group(1)
+            self.assertEqual(body.count(capture), 1)
+            marker = "Original Playbook prompt (unchanged):" if build.prompt_group(path) == "Deck" else "Play coaching prompt:"
+            self.assertTrue(body.split(marker + "\n\n", 1)[1].strip())
+
+    def test_missing_capture_in_one_prompt_fails_the_build(self):
+        original_read = Path.read_text
+        prompt = next((build.ROOT / "prompts/15-risk-assessment").glob("*.md"))
+
+        def read(path, *args, **kwargs):
+            text = original_read(path, *args, **kwargs)
+            if path == prompt:
+                return text.replace("interaction: guided-context-capture", "interaction: missing")
+            return text
+
+        with patch.object(Path, "read_text", read):
+            with self.assertRaisesRegex(ValueError, "shared guided capture contract"):
+                build.build()
+
     def test_prompts_cover_every_play_and_keep_provenance_distinct(self):
         covered = set()
         numbers = set()

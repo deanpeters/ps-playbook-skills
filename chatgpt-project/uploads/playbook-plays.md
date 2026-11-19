@@ -11,6 +11,16 @@ A Play is a guided exercise for a piece of product work. Start with the question
 
 A prompt is a bounded conversation. A skill is the fuller guide to the Play. You can use either route, switch between them, and bring equivalent prior work without completing earlier Plays.
 
+## Choose how to work
+
+| Mode | What it means |
+|---|---|
+| Guided | Complete the work and learn the method one step at a time. Get coaching and context-relevant best-guess recommendations when training was missed, forgotten, or interrupted. |
+| Expert | Bring your context, draft, or artifacts and ask for the result. Ask for guidance on any step when needed, then continue without restarting intake. |
+| Discovery | Let the assistant synthesize missing context and quickly sketch the outcomes you seek. Get just enough guidance for a simulated walkthrough, with assumptions visible and listed for validation. |
+
+You can switch modes during a conversation. Supplied context is reused. Every mode closes with a summary of what was supplied, synthesized, and still unresolved, then hands the decision back to you. Guided recommendations are options to consider, not answers assumed on your behalf. Discovery does not require a complete brief; simulated outcomes remain distinct from interviews, team agreement, or actual results. The Blueprint navigator helps first rather than forcing an intake form.
+
 ## Try it
 
 > "Help me choose a Play. Our warehouse supervisors stop using our scheduling tool after their first week. Guide me one question at a time."
@@ -353,7 +363,7 @@ AI-generated customer details are hypotheses, not research. People conduct real 
 
 ## Source and updates
 
-Source snapshot: `b9e7875950db91fa`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `f7c3f7c4bda7b327`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 This kit is generated from deanpeters/ps-playbook-skills. Changes on GitHub do not update uploaded sources. Replace all three together and update Project instructions when changed. Full decks, PDF excerpts, and external maintenance documents are outside this kit; their mentions in skill text are provenance. Test actual reference use and sharing access before wider distribution.
 

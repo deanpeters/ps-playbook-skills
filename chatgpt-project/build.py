@@ -149,8 +149,18 @@ def prompt_skill(path):
     return match.group(1)
 
 
+def capture_contract():
+    """Keep the shared interaction text in the existing Project instructions."""
+    text = (HERE / "project-instructions.txt").read_text()
+    match = re.search(r"^GUIDED CONTEXT CAPTURE\n(.*?)\n\nPLAY BOUNDARIES$", text, re.S | re.M)
+    if not match:
+        raise ValueError("Project instructions are missing the guided capture contract")
+    return match.group(1).strip()
+
+
 def build():
     plays = load_plays()
+    capture = capture_contract()
     entries = play_entries(plays)
     locations = {}
     inputs = {ROOT / "skills/README.md", ROOT / "LICENSE", HERE / "project-instructions.txt", HERE / "build.py"}
@@ -168,10 +178,23 @@ def build():
         if contents != ["SKILL.md"]:
             raise ValueError(f"{play_id} must contain only SKILL.md; found {contents}")
         text = (folder / "SKILL.md").read_text()
+        guided = re.search(r"### Guided Mode\n(.*?)\n## Application", text, re.S)
+        if not guided or guided.group(1).strip() != capture:
+            raise ValueError(f"{play_id} does not match the shared guided capture contract")
         for heading in ["## Template\n", "## Examples\n"]:
             if heading not in text:
                 raise ValueError(f"{play_id} is missing its embedded {heading.strip('# ').strip()}")
         register(folder / "SKILL.md", SKILLS, f"{play_id} / Instructions")
+    for prompt in prompt_files:
+        text = prompt.read_text()
+        front = text.split("---", 2)[1]
+        body = re.search(r"```text\n(.*?)```", text, re.S)
+        original_label = "Original Playbook prompt (unchanged):" if groups[prompt] == "Deck" else "Play coaching prompt:"
+        prefix = "Guided context capture (library-added interaction instructions):\n\n" + capture + "\n\n" + original_label + "\n\n"
+        if "\ninteraction: guided-context-capture\n" not in front or not body or not body.group(1).startswith(prefix):
+            raise ValueError(f"Prompt does not match the shared guided capture contract: {prompt.name}")
+        if not body.group(1)[len(prefix):].strip():
+            raise ValueError(f"Prompt is missing its underlying Play task: {prompt.name}")
     for entry in entries:
         matches = []
         for prompt in prompt_files:
@@ -252,6 +275,9 @@ def build():
              "## Two ways to use a Play\n",
              f"| I want to... | Start here | What to do |\n|---|---|---|\n| Get coaching, critique, or rehearsal for a task | {PROMPTS} | Find the Play below, copy its prompt into a chat, and replace the bracketed context. Nothing to install. |\n| Work through the full method and produce its artifact | {SKILLS} | Find the same Play's instructions, embedded template, examples, and quality checks. In a Project, ask the assistant to use that reference. |\n",
              "A prompt is a bounded conversation. A skill is the fuller guide to the Play. You can use either route, switch between them, and bring equivalent prior work without completing earlier Plays.\n",
+             "## Choose how to work\n",
+             "| Mode | What it means |\n|---|---|\n| Guided | Complete the work and learn the method one step at a time. Get coaching and context-relevant best-guess recommendations when training was missed, forgotten, or interrupted. |\n| Expert | Bring your context, draft, or artifacts and ask for the result. Ask for guidance on any step when needed, then continue without restarting intake. |\n| Discovery | Let the assistant synthesize missing context and quickly sketch the outcomes you seek. Get just enough guidance for a simulated walkthrough, with assumptions visible and listed for validation. |\n",
+             "You can switch modes during a conversation. Supplied context is reused. Every mode closes with a summary of what was supplied, synthesized, and still unresolved, then hands the decision back to you. Guided recommendations are options to consider, not answers assumed on your behalf. Discovery does not require a complete brief; simulated outcomes remain distinct from interviews, team agreement, or actual results. The Blueprint navigator helps first rather than forcing an intake form.\n",
              "## Try it\n",
              '> "Help me choose a Play. Our warehouse supervisors stop using our scheduling tool after their first week. Guide me one question at a time."\n',
              '> "Use Play 05 to critique my draft job statements. Find its coaching prompt first; use the skill reference if we need the template or format rules."\n',
@@ -266,7 +292,7 @@ def build():
               "## Contents\n"]
     prompts = ["# Productside Playbook: coaching prompts\n", snapshot + "\n", attribution + "\n",
                f"Start with {GUIDE} to choose a Play. For the full method and working template, use {SKILLS}. Copy the text inside the selected prompt box, add your context, and keep the judgments with you or your team.\n",
-               "Playbook-supplied prompts are labeled Deck. Added prompts are labeled Library-authored. The additions do not change which Plays the source Playbook calls AI-Enabled. Prompt text and source metadata are preserved. Follow each Play's prompt sequence; later steps may require real research or a team session.\n",
+               "Playbook-supplied prompts are labeled Deck. Added prompts are labeled Library-authored. Every copyable prompt now includes a library-added Guided / Expert / Discovery capture layer; the original Play task remains unchanged in its labeled section. Deck identifies the underlying prompt's source, not the added interaction instructions. These additions do not change which Plays the source Playbook calls AI-Enabled. Follow each Play's prompt sequence; later steps may require real research or a team session.\n",
                "## Contents\n"]
     for entry in entries:
         prompts.append(f'- {link(PROMPTS, entry["heading"], entry["heading"])}')
@@ -291,7 +317,7 @@ def build():
                 _, heading = locations[prompt.resolve()]
                 raw = prompt.read_text()
                 metadata = raw.split("---", 2)[1].strip()
-                prompts.append(f"\n#### {heading}\n\n**Source: {groups[prompt]}.**\n\nSource metadata (preserved):\n\n```yaml\n{metadata}\n```\n\n" + render(prompt))
+                prompts.append(f"\n#### {heading}\n\n**Underlying prompt source: {groups[prompt]}. Interaction layer: library-added guided capture.**\n\nSource metadata:\n\n```yaml\n{metadata}\n```\n\n" + render(prompt))
             if entry["id"] in emitted:
                 skills.append(f'\n### {entry["heading"]}\n\nRead Section Two within {link(SKILLS, entry["id"] + " / Instructions", "the shared Outcome Tree reference")}. The full content is stored once under Context.\n')
                 continue
