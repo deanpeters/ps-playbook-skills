@@ -363,7 +363,7 @@ AI-generated customer details are hypotheses, not research. People conduct real 
 
 ## Source and updates
 
-Source snapshot: `417cd2d0c0a1dcf2`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `ac653b868df4bf3f`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 This kit is generated from deanpeters/ps-playbook-skills. Changes on GitHub do not update uploaded sources. Replace all three together and update Project instructions when changed. Full decks, PDF excerpts, and external maintenance documents are outside this kit; their mentions in skill text are provenance. Test actual reference use and sharing access before wider distribution.
 

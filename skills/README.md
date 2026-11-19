@@ -8,6 +8,24 @@ For an agent tool that supports skill folders, use the complete `ps-...` folder 
 
 Every skill supports **Guided** (learn and complete the work step by step, with context-relevant recommendations), **Expert** (bring context and get the result, with guidance on any step when needed), and **Discovery** (synthesize missing context and quickly sketch or simulate a walkthrough). The assistant reuses supplied context and hands decisions back to you. Discovery assumptions stay labeled; this interaction mode is distinct from the Blueprint's Discover phases and does not claim research was conducted.
 
+```mermaid
+flowchart TD
+    M{"How would you like to work?"}
+    M --> G["Guided<br/>Learn and complete each step"]
+    M --> E["Expert<br/>Bring context and get the result"]
+    M --> D["Discovery<br/>Sketch with synthesized assumptions"]
+    E -->|Help on one step| H["Get coaching on that step"]
+    H -->|Resume| E
+    G --> R["Review the result<br/>and decide what to keep"]
+    E --> R
+    D --> R
+
+    classDef mode fill:#eef2ff,stroke:#4f46e5,color:#111827
+    class G,E,D mode
+```
+
+Switch modes when needed; keep the context already supplied. A Discovery result remains provisional until its assumptions are validated.
+
 For copy-and-paste prompts, use the separate [prompt collection](../prompts/README.md). No prompts or source PDFs are duplicated inside the skill folders.
 
 25 skills cover all 24 numbered Plays, plus a Blueprint navigator and Storyboarding. The Outcome Tree covers two numbered Plays. Numbers follow the November 2026 B2B work-in-progress Playbook, which is not yet ratified.

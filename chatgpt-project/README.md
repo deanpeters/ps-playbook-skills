@@ -31,6 +31,26 @@ ChatGPT Projects use uploaded sources and common project instructions across the
 
 The Play guide serves both audiences. A prompt user can choose a task and open a bounded coaching conversation. A skill user can find the full method and the artifact to produce. Both use the same Play names and stable identifiers.
 
+```mermaid
+flowchart LR
+    subgraph Sources["Upload these three files as Sources"]
+        G["playbook-plays.md<br/>Choose a Play and a route"]
+        P["playbook-prompts.md<br/>Coaching prompts"]
+        S["playbook-skills.md<br/>Full method and templates"]
+        G -->|Prompt route| P
+        G -->|Skill route| S
+    end
+
+    I["project-instructions-compact.txt"] -->|Paste into Instructions| A["ChatGPT Project"]
+    G --> A
+    P --> A
+    S --> A
+    A --> C["Start a chat<br/>and bring your context"]
+
+    classDef file fill:#eef2ff,stroke:#4f46e5,color:#111827
+    class G,P,S,I file
+```
+
 For example, **Play 05: Jobs-to-Be-Done & Outcomes** links to:
 
 - Its prompts in playbook-prompts.md, in sequence.

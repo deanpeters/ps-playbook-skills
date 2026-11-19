@@ -1,6 +1,6 @@
 # Productside Playbook: coaching prompts
 
-Source snapshot: `417cd2d0c0a1dcf2`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
+Source snapshot: `ac653b868df4bf3f`. November 2026 B2B work-in-progress Playbook. Not yet ratified.
 
 Based on materials from Productside, licensed under CC BY-NC-SA 4.0 with Additional Internal Business Use Permissions. Full license: playbook-plays.md, License appendix.
 

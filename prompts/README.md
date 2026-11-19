@@ -6,6 +6,21 @@ You do the thinking, and AI pressure-tests it. Review its suggestions and record
 
 Start with prompt 1 in a row. Continue in the same chat when the next prompt builds on your answer.
 
+## How a prompt helps you work
+
+```mermaid
+flowchart TD
+    C["Bring context, a draft,<br/>or an early idea"] --> P["Paste your chosen prompt"]
+    P --> A["AI coaches, critiques,<br/>or rehearses with you"]
+    A --> R["You examine suggestions<br/>and revise your work"]
+    R -->|Another pass| A
+    R --> D["You decide what to keep"]
+    D --> T["Record it in your<br/>template or notes"]
+
+    classDef human fill:#eef2ff,stroke:#4f46e5,color:#111827
+    class C,R,D,T human
+```
+
 ## Choose your mode
 
 - **Guided:** missed a step in training, got distracted, or need a refresher? Complete the work and learn the method one step at a time. The assistant coaches you with context-relevant best-guess recommendations for you to consider, adjust, or reject.
